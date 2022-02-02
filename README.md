@@ -40,3 +40,34 @@ you might find a secret ;)
 
 # What is the so called; "Dope Ass Menu"???
 
+Okay the dope ass menu looks cool.
+
+Including spikes.
+Fancy Layouts.
+And More!
+
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+DO NOT PRESS 8 IN THE MAIN MENU
+
+# DOPE ASS RESKINS/Reanimations
+Left Sides takes the basic FNF chartacters and reanimates them based on their personality in the mod.
+
+BOYFRIEND:
+- Cool, Stylish Up pose
+- Does hand gestures with every pose (excluding Idle, Idle-Scared, and Down)
+- Looks towards the opponent (Relative dirction ig)
+
+GIRLFRIEND:
+- Cutely Smiles (chad) instead of having her smile with her mouth open (virgin)
+- Blushes when cheers.
+- Lip Sync on singing poses.
+
+DAD:
+- Stiff ass mf

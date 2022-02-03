@@ -47,16 +47,24 @@ Fancy Layouts.
 And More!
 
 DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
-DO NOT PRESS 8 IN THE MAIN MENU
+
 DO NOT PRESS 8 IN THE MAIN MENU
 
-# DOPE ASS RESKINS/Reanimations
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+DO NOT PRESS 8 IN THE MAIN MENU
+
+# DOPE ASS Reanimations
 Left Sides takes the basic FNF chartacters and reanimates them based on their personality in the mod.
 
 BOYFRIEND:
@@ -71,3 +79,34 @@ GIRLFRIEND:
 
 DAD:
 - Stiff ass mf
+
+Pico:
+- He has a hat
+- Lip Syncing
+
+Mom:
+- I forgor :skull:
+
+Parents:
+- Dad is still stiff
+- Alternate Idle Animation
+
+Monster:
+- I spit some weird shit at you (not stollen from D sides)
+
+# RESKINS
+
+(Almost) Every week ha a different reskin for BF and GF:
+
+Week 2 - Haloween Costumes (drip)
+Week 4 - Date outfits(?)
+Week 5 - Winter/Christmas (duh)
+
+# Dope Ass Effects
+
+These effects are pretty cool (and a pain in the ass to code in)
+
+These Include;
+- Fade and Flash (Dims the game slightly while the screen will flash a color depending on what note you hit (NOTE THAT IF FLASHING LIGHTS IS OFF, THIS EFFECT WONT WORK!) The camera will also zoom in intensl with every beat)
+- Hide Opnt. Note (Self Explanitory);
+- Mid Song Cutscene

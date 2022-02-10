@@ -111,9 +111,8 @@ These Include;
 - Hide Opnt. Note (Self Explanitory);
 - Mid Song Cutscene (Hides Hud and a char will do a cool pose (the cam will zoom on them))
 - Intense HUD zoom (zoom in the hud on every beat)
-- Note Center (Turns on middlescroll on AND puts the notes in the DEAD CENTER of the screen (this will also turn on Fade and Flash))
+- Note Center (Turns on middlescroll on AND puts the notes in the DEAD CENTER of the screen
 - Lovey Dovey (Turns on heart particles that float accross the screen (very cool))
-- Icon Beat Hit (Does an effect similar to Dave and Bambi's icon effects every 2 beats)
 - Hypnotizing Movement (Moves the camera smoothly (sexily))
 
 # Stages
@@ -122,9 +121,36 @@ The stage redesign is absolutely dope
 
 heres some cool thing that they do
 
-- WEEK 1 STAGE - The time of day will change based on how far you've progressed throughout the week
+- WEEK 1 STAGE - The time of day will change based on how far you##'ve progressed throughout the week
 - WEEK 2 STAGE - The thunder effect is COMPLETELY RANDOM! the camera is also zoomed out more AND the stars move as the song progresses
 - WEEK 3 STAGE - Gf's hair wont blow because it take place indoors. HOWEVER, helicopter helicopter.
 - WEEK 4 STAGE - Nothing much changes, BUT bf's death screen will change to him fucking dying
 - WEEK 5 STAGE - Santa fucking dies
 
+# Dialogue
+
+The dialogue box sprites have been reworked to make low end PC guys' computer run the game better when dialogue starts.
+
+There is also a cool arrow button 😎
+
+The portraits are not animated YET however there are a BUNCH of expresions to choose from (If you want to make like a fan mod or something)
+
+# Engine Reworks
+
+FNF Left Sides is built on what I think is version 4.3 of Psyche Engine **WITH** some engine reworks from me
+
+This includes,
+- The Better Menu.
+- New Rating Strings.
+- Loading Screen
+- Warning Menu
+- S̶̛̛̘̖̰̝̒͌̍̈̇͝O̴̢̙͖̻̭̬̟͍͐́̏̐̀̅̕͘͜Ù̵̯͖̟̫͎̔͠N̴̡̧̬̹̺̰̦͚̣̝̑̊Ḑ̴̛̩̫̫̺̠͍̬̩̓͝Ţ̸͈͈͙͛́͂́͛̏͋̐̏̂͝E̴̛̟̮͖̣̪̊͜S̶͙̤̦̰͍͈̒͑́̽̓̿̅̀̓̅ͅT̶̛͙̩̝̭͚̬̂̈͛͑ ̶̛̝̟̠̜̪̱͎͈̗͇͌̏͂̐̊̈́M̷̛̳̹̥͔̄̈́̕͜Ę̸̢̮̞̰̲̠͍̋̋͋̌̌͜Ǹ̷̟̙͕̰̜̤̪͈͂̏͌Ǘ̸͚̯̀̑̌́̆̽
+- A more decorated Freeplay Menu.
+
+# End Info
+
+That pretty much sumarizes something I've been working on for a LONG time.
+
+Thanks for downloading
+
+- PurpleInsomnia 💜

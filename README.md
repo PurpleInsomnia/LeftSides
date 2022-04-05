@@ -46,59 +46,10 @@ Including spikes.
 Fancy Layouts.
 And More!
 
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-DO NOT PRESS 8 IN THE MAIN MENU
-
-# DOPE ASS Reanimations
-Left Sides takes the basic FNF chartacters and reanimates them based on their personality in the mod.
-
-BOYFRIEND:
-- Cool, Stylish Up pose
-- Does hand gestures with every pose (excluding Idle, Idle-Scared, and Down)
-- Looks towards the opponent (Relative dirction ig)
-
-GIRLFRIEND:
-- Cutely Smiles (chad) instead of having her smile with her mouth open (virgin)
-- Blushes when cheers.
-- Lip Sync on singing poses.
-
-DAD:
-- Stiff ass mf
-
-Pico:
-- He has a hat
-- Lip Syncing
-
-Mom:
-- I forgor :skull:
-
-Parents:
-- Dad is still stiff
-- Alternate Idle Animation
-
-Monster:
-- I spit some weird shit at you (not stollen from D sides)
-
 # RESKINS
 
-(Almost) Every week ha a different reskin for BF and GF:
+(Almost) Every week has a different reskin for BF and GF:
 
-- Week 2 - Haloween Costumes (drip)
 - Week 4 - Date outfits(?)
 - Week 5 - Winter/Christmas (duh)
 
@@ -108,24 +59,21 @@ These effects are pretty cool (and a pain in the ass to code in)
 
 These Include;
 - Fade and Flash (Dims the game slightly while the screen will flash a color depending on what note you hit (NOTE THAT IF FLASHING LIGHTS IS OFF, THIS EFFECT WONT WORK!) The camera will also zoom in intensl with every beat)
-- Hide Opnt. Note (Self Explanitory);
-- Mid Song Cutscene (Hides Hud and a char will do a cool pose (the cam will zoom on them))
-- Intense HUD zoom (zoom in the hud on every beat)
-- Note Center (Turns on middlescroll on AND puts the notes in the DEAD CENTER of the screen
+- Note Center (Turns on middlescroll on AND hides the game.
 - Lovey Dovey (Turns on heart particles that float accross the screen (very cool))
-- Hypnotizing Movement (Moves the camera smoothly (sexily))
+- and theres more. but I'm to lazy to list them lmao
 
 # Stages
 
 The stage redesign is absolutely dope 
 
-heres some cool thing that they do
+heres some cool things that they do
 
-- WEEK 1 STAGE - The time of day will change based on how far you##'ve progressed throughout the week
+- WEEK 1 STAGE - The time of day will change based on how far you've progressed throughout the week
 - WEEK 2 STAGE - The thunder effect is COMPLETELY RANDOM! the camera is also zoomed out more AND the stars move as the song progresses
-- WEEK 3 STAGE - Gf's hair wont blow because it take place indoors. HOWEVER, helicopter helicopter.
-- WEEK 4 STAGE - Nothing much changes, BUT bf's death screen will change to him fucking dying
-- WEEK 5 STAGE - Santa fucking dies
+- WEEK 3 STAGE - Gf's hair wont blow because it take place indoors. HOWEVER, cool sunset.
+- WEEK 4 STAGE - Nothing much changes, BUT in milf, there will be ;)
+- WEEK 5 STAGE - The crowds expression changes based on the song that you play (Happy for Cocoa, angry for Eggnog, My dad for Winter Horrorland)
 
 # Dialogue
 
@@ -144,7 +92,6 @@ This includes,
 - New Rating Strings.
 - Loading Screen
 - Warning Menu
-- S̶̛̛̘̖̰̝̒͌̍̈̇͝O̴̢̙͖̻̭̬̟͍͐́̏̐̀̅̕͘͜Ù̵̯͖̟̫͎̔͠N̴̡̧̬̹̺̰̦͚̣̝̑̊Ḑ̴̛̩̫̫̺̠͍̬̩̓͝Ţ̸͈͈͙͛́͂́͛̏͋̐̏̂͝E̴̛̟̮͖̣̪̊͜S̶͙̤̦̰͍͈̒͑́̽̓̿̅̀̓̅ͅT̶̛͙̩̝̭͚̬̂̈͛͑ ̶̛̝̟̠̜̪̱͎͈̗͇͌̏͂̐̊̈́M̷̛̳̹̥͔̄̈́̕͜Ę̸̢̮̞̰̲̠͍̋̋͋̌̌͜Ǹ̷̟̙͕̰̜̤̪͈͂̏͌Ǘ̸͚̯̀̑̌́̆̽
 - A more decorated Freeplay Menu.
 
 # End Info

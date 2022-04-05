@@ -4,8 +4,6 @@ Okay, Left Sides.
 
 I finally put it out.
 
-# THIS MOD CONTAINS FLASHING LIGHTS, IMPLACATIONS OF ABUSE, AND A FUCKING DECAPITATED HEAD ON A GODDAMN CHRISTMAS TREE. #
-
 Friday Night Funkin Left Sides Was Programed By:
 
 PurpleInsomnia

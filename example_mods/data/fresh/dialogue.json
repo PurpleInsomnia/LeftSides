@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"expression": "trolling",
+			"text": "*Staples Easy Button*",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "default",
+			"text": "The future is now old man.\\nYou're gonna have to keep up with MY pace\\nif you wanna beat me",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "You're foolish...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "yell",
+			"text": "NOBODY CAN BEAT ME!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "mic",
+			"text": "I'll set a pace for ya...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"expression": "default",
+			"text": "Is this REALLY necessary?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Yes it actually is...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "hmph",
+			"text": "For some strange reason, my father only allows me to date people who are;",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Worthy....",
+			"boxState": "normal",
+			"speed": 0.115,
+			"portrait": "gf"
+		},
+		{
+			"expression": "question",
+			"text": "So like, how do I do this \"rap\" thing? Dosen't that shit take like...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "600 million katrillon nomillion kazillion chimbagooberkajawewobillionzilliontrillionmillion\\jillioneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\\nEons?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Not...Really....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "interesting",
+			"boxState": "normal",
+			"speed": 0.09,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cheer",
+			"text": "Here, I'll show you how its done!\\nJust follow my lead!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "coolswag",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "(Im gonna be a pro at this in NO time!!)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "(If I have to rap to get this girl, I'm gonna have to try my best!)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "trolling",
+			"text": "(It is what it is.)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Alright, lets do this!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

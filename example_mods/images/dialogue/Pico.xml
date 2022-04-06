@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Pico.png">
+<SubTexture name="Pico angry0000" x="0" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<SubTexture name="bruh0000" x="417" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<SubTexture name="default0000" x="834" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<SubTexture name="gun0000" x="1251" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<SubTexture name="upset0000" x="0" y="253" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<SubTexture name="vine-boom0000" x="417" y="253" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+</TextureAtlas>

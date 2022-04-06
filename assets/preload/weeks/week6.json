@@ -1,0 +1,25 @@
+{
+	"storyName": "Coming Soon!",
+	"hideFreeplay": true,
+	"weekBackground": "comingsoon",
+	"weekBefore": "just wait please",
+	"startUnlocked": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Coming-Soon",
+			"face",
+			[
+				80,
+				80,
+				80
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week 6"
+}

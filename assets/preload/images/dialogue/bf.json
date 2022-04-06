@@ -1,0 +1,271 @@
+{
+	"dialogue_pos": "right",
+	"position": [
+		140,
+		110
+	],
+	"scale": 1.8,
+	"animations": [
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "angry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "angry",
+			"idle_name": "angry"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "what-is-this-emotion",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "ass",
+			"idle_name": "ass"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "blush",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "blush",
+			"idle_name": "blush"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "challenge",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "challenge",
+			"idle_name": "challenge"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "confused",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "confused",
+			"idle_name": "confused"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "cringe",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "cringe",
+			"idle_name": "cringe"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "default",
+			"idle_name": "default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "happy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "happy",
+			"idle_name": "happy"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "guilt",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "guilt",
+			"idle_name": "guilt"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "look",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "look",
+			"idle_name": "look"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "question",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "question",
+			"idle_name": "question"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "sad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "sadness-combat",
+			"idle_name": "sadness-combat"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "scared",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "scared",
+			"idle_name": "scared"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "trolling",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "trolling",
+			"idle_name": "trolling"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "waking-up",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "waking-up",
+			"idle_name": "waking-up"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "what",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "what",
+			"idle_name": "what"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "zamn",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "zamn",
+			"idle_name": "zamn"
+		},
+		{
+			"loop_name": "sus",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "sus",
+			"anim": "sus",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "sleeping",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "sleeping",
+			"anim": "sleeping",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "cool-dude",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "cool-dude",
+			"anim": "amongus",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "BF_Dialogue"
+}

@@ -1,0 +1,102 @@
+{
+	"position": [
+		140,
+		110
+	],
+	"dialogue_pos": "right",
+	"scale": 1.8,
+	"image": "Gf-Christmas",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "angry",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry",
+			"loop_name": "angry"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "default",
+			"loop_name": "default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "anime",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "amazed",
+			"idle_name": "amazed"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "cute-af",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "blush",
+			"idle_name": "blush"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "come-again",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "confused",
+			"idle_name": "confused"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "nervous",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "nervous",
+			"idle_name": "nervous"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "scared",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "scared",
+			"idle_name": "scared"
+		}
+	]
+}

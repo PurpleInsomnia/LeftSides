@@ -1,0 +1,214 @@
+{
+	"dialogue": [
+		{
+			"expression": "confused",
+			"text": "Still not impressed.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "flirt",
+			"text": "Awwwwwwwww. C'mon, You and I both know that you are.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "confused",
+			"text": "I will break every bone in your body in\\nalphabetical order.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Don't make me send you to the Dearest's Shadow Realm.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "what",
+			"text": "Wait.\\nShadow Realm...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Oh..\\nI thought she told you...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "angy",
+			"text": "She was supposed to tell you once you two started your relationship...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "question",
+			"text": "Tell me what????",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "i-i have a confession to m-make....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "My....\\nMy parents...\\nAre both demons...",
+			"boxState": "normal",
+			"speed": 0.09,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Which makes me a demon too....",
+			"boxState": "normal",
+			"speed": 0.1,
+			"portrait": "gf"
+		},
+		{
+			"expression": "what",
+			"text": "Wh-why are you bringing this up now...?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "scared",
+			"text": "I-I didn't want you to think I was a freak!!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "scared",
+			"text": "I didn't want to ruin a relationship we've both wanted for so long just like that!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "woman-sadness-combat",
+			"text": "E-even now I think that you hate me because I told you the truth about my bloodline...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "woman-sadness-combat",
+			"text": "D-do you... hate me?.....",
+			"boxState": "normal",
+			"speed": 0.09,
+			"portrait": "gf"
+		},
+		{
+			"expression": "guilt",
+			"text": "I don't think of you as someone who should be looked down upon because they're different.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what-is-this-emotion",
+			"text": "Being something that I'm not dosen't make you freakish in anyway possible.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what-is-this-emotion",
+			"text": "I do things like talk down to your parents, confront a shadow, dodge bullets and sing on top of a limo because I love you.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what-is-this-emotion",
+			"text": "Demon or not, I fucking love you."
+		},
+		{
+			"expression": "what-is-this-emotion",
+			"text": "And you've got GUTS to tell me something like this.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "(I love him so much...)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "angy",
+			"text": "...\\nEvery guy would just leave when they found out she was a demon",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "flirt",
+			"text": "You boy....\\nHave got some big balls.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "that's what she sai-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "I've got the balls to show love.\\nI've got the balls to give love\\nAnd now...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "challenge",
+			"text": "I have the balls to kick your ass while we race through the city...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Because for some reason we have now entered the city with no coolswag transition."
+		},
+		{
+			"expression": "flirt",
+			"text": "Get ready boy....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		}
+	]
+}

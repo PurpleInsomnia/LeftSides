@@ -1,0 +1,165 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.075,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "waking-up",
+			"text": "wh-what the hell is that breathing sound..."
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "No mean to disturb you......\\nI just need to steal your body real quick..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "look",
+			"text": "WAIT WHAT THE FUCK?!?!?!?!"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hush now....\\nYou are in the arms of [B*^7r@$)(] now..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "scared",
+			"text": "Get the fuck away from me!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "And what the hell are you supposed to be?!?!"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I am a collection of your thoughts.... Some things I say are based off something you once thought of..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Hey...\\nWhere the fuck is my Girl???"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Who needs to worry about their loved ones when you can be focused on;\\nFreeing Me.."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "WHAT?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "[I AM CONSTANTLY TRAPPED IN A NEVER ENDING] prison in which I watch my or....\\n...Your horrifying death [OVER AND OVER]..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "My Death? Your Death?\\nWhat the fuck are you talking about?!??!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "You have very little time left mini me...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "And I need to get [OUT] of this [FUCKING PRISON] of [NEVER ENDING] replays....Just give me your body.... "
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Fuck you! I'm not letting some parasite into my body!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "smile",
+			"text": "Worthless piece of shit.\\nNo wonder why she chose us.\\nShe just feels sorry for us.."
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "My goal is to cause [MISERY] upon the world.\\nWill you help me acheive this goal???"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "SHE DID NOT CHOOSE (uhh...-) ''US''\\nJUST BECAUSE SHE FELT SORRY."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "I DUNNO IF YOU ARE ME OR IF YOU ARE TRYING TO BE ME."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "BUT I WILL TELL YOU THIS;\\nNOBODY TALKS ABOUT OUR RELATIONSHIP\\nLIKE THAT!"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "[KILL] yourself."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "20 mistakes are allowed.\\nAfter that.\\nGame Over."
+		}
+	]
+}

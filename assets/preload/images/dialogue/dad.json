@@ -1,0 +1,76 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		180,
+		-30
+	],
+	"scale": 1.9,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_offsets": [
+				-1,
+				-1
+			],
+			"loop_name": "default",
+			"idle_name": "default"
+		},
+		{
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_offsets": [
+				-1,
+				-1
+			],
+			"loop_name": "default",
+			"idle_name": "default"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "no",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "no",
+			"loop_name": "no"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "yell",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "yell",
+			"idle_name": "yell"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "mic",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "mic",
+			"idle_name": "mic"
+		}
+	],
+	"image": "dad"
+}

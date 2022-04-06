@@ -1,0 +1,81 @@
+{
+	"dialogue": [
+		{
+			"expression": "what",
+			"text": "*Comicaly Over Exagerated Breathing*",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "question",
+			"text": "Holy Fucking Shit! Did I just do That!?!?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I hope it wasn't too difficult for you....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "trolling",
+			"text": "I own a copy of Wii Music, so I obviously know what I'm doing.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "what?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "trolling",
+			"text": "All Dream Stans should spontaneously combust into flames and die.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "blush",
+			"text": "Anyways, I'm off to *tries not to laugh but fails* eat the BTS Hungry Jacks burger.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Agreeable Statement.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "*Ha Ha* Bring me your 'Ex Rockstar' Father who is said to decide my fate!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Ima kick his chrome dome lookin a-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "yell",
+			"text": "HEY!!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "dad"
+		}
+	]
+}

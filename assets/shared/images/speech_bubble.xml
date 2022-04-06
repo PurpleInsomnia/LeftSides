@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="speech_bubble.png">
+    <SubTexture name="AHH speech bubble0000" x="0" y="0" width="1231" height="408"/>
+    <SubTexture name="speech bubble loud open0000" x="1231" y="0" width="1231" height="408"/>
+    <SubTexture name="speech bubble loud open0001" x="2462" y="0" width="1231" height="408"/>
+    <SubTexture name="speech bubble loud open0002" x="0" y="408" width="1231" height="408"/>
+    <SubTexture name="speech bubble loud open0003" x="1231" y="408" width="1231" height="408"/>
+    <SubTexture name="speech bubble normal0000" x="2462" y="408" width="1162" height="328"/>
+    <SubTexture name="Speech Bubble Normal Open0000" x="0" y="816" width="1162" height="328"/>
+    <SubTexture name="Speech Bubble Normal Open0001" x="1162" y="816" width="1162" height="328"/>
+    <SubTexture name="Speech Bubble Normal Open0002" x="2324" y="816" width="1162" height="328"/>
+    <SubTexture name="Speech Bubble Normal Open0003" x="0" y="1144" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel open0000" x="1162" y="1144" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel open0001" x="2324" y="1144" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel open0002" x="0" y="1472" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel open0003" x="1162" y="1472" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel open0004" x="2324" y="1472" width="1162" height="328"/>
+    <SubTexture name="speech bubble pixel0004" x="2324" y="1472" width="1162" height="328"/>
+</TextureAtlas>

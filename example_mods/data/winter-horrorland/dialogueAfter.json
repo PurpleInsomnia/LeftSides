@@ -1,0 +1,249 @@
+{
+	"dialogue": [
+		{
+			"expression": "scared",
+			"text": "Wake Up!!!",
+			"boxState": "angry",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "It's no use, now come with us.",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "traumatized",
+			"text": "n-no stop....",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "nervous",
+			"text": "A-are you okay?....",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "tired",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "gf",
+			"text": "H-hey!\\nWhat's the matter with you???\\",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.05
+		},
+		{
+			"expression": "bf",
+			"text": "I thought you were gone....",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.05
+		},
+		{
+			"expression": "bf",
+			"text": "He wanted to eat you...\\nDo all sorts of terrible things to you...",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.05
+		},
+		{
+			"expression": "come-again",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "bf",
+			"text": "He put your head on top of the fucking tree...",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.06
+		},
+		{
+			"expression": "gf",
+			"text": "-!",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.05
+		},
+		{
+			"expression": "bf",
+			"text": "And it was so cold there......",
+			"boxState": "normal",
+			"portrait": "hug",
+			"speed": 0.07
+		},
+		{
+			"expression": "scared",
+			"text": "holy shit....\\nI'm taking you home, this has gone too far...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "tired",
+			"text": "(Can't even think of something corny to say I'm so shocked)",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "You're not getting out of here just yet!-",
+			"boxState": "angry",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "The next time I hear anything about you hitting my girlfriend, I will colombian neck tie your ass in your sleep. Understood?",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-af",
+			"text": "(Yep. I'm moving in)",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "...\\n*Shimmies Away*",
+			"boxState": "normal",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "no",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.005
+		},
+		{
+			"expression": "come-again",
+			"text": "(He's still trembling....)\\n(When are my good ideas when I need them...)",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "come-again",
+			"text": "(We can't just be silent for the entire night!)\\n(There has to be something that cheers him up!)",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "So...\\nDo you have any more movies that we can watch?",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-af",
+			"text": "I-I was intrested in watching the movie with the Soap Salesman and the Insomniac or something...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "tired",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "tired",
+			"text": "Oh-\\nSorry I was spacing out...",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "Thats okay! Um....I was wondering If we could watch a movie when we get home...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "tired",
+			"text": "I was kinda thinking more like video games...",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-af",
+			"text": "I-I like video games...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-af",
+			"text": "What games do you have?",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "vine-boom",
+			"text": "Well, Recently I found a PS1 game on my door step that went by the name of;\\n''Hating Simulator''",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "anime",
+			"text": "You have a copy?!",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "vine-boom",
+			"text": "Still weirded out by the fact it was just left on my door step. But yeah I do.",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "anime",
+			"text": "Thats like-My favorite game of all time!!",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-af",
+			"text": "I-I can teach you how to play...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "anime",
+			"text": "Well, I have a feeling that tonight is gonna be fun....",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		}
+	]
+}

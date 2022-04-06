@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spookeez.png">
+    <SubTexture name="skid-bruh" x="0" y="0" width="413" height="249"/>
+    <SubTexture name="skid-default" x="413" y="0" width="413" height="249"/>
+    <SubTexture name="skid-point" x="826" y="0" width="413" height="249"/>
+    <SubTexture name="skid-sad" x="1239" y="0" width="413" height="249"/>    
+    <SubTexture name="pump-default" x="0" y="249" width="413" height="249"/>
+    <SubTexture name="pump-point" x="413" y="249" width="413" height="249"/>    
+    <SubTexture name="pump-undertale" x="826" y="249" width="413" height="249"/>
+    <SubTexture name="pump-worried" x="1239" y="249" width="413" height="249"/>
+</TextureAtlas>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Christmas_Background.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="snowFall0000" x="0" y="0" width="3576" height="1753"/>
+	<SubTexture name="snowFall0001" x="3576" y="0" width="3576" height="1753"/>
+	<SubTexture name="snowFall0002" x="0" y="1753" width="3576" height="1753"/>
+	<SubTexture name="snowFall0003" x="3576" y="1753" width="3576" height="1753"/>
+	<SubTexture name="snowFall0004" x="0" y="3506" width="3576" height="1753"/>
+	<SubTexture name="snowFall0005" x="3576" y="3506" width="3576" height="1753"/>
+	<SubTexture name="snowFall0006" x="0" y="5259" width="3576" height="1753"/>
+	<SubTexture name="snowFall0007" x="3576" y="5259" width="3576" height="1753"/>
+</TextureAtlas>

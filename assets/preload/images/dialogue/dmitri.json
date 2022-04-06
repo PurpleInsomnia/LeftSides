@@ -1,0 +1,50 @@
+{
+	"position": [
+		160,
+		100
+	],
+	"dialogue_pos": "left",
+	"scale": 2.05,
+	"image": "dmitri",
+	"animations": [
+		{
+			"loop_offsets": [
+				0,
+				10
+			],
+			"anim": "default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "default",
+			"idle_name": "default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "death-stare",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "death-stare",
+			"idle_name": "death-stare"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "cry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "cry",
+			"idle_name": "cry"
+		}
+	]
+}

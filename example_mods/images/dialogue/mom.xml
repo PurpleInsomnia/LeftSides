@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mom.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="anger.png" x="0" y="0" width="439" height="445"/>
+	<SubTexture name="default.png" x="449" y="0" width="439" height="445"/>
+	<SubTexture name="flert.png" x="0" y="455" width="439" height="445"/>
+</TextureAtlas>

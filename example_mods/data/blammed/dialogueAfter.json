@@ -1,0 +1,277 @@
+{
+	"dialogue": [
+		{
+			"expression": "wat",
+			"text": "...\\nh-how.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "what",
+			"text": "(Wondering the same for myself...)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Can we eat food now or.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "angry",
+			"text": "NOW I'M FUCKING PISSED OFF!! SAY\\nGOODBYE TO YOUR PRECIOUS BOYFRIEND YOU VOILET GUMBALL SON OF A BITCH!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "gun",
+			"text": "*click*",
+			"boxState": "normal",
+			"speed": 0,
+			"portrait": "pico"
+		},
+		{
+			"expression": "wat",
+			"text": "Oh you've gotta be busting my balls here-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "cringe",
+			"text": "Yeah..... good try...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "angry",
+			"expression": "wat",
+			"text": "SHIT! WHAT WOULD THE BOSS DO TO ME IF HE FOUND OUT I FAILED THE HIT!!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "I'm gonna have to run Boyfriend.\\nThanks a lot shit lips!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "You're gonna end up working at a Cinnabon in Nebraska."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Welp, farewell Pico."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "yeah yeah whatever..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "no",
+			"text": "*dips*"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Well.\\nThat was something."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Mhm.."
+		},
+		{
+			"expression": "default",
+			"text": "A-anyway... You must be starving from dodging all those bullets...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "angry",
+			"text": "Yeah...\\nI'm gonna talk you your father while we're at it....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "Hey.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "???",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "hmph",
+			"text": "What the hell is wrong with you dad?!??\\nYou nearly got him killed!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "What almost killed him?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "angry",
+			"text": "Don't play dumb smart ass\\nI know you're trying not to punch the air right now.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "You sent a dude out to kill me.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "Fortunately, I knew said dude and he has now disappeared without a trace.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "trolling",
+			"text": "He is also now working at a mall in Nebraska."
+		},
+		{
+			"expression": "angry",
+			"text": "Thats what.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "Oh and..\\nI GOT FUCKING SHOT AT.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "scared",
+			"text": "You know how scary that is?!?!?!?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "I'm sorry who?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "angry",
+			"text": "I'm goin home.\\nFuck Turkey, Leftovers for tonight.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Hey can I ask you something?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "Go ahead...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "My Dad's birthday is on the 9th and I really don't want to go to his party...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "So..\\nC-can I stay with you that night?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "And mabye we c-could go out for dinner the that same day...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "trolling",
+			"text": "*Clash Royale Laughing Emote*\\n/\\nYes",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "blush",
+			"text": "Guess I'll see you then...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

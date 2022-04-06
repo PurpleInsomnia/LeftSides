@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				102
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				100
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-69,
+				100
+			],
+			"fps": 24,
+			"anim": "shoot",
+			"indices": [],
+			"name": "Shoot"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				100
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				100
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				2,
+				100
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Pico_FNF_assetss",
+	"position": [
+		20,
+		300
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		82,
+		82,
+		82
+	],
+	"camera_position": [
+		30,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

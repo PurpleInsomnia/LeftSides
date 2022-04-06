@@ -1,0 +1,88 @@
+{
+	"dialogue": [
+		{
+			"expression": "yell",
+			"text": "HEY!!",
+			"boxState": "angry",
+			"speed": 0.025,
+			"portrait": "dad"
+		},
+		{
+			"expression": "scared",
+			"text": "*YELP*",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "scared",
+			"text": "D-Dad?!?!?",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "yell",
+			"text": "Why is MY daughter trying to teach you how to sing?!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "angry",
+			"text": "You said that it was required Mister..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "Am I wrong?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.08,
+			"portrait": "dad"
+		},
+		{
+			"expression": "yell",
+			"text": "GAH! You think you can outsmart THE ex rock-star, Daddy Destroyer?! ",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "confused",
+			"text": "That name sounds extremly dumb",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "yell",
+			"text": "Shut Your FUCKING mouth BOY!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "trolling",
+			"text": "K",
+			"boxState": "normal",
+			"speed": 0.02,
+			"portrait": "bf"
+		},
+		{
+			"expression": "mic",
+			"text": "Now, Prove to me that you can date my\\ndaughter...",
+			"boxState": "normal",
+			"speed": 0.03,
+			"portrait": "dad"
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				100
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Cock0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				100
+			],
+			"anim": "cock",
+			"fps": 24,
+			"name": "Cock0",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "pico/picoCOCK",
+	"position": [
+		20,
+		300
+	],
+	"healthicon": "pico-cocky",
+	"flip_x": true,
+	"healthbar_colors": [
+		82,
+		82,
+		82
+	],
+	"camera_position": [
+		30,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

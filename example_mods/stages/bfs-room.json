@@ -1,0 +1,9 @@
+{
+	"directory": "CasualFriday",
+	"defaultZoom": 0.85,
+	"isPixelStage": false,
+
+	"boyfriend": [870, 100],
+	"girlfriend": [325, 163],
+	"opponent": [0, 0]
+}

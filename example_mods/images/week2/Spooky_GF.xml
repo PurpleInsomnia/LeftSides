@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spooky_GF.png" width="1478" height="3170">
+    <SubTexture name="Idle0000" x="0" y="0" width="739" height="634"/>
+    <SubTexture name="Idle0001" x="739" y="0" width="739" height="634"/>
+    <SubTexture name="Idle0002" x="0" y="634" width="739" height="634"/>
+    <SubTexture name="Idle0003" x="739" y="634" width="739" height="634"/>
+    <SubTexture name="Idle0004" x="0" y="1268" width="739" height="634"/>
+    <SubTexture name="Scared0000" x="739" y="1268" width="739" height="634"/>
+    <SubTexture name="Scared0001" x="0" y="1902" width="739" height="634"/>
+    <SubTexture name="Scared0002" x="739" y="1902" width="739" height="634"/>
+    <SubTexture name="Scared0003" x="0" y="2536" width="739" height="634"/>
+</TextureAtlas>

@@ -1,0 +1,115 @@
+{
+	"position": [
+		140,
+		110
+	],
+	"dialogue_pos": "right",
+	"scale": 1.8,
+	"image": "Bf-Christmas",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "angry",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry",
+			"loop_name": "angry"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "default",
+			"loop_name": "default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "annoyed",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "annoyed",
+			"idle_name": "annoyed"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "undertale",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "anger-with-trauma",
+			"idle_name": "anger-with-trauma"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "traumatized",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "traumatized",
+			"idle_name": "traumatized"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "tired",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "thud",
+			"idle_name": "thud"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "vine-boom",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "the-rock",
+			"idle_name": "the-rock"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "anime",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "sparkle-eyes",
+			"idle_name": "sparkle-eyes"
+		}
+	]
+}

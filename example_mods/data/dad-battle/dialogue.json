@@ -1,0 +1,39 @@
+{
+	"dialogue": [
+		{
+			"expression": "cringe",
+			"text": "'Set A Pace' my ass",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "Not to shabby boy...",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"expression": "yell",
+			"text": "But I have one last trick up my sleeve!!!",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"expression": "challenge",
+			"text": "Bring it.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "(No one has made it this far...)\\n(He's got what it takes...)",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		}
+	]
+}

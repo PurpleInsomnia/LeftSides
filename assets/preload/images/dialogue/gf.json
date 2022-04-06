@@ -1,0 +1,193 @@
+{
+	"position": [
+		70,
+		120
+	],
+	"dialogue_pos": "right",
+	"scale": 1.7,
+	"image": "GF_Dialogue",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "cheer",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "cheer",
+			"loop_name": "cheer"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "cringe",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "cringe",
+			"loop_name": "cringe"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "cute-blushing",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "cute-blushing",
+			"loop_name": "cute-blushing"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "default",
+			"loop_name": "default"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "happy-cry",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "happy-cry",
+			"loop_name": "happy-cry"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "hmph",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "hmph",
+			"loop_name": "hmph"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "laughing",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "laughing",
+			"loop_name": "laughing"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "scared",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "scared",
+			"loop_name": "scared"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "stop-being-cute",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "stop-being-cute",
+			"loop_name": "stop-being-cute"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "wink",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "wink",
+			"loop_name": "wink"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "woman-sadness-combat",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "woman-sadness-combat",
+			"loop_name": "woman-sadness-combat"
+		},
+		{
+			"loop_name": "",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "",
+			"anim": "",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "the-rock",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "the-rock",
+			"anim": "rock",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "sus",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "sus",
+			"anim": "sus",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	]
+}

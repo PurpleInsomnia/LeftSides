@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="free-me.png" width="6800" height="2800">
+    <SubTexture name="Down0000" x="0" y="0" width="850" height="700"/>
+    <SubTexture name="Down0001" x="850" y="0" width="850" height="700"/>
+    <SubTexture name="Down0002" x="1700" y="0" width="850" height="700"/>
+    <SubTexture name="Down0003" x="2550" y="0" width="850" height="700"/>
+    <SubTexture name="Idle0000" x="3400" y="0" width="850" height="700"/>
+    <SubTexture name="Idle0001" x="4250" y="0" width="850" height="700"/>
+    <SubTexture name="Idle0002" x="5100" y="0" width="850" height="700"/>
+    <SubTexture name="Idle0003" x="5950" y="0" width="850" height="700"/>
+    <SubTexture name="Idle0004" x="0" y="700" width="850" height="700"/>
+    <SubTexture name="Idle0005" x="850" y="700" width="850" height="700"/>
+    <SubTexture name="Idle0006" x="1700" y="700" width="850" height="700"/>
+    <SubTexture name="Idle0007" x="2550" y="700" width="850" height="700"/>
+    <SubTexture name="Laugh0000" x="5100" y="700" width="850" height="700"/>
+    <SubTexture name="Laugh0001" x="5950" y="700" width="850" height="700"/>
+    <SubTexture name="Laugh0002" x="0" y="1400" width="850" height="700"/>
+    <SubTexture name="Laugh0003" x="850" y="1400" width="850" height="700"/>
+    <SubTexture name="Laugh0004" x="1700" y="1400" width="850" height="700"/>
+    <SubTexture name="Left0000" x="2550" y="1400" width="850" height="700"/>
+    <SubTexture name="Left0001" x="3400" y="1400" width="850" height="700"/>
+    <SubTexture name="Left0002" x="4250" y="1400" width="850" height="700"/>
+    <SubTexture name="Left0003" x="5100" y="1400" width="850" height="700"/>
+    <SubTexture name="Right0000" x="5950" y="1400" width="850" height="700"/>
+    <SubTexture name="Right0001" x="0" y="2100" width="850" height="700"/>
+    <SubTexture name="Right0002" x="850" y="2100" width="850" height="700"/>
+    <SubTexture name="Right0003" x="1700" y="2100" width="850" height="700"/>
+    <SubTexture name="Up0000" x="2550" y="2100" width="850" height="700"/>
+    <SubTexture name="Up0001" x="3400" y="2100" width="850" height="700"/>
+    <SubTexture name="Up0002" x="4250" y="2100" width="850" height="700"/>
+    <SubTexture name="Up0003" x="5100" y="2100" width="850" height="700"/>
+</TextureAtlas>

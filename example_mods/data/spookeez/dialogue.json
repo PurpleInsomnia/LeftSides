@@ -1,0 +1,186 @@
+{
+	"dialogue": [
+		{
+			"expression": "sad",
+			"text": "Goddamnit, Why were those houses so far apart???\\nMy legs have commited suicide at this point...",
+			"boxState": "normal",
+			"speed": 0.045,
+			"portrait": "bf"
+		},
+		{
+			"expression": "laughing",
+			"text": "*Ha Ha* They weren't THAT far apart you big baby!",
+			"boxState": "normal",
+			"speed": 0.04,
+			"portrait": "gf"
+		},
+		{
+			"expression": "wink",
+			"text": "Plus, It's good to get a nice walk in every now and then (and some candy)",
+			"boxState": "normal",
+			"speed": 0.04,
+			"portrait": "gf"
+		},
+		{
+			"expression": "guilt",
+			"text": "Well, yeah..... But I didn't like walking a fourth of a mile to get to a single house.",
+			"boxState": "normal",
+			"speed": 0.04,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "And I didn't like wearing those itchy costumes.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "I guess we're even then.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "...Yikes... Look how dark it is tonight...\\nCan't see my goddamn hands or my beautiful girlfriend...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "And why are we taking the old 'shortcut' we used to take when we would walk home from school together??",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Ummm\\nNostalgia I guess?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "look",
+			"text": "I dunno... Place gave me the chills.\\nAlways had a fear of running into something out of the ordinary....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "skid-default",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "cringe",
+			"text": "...\\n...\\nUm. You need something little dudes?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "(wow, that was..... poorly timed)",
+			"boxState": "normal",
+			"speed": 0.075,
+			"portrait": "gf"
+		},
+		{
+			"expression": "pump-point",
+			"text": "You see! I told you it was him!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "question",
+			"text": "Who.\\nAm.\\nI?",
+			"boxState": "normal",
+			"speed": 0.1,
+			"portrait": "bf"
+		},
+		{
+			"expression": "skid-default",
+			"text": "You're the dude who absolutely DESTROYED that ex rockstar guy!!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "default",
+			"text": "*Ha Ha* Well, its always nice to meet some...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "...(If he says 'Stans', I will pull a 'We ate all your candy')",
+			"boxState": "normal",
+			"speed": 0,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cringe",
+			"text": "...Uh, Fans! You want like, my signature or something?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "pump-undertale",
+			"text": "No, We want to sing with YOU!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "trolling",
+			"text": "Ah, good thing we always carry comicaly large speakers with us.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "Who are you too?",
+			"boxState": "normal",
+			"speed": 0.04,
+			"portrait": "bf"
+		},
+		{
+			"expression": "skid-default",
+			"text": "I'm Skid!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "pump-default",
+			"text": "And I'm Pump!!",
+			"boxState": "normal",
+			"portrait": "spookeez",
+			"speed": 0.05
+		},
+		{
+			"expression": "happy",
+			"text": "coolswag",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "challenge",
+			"text": "Lets see what ya got!",
+			"boxState": "normal",
+			"speed": 0.04,
+			"portrait": "bf"
+		}
+	]
+}

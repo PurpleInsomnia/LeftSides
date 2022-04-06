@@ -1,0 +1,242 @@
+{
+	"dialogue": [
+		{
+			"expression": "hmph",
+			"text": "Mother...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "angry",
+			"text": "Oh! Hi Pumpkin!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "cringe",
+			"text": "Why are you on top of a limo going at 66 miles per hour?!?!?!?!?!?!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "flirt",
+			"text": "I wanted to talk to your new boyfriend up here!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "what",
+			"text": "(Why am I involved in this?)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "trolling",
+			"text": "(I should say something cool to make a good impresion on her)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "scared",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "I like tiddies",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "(Goddamnit I thought about cool things to say and ALL I could think of was my Girlf-)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Ignoring that (true statement)....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "flirt",
+			"text": "Oh my.. look at this handsome young man...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "confused",
+			"text": "Cool, alreay hitting on me.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "Y'know lady-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "flirt",
+			"text": "Please...Call me; 'Mommy'",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "look",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "1. No\\n2. If I was going to I would have to be related to you.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "look",
+			"text": "And If that WERE to happen...\\nThe things that GF and I texted eachother last night would be a crime.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "amongus",
+			"text": "I choose to not commit crimes. B)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "G-GET TO THE P-POINT ALREADY MOTHER!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "Your Father wanted me to and I quote;\\n'Kick his 2ft tall, fake blonde, thirsty ass'.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "what",
+			"text": "Ww....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "scared",
+			"text": "H-how did he know I bleached my hair?!?!?!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "flirt",
+			"text": "My daughter talks about you alot.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "(Ah yes, as per usual, a mother trying to embarrass her kid.)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "blush",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "We're getting side tracked here.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "This is the 27th GODDAMN line of dialogue!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "question",
+			"text": "So you want to try to beat my ass in a singing battle when you know that I can somehow dodge bullets at point blank?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "flirt",
+			"text": "yes",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "default",
+			"text": "Alright start the funkin-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "guilt",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "question",
+			"text": "How is there a speaker attached to the\\ngoddamn limo?!?!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "I don't know.\\nJust go with it.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "confused",
+			"text": "Alright, start your cute cowntdown...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

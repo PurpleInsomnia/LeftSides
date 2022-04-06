@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="portrait.png">
+<SubTexture name="default0000" x="0" y="0" width="413" height="249" frameX="0" frameY="0" frameWidth="413" frameHeight="249" />
+<SubTexture name="death-stare0000" x="413" y="0" width="413" height="249" frameX="0" frameY="0" frameWidth="413" frameHeight="249" />
+<SubTexture name="cry0000" x="826" y="0" width="413" height="249" frameX="0" frameY="0" frameWidth="413" frameHeight="249" />
+</TextureAtlas>

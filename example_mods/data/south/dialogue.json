@@ -1,0 +1,95 @@
+{
+	"dialogue": [
+		{
+			"expression": "what",
+			"text": "God Da-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "ahem...",
+			"boxState": "normal",
+			"speed": 0.035,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cringe",
+			"text": "I mean.... Goodness Gracious! You two got some HEAT!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "pump-worried",
+			"text": "I told you that he would beat us!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "skid-default",
+			"text": "But he's so COOL!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "question",
+			"text": "How am I cool???\\nNot to be mean or anything.. I'm just curious...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "pump-point",
+			"text": "The way you would just freestyle during our song!\\nIt's amazing!!!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "happy",
+			"text": "Y'know what? I want a real challenge from you two. I mean, your first preformance was diffucult. But I think you can do better...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "challenge",
+			"text": "Got anything I'm lookin' for?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "pump-undertale",
+			"text": "Yes! and with this one, we will surely kick your butt!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "spookeez"
+		},
+		{
+			"expression": "challenge",
+			"text": "Bring it children.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "(He looks REALLY tired..... I don't want him to over-do himself but...)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "(Those kids were right, the way he freestyles is pretty cute. Guess one more couldn't hurt...)"
+		}
+	]
+}

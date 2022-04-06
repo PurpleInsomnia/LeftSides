@@ -1,0 +1,123 @@
+{
+	"dialogue": [
+		{
+			"expression": "scared",
+			"text": "WHAT THE FUCK HAPPENED TO THOSE FUNKY ASS DANCIN DUDES!?!?!?!?!?!?",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Don't worry, I've got plenty of my henchmen to fill in their positions...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "angry",
+			"text": "That's not the issue here!\\nYOU SAW THEM GET DECAPITATED!!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "flert",
+			"text": "But what did you think of the song?\\nIt's not released to the public yet...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "angry",
+			"text": "Stop trying to 'flatter' me with your mediocre music making skills",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "trolling",
+			"text": "The only thing that flatters me is beautiful violet hair blowing in the wind.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "Wait.\\nWho or Where does my gf get her hair color from??? ",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "My mother.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "question",
+			"text": "No wa-\\nWait.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "look",
+			"text": "Why you gotta dye your hair cuz?\\nWhats wrong?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Purple dosen't look good with green.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "cringe",
+			"text": "Bitch your eyes are glowin purple.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Belive me, I've told her thousands of times already.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "confused",
+			"text": "Ok lady",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "Fuck your gray ass hair.\\nEmbrace the gracefull, hot, sexy, and beautiful violet hair",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "And lets get on with this absolute nightmare of a game of 'balance'.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "I just wanna go on my date with my girlfriend..\\nis that too much to ask for???",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

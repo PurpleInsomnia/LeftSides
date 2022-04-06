@@ -1,0 +1,115 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		140,
+		110
+	],
+	"scale": 1.8,
+	"animations": [
+		{
+			"loop_name": "skid-default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "skid-default",
+			"anim": "skid-default",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "pump-default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "pump-default",
+			"anim": "pump-default",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "skid-bruh",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "skid-bruh",
+			"anim": "skid-bruh",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "skid-point",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "skid-point",
+			"anim": "skid-point",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "skid-sad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "skid-sad",
+			"anim": "skid-sad",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "pump-point",
+			"idle_offsets": [
+				-40,
+				0
+			],
+			"idle_name": "pump-point",
+			"anim": "pump-point",
+			"loop_offsets": [
+				-40,
+				0
+			]
+		},
+		{
+			"loop_name": "pump-undertale",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "pump-undertale",
+			"anim": "pump-undertale",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "pump-worried",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "pump-worried",
+			"anim": "pump-worried",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "spookeez"
+}

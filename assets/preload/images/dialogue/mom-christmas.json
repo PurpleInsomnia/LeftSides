@@ -1,0 +1,50 @@
+{
+	"position": [
+		130,
+		-30
+	],
+	"dialogue_pos": "left",
+	"scale": 1.75,
+	"image": "Mom-Christmas",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "angry",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "mom_anger",
+			"loop_name": "mom_anger"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "mom_default",
+			"loop_name": "mom_default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "fuck-this",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "mom_glow",
+			"idle_name": "mom_glow"
+		}
+	]
+}

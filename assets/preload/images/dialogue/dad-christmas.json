@@ -1,0 +1,50 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		180,
+		-30
+	],
+	"scale": 1.9,
+	"animations": [
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "angry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dad_yell",
+			"idle_name": "dad_yell"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dad_default",
+			"idle_name": "dad_default"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "fuck-this",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "dad_glow",
+			"loop_name": "dad_glow"
+		}
+	],
+	"image": "Dad-Christmas"
+}

@@ -1,0 +1,123 @@
+{
+	"dialogue": [
+		{
+			"expression": "trolling",
+			"text": "Piece of cake.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "trolling",
+			"text": "(I'm so glad I didn't fuck up..)",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "question",
+			"text": "Am I considered to be 'worthy' yet?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "...You Will Regret This one day boy...",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"expression": "no",
+			"text": "*Invisibility Noises*",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"expression": "confused",
+			"text": "Well... Thats one way to get a Girlfriend.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "what",
+			"text": "Welp, Ima go home and hit the hay.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "H-hey...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "question",
+			"text": "Yeah?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Um...Halloween is in a few days and um....",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "blush",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "W-would you like to go out trick or treating?...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "scared",
+			"text": "I-I mean if you feel like you're too old we could do something else...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "blush",
+			"text": "It's a date\\, I'll go get some sweet junk food with my sweet significant other...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Alright quit it, you're gonna turn me into a tomato at this point...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "trolling",
+			"text": "*Dopamine Noises*",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		}
+	]
+}

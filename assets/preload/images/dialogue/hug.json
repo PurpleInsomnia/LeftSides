@@ -1,0 +1,37 @@
+{
+	"position": [
+		140,
+		20
+	],
+	"dialogue_pos": "left",
+	"scale": 1.8,
+	"image": "hug",
+	"animations": [
+		{
+			"loop_name": "bf",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "bf",
+			"anim": "bf",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "gf",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "gf",
+			"anim": "gf",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	]
+}

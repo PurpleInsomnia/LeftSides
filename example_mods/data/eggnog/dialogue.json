@@ -1,0 +1,200 @@
+{
+	"dialogue": [
+		{
+			"expression": "annoyed",
+			"text": "There, did your dumb carol.\\nWill you let Santa go, and leave me and my Girlfriend alone???",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "fuck-this",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "fuck-this",
+			"text": "...Girlfriend, would you come over here to me and your father please...?",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.06
+		},
+		{
+			"expression": "nervous",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0
+		},
+		{
+			"expression": "default",
+			"text": "...Don't make us ask again...",
+			"boxState": "normal",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "fuck-this",
+			"text": "Get\\nOver\\nHere",
+			"boxState": "normal",
+			"portrait": "dad-christmas",
+			"speed": 0.095
+		},
+		{
+			"expression": "nervous",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0
+		},
+		{
+			"expression": "nervous",
+			"text": "...F-fuck Y-you.",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.1
+		},
+		{
+			"expression": "tired",
+			"text": "(Gf swearing is scary.)",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "pissed",
+			"text": "Come again?\\nYour stupid stuttering problem makes me unable to hear you.",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "I said; 'FUCK YOU!'",
+			"boxState": "angry",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "You are always treating me like I'm a fragile piece of pottery!!!",
+			"boxState": "angry",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "We both love you, we're trying to protect you from this cruel world.",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "vine-boom",
+			"text": "Is love calling your own child's social anxiety\\n'Stupid'?",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "THIS DOSEN'T INVOLVE YOU BOY!!!",
+			"boxState": "angry",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "No. He's allowed to be involved.\\nI've never had back up in an argument until now.",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "Don't even start the 'We've Shown Support' Shit. You FUCKING forget my birthday every year!!!!!!",
+			"boxState": "angry",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "The only reason you want me in your life is just to show the media that we're a 'happy family'.",
+			"boxState": "angry",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "(I'm making a callout post to my Twitter.com..)",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "...You ungrateful bitch.",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "You are going to fucking regret saying that when you come home.",
+			"boxState": "angry",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "scared",
+			"text": "!-",
+			"boxState": "normal",
+			"portrait": "gf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "...\\nI understand why she's scared of you two.",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "I am going to fucking kick your ass bloody you abusive pricks!!!",
+			"boxState": "angry",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "death-stare",
+			"text": "What the fuck?! My favorite celeberties hit their daughter?!?!?!?!?!\\nI'm canceling them.",
+			"boxState": "normal",
+			"portrait": "dmitri",
+			"speed": 0.05
+		},
+		{
+			"expression": "fuck-this",
+			"text": "Foolish brat....",
+			"boxState": "normal",
+			"portrait": "dad-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "fuck-this",
+			"text": "We're gonna play happy carols to cover the beans my bitch of a daughter just spilled....",
+			"boxState": "normal",
+			"portrait": "mom-christmas",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "You two are WORDS away from getting an ass whoping....",
+			"boxState": "normal",
+			"portrait": "bf-christmas",
+			"speed": 0.05
+		}
+	]
+}

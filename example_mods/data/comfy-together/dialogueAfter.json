@@ -1,0 +1,123 @@
+{
+	"dialogue": [
+		{
+			"expression": "stop-being-cute",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "question",
+			"text": "So? Whaddya think?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "Y-you're the best boyfriend I could ever ask for..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "blush",
+			"text": "And you're the best girlfriend I could ever ask for."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "laughing",
+			"text": "Well now we're even!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "coolswag"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "Y'mind if I ask you something?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Go ahead."
+		},
+		{
+			"expression": "question",
+			"text": "I'm kinda curious about what your mother does for a living, \\nyou never really talk about her much...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "Oh- she is a pop star.\\nHer carrer's pretty good too.",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "I think a song of hers is playing right now...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "Your mother seems pretty chill. Hope she dosen't do anything weird like stand on a moving car's hood.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cringe",
+			"text": "You mean like... right now?",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "guilt",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "I need to stop foreshadowing on accident.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cringe",
+			"text": "(Wait, this is a problem for him???)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		}
+	]
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:bfe2812ebf17ad17e4142dcca0d20b84:d60e25c4859a4a8368586dafacaa1540:69c624c223f5c6e93cf8f34a03812437$ -->
+<TextureAtlas imagePath="bottomBopALT.png" width="1979" height="2000">
+    <SubTexture name="boppers bop0000" x="0" y="0" width="1979" height="664"/>
+    <SubTexture name="boppers bop0001" x="0" y="668" width="1979" height="664"/>
+    <SubTexture name="boppers bop0002" x="0" y="1336" width="1979" height="664"/>
+</TextureAtlas>

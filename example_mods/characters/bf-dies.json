@@ -1,0 +1,67 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				37,
+				5
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "bfLoop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				37,
+				11
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "bfFuckingDies",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				37,
+				5
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "retryLOOP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				37,
+				69
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "retry",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "stage/bfFUCKINGDIES",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		209,
+		162,
+		48
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

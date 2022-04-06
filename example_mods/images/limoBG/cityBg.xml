@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cityBg.png">
+    <SubTexture name="city0000" x="0" y="0" width="1968" height="1313"/>
+    <SubTexture name="city0001" x="1968" y="0" width="1968" height="1313"/>
+    <SubTexture name="city0002" x="3936" y="0" width="1968" height="1313"/>
+    <SubTexture name="city0003" x="5904" y="0" width="1968" height="1313"/>
+    <SubTexture name="city0004" x="0" y="1313" width="1968" height="1313"/>
+    <SubTexture name="city0005" x="1968" y="1313" width="1968" height="1313"/>
+    <SubTexture name="city0006" x="3936" y="1313" width="1968" height="1313"/>
+    <SubTexture name="city0007" x="5904" y="1313" width="1968" height="1313"/>
+    <SubTexture name="city0008" x="0" y="2626" width="1968" height="1313"/>
+    <SubTexture name="city0009" x="1968" y="2626" width="1968" height="1313"/>
+    <SubTexture name="city0010" x="3936" y="2626" width="1968" height="1313"/>
+    <SubTexture name="city0011" x="5904" y="2626" width="1968" height="1313"/>
+    <SubTexture name="city0012" x="0" y="3939" width="1968" height="1313"/>
+    <SubTexture name="city0013" x="1968" y="3939" width="1968" height="1313"/>
+    <SubTexture name="city0014" x="3936" y="3939" width="1968" height="1313"/>
+    <SubTexture name="city0015" x="5904" y="3939" width="1968" height="1313"/>
+</TextureAtlas>

@@ -1,0 +1,5 @@
+Idk used for tutorial ig
+- PurpleInsomnia
+
+Value 1: Anything above 0 turns it on
+	Put 0 here to turn it off

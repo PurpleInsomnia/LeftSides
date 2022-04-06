@@ -1,0 +1,228 @@
+{
+	"dialogue": [
+		{
+			"expression": "angry",
+			"text": "Holy fucking jesus.\\nHow many GODDAMN times do I have to prove to you that I'm 'worthy'.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "what",
+			"text": "Literally.\\nI've cheated death so many goddamn times in order to keep my gf safe..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "Why are you so GODDAMN DENSE!?!?!?!?",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angy",
+			"text": "...\\nHave her. I don't care if she skips her fathers party.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "hmph",
+			"text": "Promise not to try to KILL US again????",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "angy",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.035,
+			"portrait": "mom"
+		},
+		{
+			"expression": "flirt",
+			"text": "no",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "mom"
+		},
+		{
+			"expression": "no",
+			"text": "*dips*",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "cringe",
+			"text": "Ah, thank god we still have time for-",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Master Boyfriend, Al's has closed early due to my reckless driving.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "alphred"
+		},
+		{
+			"expression": "what",
+			"text": "oh goddamnit alphred.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Just take us to like...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "hmph",
+			"text": "I dunno.....\\nIhop???",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "trolling",
+			"text": "Ah yes. The perfect place to go when on a date. (You're welcome Cesar)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "laughing",
+			"text": "I've never had pankcakes before, so this might be intresting",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Ha ha ha!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "what",
+			"text": "Wait what the fu-",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "trolling",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "H-hey, do you mind if I stay for the next few weeks? I-I need some help christmas shopping...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "look",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "look",
+			"text": "Why are you wearing my shirt?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "trolling",
+			"text": "(I find it funny that I am still wearing it in the dialogue portrait)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "cause it's comfy...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "blush",
+			"text": "U-uh yeah I definetly don't mind.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "question",
+			"text": "What day are we going shopping?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "The seventeenth I think.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "trolling",
+			"text": "We've got an entire week to spare...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "What do you want to do first?...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "guilt",
+			"text": "I was kinda thinking about practicing my skills on the mic.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "Kindly hit me with a fresh ass beat.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "laughing",
+			"text": "You got it!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "trolling",
+			"text": "(The will be no extra song.)\\n(Go to week 5.)"
+		}
+	]
+}

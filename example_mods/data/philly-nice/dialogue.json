@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"expression": "confused",
+			"text": "Yeah, nice try asswipe.\\nNow let us go please.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "NO! I will not lose to you again!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "upset",
+			"text": "I will keep you as hostages until I win!!!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "cringe",
+			"text": "Please just put this on pause and let us eat.\\nGf and I skipped lunch today ya know..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "WE'RE GOING AGAIN!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "sad",
+			"text": "(BUT I'M HUGRY)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

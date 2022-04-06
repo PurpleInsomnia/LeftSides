@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-3,
+				69
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				-3,
+				69
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				69
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-7,
+				69
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				70
+			],
+			"anim": "cheer",
+			"fps": 24,
+			"name": "Cheer",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				70
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				70
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "CasualFriday/casualGF",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "gf",
+	"flip_x": false,
+	"healthbar_colors": [
+		115,
+		0,
+		165
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

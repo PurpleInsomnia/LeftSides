@@ -1,0 +1,95 @@
+{
+	"dialogue": [
+		{
+			"expression": "wat",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "pico",
+			"speed": 0.05
+		},
+		{
+			"expression": "question",
+			"text": "You gonna let us go now or?....",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "I'M TIRED OF PLAYING AROUND!!!!",
+			"boxState": "angry",
+			"portrait": "pico",
+			"speed": 0.05
+		},
+		{
+			"expression": "sad",
+			"text": "...just let us eat man...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "upset",
+			"text": "I Was sent here to KILL you and Now I'm gonna try this time!",
+			"boxState": "normal",
+			"portrait": "pico",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "Are you that dense?",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "Just accept that my boyfriend is better than you at most things....",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "SHUT YOUR FUCKING MOUTH BITCH!",
+			"boxState": "angry",
+			"portrait": "pico",
+			"speed": 0.05
+		},
+		{
+			"expression": "guilt",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "Ok tough guy.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "challenge",
+			"text": "Shoot me right now.\\nI dare you.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "scared",
+			"text": "(What the hell is he doing?????)",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "gun",
+			"text": "Your call.....",
+			"boxState": "normal",
+			"portrait": "pico",
+			"speed": 0.05
+		}
+	]
+}

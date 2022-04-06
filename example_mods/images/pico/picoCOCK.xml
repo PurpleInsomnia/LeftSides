@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="picoCOCK.png">
+    <SubTexture name="Idle0000" x="0" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0000" x="0" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0001" x="600" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0002" x="1200" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0003" x="1800" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0004" x="2400" y="0" width="600" height="550"/>
+    <SubTexture name="Cock0005" x="0" y="550" width="600" height="550"/>
+    <SubTexture name="Cock0006" x="600" y="550" width="600" height="550"/>
+    <SubTexture name="Cock0007" x="1200" y="550" width="600" height="550"/>
+    <SubTexture name="Cock0008" x="1800" y="550" width="600" height="550"/>
+    <SubTexture name="Cock0009" x="2400" y="550" width="600" height="550"/>
+    <SubTexture name="Cock0010" x="0" y="1100" width="600" height="550"/>
+    <SubTexture name="Cock0011" x="600" y="1100" width="600" height="550"/>
+    <SubTexture name="Cock0012" x="1200" y="1100" width="600" height="550"/>
+</TextureAtlas>

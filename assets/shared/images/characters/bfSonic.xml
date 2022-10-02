@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="bfSonic.png">
+    <SubTexture name="dies0000" x="0" y="0" width="640" height="640"/>
+    <SubTexture name="dies0001" x="645" y="0" width="640" height="640"/>
+    <SubTexture name="dies0002" x="1290" y="0" width="640" height="640"/>
+    <SubTexture name="dies0003" x="1935" y="0" width="640" height="640"/>
+    <SubTexture name="dies0004" x="2580" y="0" width="640" height="640"/>
+    <SubTexture name="dies0005" x="3225" y="0" width="640" height="640"/>
+    <SubTexture name="dies0006" x="3870" y="0" width="640" height="640"/>
+    <SubTexture name="dies0007" x="4515" y="0" width="640" height="640"/>
+    <SubTexture name="dies0008" x="5160" y="0" width="640" height="640"/>
+    <SubTexture name="dies0009" x="5805" y="0" width="640" height="640"/>
+    <SubTexture name="dies0010" x="6450" y="0" width="640" height="640"/>
+    <SubTexture name="dies0011" x="0" y="645" width="640" height="640"/>
+    <SubTexture name="dies0012" x="645" y="645" width="640" height="640"/>
+    <SubTexture name="dies0013" x="1290" y="645" width="640" height="640"/>
+    <SubTexture name="dies0014" x="1935" y="645" width="640" height="640"/>
+    <SubTexture name="dies0015" x="2580" y="645" width="640" height="640"/>
+    <SubTexture name="hey0000" x="3225" y="645" width="640" height="640"/>
+    <SubTexture name="hey0001" x="3870" y="645" width="640" height="640"/>
+    <SubTexture name="hey0002" x="4515" y="645" width="640" height="640"/>
+    <SubTexture name="hey0003" x="5160" y="645" width="640" height="640"/>
+    <SubTexture name="hey0004" x="5805" y="645" width="640" height="640"/>
+    <SubTexture name="hey0005" x="6450" y="645" width="640" height="640"/>
+    <SubTexture name="hey0006" x="0" y="1290" width="640" height="640"/>
+    <SubTexture name="hey0007" x="645" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0000" x="1290" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0001" x="1935" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0002" x="2580" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0003" x="3225" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0004" x="3870" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0005" x="4515" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0006" x="5160" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0007" x="5805" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0008" x="6450" y="1290" width="640" height="640"/>
+    <SubTexture name="hurt0009" x="0" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0010" x="645" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0011" x="1290" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0012" x="1935" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0013" x="2580" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0014" x="3225" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0015" x="3870" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0016" x="4515" y="1935" width="640" height="640"/>
+    <SubTexture name="hurt0017" x="5160" y="1935" width="640" height="640"/>
+</TextureAtlas>

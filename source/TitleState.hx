@@ -7,6 +7,8 @@ import sys.thread.Thread;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.FlxGame;
+import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
@@ -27,6 +29,9 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
+import sys.FileSystem;
+import sys.io.File;
+import TitleLua;
 
 using StringTools;
 
@@ -36,7 +41,7 @@ class TitleState extends MusicBeatState
 	public static var volumeDownKeys:Array<FlxKey> = [FlxKey.NUMPADMINUS, FlxKey.MINUS];
 	public static var volumeUpKeys:Array<FlxKey> = [FlxKey.NUMPADPLUS, FlxKey.PLUS];
 
-	static var initialized:Bool = false;
+	public static var initialized:Bool = false;
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
@@ -45,16 +50,43 @@ class TitleState extends MusicBeatState
 	var assetsGroup:FlxGroup;
 	var logoSpr:FlxSprite;
 
+	public var musicString:String = 'freakyMenu';
+
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
 
-	var easterEggEnabled:Bool = true; //Disable this to hide the easter egg
+	var easterEggEnabled:Bool = false; //Disable this to hide the easter egg
 	var easterEggKeyCombination:Array<FlxKey> = [FlxKey.B, FlxKey.B]; //bb stands for bbpanzu cuz he wanted this lmao
 	var lastKeysPressed:Array<FlxKey> = [];
 
+	#if (haxe >= "4.0.0")
+	public var modchartTweens:Map<String, FlxTween> = new Map();
+	public var modchartSprites:Map<String, ModchartSpriteTitle> = new Map();
+	public var modchartTimers:Map<String, FlxTimer> = new Map();
+	public var modchartSounds:Map<String, FlxSound> = new Map();
+	#else
+	public var modchartTweens:Map<String, FlxTween> = new Map<String, FlxTween>();
+	public var modchartSprites:Map<String, ModchartSpriteTitle> = new Map<String, Dynamic>();
+	public var modchartTimers:Map<String, FlxTimer> = new Map<String, FlxTimer>();
+	public var modchartSounds:Map<String, FlxSound> = new Map<String, FlxSound>();
+	#end
+
+	// lua shit :)
+	var luaArray:Array<TitleLua>;
+	public var canPress:Bool = true;
+	public var customBeat:Bool = false;
+	public var modchartGroup:FlxTypedGroup<ModchartSpriteTitle>;
+	private var luaDebugGroup:FlxTypedGroup<DebugLuaTextTitle>;
+	private var preventLuaRemove:Bool = false;
+
+	public static var curSaveFile:Int = 0;
+	public static var sfn:String = '';
+
 	override public function create():Void
 	{
+		luaArray = [];
+
 		#if (polymod && !html5)
 		if (sys.FileSystem.exists('mods/')) {
 			var folders:Array<String> = [];
@@ -69,8 +101,11 @@ class TitleState extends MusicBeatState
 			}
 		}
 
+		WeekData.loadTheFirstEnabledMod();
+
 		//Gonna finish this later, probably
 		#end
+
 		FlxG.game.focusLostFramerate = 60;
 		FlxG.sound.muteKeys = muteKeys;
 		FlxG.sound.volumeDownKeys = volumeDownKeys;
@@ -80,59 +115,193 @@ class TitleState extends MusicBeatState
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
+
+		// Acheivement.loadShit();
+
 		// DEBUG BULLSHIT
+
+		var createdFile:Bool = false;
+		var SaveFileName:String = 'funkin';
 
 		swagShader = new ColorSwap();
 		super.create();
 
-		FlxG.save.bind('funkin', 'ninjamuffin99');
-		ClientPrefs.loadPrefs();
-
-		Highscore.load();
-
-		if (FlxG.save.data.weekCompleted != null)
+		if (FileSystem.exists('assets/data/saveData.leftSides'))
 		{
-			StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
-		}
-
-		FlxG.mouse.visible = false;
-		#if FREEPLAY
-		MusicBeatState.switchState(new FreeplayState());
-		#elseif CHARTING
-		MusicBeatState.switchState(new ChartingState());
-		#else
-		if(FlxG.save.data.flashing == null && !FlashingState.leftState) {
-			FlxTransitionableState.skipNextTransIn = true;
-			FlxTransitionableState.skipNextTransOut = true;
-			MusicBeatState.switchState(new FlashingState());
-		} else {
-			#if desktop
-			DiscordClient.initialize();
-			Application.current.onExit.add (function (exitCode) {
-				DiscordClient.shutdown();
-			});
-			#end
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+			var pushed:String = 'funkin';
+			var text:Array<String> = CoolUtil.coolTextFile('assets/data/saveData.leftSides');
+			// Shit for other save files
+			for (i in 0...text.length)
 			{
-				startIntro();
-			});
+				var split:Array<String> = text[i].split('|');
+				if (split[1] == '1')
+				{
+					pushed = split[0];
+					curSaveFile = i;
+					createdFile = true;
+					SaveFileName = split[0];
+				}
+			}
 		}
-		#end
+		
+
+		if (!createdFile)
+		{
+			MusicBeatState.switchState(new SaveFileStartState());
+		}
+		else
+		{
+			var SaveSuff:String = '';
+			switch (curSaveFile)
+			{
+				case 1:
+					SaveSuff = '_1';
+				case 2:
+					SaveSuff = '_2';
+				case 3:
+					SaveSuff = '_3';
+				case 4:
+					SaveSuff = '_4';
+				case 5:
+					SaveSuff = '_5';
+				case 6:
+					SaveSuff = '_6';
+				case 7:
+					SaveSuff = '_7';
+			}
+			trace(SaveSuff);
+
+			// need to call this because yes.
+			if (initialized)
+			{
+				ClientPrefs.saveSettings();
+				Highscore.saveEverything();
+				Acheivement.saveAllDates();
+				FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;
+				FlxG.save.data.weekEncoreCompleted = StoryEncoreState.weekEncoreCompleted;
+				FlxG.save.close();
+			}
+
+			if (curSaveFile == 0)
+			{
+				FlxG.save.bind('funkin', 'ninjamuffin99');
+			}
+			else
+			{
+				FlxG.save.bind('funkin' + SaveSuff, 'ninjamuffin99');
+			}
+
+			sfn = 'funkin' + SaveSuff;
+
+			MainMenuState.saveFileName = 'SAVE FILE ICON = ' + SaveFileName + ' | SAVE FILE SLOT = ' + curSaveFile;
+			ClientPrefs.loadPrefs();
+
+			Highscore.load();
+			Acheivement.loadDates();
+
+			if (FlxG.save.data.weekCompleted != null)
+			{
+				StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
+			}
+			if (FlxG.save.data.weekCompleted != null)
+			{
+				StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
+			}
+
+			Colorblind.changeMode();
+
+			FlxG.save.data.createdFile = createdFile;
+			FlxG.save.flush();
+
+			modchartGroup = new FlxTypedGroup<ModchartSpriteTitle>();
+			add(modchartGroup);
+
+			#if LUA_ALLOWED
+			luaDebugGroup = new FlxTypedGroup<DebugLuaTextTitle>();
+			add(luaDebugGroup);
+			#end
+
+			var doPush:Bool = false;
+			var luaFile:String;
+			luaFile = 'data/title.lua';
+
+
+			// WeekData is a fuckin PUSSY Lmao
+			if (FileSystem.exists('modsList.txt'))
+			{
+				var list:Array<String> = CoolUtil.coolTextFile('modsList.txt');
+				var foundAtTop:Bool = false;
+				for (i in 0...list.length)
+				{
+					var split:Array<String> = list[i].split('|');
+					if (split[1] == '1' && !foundAtTop)
+					{
+						Paths.currentModDirectory = split[0];
+						foundAtTop = true;
+					}
+				}
+			}
+
+			if(FileSystem.exists('mods/' + Paths.currentModDirectory + '/' + luaFile) && !doPush) {
+				luaFile = 'mods/' + Paths.currentModDirectory + '/' + luaFile;
+				doPush = true;
+			} else {
+				luaFile = Paths.getPreloadPath(luaFile);
+				if(FileSystem.exists(luaFile) && !doPush) {
+					doPush = true;
+				}
+			}
+
+			if (doPush)
+			{
+				luaArray.push(new TitleLua(luaFile));
+			}
+
+			trace(FlxG.save.data.warned);	
+
+			FlxG.mouse.visible = false;
+			#if FREEPLAY
+			MusicBeatState.switchState(new FreeplayState());
+			#elseif CHARTING
+			MusicBeatState.switchState(new ChartingState());
+			#else
+			#if desktop
+			if (ClientPrefs.discord)
+			{
+				DiscordClient.initialize();
+				Application.current.onExit.add (function (exitCode) {
+					DiscordClient.shutdown();
+				});
+			}
+			#end
+			if (FlxG.save.data.warned == null || FlxG.save.data.warned == false)
+			{
+				MusicBeatState.switchState(new VeryFunnyWarning());
+			}
+			else
+			{
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					startIntro();
+				});
+			}
+			#end
+		}
 	}
 
-	var bgSprite:FlxSprite;
-	var thaRealBgSprite:FlxSprite;
-	var bgGlow:FlxSprite;
-	var logoBl:FlxSprite;
-	var gfDance:FlxSprite;
-	var danceLeft:Bool = false;
-	var titleText:FlxSprite;
-	var swagShader:ColorSwap = null;
+	public var bgSprite:FlxSprite;
+	public var bgGlow:FlxSprite;
+	public var logoBl:FlxSprite;
+	public var gfDance:FlxSprite;
+	public var danceLeft:Bool = false;
+	public var titleText:FlxSprite;
+	public var swagShader:ColorSwap = null;
 
 	function startIntro()
 	{
 		if (!initialized)
 		{
+			callOnLuas('onStartIntro', [true]);
 			/*var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileDiamond);
 			diamond.persist = true;
 			diamond.destroyOnNoUse = false;
@@ -155,13 +324,20 @@ class TitleState extends MusicBeatState
 			// music.play();
 
 			if(FlxG.sound.music == null) {
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.playMusic(Paths.music(musicString));
 
-				FlxG.sound.music.fadeIn(4, 0, 0.7);
+				// FlxG.sound.music.fadeIn(4, 0, 0.7);
 			}
+		}
+		else
+		{
+			callOnLuas('onStartIntro', [false]);
 		}
 
 		Conductor.changeBPM(102);
+
+		MainMenuState.coolBeat = Std.int(Conductor.crochet / 1000);
+
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -170,17 +346,11 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		bgSprite = new FlxSprite();
-		bgSprite.frames = Paths.getSparrowAtlas('titleBG');
-		bgSprite.antialiasing = ClientPrefs.globalAntialiasing;
-		bgSprite.animation.addByPrefix('idle', 'funny bg', 24, true);
-		bgSprite.animation.play('idle');
+		bgSprite = new FlxSprite().loadGraphic(Paths.image('titleScreen/night'));
 		bgSprite.updateHitbox();
 		bgSprite.screenCenter();
 		bgSprite.alpha = 0;
-
-		thaRealBgSprite = new FlxSprite().loadGraphic(Paths.image('coolMenuBG'));
-		thaRealBgSprite.screenCenter();
+		add(bgSprite);
 
 		FlxTween.tween(bgSprite, {alpha: bgSprite.alpha + 1}, 0.6);
 		
@@ -196,10 +366,7 @@ class TitleState extends MusicBeatState
 
 		swagShader = new ColorSwap();
 		if(!FlxG.save.data.psykaEasterEgg || !easterEggEnabled) {
-			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-			gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-			gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-			gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+			gfDance = new FlxSprite(0, 0).loadGraphic(Paths.image('titleScreen/bfandgf'));
 		}
 		else //Psyka easter egg
 		{
@@ -208,12 +375,6 @@ class TitleState extends MusicBeatState
 			gfDance.animation.addByIndices('danceLeft', 'psykaDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 			gfDance.animation.addByIndices('danceRight', 'psykaDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
-
-		bgGlow = new FlxSprite().loadGraphic(Paths.image('bgGLOW'));
-		bgGlow.screenCenter();
-		bgGlow.updateHitbox();
-
-		add(bgSprite);
 
 		credGroup = new FlxGroup();
 		add(credGroup);
@@ -226,10 +387,8 @@ class TitleState extends MusicBeatState
 		// blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		// credGroup.add(blackScreen);
 
-		assetsGroup.add(thaRealBgSprite);
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 		assetsGroup.add(gfDance);
-		assetsGroup.add(bgGlow);
 		gfDance.shader = swagShader.shader;
 		assetsGroup.add(logoBl);
 		//logoBl.shader = swagShader.shader;
@@ -249,7 +408,7 @@ class TitleState extends MusicBeatState
 		logo.antialiasing = ClientPrefs.globalAntialiasing;
 		// add(logo);
 
-		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
+		FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
 
 		credTextShit = new Alphabet(0, 0, "", true);
@@ -267,12 +426,16 @@ class TitleState extends MusicBeatState
 		logoSpr.screenCenter(X);
 		logoSpr.antialiasing = ClientPrefs.globalAntialiasing;
 
-		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
+		// FlxTween.tween(logoSpr, {y: logoSpr.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
+
+		FlxTween.tween(titleText, {y: titleText.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		if (initialized)
 			skipIntro();
 		else
 			initialized = true;
+
+		callOnLuas('onStartIntroPost', []);
 
 		// credGroup.add(credTextShit);
 	}
@@ -296,6 +459,7 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		callOnLuas('onUpdate', [elapsed]);
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
@@ -334,69 +498,36 @@ class TitleState extends MusicBeatState
 
 		if (!transitioning && skippedIntro)
 		{
-			if(pressedEnter)
+			if(pressedEnter && canPress)
 			{
+				callOnLuas('onEnter', []);
 				if(titleText != null) titleText.animation.play('press');
 
 				FlxG.camera.flash(FlxColor.WHITE, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 
+				FlxTween.tween(logoBl, {x: logoBl.x - (logoBl.width * 2)}, 1.5, {ease: FlxEase.quadInOut});
+				FlxTween.tween(titleText, {x: titleText.x + 1280}, 1.5, {ease: FlxEase.quadInOut});
+
 				transitioning = true;
 				// FlxG.sound.music.stop();
 
+				var dontWarn:Bool;
+
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					MusicBeatState.switchState(new WarningState());
+					if (musicString != 'freakyMenu')
+					{
+						FlxG.sound.music.stop();
+					}
+					MusicBeatState.switchState(new MainMenuState());
 					closedState = true;
 				});
 				// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 			}
-			else if(easterEggEnabled)
-			{
-				var finalKey:FlxKey = FlxG.keys.firstJustPressed();
-				if(finalKey != FlxKey.NONE) {
-					lastKeysPressed.push(finalKey); //Convert int to FlxKey
-					if(lastKeysPressed.length > easterEggKeyCombination.length)
-					{
-						lastKeysPressed.shift();
-					}
-					
-					if(lastKeysPressed.length == easterEggKeyCombination.length)
-					{
-						var isDifferent:Bool = false;
-						for (i in 0...lastKeysPressed.length) {
-							if(lastKeysPressed[i] != easterEggKeyCombination[i]) {
-								isDifferent = true;
-								break;
-							}
-						}
-
-						if(!isDifferent) {
-							trace('Easter egg triggered!');
-							FlxG.save.data.psykaEasterEgg = !FlxG.save.data.psykaEasterEgg;
-							FlxG.sound.play(Paths.sound('secretSound'));
-
-							var black:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-							black.alpha = 0;
-							add(black);
-
-							FlxTween.tween(black, {alpha: 1}, 1, {onComplete:
-								function(twn:FlxTween) {
-									FlxTransitionableState.skipNextTransIn = true;
-									FlxTransitionableState.skipNextTransOut = true;
-									MusicBeatState.switchState(new TitleState());
-								}
-							});
-							lastKeysPressed = [];
-							closedState = true;
-							transitioning = true;
-						}
-					}
-				}
-			}
 		}
 
-		if (pressedEnter && !skippedIntro)
+		if (pressedEnter && !skippedIntro && canPress)
 		{
 			skipIntro();
 		}
@@ -406,6 +537,8 @@ class TitleState extends MusicBeatState
 			if(controls.UI_LEFT) swagShader.hue -= elapsed * 0.1;
 			if(controls.UI_RIGHT) swagShader.hue += elapsed * 0.1;
 		}
+
+		callOnLuas('onUpdatePost', [elapsed]);
 
 		super.update(elapsed);
 	}
@@ -442,14 +575,18 @@ class TitleState extends MusicBeatState
 		}
 	}
 
-	private static var closedState:Bool = false;
+	public static var closedState:Bool = false;
 	override function beatHit()
 	{
 		super.beatHit();
 
+		setOnLuas('curBeat', [curBeat]);
+		callOnLuas('onBeatHit', []);
+
 		if(logoBl != null) 
 			logoBl.animation.play('bump');
 
+		/*
 		if(gfDance != null) {
 			danceLeft = !danceLeft;
 
@@ -457,9 +594,12 @@ class TitleState extends MusicBeatState
 				gfDance.animation.play('danceRight');
 			else
 				gfDance.animation.play('danceLeft');
+		
 		}
+		*/
 
-		if(!closedState) {
+		if(!closedState || !customBeat) 
+		{
 			switch (curBeat)
 			{
 				/*
@@ -491,10 +631,10 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
 				case 9:
-					createCoolText([curWacky[0]]);
+					createCoolText(['The Real Deal']);
 				// credTextShit.visible = true;
 				case 11:
-					addMoreText(curWacky[1]);
+					addMoreText('Is Here');
 				// credTextShit.text += '\nlmao';
 				case 12:
 					deleteCoolText();
@@ -502,13 +642,13 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
 				case 13:
-					addMoreText('Friday Night');
+					addMoreText('Left Sides');
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('Funkin');
+					addMoreText('2');
 				// credTextShit.text += '\nNight';
 				case 15:
-					addMoreText('Left Sides'); // credTextShit.text += '\nFunkin';
+					addMoreText('Lets Funkin Go'); // credTextShit.text += '\nFunkin';
 
 				case 16:
 					skipIntro();
@@ -518,17 +658,61 @@ class TitleState extends MusicBeatState
 
 	var skippedIntro:Bool = false;
 
-	function skipIntro():Void
+	public function skipIntro():Void
 	{
 		if (!skippedIntro)
 		{
 			remove(logoSpr);
 
-			FlxG.camera.flash(FlxColor.WHITE, 4);
+			FlxG.camera.flash(FlxColor.WHITE, 1);
 			remove(credGroup);
 			assetsGroup.visible = true;
 			remove(bgSprite);
 			skippedIntro = true;
+		}
+
+		callOnLuas('onSkip', []);
+	}
+
+	public function getControl(key:String) {
+		var pressed:Bool = Reflect.getProperty(controls, key);
+		//trace('Control result: ' + pressed);
+		return pressed;
+	}
+
+	public function callOnLuas(event:String, args:Array<Dynamic>):Dynamic {
+		var returnVal:Dynamic = TitleLua.Function_Continue;
+		#if LUA_ALLOWED
+		for (i in 0...luaArray.length) {
+			var ret:Dynamic = luaArray[i].call(event, args);
+			if(ret != TitleLua.Function_Continue) {
+				returnVal = ret;
+			}
+		}
+		#end
+		return returnVal;
+	}
+
+	public function setOnLuas(variable:String, arg:Dynamic) {
+		#if LUA_ALLOWED
+		for (i in 0...luaArray.length) {
+			luaArray[i].set(variable, arg);
+		}
+		#end
+	}
+
+	public function addTextToDebug(text:String) {
+		#if LUA_ALLOWED
+		luaDebugGroup.forEachAlive(function(spr:DebugLuaTextTitle) {
+			spr.y += 20;
+		});
+		luaDebugGroup.add(new DebugLuaTextTitle(text, luaDebugGroup));
+		#end
+	}
+
+	public function removeLua(lua:TitleLua) {
+		if(luaArray != null && !preventLuaRemove) {
+			luaArray.remove(lua);
 		}
 	}
 }

@@ -8,6 +8,7 @@ import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.util.FlxTimer;
 import flixel.math.FlxMath;
+import flixel.text.FlxText;
 
 import openfl.utils.Assets;
 import lime.utils.Assets as LimeAssets;
@@ -18,7 +19,7 @@ import haxe.io.Path;
 
 class LoadingState extends MusicBeatState
 {
-	inline static var MIN_TIME = 1.0;
+	inline static var MIN_TIME = 2.0;
 
 	// Browsers will load create(), you can make your song load a custom directory there
 	// If you're compiling to desktop (or something that doesn't use NO_PRELOAD_ALL), search for getNextState instead
@@ -42,12 +43,15 @@ class LoadingState extends MusicBeatState
 
 	var funkay:FlxSprite;
 	var loadBar:FlxSprite;
+	var tipTexts:Array<String> = [
+		'Relaxing and Focusing is the key to victory!',
+		'You can turn on PRACTICE MODE in the pause menu!',
+		'You can change how much health you lose in the pause menu!',
+		"Take a break from playing if you're having trouble with a song\nrefreshing the mind always helps."
+	];
 	override function create()
 	{
-		var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, 0xffcaff4d);
-		add(bg);
-		funkay = new FlxSprite(0, 0).loadGraphic(Paths.getPath('images/funkay.png', IMAGE));
-		funkay.setGraphicSize(0, FlxG.height);
+		funkay = new FlxSprite(0, 0).loadGraphic(Paths.getPath('images/loadingScreenThing.png', IMAGE));
 		funkay.updateHitbox();
 		funkay.antialiasing = ClientPrefs.globalAntialiasing;
 		add(funkay);
@@ -58,6 +62,11 @@ class LoadingState extends MusicBeatState
 		loadBar.screenCenter(X);
 		loadBar.antialiasing = ClientPrefs.globalAntialiasing;
 		add(loadBar);
+
+		var ranNum:Int = FlxG.random.int(0, 3);
+		var tipText:FlxText = new FlxText(0, loadBar.y - 48, 'TIP: ' + tipTexts[ranNum], 24);
+		tipText.font = Paths.font('vcr.ttf');
+		add(tipText);
 		
 		initSongsManifest().onComplete
 		(
@@ -113,13 +122,6 @@ class LoadingState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		funkay.setGraphicSize(Std.int(0.88 * FlxG.width + 0.9 * (funkay.width - 0.88 * FlxG.width)));
-		funkay.updateHitbox();
-		if(controls.ACCEPT)
-		{
-			funkay.setGraphicSize(Std.int(funkay.width + 60));
-			funkay.updateHitbox();
-		}
 
 		if(callbacks != null) {
 			targetShit = FlxMath.remapToRange(callbacks.numRemaining / callbacks.length, 1, 0, 0, 1);

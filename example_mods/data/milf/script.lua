@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -34,48 +34,13 @@ function onCreate()
 	setProperty('fastCar.active', false);
 	setProperty('fastCarCanDrive', false);
 
-	doTweenColor('dadShading', 'dad', '6D7AD7', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '6D7AD7', 0.001, 'linear');
-	doTweenColor('bfShading', 'boyfriend', '6D7AD7', 0.001, 'linear');
-	doTweenColor('dancerShading', 'dancer', '6D7AD7', 0.001, 'linear');
-	-- doTweenColor('carShading', 'fastCar', '6D7AD7', 0.001, 'linear');
-	-- dont need that lmao
-	doTweenColor('limoShading', 'bgLimo', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShading', 'limoCorpse', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShadingTwo', 'limoCorpseTwo', '6D7AD7', 0.001, 'linear');
-
 	-- this one dumb city lmao
 	-- skyX = getProperty('skyBG.x');
 	-- skyY = getProperty('skyBG.y');
 	-- these vals wouldn't work :(
 
-	makeAnimatedLuaSprite('city', 'limoBG/cityBg', -120, -50);
-	addAnimationByPrefix('city', 'idle', 'city', 24, true);
-	objectPlayAnimation('city', 'idle');
-	setLuaSpriteScrollFactor('city', 0.1, 0.1);
-	addLuaSprite('city', false);
-	-- doo doo fard
-
-	if lowQuality then
-		removeLuaSprite('city', true);
-		-- Penis privliges removed
-		-- NO MORE CITY *VINE BOOM*
-	end
-
 	-- dialouge bgs
-	dialogueBg('dialogueBgs/limoAlt', false, false);
-end
-
-function onBeatHit()
-	if curBeat >= 168 and curBeat < 184 then
-		triggerEvent('Set Cam Zoom', 1.1, 0.15);
-	end
-	if curBeat >= 184 and curBeat < 198 then
-		triggerEvent('Set Cam Zoom', 1.2, 0.15);
-	end
-	if curBeat == 199 then
-		triggerEvent('Cam Tween Zoom', 1.2, 0.15);
-	end
+	dialogueBg('limoAlt', false, false);
 end
 
 function onStepHit()
@@ -99,6 +64,7 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
+		award(7, 'You finished Week 4!', 'mom');
 		runTimer('startAfterDialogue', 0.08);
 		allowCountdown = true;
 		return Function_Stop;
@@ -109,11 +75,7 @@ end
 local isAfter = false;
 function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
-		if not lowQuality then
-			startDialogue('dialogue', 'no-music');
-		else
-			startDialogue('dialogueLow', 'no-music');
-		end
+		startDialogue('dialogue', 'no-music');
 	end
 	if tag == 'startAfterDialogue' then -- Timer completed, play dialogue
 		startAfterDialogue('dialogueAfter', 'no-music');
@@ -129,11 +91,11 @@ function onNextDialogue(count)
 		-- playMusic('mommyIntense', 0.5);
 		-- meh
 	end
-	if count == 17 and isAfter then
-		dialogueBg('dialogueBgs/timeCards/nextDay', false, true);
+	if count == 15 and isAfter then
+		dialogueBg('timeCards/nextDay', false, true);
 	end
-	if count == 18 and isAfter then
-		dialogueBg('dialogueBgs/bfRoom');
+	if count == 16 and isAfter then
+		dialogueBg('bfRoom');
 	end
 end
 

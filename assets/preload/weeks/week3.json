@@ -1,9 +1,9 @@
 {
-	"storyName": "PICO",
+	"storyName": "THANKFUL",
 	"hideFreeplay": false,
 	"weekBackground": "philly",
 	"weekBefore": "week2",
-	"startUnlocked": true,
+	"startUnlocked": false,
 	"weekCharacters": [
 		"",
 		"bf",
@@ -30,7 +30,7 @@
 		],
 		[
 			"Blammed",
-			"pico-cocky",
+			"pico",
 			[
 				148,
 				0,

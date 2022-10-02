@@ -1,24 +1,15 @@
 {
-	"storyName": "MOMMY MUST MURDER",
+	"storyName": "DATE NIGHT",
 	"hideFreeplay": false,
 	"weekBackground": "limo",
 	"weekBefore": "week3",
-	"startUnlocked": true,
+	"startUnlocked": false,
 	"weekCharacters": [
 		"",
 		"bf",
 		""
 	],
 	"songs": [
-		[
-			"Comfy-Together",
-			"gf",
-			[
-				252,
-				150,
-				215
-			]
-		],
 		[
 			"Satin Panties",
 			"mom",

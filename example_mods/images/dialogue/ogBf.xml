@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:0d0beb03fdf42e856bf958c1e8fb3b57:4e759b18e899817dd44dc73f06a2cd81:46e7ce56b06f4b4fe5c117dc3ac22093$ -->
+<TextureAtlas imagePath="ogBf.png" width="820" height="245">
+    <SubTexture name="default" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="wat" x="411" y="0" width="409" height="245"/>
+</TextureAtlas>

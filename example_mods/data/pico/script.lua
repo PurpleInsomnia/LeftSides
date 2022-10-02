@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -52,26 +52,26 @@ function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
 	if count == 4 then
 		soundFadeOut('', 1, 0.5);
-		dialogueBg('dialogueBgs/timeCards/elevator', false, true);
+		dialogueBg('timeCards/elevator', false, true);
 		-- Bozo
 	end
 	if count == 5 then
 		soundFadeOut('', 1, 0);
-		dialogueBg('dialogueBgs/pico1', false);
+		dialogueBg('pico1', false);
 		playSound('dialogueSounds/elevatorDing');
 	end
 	if count == 9 then
-		dialogueBg('dialogueBgs/white', false);
+		dialogueBg('white', false);
 		playSound('dialogueSounds/gunClick');
 	end
 	if count == 10 then
-		dialogueBg('dialogueBgs/black', false);
+		dialogueBg('black', false);
 		playMusic('hired-mercenary', 1, true);
 	end
-	if count == 28 then
+	if count == 39 then
 		playSound('dialogueSounds/vine-boom', 2);
 	end
-	if count == 33 then
+	if count == 40 then
 		soundFadeOut('', 0.25, 0);
 	end													
 end
@@ -81,7 +81,7 @@ function onSkipDialogue(count)
 end
 
 function onCreate()
-	dialogueBg('dialogueBgs/black', false);
+	dialogueBg('black', false);
 end
 
 function onCountdownTick(counter)

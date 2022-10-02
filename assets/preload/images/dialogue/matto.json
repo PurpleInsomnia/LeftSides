@@ -1,0 +1,50 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		250,
+		130
+	],
+	"scale": 2,
+	"animations": [
+		{
+			"loop_name": "default",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "default",
+			"anim": "default",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry",
+			"anim": "angry",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "happy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "happy",
+			"anim": "happy",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "matto"
+}

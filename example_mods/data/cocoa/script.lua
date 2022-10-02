@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -30,7 +30,7 @@ local bgAlpha = function (val, tween, sec)
 end
 
 function onCreate()
-	dialogueBg('dialogueBgs/mall1', false);
+	dialogueBg('mall1', false);
 
 	setProperty('boppers.visible', true);
 
@@ -47,19 +47,19 @@ end
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
 	if count == 2 then
-		dialogueBg('dialogueBgs/timeCards/45', false, true);
+		dialogueBg('timeCards/45', false, true);
 	end
 	if count == 3 then
-		dialogueBg('dialogueBgs/mall2');
+		dialogueBg('mall2');
 	end
 	if count == 16 then
 		soundFadeOut('', 0.25, 0);
 	end
 	if count == 21 then -- 9 + 10
-		dialogueBg('dialogueBgs/timeCards/45', false, true);
+		dialogueBg('timeCards/45', false, true);
 	end
 	if count == 22 then
-		dialogueBg('dialogueBgs/mall3');
+		dialogueBg('mall3');
 		playMusic('confrontingAtTheMall', 1, true);
 	end
 end

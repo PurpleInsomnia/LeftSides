@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.055,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "What the hell was that."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Yeah, I'm confused too."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "GRRRRRRRRRRRRRRRRRRRRRRRRRRRr     c"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "I am so mad now.\\nCan you tell by my facial expression that I'm so mad right now?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "look",
+			"text": "Oh my god babe, he's mad now"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "I THINK I'M GO TO TRANSFORM!!!!1111!?/.,leqmfkle\\n     white boy sexual style"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "What if I said: ''no''?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "cry",
+			"text": "v\\n            I am sad cry now\\n a b c d e f g h i j k l m n o p q r s t u v w x y z"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Ok, bye bye!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "But I wanted to go swimming...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "We have a pool at home (in town to be specific...)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "But it's christmas time at home..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "Then we have a perfectly good bathtub."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "(That was a breaking bad reference btw.)"
+		}
+	]
+}

@@ -1,165 +1,179 @@
 {
 	"dialogue": [
 		{
-			"speed": 0.075,
-			"portrait": "bf",
-			"boxState": "normal",
 			"expression": "waking-up",
-			"text": "wh-what the hell is that breathing sound..."
-		},
-		{
-			"speed": 0.06,
-			"portrait": "freeme",
+			"text": "wh-what the hell is that breathing sound...",
 			"boxState": "normal",
-			"expression": "talk",
-			"text": "No mean to disturb you......\\nI just need to steal your body real quick..."
+			"speed": 0.075,
+			"portrait": "bf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "angry",
+			"expression": "talk",
+			"text": "No mean to disturb you......\\nI just need to steal your body real quick...",
+			"boxState": "normal",
+			"speed": 0.06,
+			"portrait": "freeme"
+		},
+		{
 			"expression": "look",
-			"text": "WAIT WHAT THE FUCK?!?!?!?!"
-		},
-		{
-			"speed": 0.06,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "Hush now....\\nYou are in the arms of [B*^7r@$)(] now..."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
+			"text": "WAIT WHAT THE FUCK?!?!?!?!",
 			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Why the hell did you say that so casually...\\n...\\nUh...anyways...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
 			"expression": "scared",
-			"text": "Get the fuck away from me!"
+			"text": "Get the fuck away from me!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
 			"expression": "question",
-			"text": "And what the hell are you supposed to be?!?!"
+			"text": "And what the hell are you supposed to be?!?!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
+			"expression": "talk",
+			"text": "I am a [*!@VS]",
+			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "I am a collection of your thoughts.... Some things I say are based off something you once thought of..."
+			"portrait": "freeme"
 		},
 		{
+			"expression": "confused",
+			"text": "That is really confusing asshole.\\nLike I don't even know if you are thinkin straight man.",
+			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "angry",
-			"text": "Hey...\\nWhere the fuck is my Girl???"
+			"portrait": "bf"
 		},
 		{
+			"expression": "angry",
+			"text": "Where the HELL is my girl?\\n...And those two kids I just met.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "default",
+			"text": "Who needs to worry about them when you can be focused on: ''Freeing Me''",
+			"boxState": "normal",
 			"speed": 0.06,
+			"portrait": "freeme"
+		},
+		{
+			"expression": "look",
+			"text": "Dude. I think you need like some...help.\\nI-I know a good therapist.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "mock",
+			"text": "ME? TALK TO A THERAPIST?? *Insane Luaghter* THOSE CLOWNS ARE ONLY PAID\\nTO LISTEN TO YOUR SOB STORIES..",
+			"boxState": "angry",
 			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "Who needs to worry about their loved ones when you can be focused on;\\nFreeing Me.."
+			"speed": 0.05
 		},
 		{
-			"speed": 0.05,
-			"portrait": "bf",
+			"expression": "default",
+			"text": "[YOU ARE A WORTHLESS] source of help.",
 			"boxState": "normal",
-			"expression": "question",
-			"text": "WHAT?!"
+			"speed": 0.05,
+			"portrait": "freeme"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "[I AM CONSTANTLY TRAPPED IN A NEVER ENDING] prison in which I watch my or....\\n...Your horrifying death [OVER AND OVER]..."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "scared",
-			"text": "My Death? Your Death?\\nWhat the fuck are you talking about?!??!"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "You have very little time left mini me...."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "And I need to get [OUT] of this [FUCKING PRISON] of [NEVER ENDING] replays....Just give me your body.... "
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
 			"expression": "angry",
-			"text": "Fuck you! I'm not letting some parasite into my body!"
+			"text": "FUCK YOU.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "freeme",
+			"expression": "confused",
+			"text": "...And I'm not letting you steal my body.",
 			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
 			"expression": "smile",
-			"text": "Worthless piece of shit.\\nNo wonder why she chose us.\\nShe just feels sorry for us.."
+			"text": "[WORTHLESS] piece of shit.\\nNo wonder why she chose us.\\nShe just feels [SORRY] for us..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "freeme"
 		},
 		{
+			"expression": "talk",
+			"text": "My goal is to [39m,vx-pfksl,,,] and then make [TESS] watch [mr03 9oeutojvvvvvv].\\n[HELP ME ACHIEVE USERNAME]",
+			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "freeme",
+			"portrait": "freeme"
+		},
+		{
+			"expression": "angry",
+			"text": "You are FUCKING insane!!!\\nAND WHO THE FUCK IS USERNAME?!",
 			"boxState": "normal",
-			"expression": "talk",
-			"text": "My goal is to cause [MISERY] upon the world.\\nWill you help me acheive this goal???"
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
+			"expression": "angry",
+			"text": "SHE DID NOT DECIDE TO CONFESS HER FEELINGS JUST BECAUSE SHE FELT BAD!!",
+			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "bf",
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "I DUNNO WHAT THE FUCK YOU ARE...",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "angry",
+			"text": "BUT I WILL TELL YOU THIS;\\nNOBODY TALKS ABOUT OUR RELATIONSHIP\\nLIKE THAT!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "[KILL] yourself.",
 			"boxState": "normal",
-			"expression": "guilt",
-			"text": "..."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "angry",
-			"expression": "angry",
-			"text": "SHE DID NOT CHOOSE (uhh...-) ''US''\\nJUST BECAUSE SHE FELT SORRY."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "angry",
-			"expression": "angry",
-			"text": "I DUNNO IF YOU ARE ME OR IF YOU ARE TRYING TO BE ME."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "angry",
-			"expression": "angry",
-			"text": "BUT I WILL TELL YOU THIS;\\nNOBODY TALKS ABOUT OUR RELATIONSHIP\\nLIKE THAT!"
-		},
-		{
 			"speed": 0.06,
-			"portrait": "freeme",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "[KILL] yourself."
+			"portrait": "freeme"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "freeme",
+			"expression": "default",
+			"text": "Forty mistakes are allowed.\\nAfter that....",
 			"boxState": "normal",
-			"expression": "talk",
-			"text": "20 mistakes are allowed.\\nAfter that.\\nGame Over."
+			"speed": 0.05,
+			"portrait": "freeme"
+		},
+		{
+			"expression": "mock",
+			"text": "...I'll make sure those cuts on your arms bleed again......",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "freeme"
+		},
+		{
+			"expression": "angry",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
 		}
 	]
 }

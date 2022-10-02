@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				208,
+				177
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				-31,
+				171
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				161,
+				52
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				-32,
+				380
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				173,
+				62
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-21,
+				1430
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP-alt",
+			"loop": false,
+			"name": "Ding"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Gus",
+	"position": [
+		80,
+		70
+	],
+	"healthicon": "gus",
+	"flip_x": false,
+	"healthbar_colors": [
+		143,
+		148,
+		214
+	],
+	"camera_position": [
+		30,
+		100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

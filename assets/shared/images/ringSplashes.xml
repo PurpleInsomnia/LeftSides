@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ringSplashes.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="note splash blue 10000" x="0" y="0" width="219" height="214" frameX="-24" frameY="-10" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash green 10001" x="229" y="0" width="239" height="215" frameX="-30" frameY="-17" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash purple 10002" x="478" y="0" width="273" height="220" frameX="-12" frameY="-14" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash red 10003" x="0" y="230" width="306" height="254"/>
+	<SubTexture name="note splash blue 20000" x="0" y="0" width="219" height="214" frameX="-24" frameY="-10" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash green 20001" x="229" y="0" width="239" height="215" frameX="-30" frameY="-17" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash purple 20002" x="478" y="0" width="273" height="220" frameX="-12" frameY="-14" frameWidth="306" frameHeight="254"/>
+	<SubTexture name="note splash red 20003" x="0" y="230" width="306" height="254"/>
+</TextureAtlas>

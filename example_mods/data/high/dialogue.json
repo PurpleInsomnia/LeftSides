@@ -1,123 +1,130 @@
 {
 	"dialogue": [
 		{
-			"expression": "scared",
-			"text": "WHAT THE FUCK HAPPENED TO THOSE FUNKY ASS DANCIN DUDES!?!?!?!?!?!?",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "Don't worry, I've got plenty of my henchmen to fill in their positions...",
+			"expression": "challenge",
+			"text": "Piano took too many reverb drugs.\\nDrums were fresh.\\nPad was okay.",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "mom"
+			"portrait": "bf"
 		},
 		{
-			"expression": "angry",
-			"text": "That's not the issue here!\\nYOU SAW THEM GET DECAPITATED!!!!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf"
+			"expression": "happy",
+			"text": "7 out of 10",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "flert",
-			"text": "But what did you think of the song?\\nIt's not released to the public yet...",
+			"text": "Your skills are pretty mediocre.\\nLike, how can my daughter find that cute?\\nI know for a fact that she has standards..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "mom"
+			"portrait": "mom",
+			"speed": 0.05
 		},
 		{
 			"expression": "angry",
-			"text": "Stop trying to 'flatter' me with your mediocre music making skills",
+			"text": "Because I don't fucking flail my body around why doing the funny poses..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
-			"expression": "trolling",
-			"text": "The only thing that flatters me is beautiful violet hair blowing in the wind.",
+			"expression": "angry",
+			"text": "Like, are you trying to fall off the car or something?",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "what",
-			"text": "Wait.\\nWho or Where does my gf get her hair color from??? ",
+			"text": "Umm. Actually, its a Limo....",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "mom",
+			"speed": 0.05
 		},
 		{
-			"expression": "hmph",
-			"text": "My mother.....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "question",
-			"text": "No wa-\\nWait.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "look",
-			"text": "Why you gotta dye your hair cuz?\\nWhats wrong?",
+			"expression": "confused",
+			"text": "Imma 'bout to react with a fucking nerd emoji.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "default",
-			"text": "Purple dosen't look good with green.",
+			"text": "Anyways.\\nCan I go back to cuddling with your daughter\\nnow?",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "mom"
+			"portrait": "bf"
+		},
+		{
+			"expression": "happy",
+			"text": "Thats kinda our thing....",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Wait.\\nYou mean like ''Cuddle-Cuddle'' or\\n''Cuddle~''?",
+			"boxState": "normal",
+			"portrait": "mom",
+			"speed": 0.05
+		},
+		{
+			"expression": "thud",
+			"text": "Why is that important?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "You know why."
 		},
 		{
 			"expression": "cringe",
-			"text": "Bitch your eyes are glowin purple.",
+			"text": "I don't think we use the word ''cuddle'' like that....",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "cringe",
-			"text": "Belive me, I've told her thousands of times already.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "confused",
-			"text": "Ok lady",
+			"text": "Agreed. Cuddle means cuddle, nothing more.",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "confused",
-			"text": "Fuck your gray ass hair.\\nEmbrace the gracefull, hot, sexy, and beautiful violet hair",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "confused",
-			"text": "And lets get on with this absolute nightmare of a game of 'balance'.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "what",
-			"text": "I just wanna go on my date with my girlfriend..\\nis that too much to ask for???",
+			"text": "Ok, SOMETIMES it can turn in that direction.\\nBut still, you're still cuddling to BEGIN with...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "Another round. we have a long drive ahead of us.",
+			"boxState": "normal",
+			"portrait": "mom",
+			"speed": 0.05
+		},
+		{
+			"expression": "sleepy",
+			"text": "But I don't want to...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
 		}
 	]
 }

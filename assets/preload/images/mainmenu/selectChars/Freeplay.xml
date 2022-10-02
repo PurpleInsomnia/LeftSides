@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Freeplay.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Freeplay0000" x="0" y="0" width="383" height="379" frameX="-1" frameY="-14" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0001" x="0" y="0" width="383" height="379" frameX="-1" frameY="-14" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0002" x="393" y="0" width="381" height="379" frameX="-1" frameY="-16" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0003" x="784" y="0" width="382" height="379" frameX="0" frameY="-16" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0004" x="1176" y="0" width="383" height="378" frameX="0" frameY="-13" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0005" x="1569" y="0" width="382" height="378" frameX="-1" frameY="-13" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0006" x="0" y="389" width="382" height="380" frameX="-1" frameY="-11" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0007" x="392" y="389" width="397" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0008" x="392" y="389" width="397" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0009" x="392" y="389" width="397" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0010" x="799" y="389" width="398" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0011" x="799" y="389" width="398" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0012" x="799" y="389" width="398" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0013" x="1207" y="389" width="399" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0014" x="1207" y="389" width="399" height="382" frameX="-1" frameY="0" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0015" x="1616" y="389" width="396" height="367" frameX="-3" frameY="-12" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0016" x="1616" y="389" width="396" height="367" frameX="-3" frameY="-12" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0017" x="0" y="781" width="397" height="367" frameX="-3" frameY="-12" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0018" x="407" y="781" width="398" height="367" frameX="-2" frameY="-12" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0019" x="815" y="781" width="397" height="368" frameX="-2" frameY="-11" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0020" x="1222" y="781" width="398" height="371" frameX="-1" frameY="-11" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0021" x="1630" y="781" width="398" height="372" frameX="-1" frameY="-10" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0022" x="0" y="1163" width="402" height="380" frameX="-1" frameY="-5" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0023" x="0" y="1163" width="402" height="380" frameX="-1" frameY="-5" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0024" x="0" y="1163" width="402" height="380" frameX="-1" frameY="-5" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0025" x="412" y="1163" width="401" height="380" frameX="-1" frameY="-6" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0026" x="412" y="1163" width="401" height="380" frameX="-1" frameY="-6" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0027" x="412" y="1163" width="401" height="380" frameX="-1" frameY="-6" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0028" x="823" y="1163" width="401" height="380" frameX="-1" frameY="-6" frameWidth="403" frameHeight="395"/>
+	<SubTexture name="Freeplay0029" x="823" y="1163" width="401" height="380" frameX="-1" frameY="-6" frameWidth="403" frameHeight="395"/>
+</TextureAtlas>

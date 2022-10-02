@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:81a21f8d188ffd292f5c27edee47e07b:cb6c8e86e8738fb1b1ad95376dddf6d2:1e29d31f62a1509c48292fde31e3822c$ -->
-<TextureAtlas imagePath="BF_Dialogue.png" width="1648" height="1241">
+<!-- $TexturePacker:SmartUpdate:9e94cb5a417a8ca4dae2d8fef06e2e46:c19d5efd1866b7c051735127fcadbd8f:1e29d31f62a1509c48292fde31e3822c$ -->
+<TextureAtlas imagePath="BF_Dialogue.png" width="1666" height="1775">
     <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
-    <SubTexture name="ass" x="413" y="0" width="409" height="245"/>
-    <SubTexture name="blush" x="826" y="0" width="409" height="245"/>
-    <SubTexture name="challenge" x="1239" y="0" width="409" height="245"/>
-    <SubTexture name="confused" x="0" y="249" width="409" height="245"/>
-    <SubTexture name="cool-dude" x="413" y="249" width="409" height="245"/>
-    <SubTexture name="cringe" x="826" y="249" width="409" height="245"/>
-    <SubTexture name="default" x="1239" y="249" width="409" height="245"/>
-    <SubTexture name="guilt" x="0" y="498" width="409" height="245"/>
-    <SubTexture name="happy" x="413" y="498" width="409" height="245"/>
-    <SubTexture name="look" x="826" y="498" width="409" height="245"/>
-    <SubTexture name="question" x="1239" y="498" width="409" height="245"/>
-    <SubTexture name="sadness-combat" x="0" y="747" width="409" height="245"/>
-    <SubTexture name="scared" x="413" y="747" width="409" height="245"/>
-    <SubTexture name="sleeping" x="826" y="747" width="409" height="245"/>
-    <SubTexture name="sus" x="1239" y="747" width="409" height="245"/>
-    <SubTexture name="trolling" x="0" y="996" width="409" height="245"/>
-    <SubTexture name="waking-up" x="413" y="996" width="409" height="245"/>
-    <SubTexture name="what" x="826" y="996" width="409" height="245"/>
-    <SubTexture name="zamn" x="1239" y="996" width="409" height="245"/>
+    <SubTexture name="ass" x="419" y="0" width="409" height="245"/>
+    <SubTexture name="blush" x="838" y="0" width="409" height="245"/>
+    <SubTexture name="challenge" x="1257" y="0" width="409" height="245"/>
+    <SubTexture name="confused" x="0" y="255" width="409" height="245"/>
+    <SubTexture name="cool-dude" x="419" y="255" width="409" height="245"/>
+    <SubTexture name="cringe" x="838" y="255" width="409" height="245"/>
+    <SubTexture name="default" x="1257" y="255" width="409" height="245"/>
+    <SubTexture name="flustered" x="0" y="510" width="409" height="245"/>
+    <SubTexture name="guilt" x="419" y="510" width="409" height="245"/>
+    <SubTexture name="happy" x="838" y="510" width="409" height="245"/>
+    <SubTexture name="look" x="1257" y="510" width="409" height="245"/>
+    <SubTexture name="nervous" x="0" y="765" width="409" height="245"/>
+    <SubTexture name="pardon" x="419" y="765" width="409" height="245"/>
+    <SubTexture name="question" x="838" y="765" width="409" height="245"/>
+    <SubTexture name="sadness-combat" x="1257" y="765" width="409" height="245"/>
+    <SubTexture name="scared" x="0" y="1020" width="409" height="245"/>
+    <SubTexture name="sleeping" x="419" y="1020" width="409" height="245"/>
+    <SubTexture name="sus" x="838" y="1020" width="409" height="245"/>
+    <SubTexture name="the-rock" x="1257" y="1020" width="409" height="245"/>
+    <SubTexture name="tired" x="0" y="1275" width="409" height="245"/>
+    <SubTexture name="trolling" x="419" y="1275" width="409" height="245"/>
+    <SubTexture name="waking-up" x="838" y="1275" width="409" height="245"/>
+    <SubTexture name="what" x="1257" y="1275" width="409" height="245"/>
+    <SubTexture name="zamn" x="0" y="1530" width="409" height="245"/>
 </TextureAtlas>

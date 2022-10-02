@@ -1,11 +1,12 @@
 -- you can use this in your mods, just leave this last comment in if you do.
 -- Dialogue Bg script by PurpleInsomnia
 local loaded = false;
+local inScene = false;
 local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -44,7 +45,10 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
+		inScene = true;
+		award(6, 'You finished Week 3!', 'pico');
 		runTimer('startAfterDialogue', 0.08);
+		dialogueBg('dialogueBgs/pico2');
 		allowCountdown = true;
 		return Function_Stop;
 	end
@@ -66,24 +70,35 @@ end
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
-	if count == 4 and isAfter then
+	if count == 5 and isAfter then
 		playSound('dialogueSounds/gunCLICK');
 	end
-	if count == 17 and isAfter then
-		dialogueBg('dialogueBgs/timeCards/5min', false, true);
+	if count == 19 and isAfter then
+		dialogueBg('timeCards/5min', false, true);
 	end
-	if count == 18 and isAfter then
-		dialogueBg('dialogueBgs/tower');
-	end
-	if count == 31 and isAfter then
-		dialogueBg('dialogueBgs/timeCards/elevator', false, true);
+	if count == 20 and isAfter then
+		dialogueBg('tower');
 	end
 	if count == 32 and isAfter then
+		dialogueBg('timeCards/elevator', false, true);
+	end
+	if count == 33 and isAfter then
 		playMusic('coupleChillout', 1, true);
-		dialogueBg('dialogueBgs/city');
+		dialogueBg('pico3');
 	end
 end
 
 function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
+end
+
+function onCreate()
+	dialogueBg('black');
+end
+
+function onCountdownTick(counter)
+	if counter == 0 then
+		seenCutscene = false;
+		bgAlpha(0, true, 0.5); 
+	end
 end

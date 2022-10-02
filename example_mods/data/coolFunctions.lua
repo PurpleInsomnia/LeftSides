@@ -1,4 +1,4 @@
-local canPressDebug = false;
+local canPressDebug = true;
 local debugger = false;
 local speedOn = false;
 local hideThing = false;
@@ -6,7 +6,7 @@ local dumbBotplay = false;
 local ogIcon = false;
 function onUpdate(elapsed)
 	if canPressDebug then
-		if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F1') and not getProperty('startingSong') then
+		if getPropertyFromClass('flixel.FlxG', 'keys.justPressed.F5') and not getProperty('startingSong') then
 			endSong();
 			canPressDebug = false;
 		end
@@ -26,8 +26,6 @@ function onCreate()
 			setProperty('introSoundsSuffix', '-bf');
 		end
 	end
-
-	runTimer('noteAngles', 0.001);
 end
 
 function onBeatHit()
@@ -39,20 +37,6 @@ function onBeatHit()
 		elseif not speedOn then
 			triggerEvent('Set Gf Speed', 1, '');
 		end
-	end
-end
-
-function onCountdownTick(counter)
-	if counter == 0 then
-		-- fancy ass thing
-		noteTweenAngle('leftO', 0, 0, 1, 'linear');
-		noteTweenAngle('downO', 1, 0, 1.1, 'linear');
-		noteTweenAngle('upO', 2, 0, 1.2, 'linear');
-		noteTweenAngle('rightO', 3, 0, 1.3, 'linear');
-		noteTweenAngle('leftP', 4, 0, 1, 'linear');
-		noteTweenAngle('downP', 5, 0, 1.1, 'linear');
-		noteTweenAngle('upP', 6, 0, 1.2, 'linear');
-		noteTweenAngle('rightP', 7, 0, 1.3, 'linear');
 	end
 end
 
@@ -70,19 +54,6 @@ function onEvent(name, value1, value2)
 		if value1 == 1 and speedOn then
 			speedOn = false;
 		end 
-	end
-end
-
-function onTimerCompleted(tag)
-	if tag == 'noteAngle' then
-		noteTweenAngle('leftO', 0, 360, 0.001, 'linear');
-		noteTweenAngle('downO', 1, 360, 0.001, 'linear');
-		noteTweenAngle('upO', 2, -360, 0.001, 'linear');
-		noteTweenAngle('rightO', 3, -360, 0.001, 'linear');
-		noteTweenAngle('leftP', 4, -360, 0.001, 'linear');
-		noteTweenAngle('downP', 5, -360, 0.001, 'linear');
-		noteTweenAngle('upP', 6, 360, 0.001, 'linear');
-		noteTweenAngle('rightP', 7, 360, 0.001, 'linear');
 	end
 end
 

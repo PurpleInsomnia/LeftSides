@@ -1,0 +1,50 @@
+{
+	"position": [
+		60,
+		125
+	],
+	"dialogue_pos": "right",
+	"scale": 1.65,
+	"image": "bfPixel",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "default",
+			"idle_name": "default",
+			"loop_name": "default"
+		},
+		{
+			"loop_name": "upset",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "upset",
+			"anim": "upset",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "what",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "what",
+			"anim": "wat",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	]
+}

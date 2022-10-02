@@ -59,7 +59,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			"Uncheck this if you're sensitive to flashing lights!",
 			'flashing',
 			'bool',
-			true);
+			false);
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooms',

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:29f0686d42a65077f4fb045f7fd126f3:609c7e410a9363f59d61db99ab5ef050:bfe4b5ce3cae706dd88ba7ee173b54d9$ -->
+<TextureAtlas imagePath="mazinSonic.png" width="290" height="121">
+    <SubTexture name="down/000" x="0" y="0" width="54" height="58"/>
+    <SubTexture name="down/001" x="59" y="0" width="54" height="58"/>
+    <SubTexture name="idle/000" x="118" y="0" width="54" height="58"/>
+    <SubTexture name="idle/001" x="177" y="0" width="54" height="58"/>
+    <SubTexture name="left/000" x="236" y="0" width="54" height="58"/>
+    <SubTexture name="left/001" x="0" y="63" width="54" height="58"/>
+    <SubTexture name="right/000" x="59" y="63" width="54" height="58"/>
+    <SubTexture name="right/001" x="118" y="63" width="54" height="58"/>
+    <SubTexture name="up/000" x="177" y="63" width="54" height="58"/>
+    <SubTexture name="up/001" x="236" y="63" width="54" height="58"/>
+</TextureAtlas>

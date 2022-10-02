@@ -1,193 +1,219 @@
 {
+	"dialogue_pos": "right",
 	"position": [
 		70,
 		120
 	],
-	"dialogue_pos": "right",
 	"scale": 1.7,
-	"image": "GF_Dialogue",
 	"animations": [
 		{
-			"idle_offsets": [
-				0,
-				0
-			],
-			"anim": "cheer",
 			"loop_offsets": [
-				0,
-				0
-			],
-			"idle_name": "cheer",
-			"loop_name": "cheer"
-		},
-		{
-			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "cringe",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "cringe",
-			"loop_name": "cringe"
+			"loop_name": "cringe",
+			"idle_name": "cringe"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "cute-blushing",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "cute-blushing",
-			"loop_name": "cute-blushing"
+			"loop_name": "cute-blushing",
+			"idle_name": "cute-blushing"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "default",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "default",
-			"loop_name": "default"
+			"loop_name": "default",
+			"idle_name": "default"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "happy-cry",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "happy-cry",
-			"loop_name": "happy-cry"
+			"loop_name": "happy-cry",
+			"idle_name": "happy-cry"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "hmph",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "hmph",
-			"loop_name": "hmph"
+			"loop_name": "hmph",
+			"idle_name": "hmph"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "laughing",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "laughing",
-			"loop_name": "laughing"
+			"loop_name": "laughing",
+			"idle_name": "laughing"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "scared",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "scared",
-			"loop_name": "scared"
+			"loop_name": "scared",
+			"idle_name": "scared"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "stop-being-cute",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "stop-being-cute",
-			"loop_name": "stop-being-cute"
+			"loop_name": "stop-being-cute",
+			"idle_name": "stop-being-cute"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "wink",
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "wink",
-			"loop_name": "wink"
+			"loop_name": "wink",
+			"idle_name": "wink"
 		},
 		{
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
 			"anim": "woman-sadness-combat",
-			"loop_offsets": [
-				0,
-				0
-			],
-			"idle_name": "woman-sadness-combat",
-			"loop_name": "woman-sadness-combat"
-		},
-		{
-			"loop_name": "",
 			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "",
-			"anim": "",
+			"loop_name": "woman-sadness-combat",
+			"idle_name": "woman-sadness-combat"
+		},
+		{
 			"loop_offsets": [
 				0,
 				0
-			]
-		},
-		{
-			"loop_name": "the-rock",
+			],
+			"anim": "horny",
 			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "the-rock",
+			"loop_name": "helltaker",
+			"idle_name": "helltaker"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "drool",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "drool",
+			"idle_name": "drool"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
 			"anim": "rock",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "the-rock",
+			"idle_name": "the-rock"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "sus",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "sus",
+			"idle_name": "sus"
+		},
+		{
+			"loop_name": "angry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry",
+			"anim": "angry",
 			"loop_offsets": [
 				0,
 				0
 			]
 		},
 		{
-			"loop_name": "sus",
+			"loop_name": "what",
 			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "sus",
-			"anim": "sus",
+			"idle_name": "what",
+			"anim": "huh",
 			"loop_offsets": [
 				0,
 				0
 			]
 		}
-	]
+	],
+	"image": "GF_Dialogue"
 }

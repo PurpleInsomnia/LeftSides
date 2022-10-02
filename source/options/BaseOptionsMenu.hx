@@ -24,6 +24,7 @@ import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
+import openfl.display.BlendMode;
 
 using StringTools;
 
@@ -54,10 +55,14 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		#if desktop
 		DiscordClient.changePresence(rpcTitle, null);
 		#end
+
+		var pp:GridBackdrop = new GridBackdrop();
+		add(pp);
 		
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuOptions'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backdropSHADER'));
 		bg.color = 0xFFea71fd;
 		bg.screenCenter();
+		bg.blend = BlendMode.DARKEN;
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 

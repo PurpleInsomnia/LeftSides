@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Doodles.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Doodles0000" x="0" y="0" width="690" height="433" frameX="-1" frameY="-21" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0001" x="0" y="0" width="690" height="433" frameX="-1" frameY="-21" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0002" x="700" y="0" width="691" height="437" frameX="-1" frameY="-19" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0003" x="1401" y="0" width="692" height="437" frameX="0" frameY="-19" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0004" x="2103" y="0" width="693" height="439" frameX="0" frameY="-14" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0005" x="2806" y="0" width="693" height="439" frameX="0" frameY="-14" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0006" x="0" y="449" width="695" height="450" frameX="0" frameY="-2" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0007" x="705" y="449" width="695" height="441" frameX="0" frameY="-2" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0008" x="1410" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0009" x="1410" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0010" x="2115" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0011" x="2115" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0012" x="2115" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0013" x="2820" y="449" width="695" height="443" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0014" x="0" y="909" width="691" height="422" frameX="0" frameY="-21" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0015" x="701" y="909" width="689" height="419" frameX="-2" frameY="-21" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0016" x="1400" y="909" width="690" height="421" frameX="-2" frameY="-19" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0017" x="2100" y="909" width="690" height="421" frameX="-2" frameY="-19" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0018" x="2800" y="909" width="691" height="426" frameX="-2" frameY="-14" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0019" x="0" y="1345" width="691" height="426" frameX="-2" frameY="-14" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0020" x="701" y="1345" width="695" height="441" frameX="0" frameY="-2" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0021" x="1406" y="1345" width="695" height="441" frameX="0" frameY="-2" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0022" x="2111" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0023" x="2111" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0024" x="2111" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0025" x="2816" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0026" x="2816" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0027" x="2816" y="1345" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0028" x="0" y="1802" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+	<SubTexture name="Doodles0029" x="0" y="1802" width="695" height="447" frameX="0" frameY="0" frameWidth="695" frameHeight="456"/>
+</TextureAtlas>

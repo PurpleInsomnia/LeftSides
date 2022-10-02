@@ -1,6 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="FreeMePort.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="default.png" x="0" y="0" width="409" height="245"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:50dd8ae5dcb1152c8f6cc717dd054836:3b4d72fe1b57f7e50024afbb7cc3768c:c81c0b00daf7afffb86ddb3c4ec180d3$ -->
+<TextureAtlas imagePath="FreeMePort.png" width="1247" height="245">
+    <SubTexture name="bruh" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="default" x="419" y="0" width="409" height="245"/>
+    <SubTexture name="heehee" x="838" y="0" width="409" height="245"/>
 </TextureAtlas>

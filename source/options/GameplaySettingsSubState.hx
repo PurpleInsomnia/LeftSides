@@ -56,11 +56,33 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
-		var option:Option = new Option('Audio Offset',
-			"This option will help with audio lag from Wireless Headphones\n(Notes will spawn later)",
-			'noteOffset',
-			'int',
-			0);
+		var option:Option = new Option('Directional Camera',
+			"If checked, the camera moves based on what note\nYou/Your Opponent hits.",
+			'camMove',
+			'bool',
+			true);
+		addOption(option);
+
+		var option:Option = new Option("Game Over Quotes",
+			"Text with a icon shows up whever you get blueballed when checked.",
+			'justDont',
+			'bool',
+			true);
+		addOption(option);
+
+		var option:Option = new Option('Dialogue Voices',
+			"If checked, a voice will play for (almost) all dialogue characters\nwhenever they speak.",
+			'dialogueVoices',
+			'bool',
+			true);
+		addOption(option);
+
+		var option:Option = new Option('Mute Miss Sounds',
+		'If checked, no sound will play when you miss a note\n(or break your combo)',
+		'muteMiss',
+		'bool',
+		false);
+
 		addOption(option);
 
 		var option:Option = new Option('Jumpscares',
@@ -68,6 +90,21 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'jumpscares',
 			'bool',
 			true);
+		addOption(option);
+
+		var option:Option = new Option('Content Warnings',
+		'Check this if you are sensitive to topics about Blood, Suicide, Abuse and/or Self Harm',
+		'contentWarnings',
+		'bool',
+		false);
+
+		addOption(option);
+
+		var option:Option = new Option('Swear Filter',
+			"If unchecked, you will see violent and innapropriate language\n>:(",
+			'swearFilter',
+			'bool',
+			false);
 		addOption(option);
 
 		super();

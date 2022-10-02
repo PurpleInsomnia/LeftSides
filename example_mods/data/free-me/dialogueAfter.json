@@ -2,126 +2,126 @@
 	"dialogue": [
 		{
 			"expression": "scared",
-			"text": "Bf?!/ BF?!?!?",
+			"text": "Ben?!?! BEN?!?!?!",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "skid-sad",
-			"text": "Mabye we did too much spooky dancing",
+			"text": "..Mabye we did too much spooky dancing..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"portrait": "spookeez",
+			"speed": 0.05
 		},
 		{
 			"expression": "waking-up",
 			"text": "y.....",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "angry",
-			"text": "YOU'RE NOT TAKING MY BODY YOU FU-",
+			"text": "YOU'RE AN INSANE-",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "scared",
 			"text": "A-are you okay?!?!?!?!",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "guilt",
 			"text": "Oh thank god.....\\nI'm still here...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "pump-worried",
 			"text": "What happened???",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"portrait": "spookeez",
+			"speed": 0.05
 		},
 		{
 			"expression": "guilt",
 			"text": "I-I don't know\\nBut I am scared shitless.",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "what",
 			"text": "P-pardon my french children",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "scared",
-			"text": "What were you 'scared' of?!?",
+			"text": "W..what were you ''scared'' of?...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "question",
-			"text": "I don't know\\nAll I know is that he wants to take my body and use it for god only knows what.",
+			"text": "I don't know.\\nHe would constantly stare at me with their giant eyeball..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "guilt",
-			"text": "And for some reason he used the pronoun; ''We''....",
+			"text": "They would ramble on about nothing...just a bunch of thoughts pouring out of their mouth...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
-			"expression": "scared",
+			"expression": "waking-up",
 			"text": "That smile...\\nStill gives me the chills.",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "hmph",
 			"text": "I-I'm sorry, but I think we're gonna go home kids..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "pump-default",
 			"text": "That's okay!\\nJust make sure he gets lots of rest!",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"portrait": "spookeez",
+			"speed": 0.05
 		},
 		{
-			"expression": "what-is-this-emotion",
-			"text": "...",
+			"expression": "confused",
+			"text": "I probably won't.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "happy",
+			"text": "But thank you for considering, children.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "what-is-this-emotion",
-			"text": "I am so thankful to be here with caring people.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "what-is-this-emotion",
-			"text": "Happy Halloween.",
+			"expression": "happy",
+			"text": "And Happy Spooky Month.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
@@ -130,145 +130,208 @@
 			"expression": "what",
 			"text": "Now if you excuse me, I'm gonna go home and have a heart attack..",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "talk",
 			"text": "",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0
+			"speed": 0,
+			"portrait": "bf"
 		},
 		{
 			"expression": "stop-being-cute",
 			"text": "...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "waking-up",
 			"text": "Man, am I glad to be out of there...\\n...\\n...Whats with the cute ass blushing?",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "stop-being-cute",
-			"text": "O-oh nothing..\\nI was wondering if you'd acompany me for thanksgiving..",
+			"text": "O-oh nothing..\\nI was um...wondering if you'd acompany me for thanksgiving..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
 			"expression": "trolling",
 			"text": "*Among Us Sound* \\nThat'd be lovely. ",
 			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Sweet...",
+			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "gf"
 		},
 		{
 			"expression": "hmph",
-			"text": "So, getting home wise; where am I taking you?",
+			"text": "..So...Getting home wise, where am I taking you?",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "waking-up",
 			"text": "Think I'm gonna go to my place...",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"expression": "hmph",
-			"text": "O-oh.\\nI thought you wanted like...\\nProtective cuddles at my place..",
+			"expression": "waking-up",
+			"text": "Can you um......\\n...spend the night???",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "I c-can only spend a few hours there....\\n..I promised my Mother that I would be back\\nby midnight...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "But I would love to if I could..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "happy",
-			"text": "All though that sounds like paradise...I've got dreadfull, life-sucking bills to pay...",
+			"text": "Wanna like...call me when you get home.\\nCause I probably might be scared being left alone in my big....",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"expression": "stop-being-cute",
-			"text": "O-ok...\\nJust... call me if you have like sleep paralisis or something...",
+			"expression": "waking-up",
+			"text": "....empty....house...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.07
+		},
+		{
+			"expression": "cringe",
+			"text": "...You okay?...",
 			"boxState": "normal",
 			"portrait": "gf",
 			"speed": 0.05
 		},
 		{
-			"expression": "trolling",
-			"text": "Very likely to happen. (Why am I still shocked by the funny shadow man)",
+			"expression": "guilt",
+			"text": "...It just gets lonely in there sometimes...\\n...And I know that its been getting better now that we've been texting wayyy more now but...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.055
+		},
+		{
+			"expression": "guilt",
+			"text": "...I don't even know...I just really wish that I can move on...",
 			"boxState": "normal",
 			"portrait": "bf",
 			"speed": 0.05
 		},
 		{
 			"expression": "cringe",
-			"text": "h-hey babe?...",
+			"text": "...Baby...I know that you're trying really, really hard to bounce back from everything\\nthat was thrown at you earlier this year..",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cringe",
+			"text": "...And I'm so proud of you for doing that.\\nAnd ever since I gathered the courage to tell you my feelings for you,",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "guilt",
-			"text": "yeah?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "cringe",
-			"text": "I-is there anything else that you wanted to tell me about... y'know...",
+			"text": "Feelings that I've had for you since the eight grade..",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "guilt",
-			"text": "...\\nHe kept using the phrases I thought to myself before I did; 'That thing' in April...",
+			"expression": "cute-blushing",
+			"text": "...You've started to become happy again..\\nI haven't seen you THIS happy in so long...",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "gf"
 		},
 		{
-			"expression": "guilt",
-			"text": "he-he also said that you only decided to date me because you felt sorry for me...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "sad",
-			"text": "is that true?...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "cringe",
-			"text": "babe...I would never, ever think about something like that. I need you to know that I'm dating you because I love you. ",
+			"expression": "cute-blushing",
+			"text": "I REALLY love it when you feel good about yourself...fills ME with joy knowing that..",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
 			"expression": "happy-cry",
-			"text": "And n-no matter what, I always will love you.",
+			"text": "I-I wanna move in w-with you at some point this year...I don't want you to feel lonely ANYMORE.",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "happy-cry",
+			"text": "You can talk to me ANYTIME okay?\\nI'm free tommorow...s-so if you want to do something together, don't be afraid to ask!",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
 			"expression": "what-is-this-emotion",
-			"text": "You have no idea how much you mean to me.\\nI will keep that phone call idea in mind. But until then, I will see you later..",
+			"text": "...I love you more than anything in the world. I wanna plan a fun day for us tommorow.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "confused",
+			"text": "...And then go back to being miserable because we have work the next day. I hate it when people get Mayonaise on thier sandwich.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "Ewwwww....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "But tonight, we cuddle on the couch and watch a show.\\nOf your choice of course...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I'll um...think about some options...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Sounds good...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"

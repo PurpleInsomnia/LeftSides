@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -44,6 +44,7 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
+		award(5, 'You finished Week 2!', 'spooky');
 		runTimer('startAfterDialogue', 0.08);
 		allowCountdown = true;
 		return Function_Stop;
@@ -58,7 +59,7 @@ function onTimerCompleted(tag, loops, loopsLeft)
 		playSound('dialogueSounds/freeme');
 	end
 	if tag == 'startAfterDialogue' then -- Timer completed, play dialogue
-		dialogueBg('dialogueBgs/spooky');
+		dialogueBg('spooky');
 		startAfterDialogue('dialogueAfter', 'no-music');
 		isAfter = true;
 	end
@@ -67,14 +68,17 @@ end
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
+	if count == 24 and not isAfter then
+		dialogueBg('tips/killYourself', false, true);
+	end
 	if count == 19 and isAfter then
-		dialogueBg('dialogueBgs/timeCards/5min', false, true);
+		dialogueBg('timeCards/5min', false, true);
 	end
 	if count == 20 and isAfter then
 		playMusic('littleStroll', 1, true);
-		dialogueBg('dialogueBgs/black');
+		dialogueBg('black');
 	end
-	if count == 30 and isAfter then
+	if count == 32 and isAfter then
 		playMusic('thisIsSoSad', 1, true);
 	end
 end
@@ -101,44 +105,63 @@ function onCreate()
 		bruh = true;
 	end
 
-	dialogueBg('dialogueBgs/spookyAlt');
+	dialogueBg('spookyAlt');
 
-	doTweenColor('bfShading', 'boyfriend', '5F5F5F', 0.001, 'linear');
-	doTweenColor('dadShading', 'dad', '5F5F5F', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '5F5F5F', 0.001, 'linear');
+	setProperty('iconP2.visible', false);
 end
 
+local canHit = false
 function opponentNoteHit()
-   	health = getProperty('health')
-    	setProperty('health', health- 0.01);
-    	if health < 0.02 then
-		setProperty('health',0.02);
-    	end
-	dumbRandom = math.floor(math.random(1,20));
+	if canHit then
+   		health = getProperty('health')
+    		setProperty('health', health - 0.01);
+    		if health < 0.05 then
+			setProperty('health',0.05);
+    		end
+		dumbRandom = math.floor(math.random(1,20));
+	end
+end
+
+function onLengthSet()
+	-- hee hee
+	setLength(37500);
+end
+
+function onBeatHit()
+	if curBeat == 72 then
+		triggerEvent('Real Time', '2.5', '');
+		healthTween(2.5, 1);
+		-- Reset Score ;)
+		scoreTween(2.5);
+		hitTween(2.5);
+		missTween(2.5);
+	end
+	if curBeat == 75 then
+		-- funkyIcons();
+	end
+	if curBeat == 79 then
+		canHit = true;
+		setProperty('iconP2.visible', true);
+	end
 end
 
 local outerInt = 200;
-local innerInt = 100;
+local innerInt = 200;
 function onCountdownTick(counter)
 	if counter == 3 then
 		isWalt = true;
 		doTweenZoom('jessePinkman', 'camGame', 1.1, 0.5, 'linear');
-		noteTweenX('cum', 4, defaultPlayerStrumX0 - outerInt, 1.5, 'linear');
-		noteTweenX('cum1', 5, defaultPlayerStrumX1 - innerInt, 1.5, 'linear');
-		noteTweenX('cum2', 6, defaultPlayerStrumX2 + innerInt, 1.5, 'linear');
-		noteTweenX('cum3', 7, defaultPlayerStrumX3 + outerInt, 1.5, 'linear');
+		doTweenX('cum', 'camHUD', 0 - outerInt, 1.5, 'circInOut');
 	end
 end
 
 local startDeath = false;
+local funnyHealth = 0;
 function onUpdate(elapsed)
-   misses = getProperty('songMisses');
-   if misses == 20 and not startDeath then
-	startDeath = true;
-        doTweenAlpha('bfFuckingDies', 'static', 1, 15, 'linear');
-	playSound('dieStatic');
-	changeIconP2('freeme-alt');
-   end
+	funnyHealth = getProperty(health);
+	if getProperty(songMisses) == 40 then
+		setProperty(health, funnyHealth - 0.05);
+	end
 end
 
 function onTweenCompleted(tag)
@@ -148,37 +171,13 @@ function onTweenCompleted(tag)
 		soundFadeOut('', 0.25, 0);
 	end
 	if tag == 'cum' then
-		noteTweenX('sussy', 4, defaultPlayerStrumX0, 1.5, 'linear');
-		noteTweenX('sussy1', 5, defaultPlayerStrumX1, 1.5, 'linear');
-		noteTweenX('sussy2', 6, defaultPlayerStrumX2, 1.5, 'linear');
-		noteTweenX('sussy3', 7, defaultPlayerStrumX3, 1.5, 'linear');
+		doTweenX('sussy', 'camHUD', 0 + outerInt, 1.5, 'circInOut');
 	end
 	if tag == 'shit' then
-		noteTweenX('sussy', 4, defaultPlayerStrumX0, 1.5, 'linear');
-		noteTweenX('sussy1', 5, defaultPlayerStrumX1, 1.5, 'linear');
-		noteTweenX('sussy2', 6, defaultPlayerStrumX2, 1.5, 'linear');
-		noteTweenX('sussy3', 7, defaultPlayerStrumX3, 1.5, 'linear');
+		doTweenX('sussy', 'camHUD', 0 + outerInt, 1.5, 'circInOut');
 	end
 	if tag == 'sussy' then
-		noteTweenX('cum', 4, defaultPlayerStrumX0 - outerInt, 1.5, 'linear');
-		noteTweenX('cum1', 5, defaultPlayerStrumX1 - innerInt, 1.5, 'linear');
-		noteTweenX('cum2', 6, defaultPlayerStrumX2 + innerInt, 1.5, 'linear');
-		noteTweenX('cum3', 7, defaultPlayerStrumX3 + outerInt, 1.5, 'linear');
-		doTweenAlpha('shit', 'boyfriend', 1, 0, 'linear');
-	end
-end
-
-function onStepHit()
-	dumbRandom = math.floor(math.random(1,20));
-	if curStep == 1040 then
-		doTweenAlpha('noMoreFortnite', 'camHUD', 0, 2.5, 'linear')
-	end
-end
-
-function onBeatHit()
-	dumbRandom = math.floor(math.random(1,20));
-	if dumbRandom == 2 then
-		-- triggerEvent('Jumpscare', 0, 0);
+		doTweenX('shit', 'camHUD', 0 - outerInt, 1.5, 'circInOut');
 	end
 end
 

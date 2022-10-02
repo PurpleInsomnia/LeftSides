@@ -30,7 +30,7 @@
 		},
 		{
 			"expression": "hmph",
-			"text": "And I didn't like wearing those itchy costumes.",
+			"text": "And I didn't like getting toothpaste...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
@@ -43,53 +43,81 @@
 			"portrait": "bf"
 		},
 		{
-			"expression": "what",
-			"text": "...Yikes... Look how dark it is tonight...\\nCan't see my goddamn hands or my beautiful girlfriend...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "confused",
-			"text": "And why are we taking the old 'shortcut' we used to take when we would walk home from school together??",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "stop-being-cute",
-			"text": "Ummm\\nNostalgia I guess?",
+			"text": "...\\nThe sky looks really pretty tonight..",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"portrait": "gf",
+			"speed": 0.05
 		},
 		{
-			"expression": "look",
-			"text": "I dunno... Place gave me the chills.\\nAlways had a fear of running into something out of the ordinary....",
+			"expression": "sus",
+			"text": "Ehh.......\\nNot AS pretty as you are.",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
-			"expression": "skid-default",
-			"text": "...",
+			"expression": "cute-blushing",
+			"text": "Oh. Really?",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "big-blush",
+			"text": "Really Really.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I mean- Look at yourself right now!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "Fishnets, Cool top, Cute ass earings -Your beautiful face! The list goes on and on."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "....y-you're the sweetest...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "I'd get my nose pierced, but I forgot that I don't have a nose."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "big-blush",
+			"text": "I'll just guess that you look pretty with your nose pierced."
+		},
+		{
+			"expression": "skid-point",
+			"text": "U-um excuse me?",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "spookeez"
 		},
 		{
 			"expression": "cringe",
-			"text": "...\\n...\\nUm. You need something little dudes?",
+			"text": "Oh- Sorry, I'll move out of the wa-",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
-		},
-		{
-			"expression": "hmph",
-			"text": "(wow, that was..... poorly timed)",
-			"boxState": "normal",
-			"speed": 0.075,
-			"portrait": "gf"
 		},
 		{
 			"expression": "pump-point",
@@ -100,7 +128,7 @@
 		},
 		{
 			"expression": "question",
-			"text": "Who.\\nAm.\\nI?",
+			"text": "Huh?",
 			"boxState": "normal",
 			"speed": 0.1,
 			"portrait": "bf"
@@ -113,29 +141,36 @@
 			"portrait": "spookeez"
 		},
 		{
-			"expression": "default",
-			"text": "*Ha Ha* Well, its always nice to meet some...",
+			"expression": "happy",
+			"text": "Oh that, piece of cake lil' dudes.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "hmph",
-			"text": "...(If he says 'Stans', I will pull a 'We ate all your candy')",
+			"expression": "default",
+			"text": "Guess my Dad's angry Twitter ramble made you kinda famous, huh?",
 			"boxState": "normal",
-			"speed": 0,
+			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "cringe",
-			"text": "...Uh, Fans! You want like, my signature or something?",
+			"expression": "guilt",
+			"text": "I hope it wasn't like....\\n...Uh.....\\n...Eggman's family friendly talk about Shadow.",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "what",
+			"text": "Um... Anyways, you guys need anything?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "pump-undertale",
-			"text": "No, We want to sing with YOU!",
+			"text": "We want to sing with YOU!",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "spookeez"
@@ -146,6 +181,20 @@
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
+		},
+		{
+			"expression": "sus",
+			"text": "Right babe?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cringe",
+			"text": "How did they get here just now..?",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.07
 		},
 		{
 			"expression": "what",

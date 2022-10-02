@@ -24,12 +24,14 @@ import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
+import Acheivement;
+import openfl.display.BlendMode;
 
 using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', 'Customize Assets'];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', "System", 'Customize', 'Extras', 'Save Files'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -46,8 +48,16 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
-			case 'Customize Assets':
-				openSubState(new options.CustomizeState());
+			case "System":
+				openSubState(new options.SysSettingsSubState());
+			case 'Customize':
+				openSubState(new options.CustomizeSubState());
+			case 'Save Files':
+				FlxG.sound.music.stop();
+				MusicBeatState.switchState(new SaveFileMenu());
+			case 'Extras':
+				FlxG.sound.music.stop();
+				MusicBeatState.switchState(new options.Extras());
 		}
 	}
 
@@ -59,10 +69,15 @@ class OptionsState extends MusicBeatState
 		DiscordClient.changePresence("Options Menu", null);
 		#end
 
+		FlxG.sound.music.stop();
+
 		FlxG.sound.playMusic(Paths.music('options'));
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuOptions'));
-		bg.color = 0xFFea71fd;
+		var backdrop:GridBackdrop = new GridBackdrop();
+		add(backdrop);
+
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backdropSHADER'));
+		bg.blend = BlendMode.DARKEN;
 		bg.updateHitbox();
 
 		bg.screenCenter();
@@ -74,9 +89,9 @@ class OptionsState extends MusicBeatState
 
 		for (i in 0...options.length)
 		{
-			var optionText:Alphabet = new Alphabet(0, 0, options[i], true, false);
+			var optionText:Alphabet = new Alphabet(0, 0, options[i], true, false, 0.6);
 			optionText.screenCenter();
-			optionText.y += (100 * (i - (options.length / 2))) + 50;
+			optionText.y += (80 * (i - (options.length / 2))) + 50;
 			grpOptions.add(optionText);
 		}
 
@@ -96,6 +111,8 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 	}
 
+
+	var penis:Acheivement;
 	override function update(elapsed:Float) {
 		super.update(elapsed);
 
@@ -109,7 +126,10 @@ class OptionsState extends MusicBeatState
 		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new MainMenuState());
+			if (!ClientPrefs.babyShitPiss)
+				MusicBeatState.switchState(new MainMenuState());
+			else
+				MusicBeatState.switchState(new Baby());
 		}
 
 		if (controls.ACCEPT) {

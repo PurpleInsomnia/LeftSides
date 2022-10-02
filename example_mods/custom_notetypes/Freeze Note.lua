@@ -4,6 +4,7 @@ function onCreate()
 	for i = 0, getProperty('unspawnNotes.length')-1 do
 		if getPropertyFromGroup('unspawnNotes', i, 'noteType') == 'Freeze Note' then
 			setPropertyFromGroup('unspawnNotes', i, 'texture', 'christmas/freezeNotes');
+			setPropertyFromGroup('unspawnNotes', i, 'angle', 180);
 
 			if getPropertyFromGroup('unspawnNotes', i, 'mustPress') then --Doesn't let Dad/Opponent notes get ignored
 				setPropertyFromGroup('unspawnNotes', i, 'ignoreNote', true); --Miss has no penalties
@@ -14,16 +15,18 @@ function onCreate()
 	makeLuaSprite('cloud', 'freezeCloud', 0, 0);
 	addLuaSprite('cloud', false);
 	
-	makeLuaSprite('outline', 'freezeOutline', 0, 0);
+	makeLuaSprite('outline', 'monster/frozen', 0, 0);
 	addLuaSprite('outline', true);
 
-	makeLuaSprite('bar', 'frozenHealthBar', getProperty('healthBar.x'), getProperty('healthbar.y'));
+	barX = getProperty('healthBarBG.x');
+	barY = getProperty('healthBarBG.y');
+	makeLuaSprite('bar', 'frozenHealthBar', barX, barY);
+	setObjectCamera('bar', 'hud');
 	addLuaSprite('bar', true);
 	-- he he he ha
 	
 	setObjectCamera('cloud', 'hud');
 	setObjectCamera('outline', 'hud');
-	setObjectCamera('bar', 'hud');
 	
 	setPropertyLuaSprite('cloud', 'alpha', 0);
 	setPropertyLuaSprite('outline', 'alpha', 0);
@@ -36,22 +39,10 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'Freeze Note' then
 		setProperty('outline.visible', true);
 		outlineVisible = true;
-		doTweenAlpha('freezeOn', 'cloud', 1, 0.1, 'linear');
+		doTweenAlpha('freezeOn', 'cloud', 0.5, 0.1, 'linear');
 		doTweenAlpha('outlineOn', 'outline', 1, 0.75, 'linear');
-		doTweenAlpha('eggman', 'bar', 1, 0.75, 'linear');
-		if gfSing then
-			setProperty('health', health - 0.05);
-		end
-		if duet then
-			setProperty('health', health - 0.1);
-		end
-		if not gfSing then
-			setProperty('health', health - 0.15);
-		end
-		if not duet then
-			setProperty('health', health - 0.15);
-		end
-		
+		doTweenAlpha('eggman', 'bar', 1, 1, 'linear');
+		setProperty('health', health - healthLoss);
 		-- Other Funny Stuff
 		
 		playSound('freeze');
@@ -77,7 +68,7 @@ function onTimerCompleted(tag)
 		doTweenAlpha('cock', 'outline', 0, 1, 'linear');
 		doTweenAlpha('shadow', 'bar', 0, 1, 'linear');
 		healthFrozen = false;
-		playSound('thaw')
+		playSound('thaw');
 	end
 end
 

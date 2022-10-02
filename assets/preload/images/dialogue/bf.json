@@ -1,271 +1,323 @@
 {
-	"dialogue_pos": "right",
 	"position": [
 		140,
 		110
 	],
+	"dialogue_pos": "right",
 	"scale": 1.8,
+	"image": "BF_Dialogue",
 	"animations": [
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "angry",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "angry",
-			"idle_name": "angry"
+			"idle_name": "angry",
+			"loop_name": "angry"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "what-is-this-emotion",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "ass",
-			"idle_name": "ass"
+			"idle_name": "ass",
+			"loop_name": "ass"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "blush",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "blush",
-			"idle_name": "blush"
+			"idle_name": "blush",
+			"loop_name": "blush"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "challenge",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "challenge",
-			"idle_name": "challenge"
+			"idle_name": "challenge",
+			"loop_name": "challenge"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "confused",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "confused",
-			"idle_name": "confused"
+			"idle_name": "confused",
+			"loop_name": "confused"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "cringe",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "cringe",
-			"idle_name": "cringe"
+			"idle_name": "cringe",
+			"loop_name": "cringe"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "default",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "default",
-			"idle_name": "default"
+			"idle_name": "default",
+			"loop_name": "default"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "happy",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "happy",
-			"idle_name": "happy"
+			"idle_name": "happy",
+			"loop_name": "happy"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "guilt",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "guilt",
-			"idle_name": "guilt"
+			"idle_name": "guilt",
+			"loop_name": "guilt"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "look",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "look",
-			"idle_name": "look"
+			"idle_name": "look",
+			"loop_name": "look"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "question",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "question",
-			"idle_name": "question"
+			"idle_name": "question",
+			"loop_name": "question"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "sad",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "sadness-combat",
-			"idle_name": "sadness-combat"
+			"idle_name": "sadness-combat",
+			"loop_name": "sadness-combat"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "scared",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "scared",
-			"idle_name": "scared"
+			"idle_name": "scared",
+			"loop_name": "scared"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "trolling",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "trolling",
-			"idle_name": "trolling"
+			"idle_name": "trolling",
+			"loop_name": "trolling"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "waking-up",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "waking-up",
-			"idle_name": "waking-up"
+			"idle_name": "waking-up",
+			"loop_name": "waking-up"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "what",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "what",
-			"idle_name": "what"
+			"idle_name": "what",
+			"loop_name": "what"
 		},
 		{
-			"loop_offsets": [
+			"idle_offsets": [
 				0,
 				0
 			],
 			"anim": "zamn",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"loop_name": "zamn",
-			"idle_name": "zamn"
+			"idle_name": "zamn",
+			"loop_name": "zamn"
 		},
 		{
-			"loop_name": "sus",
-			"idle_offsets": [
+			"loop_offsets": [
 				0,
 				0
 			],
-			"idle_name": "sus",
 			"anim": "sus",
-			"loop_offsets": [
-				0,
-				0
-			]
-		},
-		{
-			"loop_name": "sleeping",
 			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "sleeping",
+			"loop_name": "sus",
+			"idle_name": "sus"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
 			"anim": "sleeping",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "sleeping",
+			"idle_name": "sleeping"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "amongus",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "cool-dude",
+			"idle_name": "cool-dude"
+		},
+		{
+			"loop_name": "tired",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "tired",
+			"anim": "sleepy",
 			"loop_offsets": [
 				0,
 				0
 			]
 		},
 		{
-			"loop_name": "cool-dude",
+			"loop_name": "flustered",
 			"idle_offsets": [
 				0,
 				0
 			],
-			"idle_name": "cool-dude",
-			"anim": "amongus",
+			"idle_name": "flustered",
+			"anim": "big-blush",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "the-rock",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "the-rock",
+			"anim": "thud",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "pardon",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "pardon",
+			"anim": "say-what",
 			"loop_offsets": [
 				0,
 				0
 			]
 		}
-	],
-	"image": "BF_Dialogue"
+	]
 }

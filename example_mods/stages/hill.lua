@@ -1,46 +1,23 @@
 local canStrike = true;
 function onCreate()
-	makeLuaSprite('sky','week2/spooky/sky', -200, -100);
-	addLuaSprite('sky', false);
-	setLuaSpriteScrollFactor('sky', 0.9, 0.9);
+	-- fuck seperate sprites. lmfao
+	makeLuaSprite('android', 'spookyBG', -200, -100);
+	addLuaSprite('android', false);
 
-	makeLuaSprite('stars','week2/spooky/stars', -200, -100);
-	addLuaSprite('stars', false);
-	setLuaSpriteScrollFactor('stars', 0.9, 0.9);
+	makeLuaSprite('pole', 'week2/spooky/streetpole', -200, -100);
+	addLuaSprite('pole', false);
 
-	makeLuaSprite('moon','week2/spooky/the moon', -200, -100);
-	addLuaSprite('moon', false);
-	setLuaSpriteScrollFactor('moon', 0.9, 0.9);
+	-- vroom vroom
+	makeLuaSprite('car', 'week2/spooky/spookyCar', -1449, -100);
+	addLuaSprite('car', true);
 
-	makeLuaSprite('trees','week2/spooky/trees', -200, -100);
-	addLuaSprite('trees', false);
-	setLuaSpriteScrollFactor('trees', 0.9, 0.9);
-
-	makeLuaSprite('fg','week2/spooky/grass', -200, -100);
-	addLuaSprite('fg', false);
-	setLuaSpriteScrollFactor('fg', 0.9, 0.9);
-
-	-- for cool lightning effect
-
-	if lowQuality then
-		removeLuaSprite('sky', true);
-		removeLuaSprite('stars', true);
-		removeLuaSprite('moon', true);
-		removeLuaSprite('trees', true);
-		removeLuaSprite('fg', true);
-
-		makeLuaSprite('android', 'spookyBG', -200, -100);
-		addLuaSprite('android', false);
-	end
+	makeLuaSprite('overlay', 'week2/spookyOverlay', -200, -50);
+	addLuaSprite('overlay', true);
 
 	makeLuaSprite('white', 'coolVisuals/white', 0, 0);
 	addLuaSprite('white', true);
 	setObjectCamera('white', 'hud');
 	setProperty('white.alpha', 0);
-end
-
-function onStartCountdown()
-	doTweenX('starMove', 'stars', 1000, 200, 'linear');
 end
 
 function onUpdate(elapsed)
@@ -52,6 +29,11 @@ function onBeatHit()
 	if canStrike then
 		runTimer('thunder', randomNum);
 		canStrike = false;
+	end
+
+	if curBeat % 28 == 0 then
+		playSound('spookyDrive');
+		runTimer('carTimer', 0.96);
 	end
 end
 
@@ -79,5 +61,19 @@ function onTimerCompleted(tag)
 	end
 	if tag == 'coolDown' then
 		canStrike = true;
-	end		
+	end	
+	if tag == 'carTimer' then
+		moveCar();
+	end	
+end
+
+-- beep beep :)
+function moveCar()
+	doTweenX('carTween', 'car', 2114, 0.5, 'linear');
+end
+
+function onTweenCompleted(tag)
+	if tag == 'carTween' then
+		setProperty('car.x', -1449);
+	end
 end

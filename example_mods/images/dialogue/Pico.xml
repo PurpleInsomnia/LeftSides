@@ -1,9 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="Pico.png">
-<SubTexture name="Pico angry0000" x="0" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
-<SubTexture name="bruh0000" x="417" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
-<SubTexture name="default0000" x="834" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
-<SubTexture name="gun0000" x="1251" y="0" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
-<SubTexture name="upset0000" x="0" y="253" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
-<SubTexture name="vine-boom0000" x="417" y="253" width="417" height="253" frameX="0" frameY="0" frameWidth="417" frameHeight="253" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:ce2b8feb00267d35bff90716b423a63c:3868a93f3203bc5bb4e6c06d80fb6277:f42cfcaa55dc2f20e4bd732662bb856c$ -->
+<TextureAtlas imagePath="Pico.png" width="828" height="845">
+    <SubTexture name="angry" x="0" y="0" width="409" height="275"/>
+    <SubTexture name="bruh" x="419" y="0" width="409" height="275"/>
+    <SubTexture name="default" x="0" y="285" width="409" height="275"/>
+    <SubTexture name="gun" x="419" y="285" width="409" height="275"/>
+    <SubTexture name="upset" x="0" y="570" width="409" height="275"/>
+    <SubTexture name="vine-boom" x="419" y="570" width="409" height="275"/>
 </TextureAtlas>

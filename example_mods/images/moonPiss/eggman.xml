@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:1cc3be14ad30962c807b664f9392ef7f:1d246eb6b17388bd7e9590b7d15cd0d0:097b0aa2f234e272c99f5294f7bc8930$ -->
+<TextureAtlas imagePath="eggman.png" width="6342" height="6450">
+    <SubTexture name="Down/000" x="0" y="0" width="2114" height="1075"/>
+    <SubTexture name="Down/001" x="2114" y="0" width="2114" height="1075"/>
+    <SubTexture name="Down/002" x="4228" y="0" width="2114" height="1075"/>
+    <SubTexture name="Idle/000" x="0" y="1075" width="2114" height="1075"/>
+    <SubTexture name="Idle/001" x="2114" y="1075" width="2114" height="1075"/>
+    <SubTexture name="Idle/002" x="4228" y="1075" width="2114" height="1075"/>
+    <SubTexture name="Idle/003" x="0" y="2150" width="2114" height="1075"/>
+    <SubTexture name="Idle/004" x="2114" y="2150" width="2114" height="1075"/>
+    <SubTexture name="Left/000" x="4228" y="2150" width="2114" height="1075"/>
+    <SubTexture name="Left/001" x="0" y="3225" width="2114" height="1075"/>
+    <SubTexture name="Left/002" x="2114" y="3225" width="2114" height="1075"/>
+    <SubTexture name="Right/000" x="4228" y="3225" width="2114" height="1075"/>
+    <SubTexture name="Right/001" x="0" y="4300" width="2114" height="1075"/>
+    <SubTexture name="Right/002" x="2114" y="4300" width="2114" height="1075"/>
+    <SubTexture name="Up/000" x="4228" y="4300" width="2114" height="1075"/>
+    <SubTexture name="Up/001" x="0" y="5375" width="2114" height="1075"/>
+    <SubTexture name="Up/002" x="2114" y="5375" width="2114" height="1075"/>
+</TextureAtlas>

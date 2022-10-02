@@ -1,9 +1,9 @@
 {
-	"storyName": "Spooky Month",
+	"storyName": "TRICK OR TREAT",
 	"hideFreeplay": false,
 	"weekBackground": "halloween",
 	"weekBefore": "week1",
-	"startUnlocked": true,
+	"startUnlocked": false,
 	"weekCharacters": [
 		"",
 		"bf",
@@ -12,6 +12,15 @@
 	"songs": [
 		[
 			"Spookeez",
+			"spooky",
+			[
+				34,
+				51,
+				68
+			]
+		],
+		[
+			"Treats And Tricks",
 			"spooky",
 			[
 				34,
@@ -29,7 +38,7 @@
 			]
 		],
 		[
-			"Free-Me",
+			"Free Me",
 			"freeme-alt",
 			[
 				20,

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:468f5f5ae6fb0a779e4fa2c9c69246cf:7bdf9d46fed222dcfc6680dce52a056a:60c605be70ed9149f5cdead0cf334f7f$ -->
+<TextureAtlas imagePath="bfPixel.png" width="1231" height="245">
+    <SubTexture name="default" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="upset" x="411" y="0" width="409" height="245"/>
+    <SubTexture name="what" x="822" y="0" width="409" height="245"/>
+</TextureAtlas>

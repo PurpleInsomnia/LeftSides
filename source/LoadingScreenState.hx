@@ -20,73 +20,133 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
+import sys.FileSystem;
 
 using StringTools;
 
 class LoadingScreenState extends MusicBeatState
 {
 	private var camGame:FlxCamera;
-	private var camAchievement:FlxCamera;
 
-	var notDone:FlxSprite;
-	var done:FlxSprite;
+	var peepeepoopoo:LoadingSpr;
+
+	var files:Array<String> = [];
+
+	var statusText:FlxText;
+
+	var done:Bool = false;
+
+	var pushedFiles:Bool = false;
 
 	override function create()
 	{
+		#if MODS_ALLOWED
+		Paths.destroyLoadedImages();
+		#end
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Loading", null);
 		#end
 
-		camGame = new FlxCamera();
-		camAchievement = new FlxCamera();
-		camAchievement.bgColor.alpha = 0;
+		files = ["..."];
 
-		FlxG.cameras.reset(camGame);
-		FlxG.cameras.add(camAchievement);
-		FlxCamera.defaultCameras = [camGame];
+		done = false;
+
+		pushedFiles = false;
+
+		FlxG.sound.music.stop();
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('loadingScreen'));
-		bg.screenCenter();
-		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		add(bg);
+		peepeepoopoo = new LoadingSpr();
+		add(peepeepoopoo);
 
-		var notDone:FlxSprite = new FlxSprite().loadGraphic(Paths.image('loadingText'));
-		notDone.screenCenter();
-		notDone.antialiasing = ClientPrefs.globalAntialiasing;
-		add(notDone);
+		statusText = new FlxText(0, 0, 'Loading...', 24);
+		statusText.font = Paths.font('eras.ttf');
+		statusText.y = Std.int(FlxG.height - statusText.height);
+		add(statusText);
 
-		done = new FlxSprite().loadGraphic(Paths.image('loadingTextDone'));
-		done.screenCenter();
-		done.antialiasing = ClientPrefs.globalAntialiasing;
-		add(done);
-		done.visible = false;
-
-		trace('Loading...');
-
-		FlxG.sound.playMusic(Paths.music('loading'));
-
-		FlxG.sound.music.fadeIn(4, 0, 0.7);
-
-		new FlxTimer().start(15, function(tmr:FlxTimer)
+		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
-			trace('done!!!');
-			// FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.sound('scrollFreeplay'));
-			notDone.visible = false;
-			done.visible = false;
+			getStuff();
+		});
+
+		new FlxTimer().start(4, function(tmr:FlxTimer)
+		{
+			done = true;
 			LoadingState.loadAndSwitchState(new PlayState());
 		});
 	}
 	
 	override function update(elapsed:Float)
 	{
+		
 		if (FlxG.keys.justPressed.SPACE)
 		{
 			LoadingState.loadAndSwitchState(new PlayState());
 		}
+		peepeepoopoo.angle += 90 * elapsed;
+
+
+		if (pushedFiles && !done)
+		{
+			statusText.text = 'Loading (' + files[files.length - 1] + ')...';
+		}
+		if (done)
+		{
+			statusText.text = 'Done!';
+		}
+		super.update(elapsed);
+	}
+
+	function getStuff()
+	{
+		return Paths.inst(PlayState.SONG.song);
+		if (PlayState.encoreMode)
+			return Paths.instEncore(PlayState.SONG.song);
+		if (PlayState.SONG.needsVoices)
+			return Paths.voices(PlayState.SONG.song);
+		if (PlayState.SONG.needsVoices && PlayState.encoreMode)
+			return Paths.voicesEncore(PlayState.SONG.song);
+
+		pushedFiles = true;
+
+		for (file in FileSystem.readDirectory('assets/shared/images/'))
+		{
+			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('mods/images/'))
+		{
+			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('assets/shared/sounds/'))
+		{
+			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('mods/sounds/'))
+		{
+			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('mods/' + Paths.currentModDirectory + '/images/'))
+		{
+			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('mods/' + Paths.currentModDirectory + '/sounds/'))
+		{
+			files.push(file);
+		}
+	}
+}
+
+class LoadingSpr extends FlxSprite
+{
+	public function new()
+	{
+		super();
+		loadGraphic(Paths.image('loadingCircle'));
+		x = FlxG.width - 64;
+		y = FlxG.height - 64;
 	}
 }

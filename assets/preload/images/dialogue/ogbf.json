@@ -1,0 +1,37 @@
+{
+	"position": [
+		120,
+		125
+	],
+	"dialogue_pos": "left",
+	"scale": 1.85,
+	"image": "ogBf",
+	"animations": [
+		{
+			"idle_offsets": [
+				20,
+				0
+			],
+			"loop_offsets": [
+				20,
+				0
+			],
+			"anim": "default",
+			"idle_name": "default",
+			"loop_name": "default"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "wat",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "wat",
+			"idle_name": "wat"
+		}
+	]
+}

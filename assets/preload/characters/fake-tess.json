@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				41,
+				-133
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				-39,
+				-137
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				-17,
+				-214
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				-20,
+				-121
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-17,
+				-138
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/FakeTess",
+	"position": [
+		80,
+		70
+	],
+	"healthicon": "fake",
+	"flip_x": true,
+	"healthbar_colors": [
+		40,
+		0,
+		40
+	],
+	"camera_position": [
+		30,
+		100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

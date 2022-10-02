@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:76056cf41985c2a0608eab4b988c15dc:f21fc5a66147be93be34e4eb12869fd9:4d5266bce9643cfe32519716cb0f4ab5$ -->
+<TextureAtlas imagePath="pixel_BF.png" width="508" height="216">
+    <SubTexture name="Death/000" x="0" y="0" width="70" height="70"/>
+    <SubTexture name="Death/001" x="73" y="0" width="70" height="70"/>
+    <SubTexture name="Death/002" x="146" y="0" width="70" height="70"/>
+    <SubTexture name="Death/003" x="219" y="0" width="70" height="70"/>
+    <SubTexture name="Death/004" x="292" y="0" width="70" height="70"/>
+    <SubTexture name="Death/005" x="365" y="0" width="70" height="70"/>
+    <SubTexture name="Death/006" x="438" y="0" width="70" height="70"/>
+    <SubTexture name="Death/007" x="0" y="73" width="70" height="70"/>
+    <SubTexture name="Death/008" x="73" y="73" width="70" height="70"/>
+    <SubTexture name="Down/000" x="146" y="73" width="70" height="70"/>
+    <SubTexture name="Down/001" x="219" y="73" width="70" height="70"/>
+    <SubTexture name="Idle/000" x="292" y="73" width="70" height="70"/>
+    <SubTexture name="Idle/001" x="365" y="73" width="70" height="70"/>
+    <SubTexture name="Idle/002" x="438" y="73" width="70" height="70"/>
+    <SubTexture name="Left/000" x="0" y="146" width="70" height="70"/>
+    <SubTexture name="Left/001" x="73" y="146" width="70" height="70"/>
+    <SubTexture name="Right/000" x="146" y="146" width="70" height="70"/>
+    <SubTexture name="Right/001" x="219" y="146" width="70" height="70"/>
+    <SubTexture name="Up/000" x="292" y="146" width="70" height="70"/>
+    <SubTexture name="Up/001" x="365" y="146" width="70" height="70"/>
+</TextureAtlas>

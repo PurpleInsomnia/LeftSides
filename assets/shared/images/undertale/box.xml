@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:6204853a4d2f8b61a3bb5bdf66c0b779:494a0044b29bae8e32e5b864cf03fc3f:11f47976d0243ecdc22756eded2743ef$ -->
+<TextureAtlas imagePath="box.png" width="3250" height="1120">
+    <SubTexture name="bf0" x="0" y="0" width="1080" height="220"/>
+    <SubTexture name="bf1" x="1085" y="0" width="1080" height="220"/>
+    <SubTexture name="bf2" x="2170" y="0" width="1080" height="220"/>
+    <SubTexture name="bf3" x="0" y="225" width="1080" height="220"/>
+    <SubTexture name="gf0" x="1085" y="225" width="1080" height="220"/>
+    <SubTexture name="gf1" x="2170" y="225" width="1080" height="220"/>
+    <SubTexture name="gf2" x="0" y="450" width="1080" height="220"/>
+    <SubTexture name="pap0" x="1085" y="450" width="1080" height="220"/>
+    <SubTexture name="pap1" x="2170" y="450" width="1080" height="220"/>
+    <SubTexture name="pap2" x="0" y="675" width="1080" height="220"/>
+    <SubTexture name="pap3" x="1085" y="675" width="1080" height="220"/>
+    <SubTexture name="sans0" x="2170" y="675" width="1080" height="220"/>
+    <SubTexture name="sans1" x="0" y="900" width="1080" height="220"/>
+    <SubTexture name="sans2" x="1085" y="900" width="1080" height="220"/>
+    <SubTexture name="sans3" x="2170" y="900" width="1080" height="220"/>
+</TextureAtlas>

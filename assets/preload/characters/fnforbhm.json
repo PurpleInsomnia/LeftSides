@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				215,
+				184
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				61,
+				184
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				158,
+				62
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				59,
+				173
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				173,
+				62
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				59,
+				50
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"loop": false,
+			"name": "Sussy Baka"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "too-fest/fnforbhm",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "fnforbhm",
+	"flip_x": false,
+	"healthbar_colors": [
+		103,
+		88,
+		255
+	],
+	"camera_position": [
+		-310,
+		40
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -1,89 +1,89 @@
 {
+	"dialogue_pos": "left",
 	"position": [
 		140,
 		100
 	],
-	"dialogue_pos": "left",
-	"scale": 1.85,
-	"image": "Pico",
+	"scale": 1.95,
 	"animations": [
 		{
-			"loop_name": "default",
-			"idle_offsets": [
-				0,
-				0
+			"loop_offsets": [
+				-50,
+				10
 			],
-			"idle_name": "default",
 			"anim": "default",
-			"loop_offsets": [
-				0,
-				0
-			]
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "default",
+			"idle_name": "default"
 		},
 		{
-			"loop_name": "Pico angry",
-			"idle_offsets": [
-				0,
-				0
+			"loop_offsets": [
+				-50,
+				10
 			],
-			"idle_name": "Pico angry",
 			"anim": "angry",
-			"loop_offsets": [
-				0,
-				0
-			]
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "angry",
+			"idle_name": "angry"
 		},
 		{
-			"loop_name": "gun",
-			"idle_offsets": [
-				-40,
-				0
+			"loop_offsets": [
+				-50,
+				10
 			],
-			"idle_name": "gun",
 			"anim": "gun",
-			"loop_offsets": [
-				-40,
-				0
-			]
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "gun",
+			"idle_name": "gun"
 		},
 		{
-			"loop_name": "bruh",
-			"idle_offsets": [
-				0,
-				0
+			"loop_offsets": [
+				-50,
+				10
 			],
-			"idle_name": "bruh",
 			"anim": "bruh",
-			"loop_offsets": [
-				0,
-				0
-			]
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "bruh",
+			"idle_name": "bruh"
 		},
 		{
-			"loop_name": "upset",
-			"idle_offsets": [
-				0,
-				0
+			"loop_offsets": [
+				-50,
+				10
 			],
-			"idle_name": "upset",
 			"anim": "upset",
-			"loop_offsets": [
-				0,
-				0
-			]
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "upset",
+			"idle_name": "upset"
 		},
 		{
-			"loop_name": "vine-boom",
-			"idle_offsets": [
-				0,
-				0
-			],
-			"idle_name": "vine-boom",
-			"anim": "wat",
 			"loop_offsets": [
-				0,
-				0
-			]
+				-50,
+				10
+			],
+			"anim": "wat",
+			"idle_offsets": [
+				-50,
+				10
+			],
+			"loop_name": "vine-boom",
+			"idle_name": "vine-boom"
 		}
-	]
+	],
+	"image": "Pico"
 }

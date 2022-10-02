@@ -1,87 +1,109 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
-				102
+				0
 			],
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
-		},
-		{
 			"loop": false,
-			"offsets": [
-				0,
-				100
-			],
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-69,
-				100
-			],
-			"fps": 24,
-			"anim": "shoot",
-			"indices": [],
-			"name": "Shoot"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				100
-			],
 			"anim": "idle",
 			"fps": 24,
-			"name": "Idle0",
+			"name": "Pico Idle Dance",
 			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-2,
-				100
+				55,
+				-21
 			],
+			"loop": false,
 			"anim": "singLEFT",
 			"fps": 24,
-			"name": "Left",
+			"name": "Pico Note Right0",
 			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
-				2,
-				100
+				-80,
+				-7
 			],
+			"loop": false,
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "Right",
+			"name": "Pico NOTE LEFT0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-18,
+				38
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "pico Up note0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				188,
+				-97
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Pico Down Note0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				188,
+				-97
+			],
+			"loop": false,
+			"anim": "shoot",
+			"fps": 24,
+			"name": "Pico Shoot",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "Pico Idle Angry",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "cock",
+			"fps": 24,
+			"name": "Pico Cock",
 			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Pico_FNF_assetss",
 	"position": [
-		20,
+		0,
 		300
 	],
 	"healthicon": "pico",
 	"flip_x": true,
 	"healthbar_colors": [
-		82,
-		82,
-		82
+		140,
+		0,
+		0
 	],
 	"camera_position": [
-		30,
+		0,
 		0
 	],
 	"sing_duration": 4,

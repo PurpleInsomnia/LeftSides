@@ -1,25 +1,32 @@
-function onCreate()
-	doTweenColor('dadShading', 'dad', '6D7AD7', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '6D7AD7', 0.001, 'linear');
-	doTweenColor('bfShading', 'boyfriend', '6D7AD7', 0.001, 'linear');
-	doTweenColor('dancerShading', 'dancer', '6D7AD7', 0.001, 'linear');
-	doTweenColor('carShading', 'fastCar', '6D7AD7', 0.001, 'linear');
-	doTweenColor('limoShading', 'bgLimo', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShading', 'limoCorpse', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShadingTwo', 'limoCorpseTwo', '6D7AD7', 0.001, 'linear');
+-- you can use this in your mods, just leave this last comment in if you do.
+-- Dialogue Bg script by PurpleInsomnia
+local loaded = false;
+local dialogueBg = function (bg, tween, other)
+	if loaded then
+		removeLuaSprite('dialogueBg', true);
+	end
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
+	if other then
+		setObjectCamera('dialogueBg', 'camOther');
+	else
+		setObjectCamera('dialogueBg', 'camHUD');
+	end
+	addLuaSprite('dialogueBg', false);
+	setProperty('dialogueBg.alpha', 0);
+	if tween then
+		doTweenAlpha('tweenIsTrue', 'dialogueBg', 1, 1, 'linear');
+	else
+		setProperty('dialogueBg.alpha', 1);
+	end
+	loaded = true;
+end
 
-	-- dumb Countdown Sprites
-	makeLuaSprite('ready', 'limoBG/ready', 0, 0);
-	setObjectCamera('ready', 'hud');
-
-	makeLuaSprite('readySmol', 'limoBG/readySmol', 0, 0);
-	setObjectCamera('readySmol', 'hud');
-
-	makeLuaSprite('set', 'limoBG/set', 0, 0);
-	setObjectCamera('set', 'hud');
-
-	makeLuaSprite('go', 'limoBG/go', 0, 0);
-	setObjectCamera('go', 'hud');
+local bgAlpha = function (val, tween, sec)
+	if tween then
+		doTweenAlpha('bgFade', 'dialogueBg', val, sec, 'linear');
+	else
+		setProperty('dialogueBg.alpha', val);
+	end
 end
 
 local allowCountdown = false;
@@ -42,54 +49,25 @@ end
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
+	if count == 17 then
+		dialogueBg('tips/limo', false, true);
+	end
 end
 
 function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
 end
 
-function onBeatHit()
-	if curBeat == 164 then
-		addLuaSprite('ready', false);
-	end
-	if curBeat == 165 then
-		addLuaSprite('readySmol', false);
-	end
-	if curBeat == 166 then
-		addLuaSprite('set', false);
-	end
-	if curBeat == 167 then
-		addLuaSprite('go', false);
-	end
-	if curBeat == 168 then
-		doTweenAlpha('zzz', 'go', 0, 0.25, 'linear');
+function onCountdownTick(counter)
+	if counter == 0 then
+		bgAlpha(0, true, 1);
 	end
 end
 
-function onStepHit()
-	-- I typed this in at 3 am B)
-	if curStep == 666 then
-		doTweenAlpha('sex', 'set', 0, 0.25, 'linear');
-	end
-	if curStep == 658 then
-		doTweenAlpha('yeet', 'ready', 0, 0.25, 'linear');
-	end
-	if curStep == 661 then
-		doTweenAlpha('bcs', 'readySmol', 0, 0.25, 'linear');
-	end
+function onCreate()
+	dialogueBg('limo');
 end
 
-function onTweenCompleted(tag)
-	if tag == 'yeet' then
-		removeLuaSprite('ready', false);
-	end
-	if tag == 'sex' then
-		removeLuaSprite('set', false);
-	end
-	if tag == 'zzz' then
-		removeLuaSprite('go', false);
-	end
-	if tag == 'bcs' then
-		removeLuaSprite('readySmol', false);
-	end
+function onCreatePost()
+	triggerEvent('Alt Idle Animation', 'boyfriend', '-alt');
 end

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BFANDGF.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Dance0000" x="0" y="0" width="551" height="424" frameX="-1" frameY="-8" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0001" x="0" y="0" width="551" height="424" frameX="-1" frameY="-8" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0002" x="561" y="0" width="554" height="424" frameX="0" frameY="-8" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0003" x="561" y="0" width="554" height="424" frameX="0" frameY="-8" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0004" x="1125" y="0" width="555" height="426" frameX="-3" frameY="-6" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0005" x="1125" y="0" width="555" height="426" frameX="-3" frameY="-6" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0006" x="0" y="436" width="556" height="429" frameX="-1" frameY="-3" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0007" x="0" y="436" width="556" height="429" frameX="-1" frameY="-3" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0008" x="566" y="436" width="558" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0009" x="566" y="436" width="558" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0010" x="1134" y="436" width="559" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0011" x="1134" y="436" width="559" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0012" x="0" y="878" width="559" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+	<SubTexture name="Dance0013" x="0" y="878" width="559" height="432" frameX="-2" frameY="0" frameWidth="561" frameHeight="432"/>
+</TextureAtlas>

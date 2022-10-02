@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -30,16 +30,7 @@ local bgAlpha = function (val, tween, sec)
 end
 
 function onCreate()
-	doTweenColor('dadShading', 'dad', '6D7AD7', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '6D7AD7', 0.001, 'linear');
-	doTweenColor('bfShading', 'boyfriend', '6D7AD7', 0.001, 'linear');
-	doTweenColor('dancerShading', 'dancer', '6D7AD7', 0.001, 'linear');
-	doTweenColor('carShading', 'fastCar', '6D7AD7', 0.001, 'linear');
-	doTweenColor('limoShading', 'bgLimo', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShading', 'limoCorpse', '6D7AD7', 0.001, 'linear');
-	doTweenColor('goreShadingTwo', 'limoCorpseTwo', '6D7AD7', 0.001, 'linear');
-
-	dialogueBg('dialogueBgs/limo', false, false);
+	dialogueBg('limoSunset', false, false);
 end
 
 local allowCountdown = false;
@@ -53,20 +44,29 @@ function onStartCountdown()
 	return Function_Continue;
 end
 
+local isLoaded = false;
 function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
+		loadDialogue('flert');
+	end
+	if tag == 'startDialogue2' then
+		dialogueBg('limoSunset');
 		startDialogue('dialogue', 'mommy');
+		isLoaded = true;
 	end
 end
 
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
-	if count == 6 then
-		dialogueBg('dialogueBgs/timeCards/half', false, true);
+	if count == 15 and not isLoaded then
+		playSound('momLands');
 	end
-	if count == 7 then
-		dialogueBg('dialogueBgs/limo');
+	if count == 6 and isLoaded then
+		dialogueBg('timeCards/half', false, true);
+	end
+	if count == 7 and isLoaded then
+		dialogueBg('limoSunset');
 	end
 end
 
@@ -77,5 +77,12 @@ end
 function onCountdownTick(counter)
 	if counter == 0 then
 		bgAlpha(0, true, 1);
+	end
+end
+
+function onDialogueComplete(tag)
+	if tag == 'flert' then
+		dialogueBg('black');
+		runTimer('startDialogue2', 1);
 	end
 end

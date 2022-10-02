@@ -1,0 +1,53 @@
+{
+	"dialogue": [
+		{
+			"expression": "happy",
+			"text": "Huh. Not to shabby!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "thud",
+			"text": "Probably might be better than Mister Dearest I'm just sayin.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "hmph",
+			"text": "Yeah...yeah you're right...I don't like the music he makes...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "It's too loud..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "On another note little dudes, Tess and I wanna get more candy..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "skid-sad",
+			"text": "Can we just do two more songs? Pleeeeeease?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Fine....Nothing more than that...."
+		}
+	]
+}

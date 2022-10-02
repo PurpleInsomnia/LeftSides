@@ -4,239 +4,288 @@
 			"expression": "blush",
 			"text": "Wow, The 24th floor",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "trolling",
 			"text": "Now THAT'S a view to kill for",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
 			"text": "(Strange, my parents always went for the 23rd floor)",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "stop-being-cute",
 			"text": "(Is this year a special occasion because of my plus one???)",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "what",
 			"text": "",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
 			"text": "That's weird...\\nUsually the room would be packed with people...\\nBut its completely empty in here....",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "guilt",
 			"text": "Are you sure you pressed the right button on the slow ass elevator?",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
 			"text": "99.9% sure...",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "question",
 			"text": "Huh.........\\nShould we call your dad and ask what going o-",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "gun",
 			"text": "Hold it right there!!!",
 			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "gun",
-			"text": "Ah, if it isn't the 'infamous' Boyfriend.",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "I'm doing good, how are you since you asked..\\n...Pico",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "hmph",
-			"text": "Oh god its this bozo again...\\nDidn't you like.... Drop out in the 10th grade?\\n...because you fail-",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "Shut UP!\\nYOU HAVE NO IDEA WHAT I HAVE AGAINST YOUR 'BOYFRIEND'!!!!!",
-			"boxState": "angry",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "Okay Gf, Here's what he has against me; We were both rivals growing up.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "Also, You can't use 'boyfriend' as an insult anymore.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "trolling",
-			"text": "Apart from that being my legal name (why?) I have won her heart, And her ti-",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "-SHUT UP!!!",
-			"boxState": "angry",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "This time, I will NOT ALLOW myself to lose!!",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "what now...",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "gun",
-			"text": "Your Gf's father tasked me to kill you.\\nHowever,\\nWe have such a strong connection.",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "(Ah but of course)",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "I'm challenging you to a rap battle!",
-			"boxState": "angry",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "cringe",
-			"text": "...",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "hmph",
-			"text": "Does this dude use Bing?",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "what",
-			"text": "...\\nI don't think you've heard ",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "bruh",
-			"text": "Heard what?",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "trolling",
-			"text": "About the bird",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "pico"
 		},
 		{
 			"expression": "wat",
-			"text": "",
+			"text": "Oh.",
 			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"speed": 0.05,
 			"portrait": "pico",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "The cocky boyfriend of the weird girl. OF ALL PLACES!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "God damnit. I thought that nickname would stop after I graduated."
+		},
+		{
+			"expression": "confused",
+			"text": "Pico.\\nLong time no see.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "-And stop calling Tess ''The Weird Girl'' you fucking asshole."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Like, how am I weird when I'm not the one wearing a Fedora?"
+		},
+		{
+			"expression": "upset",
+			"text": "Shut UP!\\nYOU HAVE NO IDEA WHAT I HAVE AGAINST HIM!!!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "cringe",
+			"text": "...Yes she does.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "happy",
-			"text": "*Ha Ha* Okay, So I've recently made headlines\\nby whopping my Gf's Dad's Ass in a very slow rap battle. ",
+			"text": "I tell her everything.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"expression": "bruh",
-			"text": "Your point?????",
+			"expression": "trolling",
+			"text": "I don't care.\\nHowever, I now know that The Weird Girl can ACTUALLY talk.",
 			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"expression": "upset",
+			"text": "Instead of just using you to talk to people...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
 		},
 		{
 			"expression": "angry",
-			"text": "My point is that Imma kick your british ass. And then have a nice Thanksgiving with my Gf.",
+			"text": "Hey, FUCK you! Talking to people is hard for her!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"expression": "hmph",
+			"text": "What are you even doing here?"
+		},
+		{
+			"expression": "gun",
+			"text": "Glad ya asked.\\nSo, your father hired me to pop a cap in your boyfriend's ass because he ''Got Destroyed''.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "Dunno what that means.\\nHowever, he said that he'd pay ME big time."
+		},
+		{
+			"expression": "gun",
+			"text": "So. Imma do it now.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "pico"
 		},
 		{
 			"expression": "challenge",
-			"text": "Ready?",
+			"text": "...Nah we should rap instead.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"expression": "stop-being-cute",
-			"text": "This year's sure gonna be interesting...",
+			"expression": "hmph",
+			"text": "Babe, I think we should be worried about the loaded gun pointed at your face..",
 			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "Shut up bitch I'm trying to kill your boyfriend!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "FUCK YOU, REDDIT MOD LOOKIN ASS."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I have simple rules.\\n1. You lose, you leave us alone.\\n2. I lose, you get to kill me."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Deal?"
+		},
+		{
+			"speed": 0.05,
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "Um....c-can we ch-ange the um.... s-se-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "T-t-t-TODAY JUNIOR!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "OKAY NEW RULES ASSHOLE.\\nI LOSE, YOU LEAVE."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "wat",
+			"text": "HEY THATS NOT FAIR!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "YOU'RE LITERALLY BULLYING TESS HOW IS THAT NOT FAIR?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "She has a name?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Yes, I have a name.\\nAnd your hairline is horrifyingly bad."
+		},
+		{
+			"speed": 0,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "wat",
+			"text": "!-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Thats what I thought.\\nNow I'm gonna start the music."
 		}
 	]
 }

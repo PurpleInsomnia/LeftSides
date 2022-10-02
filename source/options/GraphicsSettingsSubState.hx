@@ -44,6 +44,13 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			false); //Default value
 		addOption(option);
 
+		var option:Option = new Option('Shaders',
+			'If checked, enables some cool (enviromental)\neffects to the game.\n(DISABLE IF YOU HAVE LOW QUALITY ON!)',
+			'shaders',
+			'bool',
+			true);
+		addOption(option);
+
 		var option:Option = new Option('Anti-Aliasing',
 			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
 			'globalAntialiasing',
@@ -74,6 +81,17 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		var option:Option = new Option('Colorblind Mode',
+		"Use this if you have any form of colorblindness",
+		'colorblind',
+		'string',
+		'Off',
+		['Off', 'Deuteranopia', 'Protanopia', 'Tritanopia']);
+
+		option.showBoyfriend = true;
+		option.onChange = onChangeColorblind;
+		addOption(option);
+
 		super();
 	}
 
@@ -101,5 +119,10 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			FlxG.drawFramerate = ClientPrefs.framerate;
 			FlxG.updateFramerate = ClientPrefs.framerate;
 		}
+	}
+
+	function onChangeColorblind()
+	{
+		Colorblind.changeMode(ClientPrefs.colorblind);
 	}
 }

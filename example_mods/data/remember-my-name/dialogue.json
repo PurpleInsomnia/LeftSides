@@ -1,0 +1,81 @@
+{
+	"dialogue": [
+		{
+			"expression": "what",
+			"text": "I hate dark rooms so much.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "sus",
+			"text": "Because I am unable to see your pretty face.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Awwww, really?",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Deadass."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "Now where are we?"
+		},
+		{
+			"expression": "walt",
+			"text": "He lo I am highzenburger.",
+			"boxState": "normal",
+			"portrait": "bb",
+			"speed": 0.05
+		},
+		{
+			"expression": "what",
+			"text": "WHAT THE FUCK?!\\nARE WE FUCKING DREAMING?!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "trolling",
+			"text": "I can tell that because Walter White isn't real."
+		},
+		{
+			"expression": "hmph",
+			"text": "Great. We failed our all nighter plans..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "jesse",
+			"text": "Yo mistah whi, I smorshed al the cokeane.Now I am reely hiiiiiii Xdddddddddddsdsdsdsdd",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bb"
+		},
+		{
+			"expression": "guilt",
+			"text": "I don't even feel like asking.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

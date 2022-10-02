@@ -1,0 +1,34 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				113,
+				-138
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "Saul"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Saul",
+	"position": [
+		80,
+		70
+	],
+	"healthicon": "saul",
+	"flip_x": false,
+	"healthbar_colors": [
+		143,
+		128,
+		80
+	],
+	"camera_position": [
+		30,
+		100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

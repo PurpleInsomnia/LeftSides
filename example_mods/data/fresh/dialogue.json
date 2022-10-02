@@ -1,46 +1,67 @@
 {
 	"dialogue": [
 		{
-			"expression": "trolling",
-			"text": "*Staples Easy Button*",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "default",
 			"text": "...",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"portrait": "dad",
+			"speed": 0.05
 		},
 		{
 			"expression": "default",
-			"text": "The future is now old man.\\nYou're gonna have to keep up with MY pace\\nif you wanna beat me",
+			"text": "Easy peasy old man.\\nAnd yet, I have NO idea why I need to do this",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.05
 		},
 		{
 			"expression": "default",
-			"text": "You're foolish...",
+			"text": "You're foolish...\\nAnd VERY cocky.....",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"portrait": "dad",
+			"speed": 0.05
 		},
 		{
 			"expression": "yell",
 			"text": "NOBODY CAN BEAT ME!!!",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "dad"
+			"portrait": "dad",
+			"speed": 0.05
 		},
 		{
-			"expression": "mic",
-			"text": "I'll set a pace for ya...",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "dad"
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "-Yeah and how's that workin' for ya?"
+		},
+		{
+			"expression": "yell",
+			"text": "FUCK YOU.",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Dad! You need to calm down..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Stay out of this Tess."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "mic",
+			"text": "I need to put this boy in his place...."
 		}
 	]
 }

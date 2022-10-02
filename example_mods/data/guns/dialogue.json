@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Good Shit.\\nOnly one complaint though."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "CAN YOU TELL YOUR FUCKING GOONS TO STOP POINTING THEIR GUNS AT MY\\nGIRLFRIEND?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tankman",
+			"boxState": "normal",
+			"expression": "sussy",
+			"text": "Mmmmm\\nLemme think about it....."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "(PLEASE FOR THE LOVE OF GOD TELL THEM TO PUT IT DOWN!!)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tankman",
+			"boxState": "normal",
+			"expression": "sussy",
+			"text": "Mmmmmmmmm....\\n...Nah I'm good."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tankman",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Honestly, it's pretty funny watching you simp for this ugly, boring teenager that uses a hand-me-down Iphone."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Two things.\\n1. Die, in a fucking fire."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "2. That isn't the correct use of the word ''simp''."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "I'm deadass just making sure that she feels safe and loved."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tankman",
+			"boxState": "normal",
+			"expression": "sussy",
+			"text": "Isn't it past your bedtime?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Hey, fuck you.\\nWe're both 19."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tankman",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I put those guns to your head if you keep talkin shit."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Hey.\\nIf you're looking shooting anyone, shoot me."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Unless you're too much of a pussy."
+		}
+	]
+}

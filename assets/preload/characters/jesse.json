@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				115,
+				-37
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				-66,
+				-38
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				9,
+				-152
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				-48,
+				95
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				113,
+				-138
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Jesse",
+	"position": [
+		80,
+		70
+	],
+	"healthicon": "jesse",
+	"flip_x": false,
+	"healthbar_colors": [
+		143,
+		148,
+		214
+	],
+	"camera_position": [
+		30,
+		100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

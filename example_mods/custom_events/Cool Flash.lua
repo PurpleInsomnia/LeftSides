@@ -2,7 +2,7 @@ local coolFlashOn = false;
 local coolBeat = false;
 local secThing = 0.2
 function onEvent(name, value1, value2)
-	if name == 'Cool Flash' then
+	if name == 'Cool Flash' and flashingLights then
 		trigger = tonumber(value1);
 		beatThing = tonumber(value2);
 		if trigger > 0 then

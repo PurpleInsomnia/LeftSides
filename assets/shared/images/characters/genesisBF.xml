@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:287b182f165be6a6160eb05e81781e98:48326fb9b17ba4d9c051acac9560077e:c7cf4256614a33d623ed70c26eb141cc$ -->
+<TextureAtlas imagePath="genesisBF.png" width="512" height="46">
+    <SubTexture name="down/000" x="0" y="0" width="42" height="46"/>
+    <SubTexture name="down/001" x="47" y="0" width="42" height="46"/>
+    <SubTexture name="idle/000" x="94" y="0" width="42" height="46"/>
+    <SubTexture name="idle/001" x="141" y="0" width="42" height="46"/>
+    <SubTexture name="idle/002" x="188" y="0" width="42" height="46"/>
+    <SubTexture name="left/000" x="235" y="0" width="42" height="46"/>
+    <SubTexture name="left/001" x="282" y="0" width="42" height="46"/>
+    <SubTexture name="right/000" x="329" y="0" width="42" height="46"/>
+    <SubTexture name="right/001" x="376" y="0" width="42" height="46"/>
+    <SubTexture name="up/000" x="423" y="0" width="42" height="46"/>
+    <SubTexture name="up/001" x="470" y="0" width="42" height="46"/>
+</TextureAtlas>

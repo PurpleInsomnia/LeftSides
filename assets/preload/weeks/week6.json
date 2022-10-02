@@ -1,17 +1,17 @@
 {
-	"storyName": "Coming Soon!",
+	"storyName": "CHRISTMAS DAY",
 	"hideFreeplay": true,
-	"weekBackground": "comingsoon",
-	"weekBefore": "just wait please",
+	"weekBackground": "comingSoon",
+	"weekBefore": "waitPls",
 	"startUnlocked": false,
 	"weekCharacters": [
 		"",
-		"",
+		"bf",
 		""
 	],
 	"songs": [
 		[
-			"Coming-Soon",
+			"Coming Soon",
 			"face",
 			[
 				80,
@@ -21,5 +21,5 @@
 		]
 	],
 	"hideStoryMode": false,
-	"weekName": "Week 6"
+	"weekName": "Just Wait Ok?"
 }

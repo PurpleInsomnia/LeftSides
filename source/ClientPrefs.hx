@@ -11,12 +11,12 @@ class ClientPrefs {
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var showFPS:Bool = true;
-	public static var flashing:Bool = true;
+	public static var flashing:Bool = false;
 	public static var globalAntialiasing:Bool = true;
 	public static var noteSplashes:Bool = true;
 	public static var lowQuality:Bool = false;
 	public static var framerate:Int = 60;
-	public static var cursing:Bool = true;
+	public static var swearFilter:Bool = false;
 	public static var violence:Bool = true;
 	public static var jumpscares:Bool = true;
 	public static var camZooms:Bool = true;
@@ -26,9 +26,33 @@ class ClientPrefs {
 	public static var imagesPersist:Bool = false;
 	public static var ghostTapping:Bool = true;
 	public static var hideTime:Bool = false;
-	public static var bgSprite:String = 'menuBG';
+	public static var camMove:Bool = true;
+	public static var doubShake:Bool = true;
+	public static var bgSprite:String = 'starscape';
 	public static var pauseMusic:String = 'breakfast';
 	public static var closeSound:String = 'dialogueClose';
+	public static var showComboSpr:Bool = true;
+	public static var shaders:Bool = true;
+	public static var achievementUnlocked:Array<String> = ['placeholder'];
+	public static var week8Done:Bool = false;
+	public static var setControls:Bool = false;
+	public static var foundDmitri:Bool = false;
+	public static var arcadeUnlocked:Bool = false;
+	public static var dialogueVoices:Bool = true;
+	public static var babyShitPiss:Bool = false;
+	public static var justDont:Bool = true;
+	public static var colorblind:String = 'Off';
+	public static var customStrum:String = 'Off';
+	public static var customBar:String = 'Default';
+	public static var customRating:String = 'Default';
+	public static var muteMiss:Bool = false;
+	public static var ukFormat:Bool = false;
+	public static var noStages:Bool = false;
+	public static var contentWarnings:Bool = false;
+	public static var defaultSaveFile:SaveFile;
+	public static var createdFile:Bool = false;
+	public static var showUsername:Bool = true;
+	public static var discord:Bool = true;
 
 	public static var defaultKeys:Array<FlxKey> = [
 		A, LEFT,			//Note Left
@@ -42,7 +66,7 @@ class ClientPrefs {
 		D, RIGHT,			//UI Right
 
 		R, NONE,			//Reset
-		ENTER, NONE,		//Accept
+		ENTER, Z,		//Accept
 		BACKSPACE, ESCAPE,	//Back
 		ENTER, ESCAPE,		//Pause
 		SHIFT, NONE	//Emote (I just got demons, cumming inside me)
@@ -64,7 +88,7 @@ class ClientPrefs {
 		[Control.ACCEPT, 'Accept'],
 		[Control.BACK, 'Back'],
 		[Control.PAUSE, 'Pause'],
-		[Control.EMOTE, 'Emote']
+		[Control.EMOTE, 'Attack']
 	];
 	public static var lastControls:Array<FlxKey> = defaultKeys.copy();
 
@@ -77,7 +101,7 @@ class ClientPrefs {
 		FlxG.save.data.noteSplashes = noteSplashes;
 		FlxG.save.data.lowQuality = lowQuality;
 		FlxG.save.data.framerate = framerate;
-		FlxG.save.data.cursing = cursing;
+		FlxG.save.data.swearFilter = swearFilter;
 		FlxG.save.data.violence = violence;
 		FlxG.save.data.camZooms = camZooms;
 		FlxG.save.data.noteOffset = noteOffset;
@@ -87,9 +111,34 @@ class ClientPrefs {
 		FlxG.save.data.ghostTapping = ghostTapping;
 		FlxG.save.data.hideTime = hideTime;
 		FlxG.save.data.jumpscares = jumpscares;
+		FlxG.save.data.camMove = camMove;
+		FlxG.save.data.doubShake = doubShake;
 		FlxG.save.data.bgSprite = bgSprite;
 		FlxG.save.data.pauseMusic = pauseMusic;
 		FlxG.save.data.closeSound = closeSound;
+		FlxG.save.data.showComboSpr = showComboSpr;
+		FlxG.save.data.shaders = shaders;
+		FlxG.save.data.dialogueVoices = dialogueVoices;
+		FlxG.save.data.babyShitPiss = babyShitPiss;
+		FlxG.save.data.colorblind = colorblind;
+		FlxG.save.data.customStrum = customStrum;
+		FlxG.save.data.customBar = customBar;
+		FlxG.save.data.customRating = customRating;
+		FlxG.save.data.muteMiss = muteMiss;
+		FlxG.save.data.ukFormat = ukFormat;
+		FlxG.save.data.justDont = justDont;
+		FlxG.save.data.week8Done = week8Done;
+		FlxG.save.data.setControls = setControls;
+		FlxG.save.data.foundDmitri = foundDmitri;
+		FlxG.save.data.arcadeUnlocked = arcadeUnlocked;
+		FlxG.save.data.noStages = noStages;
+		FlxG.save.data.contentWarnings = contentWarnings;
+		FlxG.save.data.createdFile = createdFile;
+		FlxG.save.data.defaultSaveFile = defaultSaveFile;
+		FlxG.save.data.showUsername = showUsername;
+		#if desktop
+		FlxG.save.data.discord = discord;
+		#end
 
 		var achieves:Array<String> = [];
 		for (i in 0...Achievements.achievementsUnlocked.length) {
@@ -99,6 +148,7 @@ class ClientPrefs {
 		}
 		FlxG.save.data.achievementsUnlocked = achieves;
 		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
+		FlxG.save.data.achievementUnlocked = Acheivement.unlocked; 
 		FlxG.save.flush();
 
 		var save:FlxSave = new FlxSave();
@@ -110,6 +160,7 @@ class ClientPrefs {
 
 	public static function loadPrefs() {
 		if(FlxG.save.data.downScroll != null) {
+			SaveFileStartState.existingSaveData = true;
 			downScroll = FlxG.save.data.downScroll;
 		}
 		if(FlxG.save.data.middleScroll != null) {
@@ -143,10 +194,10 @@ class ClientPrefs {
 				FlxG.updateFramerate = framerate;
 			}
 		}
-		/*if(FlxG.save.data.cursing != null) {
-			cursing = FlxG.save.data.cursing;
+		if(FlxG.save.data.swearFilter != null) {
+			swearFilter = FlxG.save.data.swearFilter;
 		}
-		if(FlxG.save.data.violence != null) {
+		/*if(FlxG.save.data.violence != null) {
 			violence = FlxG.save.data.violence;
 		}*/
 		if(FlxG.save.data.camZooms != null) {
@@ -174,6 +225,63 @@ class ClientPrefs {
 		if(FlxG.save.data.hideTime != null) {
 			hideTime = FlxG.save.data.hideTime;
 		}
+		if(FlxG.save.data.camMove != null) {
+			camMove = FlxG.save.data.camMove;
+		}
+		if(FlxG.save.data.doubShake != null) {
+			doubShake = FlxG.save.data.doubShake;
+		}
+		if(FlxG.save.data.showComboSpr != null) {
+			showComboSpr = FlxG.save.data.showComboSpr;
+		}
+		if(FlxG.save.data.shaders != null) {
+			shaders = FlxG.save.data.shaders;
+		}
+		if(FlxG.save.data.dialogueVoices != null) {
+			dialogueVoices = FlxG.save.data.dialogueVoices;
+		}
+		if(FlxG.save.data.babyShitPiss != null) {
+			babyShitPiss = FlxG.save.data.babyShitPiss;
+		}
+		if(FlxG.save.data.justDont != null) {
+			justDont = FlxG.save.data.justDont;
+		}
+		if (FlxG.save.data.colorblind != null) {
+			colorblind = FlxG.save.data.colorblind;
+		}
+		if (FlxG.save.data.customStrum != null) {
+			customStrum = FlxG.save.data.customStrum;
+		}
+		if (FlxG.save.data.customBar != null) {
+			customBar = FlxG.save.data.customBar;
+		}
+		if (FlxG.save.data.customRating != null) {
+			customRating = FlxG.save.data.customRating;
+		}
+		if (FlxG.save.data.muteMiss != null) {
+			muteMiss = FlxG.save.data.muteMiss;
+		}
+		if (FlxG.save.data.ukFormat != null) {
+			ukFormat = FlxG.save.data.ukFormat;
+		}
+		if (FlxG.save.data.noStages != null) {
+			noStages = FlxG.save.data.noStages;
+		}
+		if (FlxG.save.data.contentWarnings != null) {
+			contentWarnings = FlxG.save.data.contentWarnings;
+		}
+		if (FlxG.save.data.showUsername != null)
+		{
+			showUsername = FlxG.save.data.showUsername;
+		}
+		#if desktop
+		if (FlxG.save.data.discord != null) {
+			discord = FlxG.save.data.discord;
+		}
+		#end
+		if (FlxG.save.data.setControls != null) {
+			setControls = FlxG.save.data.setControls;
+		}
 		if(FlxG.save.data.bgSprite != null) {
 			bgSprite = FlxG.save.data.bgSprite;
 		}
@@ -182,6 +290,30 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.closeSound != null) {
 			closeSound = FlxG.save.data.closeSound;
+		}
+		if(FlxG.save.data.foundDmitri != null) {
+			foundDmitri = FlxG.save.data.foundDmitri;
+		}
+		if(FlxG.save.data.week8Done != null) {
+			week8Done = FlxG.save.data.week8Done;
+		}
+		if(FlxG.save.data.arcadeUnlocked != null) {
+			arcadeUnlocked = FlxG.save.data.arcadeUnlocked;
+		}
+		if(FlxG.save.data.achievementUnlocked != null) {
+			achievementUnlocked = FlxG.save.data.achievementUnlocked;
+			Acheivement.unlocked = achievementUnlocked;
+			trace(Acheivement.unlocked);
+		}
+
+		// flixel automatically saves your volume!
+		if(FlxG.save.data.volume != null)
+		{
+			FlxG.sound.volume = FlxG.save.data.volume;
+		}
+		if (FlxG.save.data.mute != null)
+		{
+			FlxG.sound.muted = FlxG.save.data.mute;
 		}
 
 		var save:FlxSave = new FlxSave();
@@ -224,5 +356,14 @@ class ClientPrefs {
 				PlayerSettings.player1.controls.bindKeys(keyBinds[i][0], controlsToAdd);
 			}
 		}
+	}
+
+	public static function delete()
+	{
+		Delete.delete();
+		saveSettings();
+		loadPrefs();
+		TitleState.initialized = false;
+		MusicBeatState.switchState(new TitleState());
 	}
 }

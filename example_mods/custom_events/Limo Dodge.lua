@@ -6,7 +6,7 @@ local canPress = true;
 -- basically the funny from FNF HD
 function onCreate()
 	makeLuaSprite('sign', 'limoBG/dangerSign', -269 * 2, 0);
-	setProperty('sign.visible', true);
+	setProperty('sign.visible', false);
 	addLuaSprite('sign', true);
 	doTweenColor('signShading', 'sign', '6D7AD7', 0.001, 'linear');
 end
@@ -19,6 +19,7 @@ function onEvent(name, value1, value2)
 	end
 end
 
+local soundPlayed = false;
 function onUpdate(elapsed)
 	if getPropertyFromClass('flixel.FlxG', 'keys.pressed.SPACE') then
 		if canPress then
@@ -26,8 +27,15 @@ function onUpdate(elapsed)
 		end
 	end
 	if getProperty('boyfriend.animation.curAnim.name') == 'dodge' then
+		if not soundPlayed then
+			playSound('dodge');
+			soundPlayed = true;
+		end
 		dodging = true;
 	else
+		if soundPlayed then
+			soundPlayed = false;
+		end
 		dodging = false;
 	end
 end
@@ -37,7 +45,9 @@ function onTweenCompleted(tag)
 	health = getProperty('health');
 	if tag == 'theThingGoWee' then
 		if not dodging then
-			setProperty('health', health - 2);
+			playSound('signHIT');
+			setProperty('health', health - 0.75);
+			characterPlayAnim('boyfriend', 'hurt', true);
 			deathShit();
 		else
 			playSound('dramaticSting', 0.2);

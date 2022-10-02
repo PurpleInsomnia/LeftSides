@@ -61,8 +61,10 @@ class Alphabet extends FlxSpriteGroup
 		forceX = Math.NEGATIVE_INFINITY;
 		this.textSize = textSize;
 
-		_finalText = text;
-		this.text = text;
+		// 4th wall breaks and swear filter (coming soon?!?) ;)
+
+		_finalText = checkText(text);
+		this.text = checkText(text);
 		this.typed = typed;
 		isBold = bold;
 
@@ -83,6 +85,7 @@ class Alphabet extends FlxSpriteGroup
 
 	public function changeText(newText:String, newTypingSpeed:Float = -1)
 	{
+		newText = checkText(newText);
 		for (i in 0...lettersArray.length) {
 			var letter = lettersArray[0];
 			remove(letter);
@@ -220,7 +223,7 @@ class Alphabet extends FlxSpriteGroup
 				timerCheck();
 			}
 			if(dialogueSound != null) dialogueSound.stop();
-			dialogueSound = FlxG.sound.play(Paths.sound(textSound));
+			dialogueSound = FlxG.sound.play(Paths.sound(textSound), 0.25);
 		} else {
 			typeTimer = new FlxTimer().start(0.1, function(tmr:FlxTimer) {
 				typeTimer = new FlxTimer().start(speed, function(tmr:FlxTimer) {
@@ -318,7 +321,7 @@ class Alphabet extends FlxSpriteGroup
 
 				if(tmr != null) {
 					if(dialogueSound != null) dialogueSound.stop();
-					dialogueSound = FlxG.sound.play(Paths.sound(textSound));
+					dialogueSound = FlxG.sound.play(Paths.sound(textSound), 0.5);
 				}
 
 				add(letter);
@@ -362,6 +365,45 @@ class Alphabet extends FlxSpriteGroup
 			typeTimer.destroy();
 		}
 		typeTimer = null;
+	}
+
+	// swear filter stuff lol
+	// I am laughing really hard by writing "cum" in this list :crying:
+	var badWords:Array<String> = ['Fuck', 'Shit', 'Bitch', 'Whore', 'Damn', 'Pussy', 'Dick', 'Cum', 'Twat', 'Wanker'];
+	// AH HELL NAH, FUCKING "WANKER" :skull:
+	var goodWords:Array<String> = ['!#$%', '$!#%', 'Female Dog', '$&%!', 'Darn', 'Cat', 'Jerky Stick', 'Nut', '#$%!', '!#$%!#'];
+	// Nut :skull:
+	function checkText(swagtext:String)
+	{
+		var editedText:String = swagtext;
+		if (swagtext.contains("[USERNAME]") || swagtext.contains("USERNAME"))
+		{
+			editedText = editedText.replace("USERNAME", CoolUtil.username());
+			editedText = editedText.replace("[USERNAME]", CoolUtil.username());
+		}
+		if (ClientPrefs.swearFilter)
+		{
+			for (i in 0...badWords.length)
+			{
+				var badUp:String = badWords[i].toUpperCase();
+				var goodUp:String = goodWords[i].toUpperCase();
+				var badLow:String = badWords[i].toLowerCase();
+				var goodLow:String = goodWords[i].toLowerCase();
+				if (swagtext.contains(badWords[i]))
+				{
+					editedText = editedText.replace(badWords[i], goodWords[i]);
+				}
+				if (swagtext.contains(badUp))
+				{
+					editedText = editedText.replace(badUp, goodUp);
+				}
+				if (swagtext.contains(badLow))
+				{
+					editedText = editedText.replace(badLow, goodLow);
+				}
+			}
+		}
+		return editedText;
 	}
 }
 
@@ -491,6 +533,10 @@ class AlphaCharacter extends FlxSprite
 				animation.addByPrefix(letter, 'exclamation point', 24);
 			case ",":
 				animation.addByPrefix(letter, 'comma', 24);
+			case "#heart":
+				animation.addByPrefix('letter', 'heart', 24);
+			case "#angry":
+				animation.addByPrefix('leter', 'angry faic', 24);
 			default:
 				animation.addByPrefix(letter, letter, 24);
 		}

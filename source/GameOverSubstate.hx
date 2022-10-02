@@ -9,6 +9,8 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.FlxCamera;
+import flixel.text.FlxText;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -21,10 +23,48 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var lePlayState:PlayState;
 
+	var stupidCamera:FlxCamera;
+
 	public static var characterName:String = 'bf-blueballed';
 	public static var deathSoundName:String = 'fnf_loss_sfx';
 	public static var loopSoundName:String = 'gameOver';
 	public static var endSoundName:String = 'gameOverEnd';
+
+	public static var timeString:String;
+
+	public static var string:Array<String> = [
+		'Just keep up man...',
+		"Don't smash your keyboard!",
+		'Ok, wow.',
+		'11/10 gameplay',
+		'Mabye Stop Sucking?',
+		'This says a lot about our society'
+	];
+
+	public static var iconName:String;
+
+	public static function setStrings(thing:Array<String>, ?icon:String)
+	{
+		if (icon != null)
+		{
+			iconName = icon;
+		}
+		if (thing != null)
+		{
+			string = thing;
+		}
+		else
+		{
+			string = [
+				'Just keep up man...',
+				"Don't smash your keyboard!",
+				'Ok, wow.',
+				'11/10 gameplay',
+				'Mabye Stop Sucking?',
+				'This says a lot about our society'
+			];
+		}
+	}
 
 	public static function resetVariables() {
 		characterName = 'bf-blueballed';
@@ -40,6 +80,13 @@ class GameOverSubstate extends MusicBeatSubstate
 		super();
 
 		Conductor.songPosition = 0;
+
+		stupidCamera = lePlayState.camOther;
+
+		if (ClientPrefs.justDont)
+		{
+			makeJustDont();
+		}
 
 		bf = new Boyfriend(x, y, characterName);
 		add(bf);
@@ -124,6 +171,9 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		super.beatHit();
 
+		if (bf.startedDeath)
+			bf.playAnim('deathLoop');
+
 		//FlxG.log.add('beat');
 	}
 
@@ -148,8 +198,36 @@ class GameOverSubstate extends MusicBeatSubstate
 				{
 					MusicBeatState.resetState();
 				});
+				stupidCamera.fade(FlxColor.BLACK, 2, false);
 			});
 			lePlayState.callOnLuas('onGameOverConfirm', [true]);
 		}
+	}
+
+	function makeJustDont()
+	{
+		var ranNum:Int = FlxG.random.int(0, string.length - 1);
+
+		var text:FlxText = new FlxText(0, 90, FlxG.width, string[ranNum], 36);
+		text.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		text.cameras = [stupidCamera];
+		text.screenCenter(X);
+		add(text);
+
+		var icon:HealthIcon = new HealthIcon(iconName);
+		icon.scale.set(0.6, 0.6);
+		icon.y -= 10;
+		icon.cameras = [stupidCamera];
+		icon.screenCenter(X);
+		add(icon);
+		icon.animation.curAnim.curFrame = 2;
+
+		var text2:FlxText = new FlxText(0, FlxG.height - 40, 'You HAD ' + timeString + ' left.', 32);
+		text2.color = FlxColor.YELLOW;
+		text2.font = Paths.font('vcr.ttf');
+		text2.y = text.y + text.height;
+		text2.cameras = [stupidCamera];
+		text2.screenCenter(X);
+		add(text2);
 	}
 }

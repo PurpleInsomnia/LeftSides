@@ -2,24 +2,31 @@
 	"dialogue": [
 		{
 			"expression": "what",
-			"text": "God Da-",
+			"text": "Oh cool, I just pulled a really cool f-",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
-			"text": "ahem...",
+			"text": "...ahem...",
 			"boxState": "normal",
 			"speed": 0.035,
 			"portrait": "gf"
 		},
 		{
 			"expression": "cringe",
-			"text": "I mean.... Goodness Gracious! You two got some HEAT!",
+			"text": "....antastic solo...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "(...sorry babe....)"
 		},
 		{
 			"expression": "pump-worried",
@@ -37,7 +44,7 @@
 		},
 		{
 			"expression": "question",
-			"text": "How am I cool???\\nNot to be mean or anything.. I'm just curious...",
+			"text": "How am I cool? (I ask after whispering Tess an apology for almost swearing infront of children..)",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
@@ -51,14 +58,14 @@
 		},
 		{
 			"expression": "happy",
-			"text": "Y'know what? I want a real challenge from you two. I mean, your first preformance was diffucult. But I think you can do better...",
+			"text": "While my voice hurts from goin' a little too high, I am thankful that it sounded cool.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "challenge",
-			"text": "Got anything I'm lookin' for?",
+			"text": "Now that last cool swag tune...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
@@ -72,7 +79,7 @@
 		},
 		{
 			"expression": "challenge",
-			"text": "Bring it children.",
+			"text": "Do your worst, children.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
@@ -85,11 +92,11 @@
 			"portrait": "gf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
 			"expression": "cute-blushing",
-			"text": "(Those kids were right, the way he freestyles is pretty cute. Guess one more couldn't hurt...)"
+			"text": "(Those kids were right, the way he freestyles is pretty cute. Guess one more couldn't hurt...)",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
 		}
 	]
 }

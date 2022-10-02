@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:370b448b357bd60c935352e88abba70c:77b405ffe4c437cde02dab3ec2b855d0:2df2651d0ead1055f2f52a076fd011ec$ -->
-<TextureAtlas imagePath="GF_Dialogue.png" width="1648" height="743">
-    <SubTexture name="cringe" x="0" y="0" width="409" height="245"/>
-    <SubTexture name="cute-blushing" x="413" y="0" width="409" height="245"/>
-    <SubTexture name="default" x="826" y="0" width="409" height="245"/>
-    <SubTexture name="happy-cry" x="1239" y="0" width="409" height="245"/>
-    <SubTexture name="hmph" x="0" y="249" width="409" height="245"/>
-    <SubTexture name="laughing" x="413" y="249" width="409" height="245"/>
-    <SubTexture name="scared" x="826" y="249" width="409" height="245"/>
-    <SubTexture name="stop-being-cute" x="1239" y="249" width="409" height="245"/>
-    <SubTexture name="sus" x="0" y="498" width="409" height="245"/>
-    <SubTexture name="the-rock" x="413" y="498" width="409" height="245"/>
-    <SubTexture name="wink" x="826" y="498" width="409" height="245"/>
-    <SubTexture name="woman-sadness-combat" x="1239" y="498" width="409" height="245"/>
+<!-- $TexturePacker:SmartUpdate:8f94708a4703d9f207e8f3f2c7aeeb11:9479234464be965d9ff62e75aba4cf61:2df2651d0ead1055f2f52a076fd011ec$ -->
+<TextureAtlas imagePath="GF_Dialogue.png" width="828" height="2030">
+    <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="cringe" x="419" y="0" width="409" height="245"/>
+    <SubTexture name="cute-blushing" x="0" y="255" width="409" height="245"/>
+    <SubTexture name="default" x="419" y="255" width="409" height="245"/>
+    <SubTexture name="drool" x="0" y="510" width="409" height="245"/>
+    <SubTexture name="happy-cry" x="419" y="510" width="409" height="245"/>
+    <SubTexture name="helltaker" x="0" y="765" width="409" height="245"/>
+    <SubTexture name="hmph" x="419" y="765" width="409" height="245"/>
+    <SubTexture name="laughing" x="0" y="1020" width="409" height="245"/>
+    <SubTexture name="scared" x="419" y="1020" width="409" height="245"/>
+    <SubTexture name="stop-being-cute" x="0" y="1275" width="409" height="245"/>
+    <SubTexture name="sus" x="419" y="1275" width="409" height="245"/>
+    <SubTexture name="the-rock" x="0" y="1530" width="409" height="245"/>
+    <SubTexture name="what" x="419" y="1530" width="409" height="245"/>
+    <SubTexture name="wink" x="0" y="1785" width="409" height="245"/>
+    <SubTexture name="woman-sadness-combat" x="419" y="1785" width="409" height="245"/>
 </TextureAtlas>

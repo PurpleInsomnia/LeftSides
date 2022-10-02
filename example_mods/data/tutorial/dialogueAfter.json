@@ -1,71 +1,85 @@
 {
 	"dialogue": [
 		{
-			"expression": "what",
-			"text": "*Comicaly Over Exagerated Breathing*",
+			"expression": "happy",
+			"text": "Huh.\\nThat wasn't too bad!",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "question",
-			"text": "Holy Fucking Shit! Did I just do That!?!?",
+			"expression": "laughing",
+			"text": "You did a nice job!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "You think so?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "I know so.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "what-is-this-emotion",
+			"text": "...I hope you know that you're really cute.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "stop-being-cute",
-			"text": "I hope it wasn't too difficult for you....",
+			"text": "th-thank you..",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "trolling",
-			"text": "I own a copy of Wii Music, so I obviously know what I'm doing.",
+			"text": "Now I can say that without being put into ten minutes of silence!"
+		},
+		{
+			"expression": "happy",
+			"text": "I feel like a million bucks knowing that I'm gonna date you!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "You're that certain on winning this then huh?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "challenge",
+			"text": "Absolutely. ",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
-			"text": "what?",
+			"text": "When's my Dad gonna get here?",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "trolling",
-			"text": "All Dream Stans should spontaneously combust into flames and die.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "blush",
-			"text": "Anyways, I'm off to *tries not to laugh but fails* eat the BTS Hungry Jacks burger.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "Agreeable Statement.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "default",
-			"text": "*Ha Ha* Bring me your 'Ex Rockstar' Father who is said to decide my fate!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "Ima kick his chrome dome lookin a-",
+			"expression": "sus",
+			"text": "I think he is afraid of my absolute fire ba-",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"

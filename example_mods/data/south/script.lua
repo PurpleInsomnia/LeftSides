@@ -25,7 +25,22 @@ function onSkipDialogue(count)
 end
 
 function onCreate()
-	doTweenColor('bfShading', 'boyfriend', '7F7F7F', 0.001, 'linear');
-	doTweenColor('dadShading', 'dad', '7F7F7F', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '7F7F7F', 0.001, 'linear');
+	makeLuaSprite('funnyEffect', 'black', 0, 0);
+	setObjectCamera('funnyEffect', 'camHUD');
+	setProperty('funnyEffect.alpha', 0);
+	addLuaSprite('funnyEffect', true);
+end
+
+function onStepHit()
+	if curStep == 832 then
+		doTweenAlpha('sussssssssssyyyyy', 'funnyEffect', 0.5, 5.81, 'linear');
+		triggerEvent("Can Tween Zoom", "1.15", "5.81");
+		triggerEvent("Screen VG", "5.81", "5.81");
+	end
+end
+
+function onTweenCompleted(tag)
+	if tag == "sussssssssssyyyyy" then
+		setProperty("funnyEffect.alpha", 1);
+	end
 end

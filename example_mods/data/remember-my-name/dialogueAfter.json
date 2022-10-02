@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "trolling",
+			"text": "This is the moment Walter White became Wal'er Why"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "I don't even know what happened."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Oh right, you haven't watched Breaking Bad\\nyet."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "We should definetly watch it with dinner\\ntomorrow."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Deal!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bb",
+			"boxState": "normal",
+			"expression": "jesse two",
+			"text": "Look lady, I dunno what you and that little dude are trying to sell yo...I'm not buyin..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "My name is Tess Dearest, yo."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "My boyfriend's name is Ben Warner, yo"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bb",
+			"boxState": "normal",
+			"expression": "walt two",
+			"text": "Jedse. Wii half too cook 10294846MPH of mefandfetamean for Guhs Refrigerator."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bb",
+			"boxState": "normal",
+			"expression": "jesse two",
+			"text": "But Mistr Whyt wat r wii goughing to do with that blonde little boi?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bb",
+			"boxState": "normal",
+			"expression": "walt three",
+			"text": "Kil him Jesls"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "BRO WHAT DID I DO?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bb",
+			"boxState": "normal",
+			"expression": "jesse",
+			"text": "Mistah whi has a stik up his ass."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "This is stupid."
+		}
+	]
+}

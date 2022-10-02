@@ -1,0 +1,67 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-5,
+				260
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "hey"
+		},
+		{
+			"offsets": [
+				-5,
+				260
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "hey"
+		},
+		{
+			"offsets": [
+				-5,
+				260
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hurt",
+			"indices": [],
+			"name": "hurt"
+		},
+		{
+			"offsets": [
+				-5,
+				260
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "dies",
+			"indices": [],
+			"name": "dies"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/bfSonic",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		209,
+		162,
+		48
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

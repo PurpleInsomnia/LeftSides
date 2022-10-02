@@ -9,7 +9,18 @@
 			"fps": 24,
 			"anim": "idle",
 			"indices": [],
-			"name": "BF idle dance"
+			"name": "BF idle dance0"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "BF idle dance alt"
 		},
 		{
 			"offsets": [
@@ -54,6 +65,50 @@
 			"anim": "singRIGHT",
 			"indices": [],
 			"name": "BF NOTE RIGHT0"
+		},
+		{
+			"offsets": [
+				12,
+				-6
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "BF NOTE LEFT ALT"
+		},
+		{
+			"offsets": [
+				-10,
+				-50
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "BF NOTE DOWN ALT"
+		},
+		{
+			"offsets": [
+				-29,
+				27
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "BF NOTE UP ALT"
+		},
+		{
+			"offsets": [
+				-38,
+				-7
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "BF NOTE RIGHT ALT"
 		},
 		{
 			"offsets": [
@@ -180,6 +235,70 @@
 			"name": "BF NOTE DOWN0"
 		},
 		{
+			"offsets": [
+				12,
+				-6
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT-alt-loop",
+			"indices": [
+				12,
+				13,
+				14,
+				15
+			],
+			"name": "BF NOTE LEFT ALT"
+		},
+		{
+			"offsets": [
+				-38,
+				-7
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singRIGHT-alt-loop",
+			"indices": [
+				58,
+				59,
+				60,
+				61
+			],
+			"name": "BF NOTE RIGHT ALT"
+		},
+		{
+			"offsets": [
+				-29,
+				27
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singUP-alt-loop",
+			"indices": [
+				11,
+				12,
+				13,
+				14
+			],
+			"name": "BF NOTE UP ALT"
+		},
+		{
+			"offsets": [
+				-10,
+				-50
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singDOWN-alt-loop",
+			"indices": [
+				26,
+				27,
+				28,
+				29
+			],
+			"name": "BF NOTE DOWN ALT"
+		},
+		{
 			"loop": false,
 			"offsets": [
 				0,
@@ -211,6 +330,17 @@
 			"anim": "emote",
 			"loop": false,
 			"name": "BF HEY"
+		},
+		{
+			"offsets": [
+				1,
+				5
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "hurt",
+			"loop": false,
+			"name": "BF Hit"
 		}
 	],
 	"no_antialiasing": false,

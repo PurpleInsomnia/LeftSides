@@ -1,0 +1,109 @@
+{
+	"dialogue": [
+		{
+			"expression": "waking-up",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "Wake up......",
+			"boxState": "normal",
+			"portrait": "freeme",
+			"speed": 0.05
+		},
+		{
+			"expression": "scared",
+			"text": "NO! NO no no no not again!!!",
+			"boxState": "angry",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "How can a [PATHETIC] [LOSER] like you handle ALL the stress that was thrown at you?",
+			"boxState": "normal",
+			"portrait": "freeme",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "The old you would be sitting on our bed, slicing his skin.",
+			"boxState": "normal",
+			"portrait": "freeme",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "Why the hell are you bringing that up?!\\nI don't even think about doing it anymore!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "LIAR!",
+			"boxState": "angry",
+			"portrait": "freeme",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "You think about it when you look at your scars... REMINDING YOU OF YOUR\\nDISGUSTING DESIRE."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "You want to vomit everytime you think about going into the bathroom just to inflict [PAIN] onto your [RUINED] body..."
+		},
+		{
+			"expression": "angry",
+			"text": "FUCK YOU.",
+			"boxState": "angry",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Listen to me...\\nI have yet to show off one of my skills my [HORRIFYING] body can do..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Yeah? And what would that be?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "...\\nI can shapeshift into a [MANGLED] version\\nof your girlfriend....."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "BULL-FUCKING-SHIT!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Ohhhh....\\nDo you want to bet on it.....?"
+		}
+	]
+}

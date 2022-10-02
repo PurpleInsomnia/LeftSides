@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Credits.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Credits0000" x="0" y="0" width="606" height="279" frameX="0" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0001" x="616" y="0" width="554" height="308" frameX="-26" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0002" x="1180" y="0" width="490" height="324" frameX="-58" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0003" x="0" y="334" width="421" height="337" frameX="-93" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0004" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0005" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0006" x="771" y="334" width="330" height="345" frameX="-138" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0007" x="771" y="334" width="330" height="345" frameX="-138" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0008" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0009" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0010" x="771" y="334" width="330" height="345" frameX="-138" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0011" x="771" y="334" width="330" height="345" frameX="-138" frameY="0" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0012" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+	<SubTexture name="Credits0013" x="431" y="334" width="330" height="344" frameX="-138" frameY="-1" frameWidth="606" frameHeight="345"/>
+</TextureAtlas>

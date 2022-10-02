@@ -8,8 +8,8 @@
 			"portrait": "dad"
 		},
 		{
-			"expression": "scared",
-			"text": "*YELP*",
+			"expression": "confused",
+			"text": "FUCK I spoke too soon..",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
@@ -29,50 +29,43 @@
 			"portrait": "dad"
 		},
 		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "Why am I the bad guy here?!"
+		},
+		{
 			"expression": "angry",
-			"text": "You said that it was required Mister..",
+			"text": "You're the one that just BUSTS into her room while I knock and wait.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "angry",
-			"text": "Am I wrong?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "...",
-			"boxState": "normal",
-			"speed": 0.08,
-			"portrait": "dad"
-		},
-		{
-			"expression": "yell",
-			"text": "GAH! You think you can outsmart THE ex rock-star, Daddy Destroyer?! ",
+			"expression": "mic",
+			"text": "...Are you trying to test me BOY?!",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "dad"
 		},
 		{
 			"expression": "confused",
-			"text": "That name sounds extremly dumb",
+			"text": "No.\\nJust trying to point the obvious fact that I am clearly more poli-",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "yell",
-			"text": "Shut Your FUCKING mouth BOY!",
+			"text": "SHUT THE HELL UP!",
 			"boxState": "angry",
 			"speed": 0.05,
 			"portrait": "dad"
 		},
 		{
-			"expression": "trolling",
-			"text": "K",
+			"expression": "confused",
+			"text": "Okay Mister Dearest.",
 			"boxState": "normal",
 			"speed": 0.02,
 			"portrait": "bf"
@@ -83,6 +76,27 @@
 			"boxState": "normal",
 			"speed": 0.03,
 			"portrait": "dad"
+		},
+		{
+			"expression": "talk",
+			"text": "Oh and one more thing.\\nDON'T TRY TO FUCKING SWOON HER\\nWHILE I'M SINGING!!!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"speed": 0.08,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Um- Okay?....."
+		},
+		{
+			"expression": "talk",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		}
 	]
 }

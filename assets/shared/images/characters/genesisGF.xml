@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:aefb5bafcc6f3478b586112858bc1375:f5b9cab24502d9d7f8bed14644aeb88f:7046b6e7cfff2fbd9a7c7ab05b18776b$ -->
+<TextureAtlas imagePath="genesisGF.png" width="241" height="223">
+    <SubTexture name="idle/000" x="0" y="0" width="77" height="71"/>
+    <SubTexture name="idle/001" x="82" y="0" width="77" height="71"/>
+    <SubTexture name="idle/002" x="164" y="0" width="77" height="71"/>
+    <SubTexture name="idle/003" x="0" y="76" width="77" height="71"/>
+    <SubTexture name="idle/004" x="82" y="76" width="77" height="71"/>
+    <SubTexture name="idle/005" x="164" y="76" width="77" height="71"/>
+    <SubTexture name="idle/006" x="0" y="152" width="77" height="71"/>
+</TextureAtlas>

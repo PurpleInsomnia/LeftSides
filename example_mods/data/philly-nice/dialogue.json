@@ -1,43 +1,43 @@
 {
 	"dialogue": [
 		{
-			"expression": "confused",
-			"text": "Yeah, nice try asswipe.\\nNow let us go please.",
+			"expression": "angry",
+			"text": "You've got ass skills asshole.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "angry",
-			"text": "NO! I will not lose to you again!",
+			"expression": "wat",
+			"text": "WHAT?!\\nNO FAIR!!!\\nI HAD NO TIME TO REACT TO THAT!!!!",
 			"boxState": "angry",
 			"speed": 0.05,
 			"portrait": "pico"
 		},
 		{
 			"expression": "upset",
-			"text": "I will keep you as hostages until I win!!!",
+			"text": "The RNG in this is terrible!!!!\\nI'm gonna keep you as hosta-",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "pico"
 		},
 		{
 			"expression": "cringe",
-			"text": "Please just put this on pause and let us eat.\\nGf and I skipped lunch today ya know..",
+			"text": "Please just put this on pause and let us eat.\\nTess and I skipped lunch today y'know?",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "angry",
+			"expression": "upset",
 			"text": "WE'RE GOING AGAIN!",
 			"boxState": "angry",
 			"speed": 0.05,
 			"portrait": "pico"
 		},
 		{
-			"expression": "sad",
-			"text": "(BUT I'M HUGRY)",
+			"expression": "sleepy",
+			"text": "(BUT I'M STARVING)",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"

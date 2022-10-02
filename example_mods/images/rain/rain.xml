@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:2e6f9482df5ea5d19c1ddda1f68f2aac:9e2058aec1ec775477bd2c7e5cf32e1f:18f5f951438a4e93932727d32d737747$ -->
+<TextureAtlas imagePath="rain.png" width="3840" height="1440">
+    <SubTexture name="idle0000" x="0" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0001" x="1280" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0002" x="2560" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0003" x="0" y="720" width="1280" height="720"/>
+    <SubTexture name="idle0004" x="1280" y="720" width="1280" height="720"/>
+</TextureAtlas>

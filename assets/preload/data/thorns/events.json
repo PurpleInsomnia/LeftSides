@@ -1,58 +1,1378 @@
-{"song":{"player1":"bf-pixel","song":"Thorns","player2":"spirit","notes":[{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[20526.3157894737,-1,"Trigger BG Ghouls","",""],[21157.8947368421,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[21789.4736842105,-1,"Trigger BG Ghouls","",""],[22421.0526315789,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[23052.6315789474,-1,"Trigger BG Ghouls","",""],[23684.2105263158,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[24315.7894736842,-1,"Trigger BG Ghouls","",""],[24947.3684210526,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[25578.9473684211,-1,"Trigger BG Ghouls","",""],[26210.5263157895,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[26842.1052631579,-1,"Trigger BG Ghouls","",""],[27473.6842105263,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[28105.2631578947,-1,"Trigger BG Ghouls","",""],[28736.8421052632,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[29368.4210526316,-1,"Trigger BG Ghouls","",""],[30000,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[50842.1052631579,-1,"Trigger BG Ghouls","",""],[51473.6842105263,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[52105.2631578947,-1,"Trigger BG Ghouls","",""],[52736.8421052631,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[53368.4210526316,-1,"Trigger BG Ghouls","",""],[54000,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[54631.5789473684,-1,"Trigger BG Ghouls","",""],[55263.1578947368,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[55894.7368421052,-1,"Trigger BG Ghouls","",""],[56526.3157894737,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[57157.8947368421,-1,"Trigger BG Ghouls","",""],[57789.4736842105,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[58421.0526315789,-1,"Trigger BG Ghouls","",""],[59052.6315789473,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[59684.2105263158,-1,"Trigger BG Ghouls","",""],[60315.7894736842,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[81157.894736842,-1,"Trigger BG Ghouls","",""],[81789.4736842104,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[82421.0526315789,-1,"Trigger BG Ghouls","",""],[83052.6315789473,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[83684.2105263157,-1,"Trigger BG Ghouls","",""],[84315.7894736841,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[84947.3684210526,-1,"Trigger BG Ghouls","",""],[85578.947368421,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[[86210.5263157894,-1,"Trigger BG Ghouls","",""],[86842.1052631578,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[87473.6842105262,-1,"Trigger BG Ghouls","",""],[88105.2631578946,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[88736.8421052631,-1,"Trigger BG Ghouls","",""],[89368.4210526315,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[[89999.9999999999,-1,"Trigger BG Ghouls","",""],[90631.5789473683,-1,"Trigger BG Ghouls","",""]],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":false},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],"mustHitSection":true},{"lengthInSteps":16,"sectionNotes":[],
-"mustHitSection":true},{"sectionNotes":[],"typeOfSection":0,"lengthInSteps":16,"altAnim":false,"mustHitSection":true,"changeBPM":false,"bpm":190},
-{"sectionNotes":[],"typeOfSection":0,"lengthInSteps":16,"altAnim":false,"mustHitSection":true,"changeBPM":false,"bpm":190},{
-"sectionNotes":[],"typeOfSection":0,"lengthInSteps":16,"altAnim":false,"mustHitSection":true,"changeBPM":false,"bpm":190},{
-"lengthInSteps":16,"altAnim":false,"typeOfSection":0,"sectionNotes":[],"bpm":190,"changeBPM":false,"mustHitSection":true}],"needsVoices":true,"validScore":true,"bpm":190,"speed":1.5}}
+{
+	"song": {
+		"speed": 2.5,
+		"stage": null,
+		"player1": "bf-pixel",
+		"player2": "spirit",
+		"player3": "gf-pixel",
+		"notes": [
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						40421.0526315789,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						41052.6315789474,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						41684.2105263158,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						42315.7894736842,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						42947.3684210526,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						43578.947368421,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						44210.5263157895,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						44842.1052631579,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						45473.6842105263,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						46105.2631578947,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						46736.8421052631,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						47368.4210526316,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						48000,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						48631.5789473684,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						49263.1578947368,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						49894.7368421052,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						50526.3157894737,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						70736.8421052631,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						71368.4210526315,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						71999.9999999999,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						72631.5789473684,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						73263.1578947368,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						73894.7368421052,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						74526.3157894736,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						75157.894736842,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						75789.4736842105,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						76421.0526315789,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						77052.6315789473,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						77684.2105263157,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						78315.7894736841,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						78947.3684210526,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						79578.947368421,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						80210.5263157894,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						101052.631578947,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						101684.210526316,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						102315.789473684,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						102947.368421053,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						103578.947368421,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						104210.526315789,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						104842.105263158,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						105473.684210526,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						106105.263157895,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						106736.842105263,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						107368.421052631,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						108000,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						108631.578947368,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						109263.157894737,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						109894.736842105,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						110526.315789474,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						111157.894736842,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						111789.47368421,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						112421.052631579,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						113052.631578947,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						113684.210526316,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						114315.789473684,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						114947.368421052,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						115578.947368421,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						116210.526315789,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						116842.105263158,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						117473.684210526,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						118105.263157895,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						118736.842105263,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						119368.421052631,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						120000,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					],
+					[
+						120631.578947368,
+						-1,
+						"Trigger BG Ghouls",
+						"",
+						""
+					]
+				],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			}
+		],
+		"splashSkin": null,
+		"validScore": false,
+		"bpm": 190,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Thorns"
+	}
+}

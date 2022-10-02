@@ -52,7 +52,7 @@ class Paths
 		#end
 	}
 
-	static public var currentModDirectory:String = null;
+	static public var currentModDirectory:String = '';
 	static var currentLevel:String;
 	static public function getModFolders()
 	{
@@ -175,6 +175,16 @@ class Paths
 		#end
 		return getPath('doodles/$key.png', IMAGE, library);
 	}
+
+	static public function arcade(key:String)
+	{
+		return 'assets/arcade/' + key;
+	}
+
+	static public function concepts(key:String)
+	{
+		return 'assets/concepts/' + key;
+	}
 	
 	inline static public function soundRandom(key:String, min:Int, max:Int, ?library:String)
 	{
@@ -195,6 +205,11 @@ class Paths
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
 	}
 
+	inline static public function unusedSongs(song:String):Any
+	{
+		return 'unusedSongs/$song.$SOUND_EXT';
+	}
+
 	inline static public function voices(song:String):Any
 	{
 		#if MODS_ALLOWED
@@ -204,6 +219,17 @@ class Paths
 		}
 		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices.$SOUND_EXT';
+	}
+
+	inline static public function voicesEncore(song:String):Any
+	{
+		#if MODS_ALLOWED
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/VoicesEncore'));
+		if(file != null) {
+			return file;
+		}
+		#end
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/VoicesEncore.$SOUND_EXT';
 	}
 
 	inline static public function fuckedVoices(song:String):Any
@@ -226,6 +252,17 @@ class Paths
 		}
 		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+	}
+
+	inline static public function instEncore(song:String):Any
+	{
+		#if MODS_ALLOWED
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore'));
+		if(file != null) {
+			return file;
+		}
+		#end
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/InstEncore.$SOUND_EXT';
 	}
 
 	inline static public function fuckedInst(song:String):Any
@@ -339,6 +376,22 @@ class Paths
 	inline static public function formatToSongPath(path:String) {
 		return path.toLowerCase().replace(' ', '-');
 	}
+
+	inline static public function addFlxGraphic(key:String):FlxGraphic {
+		var newBitmap:BitmapData = BitmapData.fromFile(image(key));
+		if(FileSystem.exists(modsImages(key)))
+		{
+			if(!customImagesLoaded.exists(key))
+			{
+				newBitmap = BitmapData.fromFile(modsImages(key));
+			}
+		}
+		var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, key);
+		newGraphic.persist = true;
+		FlxG.bitmap.addGraphic(newGraphic);
+		customImagesLoaded.set(key, true);
+		return FlxG.bitmap.get(key);
+	}
 	
 	#if MODS_ALLOWED
 	static public function addCustomGraphic(key:String):FlxGraphic {
@@ -353,6 +406,11 @@ class Paths
 			return FlxG.bitmap.get(key);
 		}
 		return null;
+	}
+
+	inline static public function quotes(key:String = "")
+	{
+		return "assets/quotes/" + key + ".txt";
 	}
 
 	inline static public function mods(key:String = '') {
@@ -395,8 +453,21 @@ class Paths
 		return modFolders('images/' + key + '.txt');
 	}
 
+	inline static public function modsTxtData(key:String) {
+		return modFolders('data/' + key + '.txt');
+	}
+
+	inline static public function warpInfo(key:String) {
+		return modFolders('data/' + key + '.txt');
+	}
+
 	inline static public function modsScriptTxt(key:String) {
 		return modFolders('scripts/' + key + '.txt');
+	}
+
+	inline static public function getModFile(key:String)
+	{
+		return modFolders(key);
 	}
 
 	static public function modFolders(key:String) {
@@ -407,6 +478,20 @@ class Paths
 			}
 		}
 		return 'mods/' + key;
+	}
+
+	static public function getModDirectories():Array<String> {
+		var list:Array<String> = [];
+		var modsFolder:String = mods();
+		if(FileSystem.exists(modsFolder)) {
+			for (folder in FileSystem.readDirectory(modsFolder)) {
+				var path = haxe.io.Path.join([modsFolder, folder]);
+				if (sys.FileSystem.isDirectory(path) && !ignoreModFolders.exists(folder) && !list.contains(folder)) {
+					list.push(folder);
+				}
+			}
+		}
+		return list;
 	}
 	#end
 }

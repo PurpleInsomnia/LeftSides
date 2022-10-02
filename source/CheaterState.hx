@@ -66,7 +66,7 @@ class CheaterState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new SpookyTitleState());
+				MusicBeatState.switchState(new TitleState());
 			});
 		}
 		if (controls.BACK)
@@ -75,11 +75,12 @@ class CheaterState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new SpookyTitleState());
+				MusicBeatState.switchState(new TitleState());
 			});
 		}
 		if (FlxG.keys.justPressed.N)
 		{
+			// lmao
 			LoadingState.loadAndSwitchState(new PlayState());
 		}
 	}

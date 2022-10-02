@@ -22,9 +22,15 @@ using StringTools;
 
 class WarningState extends MusicBeatState
 {
+	public static var left:Bool = false;
+
 	override function create()
 	{
 		FlxG.sound.music.stop();
+
+		#if MODS_ALLOWED
+		Paths.destroyLoadedImages();
+		#end
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -59,11 +65,14 @@ class WarningState extends MusicBeatState
 		if (controls.BACK)
 		{
 			FlxG.sound.play(Paths.sound('cancelMenu'));
-			MusicBeatState.switchState(new TitleState());
+			MusicBeatState.switchState(new MainMenuState());
+			FlxG.sound.music.stop();
 		}
 
 		if (controls.ACCEPT)
 		{
+			left = true;
+			FlxG.save.data.left = true;
 			MusicBeatState.switchState(new MainMenuState());
 			FlxG.sound.play(Paths.sound('pressWarning'));
 			FlxG.sound.music.stop();

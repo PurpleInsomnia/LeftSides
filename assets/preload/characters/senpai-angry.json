@@ -8,7 +8,7 @@
 			"loop": false,
 			"anim": "idle",
 			"fps": 24,
-			"name": "Angry Senpai Idle",
+			"name": "Cock",
 			"indices": []
 		},
 		{
@@ -57,7 +57,7 @@
 		}
 	],
 	"no_antialiasing": true,
-	"image": "characters/senpai",
+	"image": "characters/Mom_Assets",
 	"position": [
 		150,
 		360

@@ -121,14 +121,14 @@ class Option
 		this.child = child;
 	}
 
-	private function get_text()
+	public function get_text()
 	{
 		if(child != null) {
 			return child.text;
 		}
 		return null;
 	}
-	private function set_text(newValue:String = '')
+	public function set_text(newValue:String = '')
 	{
 		if(child != null) {
 			child.changeText(newValue);

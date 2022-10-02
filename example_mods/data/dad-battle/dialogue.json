@@ -1,11 +1,18 @@
 {
 	"dialogue": [
 		{
-			"expression": "cringe",
-			"text": "'Set A Pace' my ass",
+			"expression": "sus",
+			"text": "Imagine losing to a 19 year old that has only been doing this for like 7 minutes.",
 			"boxState": "normal",
 			"portrait": "bf",
 			"speed": 0.05
+		},
+		{
+			"expression": "happy",
+			"text": "Couldn't be me.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "default",
@@ -22,6 +29,13 @@
 			"speed": 0.05
 		},
 		{
+			"expression": "mic",
+			"text": "And if you SOMEHOW win this...\\n..I will go on an angry rant on twitter.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
 			"expression": "challenge",
 			"text": "Bring it.",
 			"boxState": "normal",
@@ -30,7 +44,7 @@
 		},
 		{
 			"expression": "stop-being-cute",
-			"text": "(No one has made it this far...)\\n(He's got what it takes...)",
+			"text": "(Why can't I just date him now...)",
 			"boxState": "normal",
 			"portrait": "gf",
 			"speed": 0.05

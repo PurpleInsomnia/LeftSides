@@ -93,7 +93,11 @@ class Character extends FlxSprite
 			//case 'your character name in case you want to hardcode him instead':
 
 			default:
-				var characterPath:String = 'characters/' + curCharacter + '.json';
+				var characterPath:String;
+				if (!PlayState.encoreMode)
+					characterPath = 'characters/' + curCharacter + '.json';
+				else
+					characterPath = 'characters/encore/' + curCharacter + '.json';
 				#if MODS_ALLOWED
 				var path:String = Paths.modFolders(characterPath);
 				if (!FileSystem.exists(path)) {
@@ -106,7 +110,10 @@ class Character extends FlxSprite
 				if (!Assets.exists(path))
 				#end
 				{
-					path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+					if (!PlayState.encoreMode)
+						path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+					else
+						path = Paths.getPreloadPath('characters/' + curCharacter + '.json');
 				}
 
 				#if MODS_ALLOWED

@@ -176,6 +176,10 @@ class DialogueBoxPsych extends FlxSpriteGroup
 	var box:FlxSprite = null;
 	var textToType:String = '';
 
+	var lePlayState:PlayState;
+
+	var canPress:Bool = false;
+
 	private var luaArray:Array<FunkinLua> = [];
 
 	var arrayCharacters:Array<DialogueCharacter> = [];
@@ -200,9 +204,9 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		bgFade.visible = true;
 		bgFade.alpha = 0;
 		add(bgFade);
-		
 
 		this.dialogueList = dialogueList;
+
 		spawnCharacters();
 
 		box = new FlxSprite(70, 370);
@@ -296,15 +300,47 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			// bgFade.alpha += 0.5 * elapsed;
 			// if(bgFade.alpha > 0.5) bgFade.alpha = 0.25;
 
-			if(PlayerSettings.player1.controls.BACK)
+			if(PlayerSettings.player1.controls.BACK && canPress)
 			{
-				skipDialogueThing();
-				dialogueEnded = true;
-				daText.kill();
-				remove(daText);
-				daText.destroy();
-				FlxG.sound.music.fadeOut(1, 0);
-				FlxG.sound.play(Paths.sound('dialogueSkip'));
+				if (daText.finishedText)
+				{
+					skipDialogueThing();
+					dialogueEnded = true;
+					daText.kill();
+					remove(daText);
+					daText.destroy();
+					FlxG.sound.music.fadeOut(1, 0);
+					FlxG.sound.play(Paths.sound('dialogueSkip'));
+				}
+				else
+				{
+					daText.killTheTimer();
+					skipDialogueThing();
+					dialogueEnded = true;
+					daText.kill();
+					remove(daText);
+					daText.destroy();
+					FlxG.sound.music.fadeOut(1, 0);
+					FlxG.sound.play(Paths.sound('dialogueSkip'));
+				}
+			}
+
+			if (PlayerSettings.player1.controls.EMOTE)
+			{
+				if(!daText.finishedText) {
+					if(daText != null) {
+						daText.killTheTimer();
+						daText.kill();
+						remove(daText);
+						daText.destroy();
+					}
+					daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.7);
+					add(daText);
+					
+					if(skipDialogueThing != null) {
+						skipDialogueThing();
+					}
+				}
 			}
 
 			if(PlayerSettings.player1.controls.ACCEPT) {
@@ -344,8 +380,8 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				} else {
 					startNextDialog();
 				}
-				FlxG.sound.play(Paths.sound(ClientPrefs.closeSound));
-				callOnLuas('onDialogueClick', []);
+				FlxG.sound.play(Paths.sound('dialogueClose'));
+				// lePlayState.callOnLuas('onDialogueClick', []);
 			} else if(daText.finishedText) {
 				var char:DialogueCharacter = arrayCharacters[lastCharacter];
 				if(char != null && char.animation.curAnim != null && char.animationIsLoop() && char.animation.finished) {
@@ -451,6 +487,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 					}
 				}
 				finishThing();
+				// lePlayState.dialogueComplete();
 				kill();
 			}
 		}
@@ -486,6 +523,73 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				break;
 			}
 		}
+
+		var soundString = 'textSounds/' + curDialogue.portrait + 'Text';
+		if (FileSystem.exists('assets/shared/sounds/' + soundString + '.ogg') && ClientPrefs.dialogueVoices || FileSystem.exists('mods/' + Paths.currentModDirectory + '/sounds/' + soundString + '.ogg')  && ClientPrefs.dialogueVoices)
+		{
+			Alphabet.textSound = soundString;
+			if (curDialogue.portrait == 'senpai' && curDialogue.expression == 'angry')
+			{
+				Alphabet.textSound = 'textSounds/angrysenpaiText';
+			}
+			if (curDialogue.portrait == 'dad' && curDialogue.expression == 'no')
+			{
+				Alphabet.textSound = 'dialogue';
+			}
+		}
+		else
+		{
+			Alphabet.textSound = 'dialogue';
+
+			// I have to do this in order to minimize the amount of MBs this mod has :/
+			// If you have a better solution, contact me.
+
+			if (ClientPrefs.dialogueVoices)
+			{
+				switch (curDialogue.portrait)
+				{
+					case 'spookeez':
+						if (curDialogue.expression == 'skid-default' || curDialogue.expression == 'skid-bruh' || curDialogue.expression == 'skid-point' || curDialogue.expression == 'skid-sad')
+						{
+							Alphabet.textSound = 'textSounds/skidText';
+						}
+						else
+						{
+							Alphabet.textSound = 'textSounds/pumpText';
+						}
+					case 'hug':
+						if (curDialogue.expression == 'bf')
+						{
+							Alphabet.textSound = 'textSounds/bfText';
+						}
+						else
+						{
+							Alphabet.textSound = 'textSounds/gfText';
+						}
+					case 'bf-christmas':
+						Alphabet.textSound = 'textSounds/bfText';
+					case 'gf-christmas':
+						Alphabet.textSound = 'textSounds/gfText';
+					case 'dad-christmas':
+						Alphabet.textSound = 'textSounds/dadText';
+					case 'mom-christmas':
+						Alphabet.textSound = 'textSounds/momText'; 
+					case 'bb':
+						if (curDialogue.expression.startsWith('walt'))
+						{
+							Alphabet.textSound = 'textSounds/waltText';
+						}
+						if (curDialogue.expression.startsWith('jesse'))
+						{
+							Alphabet.textSound = 'textSounds/jesseText';
+						}
+				}
+			}
+		}
+
+		// haha funny XDDDDDDDssssss!!!111//11/
+		if (curDialogue.text == ' ' || curDialogue.text.length < 1)
+			Alphabet.textSound = 'dialogue';
 
 		var centerPrefix:String = '';
 		var lePosition:String = arrayCharacters[character].jsonFile.dialogue_pos;
@@ -524,6 +628,9 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			}
 		}
 		currentText++;
+
+		if (!canPress)
+			canPress = true;
 
 		if(nextDialogueThing != null) {
 			nextDialogueThing();

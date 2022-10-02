@@ -1,0 +1,60 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ""
+		},
+		{
+			"speed": 0.06,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "waking-up",
+			"text": "...Who could that be at the lovely hour of...."
+		},
+		{
+			"speed": 0.07,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "Seven In The Morning...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "phone",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "[TESS]: Hey, can you come over?\\nI need to tell you something.....\\n(Kinda about what happened yesterday)..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "say-what",
+			"text": "(Guess she changed her mind about not bringing it up...)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "phone",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "[ME]: i gotta make coffee first lol...\\nafter that, i'll be headin over :)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "say-what",
+			"text": "(Hope she's not upset at me or anything...)\\n(But I guess that I shouldn't overthink about what she needs to say....)"
+		},
+		{
+			"speed": 0.07,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "(And now to making coffee....)"
+		}
+	]
+}

@@ -6,6 +6,17 @@
 				37,
 				11
 			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BF dies",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				37,
+				11
+			],
 			"anim": "firstDeath",
 			"fps": 24,
 			"name": "BF dies",

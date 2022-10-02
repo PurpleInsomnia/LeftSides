@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				215,
+				184
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				61,
+				184
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				158,
+				62
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				59,
+				173
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				59,
+				50
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"loop": false,
+			"name": "Sussy Baka"
+		},
+		{
+			"offsets": [
+				173,
+				62
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "The Devil"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "too-fest/TheDevil",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "the-devil",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		20,
+		20
+	],
+	"camera_position": [
+		-310,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

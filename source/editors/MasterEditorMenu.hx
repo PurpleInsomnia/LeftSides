@@ -88,6 +88,10 @@ class MasterEditorMenu extends MusicBeatState
 				case 'Dialogue Editor':
 					LoadingState.loadAndSwitchState(new DialogueEditorState(), false);
 				case 'Chart Editor':
+					if (PlayState.SONG == null)
+					{
+						PlayState.SONG = Song.loadFromJson('dad-battle', 'dad-battle');
+					}
 					LoadingState.loadAndSwitchState(new ChartingState(), false);
 			}
 			FlxG.sound.music.volume = 0;

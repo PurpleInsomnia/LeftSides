@@ -5,7 +5,7 @@ local dialogueBg = function (bg, tween, other)
 	if loaded then
 		removeLuaSprite('dialogueBg', true);
 	end
-	makeLuaSprite('dialogueBg', bg, 0, 0);
+	makeLuaSprite('dialogueBg', 'dialogueBgs/' .. bg, 0, 0);
 	if other then
 		setObjectCamera('dialogueBg', 'camOther');
 	else
@@ -47,11 +47,11 @@ function onTimerCompleted(tag, loops, loopsLeft)
 end
 
 function onCreate()
-	dialogueBg('dialogueBgs/spooky', false, false);
+	dialogueBg('spooky', false, false);
 
-	doTweenColor('bfShading', 'boyfriend', '7F7F7F', 0.001, 'linear');
-	doTweenColor('dadShading', 'dad', '7F7F7F', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '7F7F7F', 0.001, 'linear');
+	-- doTweenColor('bfShading', 'boyfriend', '7F7F7F', 0.001, 'linear');
+	-- doTweenColor('dadShading', 'dad', '7F7F7F', 0.001, 'linear');
+	-- doTweenColor('gfShading', 'gf', '7F7F7F', 0.001, 'linear');
 end
 
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)

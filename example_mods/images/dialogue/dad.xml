@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="dad.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="default.png" x="0" y="0" width="409" height="395"/>
-	<SubTexture name="mic.png" x="419" y="0" width="409" height="395"/>
-	<SubTexture name="no.png" x="0" y="405" width="409" height="395"/>
-	<SubTexture name="yell.png" x="419" y="405" width="409" height="395"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:379d4b7ea22140268202ab51c199c400:a9204d42ba0721d8563c4e4e8d772969:a65ab0777e9bc18cf55b8321e42f1ce6$ -->
+<TextureAtlas imagePath="dad.png" width="818" height="790">
+    <SubTexture name="default" x="0" y="0" width="409" height="395"/>
+    <SubTexture name="mic" x="409" y="0" width="409" height="395"/>
+    <SubTexture name="no" x="0" y="395" width="409" height="395"/>
+    <SubTexture name="yell" x="409" y="395" width="409" height="395"/>
 </TextureAtlas>

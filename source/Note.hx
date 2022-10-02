@@ -98,6 +98,18 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
+				case 'Glitch Note':
+					ignoreNote = mustPress;
+					reloadNote('glitch');
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					if(isSustainNote) {
+						missHealth = 0.1;
+					} else {
+						missHealth = 0.3;
+					}
+					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
 			}
@@ -213,7 +225,7 @@ class Note extends FlxSprite
 		x += offsetX;
 	}
 
-	function reloadNote(?prefix:String = '', ?texture:String = '', ?suffix:String = '') {
+	public function reloadNote(?prefix:String = '', ?texture:String = '', ?suffix:String = '') {
 		if(prefix == null) prefix = '';
 		if(texture == null) texture = '';
 		if(suffix == null) suffix = '';
@@ -223,6 +235,15 @@ class Note extends FlxSprite
 			skin = PlayState.SONG.arrowSkin;
 			if(skin == null || skin.length < 1) {
 				skin = 'NOTE_assets';
+			}
+		}
+
+		if (skin == 'NOTE_assets' || skin == PlayState.SONG.arrowSkin)
+		{
+			if (prefix.length < 1 || suffix.length < 1)
+			{
+				if (ClientPrefs.customStrum != 'Off')
+					skin = ClientPrefs.customStrum;
 			}
 		}
 
@@ -236,6 +257,7 @@ class Note extends FlxSprite
 
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
+		// maybe?
 		if(PlayState.isPixelStage) {
 			if(isSustainNote) {
 				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));

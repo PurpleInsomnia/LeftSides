@@ -56,6 +56,7 @@ class ChartingState extends MusicBeatState
 		'',
 		'Alt Animation',
 		'Hey!',
+		'Glitch Note',
 		'Hurt Note',
 		'GF Sing',
 		'No Animation'
@@ -77,7 +78,27 @@ class ChartingState extends MusicBeatState
 		['Camera Follow Pos', "Value 1: X\nValue 2: Y\n\nThe camera won't change the follow point\nafter using this, for getting it back\nto normal, leave both values blank."],
 		['Alt Idle Animation', "Sets a speciied suffix after the idle animation name.\nYou can use this to trigger 'idle-alt' if you set\nValue 2 to -alt\n\nValue 1: Character to set (Dad, BF or GF)\nValue 2: New suffix (Leave it blank to disable)"],
 		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
-		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"]
+		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
+		['Change Scroll Speed', 'VALUE 1: The Multiplier'],
+		['Cinematic Bar Zoom', 'Value 1: The y value the bars will be added to\n(put 1 for default)\n \nValue 2: Time'],
+		['Cam Tween Zoom', 'Value 1: Zoom Value\nValue 2: Time (none for instant)'],
+		['Lyrics', 'Value 1: Text\nValue 2: Char (dad for dad, mom for mom and so on)\nPut "remove" in value 1 to remove the thing lol\nPut "<>" to split the text and\nto add a color\n(Example: Penis<>FF0000)'],
+		['Countdown', 'Sus? (PLACE 1 BEAT BEOFRE COUNTDOWN)'],
+		['Note Spin', 'Spins notes on a certain beat'],
+		['Screen Flash', 'Cum color?!?!?!?!'],
+		['Monster Window', 'Fatal Error reference?!\nvalue 1: Amount (leave blank for only one)'],
+		['Switch Note Sides', 'Place to toggle'],
+		['Real Time', 'D Sides Too Slow?!\nvalue 1: New length in milliseconds'],
+		['Change UI', 'Place to Toggle'],
+		['Hide HUD', 'Hides SOME hud elements\nValue 1: Alpha,\nValue 2: Time in secs (0 for instant)'],
+		['Zoom Multiplier', 'Multiplys the camera zoom by Value 1\nMUST BE GREATER THAN 0'],
+		['Zoom On Note Hit', 'Place to Toggle'],
+		['Camera Angle', 'Value 1: Angle\nValue 2: Secs\nYou can put "<>" to split the time\nAND to add an EASE'],
+		['Note Angle', 'Same thing as camera angle.'],
+		['Blammed Angle', 'Based off that funny part in blammed\nValue 1: Player (DAD, BF)\nValue 2: Angle (CANNOT BE A NEGATIVE)'],
+		["Vine Boom", "Value 1: Type anything here to play the sound effect\nValue 2: Duration of the shake"],
+		["Change Note Skin", "Value 1: Skin to change to (file path)"],
+		["Screen VG", "Value 1: Tween Time\nValue 2: How long it should be up (tween time included)"]
 	];
 
 	var _file:FileReference;
@@ -137,6 +158,7 @@ class ChartingState extends MusicBeatState
 	var zoomTxt:FlxText;
 	var curZoom:Int = 1;
 
+	// Zoom lol
 	#if !html5
 	var zoomList:Array<Float> = [
 		0.5,
@@ -146,7 +168,12 @@ class ChartingState extends MusicBeatState
 		8,
 		12,
 		16,
-		24
+		24,
+		32,
+		40,
+		44,
+		48,
+		50
 	];
 	#else //The grid gets all black when over 1/12 snap
 	var zoomList:Array<Float> = [
@@ -1300,7 +1327,7 @@ class ChartingState extends MusicBeatState
 
 				//if(_song.stage == null) _song.stage = stageDropDown.selectedLabel;
 				StageData.loadDirectory(_song);
-				if (currentSongName == 'nightmare')
+				if (currentSongName == 'Nightmare')
 				{
 					MusicBeatState.switchState(new CheaterState());
 				}
@@ -1470,7 +1497,7 @@ class ChartingState extends MusicBeatState
 				if(note.strumTime > lastConductorPos && ((playSoundBf.checked && note.mustPress) || (playSoundDad.checked && !note.mustPress)) && FlxG.sound.music.playing && note.noteData > -1) {
 					var data:Int = note.noteData % 4;
 					if(!playedSound[data]) {
-						var soundToPlay = 'ChartingTick';						
+						var soundToPlay = 'Charting_' + Std.string(data + 1);						
 						if(_song.player1 == 'gf') { //Easter egg
 							soundToPlay = 'GF_' + Std.string(data + 1);
 						}

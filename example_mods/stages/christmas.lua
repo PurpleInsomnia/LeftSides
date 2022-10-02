@@ -52,15 +52,12 @@ function onCreate()
 	addAnimationByPrefix('santa', 'idle', 'santaNeedsTheFortniteBattlePass', 24, false);
 	addLuaSprite('santa', false);
 
+	makeLuaSprite('hue', 'christmas/hue', -1200, -500);
+	addLuaSprite('hue', false);
+
 	makeLuaSprite('ethanIsHotAndSmexy', 'christmas/fgSnow', '-800', '780');
 	addLuaSprite('ethanIsHotAndSmexy', true);
 	-- aaaaaaaaaa theres snow in da speaker.
-
-	if not lowQuality then
-		makeAnimatedLuaSprite('frontBoppers', 'christmas/FGboppers', -300, 240 * 2);
-		addAnimationByPrefix('frontBoppers', 'idle', 'boppers bop', 24, false);
-		addLuaSprite('frontBoppers', true);
-	end
 
 	makeAnimatedLuaSprite('snowFall', 'christmas/fallingSnow', 0, 0);
 	addAnimationByPrefix('snowFall', 'idle', 'bad', 24, true);
@@ -77,7 +74,6 @@ function onBeatHit()
 		objectPlayAnimation('boppersAlt', 'idle', true);
 		objectPlayAnimation('bottomBoppers', 'idle', true);
 		objectPlayAnimation('bottomBoppersAlt', 'idle', true);
-		objectPlayAnimation('frontBoppers', 'idle', true);
 		objectPlayAnimation('santa', 'idle', true);
 	end
 end

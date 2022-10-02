@@ -11,12 +11,13 @@ class AttachedSprite extends FlxSprite
 	public var yAdd:Float = 0;
 	public var angleAdd:Float = 0;
 	public var alphaAdd:Float = 0;
+	public var alphaMult:Float = 1;
 
 	public var copyAngle:Bool = true;
 	public var copyAlpha:Bool = true;
 	public var copyVisible:Bool = false;
 
-	public function new(file:String, ?anim:String = null, ?library:String = null, ?loop:Bool = false)
+	public function new(?file:String = null, ?anim:String = null, ?library:String = null, ?loop:Bool = false)
 	{
 		super();
 		if(anim != null) {

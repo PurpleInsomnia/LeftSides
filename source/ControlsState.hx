@@ -53,10 +53,13 @@ class ControlsState extends MusicBeatState
 		ClientPrefs.keyBinds[6][1],
 		ClientPrefs.keyBinds[7][1],
 		'',
+		'ETC.',
 		ClientPrefs.keyBinds[8][1],
 		ClientPrefs.keyBinds[9][1],
 		ClientPrefs.keyBinds[10][1],
 		ClientPrefs.keyBinds[11][1],
+		'',
+		'MECHANICS',
 		ClientPrefs.keyBinds[12][1],
 		'',
 		defaultKey];
@@ -69,9 +72,11 @@ class ControlsState extends MusicBeatState
 
 	override function create() {
 
-		menuBG = new FlxSprite().loadGraphic(Paths.image('menuOptions'));
-		menuBG.screenCenter();
-		add(menuBG);
+		#if MODS_ALLOWED
+		Paths.destroyLoadedImages();
+		#end
+
+		add(new GridBackdrop());
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);

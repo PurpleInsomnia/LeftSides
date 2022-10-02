@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:364a2bf917286828e6ad9e385d03a5aa:773a0eb578653d49b8e2ce5258ffcf0d:6c23700e54c2fd709ae22ca3d3d055a2$ -->
+<TextureAtlas imagePath="senpai.png" width="1231" height="245">
+    <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="default" x="411" y="0" width="409" height="245"/>
+    <SubTexture name="wink" x="822" y="0" width="409" height="245"/>
+</TextureAtlas>

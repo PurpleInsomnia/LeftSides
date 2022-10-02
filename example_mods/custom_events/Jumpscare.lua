@@ -43,7 +43,11 @@ function onEvent(name, value1, value2)
 		isScary = true;
 
 		runTimer('scareHide', 0.3);
+		runTimer('fuckShit', 0.3);
 		runTimer('cooldown', 5);
+	end
+	if name == 'Jumpscare' and not jumpscares and not isScary then
+		runTimer('fuckShit', 0.3);
 	end
 end
 
@@ -53,5 +57,8 @@ function onTimerCompleted(tag)
 	end
 	if tag == 'cooldown' then
 		isScary = false;
+	end
+	if tag == 'fuckShit' then
+		arrowAngle(90);
 	end
 end

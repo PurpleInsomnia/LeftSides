@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:b79c6dedaad1e195b346d159affb9a3e:4a11813d911b9ec2d3008dffcf89f14f:0fa7de88c8d79e70617ba0ceb45b1e92$ -->
+<TextureAtlas imagePath="ogGf.png" width="820" height="245">
+    <SubTexture name="default" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="wink" x="411" y="0" width="409" height="245"/>
+</TextureAtlas>

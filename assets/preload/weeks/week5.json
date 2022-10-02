@@ -1,9 +1,9 @@
 {
-	"storyName": "RED SNOW",
+	"storyName": "CHRISTMAS SHOPPING",
 	"hideFreeplay": false,
 	"weekBackground": "christmas",
 	"weekBefore": "week4",
-	"startUnlocked": true,
+	"startUnlocked": false,
 	"weekCharacters": [
 		"",
 		"bf",
@@ -21,7 +21,7 @@
 		],
 		[
 			"Eggnog",
-			"parents-alt",
+			"parents",
 			[
 				160,
 				209,
@@ -29,7 +29,7 @@
 			]
 		],
 		[
-			"Winter-Horrorland",
+			"Horrifying Truth",
 			"freeme",
 			[
 				20,

@@ -41,14 +41,15 @@ class ResetScoreSubState extends MusicBeatSubstate
 		var tooLong:Float = (name.length > 18) ? 0.8 : 1; //Fucking Winter Horrorland
 		var text:Alphabet = new Alphabet(0, 180, "Reset the score of", true);
 		text.screenCenter(X);
-		alphabetArray.push(text);
-		text.alpha = 0;
+		text.scrollFactor.set();
 		add(text);
 		var text:Alphabet = new Alphabet(0, text.y + 90, name, true, false, 0.05, tooLong);
 		text.screenCenter(X);
-		if(week == -1) text.x += 60 * tooLong;
-		alphabetArray.push(text);
-		text.alpha = 0;
+		text.scrollFactor.set();
+
+		if(week == -1) 
+			text.x += 60 * tooLong;
+
 		add(text);
 		if(week == -1) {
 			icon = new HealthIcon(character);
@@ -56,16 +57,19 @@ class ResetScoreSubState extends MusicBeatSubstate
 			icon.updateHitbox();
 			icon.setPosition(text.x - icon.width + (10 * tooLong), text.y - 30);
 			icon.alpha = 0;
+			icon.scrollFactor.set();
 			add(icon);
 		}
 
 		yesText = new Alphabet(0, text.y + 150, 'Yes', true);
 		yesText.screenCenter(X);
 		yesText.x -= 200;
+		yesText.scrollFactor.set();
 		add(yesText);
 		noText = new Alphabet(0, text.y + 150, 'No', true);
 		noText.screenCenter(X);
 		noText.x += 200;
+		noText.scrollFactor.set();
 		add(noText);
 		updateOptions();
 	}
@@ -75,10 +79,6 @@ class ResetScoreSubState extends MusicBeatSubstate
 		bg.alpha += elapsed * 1.5;
 		if(bg.alpha > 0.6) bg.alpha = 0.6;
 
-		for (i in 0...alphabetArray.length) {
-			var spr = alphabetArray[i];
-			spr.alpha += elapsed * 2.5;
-		}
 		if(week == -1) icon.alpha += elapsed * 2.5;
 
 		if(controls.UI_LEFT_P || controls.UI_RIGHT_P) {

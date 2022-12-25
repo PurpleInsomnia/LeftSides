@@ -1,0 +1,30 @@
+{
+	"storyName": "ONE YEAR AFTER WEEK 6...",
+	"hideFreeplay": false,
+	"weekBackground": "tank",
+	"weekBefore": "week6",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Ron",
+			"ron",
+			[
+				0,
+				255,
+				20
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week 7"
+}

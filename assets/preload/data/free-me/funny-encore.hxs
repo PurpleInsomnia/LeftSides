@@ -1,0 +1,58 @@
+var doTextThing:Bool = false;
+var daStuff:Array<String> = ["PLEASE", "HELP", "ME"];
+var fonts:Array<String> = ["eras", "vcr"];
+function onCreate()
+{
+    daStuff.push(CoolUtil.username().toUpperCase());
+}
+
+function onStepHit()
+{
+    if (curStep == 1279)
+    {
+        lePlayState.timeTxt.text = "[ETERNITY]";
+        lePlayState.timeTxt.font = Paths.font(fonts[0] + ".ttf");
+        lePlayState.timeBar.visible = false;
+        doTextThing = false;
+    }
+    if (curStep == 512 || curStep == 1760)
+    {
+        lePlayState.customTimeText = true;
+        doTextThing = true;
+        if (curStep == 1760)
+        {
+            lePlayState.timeBar.visible = true;
+            for (i in 0...4)
+            {
+                lePlayState.modchartTweens.set("final stretch tween", FlxTween.tween(lePlayState.playerStrums.members[i], {angle: 360}, (beat * 4), {type: FlxTweenType.looping}));
+            }
+        }
+    }
+}
+
+function onBeatHit()
+{
+    if (doTextThing)
+    {
+        if (curBeat % 4 == 0)
+        {
+            lePlayState.timeTxt.text = daStuff[0];
+            lePlayState.timeTxt.font = Paths.font(fonts[0] + ".ttf");
+        }
+        if (curBeat % 4 == 1)
+        {
+            lePlayState.timeTxt.text = daStuff[1];
+            lePlayState.timeTxt.font = Paths.font(fonts[1] + ".ttf");
+        }
+        if (curBeat % 4 == 2)
+        {
+            lePlayState.timeTxt.text = daStuff[2];
+            lePlayState.timeTxt.font = Paths.font(fonts[0] + ".ttf");
+        }
+        if (curBeat % 4 == 3)
+        {
+            lePlayState.timeTxt.text = daStuff[3];
+            lePlayState.timeTxt.font = Paths.font(fonts[1] + ".ttf");
+        }
+    }
+}

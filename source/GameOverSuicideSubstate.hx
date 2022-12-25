@@ -11,6 +11,9 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
 import flixel.FlxSprite;
+import openfl.filters.ShaderFilter;
+import openfl.filters.BitmapFilter;
+import filters.VCR;
 
 class GameOverSuicideSubstate extends MusicBeatSubstate
 {
@@ -34,6 +37,8 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 	public static var loopSoundName:String = 'gameOverSuicide';
 	public static var endSoundName:String = 'gameOverEndSuicide';
 
+	var vcr:VCR;
+
 	public static function resetVariables() {
 		characterName = 'bf-blueballed';
 		deathSoundName = 'fnf_loss_sfx';
@@ -46,8 +51,6 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 		lePlayState = state;
 		state.setOnLuas('inGameOver', true);
 		super();
-
-		FlxG.camera.zoom = 1;
 
 		Conductor.songPosition = 0;
 
@@ -70,15 +73,11 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 		jumpscareSpr.scrollFactor.set();
 		add(jumpscareSpr);
 
-		var stupidStatic:FlxSprite = new FlxSprite();
-		stupidStatic.frames = Paths.getSparrowAtlas('static');
-		stupidStatic.antialiasing = ClientPrefs.globalAntialiasing;
-		stupidStatic.animation.addByPrefix('idle', 'idle', 24, true);
-		stupidStatic.animation.play('idle');
-		stupidStatic.scrollFactor.set();
-		stupidStatic.screenCenter();
-
-		add(stupidStatic);
+		var toAdd:Array<BitmapFilter> = [];
+        vcr = new VCR();
+        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        toAdd.push(filter2);
+        FlxG.camera.setFilters(toAdd);
 
 		FlxG.sound.play(Paths.sound(deathSoundName));
 		Conductor.changeBPM(100);
@@ -104,6 +103,9 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		vcr.update(elapsed);
+		FlxG.camera.zoom = 1;
 
 		// FlxG.camera.x = red.x;
 		// FlxG.camera.y = red.y;
@@ -152,7 +154,6 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 	function coolStartDeath(?volume:Float = 1):Void
 	{
 		FlxG.sound.playMusic(Paths.music(loopSoundName), volume);
-		add(new Acheivement(19, "You did it\nYou Killed Yourself", "spookyGlitch"));
 	}
 
 	function endBullshit():Void

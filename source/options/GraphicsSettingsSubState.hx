@@ -44,13 +44,6 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			false); //Default value
 		addOption(option);
 
-		var option:Option = new Option('Shaders',
-			'If checked, enables some cool (enviromental)\neffects to the game.\n(DISABLE IF YOU HAVE LOW QUALITY ON!)',
-			'shaders',
-			'bool',
-			true);
-		addOption(option);
-
 		var option:Option = new Option('Anti-Aliasing',
 			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
 			'globalAntialiasing',

@@ -1,0 +1,32 @@
+{
+	"dialogue": [
+		{
+			"expression": "challenge",
+			"text": "Piano took too many reverb drugs.\\nDrums were fresh.\\nPad was okay.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "happy",
+			"text": "7 out of 10",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "flert",
+			"text": "Not bad...Now lets pick up the pace!\nUnless if you're ''too tired''...",
+			"boxState": "normal",
+			"portrait": "mom",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "*angry mubling about how he wants to cuddle with tess or sum, idk how to translate it*",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		}
+	]
+}

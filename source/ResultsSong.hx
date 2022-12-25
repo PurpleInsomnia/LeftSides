@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.ui.FlxButton;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
 
@@ -174,10 +173,11 @@ class ResultsSong extends MusicBeatState
 
 		FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
 		{
-			if (!PlayState.encoreMode)
-				MusicBeatState.switchState(new FreeplayState());
-			else
-				MusicBeatState.switchState(new FreeplayEncoreState());
+			var check:Bool = StateManager.check("freeplay");
+			if (!check)
+			{
+				MusicBeatState.switchState(new FunnyFreeplayState());
+			}
 		});
 	}
 

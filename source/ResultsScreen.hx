@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.ui.FlxButton;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
 
@@ -168,10 +167,14 @@ class ResultsScreen extends MusicBeatState
 		{
 			if (PlayState.SONG.song != 'Free Me' || PlayState.SONG.song != 'Thorns' || PlayState.SONG.song != 'Horrifying Truth')
 			{
-				if (!PlayState.encoreMode)
-					MusicBeatState.switchState(new StoryMenuState());
-				else
-					MusicBeatState.switchState(new StoryEncoreState());
+				var check:Bool = StateManager.check("freeplay");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+						MusicBeatState.switchState(new StoryMenuState());
+					else
+						MusicBeatState.switchState(new StoryEncoreState());
+				}
 			}
 			if (PlayState.SONG.song == 'Free Me')
 				MusicBeatState.switchState(new NoIdeaState());
@@ -185,10 +188,14 @@ class ResultsScreen extends MusicBeatState
 				MusicBeatState.switchState(new UnlockedState('void'));
 			if (PlayState.SONG.song == 'Horrifying Truth' && ClientPrefs.week8Done)
 			{
-				if (!PlayState.encoreMode)
-					MusicBeatState.switchState(new StoryMenuState());
-				else
-					MusicBeatState.switchState(new StoryEncoreState());
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+						MusicBeatState.switchState(new StoryMenuState());
+					else
+						MusicBeatState.switchState(new StoryEncoreState());
+				}
 			}
 		});
 	}

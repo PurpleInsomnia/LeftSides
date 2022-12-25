@@ -2,6 +2,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.ui.FlxButton;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import haxe.Json;
 
 class MonsterWindow extends FlxTypedGroup<Dynamic>
 {

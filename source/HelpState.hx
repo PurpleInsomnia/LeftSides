@@ -3,13 +3,27 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
+import filters.*;
 
 class HelpState extends MusicBeatState
 {
 	var vg:FlxSprite;
 
+	var vcr:VCR;
+
 	override function create()
 	{
+		var toAdd:Array<BitmapFilter> = [];
+        var tv:TV = new TV();
+        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+        vcr = new VCR();
+        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        toAdd.push(filter1);
+        toAdd.push(filter2);
+        FlxG.camera.setFilters(toAdd);
+
 		add(new FlxSprite().loadGraphic(Paths.image('help')));
 
 		FlxG.sound.play(Paths.sound('help'));
@@ -28,5 +42,11 @@ class HelpState extends MusicBeatState
 		}});
 
 		super.create();
+	}
+
+	override function update(elapsed) 
+	{
+		vcr.update(elapsed);
+		super.update(elapsed);	
 	}
 }

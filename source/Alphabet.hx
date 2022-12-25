@@ -83,7 +83,7 @@ class Alphabet extends FlxSpriteGroup
 		}
 	}
 
-	public function changeText(newText:String, newTypingSpeed:Float = -1)
+	public function changeText(newText:String, ?newTypingSpeed:Float = -1)
 	{
 		newText = checkText(newText);
 		for (i in 0...lettersArray.length) {

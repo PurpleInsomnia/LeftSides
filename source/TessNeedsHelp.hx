@@ -4,15 +4,29 @@ import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
 import flixel.FlxG;
 import flixel.addons.transition.FlxTransitionableState;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
+import filters.*;
 
 class TessNeedsHelp extends MusicBeatState
 {
 	var jump:FlxSprite;
 
+	var vcr:VCR;
+
 	override function create()
 	{
 		FlxTransitionableState.skipNextTransIn = true;
 		jump = new FlxSprite().loadGraphic(Paths.image("fault/3"));
+
+		var toAdd:Array<BitmapFilter> = [];
+        var tv:TV = new TV();
+        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+        vcr = new VCR();
+        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        toAdd.push(filter1);
+        toAdd.push(filter2);
+        FlxG.camera.setFilters(toAdd);
 
 		FlxG.sound.play(Paths.sound("fault/amb"), 1, true);
 
@@ -38,6 +52,12 @@ class TessNeedsHelp extends MusicBeatState
 		}});
 
 		super.create();
+	}
+
+	override function update(elapsed) 
+	{
+		vcr.update(elapsed);
+		super.update(elapsed);	
 	}
 
 	function jumpscare()

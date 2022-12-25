@@ -1,0 +1,193 @@
+{
+	"dialogue": [
+		{
+			"expression": "waking-up",
+			"text": "Jesus that was a work out.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "wat",
+			"text": "*Game Over Noises*",
+			"boxState": "normal",
+			"portrait": "ogbf",
+			"speed": 0.05
+		},
+		{
+			"expression": "talk",
+			"text": "Fuck you guys I'm telling my dad on you.",
+			"boxState": "normal",
+			"portrait": "oggf",
+			"speed": 0.05
+		},
+		{
+			"expression": "happy",
+			"text": "Welp time to dip.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "no",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "waking-up",
+			"text": "Babe... I just had the WEIRDEST dream in the history of existance."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Can't be weirder than mine.\\nI dreamt about Eggman...but he looked different...or something..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "Funny... I dreamt that too...."
+		},
+		{
+			"expression": "confused",
+			"text": "Wait.... how much time has passed while we were asleep???",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "Um.......",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cringe",
+			"text": "2 hours.",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "What the fu-",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "happy",
+			"text": "Oh look the game loaded :)",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.02
+		},
+		{
+			"expression": "laughing",
+			"text": "*Ha ha* I don't care if we fell asleep already, we're still calling this an all-nighter!",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "trolling",
+			"text": "Hell yeah!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "amongus",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "This game is so fucking goofy, how did they let the spelling of ''IRON'' pass as ''IRAN''?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "There is NO fucking way that it's a\\nmistranslation."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "H-hey baby?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "blush",
+			"text": "Yeah?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "I'm sorry about...what I said infront of the mall....I'm just...not ready yet...y'know?.."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what-is-this-emotion",
+			"text": "Hey, it's okay...I want you to know that only YOU get to decide when YOU want to talk...okay?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "...okay....\\nOh- and another thing..."
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "umm....this is getting k-kinda boring...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Wanna um...go upstairs...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "horny",
+			"text": "A-and...umm...y'know?~",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "big-blush",
+			"text": "Sheeesh, okay!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		}
+	]
+}

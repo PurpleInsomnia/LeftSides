@@ -1,0 +1,79 @@
+{
+    "sections": [
+        {
+            "name": "Left Sides Team",
+            "subsections": [
+                {
+                    "title": "Left Sides Director",
+                    "people": [["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Director of Left Sides"]]
+                },
+                {
+                    "title": "Left Sides Programers",
+                    "people": [["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Lead Programmer"]]
+                },
+                {
+                    "title": "Left Sides Composers",
+                    "people": [["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Lead Composer"]]
+                },
+                {
+                    "title": "Left Sides Artists/Animators",
+                    "people": [["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Lead arist/animator"]]
+                },
+                {
+                    "title": "Left Sides Charters",
+                    "people": [["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Lead Charter"]]
+                },
+                {
+                    "title": "Left Sides Voice Actors",
+                    "people": [
+                        ["PurpleInsomnia", "purpleinsomnia", "https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA", "Voice actor for MONSTER, SCORCHED RED, TORMENTOR K and NUCKLES"],
+                        ["Your Sour Toast", "yst", "https://www.youtube.com/channel/UCZrlqAH631iOJuMuxPyJxLg", "Voice actor for V. (new mod in development starring her soon??)"]
+                    ]
+                },
+                {
+                    "title": "Special Thanks",
+                    "people": [
+                        ["You", "you", "", "Supporting this project and some cool ass fan art (if you made any)"],
+                        ["JustCam", "cam", "", "Charted SENPAI before WEEK 6 got canned"],
+                        ["nico_1786", "nico", "https://www.youtube.com/channel/UC54887rDEIZGpUXELibdSTQ", "Charted GUNS before WEEK 7 got canned"]
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Psych Engine Team",
+            "subsections": [
+                {
+                    "title": "Psych Engine Programers",
+                    "people": [
+                        ["Shadow Mario", "shadowmario", "https://twitter.com/Shadow_Mario_", "Main programmer of Psych Engine"],
+                        ["SqirraRNG", "gedehari", "https://twitter.com/gedehari", "Chart Editor's waveform base"],
+                        ["PolybiusProxy", "polybiusproxy", "https://twitter.com/polybiusproxy", ".MP4 loader extention"],
+                        ["Smokey", "smokey", "https://twitter.com/Smokey_5_", "Spritemap texture support"]
+                    ]
+                },
+                {
+                    "title": "Psych Engine Artists/Animators",
+                    "people": [
+                        ["RiverOaken", "riveroaken", "https://twitter.com/river_oaken", "Main Artist/Animator for Psych Engine"],
+                        ["Keoiki", "keoiki", "https://twitter.com/Keoiki", "Note Splash Animations"]
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Funkin' Crew",
+            "subsections": [
+                {
+                    "title": "Funkin Crew",
+                    "people": [
+                        ["ninjamuffin99", "ninjamuffin99", "'https://twitter.com/ninja_muffin99", "Programmer for FRIDAY NIGHT FUNKIN'"],
+                        ["PhantomArcade", "phantomarcade", "https://twitter.com/PhantomArcade3K", "Animator for FRIDAY NIGHT FUNKIN'"],
+                        ["evilsk8r", "evilsk8r", "https://twitter.com/evilsk8r", "Artist for FRIDAY NIGHT FUNKIN'"],
+                        ["kawaisprite", "kawaisprite", "https://twitter.com/kawaisprite", "Composer for FRIDAY NIGHT FUNKIN'"]
+                    ]
+                }
+            ]
+        }
+    ]
+}

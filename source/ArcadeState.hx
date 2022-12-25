@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.ui.FlxButton;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
 import arcade.ArcadePlayState;

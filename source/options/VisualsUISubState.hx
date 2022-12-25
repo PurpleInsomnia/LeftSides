@@ -55,6 +55,15 @@ class VisualsUISubState extends BaseOptionsMenu
 			'false');
 		addOption(option);
 
+		var option:Option = new Option("Time Bar Colour",
+			"What colours the time bar should be",
+			"timeColour",
+			"string",
+			"Gradient & Black",
+			["Gradient & Black", "Gold & Magenta", "Magenta & Gold", "White & Black"]);
+
+		addOption(option);
+
 		var option:Option = new Option('Flashing Lights',
 			"Uncheck this if you're sensitive to flashing lights!",
 			'flashing',
@@ -68,6 +77,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool',
 			true);
 		addOption(option);
+
+		var option:Option = new Option("Screen Shake",
+			"If checked, screen shaking will be enabled.",
+			"screenShake",
+			"bool",
+			true);
+		addOption(option);
 		
 		#if !mobile
 		var option:Option = new Option('FPS Counter',
@@ -78,6 +94,15 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
 		#end
+
+		var option:Option = new Option("Prefered Window Size:",
+		"Your Prefered Window Size (1280 x 720 is default).\nSmaller Sizes Cause Less Lag.",
+		"preferedDimens",
+		"string",
+		"1280 x 720",
+		["1280 x 720", "960 x 540", "640 x 360", "320 x 180"]);
+		addOption(option);
+		option.onChange = onChangeWindowSize;
 
 		super();
 	}
@@ -94,4 +119,12 @@ class VisualsUISubState extends BaseOptionsMenu
 			Main.fpsVar.visible = ClientPrefs.showFPS;
 	}
 	#end
+
+	function onChangeWindowSize()
+	{
+		var split:Array<String> = ClientPrefs.preferedDimens.split(" x ");
+		var toMod:Array<Int> = [Std.parseInt(split[0]), Std.parseInt(split[1])];
+		FlxG.resizeWindow(toMod[0], toMod[1]);
+		WindowControl.rePosWindow();
+	}
 }

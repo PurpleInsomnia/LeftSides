@@ -1,0 +1,13 @@
+Freaky Menu|PurpleInsomnia|freakyMenu
+Breakfast|PurpleInsomnia|breakfast
+Breakfast (Old)|PurpleInsomnia|breakfastOLD
+Left Sides Shufflin'|PurpleInsomnia|freeplay
+Things Happen|PurpleInsomnia|credits
+Moving On|PurpleInsomnia|movingOn
+Extra Hugs|PurpleInsomnia|extraHugs
+Story Teller|PurpleInsomnia|storyTeller
+Truths and Lies|PurpleInsomnia|terminal
+Had Me At Gamejolt|PurpleInsomnia|gamejoltMenu
+The Lair|PurpleInsomnia|lair
+The Void|PurpleInsomnia|void
+Their Motifs|PurpleInsomnia|title

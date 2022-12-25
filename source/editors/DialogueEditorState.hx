@@ -25,6 +25,8 @@ import openfl.events.Event;
 import openfl.events.IOErrorEvent;
 import flash.net.FileFilter;
 import haxe.Json;
+import OldDialogueBoxSupport;
+import DialogueCharacter;
 import DialogueBoxPsych;
 import lime.system.Clipboard;
 #if sys
@@ -43,8 +45,8 @@ class DialogueEditorState extends MusicBeatState
 	var selectedText:FlxText;
 	var animText:FlxText;
 
-	var defaultLine:DialogueLine;
-	var dialogueFile:DialogueFile = null;
+	var defaultLine:FunnyDialogueLine;
+	var dialogueFile:FunnyDialogueFile = null;
 
 	override function create() {
 		persistentUpdate = persistentDraw = true;
@@ -176,8 +178,8 @@ class DialogueEditorState extends MusicBeatState
 		UI_box.addGroup(tab_group);
 	}
 
-	function copyDefaultLine():DialogueLine {
-		var copyLine:DialogueLine = {
+	function copyDefaultLine():FunnyDialogueLine {
+		var copyLine:FunnyDialogueLine = {
 			portrait: defaultLine.portrait,
 			expression: defaultLine.expression,
 			text: defaultLine.text,
@@ -204,7 +206,7 @@ class DialogueEditorState extends MusicBeatState
 				}
 		}
 		box.animation.play(anim, true);
-		DialogueBoxPsych.updateBoxOffsets(box);
+		OldDialogueBoxSupport.updateBoxOffsets(box);
 	}
 
 	function reloadCharacter() {
@@ -213,12 +215,12 @@ class DialogueEditorState extends MusicBeatState
 		character.reloadAnimations();
 		character.setGraphicSize(Std.int(character.width * DialogueCharacter.DEFAULT_SCALE * character.jsonFile.scale));
 		character.updateHitbox();
-		character.x = DialogueBoxPsych.LEFT_CHAR_X;
-		character.y = DialogueBoxPsych.DEFAULT_CHAR_Y;
+		character.x = OldDialogueBoxSupport.LEFT_CHAR_X;
+		character.y = OldDialogueBoxSupport.DEFAULT_CHAR_Y;
 
 		switch(character.jsonFile.dialogue_pos) {
 			case 'right':
-				character.x = FlxG.width - character.width + DialogueBoxPsych.RIGHT_CHAR_X;
+				character.x = FlxG.width - character.width + OldDialogueBoxSupport.RIGHT_CHAR_X;
 			
 			case 'center':
 				character.x = FlxG.width / 2;
@@ -251,7 +253,7 @@ class DialogueEditorState extends MusicBeatState
 
 		var textToType:String = lineInputText.text;
 		if(textToType == null || textToType.length < 1) textToType = ' ';
-		daText = new Alphabet(DialogueBoxPsych.DEFAULT_TEXT_X, DialogueBoxPsych.DEFAULT_TEXT_Y, textToType, false, true, speed, 0.7);
+		daText = new Alphabet(OldDialogueBoxSupport.DEFAULT_TEXT_X, OldDialogueBoxSupport.DEFAULT_TEXT_Y, textToType, false, true, speed, 0.7);
 		add(daText);
 
 		if(speed > 0) {
@@ -339,9 +341,9 @@ class DialogueEditorState extends MusicBeatState
 		}
 
 		if(!blockInput) {
-			FlxG.sound.muteKeys = TitleState.muteKeys;
-			FlxG.sound.volumeDownKeys = TitleState.volumeDownKeys;
-			FlxG.sound.volumeUpKeys = TitleState.volumeUpKeys;
+			FlxG.sound.muteKeys = TitleScreenState.muteKeys;
+			FlxG.sound.volumeDownKeys = TitleScreenState.volumeDownKeys;
+			FlxG.sound.volumeUpKeys = TitleScreenState.volumeUpKeys;
 			if(FlxG.keys.justPressed.SPACE) {
 				reloadText(speedStepper.value);
 			}
@@ -394,7 +396,7 @@ class DialogueEditorState extends MusicBeatState
 		if(curSelected < 0) curSelected = dialogueFile.dialogue.length - 1;
 		else if(curSelected >= dialogueFile.dialogue.length) curSelected = 0;
 
-		var curDialogue:DialogueLine = dialogueFile.dialogue[curSelected];
+		var curDialogue:FunnyDialogueLine = dialogueFile.dialogue[curSelected];
 		characterInputText.text = curDialogue.portrait;
 		lineInputText.text = curDialogue.text;
 		angryCheckbox.checked = (curDialogue.boxState == 'angry');
@@ -470,7 +472,7 @@ class DialogueEditorState extends MusicBeatState
 		if(fullPath != null) {
 			var rawJson:String = File.getContent(fullPath);
 			if(rawJson != null) {
-				var loadedDialog:DialogueFile = cast Json.parse(rawJson);
+				var loadedDialog:FunnyDialogueFile = cast Json.parse(rawJson);
 				if(loadedDialog.dialogue != null && loadedDialog.dialogue.length > 0) //Make sure it's really a dialogue file
 				{
 					var cutName:String = _file.name.substr(0, _file.name.length - 5);

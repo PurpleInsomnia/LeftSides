@@ -8,9 +8,13 @@ import flixel.addons.ui.FlxUIInputText;
 import flixel.ui.FlxButton;
 import flixel.FlxCamera;
 import flixel.util.FlxTimer;
+import flixel.system.FlxAssets.FlxShader;
 #if desktop
 import Discord.DiscordClient;
 #end
+import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
+import filters.*;
 
 using StringTools;
 
@@ -45,7 +49,9 @@ class TerminalState extends MusicBeatState
 		'Who is the oldest Dearest daughter?',
 		'What did Ben do in april?',
 		'Who am I?',
-		"What is on Ben's Arm?"
+		"What is on Ben's Arm?",
+		"Passcodes?",
+		"Are they coming?"
 	];
 
 	var responses:Array<String> = [
@@ -59,7 +65,9 @@ class TerminalState extends MusicBeatState
 		'[REDACTED] is dead.',
 		"[April 19, 2021. 9:55 AM] Benjamin Morgan Warner has been brought into the ER. His friend [UPDATE: now girlfriend] Tess Diana Dearest was going to wake up Benjamin for work (Benjamin was late, which made Tess extremely concerned) when she found him bleeding on his bed with deep cuts on both of his arms. It was an absolute miricale that Bemjamin surrvived.",
 		"Newmaker? Where is my house? Where is the school?.....C'mon you got the reference, right?",
-		'Ben reported his cutting behaviors to the social worker that came to his hospital bed. How he LOVED to slide the cold blade of his knife into his arms/legs. Tess now wanted to check in on him every day, to make sure he reduced or stopped cutting. As of now, about twice a month he tells Tess that he sliced his skin open. He is forever reminded of his [SICK] and [DISGUSTING] actions via the scars on his body.'
+		'Ben reported his cutting behaviors to the social worker that came to his hospital bed. How he LOVED to slide the cold blade of his knife into his arms/legs. Tess now wanted to check in on him every day, to make sure he reduced or stopped cutting. As of now, about twice a month he tells Tess that he sliced his skin open. He is forever reminded of his [SICK] and [DISGUSTING] actions via the scars on his body.',
+		"...",
+		"Close the game " + CoolUtil.username() + ". Now."
 	];
 
 	var response2:Array<String> = [
@@ -76,6 +84,7 @@ class TerminalState extends MusicBeatState
 	// HOLY FUCK HOW DID I WRITE ALL OF THAT?!?!
 
 	var canExit:Bool = true;
+
 	override public function create()
 	{
 		#if MODS_ALLOWED
@@ -88,6 +97,7 @@ class TerminalState extends MusicBeatState
 		#end
 
 		FlxG.sound.playMusic(Paths.music('terminal'));
+
 
 		bg = new FlxSprite().loadGraphic(Paths.image('term/bg'));
 		add(bg);
@@ -159,7 +169,7 @@ class TerminalState extends MusicBeatState
 			else
 			{
 				if (!isStoryTelling)
-					MusicBeatState.switchState(new TitleStateScary());
+					MusicBeatState.switchState(new TitleScreenState());
 			}
 		}
 		super.update(elapsed);
@@ -167,10 +177,6 @@ class TerminalState extends MusicBeatState
 
 	function correctString(string:Int)
 	{
-		if (string == 9)
-		{
-			add(new Acheivement(21, 'Where is Petscop 2?', 'petscop'));
-		}
 		curResponse = responses[string];
 		if (string != 10)
 			startText();
@@ -250,7 +256,7 @@ class TerminalState extends MusicBeatState
 		if (canExit)
 		{
 			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new MainMenuState());
+			MusicBeatState.switchState(new MonsterLairState());
 		}
 	}
 }

@@ -24,7 +24,7 @@ class SaveFileMenu extends MusicBeatState
 	var curFile:Int = 0;
 	var canPress:Bool = true;
 
-	// how may save files there are
+	// how may save files there are plus one.
 	var list:Int = 8;
 
 	public static var files:Array<String> = [];
@@ -41,6 +41,8 @@ class SaveFileMenu extends MusicBeatState
 	var followX:Array<Float> = [];
 
 	var selector:FlxSprite;
+
+	public static var title:Bool = false;
 
 	override public function create()
 	{
@@ -218,7 +220,10 @@ class SaveFileMenu extends MusicBeatState
 		{
 			FlxG.sound.music.stop();
 			canPress = false;
-			MusicBeatState.switchState(new options.OptionsState());
+			if (!title)
+				MusicBeatState.switchState(new options.OptionsState());
+			else
+				MusicBeatState.switchState(new TitleScreenState());
 		}
 		if (controls.RESET && canPress)
 		{
@@ -318,8 +323,19 @@ class SaveFileMenu extends MusicBeatState
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			FlxG.sound.music.stop();
-			TitleState.curSaveFile = num;
-			MusicBeatState.switchState(new TitleState());
+			ClientPrefs.saveSettings();
+			Highscore.saveEverything();
+			FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;
+			FlxG.save.data.weekEncoreCompleted = StoryEncoreState.weekEncoreCompleted;
+			FlxG.save.flush();
+			SideStorySelectState.save();
+			TitleScreenState.curSaveFile = num;
+			TitleScreenState.initialized = false;
+			new FlxTimer().start(2, function(tmr:FlxTimer)
+			{
+				lime.app.Application.current.window.alert("It is recommended that you close the game and reopen it after entering the main title screen after making a new save file (so that it works properly)", "TIP FROM PURPLEINSOMNIA.");
+				FlxG.resetGame();
+			});
 		});
 	}
 
@@ -363,8 +379,18 @@ class SaveFileMenu extends MusicBeatState
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			FlxG.sound.music.stop();
-			TitleState.curSaveFile = curFile;
-			MusicBeatState.switchState(new TitleState());
+			ClientPrefs.saveSettings();
+			Highscore.saveEverything();
+			FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;
+			FlxG.save.data.weekEncoreCompleted = StoryEncoreState.weekEncoreCompleted;
+			FlxG.save.flush();
+			SideStorySelectState.save();
+			TitleScreenState.curSaveFile = curFile;
+			TitleScreenState.initialized = false;
+			new FlxTimer().start(2, function(tmr:FlxTimer)
+			{
+				FlxG.resetGame();
+			});
 		});
 	}
 
@@ -386,7 +412,7 @@ class SaveFileMenu extends MusicBeatState
 
 		if (curFile != 0)
 		{
-			TitleState.curSaveFile = 0;
+			TitleScreenState.curSaveFile = 0;
 		}
 		else
 		{
@@ -395,11 +421,19 @@ class SaveFileMenu extends MusicBeatState
 			{
 				if (!file[i].contains('funkin'))
 				{
-					TitleState.curSaveFile = i;
+					TitleScreenState.curSaveFile = i;
 				}
 			}
 		}
-		MusicBeatState.switchState(new TitleState());
+		new FlxTimer().start(1, function(tmr:FlxTimer)
+		{
+			FlxG.sound.music.stop();
+			TitleScreenState.initialized = false;
+			new FlxTimer().start(2, function(tmr:FlxTimer)
+			{
+				FlxG.resetGame();
+			});
+		});
 	}
 
 	function getFiles()

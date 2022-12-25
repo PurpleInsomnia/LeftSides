@@ -1,0 +1,291 @@
+{
+	"dialogue": [
+		{
+			"expression": "sad",
+			"text": "Nooooooooooooooooo they fuckin' removed Just Friends from Netflix!!!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "Man, fuck Netflix.",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "confused",
+			"text": "Got any other picks?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "hmph",
+			"text": "Nope. I'm mad now.",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "say-what",
+			"text": "Damn...sorry that our perfect christmas movie watching on christmas evening didn't work out...",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "It's okay...I'm just glad I'm with you...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "big-blush",
+			"text": "Oh- Me too..",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "laughing",
+			"text": "Ha! Got you flustered!",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.05
+		},
+		{
+			"expression": "what",
+			"text": "How dreadful.",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "question",
+			"text": "You ready to start on dinner?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Why not?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "talk",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "happy",
+			"text": "Pretty good if I say so myself.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Did I do a...good job on the mashed potatos?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Absolutely! Including the cookies which we had enough time to make because of Netflix's middle finger to us!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Thank you...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I-I'm guessing that you're on the edge of your seat to open gifts and such...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Only if you are!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "happy",
+			"text": "Ooooh! This looks snazzy as hell! And you got that light up keyboard and mouse too?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Mhm! The real reason I took so long in the store was because I was having trouble finding the hoodie for you.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "Still, It looks cool as fuck! Thank you!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "happy",
+			"text": "Since we're on topic, I ALSO gave you two gifts.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "Awwww. You're the best...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "no",
+			"text": "",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "dad"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "...t-these are both so cute...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I-I never see any jewlery that I actually like. But damn...you really know what I like....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "...And the c-color on the sweater is actually perfect...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "This is literally the best christmas of my life...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "...Thank you...really...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "big-blush",
+			"text": "Anything for you...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "laughing",
+			"text": "In fact, I'm putting the sweater on now!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "thud",
+			"text": "What about the necklace?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Ehh...Kinda late for that...maybe tommorow..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "N-not that I don't like it or anything...I just..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I get you, its totally cool!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "Oh-\\n..."
+		},
+		{
+			"expression": "default",
+			"text": "You know what?\\nI think we should sing a song together.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "I know it's kinda dumb and random but we haven't done it in forever and I'm just feeling like it.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "challenge",
+			"text": "Sold.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "amongus",
+			"text": "Alexa, play the coolswag christmas beat.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

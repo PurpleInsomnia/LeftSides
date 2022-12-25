@@ -117,13 +117,28 @@ class GameOverPixelSubstate extends MusicBeatSubstate
 
 			if (PlayState.isStoryMode)
 			{
-				MusicBeatState.switchState(new StoryMenuState());
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+					{
+						MusicBeatState.switchState(new StoryMenuState());
+					}
+					else
+					{
+						MusicBeatState.switchState(new StoryEncoreState());
+					}
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				}
 			}
 			else
 			{
-				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music('freeplay'));
+				var check:Bool = StateManager.check("freeplay");
+				if (!check)
+				{
+					MusicBeatState.switchState(new FunnyFreeplayState());
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				}
 			}
 
 			lePlayState.callOnLuas('onGameOverConfirm', [false]);

@@ -1,3 +1,5 @@
-export/
 .vscode/
+.v/
+export/
 APIStuff.hx
+source/GJKeys.hx

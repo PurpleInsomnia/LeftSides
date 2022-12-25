@@ -1,0 +1,67 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Can we get the ''money'' and leave now?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "cool",
+			"text": "No. I was joking about the money."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "cool",
+			"text": "HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\\nGET EPIC PRAK BY RONALD!!!!"
+		},
+		{
+			"speed": 0.07,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "Oh my goodness. That was so epic. I really got ''praked'' this time..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Thanks for watching USERNAME!! Bee sher to subscibe for moar funny epic praink and joks!!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "I'm done."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Yeah...goodbye....R...Ruandale Dingle(?)"
+		},
+		{
+			"speed": 0.025,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "01001000 01100101 01101100 01110000 00100000 01001101 01100101 "
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "No idea what that means. But thanks!"
+		}
+	]
+}

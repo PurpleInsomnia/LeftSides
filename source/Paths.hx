@@ -53,6 +53,7 @@ class Paths
 	}
 
 	static public var currentModDirectory:String = '';
+	static public var AssetDirectories:Array<String> = [];
 	static var currentLevel:String;
 	static public function getModFolders()
 	{
@@ -70,12 +71,27 @@ class Paths
 		ignoreModFolders.set('images', true);
 		ignoreModFolders.set('stages', true);
 		ignoreModFolders.set('weeks', true);
+		ignoreModFolders.set("side-stories", true);
+		ignoreModFolders.set("dialogue", true);
+		ignoreModFolders.set("quotes", true);
+		ignoreModFolders.set("fanart", true);
+		ignoreModFolders.set("states", true);
+		ignoreModFolders.set("fonts", true);
 		#end
 	}
 
 	static public function setCurrentLevel(name:String)
 	{
 		currentLevel = name.toLowerCase();
+	}
+
+	public static function getSharedMods(file:String):String
+	{
+		if (FileSystem.exists(modFolders(file)))
+		{
+			return modFolders(file);
+		}
+		return "assets/shared/" + file;
 	}
 
 	public static function getPath(file:String, type:AssetType, ?library:Null<String> = null)
@@ -132,7 +148,16 @@ class Paths
 
 	inline static public function json(key:String, ?library:String)
 	{
-		return getPath('data/$key.json', TEXT, library);
+		var swag:String = "";
+		if (FileSystem.exists(modsJson(key)))
+		{
+			swag = modsJson(key);
+		}
+		else
+		{
+			swag = "assets/data/" + key + ".json";
+		}
+		return swag;
 	}
 
 	inline static public function lua(key:String, ?library:String)
@@ -301,8 +326,8 @@ class Paths
 	static public function getTextFromFile(key:String, ?ignoreMods:Bool = false):String
 	{
 		#if sys
-		if (!ignoreMods && FileSystem.exists(mods(key)))
-			return File.getContent(mods(key));
+		if (!ignoreMods && FileSystem.exists(getModFile(key)))
+			return File.getContent(getModFile(key));
 
 		if (FileSystem.exists(getPreloadPath(key)))
 			return File.getContent(getPreloadPath(key));
@@ -326,6 +351,10 @@ class Paths
 
 	inline static public function font(key:String)
 	{
+		if (FileSystem.exists(Paths.modFolders('fonts/$key')))
+		{
+			return modFolders('fonts/$key');
+		}
 		return 'assets/fonts/$key';
 	}
 
@@ -392,6 +421,58 @@ class Paths
 		customImagesLoaded.set(key, true);
 		return FlxG.bitmap.get(key);
 	}
+
+	inline static public function funnyFlxGraphic(key:String):FlxGraphic {
+		var newBitmap:BitmapData = BitmapData.fromFile(getPreloadPath(key));
+		if(FileSystem.exists(getModFile(key)))
+		{
+			if(!customImagesLoaded.exists(key))
+			{
+				newBitmap = BitmapData.fromFile(getModFile(key));
+			}
+		}
+		var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, key);
+		newGraphic.persist = true;
+		FlxG.bitmap.addGraphic(newGraphic);
+		customImagesLoaded.set(key, true);
+		return FlxG.bitmap.get(key);
+	}
+
+	inline static public function quotes(key:String = "")
+	{
+		if (FileSystem.exists(modFolders("quotes/" + key + ".txt")))
+		{
+			return modFolders("quotes/" + key + ".txt");
+		}
+		return "assets/quotes/" + key + ".txt";
+	}
+
+	inline static public function gameover(key:String)
+	{
+		if (FileSystem.exists(modFolders("gameover/" + key)))
+		{
+			return modFolders("gameover/" + key);
+		}
+		return "assets/gameover/" + key;
+	}
+
+	inline static public function preloadFunny(key:String)
+	{
+		if (FileSystem.exists(modFolders(key)))
+		{
+			return modFolders(key);
+		}
+		return getPreloadPath(key);
+	}
+
+	inline static public function dialogue(key:String)
+	{
+		if (FileSystem.exists(modFolders("dialogue/" + key)))
+		{
+			return modFolders("dialogue/" + key);
+		}
+		return "assets/dialogue/" + key;
+	}
 	
 	#if MODS_ALLOWED
 	static public function addCustomGraphic(key:String):FlxGraphic {
@@ -406,11 +487,6 @@ class Paths
 			return FlxG.bitmap.get(key);
 		}
 		return null;
-	}
-
-	inline static public function quotes(key:String = "")
-	{
-		return "assets/quotes/" + key + ".txt";
 	}
 
 	inline static public function mods(key:String = '') {
@@ -475,6 +551,18 @@ class Paths
 			var fileToCheck:String = mods(currentModDirectory + '/' + key);
 			if(FileSystem.exists(fileToCheck)) {
 				return fileToCheck;
+			}
+		}
+		WeekData.getAssetDirectories();
+		if (AssetDirectories != [])
+		{
+			for (i in 0...AssetDirectories.length)
+			{
+				var fileToCheck:String = mods(AssetDirectories[i] + "/" + key);
+				if (FileSystem.exists(fileToCheck))
+				{
+					return fileToCheck;
+				}
 			}
 		}
 		return 'mods/' + key;

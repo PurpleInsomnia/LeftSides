@@ -99,7 +99,7 @@ class CoolUtil
 			username = Std.string(Sys.environment()["USERNAME"]);
 			return username;
 			#else
-			username = Std.stringSys.environment()["USER"]);
+			username = Std.string(Sys.environment()["USER"]);
 			return username;
 			#end
 		}
@@ -107,5 +107,25 @@ class CoolUtil
 		{
 			return '**USERNAME**';
 		}
+	}
+
+	public static function swearFilter(text:String)
+	{
+		var toReturn:String = text;
+
+		var swearWords:Array<String> = ['Fuck', 'Shit', 'Ass', 'Bitch', 'Whore', 'Pussy', 'Dick', 'Wanker', "Damn"];
+		var goodWords:Array<String> = ['****', '****', '***', '*****', '*****', '*****', '****', '******', "Darn"];
+		// swear filter >:(
+		if (ClientPrefs.swearFilter)
+		{
+			for (i in 0...swearWords.length)
+			{
+				toReturn.replace(swearWords[i], goodWords[i]);
+				toReturn.replace(swearWords[i].toUpperCase(), goodWords[i].toUpperCase());
+				toReturn.replace(swearWords[i].toLowerCase(), goodWords[i].toLowerCase());
+			}
+		}
+
+		return toReturn;
 	}
 }

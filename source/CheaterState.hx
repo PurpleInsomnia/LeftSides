@@ -18,7 +18,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import Achievements;
 import editors.MasterEditorMenu;
 
 using StringTools;
@@ -66,7 +65,7 @@ class CheaterState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new TitleScreenState());
 			});
 		}
 		if (controls.BACK)
@@ -75,7 +74,7 @@ class CheaterState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new TitleScreenState());
 			});
 		}
 		if (FlxG.keys.justPressed.N)

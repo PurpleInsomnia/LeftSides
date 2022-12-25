@@ -1,0 +1,53 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Oooh cool backdrop!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "It looks kinda pretty..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "DO you know who ELSE is pretty?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "t-thank you..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "...Anyways, where the hell are we?"
+		},
+		{
+			"speed": 0.07,
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "no",
+			"text": "Heh...I knew this day would come..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "And who are you supposed to be?"
+		}
+	]
+}

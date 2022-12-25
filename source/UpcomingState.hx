@@ -23,8 +23,6 @@ class UpcomingState extends MusicBeatState
 
 		FlxG.sound.playMusic(Paths.music('simpleBreakfast'), 1, true);
 
-		new Acheivement(20, 'Thanks Lol', 'benntess');
-
 		super.create();
 	}
 
@@ -36,7 +34,7 @@ class UpcomingState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('confirmMenu'));
 			FlxG.sound.music.stop();
 			TextFile.newFile("come to freeplay if u think that your fester then me!!1!\n\n- Nuckle", "fest");
-			MusicBeatState.switchState(new TitleState());
+			MusicBeatState.switchState(new CreditsState());
 		}
 
 		super.update(elapsed);

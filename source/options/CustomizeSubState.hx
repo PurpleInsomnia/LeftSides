@@ -30,11 +30,14 @@ using StringTools;
 
 class CustomizeSubState extends BaseOptionsMenu
 {
-	var fileList:Array<String> = ['Off', 'NOTE_assets', 'funkinNOTE_assets'];
-	var strumArray:Array<String> = ['Off', 'Left Sides Notes', "Funkin' Notes"];
+	var fileList:Array<String> = ['Off', 'NOTE_assets', 'funkinNOTE_assets', "purpleinsomniaNOTE_assets"];
+	var splashFileList:Array<String> = ["Off", "noteSplashes", "funkinNoteSplashes", "purpleinsomniaNoteSplashes"];
+	var strumArray:Array<String> = ['Off', 'Left Sides Notes', "Funkin' Notes", "PurpleInsomnia Notes"];
 	var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
-	var barArray:Array<String> = ['Default', 'Sonic Spikes'];
-	var ratingArray:Array<String> = ['Default', 'Funkin'];
+	var barArray:Array<String> = ['Default', "Grid", "Sonic Spikes"];
+	var ratingArray:Array<String> = ['Default', 'Funkin', "PurpleInsomnia"];
+
+	var strumOption:Option;
 
 	public function new()
 	{
@@ -48,18 +51,16 @@ class CustomizeSubState extends BaseOptionsMenu
 		checkForBars();
 		checkForRating();
 
-		setText();
-
-		var option:Option = new Option('Note Skin:',
-		"Set a custom note skin for yourself.\nWhen applied however, stuff like " + '"Change UI" (the event)\nand "Arrow Skins" (used in song files) ' + "\nwill not be active",
-		'customStrum',
-		'string',
-		'Off',
+		strumOption = new Option('Note Skin:',
+			"Set a custom note skin for yourself.\nWhen applied however, stuff like " + '"Change UI" (the event)\nand "Arrow Skins" (used in song files) ' + "\nwill not be active",
+			'customStrum',
+			'string',
+			'Off',
 		strumArray);
 
-		option.onChange = changeStrum;
+		strumOption.onChange = changeStrum;
 
-		addOption(option);
+		addOption(strumOption);
 
 		var option:Option = new Option('Cinematic Bar Type:',
 		"Set a custom texture for the cinematic bars",
@@ -86,32 +87,26 @@ class CustomizeSubState extends BaseOptionsMenu
 
 	function changeStrum()
 	{
-		for (i in 0...strumArray.length)
+		if (ClientPrefs.customStrum != "Off")
 		{
-			if (ClientPrefs.customStrum == strumArray[i] && ClientPrefs.customStrum != strumArray[0])
-			{
-				ClientPrefs.customStrum = fileList[i];
-			}
+			CustomStrum.strum = fileList[strumOption.curOption];
+			CustomStrum.splash = splashFileList[strumOption.curOption];
 		}
-	}
-
-	function setText()
-	{
-		for (i in 0...fileList.length)
+		else
 		{
-			if (ClientPrefs.customStrum == fileList[i] && ClientPrefs.customStrum != strumArray[0])
-			{
-				ClientPrefs.customStrum = strumArray[i];
-			}
+			// this is so sad.
+			CustomStrum.strum = "";
+			CustomStrum.splash = "";
 		}
 	}
 
 	function resetArrays()
 	{
-		strumArray = ['Off', 'Left Sides Notes', "Funkin' Notes"];
-		fileList = ['Off', 'NOTE_assets', 'funkinNOTE_assets'];
-		barArray = ['Default', 'Sonic Spikes'];
-		ratingArray = ['Default', 'Funkin'];
+		strumArray = ['Off', 'Left Sides Notes', "Funkin' Notes", "PurpleInsomia Notes"];
+		fileList = ['Off', 'NOTE_assets', 'funkinNOTE_assets', "purpleinsomniaNOTE_assets"];
+		splashFileList = ["Off", "noteSplashes", "funkinNoteSplashes", "purpleinsomniaNoteSplashes"];
+		barArray = ['Default', "Grid", "Sonic Spikes"];
+		ratingArray = ['Default', 'Funkin', "PurpleInsomnia"];
 		directories = [Paths.mods(), Paths.getPreloadPath()];
 	}
 
@@ -153,7 +148,22 @@ class CustomizeSubState extends BaseOptionsMenu
 				{
 					var split:Array<String> = list[i].split('|');
 					strumArray.push(split[0]);
-					fileList.push(split[1]);
+					if (split[1] == null)
+					{
+						lime.app.Application.current.window.alert('Please specify a file path by adding a "|" after your strum name.\nEXAMPLE: "My Strum|mystrumNOTE_assets|myStrumNoteSplashes"', "Error on strum file (line " + i + ")");
+					}
+					else
+					{
+						fileList.push(split[1]);
+					}
+					if (split[2] == null)
+					{
+						lime.app.Application.current.window.alert('Please specify a splash skin file path by adding a "|" after your strum file path.\nEXAMPLE: "My Strum|mystrumNOTE_assets|myStrumNoteSplashes"', "Error on strum file (line " + i + ")");
+					}
+					else
+					{
+						splashFileList.push(split[2]);
+					}
 				}
 			}
 		}

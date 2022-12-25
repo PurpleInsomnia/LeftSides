@@ -83,6 +83,7 @@ class EncoreChartingState extends MusicBeatState
 		['Cinematic Bar Zoom', 'Value 1: The y value the bars will be added to\n(put 1 for default)\n \nValue 2: Time'],
 		['Cam Tween Zoom', 'Value 1: Zoom Value\nValue 2: Time (none for instant)'],
 		['Lyrics', 'Value 1: Text\nValue 2: Char (dad for dad, mom for mom and so on)\nPut "remove" in value 1 to remove the thing lol\nPut "<>" to split the text and\nto add a color\n(Example: Penis<>FF0000)'],
+		["Third Strumline", "Value 1: If it should tween. (true/false)\nValue 2: Time for tween (tween must be on.)"],
 		['Countdown', 'Sus? (PLACE 1 BEAT BEOFRE COUNTDOWN)'],
 		['Note Spin', 'Spins notes on a certain beat'],
 		['Screen Flash', 'Cum color?!?!?!?!'],
@@ -201,6 +202,10 @@ class EncoreChartingState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Encore Chart Editor", StringTools.replace(PlayState.SONG.song, '-', ' '));
 		#end
+
+		FlxG.resizeWindow(1280, 720);
+
+		WindowControl.rePosWindow();
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuCharting'));
 		bg.scrollFactor.set();
@@ -819,13 +824,13 @@ class EncoreChartingState extends MusicBeatState
 		}
 
 		#if LUA_ALLOWED
-		var directories:Array<String> = [Paths.mods('custom_notetypes/'), Paths.mods(Paths.currentModDirectory + '/custom_notetypes/')];
+		var directories:Array<String> = [Paths.mods('custom_notetypes/'), Paths.mods(Paths.currentModDirectory + '/custom_notetypes/'), Paths.getPreloadPath("custom_notetypes/"), Paths.getPreloadPath("data/" + Paths.formatToSongPath(_song.song) + "/notes/"), Paths.mods("data/" + Paths.formatToSongPath(_song.song) + "/notes/"), Paths.mods(Paths.currentModDirectory + "/data/" + Paths.formatToSongPath(_song.song) + "/notes/")];
 		for (i in 0...directories.length) {
 			var directory:String =  directories[i];
 			if(FileSystem.exists(directory)) {
 				for (file in FileSystem.readDirectory(directory)) {
 					var path = haxe.io.Path.join([directory, file]);
-					if (!FileSystem.isDirectory(path) && file.endsWith('.lua')) {
+					if (!FileSystem.isDirectory(path) && (file.endsWith('.lua') || file.endsWith(".hxs"))) {
 						var fileToCheck:String = file.substr(0, file.length - 4);
 						if(!noteTypeMap.exists(fileToCheck)) {
 							displayNameList.push(fileToCheck);
@@ -872,7 +877,7 @@ class EncoreChartingState extends MusicBeatState
 
 		#if LUA_ALLOWED
 		var eventPushedMap:Map<String, Bool> = new Map<String, Bool>();
-		var directories:Array<String> = [Paths.mods('custom_events/'), Paths.mods(Paths.currentModDirectory + '/custom_events/')];
+		var directories:Array<String> = [Paths.mods('custom_events/'), Paths.mods(Paths.currentModDirectory + '/custom_events/'), Paths.getPreloadPath("custom_events/"), Paths.getPreloadPath("data/" + Paths.formatToSongPath(_song.song) + "/events/"), Paths.mods("data/" + Paths.formatToSongPath(_song.song) + "/events/"), Paths.mods(Paths.currentModDirectory + "/data/" + Paths.formatToSongPath(_song.song) + "/events/")];
 		for (i in 0...directories.length) {
 			var directory:String =  directories[i];
 			if(FileSystem.exists(directory)) {
@@ -1298,9 +1303,9 @@ class EncoreChartingState extends MusicBeatState
 			}
 		}
 		if(!blockInput) {
-			FlxG.sound.muteKeys = TitleState.muteKeys;
-			FlxG.sound.volumeDownKeys = TitleState.volumeDownKeys;
-			FlxG.sound.volumeUpKeys = TitleState.volumeUpKeys;
+			FlxG.sound.muteKeys = TitleScreenState.muteKeys;
+			FlxG.sound.volumeDownKeys = TitleScreenState.volumeDownKeys;
+			FlxG.sound.volumeUpKeys = TitleScreenState.volumeUpKeys;
 			for (dropDownMenu in blockPressWhileScrolling) {
 				if(dropDownMenu.dropPanel.visible) {
 					blockInput = true;
@@ -1332,6 +1337,11 @@ class EncoreChartingState extends MusicBeatState
 				}
 				else
 				{
+					var split:Array<String> = ClientPrefs.preferedDimens.split(" x ");
+					var toMod:Array<Int> = [Std.parseInt(split[0]), Std.parseInt(split[1])];
+					FlxG.resizeWindow(toMod[0], toMod[1]);
+
+					WindowControl.rePosWindow();
 					LoadingState.loadAndSwitchState(new PlayState());
 				}
 			}

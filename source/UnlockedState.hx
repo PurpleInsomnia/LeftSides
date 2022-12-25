@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.ui.FlxButton;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
 
@@ -110,7 +109,7 @@ class UnlockedState extends MusicBeatState
 				case "void":
 					MusicBeatState.switchState(new TessNeedsHelp());
 				case 'dmitri':
-					MusicBeatState.switchState(new VoidState());
+					MusicBeatState.switchState(new MonsterLairState());
 				case "dmitriSecret":
 					LoadingState.loadAndSwitchState(new PlayState());
 				case 'exe':

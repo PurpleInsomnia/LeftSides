@@ -78,10 +78,18 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Mute Miss Sounds',
-		'If checked, no sound will play when you miss a note\n(or break your combo)',
+		'If checked, no sound will play when you break a combo over 5',
 		'muteMiss',
 		'bool',
 		false);
+
+		addOption(option);
+
+		var option:Option = new Option("Strums Gain Health",
+		"If checked, held notes give you health\n(Unchecked is like KE health)",
+		"strumHealth",
+		"bool",
+		true);
 
 		addOption(option);
 
@@ -93,9 +101,9 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Content Warnings',
-		'Check this if you are sensitive to topics about Blood, Suicide, Abuse and/or Self Harm',
-		'contentWarnings',
-		'bool',
+			'Check this if you are sensitive to topics about Blood, Suicide, Abuse and/or Self Harm',
+			'contentWarnings',
+			'bool',
 		false);
 
 		addOption(option);

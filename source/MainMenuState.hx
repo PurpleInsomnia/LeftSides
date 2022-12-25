@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.ui.FlxButton;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
 import openfl.display.BlendMode;
@@ -39,7 +38,7 @@ class MainMenuState extends MusicBeatState
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
 	
-	var optionShit:Array<String> = ['story_mode', 'freeplay', 'credits', 'options', 'doodles'];
+	var optionShit:Array<String> = ['story_mode', 'freeplay', 'options', 'doodles'];
 
 	var magenta:FlxSprite;
 	var spikes:FlxSprite;
@@ -90,10 +89,18 @@ class MainMenuState extends MusicBeatState
 		Paths.destroyLoadedImages();
 		#end
 
+		WeekData.loadTheFirstEnabledMod();
+
+		var check:Bool = StateManager.check("main-menu");
+		var blackOverlay:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
+		blackOverlay.scrollFactor.set();
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
+
+		options.OptionsState.playstate = false;
 
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
@@ -117,7 +124,7 @@ class MainMenuState extends MusicBeatState
 		add(ppSuck);
 
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('backdropSHADER'));
-		bg.scrollFactor.set(0, yScroll);
+		bg.scrollFactor.set(0, 0);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
 		bg.screenCenter();
@@ -159,7 +166,7 @@ class MainMenuState extends MusicBeatState
 		spikes.antialiasing = ClientPrefs.globalAntialiasing;
 		add(spikes);
 
-		if (!FlxG.sound.music.playing)
+		if (!FlxG.sound.music.playing && !check)
 		{
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		}
@@ -187,23 +194,6 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, saveFileName, 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v2.0", 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-
 		tip = new FlxSprite().loadGraphic(Paths.image('menuTip'));
 		tip.x = 670;
 		tip.y = Std.int((720 - 150) - (tip.height / 2));
@@ -218,13 +208,9 @@ class MainMenuState extends MusicBeatState
 		buttonGroup = new FlxTypedGroup<FlxButton>();
 		add(buttonGroup);
 
-		var dlcButton:FlxButton = new FlxButton(0 + 370, 720 - 150, null, dlcPress);
+		var dlcButton:FlxButton = new FlxButton(150 + 370, 720 - 150, null, dlcPress);
 		dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
 		buttonGroup.add(dlcButton);
-
-		var acButton:FlxButton = new FlxButton(150 + 370, dlcButton.y, null, clickTrophy);
-		acButton.loadGraphic(Paths.image('trophyButton'), true, 150, 150);
-		buttonGroup.add(acButton);
 
 		var waButton:FlxButton = new FlxButton(300 + 370, dlcButton.y, null, clickWarn);
 		waButton.loadGraphic(Paths.image('warningButton'), true, 150, 150);
@@ -243,28 +229,13 @@ class MainMenuState extends MusicBeatState
 			buttonGroup.add(vButton);
 		}
 
-		if (ClientPrefs.arcadeUnlocked)
-		{
-			// var arcButton:FlxButton = new FlxButton(600 + 370, dlcButton.y, null, arcade);
-			// arcButton.loadGraphic(Paths.image('arcadeButton'), true, 150, 150);
-			// add(arcButton);
-
-			var arcButton:FlxButton = new FlxButton(600 + 370, dlcButton.y, null, lockedArcade);
-			arcButton.loadGraphic(Paths.image('lockedButton'), true, 150, 150);
-			buttonGroup.add(arcButton);
-		}
-		else
-		{
-			var arcButton:FlxButton = new FlxButton(600 + 370, dlcButton.y, null, lockedArcade);
-			arcButton.loadGraphic(Paths.image('lockedButton'), true, 150, 150);
-			buttonGroup.add(arcButton);
-		}
+		var arcButton:FlxButton = new FlxButton(600 + 370, dlcButton.y, null, sideClick);
+		arcButton.loadGraphic(Paths.image('sideButton'), true, 150, 150);
+		buttonGroup.add(arcButton);
 
 		var soundTr:FlxButton = new FlxButton(750 + 370, dlcButton.y, '', soundtrack);
 		soundTr.loadGraphic(Paths.image('stButton'), true, 150, 150);
 		buttonGroup.add(soundTr);
-
-		add(new Acheivement(0, "You got past the title screen! \n(woopie for you I guess?)", 'story', camAchievement));
 
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		blackScreen.scrollFactor.set();
@@ -289,6 +260,38 @@ class MainMenuState extends MusicBeatState
 		{
 			coolBeatHit();
 		});
+
+		var unlocks:Array<Array<Dynamic>> = [];
+
+		// get new unlocks for returning players
+		if (Highscore.getWeekScore("week2", 1) > 0 && SideStorySelectState.storyList[0][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Halloween"', 0, 1]);
+		}
+		if (Highscore.getScore("Doppelganger", 1) > 0 && SideStorySelectState.storyList[1][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Saturday"', 1, 1]);
+		}
+		if (Highscore.getWeekScore("week6", 1) > 0 && SideStorySelectState.storyList[2][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Talking"', 2, 1]);
+		}
+		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
+		{
+			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
+		}
+
+		if (unlocks.length > 0 && unlocks[0] != null)
+		{
+			trace("Unlocking Somethin");
+			MusicBeatState.switchState(new UnlockState(unlocks));
+		}
+
+		if (check)
+		{
+			add(blackOverlay);
+			FlxG.sound.music.stop();
+		}
 
 		super.create();
 	}
@@ -333,7 +336,7 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new TitleScreenState());
 			}
 
 			if (controls.ACCEPT)
@@ -392,10 +395,7 @@ class MainMenuState extends MusicBeatState
 											trace('here we funkin go!!!');
 										}
 									case 'freeplay':
-										SelectSongTypeState.freeplay = true;
-										MusicBeatState.switchState(new SelectSongTypeState());
-									case 'credits':
-										MusicBeatState.switchState(new CreditsState());
+										MusicBeatState.switchState(new FunnyFreeplayState());
 										FlxG.sound.music.stop();
 									case 'options':
 										MusicBeatState.switchState(new options.OptionsState());
@@ -414,6 +414,11 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
+			}
+			if (FlxG.keys.justPressed.EIGHT && ClientPrefs.devMode)
+			{
+				selectedSomethin = true;
+				MusicBeatState.switchState(new UnlockState([["Huh?", "Test Unlock LOL"]]));
 			}
 			#end
 		}
@@ -463,15 +468,6 @@ class MainMenuState extends MusicBeatState
 		menuCharSprs[curSelected].visible = true;
 	}
 
-	function clickTrophy()
-	{
-		if (!selectedSomethin)
-		{
-			selectedSomethin = true;
-			MusicBeatState.switchState(new AchievementsMenu());
-		}
-	}
-
 	function clickWarn()
 	{
 		if (!selectedSomethin)
@@ -486,7 +482,7 @@ class MainMenuState extends MusicBeatState
 		if (!selectedSomethin)
 		{
 			selectedSomethin = true;
-			MusicBeatState.switchState(new VoidState());
+			MusicBeatState.switchState(new MonsterLairState());
 		}
 	}
 
@@ -536,8 +532,18 @@ class MainMenuState extends MusicBeatState
 		}
 	}
 
+	function sideClick()
+	{
+		if (!selectedSomethin)
+		{
+			selectedSomethin = true;
+			FlxG.sound.music.stop();
+			MusicBeatState.switchState(new SideStorySelectState());
+		}
+	}
 
-	var menuChars:Array<String> = ['Story Mode', 'Freeplay', 'Credits', 'Options', 'Doodles'];
+
+	var menuChars:Array<String> = ['Story Mode', 'Freeplay', 'Options', 'Doodles'];
 	function makeMenuChars()
 	{
 		menuCharSprs = [];

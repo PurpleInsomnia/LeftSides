@@ -1,5 +1,7 @@
 package;
 
+import filters.GrainFilter;
+import filters.VCR;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
@@ -14,6 +16,7 @@ import sys.FileSystem;
 import openfl.utils.Assets;
 import haxe.Json;
 import haxe.format.JsonParser;
+import flixel.system.FlxAssets.FlxShader;
 
 using StringTools;
 
@@ -111,9 +114,15 @@ class Character extends FlxSprite
 				#end
 				{
 					if (!PlayState.encoreMode)
+					{
 						path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+					}
 					else
-						path = Paths.getPreloadPath('characters/' + curCharacter + '.json');
+					{
+						path = Paths.modFolders('characters/' + curCharacter + '.json');
+						if (!FileSystem.exists(path))
+							path = Paths.getPreloadPath('characters/' + curCharacter + '.json');
+					}
 				}
 
 				#if MODS_ALLOWED

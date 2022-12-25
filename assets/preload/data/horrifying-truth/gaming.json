@@ -1,0 +1,130 @@
+{
+	"dialogue": [
+		{
+			"expression": "no",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "dad",
+			"speed": 0.005
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "So I was thinking about seeing a movie with you on monday....After work of course...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Depends what's showing.....I don't want to watch overhyped garbage...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I guess we'll check sometime this weekend...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "But for now, we are playing goofy ass video games.."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "Wanna pull an all nighter too?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Absolutely!\\nI'll get snacks after the game boots up..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "You've gotta be kidding me.\\nFive loading screens within two minutes of playing?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "trolling",
+			"text": "This reminds me of Sonic '06.\\n(Exagerated but kinda true at the same time)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Yeah.....this one looks like it MIGHT take a while...."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "Get comfy I guess....."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "big-blush",
+			"text": "Oooh, cuddles on the couch!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "This game dead ass has-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "look",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "(Well... I can't blame her for falling asleep...\\n...Today has been PRETTY tough for us both...)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "(Might as well catch some sleep too.)"
+		}
+	]
+}

@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				118,
+				-8
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				60,
+				-76
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-24,
+				78
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-27,
+				12
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				118,
+				-8
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "Left Miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				60,
+				-76
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "Down Miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-24,
+				78
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "Up Miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-27,
+				12
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "Right Miss",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-5,
+				30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "exe/characters/benAssets",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf-mobian",
+	"flip_x": true,
+	"healthbar_colors": [
+		209,
+		162,
+		48
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

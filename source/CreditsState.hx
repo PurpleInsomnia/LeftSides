@@ -1,266 +1,231 @@
 package;
 
-#if desktop
-import Discord.DiscordClient;
-#end
-import flash.text.TextField;
-import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.display.FlxGridOverlay;
+import flixel.FlxG;
+import flixel.text.FlxText;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
-import flixel.text.FlxText;
-import flixel.util.FlxColor;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import lime.utils.Assets;
-import haxe.Json;
-import haxe.format.JsonParser;
-import sys.io.File;
 import sys.FileSystem;
+import haxe.Json;
 
-using StringTools;
+typedef CreditsFile = {
+    var sections:Array<CreditsSection>;
+}
+
+typedef CreditsSection = {
+    var name:String;
+    var subsections:Array<CreditsSubsection>;
+}
+
+typedef CreditsSubsection = {
+    var title:String;
+    var people:Array<Array<String>>;
+}
 
 class CreditsState extends MusicBeatState
 {
-	var curSelected:Int = 1;
+    var file:CreditsFile;
 
-	private var grpOptions:FlxTypedGroup<Alphabet>;
-	private var iconArray:Array<AttachedSprite> = [];
+    var icon:FlxSprite;
+    var text:FlxText;
 
-	private static var creditsStuff:Array<Dynamic> = [ //Name - Icon name - Description - Link - BG Color
-		['Left Sides Team'],
-		['PurpleInsomnia', 'purpleinsomnia', 'Director, Lead Coder, Lead Artist/Animator, Lead Composer, Lead Charter, VA for Monster and [Upcoming Dlc Character]', 'https://www.youtube.com/channel/UCw1Q7T9zmJ5D3hMyhFh3lgA', 0xFFA130D0],
-		['JustCam', 'cam', 'Charter for Cocoa and Senpai', '', 0xFF00EAFF],
-		['nico_0716', 'nico', 'Charter for Guns', 'https://www.youtube.com/channel/UC54887rDEIZGpUXELibdSTQ', 0xFFFFFFFF],
-		['Your Sour Toast', 'dmitri', 'V (New Mod Coming Soon?)', 'https://www.youtube.com/channel/UCZrlqAH631iOJuMuxPyJxLg', 0xFFFF0000],
-		[''],
-		['Special Thanks'],
-		['You <3', 			'you', 			'Thanks For Being So Patient! ', 			'', 			0xFF454545],
-		['Fan Artists', 'you', 'Amazing Fan Artwork!', '', 0xFF454545],
-		[''],
-		["HUGE FUCKING W's"],
-		['HankKD7', 'thew', 'Showcased the mod', 'https://www.youtube.com/c/HankKD7', 0xFFFFFFFF],
-		['samithew', 'thew',  'Showcased the mod', 'https://www.youtube.com/channel/UCgNfQP1rRIMQCAbhxSOo4WQ', 0xFFFFFFFF],
-	];
+    var grp:FlxTypedGroup<Dynamic>;
 
-	var bg:FlxSprite;
-	var descText:FlxText;
-	var intendedColor:Int;
-	var colorTween:FlxTween;
+    var camFollow:FlxSprite;
+    var camFollowPos:FlxSprite;
 
-	override function create()
-	{
-		#if MODS_ALLOWED
-		Paths.destroyLoadedImages();
-		#end
+    var toSelect:Array<Array<Dynamic>> = [];
+    var subsecs:Array<Alphabet> = [];
 
-		#if desktop
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
+    var curSelected:Int = 0;
 
-		bg = new FlxSprite().loadGraphic(Paths.image('coolBg'));
+    override function create()
+    {
+        if (FileSystem.exists(Paths.preloadFunny("data/credits.json")))
+        {
+            file = Json.parse(Paths.getTextFromFile("data/credits.json"));
+        }
+        else
+        {
+            file = {
+                sections: [
+                    {
+                        name: "NO FILE",
+                        subsections: [
+                            {
+                                title: "NO FILE",
+                                people: [["NO FILE", "you", "", "NO FILE EXISTS IN THE DATA FOLDER TITLED: " + '"credits.json"']]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+        camFollow = new FlxSprite().makeGraphic(1, 1);
+        camFollow.screenCenter();
+        add(camFollow);
+
+        camFollowPos = new FlxSprite().makeGraphic(1, 1);
+        camFollowPos.screenCenter();
+        add(camFollowPos);
+
+        FlxG.camera.follow(camFollowPos, null, 1);
+
+		var ppSuck:GridBackdrop = new GridBackdrop();
+		ppSuck.scrollFactor.set(0, 0);
+		add(ppSuck);
+
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('backdropSHADER'));
+		bg.scrollFactor.set(0, 0);
+		bg.setGraphicSize(Std.int(bg.width * 1.175));
+		bg.updateHitbox();
+		bg.screenCenter();
+		bg.blend = openfl.display.BlendMode.DARKEN;
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		FlxG.sound.playMusic(Paths.music('credits'));
+        grp = new FlxTypedGroup<Dynamic>();
+        add(grp);
 
-		grpOptions = new FlxTypedGroup<Alphabet>();
-		add(grpOptions);
+        for (i in 0...file.sections.length)
+        {
+            var alpha:Alphabet = new Alphabet(0, 0, file.sections[i].name, true, false);
+            alpha.screenCenter();
+            if (grp.length != 0)
+                alpha.y += 90 * grp.length;
 
-		// DLC SUPPORT!!!!!!
-		getCreditJsons();
+            grp.add(alpha);
+            addSection(i);
+        }
 
-		// adding on to dlc support lol
-		var moreCredits:Array<Dynamic> = [
-			[''],
-			['Psych Engine Team'],
-			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',					'https://twitter.com/Shadow_Mario_',	0xFF454545],
-			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',				'https://twitter.com/river_oaken',		0xFFC30085],
-			[''],
-			['Engine Contributors'],
-			['SqirraRNG',			'gedehari',			'Chart Editor\'s Sound Waveform base',						'https://twitter.com/gedehari',			0xFFFF9300],
-			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',								'https://twitter.com/polybiusproxy',	0xFFFFEAA6],
-			['Keoiki',				'keoiki',			'Note Splash Animations',									'https://twitter.com/Keoiki_',			0xFFFFFFFF],
-			['Smokey',				'smokey',			'Spritemap Texture Support',								'https://twitter.com/Smokey_5_',		0xFF4D5DBD],
-			[''],
-			["Funkin' Crew"],
-			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",				'https://twitter.com/ninja_muffin99',	0xFFF73838],
-			['PhantomArcade',		'phantomarcade',	"Animator of Friday Night Funkin'",					'https://twitter.com/PhantomArcade3K',	0xFFFFBB1B],
-			['evilsk8r',			'evilsk8r',			"Artist of Friday Night Funkin'",					'https://twitter.com/evilsk8r',			0xFF53E52C],
-			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",					'https://twitter.com/kawaisprite',		0xFF6475F3]
-		];
+        var box:FlxSprite = new FlxSprite(0, FlxG.height - 150).makeGraphic(FlxG.width, 150, 0xFF000000);
+        box.scrollFactor.set(0, 0);
+        add(box);
 
-		for (i in 0...moreCredits.length)
-			 creditsStuff.push(moreCredits[i]);
+        icon = new FlxSprite(0, box.y).loadGraphic(Paths.image("credits/purpleinsomnia"));
+        icon.scrollFactor.set(0, 0);
+        add(icon);
 
-		for (i in 0...creditsStuff.length)
-		{
-			var isSelectable:Bool = !unselectableCheck(i);
-			var optionText:Alphabet = new Alphabet(0, 70 * i, creditsStuff[i][0], !isSelectable, false);
-			optionText.isMenuItem = true;
-			optionText.screenCenter(X);
-			if(isSelectable) {
-				optionText.x -= 70;
-			}
-			optionText.forceX = optionText.x;
-			//optionText.yMult = 90;
-			optionText.targetY = i;
-			grpOptions.add(optionText);
+        text = new FlxText(150, box.y + 10, FlxG.width - 150, "penis fart fart lmao", 24);
+        text.font = Paths.font("eras.ttf");
+        text.scrollFactor.set(0, 0);
+        add(text);
 
-			if(isSelectable) {
-				var icon:AttachedSprite = new AttachedSprite('credits/' + creditsStuff[i][1]);
-				icon.xAdd = optionText.width + 10;
-				icon.sprTracker = optionText;
-	
-				// using a FlxGroup is too much fuss!
-				iconArray.push(icon);
-				add(icon);
-			}
-		}
+        changeSelection(0);
 
-		var spikesFg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('credits/spikesFG'));
-		spikesFg.antialiasing = ClientPrefs.globalAntialiasing;
-		spikesFg.screenCenter();
-		add(spikesFg);
+        // 1.5 bc I made it too quiet DX
+        FlxG.sound.playMusic(Paths.music("movingOn"), 1.5, true);
 
-		FlxTween.tween(spikesFg, {x: spikesFg.x + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
+        super.create();
+    }
 
-		descText = new FlxText(50, 600, 1180, "", 32);
-		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		descText.scrollFactor.set();
-		descText.borderSize = 2.4;
-		add(descText);
+    var canLink:Bool = false;
+    override function update(elapsed:Float)
+    {
+        var lerpVal:Float = CoolUtil.boundTo(elapsed * 5.6, 0, 1);
+		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
-		bg.color = creditsStuff[curSelected][4];
-		intendedColor = bg.color;
-		changeSelection();
+        if (controls.UI_UP_P)
+        {
+            changeSelection(-1);
+        }
+        if (controls.UI_DOWN_P)
+        {
+            changeSelection(1);
+        }
+        if (controls.ACCEPT && canLink)
+        {
+            if (toSelect[curSelected][1] != "")
+            {
+                CoolUtil.browserLoad(toSelect[curSelected][1]);
+            }
+            else
+            {
+                lime.app.Application.current.window.alert("Social link either doesn't exist, or it was pretty hard to find.", "ERROR");
+            }
+        }
+        if (controls.BACK)
+        {
+            FlxG.sound.music.stop();
+            FlxG.sound.play(Paths.sound("cancelMenu"));
+            MusicBeatState.switchState(new TitleScreenState());
+        }
+        super.update(elapsed);
+    }
 
-		add(new Acheivement(2, "You looked at all the cool\npeople in the credits menu!\n(you're in it)", 'credit'));
+    function changeSelection(?huh:Int = 0)
+    {
+        if (huh != 0)
+            FlxG.sound.play(Paths.sound("scrollMenu"));
 
-		super.create();
-	}
+        curSelected += huh;
+        if (curSelected >= toSelect.length)
+            curSelected = 0;
+        if (curSelected < 0)
+            curSelected = toSelect.length - 1;
 
-	override function update(elapsed:Float)
-	{
-		if (FlxG.sound.music.volume < 0.7)
-		{
-			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
+        if (toSelect[curSelected][2] != null && toSelect[curSelected][3] != null && toSelect[curSelected][4] != null)
+        {
+            icon.visible = true;
+            text.visible = true;
+            icon.loadGraphic(Paths.image("credits/" + toSelect[curSelected][2]));
+            var lmao:String = Std.string(toSelect[curSelected][4]);
+            text.text = lmao.toUpperCase() + ": " + toSelect[curSelected][3];
+        }
+        else
+        {
+            icon.visible = false;
+            text.visible = false;
+        }
 
-		var upP = controls.UI_UP_P;
-		var downP = controls.UI_DOWN_P;
+        if (toSelect[curSelected][1] != null)
+        {
+            canLink = true;
+        }
+        else
+        {
+            canLink = false;
+        }
 
-		if (upP)
-		{
-			changeSelection(-1);
-		}
-		if (downP)
-		{
-			changeSelection(1);
-		}
+        for (i in 0...toSelect.length)
+        {
+            toSelect[i][0].alpha = 0.25;
+            if (i == curSelected)
+            {
+                toSelect[i][0].alpha = 1;
+            }
+        }
 
-		if (controls.BACK)
-		{
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			FlxG.sound.play(Paths.sound('cancelMenu'));
-			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new MainMenuState());
-		}
-		if(controls.ACCEPT) {
-			CoolUtil.browserLoad(creditsStuff[curSelected][3]);
-		}
-		super.update(elapsed);
-	}
+        if (toSelect[curSelected][2] != null)
+            camFollow.y = toSelect[curSelected][0].y + (Std.int(90 / 2) + 90);
+        else
+            camFollow.y = toSelect[curSelected][0].y + Std.int(90 / 2);
+    }
 
-	function changeSelection(change:Int = 0)
-	{
-		FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-		do {
-			curSelected += change;
-			if (curSelected < 0)
-				curSelected = creditsStuff.length - 1;
-			if (curSelected >= creditsStuff.length)
-				curSelected = 0;
-		} while(unselectableCheck(curSelected));
+    function addSection(huh:Int)
+    {
+        for (i in 0...file.sections[huh].subsections.length)
+        {
+            var alpha:Alphabet = new Alphabet(0, 0, file.sections[huh].subsections[i].title, true, false, 0.5, 0.75);
+            alpha.screenCenter();
+            alpha.y += 90 * grp.length;
+            grp.add(alpha);
+            toSelect.push([alpha]);
+            subsecs.push(alpha);
+            addSubsection(file.sections[huh].subsections[i], i);
+        }
+    }
 
-		var newColor:Int = creditsStuff[curSelected][4];
-		if(newColor != intendedColor) {
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			intendedColor = newColor;
-			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
-				onComplete: function(twn:FlxTween) {
-					colorTween = null;
-				}
-			});
-		}
-
-		var bullShit:Int = 0;
-
-		for (item in grpOptions.members)
-		{
-			item.targetY = bullShit - curSelected;
-			bullShit++;
-
-			if(!unselectableCheck(bullShit-1)) {
-				item.alpha = 0.6;
-				if (item.targetY == 0) {
-					item.alpha = 1;
-				}
-			}
-		}
-		descText.text = creditsStuff[curSelected][2];
-	}
-
-	private function unselectableCheck(num:Int):Bool {
-		return creditsStuff[num].length <= 1;
-	}
-
-
-	// copied from WeekData.hx lmfao
-	function getCreditJsons()
-	{
-		var disabledMods:Array<String> = [];
-		var modsListPath:String = 'modsList.txt';
-		var directories:Array<String> = [Paths.mods()];
-		var originalLength:Int = directories.length;
-		if(FileSystem.exists(modsListPath))
-		{
-			var stuff:Array<String> = CoolUtil.coolTextFile(modsListPath);
-			for (i in 0...stuff.length)
-			{
-				var splitName:Array<String> = stuff[i].trim().split('|');
-				if(splitName[1] == '0') // Disable mod
-				{
-					disabledMods.push(splitName[0]);
-				}
-				else // Sort mod loading order based on modsList.txt file
-				{
-					var path = haxe.io.Path.join([Paths.mods(), splitName[0]]);
-					//trace('trying to push: ' + splitName[0]);
-					if (sys.FileSystem.isDirectory(path) && !Paths.ignoreModFolders.exists(splitName[0]) && !disabledMods.contains(splitName[0]) && !directories.contains(path + '/'))
-					{
-						directories.push(path + '/');
-						//trace('pushed Directory: ' + splitName[0]);
-					}
-				}
-			}
-		}
-		for (i in 0...directories.length) {
-			var file:String = directories[i] + 'data/credits.txt';
-			if(FileSystem.exists(file)) {
-				creditsStuff.push(['']);
-				var list:Array<String> = CoolUtil.coolTextFile(file);
-				for (i in 0...list.length)
-				{
-					var split:Array<String> = list[i].split('|');
-					creditsStuff.push(split);
-				}
-			}
-		}
-	}
+    function addSubsection(subsection:CreditsSubsection, huh:Int)
+    {
+        for (i in 0...subsection.people.length)
+        {
+            var alpha:Alphabet = new Alphabet(0, 0, subsection.people[i][0], false, false, 0.5, 0.75);
+            alpha.screenCenter();
+            alpha.y += 90 * (grp.length - 1);
+            grp.add(alpha);
+            toSelect.push([alpha, subsection.people[i][2], subsection.people[i][1], subsection.people[i][3], subsection.people[i][0]]);
+        }
+    }
 }

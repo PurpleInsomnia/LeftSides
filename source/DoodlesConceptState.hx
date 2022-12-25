@@ -29,7 +29,9 @@ class DoodlesConceptState extends MusicBeatState
 		'trickyIcon:image',
 		'nightmare:music',
 		'pico:music',
-		'dad:music'
+		'dad:music',
+		"haunter:image",
+		"frostbite:music"
 	];
 
 	var descs:Array<String> = [
@@ -39,7 +41,9 @@ class DoodlesConceptState extends MusicBeatState
 		"Left Sides Tricky icon concept",
 		'Unused instrumental to a song that would take place after "They Go Upstairs"\n(Press Enter To Play)',
 		'Unused dialogue theme for Pico\n(Press Enter To Play)',
-		'Unused dialogue theme for Daddy Dearest\n(Press Enter To Play)'
+		'Unused dialogue theme for Daddy Dearest\n(Press Enter To Play)',
+		"Left Sides Lullaby icon concept for Safety Lullaby (staring Haunter :D)",
+		'Instrumental for a Left Sides remix of "Frostbite"\nThe song would instead be called "Third Degree"\n(Press Enter To Play)'
 	];
 
 	var spriteGroup:FlxTypedGroup<FlxSprite>;

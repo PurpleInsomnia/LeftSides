@@ -26,6 +26,8 @@ class ClientPrefs {
 	public static var imagesPersist:Bool = false;
 	public static var ghostTapping:Bool = true;
 	public static var hideTime:Bool = false;
+
+
 	public static var camMove:Bool = true;
 	public static var doubShake:Bool = true;
 	public static var bgSprite:String = 'starscape';
@@ -33,7 +35,6 @@ class ClientPrefs {
 	public static var closeSound:String = 'dialogueClose';
 	public static var showComboSpr:Bool = true;
 	public static var shaders:Bool = true;
-	public static var achievementUnlocked:Array<String> = ['placeholder'];
 	public static var week8Done:Bool = false;
 	public static var setControls:Bool = false;
 	public static var foundDmitri:Bool = false;
@@ -45,7 +46,7 @@ class ClientPrefs {
 	public static var customStrum:String = 'Off';
 	public static var customBar:String = 'Default';
 	public static var customRating:String = 'Default';
-	public static var muteMiss:Bool = false;
+	public static var muteMiss:Bool = true;
 	public static var ukFormat:Bool = false;
 	public static var noStages:Bool = false;
 	public static var contentWarnings:Bool = false;
@@ -53,6 +54,24 @@ class ClientPrefs {
 	public static var createdFile:Bool = false;
 	public static var showUsername:Bool = true;
 	public static var discord:Bool = true;
+	public static var newUnlocked:Bool = false;
+	public static var preferedDimens:String = "1280 x 720";
+	public static var devMode:Bool = false;
+	public static var chartingMode:Bool = false;
+	public static var screenShake:Bool = true;
+	public static var customStrumFile:String = "";
+	public static var customSplashFile:String = "";
+	public static var timeColour:String = "Gradient & Black";
+	public static var strumHealth:Bool = true;
+
+
+	#if (haxe >= "4.0.0")
+	public static var luaSave:Map<String, Dynamic> = new Map();
+	#else
+	public static var luaSave:Map<String, Dynamic> = new Map<String, Dynamic>();
+	#end
+
+	public static var gameJoltLogin:Array<String> = ["", ""];
 
 	public static var defaultKeys:Array<FlxKey> = [
 		A, LEFT,			//Note Left
@@ -139,17 +158,23 @@ class ClientPrefs {
 		#if desktop
 		FlxG.save.data.discord = discord;
 		#end
+		FlxG.save.data.newUnlocked = newUnlocked;
+		FlxG.save.data.preferedDimens = preferedDimens;
+		FlxG.save.data.devMode = devMode;
+		FlxG.save.data.chartingMode = chartingMode;
+		FlxG.save.data.screenShake = screenShake;
+		FlxG.save.data.customStrumFile = CustomStrum.strum;
+		FlxG.save.data.customSplashFile = CustomStrum.splash;
+		FlxG.save.data.timeColour = timeColour;
+		FlxG.save.data.strumHealth = strumHealth;
 
-		var achieves:Array<String> = [];
-		for (i in 0...Achievements.achievementsUnlocked.length) {
-			if(Achievements.achievementsUnlocked[i][1]) {
-				achieves.push(Achievements.achievementsUnlocked[i][0]);
-			}
-		}
-		FlxG.save.data.achievementsUnlocked = achieves;
-		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
-		FlxG.save.data.achievementUnlocked = Acheivement.unlocked; 
+		FlxG.save.data.luaSave = luaSave;
+
+		FlxG.save.data.gameJoltLogin = gameJoltLogin;
+
 		FlxG.save.flush();
+
+		SideStorySelectState.save();
 
 		var save:FlxSave = new FlxSave();
 		save.bind('controls', 'ninjamuffin99'); //Placing this in a separate save so that it can be manually deleted without removing your Score and stuff
@@ -235,7 +260,7 @@ class ClientPrefs {
 			showComboSpr = FlxG.save.data.showComboSpr;
 		}
 		if(FlxG.save.data.shaders != null) {
-			shaders = FlxG.save.data.shaders;
+			shaders = true;
 		}
 		if(FlxG.save.data.dialogueVoices != null) {
 			dialogueVoices = FlxG.save.data.dialogueVoices;
@@ -279,6 +304,53 @@ class ClientPrefs {
 			discord = FlxG.save.data.discord;
 		}
 		#end
+		if (FlxG.save.data.newUnlocked != null)
+		{
+			newUnlocked = FlxG.save.data.newUnlocked;
+		}
+		if (FlxG.save.data.preferedDimens != null)
+		{
+			preferedDimens = FlxG.save.data.preferedDimens;
+		}
+		if (FlxG.save.data.devMode != null)
+		{
+			devMode = FlxG.save.data.devMode;
+		}
+		if (FlxG.save.data.chartingMode != null)
+		{
+			chartingMode = FlxG.save.data.chartingMode;
+		}
+		if (FlxG.save.data.screenShake != null)
+		{
+			screenShake = FlxG.save.data.screenShake;
+		}
+		if (FlxG.save.data.customStrumFile != null)
+		{
+			CustomStrum.strum = FlxG.save.data.customStrumFile;
+		}
+		if (FlxG.save.data.customSplashFile != null)
+		{
+			CustomStrum.splash = FlxG.save.data.customSplashFile;
+		}
+		if (FlxG.save.data.timeColour != null)
+		{
+			timeColour = FlxG.save.data.timeColour;
+		}
+		if (FlxG.save.data.strumHealth != null)
+		{
+			strumHealth = FlxG.save.data.strumHealth;
+		}
+		if (FlxG.save.data.luaSave != null)
+		{
+			luaSave = FlxG.save.data.luaSave;
+		}
+
+		if (FlxG.save.data.gameJoltLogin != null)
+		{
+			gameJoltLogin = FlxG.save.data.gameJoltLogin;
+		}
+
+
 		if (FlxG.save.data.setControls != null) {
 			setControls = FlxG.save.data.setControls;
 		}
@@ -299,11 +371,6 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.arcadeUnlocked != null) {
 			arcadeUnlocked = FlxG.save.data.arcadeUnlocked;
-		}
-		if(FlxG.save.data.achievementUnlocked != null) {
-			achievementUnlocked = FlxG.save.data.achievementUnlocked;
-			Acheivement.unlocked = achievementUnlocked;
-			trace(Acheivement.unlocked);
 		}
 
 		// flixel automatically saves your volume!
@@ -363,7 +430,7 @@ class ClientPrefs {
 		Delete.delete();
 		saveSettings();
 		loadPrefs();
-		TitleState.initialized = false;
-		MusicBeatState.switchState(new TitleState());
+		TitleScreenState.initialized = false;
+		MusicBeatState.switchState(new TitleScreenState());
 	}
 }

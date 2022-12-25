@@ -91,14 +91,7 @@ class SelectSongTypeState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('confirmMenu'));
 			if (freeplay)
 			{
-				if (curSelected == 1)
-				{	
-					MusicBeatState.switchState(new FreeplayEncoreState());
-				}
-				else
-				{
-					MusicBeatState.switchState(new FreeplayState());
-				}
+				// unused
 			}
 			else
 			{

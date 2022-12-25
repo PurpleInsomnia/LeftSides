@@ -49,14 +49,6 @@ class SysSettingsSubState extends BaseOptionsMenu
 
 		addOption(option);
 
-		var option:Option = new Option('UK Time Format',
-		'If checked, the time format is changed to "Day/Month/Year" ' + "(Bri'ish)",
-		'ukFormat',
-		'bool',
-		false);
-
-		addOption(option);
-
 		#if desktop
 		var option:Option = new Option("Discord Rich Presence",
 		"If checked, Discord will display this game (and it's curent state) as a status message\n(YOU MUST RESTART THE GAME TO ACTIVATE)",
@@ -66,6 +58,31 @@ class SysSettingsSubState extends BaseOptionsMenu
 
 		addOption(option);
 		#end
+
+		// HAHAHAHAHAHAHAHAHAH DEVS ONLYYYYYYYY :skull:
+		var devBuild:Bool = false;
+		if (CoolUtil.username() == "purpl")
+		{
+			devBuild = true;
+		}
+		if (devBuild)
+		{
+			var option:Option = new Option("Developer Options",
+			"If checked, locks will be removed in the story menu and freeplay menu.",
+			"devMode",
+			"bool",
+			false);
+
+			addOption(option);
+		}
+
+		var option:Option = new Option("Charting Mode",
+		"If checked, charting is enabled",
+		"chartingMode",
+		"bool",
+		false);
+
+		addOption(option);
 
 		super();
 	}

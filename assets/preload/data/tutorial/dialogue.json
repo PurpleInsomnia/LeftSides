@@ -1,102 +1,319 @@
 {
 	"dialogue": [
 		{
-			"expression": "default",
-			"text": "Is this REALLY necessary?",
+			"expression": "question",
+			"text": "Am I allowed to enter your room?",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "U-um.. I'm changing right now.. just g-give me a minute...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Alright, I'll wait out here then.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "stop-being-cute",
-			"text": "Yes it actually is...",
+			"text": "...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "hmph",
-			"text": "For some strange reason, my father only allows me to date people who are;",
+			"expression": "stop-being-cute",
+			"text": "(All I have to do is just tell him how I feel..)\\n(It shouldn't be that difficult...)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "(Worst he can say is ''No''....)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "default",
+			"text": "O-ok, you can come in now!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "So, what's up?\\nYou told me that you needed to tell me\\nsomething..",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I'm sorry that w-we couldn't do this some place nicer...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Oh no it's fine!\\nYour room looks really nice right now so I could say it fits...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "default",
+			"text": "O-oh thanks!\\nI um...cleaned it yesterday....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "Anyways.... um.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "So...........\\num.....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "A-about yesterday....and what...happened t-that morning....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I...I wanted to tell you something in that moment....but I guess I got to scared or something...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "So I'm just gonna say it now...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "..I-I'm in...l-love with you...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "I have been for..a-a really long time...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cute-blushing",
+			"text": "I'm s-sorry if that sounds weird...but I really mean it....I-I literally can't stop thinking about you sometimes....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "stop-being-cute",
+			"text": "D-do you want to be my B-boyfriend?....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "big-blush",
+			"text": "Is that even a question?\\nOf course I do!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "say-what",
+			"text": "Keepin' it between us...I was gonna ask you...Kept saying to myself ''the worst thing she can say is no''."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "And then, I'd puss out of doing it..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "I dunno, I just thought you would only like me as a friend..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Yikes. That's the same mindset I had..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Guess we're both afraid of rejection huh?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Guess so....\\n...Anyways..."
+		},
+		{
+			"expression": "laughing",
+			"text": "It's official then!",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
 			"expression": "cringe",
-			"text": "Worthy....",
+			"text": "well almost...",
 			"boxState": "normal",
-			"speed": 0.115,
+			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "question",
-			"text": "So like, how do I do this \"rap\" thing? Dosen't that shit take like...",
+			"expression": "what",
+			"text": "What does that mean?....",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "what",
-			"text": "600 million katrillon nomillion kazillion chimbagooberkajawewobillionzilliontrillionmillion\\jillioneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\\nEons?",
+			"expression": "cringe",
+			"text": "My father needs something from you...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "happy",
+			"text": "Does this have something to do with the GIANT\\nASS speakers in the middle of your room?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "cringe",
+			"text": "Ummmm.....yeah.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "cringe",
+			"text": "You have to out-last him in a singing\\ncompetition I think....",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "look",
+			"text": "B-but I have no idea how to sing....\\nLet alone Saul Goodman beatbox.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
 			"expression": "stop-being-cute",
-			"text": "Not...Really....",
+			"text": "I haven't sang in a while.... But I wouldn't mind helping you out...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "default",
-			"text": "interesting",
-			"boxState": "normal",
-			"speed": 0.09,
-			"portrait": "bf"
-		},
-		{
-			"expression": "cheer",
-			"text": "Here, I'll show you how its done!\\nJust follow my lead!",
+			"expression": "wink",
+			"text": "I guess you can call them ''Tutorials'' if you want to.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "gf"
 		},
 		{
-			"expression": "default",
-			"text": "coolswag",
+			"expression": "waking-up",
+			"text": "Um....... ok..........\\nI just....don't want to mess up in front of you....",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "default",
-			"text": "(Im gonna be a pro at this in NO time!!)",
+			"expression": "cute-blushing",
+			"text": "You're gonna do great! Just trust me on this!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "guilt",
+			"text": "...",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "default",
-			"text": "(If I have to rap to get this girl, I'm gonna have to try my best!)",
+			"expression": "challenge",
+			"text": "Lets do this.",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "trolling",
-			"text": "(It is what it is.)",
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Where did you get that microphone?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I found it."
+		},
+		{
+			"expression": "happy",
+			"text": "Also, may you also go easy on me please?",
 			"boxState": "normal",
 			"speed": 0.05,
 			"portrait": "bf"
 		},
 		{
-			"expression": "default",
-			"text": "Alright, lets do this!",
+			"expression": "cute-blushing",
+			"text": "Of course....",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"portrait": "gf"
 		}
 	]
 }

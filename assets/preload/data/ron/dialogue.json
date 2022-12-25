@@ -1,0 +1,144 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Hi guys! It's me, Ronald M. Oxlong!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Who is that little boy?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I'm nineteen, asshole."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Don't get mad. I t was just a funni epik prak!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Look, what are you doing here Mr. Oxlong?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "SHUT THE FUCK UP!!!!!!111!!1!!\\nI HATE WOAH MAN!!!!111?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "cool",
+			"text": "(In a cool way.)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Cool! I already want to beat yo ass."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "cool",
+			"text": "kys."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Fuck off Ronald Mcdonald or whatever your name is..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Anyways, I can do the FUNNE AND COUL RAP!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "If you win rap, I will give you one katrilliongazillion dollars."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "thud",
+			"text": "Where did you get the money??"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "I don't have it right now."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "cool",
+			"text": "I'm gonna ask my good friend, Mister Beast for the money."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "say-what",
+			"text": "How old are you?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ron",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Fifteen."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "Okay...Ron...I want to get my money from mister beast....."
+		}
+	]
+}

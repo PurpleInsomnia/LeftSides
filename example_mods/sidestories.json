@@ -1,0 +1,6 @@
+{
+    "names": ["MY SIDE STORY NAME", "MY SIDE STORY NAME 2"],
+    "dataFolders": ["mysidestory", "secondsidestory"],
+    "lockedUntil": ["week5", "week6"],
+    "colours": [["0xFF9D00FF", "0xFFFF7E00", "0xFFFFFFFF"], ["0xFF9D00FF", "0xFFFF7E00", "0xFF000000"]]
+}

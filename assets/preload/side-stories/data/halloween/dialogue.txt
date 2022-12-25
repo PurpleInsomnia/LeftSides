@@ -1,0 +1,121 @@
+ben|tired|Oh wow...Can't believe this got here......I really should clean the couch more...|benLivingRoom
+none|piss|Yep, today is halloween.||ben
+none|piss|Tess is coming over to watch a horror movie before we go out Trick-or-Treating.
+none|piss|So, I need to clean the couch..
+none|piss|...Well I mean, I don't really HAVE to..
+none|piss|I just want my house to look nice for her.
+none|piss|However, she HAS been in my house while it was a complete disaster..she didn't complain (to me at least)
+none|piss|I dunno, I think I'm just nervous because she's my girlfriend now.
+ben|happy|Okay...that's done!||default
+ben|confused|Now where are the really cool and swag spooky pillows?....
+none|piss|a
+none|piss|Hmm, not to shabby.|benLivingRoomSpooky|ben
+none|piss|Glad Tess wanted to handle food stuff. Cause I've deadass got literally no time to make anything...She should be here ANY second..
+none|piss|!-||default
+none|piss|Huh...I was right!||ben
+none|piss|Also, Tess kept her costume a surprise for me.|benHallway
+none|piss|So this is making me curious...
+none|piss|I gently turn the door handle, and then open the door..
+ben|happy|Hey babe!||default
+tess|cute-blushing|Hi babe!
+none|piss|We exchange a kiss before Tess puts down her stereotypical pumpkin Tirck-or-Treat bucket that she's been using since she was ten.
+tess|default|So, what are we watching?||default
+none|piss|Fuck, I only had one job..Picking a movie.||ben
+none|piss|...
+none|piss|...Okay, I had two jobs.
+ben|ohfuck|so||default
+ben|ohfuck|umm
+ben|ohfuck|uh
+ben|ohfuck|uhh
+ben|ohfuck|erm
+ben|ohfuck|uh
+ben|ohfuck|uhhhh
+ben|ohfuck|ummm
+ben|ohfuck|uhhh
+ben|ohfuck|ummm
+ben|nervSmile|I uhh...completely forgot about putting something on while I was setting up the living room..
+tess|cute-blushing|That's okay! I know how you are when you're in your creative mood.
+tess|oh|Oh-
+tess|default|I forgot to tell you that I bought a giant tub of Red Vines.
+tess|laughing|To share!
+ben|plot|If you can get to them quick enough...
+tess|hmph|Heyyyyyyyyyyyyyyyyyyyyy, No fairrrr....
+ben|happy|Relax, I was only teasing!
+ben|plot|...Or was I?
+tess|bruh|Hah hah, goofball.
+tess|cute-blushing|Lets go find a movie to watch.
+none|piss|p||ben
+none|piss|We ended up picking "Insidious".|benLivingRoomSpooky
+none|piss|Not the best choice for Tess' first horror movie. (Well, the first one she watches all the way though at least..)
+none|piss|But hey, not complainin' about cuddles on the couch.
+none|piss|We've been feeding each other Red Vines and Chips since we've started the movie.
+none|piss|And I've gotta say...So far, this is the best Halloween I've had in a long ass time.
+none|piss|The movie finishes, Tess sits up to stretch, and I start cleaning up the area.
+ben|question|So, was the movie good?||default
+tess|oh|I mean....It wasn't AS scary as I thought it would be...
+tess|happy|However, it was still kinda scary and I want protective cuddles.
+ben|heehee|Ohhhhhhh okay...We can make it happen..We've got 45 minutes to spare..
+tess|bruh|Ehhh...more like 25...
+tess|hmph|It takes me a while to get my make up on...
+tess|stop-being-cute|S-still enough time though...
+ben|happy|Indeed.
+none|piss|p||ben
+none|piss|I look at the time on my clock...5:50....|benRoom
+ben|happy|Time to get ready...||default
+tess|stop-being-cute|....five more minutes....
+ben|tired|I feel the same....
+ben|happy|But I've also been REALLY looking forward to your costume...
+tess|happy|That's enough reasons for me to get ready!
+tess|cute-blushing|I'll just be umm....changing downstairs...I-I'll let you know when I'm ready...
+ben|happy|Alright then...
+none|piss|p
+tess|cute-blushing|So umm...W-what do you think?|benLivingRoomSpooky
+ben|flustered|...
+ben|flustered|Damn...that's pretty hot.
+tess|oh|Oh-
+tess|stop-being-cute|U-ummm...t-thank you....I-I knew that you'd like it...
+tess|cute-blushing|You look cute~
+ben|tired|I couldn't find my Journal 3 book...
+tess|hmph|aww man...
+ben|happy|But hey! We're gonna go out there and get as much candy as we possibly can! And nothing can or will go wrong!
+none|piss|p
+none|piss|Something went fucking wrong.|benHallwayNight|ben
+none|piss|I don't know what that...THING even is....
+none|piss|Some sort of monster...trying to manipulate me...I tried to keep my composure around her, but that didn't really last long.
+none|piss|Tess is worried sick about me...We tried to do something that would take our minds off of whatever the fuck just happened..
+none|piss|But of course, it didn't work..
+none|piss|Tess promised her parents that she'd be home by midnight. Which means she will have to leave me alone in here until she gets home, so that she can call me to check in on me.
+tess|pout|...I really wish I didn't have this stupid curfew...||default
+tess|cute-blushing|...I want to let you know that I had a lot fun today...
+ben|fake-smile|well...I tried my best to make it fun...
+none|piss|Tess looks at me with a sad expression.||ben
+none|piss|She gives me a really tight hug.
+none|piss|Reminds me of the hug she gave me at the hospital..
+none|piss|We tell each other "I love you". Then, Tess leaves.
+none|piss|...
+ben|lee-im-sad|*sigh*...Might as well clean up..||default
+none|piss|p||ben
+none|piss|Waiting for Tess to call me while I'm scared out of my fucking mind that "The Monster" is gonna show up again feels so agonizing...|benRoomNight
+none|piss|...My head hurts like hell...
+none|piss|.....I wonder how Tess feels about this whole monster thing...
+none|piss|...Does she even believe me?...
+none|piss|...
+none|piss|...A curfew...Are those guys fucking serious?!|streetNight|
+none|piss|Do they not like me hanging out with him?!
+none|piss|I swear, I'm gonna move out the very fucking MOMENT I see an oportunity...
+none|piss|...Fuck...I'm just so pissed off that I can't be with him when he really needs me...
+none|piss|I check the time, 11:52.
+none|piss|FUCK! I NEED to hurry!|none
+none|piss|I start sprinting.
+none|piss|I don't care if I fall and scrape my knee, I NEED to get home.
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster
+none|piss|Faster|||962424
+none|piss|!-|benRoomNight|ben
+none|piss|My ringtone brings me out of my paranoid state. Looks like Tess is calling...
+none|piss|And a wave of relaxation runs over me as I answer the call...

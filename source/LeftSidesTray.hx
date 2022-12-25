@@ -33,7 +33,7 @@ class LeftSidesTray extends FlxSoundTray
 		y = 0;
 		visible = true;
 		active = true;
-		dtf.font = Paths.font('vcr.ttf');
+		dtf.font = Paths.font('eras.ttf');
 		if (dtf.size != 16)
 			dtf.size = 16;
 		var globalVolume:Int = Math.round(FlxG.sound.volume * 10);

@@ -1,8 +1,8 @@
 {
 	"storyName": "CHRISTMAS DAY",
-	"hideFreeplay": true,
-	"weekBackground": "comingSoon",
-	"weekBefore": "waitPls",
+	"hideFreeplay": false,
+	"weekBackground": "real-christmas",
+	"weekBefore": "week5",
 	"startUnlocked": false,
 	"weekCharacters": [
 		"",
@@ -11,15 +11,15 @@
 	],
 	"songs": [
 		[
-			"Coming Soon",
-			"face",
+			"Peppermints",
+			"gf-2",
 			[
-				80,
-				80,
-				80
+				155,
+				0,
+				175
 			]
 		]
 	],
 	"hideStoryMode": false,
-	"weekName": "Just Wait Ok?"
+	"weekName": "Week 6"
 }

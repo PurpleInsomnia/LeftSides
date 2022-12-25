@@ -25,7 +25,8 @@ import openfl.events.Event;
 import openfl.events.IOErrorEvent;
 import flash.net.FileFilter;
 import haxe.Json;
-import DialogueBoxPsych;
+import OldDialogueBoxSupport;
+import DialogueCharacter;
 import flixel.FlxCamera;
 import flixel.group.FlxSpriteGroup;
 import lime.system.Clipboard;
@@ -408,8 +409,8 @@ class DialogueCharacterEditorState extends MusicBeatState
 			daText.destroy();
 		}
 		daText = new Alphabet(0, 0, DEFAULT_TEXT, false, true, 0.05, 0.7);
-		daText.x = DialogueBoxPsych.DEFAULT_TEXT_X;
-		daText.y = DialogueBoxPsych.DEFAULT_TEXT_Y;
+		daText.x = OldDialogueBoxSupport.DEFAULT_TEXT_X;
+		daText.y = OldDialogueBoxSupport.DEFAULT_TEXT_Y;
 		hudGroup.add(daText);
 	}
 
@@ -422,12 +423,12 @@ class DialogueCharacterEditorState extends MusicBeatState
 			char.setGraphicSize(Std.int(char.width * DialogueCharacter.DEFAULT_SCALE * character.jsonFile.scale));
 			char.updateHitbox();
 		}
-		character.x = DialogueBoxPsych.LEFT_CHAR_X;
-		character.y = DialogueBoxPsych.DEFAULT_CHAR_Y;
+		character.x = OldDialogueBoxSupport.LEFT_CHAR_X;
+		character.y = OldDialogueBoxSupport.DEFAULT_CHAR_Y;
 
 		switch(character.jsonFile.dialogue_pos) {
 			case 'right':
-				character.x = FlxG.width - character.width + DialogueBoxPsych.RIGHT_CHAR_X;
+				character.x = FlxG.width - character.width + OldDialogueBoxSupport.RIGHT_CHAR_X;
 			
 			case 'center':
 				character.x = FlxG.width / 2;
@@ -461,7 +462,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 				anim = 'center';
 		}
 		box.animation.play(anim, true);
-		DialogueBoxPsych.updateBoxOffsets(box);
+		OldDialogueBoxSupport.updateBoxOffsets(box);
 	}
 
 	override function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>) {
@@ -519,9 +520,9 @@ class DialogueCharacterEditorState extends MusicBeatState
 		}
 
 		if(!blockInput && !animationDropDown.dropPanel.visible) {
-			FlxG.sound.muteKeys = TitleState.muteKeys;
-			FlxG.sound.volumeDownKeys = TitleState.volumeDownKeys;
-			FlxG.sound.volumeUpKeys = TitleState.volumeUpKeys;
+			FlxG.sound.muteKeys = TitleScreenState.muteKeys;
+			FlxG.sound.volumeDownKeys = TitleScreenState.volumeDownKeys;
+			FlxG.sound.volumeUpKeys = TitleScreenState.volumeUpKeys;
 			if(FlxG.keys.justPressed.SPACE && UI_mainbox.selected_tab_id == 'Character') {
 				character.playAnim();
 				updateTextBox();

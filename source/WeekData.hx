@@ -317,4 +317,24 @@ class WeekData {
 		}
 		#end
 	}
+
+	public static function getAssetDirectories()
+	{
+		var toPush:Array<String> = [];
+		if (FileSystem.exists("modsList.txt"))
+		{
+			var list:Array<String> = CoolUtil.listFromString(File.getContent("modsList.txt"));
+			for (i in 0...list.length)
+			{
+				// gets asset based directories if certain folders don't exist.
+				// or the system finds "isAssetMod.leftSides".
+				var split:Array<String> = list[i].split("|");
+				if (!FileSystem.exists(Paths.mods(split[i] + "/weeks/")) || FileSystem.exists(Paths.mods(split[i] + "/isAssetMod.leftSides")))
+				{
+					toPush.push(split[i]);
+				}
+			}
+		}
+		Paths.AssetDirectories = toPush;	
+	}
 }

@@ -10,6 +10,9 @@ import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
 import flixel.FlxSprite;
 import flixel.ui.FlxButton;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
+import filters.*;
 
 class NoIdeaState extends MusicBeatState
 {
@@ -23,6 +26,7 @@ class NoIdeaState extends MusicBeatState
 	var canPress:Bool = true;
 
 	public static var diff:Int = 1;
+	var vcr:VCR;
 
 	override public function create()
 	{
@@ -32,20 +36,29 @@ class NoIdeaState extends MusicBeatState
 
 		FlxG.mouse.visible = true;
 
-		theSprite = new FlxSprite().loadGraphic(Paths.image('talk/bgSprite'));
+		var toAdd:Array<BitmapFilter> = [];
+        var tv:TV = new TV();
+        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+        vcr = new VCR();
+        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        toAdd.push(filter1);
+        toAdd.push(filter2);
+        FlxG.camera.setFilters(toAdd);
+
+		theSprite = new FlxSprite(0, -150).loadGraphic(Paths.image('talk/bgSprite'));
 		theSprite.alpha = 0;
 		add(theSprite);
 
-		var eye:FlxSprite = new FlxSprite().loadGraphic(Paths.image('talk/eye'));
+		var eye:FlxSprite = new FlxSprite(0, -150).loadGraphic(Paths.image('talk/eye'));
 		add(eye);
 
 		FlxG.sound.playMusic(Paths.music('monstersTheme'));
 
 		var username:String = CoolUtil.username();
-		talkingText = new FlxText(0, 0, "You have no idea what\nthose two have to bear with\nat home, " + username + '...\n...', 32);
+		talkingText = new FlxText(0, 75, FlxG.width, "You have no idea what\nthose two have to bear with\nat home, " + username + '...\n...', 32);
 		talkingText.font = Paths.font('vcr.ttf');
-		talkingText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		talkingText.screenCenter(X);
+		talkingText.setFormat("VCR OSD Mono", 36, FlxColor.RED, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		talkingText.screenCenter();
 		talkingText.alpha = 0;
 		add(talkingText);
 
@@ -58,11 +71,17 @@ class NoIdeaState extends MusicBeatState
 		});
 	}
 
+	override function update(elapsed) 
+	{
+		vcr.update(elapsed);
+		super.update(elapsed);	
+	}
+
 	function changeText(text:String = 'No Text?', num:Int)
 	{
 		talkingText.alpha = 0;
 		talkingText.text = text;
-		talkingText.screenCenter(X);
+		talkingText.screenCenter();
 
 		FlxTween.tween(talkingText, {alpha: talkingText.alpha + 1}, 1, {ease: FlxEase.expoOut});
 
@@ -70,7 +89,7 @@ class NoIdeaState extends MusicBeatState
 		{
 			if(num == 0)
 			{
-				changeText('That little blonde shit wanted to die..\nUntil she confessed her feelings.\nHe though everything would be okay...\n...', 1);
+				changeText('That little blonde shit wanted to die..\nUntil she confessed her feelings.\nHe thought everything would be okay...\n...', 1);
 			}
 			if (num == 1)
 			{
@@ -83,7 +102,11 @@ class NoIdeaState extends MusicBeatState
 			if (num == 3)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new TitleStateScary());
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					MusicBeatState.switchState(new StoryMenuState());
+				}
 			}
 		});
 	}

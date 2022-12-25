@@ -19,6 +19,8 @@ class WiggleEffect
 	public var waveSpeed(default, set):Float = 100;
 	public var waveFrequency(default, set):Float = 100;
 	public var waveAmplitude(default, set):Float = 100;
+	public var canUpdate:Bool = true;
+	public var tag:String = "";
 
 	public function new():Void
 	{
@@ -27,7 +29,14 @@ class WiggleEffect
 
 	public function update(elapsed:Float):Void
 	{
-		shader.uTime.value[0] += elapsed;
+		if (canUpdate)
+		{
+			shader.uTime.value[0] += elapsed;
+		}
+		else
+		{
+			shader.uTime.value = [0];
+		}
 	}
 
 	public function setValue(value:Float):Void

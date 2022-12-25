@@ -98,7 +98,7 @@ class SaveFileStartState extends MusicBeatState
 		if (FlxG.keys.anyJustPressed([ENTER, SPACE]) && canPress && showed)
 		{
 			canPress = false;
-			MusicBeatState.switchState(new TitleState());
+			MusicBeatState.switchState(new TitleScreenState());
 		}
 
 		super.update(elapsed);
@@ -131,16 +131,15 @@ class SaveFileStartState extends MusicBeatState
 		FlxG.camera.flash(0xFFFFFFFF, 1);
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			FlxG.save.bind('funkin', 'ninjamuffin99');
 			var path:String = 'assets/data/saveData.leftSides';
 			File.saveContent(path, SaveFileIcon.list[curSelected] + '|1\nfunkin|0\nfunkin|0\nfunkin|0\nfunkin|0\nfunkin|0\nfunkin|0');
-			TitleState.curSaveFile = 0;
+			TitleScreenState.curSaveFile = 0;
+			TitleScreenState.initialized = false;
 			trace('epic win!!');
-			ClientPrefs.loadPrefs();
-			if (!existingSaveData)
-				MusicBeatState.switchState(new TitleState());
-			else
-				SussyBaka();
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				FlxG.resetGame();
+			});
 		});
 	}
 

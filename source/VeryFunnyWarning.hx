@@ -36,7 +36,7 @@ class VeryFunnyWarning extends MusicBeatState
 			FlxG.camera.flash(0xFFFFFFFF, 1);
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new TitleScreenState());
 			});
 		}
 

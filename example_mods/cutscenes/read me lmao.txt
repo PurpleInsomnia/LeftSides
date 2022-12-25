@@ -1,3 +1,0 @@
-place custom .lua files here.
-
-(when opened, they both call 'onCreate' AND 'onCutsceneStart')

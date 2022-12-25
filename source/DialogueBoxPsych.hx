@@ -7,6 +7,8 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
 import flixel.input.FlxKeyManager;
 import flixel.text.FlxText;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.FlxSubState;
@@ -17,34 +19,14 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 import openfl.utils.Assets;
-import FunkinLua;
 
 using StringTools;
 
-typedef DialogueCharacterFile = {
-	var image:String;
-	var dialogue_pos:String;
-
-	var animations:Array<DialogueAnimArray>;
-	var position:Array<Float>;
-	var scale:Float;
+typedef FunnyDialogueFile = {
+	var dialogue:Array<FunnyDialogueLine>;
 }
 
-typedef DialogueAnimArray = {
-	var anim:String;
-	var loop_name:String;
-	var loop_offsets:Array<Int>;
-	var idle_name:String;
-	var idle_offsets:Array<Int>;
-}
-
-// Gonna try to kind of make it compatible to Forever Engine,
-// love u Shubs no homo :flushedh4:
-typedef DialogueFile = {
-	var dialogue:Array<DialogueLine>;
-}
-
-typedef DialogueLine = {
+typedef FunnyDialogueLine = {
 	var portrait:Null<String>;
 	var expression:Null<String>;
 	var text:Null<String>;
@@ -52,494 +34,221 @@ typedef DialogueLine = {
 	var speed:Null<Float>;
 }
 
-class DialogueCharacter extends FlxSprite
-{
-	private static var IDLE_SUFFIX:String = '-IDLE';
-	public static var DEFAULT_CHARACTER:String = 'bf';
-	public static var DEFAULT_SCALE:Float = 0.7;
-
-	public var jsonFile:DialogueCharacterFile = null;
-	#if (haxe >= "4.0.0")
-	public var dialogueAnimations:Map<String, DialogueAnimArray> = new Map();
-	#else
-	public var dialogueAnimations:Map<String, DialogueAnimArray> = new Map<String, DialogueAnimArray>();
-	#end
-
-	public var startingPos:Float = 0; //For center characters, it works as the starting Y, for everything else it works as starting X
-	public var isGhost:Bool = false; //For the editor
-	public var curCharacter:String = 'bf';
-
-	public static var curBox:String = 'speech_bubble';
-
-	public static function resetVariables() 
-	{
-		curBox = 'speech_bubble';
-	}
-
-	public function new(x:Float = 0, y:Float = 0, character:String = null)
-	{
-		super(x, y);
-
-		if(character == null) character = DEFAULT_CHARACTER;
-		this.curCharacter = character;
-
-		reloadCharacterJson(character);
-		frames = Paths.getSparrowAtlas('dialogue/' + jsonFile.image);
-		reloadAnimations();
-	}
-
-	public function reloadCharacterJson(character:String) {
-		var characterPath:String = 'images/dialogue/' + character + '.json';
-		var rawJson = null;
-
-		#if MODS_ALLOWED
-		var path:String = Paths.modFolders(characterPath);
-		if (!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath(characterPath);
-		}
-
-		if(!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath('images/dialogue/' + DEFAULT_CHARACTER + '.json');
-		}
-		rawJson = File.getContent(path);
-
-		#else
-		var path:String = Paths.getPreloadPath(characterPath);
-		rawJson = Assets.getText(path);
-		#end
-		
-		jsonFile = cast Json.parse(rawJson);
-	}
-
-	public function reloadAnimations() {
-		dialogueAnimations.clear();
-		if(jsonFile.animations != null && jsonFile.animations.length > 0) {
-			for (anim in jsonFile.animations) {
-				animation.addByPrefix(anim.anim, anim.loop_name, 24, isGhost);
-				animation.addByPrefix(anim.anim + IDLE_SUFFIX, anim.idle_name, 24, true);
-				dialogueAnimations.set(anim.anim, anim);
-			}
-		}
-	}
-
-	public function playAnim(animName:String = null, playIdle:Bool = false) {
-		var leAnim:String = animName;
-		if(animName == null || !dialogueAnimations.exists(animName)) { //Anim is null, get a random animation
-			var arrayAnims:Array<String> = [];
-			for (anim in dialogueAnimations) {
-				arrayAnims.push(anim.anim);
-			}
-			if(arrayAnims.length > 0) {
-				leAnim = arrayAnims[FlxG.random.int(0, arrayAnims.length-1)];
-			}
-		}
-
-		if(dialogueAnimations.exists(leAnim) &&
-		(dialogueAnimations.get(leAnim).loop_name == null ||
-		dialogueAnimations.get(leAnim).loop_name.length < 1 ||
-		dialogueAnimations.get(leAnim).loop_name == dialogueAnimations.get(leAnim).idle_name)) {
-			playIdle = true;
-		}
-		animation.play(playIdle ? leAnim + IDLE_SUFFIX : leAnim, false);
-
-		if(dialogueAnimations.exists(leAnim)) {
-			var anim:DialogueAnimArray = dialogueAnimations.get(leAnim);
-			if(playIdle) {
-				offset.set(anim.idle_offsets[0], anim.idle_offsets[1]);
-				//trace('Setting idle offsets: ' + anim.idle_offsets);
-			} else {
-				offset.set(anim.loop_offsets[0], anim.loop_offsets[1]);
-				//trace('Setting loop offsets: ' + anim.loop_offsets);
-			}
-		} else {
-			offset.set(0, 0);
-			trace('Offsets not found! Dialogue character is badly formatted, anim: ' + leAnim + ', ' + (playIdle ? 'idle anim' : 'loop anim'));
-		}
-	}
-
-	public function animationIsLoop():Bool {
-		if(animation.curAnim == null) return false;
-		return !animation.curAnim.name.endsWith(IDLE_SUFFIX);
-	}
-}
-
-// TO DO: Clean code? Maybe? idk
 class DialogueBoxPsych extends FlxSpriteGroup
 {
-	var dialogue:Alphabet;
-	public var dialogueList:DialogueFile = null;
+    var daFile:FunnyDialogueFile = null;
+    var curDialogue:FunnyDialogueLine = null;
 
-	public var finishThing:Void->Void;
+    public var finishThing:Void->Void;
 	public var nextDialogueThing:Void->Void = null;
 	public var skipDialogueThing:Void->Void = null;
-	var bgFade:FlxSprite = null;
-	var box:FlxSprite = null;
-	var textToType:String = '';
+    public var backDialogueThing:Void->Void = null;
 
-	var lePlayState:PlayState;
+    // goofy ahh vars :skull:
+    public var char:DialogueCharacter;
+    public var box:FlxSprite;
+    public var text:FlxTypeText;
 
-	var canPress:Bool = false;
+    public var line:Int = 0;
 
-	private var luaArray:Array<FunkinLua> = [];
+    // for like....flexibility??
+    public var boxGra:String = "normal";
+    public var charGra:String = "bf";
 
-	var arrayCharacters:Array<DialogueCharacter> = [];
+    public var canPress:Bool = false;
 
-	var currentText:Int = 0;
-	var offsetPos:Float = -600;
+    public function new(file:FunnyDialogueFile, ?song:String = null)
+    {
+        super();
 
-	var textBoxTypes:Array<String> = ['normal', 'angry', 'pixel'];
-	//var charPositionList:Array<String> = ['left', 'center', 'right'];
+        var time:Float = 0.25;
 
-	public function new(dialogueList:DialogueFile, ?song:String = null)
-	{
-		super();
-
-		if(song != null && song != '') {
+        if(song != null && song != '') 
+        {
 			FlxG.sound.playMusic(Paths.music(song), 0);
-			FlxG.sound.music.fadeIn(2, 0, 1);
-		}
-		
-		bgFade = new FlxSprite(-500, -500).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.WHITE);
-		bgFade.scrollFactor.set();
-		bgFade.visible = true;
-		bgFade.alpha = 0;
-		add(bgFade);
-
-		this.dialogueList = dialogueList;
-
-		spawnCharacters();
-
-		box = new FlxSprite(70, 370);
-		box.frames = Paths.getSparrowAtlas('speech_bubble');
-		box.scrollFactor.set();
-		box.antialiasing = ClientPrefs.globalAntialiasing;
-		box.animation.addByPrefix('normal', 'speech bubble normal', 24);
-		box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-		box.animation.addByPrefix('angry', 'AHH speech bubble', 24);
-		box.animation.addByPrefix('angryOpen', 'speech bubble loud open', 24, false);
-		box.animation.addByPrefix('pixel', 'speech bubble pixel0', 24);
-		box.animation.addByPrefix('pixelOpen', 'speech bubble pixel open', 24, false);
-		box.animation.play('normal', true);
-		box.visible = false;
-		box.setGraphicSize(Std.int(box.width * 0.9));
-		box.updateHitbox();
-		add(box);
-
-		startNextDialog();
-	}
-
-	var dialogueStarted:Bool = false;
-	var dialogueEnded:Bool = false;
-
-	public static var LEFT_CHAR_X:Float = -60;
-	public static var RIGHT_CHAR_X:Float = -100;
-	public static var DEFAULT_CHAR_Y:Float = 60;
-
-	function spawnCharacters() {
-		#if (haxe >= "4.0.0")
-		var charsMap:Map<String, Bool> = new Map();
-		#else
-		var charsMap:Map<String, Bool> = new Map<String, Bool>();
-		#end
-		for (i in 0...dialogueList.dialogue.length) {
-			if(dialogueList.dialogue[i] != null) {
-				var charToAdd:String = dialogueList.dialogue[i].portrait;
-				if(!charsMap.exists(charToAdd) || !charsMap.get(charToAdd)) {
-					charsMap.set(charToAdd, true);
-				}
-			}
+			FlxG.sound.music.fadeIn(time / 2, 0, 1);
 		}
 
-		for (individualChar in charsMap.keys()) {
-			var x:Float = LEFT_CHAR_X;
-			var y:Float = DEFAULT_CHAR_Y;
-			var char:DialogueCharacter = new DialogueCharacter(x + offsetPos, y, individualChar);
+        daFile = file;
+        boxGra = daFile.dialogue[0].boxState;
+        charGra = daFile.dialogue[0].portrait;
 
-			char.setGraphicSize(Std.int(char.width * DialogueCharacter.DEFAULT_SCALE * char.jsonFile.scale));
-			char.updateHitbox();
-			char.antialiasing = ClientPrefs.globalAntialiasing;
-			char.scrollFactor.set();
-			char.alpha = 0.00001;
-			add(char);
+        char = new DialogueCharacter(0, 0, charGra);
+        char.playAnim(daFile.dialogue[0].expression);
+        char.alpha = 0;
+        add(char);
 
-			var saveY:Bool = false;
-			switch(char.jsonFile.dialogue_pos) {
-				case 'center':
-					char.x = FlxG.width / 2;
-					char.x -= char.width / 2;
-					y = char.y;
-					char.y = FlxG.height + 50;
-					saveY = true;
-				case 'right':
-					x = FlxG.width - char.width + RIGHT_CHAR_X;
-					char.x = x - offsetPos;
-			}
-			x += char.jsonFile.position[0];
-			y += char.jsonFile.position[1];
-			char.x += char.jsonFile.position[0];
-			char.y += char.jsonFile.position[1];
-			char.startingPos = (saveY ? y : x);
-			arrayCharacters.push(char);
-		}
-	}
+        box = new FlxSprite().loadGraphic(Paths.dialogue("boxes/" + boxGra + ".png"));
+        box.alpha = 0;
+        box.screenCenter(X);
+        box.y = (FlxG.height - box.height) - 25;
+        add(box);
 
-	public static var DEFAULT_TEXT_X = 90;
-	public static var DEFAULT_TEXT_Y = 430;
-	var scrollSpeed = 4500;
-	var daText:Alphabet = null;
-	var ignoreThisFrame:Bool = true; //First frame is reserved for loading dialogue images
-	override function update(elapsed:Float)
-	{
-		if(ignoreThisFrame) {
-			ignoreThisFrame = false;
-			super.update(elapsed);
-			return;
-		}
+        reposChar();
 
-		if(!dialogueEnded) {
-			// bgFade.alpha += 0.5 * elapsed;
-			// if(bgFade.alpha > 0.5) bgFade.alpha = 0.25;
+        text = new FlxTypeText(box.x + 20, box.y + 20, Std.int(box.width - 20), "", 42);
+		text.setFormat(Paths.font(DialogueManager.font), 42, 0xFFFFFFFF, LEFT, FlxTextBorderStyle.OUTLINE, 0xFF000000);
+        text.sounds = [FlxG.sound.load(Paths.sound('dialogue'), 0.6)];
+		add(text);
 
-			if(PlayerSettings.player1.controls.BACK && canPress)
-			{
-				if (daText.finishedText)
-				{
-					skipDialogueThing();
-					dialogueEnded = true;
-					daText.kill();
-					remove(daText);
-					daText.destroy();
-					FlxG.sound.music.fadeOut(1, 0);
-					FlxG.sound.play(Paths.sound('dialogueSkip'));
-				}
-				else
-				{
-					daText.killTheTimer();
-					skipDialogueThing();
-					dialogueEnded = true;
-					daText.kill();
-					remove(daText);
-					daText.destroy();
-					FlxG.sound.music.fadeOut(1, 0);
-					FlxG.sound.play(Paths.sound('dialogueSkip'));
-				}
-			}
+        doIntro(time);
+        new FlxTimer().start(time, function(tmr:FlxTimer)
+        {
+            nextLine();
+			canPress = true;
+        });
+    }
 
-			if (PlayerSettings.player1.controls.EMOTE)
-			{
-				if(!daText.finishedText) {
-					if(daText != null) {
-						daText.killTheTimer();
-						daText.kill();
-						remove(daText);
-						daText.destroy();
-					}
-					daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.7);
-					add(daText);
-					
-					if(skipDialogueThing != null) {
-						skipDialogueThing();
-					}
-				}
-			}
+    var ended:Bool = false;
 
-			if(PlayerSettings.player1.controls.ACCEPT) {
-				if(!daText.finishedText) {
-					if(daText != null) {
-						daText.killTheTimer();
-						daText.kill();
-						remove(daText);
-						daText.destroy();
-					}
-					daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.7);
-					add(daText);
-					
-					if(skipDialogueThing != null) {
-						skipDialogueThing();
-					}
-				} else if(currentText >= dialogueList.dialogue.length) {
-					dialogueEnded = true;
-					for (i in 0...textBoxTypes.length) {
-						var checkArray:Array<String> = ['', 'center-'];
-						var animName:String = box.animation.curAnim.name;
-						for (j in 0...checkArray.length) {
-							if(animName == checkArray[j] + textBoxTypes[i] || animName == checkArray[j] + textBoxTypes[i] + 'Open') {
-								box.animation.play(checkArray[j] + textBoxTypes[i] + 'Open', true);
-							}
-						}
-					}
-
-					box.animation.curAnim.curFrame = box.animation.curAnim.frames.length - 1;
-					box.animation.curAnim.reverse();
-					daText.kill();
-					remove(daText);
-					daText.destroy();
-					daText = null;
-					updateBoxOffsets(box);
-					FlxG.sound.music.fadeOut(1, 0);
-				} else {
-					startNextDialog();
-				}
-				FlxG.sound.play(Paths.sound('dialogueClose'));
-				// lePlayState.callOnLuas('onDialogueClick', []);
-			} else if(daText.finishedText) {
-				var char:DialogueCharacter = arrayCharacters[lastCharacter];
-				if(char != null && char.animation.curAnim != null && char.animationIsLoop() && char.animation.finished) {
-					char.playAnim(char.animation.curAnim.name, true);
-				}
-			} else {
-				var char:DialogueCharacter = arrayCharacters[lastCharacter];
-				if(char != null && char.animation.curAnim != null && char.animation.finished) {
-					char.animation.curAnim.restart();
-				}
-			}
-
-			if(box.animation.curAnim.finished) {
-				for (i in 0...textBoxTypes.length) {
-					var checkArray:Array<String> = ['', 'center-'];
-					var animName:String = box.animation.curAnim.name;
-					for (j in 0...checkArray.length) {
-						if(animName == checkArray[j] + textBoxTypes[i] || animName == checkArray[j] + textBoxTypes[i] + 'Open') {
-							box.animation.play(checkArray[j] + textBoxTypes[i], true);
-						}
-					}
-				}
-				updateBoxOffsets(box);
-			}
-
-			if(lastCharacter != -1 && arrayCharacters.length > 0) {
-				for (i in 0...arrayCharacters.length) {
-					var char = arrayCharacters[i];
-					if(char != null) {
-						if(i != lastCharacter) {
-							switch(char.jsonFile.dialogue_pos) {
-								case 'left':
-									char.x -= scrollSpeed * elapsed;
-									if(char.x < char.startingPos + offsetPos) char.x = char.startingPos + offsetPos;
-								case 'center':
-									char.y += scrollSpeed * elapsed;
-									if(char.y > char.startingPos + FlxG.height) char.y = char.startingPos + FlxG.height;
-								case 'right':
-									char.x += scrollSpeed * elapsed;
-									if(char.x > char.startingPos - offsetPos) char.x = char.startingPos - offsetPos;
-							}
-							char.alpha -= 3 * elapsed;
-							if(char.alpha < 0.00001) char.alpha = 0.00001;
-						} else {
-							switch(char.jsonFile.dialogue_pos) {
-								case 'left':
-									char.x += scrollSpeed * elapsed;
-									if(char.x > char.startingPos) char.x = char.startingPos;
-								case 'center':
-									char.y -= scrollSpeed * elapsed;
-									if(char.y < char.startingPos) char.y = char.startingPos;
-								case 'right':
-									char.x -= scrollSpeed * elapsed;
-									if(char.x < char.startingPos) char.x = char.startingPos;
-							}
-							char.alpha += 3 * elapsed;
-							if(char.alpha > 1) char.alpha = 1;
-						}
-					}
-				}
-			}
-		} else { //Dialogue ending
-			if(box != null && box.animation.curAnim.curFrame <= 0) {
-				box.kill();
-				remove(box);
-				box.destroy();
-				box = null;
-			}
-
-			if(bgFade != null) {
-				bgFade.alpha -= 0.5 * elapsed;
-				if(bgFade.alpha <= 0) {
-					bgFade.kill();
-					remove(bgFade);
-					bgFade.destroy();
-					bgFade = null;
-				}
-			}
-
-			for (i in 0...arrayCharacters.length) {
-				var leChar:DialogueCharacter = arrayCharacters[i];
-				if(leChar != null) {
-					switch(arrayCharacters[i].jsonFile.dialogue_pos) {
-						case 'left':
-							leChar.x -= scrollSpeed * elapsed;
-						case 'center':
-							leChar.y += scrollSpeed * elapsed;
-						case 'right':
-							leChar.x += scrollSpeed * elapsed;
-					}
-					leChar.alpha -= elapsed * 10;
-				}
-			}
-
-			if(box == null && bgFade == null) {
-				for (i in 0...arrayCharacters.length) {
-					var leChar:DialogueCharacter = arrayCharacters[0];
-					if(leChar != null) {
-						arrayCharacters.remove(leChar);
-						leChar.kill();
-						remove(leChar);
-						leChar.destroy();
-					}
-				}
-				finishThing();
-				// lePlayState.dialogueComplete();
-				kill();
-			}
-		}
-		super.update(elapsed);
-	}
-
-	var lastCharacter:Int = -1;
-	var lastBoxType:String = '';
-	function startNextDialog():Void
-	{
-		var curDialogue:DialogueLine = null;
-		do {
-			curDialogue = dialogueList.dialogue[currentText];
-		} while(curDialogue == null);
-
-		if(curDialogue.text == null || curDialogue.text.length < 1) curDialogue.text = ' ';
-		if(curDialogue.boxState == null) curDialogue.boxState = 'normal';
-		if(curDialogue.speed == null || Math.isNaN(curDialogue.speed)) curDialogue.speed = 0.05;
-
-		var animName:String = curDialogue.boxState;
-		var boxType:String = textBoxTypes[0];
-		for (i in 0...textBoxTypes.length) {
-			if(textBoxTypes[i] == animName) {
-				boxType = animName;
-			}
-		}
-
-		var character:Int = 0;
-		box.visible = true;
-		for (i in 0...arrayCharacters.length) {
-			if(arrayCharacters[i].curCharacter == curDialogue.portrait) {
-				character = i;
-				break;
-			}
-		}
-
-		var soundString = 'textSounds/' + curDialogue.portrait + 'Text';
-		if (FileSystem.exists('assets/shared/sounds/' + soundString + '.ogg') && ClientPrefs.dialogueVoices || FileSystem.exists('mods/' + Paths.currentModDirectory + '/sounds/' + soundString + '.ogg')  && ClientPrefs.dialogueVoices)
+    override function update(elapsed:Float)
+    {
+        if (canPress)
 		{
-			Alphabet.textSound = soundString;
+			if (ended)
+			{
+				if (FlxG.keys.justPressed.ENTER)
+				{
+					ended = false;
+					line++;
+                    FlxG.sound.play(Paths.sound("dialogueClose"));
+					if (line >= daFile.dialogue.length)
+					{
+						doOutro();
+					}
+					else
+					{
+                        nextDialogueThing();
+						nextLine();
+					}
+				}
+			}
+			else
+			{
+				if (FlxG.keys.justPressed.ENTER || FlxG.keys.justPressed.SHIFT)
+				{
+					ended = true;
+					text.skip();
+                    skipDialogueThing();
+                    FlxG.sound.play(Paths.sound("dialogueClose"));
+				}
+			}
+			if (FlxG.keys.justPressed.ESCAPE)
+			{
+                text.skip();
+                FlxG.sound.play(Paths.sound("dialogueSkip"));
+				doOutro();
+			}
+
+            if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.BACKSPACE)
+            {
+				if (line != 0)
+				{
+                	FlxG.sound.play(Paths.sound("dialogueClose"));
+                	line -= 1;
+                	backDialogueThing();
+                	nextLine();
+				}
+            }
+		}
+        super.update(elapsed);
+    }
+
+    public function doIntro(time:Float)
+    {
+        FlxTween.tween(char, {alpha: 1}, time);
+        FlxTween.tween(box, {alpha: 1}, time);
+    }
+
+    public function doOutro()
+    {
+        canPress = false;
+        FlxTween.tween(char, {alpha: 0}, 0.5);
+        FlxTween.tween(box, {alpha: 0}, 0.5);
+        FlxTween.tween(text, {alpha: 0}, 0.5);
+        new FlxTimer().start(0.5, function(tmr:FlxTimer)
+        {
+            finishThing();
+        });
+    }
+
+    public function nextLine()
+    {
+        // this might take a while....
+        curDialogue = daFile.dialogue[line];
+        if (daFile.dialogue[line].boxState != boxGra)
+        {
+            boxGra = daFile.dialogue[line].boxState;
+            box.loadGraphic(Paths.dialogue("boxes/" + boxGra + ".png"));
+        }
+
+        if (daFile.dialogue[line].portrait != charGra)
+        {
+            charGra = daFile.dialogue[line].portrait;
+            char.reloadCharacterJson(charGra);
+            char.reloadFrames();
+            char.reloadAnimations();
+        }
+        reposChar();
+        char.playAnim(daFile.dialogue[line].expression);
+
+        reloadTextSounds();
+
+        var toType:String = checkText(daFile.dialogue[line].text);
+		text.font = Paths.font(DialogueManager.font);
+		text.color = Std.parseInt(DialogueManager.textColor);
+        text.resetText(toType);
+		text.start(daFile.dialogue[line].speed, true);
+
+		// port shit for D E P T H
+		portShit();
+
+        // prevents that stupid ass double press thing for null text :skull:
+        if (toType.length < 1 || toType == "")
+        {
+            ended = true;
+        }
+		text.completeCallback = function() {
+			ended = true;
+		};
+    }
+
+    public function reposChar()
+    {
+        char.y = Std.int(box.y - (char.height - 10));
+        if (char.jsonFile.dialogue_pos.toLowerCase() == "left")
+        {
+            char.x = box.x + 10;
+        }
+        if (char.jsonFile.dialogue_pos.toLowerCase() == "right")
+        {
+            char.x = Std.int((box.x + box.width) - (char.width + 10));
+        }
+        if (char.jsonFile.dialogue_pos.toLowerCase() == "center")
+        {
+            char.screenCenter(X);
+        }
+    }
+
+    public function reloadTextSounds()
+    {
+		var soundString = 'textSounds/' + curDialogue.portrait + 'Text';
+        var soundRp:String = "";
+		if (FileSystem.exists('assets/dialogue/' + soundString + '.ogg') && ClientPrefs.dialogueVoices || FileSystem.exists('mods/' + Paths.currentModDirectory + '/dialogue/' + soundString + '.ogg')  && ClientPrefs.dialogueVoices)
+		{
+			soundRp = soundString;
 			if (curDialogue.portrait == 'senpai' && curDialogue.expression == 'angry')
 			{
-				Alphabet.textSound = 'textSounds/angrysenpaiText';
+				soundRp = 'textSounds/angrysenpaiText';
 			}
 			if (curDialogue.portrait == 'dad' && curDialogue.expression == 'no')
 			{
-				Alphabet.textSound = 'dialogue';
+				soundRp = 'textSounds/dialogue';
 			}
 		}
 		else
 		{
-			Alphabet.textSound = 'dialogue';
+			soundRp = 'textSounds/dialogue';
 
 			// I have to do this in order to minimize the amount of MBs this mod has :/
 			// If you have a better solution, contact me.
@@ -551,37 +260,37 @@ class DialogueBoxPsych extends FlxSpriteGroup
 					case 'spookeez':
 						if (curDialogue.expression == 'skid-default' || curDialogue.expression == 'skid-bruh' || curDialogue.expression == 'skid-point' || curDialogue.expression == 'skid-sad')
 						{
-							Alphabet.textSound = 'textSounds/skidText';
+							soundRp = 'textSounds/skidText';
 						}
 						else
 						{
-							Alphabet.textSound = 'textSounds/pumpText';
+							soundRp = 'textSounds/pumpText';
 						}
 					case 'hug':
 						if (curDialogue.expression == 'bf')
 						{
-							Alphabet.textSound = 'textSounds/bfText';
+							soundRp = 'textSounds/bfText';
 						}
 						else
 						{
-							Alphabet.textSound = 'textSounds/gfText';
+							soundRp = 'textSounds/gfText';
 						}
 					case 'bf-christmas':
-						Alphabet.textSound = 'textSounds/bfText';
+						soundRp = 'textSounds/bfText';
 					case 'gf-christmas':
-						Alphabet.textSound = 'textSounds/gfText';
+						soundRp = 'textSounds/gfText';
 					case 'dad-christmas':
-						Alphabet.textSound = 'textSounds/dadText';
+						soundRp = 'textSounds/dadText';
 					case 'mom-christmas':
-						Alphabet.textSound = 'textSounds/momText'; 
+						soundRp = 'textSounds/momText'; 
 					case 'bb':
 						if (curDialogue.expression.startsWith('walt'))
 						{
-							Alphabet.textSound = 'textSounds/waltText';
+							soundRp = 'textSounds/waltText';
 						}
 						if (curDialogue.expression.startsWith('jesse'))
 						{
-							Alphabet.textSound = 'textSounds/jesseText';
+							soundRp = 'textSounds/jesseText';
 						}
 				}
 			}
@@ -589,87 +298,112 @@ class DialogueBoxPsych extends FlxSpriteGroup
 
 		// haha funny XDDDDDDDssssss!!!111//11/
 		if (curDialogue.text == ' ' || curDialogue.text.length < 1)
-			Alphabet.textSound = 'dialogue';
+			soundRp = 'textSounds/dialogue';
 
-		var centerPrefix:String = '';
-		var lePosition:String = arrayCharacters[character].jsonFile.dialogue_pos;
-		if(lePosition == 'center') centerPrefix = 'center-';
+        text.sounds = [FlxG.sound.load(Paths.dialogue(soundRp + ".ogg"), 0.2)];
+    }
 
-		if(character != lastCharacter) {
-			box.animation.play(centerPrefix + boxType + 'Open', true);
-			updateBoxOffsets(box);
-			box.flipX = (lePosition == 'left');
-		} else if(boxType != lastBoxType) {
-			box.animation.play(centerPrefix + boxType, true);
-			updateBoxOffsets(box);
+	// swear filter stuff lol
+	// I am laughing really hard by writing "cum" in this list
+	var badWords:Array<String> = ['Fuck', 'Shit', 'Bitch', 'Whore', 'Damn', 'Pussy', 'Dick', 'Cum', 'Twat', 'Wanker'];
+	// AH HELL NAH, FUCKING "WANKER" :skull:
+	var goodWords:Array<String> = ['!#$%', '$!#%', 'Female Dog', '$&%!', 'Darn', 'Cat', 'Jerky Stick', 'Nut', '#$%!', '!#$%!#'];
+	// Nut :skull:
+	function checkText(swagtext:String)
+	{
+		var editedText:String = swagtext;
+        if (swagtext.contains(Std.string("\\n")) || swagtext.contains("/") || swagtext.contains("\\"))
+        {
+            // no need for that shit anymore :skull:
+            editedText = editedText.replace(Std.string("\\n"), " ");
+            editedText = editedText.replace("/", "");
+			editedText = editedText.replace("\\", "");
+        }
+		if (swagtext.contains("[USERNAME]") || swagtext.contains("USERNAME"))
+		{
+			editedText = editedText.replace("USERNAME", CoolUtil.username());
+			editedText = editedText.replace("[USERNAME]", CoolUtil.username());
 		}
-		lastCharacter = character;
-		lastBoxType = boxType;
-
-		if(daText != null) {
-			daText.killTheTimer();
-			daText.kill();
-			remove(daText);
-			daText.destroy();
-		}
-
-		textToType = curDialogue.text;
-		daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, curDialogue.speed, 0.7);
-		add(daText);
-
-		var char:DialogueCharacter = arrayCharacters[character];
-		if(char != null) {
-			char.playAnim(curDialogue.expression, daText.finishedText);
-			if(char.animation.curAnim != null) {
-				var rate:Float = 24 - (((curDialogue.speed - 0.05) / 5) * 480);
-				if(rate < 12) rate = 12;
-				else if(rate > 48) rate = 48;
-				char.animation.curAnim.frameRate = rate;
+		if (ClientPrefs.swearFilter)
+		{
+			for (i in 0...badWords.length)
+			{
+				var badUp:String = badWords[i].toUpperCase();
+				var goodUp:String = goodWords[i].toUpperCase();
+				var badLow:String = badWords[i].toLowerCase();
+				var goodLow:String = goodWords[i].toLowerCase();
+				if (swagtext.contains(badWords[i]))
+				{
+					editedText = editedText.replace(badWords[i], goodWords[i]);
+				}
+				if (swagtext.contains(badUp))
+				{
+					editedText = editedText.replace(badUp, goodUp);
+				}
+				if (swagtext.contains(badLow))
+				{
+					editedText = editedText.replace(badLow, goodLow);
+				}
 			}
 		}
-		currentText++;
+		return editedText;
+	}
 
-		if (!canPress)
-			canPress = true;
-
-		if(nextDialogueThing != null) {
-			nextDialogueThing();
+	function portShit() 
+	{
+		var split:Array<String> = daFile.dialogue[line].portrait.split("-");
+		switch(split[0])
+		{
+			case "bf":
+				switch (daFile.dialogue[line].expression)
+				{
+					case "flustered":
+						FlxTween.tween(char, {y: char.y + 25}, 1, {ease: FlxEase.sineInOut});
+				}
+			case "gf":
+				switch (daFile.dialogue[line].expression)
+				{
+					case "stop-being-cute" | "cute-af":
+						FlxTween.tween(char, {y: char.y + 25}, 1, {ease: FlxEase.sineInOut});
+				}
 		}
 	}
 
-	public static function parseDialogue(path:String):DialogueFile {
-		#if MODS_ALLOWED
+    public static function loadDialogue(path:String):FunnyDialogueFile
+    {
+		if (FileSystem.exists(path.replace(".json", ".txt")))
+		{
+			var json:FunnyDialogueFile = {
+				dialogue: []
+			}
+			var raw:Array<String> = CoolUtil.coolTextFile(path.replace(".json", ".txt"));
+			for (i in 0...raw.length)
+			{
+				var split:Array<String> = raw[i].split("|");
+				if (split[4] == null)
+				{
+					split[4] = "normal";
+				}
+				if (split[5] == null)
+				{
+					split[5] = "0.05";
+				}
+				var line:FunnyDialogueLine = {
+					portrait: split[1],
+					expression: split[2],
+					text: split[3],
+					boxState: split[4],
+					speed: Std.parseInt(split[5])
+				}
+				json.dialogue.push(line);
+			}
+			return cast json;
+		}
+        #if MODS_ALLOWED
 		var rawJson = File.getContent(path);
 		#else
 		var rawJson = Assets.getText(path);
 		#end
 		return cast Json.parse(rawJson);
-	}
-
-	public static function updateBoxOffsets(box:FlxSprite) { //Had to make it static because of the editors
-		box.centerOffsets();
-		box.updateHitbox();
-		if(box.animation.curAnim.name.startsWith('angry')) {
-			box.offset.set(50, 65);
-		} else if(box.animation.curAnim.name.startsWith('center-angry')) {
-			box.offset.set(50, 30);
-		} else {
-			box.offset.set(10, 0);
-		}
-		
-		if(!box.flipX) box.offset.y += 10;
-	}
-
-	public function callOnLuas(event:String, args:Array<Dynamic>):Dynamic {
-		var returnVal:Dynamic = FunkinLua.Function_Continue;
-		#if LUA_ALLOWED
-		for (i in 0...luaArray.length) {
-			var ret:Dynamic = luaArray[i].call(event, args);
-			if(ret != FunkinLua.Function_Continue) {
-				returnVal = ret;
-			}
-		}
-		#end
-		return returnVal;
-	}
+    }
 }

@@ -68,6 +68,8 @@ class Note extends FlxSprite
 	public var noAnimation:Bool = false;
 	public var hitCausesMiss:Bool = false;
 
+	public var isGfNote:Bool = false;
+
 	private function set_texture(value:String):String {
 		if(texture != value) {
 			reloadNote('', value);
@@ -98,6 +100,8 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
+				case "GF Sing":
+					isGfNote = true;
 				case 'Glitch Note':
 					ignoreNote = mustPress;
 					reloadNote('glitch');
@@ -242,8 +246,8 @@ class Note extends FlxSprite
 		{
 			if (prefix.length < 1 || suffix.length < 1)
 			{
-				if (ClientPrefs.customStrum != 'Off')
-					skin = ClientPrefs.customStrum;
+				if (CustomStrum.strum != '')
+					skin = CustomStrum.strum;
 			}
 		}
 

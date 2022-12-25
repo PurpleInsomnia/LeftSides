@@ -1,5 +1,0 @@
-Sets Camera Zoom but just the tween AND it stays there!!!
-
-Value 1: Cam zoom
-
-Value 2: duration

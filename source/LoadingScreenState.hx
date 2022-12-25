@@ -18,9 +18,11 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import Achievements;
 import editors.MasterEditorMenu;
 import sys.FileSystem;
+import openfl.display.BitmapData;
+import flixel.system.FlxSound;
+import lime.utils.Assets as LimeAssets;
 
 using StringTools;
 
@@ -35,8 +37,6 @@ class LoadingScreenState extends MusicBeatState
 	var statusText:FlxText;
 
 	var done:Bool = false;
-
-	var pushedFiles:Bool = false;
 
 	override function create()
 	{
@@ -53,12 +53,17 @@ class LoadingScreenState extends MusicBeatState
 
 		done = false;
 
-		pushedFiles = false;
-
 		FlxG.sound.music.stop();
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
+
+		var screen:FlxSprite = new FlxSprite().loadGraphic(Paths.image("loading/loadingScreen"));
+		add(screen);
+
+		var random:Int = FlxG.random.int(0, 6);
+		var tip:FlxSprite = new FlxSprite(-1280, 0).loadGraphic(Paths.image("loading/tips/" + random));
+		add(tip);
 
 		peepeepoopoo = new LoadingSpr();
 		add(peepeepoopoo);
@@ -67,6 +72,8 @@ class LoadingScreenState extends MusicBeatState
 		statusText.font = Paths.font('eras.ttf');
 		statusText.y = Std.int(FlxG.height - statusText.height);
 		add(statusText);
+
+		FlxTween.tween(tip, {x: 0}, 1.5, {ease: FlxEase.sineOut});
 
 		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
@@ -88,12 +95,6 @@ class LoadingScreenState extends MusicBeatState
 			LoadingState.loadAndSwitchState(new PlayState());
 		}
 		peepeepoopoo.angle += 90 * elapsed;
-
-
-		if (pushedFiles && !done)
-		{
-			statusText.text = 'Loading (' + files[files.length - 1] + ')...';
-		}
 		if (done)
 		{
 			statusText.text = 'Done!';
@@ -103,40 +104,64 @@ class LoadingScreenState extends MusicBeatState
 
 	function getStuff()
 	{
-		return Paths.inst(PlayState.SONG.song);
-		if (PlayState.encoreMode)
-			return Paths.instEncore(PlayState.SONG.song);
-		if (PlayState.SONG.needsVoices)
-			return Paths.voices(PlayState.SONG.song);
-		if (PlayState.SONG.needsVoices && PlayState.encoreMode)
-			return Paths.voicesEncore(PlayState.SONG.song);
-
-		pushedFiles = true;
-
-		for (file in FileSystem.readDirectory('assets/shared/images/'))
+		/*
+		for (file in FileSystem.readDirectory('assets/songs/' + Paths.formatToSongPath(PlayState.SONG.song) + "/"))
 		{
 			files.push(file);
+		}
+		for (file in FileSystem.readDirectory('assets/shared/images/'))
+		{
+			if (!FileSystem.isDirectory(file))
+			{
+				files.push(file);
+			}
+			else
+			{
+				for (file2 in FileSystem.readDirectory("assets/shared/images/" + file + "/"))
+				{
+					files.push(file2);
+				}
+			}
 		}
 		for (file in FileSystem.readDirectory('mods/images/'))
 		{
-			files.push(file);
+			if (!FileSystem.isDirectory(file))
+			{
+				files.push(file);
+			}
 		}
 		for (file in FileSystem.readDirectory('assets/shared/sounds/'))
 		{
-			files.push(file);
+			if (!FileSystem.isDirectory(file))
+			{
+				files.push(file);
+			}
 		}
 		for (file in FileSystem.readDirectory('mods/sounds/'))
 		{
-			files.push(file);
+			if (!FileSystem.isDirectory(file))
+			{
+				files.push(file);
+			}
 		}
-		for (file in FileSystem.readDirectory('mods/' + Paths.currentModDirectory + '/images/'))
+		for (i in 1...files.length)
 		{
-			files.push(file);
+			if (files[i].endsWith("png"))
+			{
+				var newBitmap:BitmapData = BitmapData.fromFile(files[i]);
+			}
+			if (files[i].endsWith("ogg"))
+			{
+				var sound:FlxSound = new FlxSound().loadEmbedded(files[i]);
+			}
+			if (files[i].endsWith("xml") || files[i].endsWith("txt"))
+			{
+				var txt:Array<String> = CoolUtil.coolTextFile(files[i]);
+			}
 		}
-		for (file in FileSystem.readDirectory('mods/' + Paths.currentModDirectory + '/sounds/'))
-		{
-			files.push(file);
-		}
+		*/
+		LimeAssets.loadLibrary("shared");
+		files = LimeAssets.list(null);
 	}
 }
 

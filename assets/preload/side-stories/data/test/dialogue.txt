@@ -1,0 +1,10 @@
+ben|default|Testing dialogue
+tess|cringe|Why are you testing??
+ben|troll|I dunno.
+ben|troll|THE ONE PIECE IS REALLLL|black|yell
+tess|default|Hey cool! you made the screen shake!|black|default
+ben|the-rock|Wait, I did?!
+ben|happy|That's pretty cool.
+tess|stop-being-cute|...You're cool...
+ben|troll|Damn, you're pretty good at testing the moveDown function for the portraits (used in a lua file?!)
+ben|troll|Also, dialogue bg test.|ohmagawd|default

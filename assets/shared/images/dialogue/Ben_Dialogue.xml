@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:bf641fefd129a02aedb3d7b39ead159b:1f9913a66e49a268cf92a0882c337bc9:7e67435590aa4e2657536b3312259782$ -->
+<TextureAtlas imagePath="Ben_Dialogue.png" width="1666" height="1520">
+    <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
+    <SubTexture name="ass" x="419" y="0" width="409" height="245"/>
+    <SubTexture name="blush" x="838" y="0" width="409" height="245"/>
+    <SubTexture name="confused" x="1257" y="0" width="409" height="245"/>
+    <SubTexture name="cool-dude" x="0" y="255" width="409" height="245"/>
+    <SubTexture name="cringe" x="419" y="255" width="409" height="245"/>
+    <SubTexture name="default" x="838" y="255" width="409" height="245"/>
+    <SubTexture name="flustered" x="1257" y="255" width="409" height="245"/>
+    <SubTexture name="guilt" x="0" y="510" width="409" height="245"/>
+    <SubTexture name="happy" x="419" y="510" width="409" height="245"/>
+    <SubTexture name="look" x="838" y="510" width="409" height="245"/>
+    <SubTexture name="pardon" x="1257" y="510" width="409" height="245"/>
+    <SubTexture name="question" x="0" y="765" width="409" height="245"/>
+    <SubTexture name="sadness-combat" x="419" y="765" width="409" height="245"/>
+    <SubTexture name="scared" x="838" y="765" width="409" height="245"/>
+    <SubTexture name="sleeping" x="1257" y="765" width="409" height="245"/>
+    <SubTexture name="sus" x="0" y="1020" width="409" height="245"/>
+    <SubTexture name="the-rock" x="419" y="1020" width="409" height="245"/>
+    <SubTexture name="tired" x="838" y="1020" width="409" height="245"/>
+    <SubTexture name="troll" x="1257" y="1020" width="409" height="245"/>
+    <SubTexture name="waking-up" x="0" y="1275" width="409" height="245"/>
+    <SubTexture name="what" x="419" y="1275" width="409" height="245"/>
+    <SubTexture name="zamn" x="838" y="1275" width="409" height="245"/>
+</TextureAtlas>

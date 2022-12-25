@@ -1,0 +1,25 @@
+function onCreate()
+    setProperty("musicName", "gameOver");
+
+    runTimer("the timer", 1);
+end
+
+function onTimerCompleted(tag)
+    if tag == "the timer" then
+        setProperty("canPress", true);
+        playMusic(1, true);
+    end
+end
+
+local can = false;
+function onUpdate(elapsed)
+    can = getProperty("canPress");
+    if keyJustPressed("accept") and can then
+        setProperty("canPress", false);
+        switchState("bruh");
+    end
+    if keyJustPressed("back") and can then
+        setProperty("canPress", false);
+        back("bruh");
+    end
+end

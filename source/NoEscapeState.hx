@@ -18,7 +18,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import Achievements;
 import editors.MasterEditorMenu;
 
 using StringTools;
@@ -43,8 +42,6 @@ class NoEscapeState extends MusicBeatState
 		FlxG.sound.playMusic(Paths.music('safe'));
 
 		FlxG.sound.music.fadeIn(4, 0, 0.7);
-
-		add(new Acheivement(18, "no escape", "spookyGlitch"));
 	}
 	
 	override function update(elapsed:Float)
@@ -54,7 +51,7 @@ class NoEscapeState extends MusicBeatState
 			new FlxTimer().start(0.01, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new TitleStateScary());
+				MusicBeatState.switchState(new TitleScreenState());
 			});
 		}
 		if (controls.BACK)
@@ -62,7 +59,7 @@ class NoEscapeState extends MusicBeatState
 			new FlxTimer().start(0.01, function(tmr:FlxTimer)
 			{
 				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new TitleStateScary());
+				MusicBeatState.switchState(new TitleScreenState());
 			});
 		}
 	}

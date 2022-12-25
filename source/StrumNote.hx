@@ -14,6 +14,8 @@ class StrumNote extends FlxSprite
 
 	private var player:Int;
 
+	public var texture:String;
+
 	public function new(x:Float, y:Float, leData:Int, player:Int) {
 		colorSwap = new ColorSwap();
 		shader = colorSwap.shader;
@@ -25,8 +27,10 @@ class StrumNote extends FlxSprite
 		var skin:String = 'NOTE_assets';
 		if(PlayState.SONG.arrowSkin != null && PlayState.SONG.arrowSkin.length > 1) skin = PlayState.SONG.arrowSkin;
 
-		if (ClientPrefs.customStrum != 'Off')
-			skin = ClientPrefs.customStrum;
+		if (CustomStrum.strum != "")
+			skin = CustomStrum.strum;
+
+		this.texture = skin;
 
 		if(PlayState.isPixelStage)
 		{
@@ -98,11 +102,15 @@ class StrumNote extends FlxSprite
 		scrollFactor.set();
 	}
 
-	public function postAddedToGroup() {
+	public function postAddedToGroup(?mult = -1) {
 		playAnim('static');
+		if (mult == -1)
+		{
+			mult = player;
+		}
 		x += Note.swagWidth * noteData;
 		x += 50;
-		x += ((FlxG.width / 2) * player);
+		x += ((FlxG.width / 2) * mult);
 		ID = noteData;
 	}
 
@@ -198,6 +206,7 @@ class StrumNote extends FlxSprite
 	public function playAnim(anim:String, ?force:Bool = false) {
 		animation.play(anim, force);
 		centerOffsets();
+		centerOrigin();
 		if(animation.curAnim == null || animation.curAnim.name == 'static') {
 			colorSwap.hue = 0;
 			colorSwap.saturation = 0;
@@ -207,8 +216,9 @@ class StrumNote extends FlxSprite
 			colorSwap.saturation = ClientPrefs.arrowHSV[noteData % 4][1] / 100;
 			colorSwap.brightness = ClientPrefs.arrowHSV[noteData % 4][2] / 100;
 
-			if(animation.curAnim.name == 'confirm' && !PlayState.isPixelStage) {
-				updateConfirmOffset();
+			if(animation.curAnim.name == 'confirm' && !PlayState.isPixelStage) 
+			{
+				centerOrigin();
 			}
 		}
 	}

@@ -65,9 +65,9 @@
 	"healthicon": "nuckle",
 	"flip_x": false,
 	"healthbar_colors": [
-		255,
-		20,
-		60
+		222,
+		126,
+		24
 	],
 	"camera_position": [
 		-180,

@@ -44,8 +44,8 @@ using StringTools;
 
 class SoundtrackState extends MusicBeatState
 {
-	var soundtrackList:Array<String> = ['LeftSides', 'VoidSongs', 'Encore'];
-	var soundtrackNames:Array<String> = ['Left Sides: Story Soundtrack', 'Left Sides: Void Songs', 'Left Sides: ENCORE REMIXES'];
+	var soundtrackList:Array<String> = ['LeftSides', 'VoidSongs', 'Encore', "Menu Music", "Exe"];
+	var soundtrackNames:Array<String> = ['Left Sides: Story Soundtrack', 'Left Sides: Bonus Songs', 'Left Sides: ENCORE REMIXES', "Left Sides: Menu Music", "Left Sides: EXE Extension"];
 	var tracklist:Array<String> = [];
 
 	var directories:Array<String> = [];
@@ -114,8 +114,12 @@ class SoundtrackState extends MusicBeatState
 				var thing:Array<String> = CoolUtil.coolTextFile(directories[i] + '/data/soundtrack.txt');
 				// so that the thing can actually LOAD.
 				loadedDirectories.push(directories[i]);
-				soundtrackList.push(thing[0]);
-				soundtrackNames.push(thing[1]);
+				for (j in 0...thing.length)
+				{
+					var daSplit:Array<String> = thing[j].split("|");
+					soundtrackList.push(daSplit[0]);
+					soundtrackNames.push(daSplit[1]);
+				}
 			}
 		}
 
@@ -243,7 +247,7 @@ class SoundtrackState extends MusicBeatState
 		if (VocalSound != null)
 			VocalSound.stop();
 		// inst is FlxSound.music?? Idk, but if I try to play 2 sounds simutaneously it just crashes. :/
-		if (curSelected == 0 || curSelected == 1 || curSelected > 2)
+		if (curSelected == 0 || curSelected == 1 || curSelected > 3)
 		{
 				FlxG.sound.playMusic(Paths.inst(tracklist[music]), 1, true);
 				FlxG.sound.music.pause();
@@ -256,6 +260,18 @@ class SoundtrackState extends MusicBeatState
 			FlxG.sound.music.pause();
 			VocalSound = FlxG.sound.load(Paths.voicesEncore(tracklist[music]), 1, true);
 			resyncVocals();
+		}
+		if (curSelected == 3)
+		{
+			var path:String = "assets/music/" + tracklist[music] + ".ogg";
+			if (FileSystem.exists(Paths.getModFile("music/" + tracklist[music] + ".ogg")))
+			{
+				FlxG.sound.playMusic(Paths.music(tracklist[music]), 1, true);
+			}
+			else
+			{
+				FlxG.sound.playMusic(path, 1, true);
+			}
 		}
 		playMusic2(music);
 	}
@@ -267,7 +283,7 @@ class SoundtrackState extends MusicBeatState
 		if (VocalSound != null)
 			VocalSound.stop();
 		// inst is FlxSound.music?? Idk, but if I try to play 2 sounds simutaneously it just crashes. :/
-		if (curSelected == 0 || curSelected == 1 || curSelected > 2)
+		if (curSelected == 0 || curSelected == 1 || curSelected > 3)
 		{
 				FlxG.sound.playMusic(Paths.inst(tracklist[music]), 1, true);
 				FlxG.sound.music.pause();
@@ -280,6 +296,18 @@ class SoundtrackState extends MusicBeatState
 			FlxG.sound.music.pause();
 			VocalSound = FlxG.sound.load(Paths.voicesEncore(tracklist[music]), 1, true);
 			resyncVocals();
+		}
+		if (curSelected == 3)
+		{
+			var path:String = "assets/music/" + tracklist[music] + ".ogg";
+			if (FileSystem.exists(Paths.getModFile("music/" + tracklist[music] + ".ogg")))
+			{
+				FlxG.sound.playMusic(Paths.music(tracklist[music]), 1, true);
+			}
+			else
+			{
+				FlxG.sound.playMusic(path, 1, true);
+			}
 		}
 
 		#if desktop
@@ -293,11 +321,8 @@ class SoundtrackState extends MusicBeatState
 		trackGroup = new FlxTypedGroup<FlxText>();
 		add(trackGroup);
 		tracklist = [];
-		if (FileSystem.exists('assets/images/soundtrack/' + soundtrackList[type] + '/tracks.txt'))
-		{
-			tracklist = CoolUtil.coolTextFile('assets/images/soundtrack/' + soundtrackList[type] + '/tracks.txt');
-		}
-		else
+		tracklist = CoolUtil.coolTextFile('assets/images/soundtrack/' + soundtrackList[type] + '/tracks.txt');
+		if (FileSystem.exists('mods/' + Paths.currentModDirectory + '/images/soundtrack/' + soundtrackList[type] + '/tracks.txt'))
 		{
 			tracklist = CoolUtil.coolTextFile('mods/' + Paths.currentModDirectory + '/images/soundtrack/' + soundtrackList[type] + '/tracks.txt');
 		}
@@ -316,24 +341,32 @@ class SoundtrackState extends MusicBeatState
 		var num:Int = 0;
 		var maxNum:Int = 0;
 		var multNum:Int = 2;
-		for (i in 0...tracklist.length)
+		var toRead:Array<String> = tracklist;
+		if (FileSystem.exists('assets/images/soundtrack/' + soundtrackList[type] + '/tracksToDisplay.txt'))
 		{
-			var daTrack:FlxText = new FlxText(20, (52 * i) + 20, tracklist[i], 52);
+			toRead = CoolUtil.coolTextFile('assets/images/soundtrack/' + soundtrackList[type] + '/tracksToDisplay.txt');
+		}
+		if (FileSystem.exists('mods/' + Paths.currentModDirectory + '/images/soundtrack/' + soundtrackList[type] + '/tracksToDisplay.txt'))
+		{
+			toRead = CoolUtil.coolTextFile('mods/' + Paths.currentModDirectory + '/images/soundtrack/' + soundtrackList[type] + '/tracksToDisplay.txt');
+		}
+		for (i in 0...toRead.length)
+		{
+			var daTrack:FlxText = new FlxText(20, (52 * i) + 20, toRead[i], 52);
 			daTrack.setFormat(Paths.font('eras.ttf'), 52, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			if (daTrack.y > Std.int(FlxG.height - daTrack.height))
 			{
 				// just using these for longer soundtrack lists *COUGH COUGH* STORY SOUNDTRACK *COUGH COUGH*
 				if (maxNum == 0)
-				{
 					maxNum = i;
-				}
+				
 				if (i == Std.int(maxNum * multNum))
 				{
 					num = 0;
 					multNum++;
 				}
 				daTrack.y = (52 * num) + 20;
-				daTrack.x = Std.int(180 * multNum);
+				daTrack.x = Std.int(300 * multNum);
 				num ++;
 			}
 			daTrack.ID = i;
@@ -399,9 +432,9 @@ class SoundtrackState extends MusicBeatState
 			}	
 		});
 
-		if (curSelected > 2)
+		if (curSelected > 3)
 		{
-			var pathNum:Int = curSelected - 3;
+			var pathNum:Int = curSelected - 4;
 			Paths.currentModDirectory = loadedDirectories[pathNum].replace('mods/', '');
 		}
 
@@ -485,14 +518,15 @@ class SoundtrackState extends MusicBeatState
 		}
 		var songName:String = name;
 		var artist:String = 'NO ARTIST';
-		if (curSelected == 0 || curSelected == 1)
+		var toAdd:String = " ~ ";
+		if (curSelected == 0 || curSelected == 1 || curSelected > 3)
 		{
 			if (FileSystem.exists('assets/data/' + Paths.formatToSongPath(name) + '/composer.txt'))
 			{
 				var file:Array<String> = CoolUtil.coolTextFile('assets/data/' + Paths.formatToSongPath(name) + '/composer.txt');
 				artist = file[0];
 			}
-			if (FileSystem.exists('mods/data/' + Paths.formatToSongPath(name) + '/composer.txt'))
+			if (FileSystem.exists(Paths.getModFile('data/' + Paths.formatToSongPath(name) + '/composer.txt')))
 			{
 				var file:Array<String> = CoolUtil.coolTextFile('mods/data/' + Paths.formatToSongPath(name) + '/composer.txt');
 				artist = file[0];
@@ -500,15 +534,14 @@ class SoundtrackState extends MusicBeatState
 		}
 		if (curSelected == 2)
 		{
-			name = name + ' (ENCORE)';
 			if (FileSystem.exists('assets/data/' + Paths.formatToSongPath(name) + '/composer.txt'))
 			{
 				var file:Array<String> = CoolUtil.coolTextFile('assets/data/' + Paths.formatToSongPath(name) + '/composer.txt');
 				artist = file[0];
 			}
-			if (FileSystem.exists('mods/data/' + Paths.formatToSongPath(name) + '/composer.txt'))
+			if (FileSystem.exists(Paths.getModFile('data/' + Paths.formatToSongPath(name) + '/composer.txt')))
 			{
-				var file:Array<String> = CoolUtil.coolTextFile('mods/data/' + Paths.formatToSongPath(name) + '/composer.txt');
+				var file:Array<String> = CoolUtil.coolTextFile(Paths.getModFile('mods/data/' + Paths.formatToSongPath(name) + '/composer.txt'));
 				artist = file[0];
 			}
 			if (FileSystem.exists('assets/data/' + Paths.formatToSongPath(name) + '/composer-encore.txt'))
@@ -516,22 +549,44 @@ class SoundtrackState extends MusicBeatState
 				var file:Array<String> = CoolUtil.coolTextFile('assets/data/' + Paths.formatToSongPath(name) + '/composer-encore.txt');
 				artist = file[0];
 			}
-			if (FileSystem.exists('mods/data/' + Paths.formatToSongPath(name) + '/composer-encore.txt'))
+			if (FileSystem.exists(Paths.getModFile('data/' + Paths.formatToSongPath(name) + '/composer-encore.txt')))
 			{
-				var file:Array<String> = CoolUtil.coolTextFile('mods/data/' + Paths.formatToSongPath(name) + '/composer-encore.txt');
+				var file:Array<String> = CoolUtil.coolTextFile(Paths.getModFile('data/' + Paths.formatToSongPath(name) + '/composer-encore.txt'));
 				artist = file[0];
 			}
+			toAdd = ' (ENCORE) ~ ';
 		}
 		if (curSelected == 3)
 		{
-			if (FileSystem.exists('mods/' + Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(name) + '/composer.txt'))
+			if (FileSystem.exists("assets/images/soundtrack/" + soundtrackList[3] + "/artists.txt"))
 			{
-				var file:Array<String> = CoolUtil.coolTextFile('mods/' + Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(name) + '/composer.txt');
-				artist = file[0];
+				var file:Array<String> = CoolUtil.coolTextFile("assets/images/soundtrack/" + soundtrackList[3] + "/artists.txt");
+				for (i in 0...file.length)
+				{
+					var split:Array<String> = file[i].split("|");
+					if (songName == split[2])
+					{
+						songName = split[0];
+						artist = split[1];
+					}
+				}
+			}
+			if (FileSystem.exists(Paths.getModFile("images/soundtrack/" + soundtrackList[3] + "/artists.txt")))
+			{
+				var file:Array<String> = CoolUtil.coolTextFile("assets/images/soundtrack/" + soundtrackList[3] + "/artists.txt");
+				for (i in 0...file.length)
+				{
+					var split:Array<String> = file[i].split("|");
+					if (songName == split[3])
+					{
+						songName = split[0];
+						artist = split[1];
+					}
+				}
 			}
 		}
-		scrollText = new FlxText(50, 50, songName + ' ~ ' + artist, 42);
-		scrollText.font = Paths.font('vcr.ttf');
+		scrollText = new FlxText(50, 50, songName + toAdd + artist, 42);
+		scrollText.setFormat(Paths.font('vcr.ttf'), 42, 0xFFFFFFFF, LEFT, FlxTextBorderStyle.OUTLINE, 0xFF000000);
 		scrollText.x -= scrollText.width;
 		scrollText.alpha = 0.5;
 		scrollText.scrollFactor.set(0, 0);

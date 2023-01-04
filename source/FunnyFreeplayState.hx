@@ -9,6 +9,13 @@ import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import openfl.display.BlendMode;
 import sys.FileSystem;
+import haxe.Json;
+
+typedef CustomFreeplayFile = {
+    var songsToAdd:Array<String>;
+    var unlockedAtScoreOf:Array<String>;
+    var data:Array<Dynamic>;
+}
 
 class FunnyFreeplayState extends MusicBeatState
 {
@@ -95,6 +102,19 @@ class FunnyFreeplayState extends MusicBeatState
             if (Highscore.getScore("Doppelganger", 1) != 0)
             {
                 addSong("Too Fest", 69, "nuckle", FlxColor.fromRGB(222, 126, 24), "EXE", false);
+            }
+        }
+
+        WeekData.loadTheFirstEnabledMod();
+        if (FileSystem.exists(Paths.getModFile("data/freeplay.json")))
+        {
+            var daFile:CustomFreeplayFile = Json.parse(Paths.getTextFromFile("data/freeplay.json"));
+            for (i in 0...daFile.songsToAdd.length)
+            {
+                if (Highscore.getScore(daFile.unlockedAtScoreOf[i], 1) != 0)
+                {
+                    addSong(daFile.songsToAdd[i], daFile.data[i][0], daFile.data[i][1], Std.int(daFile.data[i][2]), daFile.data[i][3], daFile.data[i][4]);
+                }
             }
         }
 

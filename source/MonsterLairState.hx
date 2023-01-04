@@ -231,6 +231,35 @@ class MonsterLairState extends MusicBeatState
                             fade();
                             MusicBeatState.switchState(new SoundTestState());
                             return;
+                        case "Curse":
+                            canPress = false;
+
+			                var songLowercase:String = ""; 
+                            songLowercase = Paths.formatToSongPath("Calm Down Song");
+			                var poop:String = 'normal';
+			                #if MODS_ALLOWED
+			                if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
+			                #else
+			                if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
+			                #end
+				                poop = songLowercase;
+			                }
+
+			                PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+			                PlayState.isStoryMode = true;
+			                PlayState.storyDifficulty = 1;
+                            // Lullaby demo :)
+                            PlayState.storyPlaylist = ["Calm Down Song", "Hentur"];
+
+                            // Very imposible week to get to :thumbsup:
+			                PlayState.storyWeek = 50;
+			                PlayState.isVoid = true;
+
+					        FlxG.sound.music.stop();
+                            fade();
+
+                            MusicBeatState.switchState(new SideStoryState(CoolUtil.coolTextFile("assets/side-stories/data/calm/dialogue.txt"), "calm", ""));
+                            return;
                     }
                     curSelected = 0;
                     createAlphabetList();

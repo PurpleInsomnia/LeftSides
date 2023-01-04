@@ -31,11 +31,6 @@ function onCreate()
 	setPropertyLuaSprite('bar', 'alpha', 0);
 end
 
-function onCreatePost()
-	setProperty("bar.x", getProperty("healthBarBG.x"));
-	setProperty("bar.y", getProperty("healthBarBG.x"));
-end
-
 local set = 0;
 function goodNoteHit(id, noteData, noteType, isSustainNote)
 	health = getProperty('health');
@@ -44,7 +39,6 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 		outlineVisible = true;
 		doTweenAlpha('freezeOn', 'cloud', 0.5, 0.1, 'linear');
 		doTweenAlpha('outlineOn', 'outline', 1, 0.75, 'linear');
-		doTweenAlpha('eggman', 'bar', 1, 1, 'linear');
 		setProperty('health', health - healthLoss);
 		-- Other Funny Stuff
 		
@@ -70,7 +64,6 @@ function onTimerCompleted(tag)
 	if tag == 'healthBarThaw' then
 		outlineVisible = false;
 		doTweenAlpha('cock', 'outline', 0, 1, 'linear');
-		doTweenAlpha('shadow', 'bar', 0, 1, 'linear');
 		healthFrozen = false;
 		playSound('thaw');
 	end

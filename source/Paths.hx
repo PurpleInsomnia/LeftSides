@@ -76,6 +76,7 @@ class Paths
 		ignoreModFolders.set("quotes", true);
 		ignoreModFolders.set("fanart", true);
 		ignoreModFolders.set("states", true);
+		ignoreModFolders.set("shaders", true);
 		ignoreModFolders.set("fonts", true);
 		#end
 	}
@@ -351,9 +352,9 @@ class Paths
 
 	inline static public function font(key:String)
 	{
-		if (FileSystem.exists(Paths.modFolders('fonts/$key')))
+		if (FileSystem.exists(getModFile('fonts/$key')))
 		{
-			return modFolders('fonts/$key');
+			return getModFile('fonts/$key');
 		}
 		return 'assets/fonts/$key';
 	}
@@ -472,6 +473,15 @@ class Paths
 			return modFolders("dialogue/" + key);
 		}
 		return "assets/dialogue/" + key;
+	}
+
+	inline static public function shaders(key:String)
+	{
+		if (FileSystem.exists(modFolders("shaders/" + key)))
+		{
+			return modFolders("shaders/" + key);
+		}
+		return "assets/shaders/" + key;
 	}
 	
 	#if MODS_ALLOWED

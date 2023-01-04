@@ -1433,9 +1433,17 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "makeLuaText", function(tag:String, text:String, x:Float, y:Float, ?size:Int = 12)
 		{	
 			resetTextTag(tag);
-			var sexPenis:ModchartText = new ModchartText(x, y, text, size);
+			var sexPenis:ModchartText = new ModchartText(x, y, FlxG.width, text, size);
 			sexPenis.fontSizeThing = size;
 			lePlayState.modchartTexts.set(tag, sexPenis);
+		});
+
+		Lua_helper.add_callback(lua, "setLuaTextWidth", function(tag:String, the:Int)
+		{
+			if (lePlayState.modchartTexts.exists(tag))
+			{
+				lePlayState.modchartTexts.get(tag).width = the;	
+			}
 		});
 
 		Lua_helper.add_callback(lua, "setLuaTextFormat", function(tag:String, font:String, placement:String, colour:String, outlineColour:String)
@@ -1579,10 +1587,11 @@ class FunkinLua {
 		// save data
 		Lua_helper.add_callback(lua, "saveData", function(tag:String, val:Dynamic)
 		{
-			if (!ClientPrefs.luaSave.exists(tag))
+			if (ClientPrefs.luaSave.exists(tag))
 			{
-				ClientPrefs.luaSave.set(tag, val);
+				ClientPrefs.luaSave.remove(tag);
 			}
+			ClientPrefs.luaSave.set(tag, val);
 			ClientPrefs.saveSettings();
 		});
 
@@ -1593,6 +1602,15 @@ class FunkinLua {
 				ClientPrefs.luaSave.remove(tag);
 				ClientPrefs.saveSettings();
 			}
+		});
+
+		Lua_helper.add_callback(lua, "getData", function(tag)
+		{
+			if (ClientPrefs.luaSave.exists(tag))
+			{
+				return ClientPrefs.luaSave.get(tag);
+			}
+			return null;
 		});
 
 		// stages.
@@ -1623,7 +1641,7 @@ class FunkinLua {
 		});
 
 		Lua_helper.add_callback(lua, "setCameraSpeed", function(val:Float) {
-			PlayState.cameraSpeed = val;
+			lePlayState.cameraSpeed = val;
 			trace('set cam speed to ' + val);
 		});
 

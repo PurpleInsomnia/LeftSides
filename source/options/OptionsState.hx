@@ -1,6 +1,6 @@
 package options;
 
-#if desktop
+#if DISCORD
 import Discord.DiscordClient;
 #end
 import flash.text.TextField;
@@ -51,7 +51,7 @@ class OptionsState extends MusicBeatState
 			case "System":
 				openSubState(new options.SysSettingsSubState());
 			case 'Customize':
-				openSubState(new options.CustomizeSubState());
+				LoadingState.loadAndSwitchState(new CustomizeState());
 			case 'Save Files':
 				FlxG.sound.music.stop();
 				MusicBeatState.switchState(new SaveFileMenu());

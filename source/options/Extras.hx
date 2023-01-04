@@ -140,7 +140,7 @@ class Extras extends MusicBeatState
 
 	function makeSideStoryFile()
 	{
-		TextFile.newFile('In the "mods" folder (or in your DLC' + "'s" + ' foler) make a new folder called "side-stories"\nin here, make a "images", "sounds", "music" and "data" folder as well\nTo make your side story visible in the menu, make a file and title it "sidestories.josn", a template is avalible in the mods folder.', "Custom Side Stories");
+		TextFile.newFile('In the "mods" folder (or in your DLC' + "'s" + ' foler) make a new folder called "side-stories"\nin here, make a "images", "sounds", "music" and "data" folder as well\nTo make your side story visible in the menu, make a file and title it "sidestories.josn" (and put it in the side stories data folder), a template is avalible in the mods folder.', "Custom Side Stories");
 	}
 
 	function makeMenuFile()

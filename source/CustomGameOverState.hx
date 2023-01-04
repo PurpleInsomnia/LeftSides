@@ -1,19 +1,54 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
+import CustomGameOverLua;
+import CustomState.StateHscript;
+import CustomState.StateScript;
+import GameJolt.GameJoltAPI;
+import filters.*;
+import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxObject;
-import flixel.FlxSubState;
+import flixel.FlxSprite;
+import flixel.addons.editors.ogmo.FlxOgmo3Loader;
+import flixel.addons.text.FlxTypeText;
+import flixel.effects.FlxFlicker;
+import flixel.graphics.FlxGraphic;
+import flixel.graphics.tile.FlxGraphicsShader;
+import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
-import flixel.util.FlxColor;
-import flixel.util.FlxTimer;
+import flixel.math.FlxRect;
+import flixel.system.FlxAssets.FlxShader;
 import flixel.system.FlxSound;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.FlxCamera;
+import flixel.text.FlxText.FlxTextAlign;
+import flixel.text.FlxText.FlxTextBorderStyle;
 import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween.FlxTweenType;
+import flixel.tweens.FlxTween;
+import flixel.ui.FlxBar;
+import flixel.ui.FlxButton;
+import flixel.util.FlxAxes;
+import flixel.util.FlxCollision;
+import flixel.util.FlxDirectionFlags;
+import flixel.util.FlxTimer;
 import haxe.ds.StringMap;
-import CustomGameOverLua;
+import hscript.Expr;
+import hscript.Interp;
+import hscript.Parser;
+import openfl.display.BlendMode;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ColorMatrixFilter;
+import openfl.filters.ShaderFilter;
+import sys.FileSystem;
+import sys.io.File;
+
+using StringTools;
 
 class CustomGameOverState extends MusicBeatState
 {
@@ -34,7 +69,10 @@ class CustomGameOverState extends MusicBeatState
 	#end
 
 	var lua:CustomGameOverLua = null;
+	var script:StateScript;
 	var path:String = "";
+
+	var hscriptVars:StringMap<Dynamic> = new StringMap<Dynamic>();
 
 
 	// lua vars.
@@ -52,7 +90,16 @@ class CustomGameOverState extends MusicBeatState
 
 	override function create()
 	{
-		lua = new CustomGameOverLua(Paths.gameover(path + ".lua"));
+		if (FileSystem.exists(Paths.gameover(path + ".lua")))
+		{
+			lua = new CustomGameOverLua(Paths.gameover(path + ".lua"));
+		}
+		if (FileSystem.exists(Paths.gameover(path + ".hxs")))
+		{
+			StateHscript.initialize();
+			setHscript();
+			script = StateHscript.load(Paths.gameover(path + ".hxs"), hscriptVars);
+		}
 
 		callOnLuas("onCreate", []);
 		super.create();
@@ -95,7 +142,7 @@ class CustomGameOverState extends MusicBeatState
 		}
 		new FlxTimer().start(0.7, function(tmr:FlxTimer)
 		{
-			FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
+			FlxG.camera.fade(0xFF000000, 2, false, function()
 			{
 				MusicBeatState.switchState(new PlayState());
 			});
@@ -142,21 +189,154 @@ class CustomGameOverState extends MusicBeatState
 		return pressed;
 	}
 
-	public function callOnLuas(event:String, args:Array<Dynamic>):Dynamic {
+	public function getBlend(blend:String):BlendMode
+    {
+        switch(blend.toLowerCase().trim()) {
+			case 'add': return ADD;
+			case 'alpha': return ALPHA;
+			case 'darken': return DARKEN;
+			case 'difference': return DIFFERENCE;
+			case 'erase': return ERASE;
+			case 'hardlight': return HARDLIGHT;
+			case 'invert': return INVERT;
+			case 'layer': return LAYER;
+			case 'lighten': return LIGHTEN;
+			case 'multiply': return MULTIPLY;
+			case 'overlay': return OVERLAY;
+			case 'screen': return SCREEN;
+			case 'shader': return SHADER;
+			case 'subtract': return SUBTRACT;
+		}
+		return NORMAL;
+    }
+
+	public function callOnLuas(event:String, arg:Array<Dynamic>):Dynamic {
 		var returnVal:Dynamic = CustomGameOverLua.Function_Continue;
 		#if LUA_ALLOWED
-		var ret:Dynamic = lua.call(event, args);
-		if(ret != CustomGameOverLua.Function_Continue) 
+		if (lua != null)
 		{
-			returnVal = ret;
+			var ret:Dynamic = lua.call(event, arg);
+			if(ret != CustomGameOverLua.Function_Continue) 
+			{
+				returnVal = ret;
+			}
 		}
 		#end
+		if (script != null)
+		{
+			if (script.exists(event))
+		    {
+			    if (arg[0] == null)
+				    script.get(event)();
+
+			    if (arg.length == 1)
+				    script.get(event)(arg[0]);
+
+			    if (arg.length == 2)
+				    script.get(event)(arg[0], arg[1]);
+
+			    if (arg.length == 3)
+				    script.get(event)(arg[0], arg[1], arg[2]);
+
+			    if (arg.length == 4)
+				    script.get(event)(arg[0], arg[1], arg[2], arg[3]);
+
+			    if (arg.length == 5)
+				    script.get(event)(arg[0], arg[1], arg[2], arg[3], arg[4]);
+
+			    if (arg.length == 6)
+				    script.get(event)(arg[0], arg[1], arg[2], arg[3], arg[4], arg[5]);
+			}
+		}
 		return returnVal;
 	}
 
-	public function setOnLuas(variable:String, arg:Dynamic) {
+	public function setOnLuas(variable:String, arg:Dynamic) 
+	{
 		#if LUA_ALLOWED
-		lua.set(variable, arg);
+		if (lua != null)
+		{
+			lua.set(variable, arg);
+		}
+		#end
+		if (script != null)
+		{
+			script.set(variable, arg);
+		}
+	}
+
+	// hscript shit lol
+	function theTrace(val:Dynamic)
+    {
+        trace(val);
+    }
+
+	function screenCenter(obj:FlxObject, ?pl:String = "XY")
+	{
+		switch(pl.toUpperCase())
+		{
+			case "X":
+				obj.screenCenter(FlxAxes.X);
+			case "Y":
+				obj.screenCenter(FlxAxes.Y);
+			case "XY":
+				obj.screenCenter(FlxAxes.XY);
+		}
+	}
+
+	function setCamBgAlpha(camera:FlxCamera, ?alpha:Float = 0)
+	{
+		camera.bgColor.alpha = 0;
+	}
+
+	function alignText(text:FlxText, ?place:String = "left")
+	{
+		switch(place.toLowerCase())
+		{
+			case "left":
+				text.alignment = LEFT;
+			case "right":
+				text.alignment = RIGHT;
+			case "center":
+				text.alignment = CENTER;
+		}
+	}
+
+	public function setHscript()
+	{
+		hscriptVars.set("add", add);
+		hscriptVars.set("remove", remove);
+		hscriptVars.set("insert", insert);
+
+		hscriptVars.set("screenCenter", screenCenter);
+		hscriptVars.set("setCamBgAlpha", setCamBgAlpha);
+		hscriptVars.set("alignText", alignText);
+
+        hscriptVars.set("controls", controls);
+		hscriptVars.set("openSubState", openSubState);
+        hscriptVars.set("getBlend", getBlend);
+        hscriptVars.set("trace", theTrace);
+		hscriptVars.set("lePlayState", this);
+
+		hscriptVars.set("callOnScripts", callOnLuas);
+
+        // Some settings, no jokes
+		hscriptVars.set('flashingLights', ClientPrefs.flashing);
+		hscriptVars.set("antialiasing", ClientPrefs.globalAntialiasing);
+		hscriptVars.set('lowQuality', ClientPrefs.lowQuality);
+
+		#if windows
+		hscriptVars.set('buildTarget', 'windows');
+		#elseif linux
+		hscriptVars.set('buildTarget', 'linux');
+		#elseif mac
+		hscriptVars.set('buildTarget', 'mac');
+		#elseif html5
+		hscriptVars.set('buildTarget', 'browser');
+		#elseif android
+		hscriptVars.set('buildTarget', 'android');
+		#else
+		hscriptVars.set('buildTarget', 'unknown');
 		#end
 	}
 }

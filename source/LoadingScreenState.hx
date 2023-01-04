@@ -1,6 +1,6 @@
 package;
 
-#if desktop
+#if DISCORD
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
@@ -22,7 +22,7 @@ import editors.MasterEditorMenu;
 import sys.FileSystem;
 import openfl.display.BitmapData;
 import flixel.system.FlxSound;
-import lime.utils.Assets as LimeAssets;
+import openfl.utils.Assets as LimeAssets;
 
 using StringTools;
 
@@ -160,6 +160,7 @@ class LoadingScreenState extends MusicBeatState
 			}
 		}
 		*/
+		LimeAssets.loadLibrary(Paths.getModFile("images").replace("mods/", ""));
 		LimeAssets.loadLibrary("shared");
 		files = LimeAssets.list(null);
 	}

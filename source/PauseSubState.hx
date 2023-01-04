@@ -36,6 +36,8 @@ class PauseSubState extends MusicBeatSubstate
 	public static var transCamera:FlxCamera;
 
 	public static var pauseString = "breakfast";
+	public static var dadCol:FlxColor = 0xFFFFFFFF;
+	public static var bfCol:FlxColor = 0xFFFFFFFF;
 
 
 	var canPress:Bool = true;
@@ -68,6 +70,20 @@ class PauseSubState extends MusicBeatSubstate
 		add(bg);
 		bg.alpha = 0;
 		FlxTween.tween(bg, {alpha: 0.5}, 1);
+
+		var dadGra:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image("pause/gradient"));
+		dadGra.color = dadCol;
+		dadGra.flipY = true;
+		dadGra.alpha = 0;
+		add(dadGra);
+
+		var bfGra:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image("pause/gradient"));
+		bfGra.color = bfCol;
+		bfGra.alpha = 0;
+		add(bfGra);
+
+		FlxTween.tween(dadGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
+		FlxTween.tween(bfGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
 
 		var chars:FlxSprite = new FlxSprite().loadGraphic(Paths.image("pause/artwork"));
 		chars.y = FlxG.height;

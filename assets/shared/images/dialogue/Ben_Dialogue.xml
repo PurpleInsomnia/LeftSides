@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:bf641fefd129a02aedb3d7b39ead159b:1f9913a66e49a268cf92a0882c337bc9:7e67435590aa4e2657536b3312259782$ -->
+<!-- $TexturePacker:SmartUpdate:191c2cdd8984e01133413383a2e0f852:504a302316108ad448dbcd1e9635a5ad:7e67435590aa4e2657536b3312259782$ -->
 <TextureAtlas imagePath="Ben_Dialogue.png" width="1666" height="1520">
     <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
     <SubTexture name="ass" x="419" y="0" width="409" height="245"/>

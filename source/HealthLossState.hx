@@ -3,9 +3,12 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
-import flixel.util.FlxColor;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
+import filters.Scanline;
 
 using StringTools;
 
@@ -21,17 +24,22 @@ class HealthLossState extends MusicBeatState
 	var descText:FlxText;
 	var alphaGroup:FlxTypedGroup<FlxSprite>;
 
+	var diffSpr:FlxSprite;
+
 	var curSelected:Int = 1;
+
+	public static var preferedHL:Int = 1;
 
 	override public function create()
 	{
+		curSelected = preferedHL;
 		bg = new FlxSprite().loadGraphic(Paths.image('healthloss/bg'));
-		bg.color = 0xFFBFBFBF;
 		bg.scrollFactor.set();
 		add(bg);
 
 		var text:Alphabet = new Alphabet(0, 45, "Health Loss Settings", true);
-		text.screenCenter(X);
+		text.x = 128;
+		text.forceX = text.x;
 		alphabetArray.push(text);
 		add(text);
 
@@ -40,12 +48,18 @@ class HealthLossState extends MusicBeatState
 
 		for (i in 0...5)
 		{
-			var suck:FlxSprite = new FlxSprite(0, Std.int(45 + text.height)).loadGraphic(Paths.image('healthloss/' + i));
-			suck.screenCenter(X);
+			var suck:FlxSprite = new FlxSprite(64, Std.int(45 + text.height)).loadGraphic(Paths.image('healthloss/' + i));
 			suck.y += 85 * i;
 			suck.ID = i;
 			alphaGroup.add(suck);
 		}
+
+		diffSpr = new FlxSprite().loadGraphic(Paths.image("healthloss/diff/" + curSelected));
+		diffSpr.scale.set(2, 2);
+		diffSpr.updateHitbox();
+		diffSpr.screenCenter();
+		diffSpr.x += 64;
+		add(diffSpr);
 
 		descText = new FlxText(0, 0, 'sussybaka', 32);
 		descText.setFormat(Paths.font('vcr.ttf'), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -83,6 +97,8 @@ class HealthLossState extends MusicBeatState
 				case 4:
 					PlayState.healthLoss = 0.0005;
 			}
+			preferedHL = curSelected;
+			ClientPrefs.saveSettings();
 			FlxG.sound.play(Paths.sound('confirmMenu'), 1);
 			FlxG.sound.music.stop();
 			MusicBeatState.switchState(new LoadingScreenState());
@@ -125,5 +141,11 @@ class HealthLossState extends MusicBeatState
 				descText.text = 'Lose 0.05% of your health everytime you miss a note';
 		}
 		descText.screenCenter(X);
+
+		diffSpr.loadGraphic(Paths.image("healthloss/diff/" + curSelected));
+		diffSpr.scale.set(2, 2);
+		diffSpr.updateHitbox();
+		diffSpr.screenCenter();
+		diffSpr.x += 64;
 	}
 }

@@ -1,4 +1,6 @@
 function onCreatePost()
+    setProperty("bfZoom", true);
+    
     if not lowQuality then
         makeLuaSprite("bg", "starfall/bg", 0, 0);
         addLuaSprite("bg", false);

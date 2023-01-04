@@ -281,11 +281,21 @@ class WeekData {
 
 	//To use on PlayState.hx or Highscore stuff
 	public static function getWeekFileName():String {
+		if (weeksList[PlayState.storyWeek] == null)
+		{
+			return "ERROR_NO_WEEK";
+		}
 		return weeksList[PlayState.storyWeek];
 	}
 
 	//Used on LoadingState, nothing really too relevant
 	public static function getCurrentWeek():WeekData {
+		if (!weeksLoaded.exists(weeksList[PlayState.storyWeek]))
+		{
+			var daData:WeekFile = createWeekFile();
+			var daWeek = new WeekData(daData);
+			return daWeek;
+		}
 		return weeksLoaded.get(weeksList[PlayState.storyWeek]);
 	}
 

@@ -1,6 +1,6 @@
 package;
 
-#if desktop
+#if DISCORD
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
@@ -216,7 +216,7 @@ class MainMenuState extends MusicBeatState
 		waButton.loadGraphic(Paths.image('warningButton'), true, 150, 150);
 		buttonGroup.add(waButton);
 
-		if (ClientPrefs.week8Done)
+		if (ClientPrefs.week8Done || ClientPrefs.devMode)
 		{
 			var vButton:FlxButton = new FlxButton(450 + 370, dlcButton.y, null, voidThing);
 			vButton.loadGraphic(Paths.image('theVoidButton'), true, 150, 150);

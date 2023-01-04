@@ -1,0 +1,74 @@
+var stuff:Array<String> = ["story", "freeplay", "options", "doodles"];
+var curSelected:Int = 0;
+var text:FlxText;
+var canPress:Bool = true;
+function onCreate()
+{
+    var grid:GridBackdrop = new GridBackdrop();
+    add(grid);
+
+    var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backdropSHADER"));
+    bg.blend = getBlend("darken");
+    add(bg);
+
+    text = new FlxText(0, 0, 1280, "", 42);
+    text.font = Paths.font("eras.ttf");
+    add(text);
+
+    change(0);
+}
+
+function onUpdate(elapsed)
+{
+    if (controls.UI_DOWN_P && canPress)
+    {
+        change(1);
+    }
+
+    if (controls.UI_UP_P && canPress)
+    {
+        change(-1);
+    }
+
+    if (controls.ACCEPT && canPress)
+    {
+        FlxG.sound.play(Paths.sound("confirmMenu"));
+
+        canPress = false;
+
+        switch(curSelected)
+        {
+            case 0:
+                MusicBeatState.switchState(new SelectSongTypeState());
+            case 1:
+                MusicBeatState.switchState(new FreeplayState());
+            case 2:
+                MusicBeatState.switchState(new OptionsState());
+            case 3:
+                MusicBeatState.switchState(new DoodlesState());
+        }
+    }
+
+    screenCenter(text);
+}
+
+function change(huh:Int)
+{
+    curSelected += huh;
+
+    if (huh != 0)
+    {
+        FlxG.sound.play(Paths.sound("scrollMenu"));
+    }
+
+    if (curSelected >= stuff.length)
+    {
+        curSelected = 0;
+    }
+    if (curSelected < 0)
+    {
+        curSelected = stuff.length - 1;
+    }
+
+    text.text = stuff[curSelected].toUpperCase();
+}

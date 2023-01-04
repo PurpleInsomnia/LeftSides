@@ -1,4 +1,6 @@
 function onCreate()
+	setProperty("bfZoom", true);
+	
 	if not lowQuality then
 		makeAnimatedLuaSprite('christmasBg', 'christmas/christmasBg', -1200, -500);
 		addAnimationByPrefix('christmasBg', 'idle', 'snowFall', 24, true);

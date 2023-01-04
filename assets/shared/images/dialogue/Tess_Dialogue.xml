@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:d164f9260f7b3f14939bbde8b6049abf:26adff734538f0f97308c885d48cb486:e4a10f76e1ade6ed5600fc88cfdbff11$ -->
+<!-- $TexturePacker:SmartUpdate:5d4c824edf4a5b336760bef6753e38db:97fabc4efa5d07a424e93175d63510d3:e4a10f76e1ade6ed5600fc88cfdbff11$ -->
 <TextureAtlas imagePath="Tess_Dialogue.png" width="1666" height="1315">
     <SubTexture name="angry" x="0" y="0" width="409" height="255"/>
     <SubTexture name="bruh" x="419" y="0" width="409" height="255"/>
-    <SubTexture name="cringe" x="838" y="0" width="409" height="255"/>
-    <SubTexture name="cute-blushing" x="1257" y="0" width="409" height="255"/>
-    <SubTexture name="default" x="0" y="265" width="409" height="255"/>
-    <SubTexture name="drool" x="419" y="265" width="409" height="255"/>
-    <SubTexture name="happy-cry" x="838" y="265" width="409" height="255"/>
-    <SubTexture name="happy" x="1257" y="265" width="409" height="255"/>
-    <SubTexture name="helltaker" x="0" y="530" width="409" height="255"/>
-    <SubTexture name="laughing" x="419" y="530" width="409" height="255"/>
-    <SubTexture name="sad" x="838" y="530" width="409" height="255"/>
-    <SubTexture name="scared" x="1257" y="530" width="409" height="255"/>
-    <SubTexture name="stop-being-cute" x="0" y="795" width="409" height="255"/>
-    <SubTexture name="sus" x="419" y="795" width="409" height="255"/>
-    <SubTexture name="the-rock" x="838" y="795" width="409" height="255"/>
-    <SubTexture name="what" x="1257" y="795" width="409" height="255"/>
-    <SubTexture name="wink" x="0" y="1060" width="409" height="255"/>
+    <SubTexture name="comfort" x="838" y="0" width="409" height="255"/>
+    <SubTexture name="cringe" x="1257" y="0" width="409" height="255"/>
+    <SubTexture name="cute-blushing" x="0" y="265" width="409" height="255"/>
+    <SubTexture name="default" x="419" y="265" width="409" height="255"/>
+    <SubTexture name="drool" x="838" y="265" width="409" height="255"/>
+    <SubTexture name="happy-cry" x="1257" y="265" width="409" height="255"/>
+    <SubTexture name="happy" x="0" y="530" width="409" height="255"/>
+    <SubTexture name="helltaker" x="419" y="530" width="409" height="255"/>
+    <SubTexture name="hmph" x="838" y="530" width="409" height="255"/>
+    <SubTexture name="laughing" x="1257" y="530" width="409" height="255"/>
+    <SubTexture name="sad" x="0" y="795" width="409" height="255"/>
+    <SubTexture name="scared" x="419" y="795" width="409" height="255"/>
+    <SubTexture name="stop-being-cute" x="838" y="795" width="409" height="255"/>
+    <SubTexture name="sus" x="1257" y="795" width="409" height="255"/>
+    <SubTexture name="the-rock" x="0" y="1060" width="409" height="255"/>
+    <SubTexture name="what" x="419" y="1060" width="409" height="255"/>
+    <SubTexture name="wink" x="838" y="1060" width="409" height="255"/>
 </TextureAtlas>

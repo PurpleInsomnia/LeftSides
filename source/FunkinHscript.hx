@@ -1,51 +1,54 @@
 package;
 
+#if DISCORD
 import Discord.DiscordClient;
+#end
 import GameJolt.GameJoltAPI;
-import flixel.ui.FlxButton;
-import openfl.filters.BitmapFilter;
-import flixel.FlxG;
-import flixel.FlxSprite;
-import flixel.FlxObject;
-import flixel.text.FlxText;
-import flixel.text.FlxText.FlxTextAlign;
-import flixel.addons.text.FlxTypeText;
-import flixel.graphics.FlxGraphic;
+import filters.*;
 import flixel.FlxCamera;
-import flixel.system.FlxAssets.FlxShader;
+import flixel.FlxG;
+import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.addons.editors.ogmo.FlxOgmo3Loader;
+import flixel.addons.text.FlxTypeText;
+import flixel.effects.FlxFlicker;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.tile.FlxGraphicsShader;
-import flixel.group.FlxGroup;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
+import flixel.system.FlxAssets.FlxShader;
 import flixel.system.FlxSound;
+import flixel.text.FlxText.FlxTextAlign;
+import flixel.text.FlxText.FlxTextBorderStyle;
+import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween.FlxTweenType;
+import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
+import flixel.ui.FlxButton;
+import flixel.util.FlxAxes;
+import flixel.util.FlxCollision;
+import flixel.util.FlxDirectionFlags;
 import flixel.util.FlxTimer;
 import haxe.ds.StringMap;
 import hscript.Expr;
 import hscript.Interp;
 import hscript.Parser;
-import openfl.filters.ShaderFilter;
 import openfl.display.BlendMode;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ColorMatrixFilter;
+import openfl.filters.ShaderFilter;
 import sys.FileSystem;
 import sys.io.File;
-import flixel.util.FlxAxes;
-import flixel.util.FlxCollision;
-import flixel.util.FlxDirectionFlags;
-import flixel.effects.FlxFlicker;
-import flixel.tweens.FlxTween.FlxTweenType;
-import flixel.text.FlxText.FlxTextBorderStyle;
-
-// ogmo bs
-import flixel.addons.editors.ogmo.FlxOgmo3Loader;
-import flixel.tile.FlxTilemap;
-
-import filters.*;
 
 using StringTools;
+// ogmo bs
+
+// Im not using lua on here because...you already have lua in playstate.
 
 class FunkinHscript
 {
@@ -186,12 +189,33 @@ class FunkinHscript
         daScript = null;
     }
 
+	public function addToPlayState(shit:Dynamic, ?front:Bool = true)
+	{
+		if(front) 
+		{
+			lePlayState.add(shit);
+		} 
+		else 
+		{
+			var position:Int = lePlayState.members.indexOf(lePlayState.gfGroup);
+			if(lePlayState.members.indexOf(lePlayState.boyfriendGroup) < position) 
+			{
+				position = lePlayState.members.indexOf(lePlayState.boyfriendGroup);
+			} 
+			else if(lePlayState.members.indexOf(lePlayState.dadGroup) < position) 
+			{
+				position = lePlayState.members.indexOf(lePlayState.dadGroup);
+			}
+			lePlayState.insert(position, shit);
+		}
+	}
+
     function setHscriptVars()
     {
         hscriptVars.set("Function_Continue", Function_Continue);
         hscriptVars.set("Function_Stop", Function_Stop);
 
-        hscriptVars.set("add", lePlayState.add);
+        hscriptVars.set("add", addToPlayState);
 		hscriptVars.set("remove", lePlayState.remove);
 		hscriptVars.set("insert", lePlayState.insert);
         hscriptVars.set("lePlayState", lePlayState);
@@ -330,6 +354,7 @@ class PlayStateHscript
 		exp.set("FileSystem", sys.FileSystem);
 		exp.set("File", sys.io.File);
 		exp.set("Bytes", haxe.io.Bytes);
+		exp.set("Json", haxe.Json);
 
 		// Flixel
 		exp.set("FlxG", FlxG);
@@ -358,12 +383,14 @@ class PlayStateHscript
 		exp.set("FlxFlicker", FlxFlicker);
         exp.set("FlxTweenType", PlayStateType);
         exp.set("FlxTextBorderStyle", PlayStateBorder);
+		exp.set("FlxVideo", FlxVideo);
 		
 		// Classes
 		exp.set("Conductor", Conductor);
 		exp.set("Character", Character);
 		exp.set("Boyfriend", Boyfriend);
 		exp.set("ClientPrefs", ClientPrefs);
+		exp.set("CustomClientPrefs", CustomClientPrefs);
 		exp.set("CoolUtil", CoolUtil);
 		exp.set("Alphabet", Alphabet);
 		exp.set("AttachedSprite", AttachedSprite);
@@ -391,6 +418,7 @@ class PlayStateHscript
         // shader classes
         exp.set("ShaderFilter", ShaderFilter);
         exp.set("BitmapFilter", BitmapFilter);
+		exp.set("ColorMatrixFilter", ColorMatrixFilter);
 
 		// allowed classes
 		exp.set("MainMenuState", MainMenuState);
@@ -414,6 +442,7 @@ class PlayStateHscript
 		exp.set("ResultsScreen", ResultsScreen);
 		exp.set("ResultsSong", ResultsSong);
 		exp.set("SoundtrackState", SoundtrackState);
+		exp.set("CustomSubState", CustomSubState);
 
 		// substates :)
 		exp.set("ResetScoreSubState", ResetScoreSubState);
@@ -424,6 +453,7 @@ class PlayStateHscript
 		exp.set("Tiltshift", Tiltshift);
 		exp.set("TV", TV);
 		exp.set("VCR", VCR);
+		exp.set("PixelateShader", PixelateShader);
 
 		// lol backend shit.
 		exp.set("Internet", InternetAPI);
@@ -434,6 +464,7 @@ class PlayStateHscript
         
 		parser.allowTypes = true;
         parser.resumeErrors = true;
+		parser.allowJSON = true;
 	}
 
 	public static function load(path:String, ?extraParams:StringMap<Dynamic>)

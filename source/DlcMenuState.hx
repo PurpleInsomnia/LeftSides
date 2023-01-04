@@ -1,7 +1,11 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.FlxCamera;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.util.FlxColor;
@@ -13,6 +17,7 @@ import flixel.math.FlxMath;
 import sys.io.File;
 import haxe.Json;
 import flixel.ui.FlxButton;
+import flixel.addons.ui.FlxUIInputText;
 import flixel.graphics.FlxGraphic;
 import openfl.display.BitmapData;
 
@@ -51,12 +56,23 @@ class DlcMenuState extends MusicBeatState
     var allowedFolders:Array<String> = [];
     var ttc:Array<String> = [];
 
+	var check:Array<String> = [];
+	var skipLastCheck:Bool = false;
+
+	private var camGame:FlxCamera;
+	private var camOV:FlxCamera;
+
 	override function create()
 	{
 		#if MODS_ALLOWED
 		Paths.destroyLoadedImages();
 		#end
 		WeekData.setDirectoryFromWeek();
+
+		#if desktop
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("Browsing DLC Packs", null);
+		#end
 
 		curSelected = 0;
 		canPress = true;
@@ -69,8 +85,6 @@ class DlcMenuState extends MusicBeatState
 		camFollower.screenCenter();
 		add(camFollower);
 
-		FlxG.camera.follow(camFollower, null, 1);
-
 		add(new GridBackdrop());
 
 		bg = new FlxSprite().loadGraphic(Paths.image("freeplay/bg"));
@@ -78,17 +92,118 @@ class DlcMenuState extends MusicBeatState
 		bg.scrollFactor.set(0, 0);
 		add(bg);
 
-		var check:Array<String> = [];
+		camGame = new FlxCamera();
+		camOV = new FlxCamera();
+		camOV.bgColor.alpha = 0;
+
+		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(camOV);
+		FlxCamera.defaultCameras = [camGame];
+
+		FlxG.camera.follow(camFollower, null, 1);
+
 		if (!FileSystem.exists("modsList.txt"))
 		{
 			noMods = true;
+			skipLastCheck = false;
+			File.saveContent("modsList.txt", "");
 		}
 		else
 		{
+			// auto-updates the list incase a new pack is found :)
 			check = CoolUtil.coolTextFile("modsList.txt");
+			var toRead:Array<String> = [];
+			if (check[0].length >= 2)
+			{
+				for (i in 0...check.length)
+				{
+					var toSplit:Array<String> = check[i].split("|");
+					toRead.push(toSplit[0]);
+				}
+				for (folder in Paths.getModDirectories())
+				{
+					if (!Paths.ignoreModFolders.exists(folder))
+					{
+						if (!toRead.contains(Std.string(folder)))
+						{
+							check.push(Std.string(folder) + "|0");
+							for (i in 0...check.length)
+							{
+								var cont:String = check[0];
+								for (i in 1...check.length)
+								{
+									cont += check[i];
+								}
+								File.saveContent("modsList.txt", cont);
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				for (folder in Paths.getModDirectories())
+				{
+					if (!Paths.ignoreModFolders.exists(folder))
+					{
+						skipLastCheck = true;
+						check.push(Std.string(folder) + "|0");
+						for (i in 0...check.length)
+						{
+							var cont:String = check[0];
+							for (i in 1...check.length)
+							{
+								cont += check[i];
+							}
+							File.saveContent("modsList.txt", cont);
+						}
+					}
+				}
+			}
 		}
 
-		if (check[0].length < 2)
+		// checks again.
+		if (FileSystem.exists("modsList.txt"))
+		{
+			if (check[0].length < 2)
+			{
+				for (folder in Paths.getModDirectories())
+				{
+					if (!Paths.ignoreModFolders.exists(folder))
+					{
+						skipLastCheck = true;
+						noMods = false;
+						check.push(Std.string(folder) + "|0");
+						for (i in 0...check.length)
+						{
+							var cont:String = check[0];
+							for (i in 1...check.length)
+							{
+								cont += check[i];
+							}
+							File.saveContent("modsList.txt", cont);
+						}
+					}
+				}
+			}
+		}
+
+		var blackOvrlay:FlxSprite = new FlxSprite().makeGraphic(1280, 720, 0xFF000000);
+		blackOvrlay.cameras = [camOV];
+		add(blackOvrlay);
+
+		new FlxTimer().start(2, function(tmr:FlxTimer)
+		{
+			makeRest();
+			FlxTween.tween(blackOvrlay, {alpha: 0}, 0.5);
+		});
+
+		super.create();
+	}
+
+	function makeRest()
+	{
+		if (check[0].length < 2 && !skipLastCheck)
 		{
 			noMods = true;
 		}
@@ -96,9 +211,15 @@ class DlcMenuState extends MusicBeatState
         var path:String = 'modsList.txt';
 		// FIND MOD FOLDERS
 		var boolshit = true;
+		var checkedFolder:Array<String> = [];
+		for (i in 0...check.length)
+		{
+			var daSplit:Array<String> = check[i].split("|");
+			checkedFolder.push(daSplit[0]);
+		}
 		if (!noMods)
         {
-			for (folder in Paths.getModDirectories())
+			for (folder in checkedFolder)
 			{
 				if(!Paths.ignoreModFolders.exists(folder))
 				{
@@ -192,8 +313,6 @@ class DlcMenuState extends MusicBeatState
 			}
 			saveFile();
 
-			trace("bruh");
-
 			WeekData.loadTheFirstEnabledMod();
 
 			daIcons = new FlxTypedGroup<Dynamic>();
@@ -244,17 +363,21 @@ class DlcMenuState extends MusicBeatState
 			changeStatusText(modsList[0][1]);
 			add(statText);
 
-			var removeButton:FlxButton = new FlxButton(800, FlxG.height - 50, "REMOVE THIS MOD", removePress);
-			removeButton.label.setFormat(Paths.font("vcr.ttf"), 6, FlxColor.BLACK, CENTER);
-			removeButton.setGraphicSize(75, 25);
-			removeButton.color = FlxColor.RED;
-			add(removeButton);
-
-			var moveButton:FlxButton = new FlxButton(800 + 100, FlxG.height - 50, "MOVE MOD TO TOP", movePress);
+			var moveButton:FlxButton = new FlxButton(800 + 50, FlxG.height - 50, "MOVE MOD TO TOP", movePress);
 			moveButton.label.setFormat(Paths.font("vcr.ttf"), 6, FlxColor.BLACK, CENTER);
 			moveButton.setGraphicSize(75, 25);
 			moveButton.color = FlxColor.GREEN;
 			add(moveButton);
+
+			var makeButton:FlxButton = new FlxButton(30, FlxG.height - 50, "MAKE DLC PACK", function()
+			{
+				canPress = false;
+				openSubState(new DlcMakerSubstate());
+			});
+			makeButton.label.setFormat(Paths.font("vcr.ttf"), 6, FlxColor.BLACK, CENTER);
+			makeButton.setGraphicSize(75, 25);
+			makeButton.color = FlxColor.GREEN;
+			add(makeButton);
 
 			changeSelection(0);
 		}
@@ -263,6 +386,18 @@ class DlcMenuState extends MusicBeatState
 			var noBitches:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image("no bitches"));
 			noBitches.screenCenter();
 			add(noBitches);
+
+			var makeButton:FlxButton = new FlxButton(20, FlxG.height - 50, "MAKE DLC PACK", function()
+			{
+				canPress = false;
+				openSubState(new DlcMakerSubstate());
+			});
+			makeButton.label.setFormat(Paths.font("vcr.ttf"), 6, FlxColor.BLACK, CENTER);
+			makeButton.setGraphicSize(75, 25);
+			makeButton.screenCenter(X);
+			makeButton.y += 75;
+			makeButton.color = FlxColor.GREEN;
+			add(makeButton);
 		}
 	}
 
@@ -369,18 +504,22 @@ class DlcMenuState extends MusicBeatState
 		if (on)
 		{
 			statText.color = FlxColor.LIME;
-			statText.text = "THIS MOD IS\nON\n";
+			statText.text = "THIS DLC IS\nON\n";
 		}
 		else
 		{
 			statText.color = FlxColor.RED;
-			statText.text = "THIS MOD IS\nOFF\n";
+			statText.text = "THIS DLC IS\nOFF\n";
 		}
 	}
 
 	function saveFile()
 	{
 		var cont:String = "";
+		if (modsList[0] == null)
+		{
+			return;
+		}
 		for (i in 0...modsList.length)
 		{
 			if(cont.length > 0) cont += '\n';
@@ -402,30 +541,90 @@ class DlcMenuState extends MusicBeatState
 
 	function moveToTop(mod:Array<Dynamic>)
 	{
-		FlxG.sound.play(Paths.sound("scollMenu"));
+		FlxG.sound.play(Paths.sound("scrollMenu"));
 		modsList.remove(mod);
 		modsList.insert(0, mod);
 		saveFile();
 		MusicBeatState.switchState(new DlcMenuState());
 	}
 
-	function removeMod(mod:Array<Dynamic>)
-	{
-		FlxG.sound.play(Paths.sound("cancelMenu"));
-		modsList.remove(mod);
-		saveFile();
-		MusicBeatState.switchState(new DlcMenuState());
-	}
-
-	function removePress()
-	{
-		var mod:Array<Dynamic> = modsList[curSelected];
-		removeMod(mod);
-	}
-
 	function movePress()
 	{
 		var mod:Array<Dynamic> = modsList[curSelected];
 		moveToTop(mod);
+	}
+}
+
+class DlcMakerSubstate extends MusicBeatSubstate
+{
+	public var input:FlxUIInputText = null;
+
+	public function new()
+	{
+		super();
+
+		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
+		bg.scrollFactor.set(0, 0);
+		bg.alpha = 0.5;
+		add(bg);
+
+		input = new FlxUIInputText(0, 0, Std.int(FlxG.width / 2), '', 28);
+		input.scrollFactor.set(0, 0);
+		input.screenCenter();
+		add(input);
+
+		var text:FlxText = new FlxText(0, 0, 1280, "NAME YOUR NEW PACK:", 28);
+		text.font = Paths.font("eras.ttf");
+		text.alignment = CENTER;
+		text.screenCenter(X);
+		text.y = Std.int(input.y - text.height);
+		text.scrollFactor.set(0, 0);
+		add(text);
+
+		var confirm:FlxButton = new FlxButton(800 + 100, FlxG.height - 50, "CONFIRM", confirmPack);
+		confirm.label.setFormat(Paths.font("eras.ttf"), 12, FlxColor.BLACK, CENTER);
+		confirm.setGraphicSize(150, 75);
+		confirm.screenCenter(X);
+		confirm.y = input.y + 80;
+		confirm.color = FlxColor.LIME;
+		confirm.scrollFactor.set(0, 0);
+		add(confirm);
+	}
+
+	override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+
+		if (controls.BACK)
+		{
+			FlxG.sound.play(Paths.sound("cancelMenu"));
+			MusicBeatState.resetState();
+		}
+	}
+
+	function confirmPack()
+	{
+		var daName:String = input.text;
+
+		var modPack:ModData = {
+			name: daName,
+			description: "ENTER DESCRIPTION HERE",
+			restart: false,
+			color: [255, 255, 255]
+		}
+
+		var savedPack:String = Json.stringify(modPack, "\t");
+
+		var daLength:Int = Std.int(daName.length * 2);
+
+		var lsFileData:String = "LEFTSIDESMODFILE\nLS" + daName + "LS\n" + daLength;
+
+		FileSystem.createDirectory("mods/" + daName);
+
+		File.saveContent("mods/"+ daName + "/pack.json", savedPack);
+		File.saveContent("mods/" + daName + "/" + daName + ".leftSides", lsFileData);
+
+		// Resets the state. Because you should see your results! :)
+		MusicBeatState.resetState();
 	}
 }

@@ -1,5 +1,7 @@
 local showed = false;
 function onCreate()
+	setProperty("bfZoom", true);
+	
 	setProperty('isScary', true);
 	makeLuaSprite('stageback','week2/bg', -200, -100);
 	addLuaSprite('stageback',false);

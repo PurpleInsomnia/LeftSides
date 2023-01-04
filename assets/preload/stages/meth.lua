@@ -1,4 +1,6 @@
 function onCreate()
+	setProperty("bfZoom", true);
+	
 	makeLuaSprite('sky','meth/labWall', -200, -100);
 	addLuaSprite('sky', false);
 

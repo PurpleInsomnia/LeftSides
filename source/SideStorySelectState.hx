@@ -56,6 +56,7 @@ class SideStorySelectState extends MusicBeatState
 
 	override function create()
 	{
+		noStories = false;
 		amountUnlocked = 0;
 		curSelected = 0;
 		camX = [];
@@ -72,7 +73,10 @@ class SideStorySelectState extends MusicBeatState
 		{
 			for (i in 0...customStories.length)
 			{
-				toRead.push(customStories[i]);
+				if ((storyList[0][2] != 0 && storyList[1][2] != 0 && storyList[2][2] != 0) || ClientPrefs.devMode)
+				{
+					toRead.push(customStories[i]);
+				}
 			}
 		}
 
@@ -103,16 +107,22 @@ class SideStorySelectState extends MusicBeatState
 
 		for (i in 0...toRead.length)
 		{
-			if (toRead[i][2] == 1)
+			if (toRead[i][2] == 1 || ClientPrefs.devMode)
 			{
 				realList.push(toRead[i]);
 				amountUnlocked += 1;
 
 				var graphic:FlxSprite = new FlxSprite();
-				if (toRead.length != 6)
+				if (toRead[i].length != 7)
+				{
 					graphic.loadGraphic("assets/side-stories/images/icons/" + toRead[i][1] + ".png");
+				}
 				else
-					graphic.loadGraphic("" + toRead[6] + "side-stories/images/icons/" + toRead[i][1] + ".png");
+				{
+					var split:Array<String> = toRead[i][6].split("/");
+					Paths.currentModDirectory = split[1];
+					graphic.loadGraphic(Paths.funnyFlxGraphic("side-stories/images/icons/" + toRead[i][1] + ".png"));
+				}
 				graphic.screenCenter();
 				graphic.y += 25;
 				graphic.x += 1280 * i;
@@ -178,22 +188,16 @@ class SideStorySelectState extends MusicBeatState
 				if (controls.ACCEPT)
 				{
 					// nothing yet :|
-					var modDirect:String = "";
-					var name:String = toRead[curSelected][1];
-					if (curSelected >= (amountUnlocked - customStories.length))
-					{
-						modDirect = curDirect;
-						var split:Array<String> = modDirect.split("/");
-						Paths.currentModDirectory = split[1];
-					}
+					var name:String = realList[curSelected][1];
+					trace(Paths.getModFile("side-stories/data/" + name + "/dialogue.txt"));
 					var file:Array<String> = [];
-					if (modDirect == "")
+					if (Paths.currentModDirectory == "")
 						file = CoolUtil.coolTextFile("assets/side-stories/data/" + name + "/dialogue.txt");
 					else
-						file = CoolUtil.coolTextFile(modDirect + "side-stories/data/" + name + "/dialogue.txt");
+						file = CoolUtil.coolTextFile(Paths.getModFile("side-stories/data/" + name + "/dialogue.txt"));
 
 					FlxG.sound.music.stop();
-					MusicBeatState.switchState(new SideStoryState(file, name, modDirect));
+					MusicBeatState.switchState(new SideStoryState(file, name, Paths.currentModDirectory));
 				}
 				nameTxt.screenCenter(X);
 			}
@@ -241,11 +245,14 @@ class SideStorySelectState extends MusicBeatState
 		{
 			if (curSelected >= (amountUnlocked - customStories.length))
 			{
-				curDirect = realList[curSelected][6];
+				var daSplit:Array<String> = realList[curSelected][6].split("/");
+				curDirect = daSplit[1];
+				Paths.currentModDirectory = daSplit[1];
 			}
 			else
 			{
 				curDirect = "";
+				Paths.currentModDirectory = "";
 			}
 		}
 	}

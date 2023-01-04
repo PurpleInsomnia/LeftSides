@@ -890,9 +890,17 @@ class CustomGameOverLua {
 		Lua_helper.add_callback(lua, "makeLuaText", function(tag:String, text:String, x:Float, y:Float, ?size:Int = 12)
 		{
 			resetTextTag(tag);
-			var sexPenis:GameOverModchartText = new GameOverModchartText(x, y, text, size);
+			var sexPenis:GameOverModchartText = new GameOverModchartText(x, y, 1280, text, size);
 			sexPenis.fontSizeThing = size;
 			lePlayState.gomodchartTexts.set(tag, sexPenis);
+		});
+
+		Lua_helper.add_callback(lua, "setLuaTextWidth", function(tag:String, the:Int)
+		{
+			if (lePlayState.gomodchartTexts.exists(tag))
+			{
+				lePlayState.gomodchartTexts.get(tag).width = the;	
+			}
 		});
 
 		Lua_helper.add_callback(lua, "setLuaTextFormat", function(tag:String, font:String, placement:String, colour:String, outlineColour:String)

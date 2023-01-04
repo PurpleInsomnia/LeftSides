@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import haxe.Json;
 import openfl.utils.Assets as OpenFlAssets;
 
 using StringTools;
@@ -10,7 +11,7 @@ class HealthIcon extends FlxSprite
 	public var sprTracker:FlxSprite;
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
-	private var char:String = '';
+	public var char:String = '';
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{

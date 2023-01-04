@@ -1,9 +1,16 @@
 package;
 
 import Sys.sleep;
+#if DISCORD
 import discord_rpc.DiscordRpc;
+#end
 
 using StringTools;
+
+class Discord
+{
+	// I hate you. >:(
+}
 
 class DiscordClient
 {

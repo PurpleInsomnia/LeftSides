@@ -43,8 +43,6 @@ function onCreate()
 
 	makeLuaSprite('overlay', 'moonPiss/ovrlBuilding', -300, -200);
 	addLuaSprite('overlay', true);
-
-	setProperty('followChars', false);
 end
 
 local isSinging = false;

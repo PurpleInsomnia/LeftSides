@@ -4,6 +4,8 @@ import flixel.FlxG;
 import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
+import sys.io.File;
+import haxe.Json;
 import Controls;
 
 class ClientPrefs {
@@ -45,6 +47,7 @@ class ClientPrefs {
 	public static var colorblind:String = 'Off';
 	public static var customStrum:String = 'Off';
 	public static var customBar:String = 'Default';
+	public static var isCustomBar:Bool = false;
 	public static var customRating:String = 'Default';
 	public static var muteMiss:Bool = true;
 	public static var ukFormat:Bool = false;
@@ -67,8 +70,10 @@ class ClientPrefs {
 
 	#if (haxe >= "4.0.0")
 	public static var luaSave:Map<String, Dynamic> = new Map();
+	public static var customPrefs:Map<String, Dynamic> = new Map();
 	#else
 	public static var luaSave:Map<String, Dynamic> = new Map<String, Dynamic>();
+	public static var customPrefs:Map<String, Dynamic> = new Map<String, Dynamic>();
 	#end
 
 	public static var gameJoltLogin:Array<String> = ["", ""];
@@ -142,6 +147,7 @@ class ClientPrefs {
 		FlxG.save.data.colorblind = colorblind;
 		FlxG.save.data.customStrum = customStrum;
 		FlxG.save.data.customBar = customBar;
+		FlxG.save.data.isCustomBar = isCustomBar;
 		FlxG.save.data.customRating = customRating;
 		FlxG.save.data.muteMiss = muteMiss;
 		FlxG.save.data.ukFormat = ukFormat;
@@ -167,6 +173,10 @@ class ClientPrefs {
 		FlxG.save.data.customSplashFile = CustomStrum.splash;
 		FlxG.save.data.timeColour = timeColour;
 		FlxG.save.data.strumHealth = strumHealth;
+		FlxG.save.data.customPrefs = CustomClientPrefs.saved;
+
+		// states bullshit :)
+		FlxG.save.data.preferedHL = HealthLossState.preferedHL;
 
 		FlxG.save.data.luaSave = luaSave;
 
@@ -277,8 +287,14 @@ class ClientPrefs {
 		if (FlxG.save.data.customStrum != null) {
 			customStrum = FlxG.save.data.customStrum;
 		}
-		if (FlxG.save.data.customBar != null) {
+		if (FlxG.save.data.customBar != null) 
+		{
 			customBar = FlxG.save.data.customBar;
+			isCustomBar = FlxG.save.data.isCustomBar;
+			if (customBar == "Sonic Spikes" && !isCustomBar)
+			{
+				customBar = "Default";
+			}
 		}
 		if (FlxG.save.data.customRating != null) {
 			customRating = FlxG.save.data.customRating;
@@ -343,6 +359,15 @@ class ClientPrefs {
 		if (FlxG.save.data.luaSave != null)
 		{
 			luaSave = FlxG.save.data.luaSave;
+		}
+		if (FlxG.save.data.customPrefs != null)
+		{
+			customPrefs = FlxG.save.data.customPrefs;
+			CustomClientPrefs.saved = FlxG.save.data.customPrefs;
+		}
+		if (FlxG.save.data.preferedHL != null)
+		{
+			HealthLossState.preferedHL = FlxG.save.data.preferedHL;
 		}
 
 		if (FlxG.save.data.gameJoltLogin != null)

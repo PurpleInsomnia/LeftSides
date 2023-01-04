@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Haunter.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Haunter Body0000" x="0" y="0" width="498" height="590"/>
+	<SubTexture name="Haunter Eyes0000" x="508" y="0" width="356" height="295"/>
+	<SubTexture name="Haunter Face0000" x="874" y="0" width="397" height="333"/>
+	<SubTexture name="Haunter Hands0000" x="1281" y="0" width="286" height="144" frameX="0" frameY="-9" frameWidth="304" frameHeight="161"/>
+	<SubTexture name="Haunter Hands0001" x="1577" y="0" width="247" height="159" frameX="-25" frameY="0" frameWidth="304" frameHeight="161"/>
+	<SubTexture name="Haunter Hands0002" x="0" y="600" width="298" height="154" frameX="-6" frameY="-7" frameWidth="304" frameHeight="161"/>
+	<SubTexture name="Spooky Red eye woooooooooooo0000" x="308" y="600" width="18" height="18"/>
+	<SubTexture name="Sussy Things :)0000" x="336" y="600" width="473" height="290" frameX="-8" frameY="-3" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0001" x="819" y="600" width="494" height="294" frameX="0" frameY="-1" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0002" x="1323" y="600" width="479" height="295" frameX="-5" frameY="0" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0003" x="336" y="600" width="473" height="290" frameX="-8" frameY="-3" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0004" x="819" y="600" width="494" height="294" frameX="0" frameY="-1" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0005" x="1323" y="600" width="479" height="295" frameX="-5" frameY="0" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0006" x="336" y="600" width="473" height="290" frameX="-8" frameY="-3" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0007" x="819" y="600" width="494" height="294" frameX="0" frameY="-1" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0008" x="1323" y="600" width="479" height="295" frameX="-5" frameY="0" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0009" x="336" y="600" width="473" height="290" frameX="-8" frameY="-3" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0010" x="819" y="600" width="494" height="294" frameX="0" frameY="-1" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0011" x="1323" y="600" width="479" height="295" frameX="-5" frameY="0" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0012" x="336" y="600" width="473" height="290" frameX="-8" frameY="-3" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0013" x="819" y="600" width="494" height="294" frameX="0" frameY="-1" frameWidth="494" frameHeight="295"/>
+	<SubTexture name="Sussy Things :)0014" x="1323" y="600" width="479" height="295" frameX="-5" frameY="0" frameWidth="494" frameHeight="295"/>
+</TextureAtlas>

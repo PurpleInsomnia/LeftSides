@@ -60,6 +60,7 @@ end
 
 function showReal()
 	isTv = false;
+	setProperty("bfZoom", true);
 	callOnLuas("onChangeStage", false);
 	triggerEvent("Cam Tween Zoom", "0.8", "0.001");
 	setProperty("dad.x", 0);

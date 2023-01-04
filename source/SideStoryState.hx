@@ -16,10 +16,12 @@ import openfl.display.BitmapData;
 import flash.media.Sound;
 import fliters.*;
 
+#if LUA_ALLOWED
 import llua.Lua;
 import llua.LuaL;
 import llua.State;
 import llua.Convert;
+#end
 
 using StringTools;
 
@@ -63,6 +65,7 @@ class SideStoryState extends MusicBeatState
 	// LUA VARIABLES LETS FUCKING GOOOOOOOOOOOOOOOO
 	public var nextOnFinish:Bool = false;
 	public var luaControlNext:Bool = false;
+	public var stopClose:Bool = false;
 
 	public function new(?dialogue:Array<String>, directory:String, modDirect:String)
 	{
@@ -83,7 +86,8 @@ class SideStoryState extends MusicBeatState
 
 	override function create()
 	{
-		if (!showedDate)
+		PathSS.modDirect = modDirect;
+		if (!showedDate && FileSystem.exists((PathSS.data(directory + "/date.txt"))))
 		{
 			var date:Array<String> = CoolUtil.coolTextFile(PathSS.data(directory + "/date.txt"));
 			showedDate = true;
@@ -91,7 +95,6 @@ class SideStoryState extends MusicBeatState
 			return;
 		}
 
-		PathSS.modDirect = modDirect;
 		bg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
 		add(bg);
 
@@ -123,6 +126,8 @@ class SideStoryState extends MusicBeatState
 		{
 			luaArray.push(new SideStoryLua(PathSS.data(directory + "/" + "script.lua")));
 		}
+
+		trace("bruh");
 
 		if (FileSystem.exists(PathSS.data(directory + "/events.txt")))
 		{
@@ -364,6 +369,13 @@ class SideStoryState extends MusicBeatState
 
 	public function close()
 	{
+		showedDate = false;
+		callOnLuas("onEnd", []);
+		if (stopClose)
+		{
+			// No lol.
+			return;
+		}
 		canPress = false;
 		showedDate = false;
 		if (FlxG.sound.music != null)
@@ -556,6 +568,11 @@ class SideStoryLua
 		Lua_helper.add_callback(lua, "nextLine", function()
 		{
 			lePlayState.nextLine();
+		});
+
+		Lua_helper.add_callback(lua, "endState", function()
+		{
+			lePlayState.close();
 		});
 
 		Lua_helper.add_callback(lua, "startTimer", function(tag:String, time:Float, ?loopTimes:Int = 1)
@@ -885,18 +902,83 @@ class SideStoryLua
 			lePlayState.timeCard(name);
 		});
 
+		Lua_helper.add_callback(lua, "trace", function(bruh:Dynamic)
+		{
+			trace(bruh);
+		});
+
 		Lua_helper.add_callback(lua, "preloadShit", function(huh:String)
 		{
 			trace(huh);
 			lePlayState.preloadShit();
 		});
 
-		Lua_helper.add_callback(lua, "loadSong", function(song:String)
+		Lua_helper.add_callback(lua, "loadSong", function(song:String, ?skipHL:Bool = false)
 		{
 			var name:String = Paths.formatToSongPath(song);
 			var poop = Highscore.formatSong(name, 1);
 			PlayState.SONG = Song.loadFromJson(poop, name);
-			LoadingState.loadAndSwitchState(new PlayState());
+			PlayState.isStoryMode = false;
+			PlayState.storyDifficulty = 1;
+			PlayState.storyWeek = 999;
+			PlayState.isVoid = false;
+			if (skipHL)
+			{
+				MusicBeatState.switchState(new LoadingScreenState());
+			}
+			else
+			{
+				MusicBeatState.switchState(new HealthLossState());
+			}
+		});
+
+		Lua_helper.add_callback(lua, "startSong", function(skipHL:Bool)
+		{
+			if (!skipHL)
+			{
+				MusicBeatState.switchState(new HealthLossState());
+			}
+			else
+			{
+				MusicBeatState.switchState(new LoadingScreenState());
+			}
+		});
+
+		Lua_helper.add_callback(lua, "loadStoryMode", function(songs:String, week:Int, ?skipHL:Bool = false)
+		{
+			var split:Array<String> = songs.split("|");
+			for (i in 0...split.length)
+			{
+				PlayState.storyPlaylist.push(split[i]);
+			}
+			var songLowercase:String = ""; 
+            songLowercase = Paths.formatToSongPath(split[0]);
+			var poop:String = 'normal';
+			#if MODS_ALLOWED
+			if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
+			#else
+			if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
+			#end
+				poop = songLowercase;
+			}
+
+			PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+			PlayState.isStoryMode = true;
+			PlayState.storyDifficulty = 1;
+            // Lullaby demo :)
+
+            // Very imposible week to get to :thumbsup:
+			PlayState.storyWeek = week;
+			PlayState.isVoid = false;
+
+			if (skipHL)
+			{
+				MusicBeatState.switchState(new LoadingScreenState());
+			}
+			else
+			{
+				MusicBeatState.switchState(new HealthLossState());
+			}
 		});
 
 		call("onCreate", []);
@@ -1060,14 +1142,14 @@ class PathSS
 		var toReturn:String = "assets/side-stories/" + key;
 		if (!FileSystem.exists(toReturn) && modDirect != "")
 		{
-			toReturn = modDirect + "side-stories/" + key;
+			toReturn = modDirect + "/side-stories/" + key;
 		}
 		return toReturn;
 	}
 	
 	public static function image(key:String):Dynamic
 	{
-		if (FileSystem.exists(modDirect + "side-stories/images/" + key + ".png"))
+		if (FileSystem.exists("mods/" + modDirect + "/side-stories/images/" + key + ".png"))
 		{
 			var imageToReturn:FlxGraphic = addCustomGraphic("side-stories/images/" + key + ".png");
 			if(imageToReturn != null) return imageToReturn;
@@ -1077,7 +1159,7 @@ class PathSS
 
 	public static function frames(key:String)
 	{
-		if (FileSystem.exists(modDirect + "side-stories/images/" + key + ".png"))
+		if (FileSystem.exists("mods/" + modDirect + "/side-stories/images/" + key + ".png"))
 		{
 			var imageLoaded:FlxGraphic = addCustomGraphic("side-stories/images/" + key + ".png");
 
@@ -1088,7 +1170,7 @@ class PathSS
 
 	public static function sound(key:String):Dynamic
 	{
-		if (FileSystem.exists(modDirect + "side-stories/sounds/" + key + ".ogg"))
+		if (FileSystem.exists("mods/" + modDirect + "/side-stories/sounds/" + key + ".ogg"))
 		{
 			var file:String = Paths.getModFile("side-stories/sounds/" + key + ".ogg");
 			if(!Paths.customSoundsLoaded.exists(file)) {
@@ -1101,7 +1183,7 @@ class PathSS
 
 	public static function music(key:String):Dynamic
 	{
-		if (FileSystem.exists(modDirect + "side-stories/music/" + key + ".ogg"))
+		if (FileSystem.exists("mods/" + modDirect + "/side-stories/music/" + key + ".ogg"))
 		{
 			var file:String = Paths.getModFile("side-stories/music/" + key + ".ogg");
 			if(!Paths.customSoundsLoaded.exists(file)) {
@@ -1114,7 +1196,7 @@ class PathSS
 
 	public static function data(key:String)
 	{
-		if (FileSystem.exists(modDirect + "side-stories/data/" + key))
+		if (FileSystem.exists("mods/" + modDirect + "/side-stories/data/" + key))
 		{
 			return Paths.getModFile("side-stories/data/" + key);
 		}

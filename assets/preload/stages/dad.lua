@@ -1,4 +1,5 @@
 function onCreate()
+	setProperty("bfZoom", true);
 	-- background shit
 	makeLuaSprite('stageback', 'stageback', -600, -300);
 	setScrollFactor('stageback', 0.9, 0.9);

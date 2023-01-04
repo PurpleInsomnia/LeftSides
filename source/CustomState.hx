@@ -1,49 +1,49 @@
 package;
 
+#if DISCORD
 import Discord.DiscordClient;
+#end
 import GameJolt.GameJoltAPI;
-import flixel.ui.FlxButton;
-import openfl.filters.BitmapFilter;
-import flixel.FlxG;
-import flixel.FlxSprite;
-import flixel.FlxObject;
-import flixel.text.FlxText;
-import flixel.text.FlxText.FlxTextAlign;
-import flixel.addons.text.FlxTypeText;
-import flixel.graphics.FlxGraphic;
+import filters.*;
 import flixel.FlxCamera;
-import flixel.system.FlxAssets.FlxShader;
+import flixel.FlxG;
+import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.addons.editors.ogmo.FlxOgmo3Loader;
+import flixel.addons.text.FlxTypeText;
+import flixel.effects.FlxFlicker;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.tile.FlxGraphicsShader;
-import flixel.group.FlxGroup;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
+import flixel.system.FlxAssets.FlxShader;
 import flixel.system.FlxSound;
+import flixel.text.FlxText.FlxTextAlign;
+import flixel.text.FlxText.FlxTextBorderStyle;
+import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween.FlxTweenType;
+import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
+import flixel.ui.FlxButton;
+import flixel.util.FlxAxes;
+import flixel.util.FlxCollision;
+import flixel.util.FlxDirectionFlags;
 import flixel.util.FlxTimer;
 import haxe.ds.StringMap;
 import hscript.Expr;
 import hscript.Interp;
 import hscript.Parser;
-import openfl.filters.ShaderFilter;
 import openfl.display.BlendMode;
+import openfl.filters.BitmapFilter;
+import openfl.filters.ColorMatrixFilter;
+import openfl.filters.ShaderFilter;
 import sys.FileSystem;
 import sys.io.File;
-import flixel.util.FlxAxes;
-import flixel.util.FlxCollision;
-import flixel.util.FlxDirectionFlags;
-import flixel.effects.FlxFlicker;
-import flixel.tweens.FlxTween.FlxTweenType;
-import flixel.text.FlxText.FlxTextBorderStyle;
-
-// ogmo bs
-import flixel.addons.editors.ogmo.FlxOgmo3Loader;
-import flixel.tile.FlxTilemap;
-
-import filters.*;
 
 using StringTools;
 
@@ -138,6 +138,14 @@ class CustomState extends MusicBeatState
 				    scriptArray[i].get(thing)(arg[0], arg[1], arg[2], arg[3], arg[4], arg[5]);
 			}
         }
+	}
+
+	public function setOnScripts(vari:String, val:Dynamic)
+	{
+		for (i in 0...scriptArray.length)
+		{
+			scriptArray[i].set(vari, val);
+		}
 	}
 
     function theTrace(val:Dynamic)
@@ -257,6 +265,7 @@ class StateHscript
 		exp.set("FileSystem", sys.FileSystem);
 		exp.set("File", sys.io.File);
 		exp.set("Bytes", haxe.io.Bytes);
+		exp.set("Json", haxe.Json);
 
 		// Flixel
 		exp.set("FlxG", FlxG);
@@ -285,6 +294,7 @@ class StateHscript
 		exp.set("FlxFlicker", FlxFlicker);
 		exp.set("FlxTweenType", StateType);
         exp.set("FlxTextBorderStyle", StateBorder);
+		exp.set("FlxVideo", FlxVideo);
 		
 		// Classes
 		exp.set("Conductor", Conductor);
@@ -292,6 +302,7 @@ class StateHscript
 		exp.set("Boyfriend", Boyfriend);
 		exp.set("DialogueBox", DialogueBoxPsych);
 		exp.set("ClientPrefs", ClientPrefs);
+		exp.set("CustomClientPrefs", CustomClientPrefs);
 		exp.set("CoolUtil", CoolUtil);
 		exp.set("Alphabet", Alphabet);
 		exp.set("AttachedSprite", AttachedSprite);
@@ -319,6 +330,7 @@ class StateHscript
         // shader classes
         exp.set("ShaderFilter", ShaderFilter);
         exp.set("BitmapFilter", BitmapFilter);
+		exp.set("ColorMatrixFilter", ColorMatrixFilter);
 
 		// allowed classes
 		exp.set("MainMenuState", MainMenuState);
@@ -342,6 +354,7 @@ class StateHscript
 		exp.set("ResultsScreen", ResultsScreen);
 		exp.set("ResultsSong", ResultsSong);
 		exp.set("SoundtrackState", SoundtrackState);
+		exp.set("CustomSubState", CustomSubState);
 
 		// substates :)
 		exp.set("ResetScoreSubState", ResetScoreSubState);
@@ -352,6 +365,7 @@ class StateHscript
 		exp.set("Tiltshift", Tiltshift);
 		exp.set("TV", TV);
 		exp.set("VCR", VCR);
+		exp.set("PixelateShader", PixelateShader);
 
 		// lol backend shit.
 		exp.set("Internet", InternetAPI);
@@ -359,9 +373,26 @@ class StateHscript
 		// ogmo
 		exp.set("FlxOgmo", FlxOgmo3Loader);
 		exp.set("FlxTilemap", FlxTilemap);
+		// I guess if you want these classes I guess you're gonna have to use dynamic. :/
+		/*
+		exp.set("OgmoProjectData", ProjectData);
+		exp.set("OgmoProjectLayerData", ProjectLayerData);
+		exp.set("OgmoProjectEntityData", ProjectEntityData);
+		exp.set("OgmoProjectTilesetData", ProjectTilesetData);
+		exp.set("OgmoLevelData", LevelData);
+		exp.set("OgmoLayerData", LayerData);
+		exp.set("OgmoTileLayer", TileLayer);
+		exp.set("OgmoGridLayer", GridLayer);
+		exp.set("OgmoEntityLayer", EntityLayer);
+		exp.set("OgmoEntityData", EntityData);
+		exp.set("OgmoDecalLayer", DecalLayer);
+		exp.set("OgmoDecalData", DecalData);
+		exp.set("OgmoPoint", Point);
+		*/
         
 		parser.allowTypes = true;
 		parser.resumeErrors = true;
+		parser.allowJSON = true;
 	}
 
 	public static function load(path:String, ?extraParams:StringMap<Dynamic>)

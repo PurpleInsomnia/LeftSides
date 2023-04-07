@@ -1,0 +1,110 @@
+{
+    "sectionName": "Bently 'Ben' Warner",
+    "chars": [
+        {
+            "name": "Default",
+            "description": "The song defaults to its character.",
+            "path": "none",
+            "unlock": "none",
+            "lock": "none"
+        },
+        {
+            "name": "Classic Fit",
+            "description": "One of his favorite outfits. Picked during a 'Day Date' with Tess before they started dating.\nOccasionally smells like Tess.",
+            "path": "bf",
+            "unlock": "song:tutorial",
+            "lock": "Play the Tutorial"
+        },
+        {
+            "name": "Current Fit",
+            "description": "His new, soft and cozy hoodie was given to him by Tess on Christmas 2021.\nThe drawstrings that close the hood make a good hiding place.",
+            "path": "bf-new",
+            "unlock": "song:peppermints",
+            "lock": "Complete 'Week 6'"
+        },
+        {
+            "name": "Halloween Costume",
+            "description": "Holy shit, Dipper Pines.\nThe missing journal can't fully complete the fit. :(",
+            "path": "bf-spooky",
+            "unlock": "song:spookeez",
+            "lock": "Play the song: 'Spookeez'"
+        },
+        {
+            "name": "Date Outfit",
+            "description": "An outfit made for a special date night. The comfy yet formal vibe fits him perfectly.\nIt reminds Ben of Olive Garden.",
+            "path": "bf-date",
+            "unlock": "song:satin-panties",
+            "lock": "Play the song: 'Satin Panties'"
+        },
+        {
+            "name": "'Christmas' Outfit",
+            "description": "A set of clothes made to traverse the harsh winters of the area he lives in.\nAlways keeps him from complaining about the cold.",
+            "path": "bf-christmas",
+            "unlock": "song:cocoa",
+            "lock": "Play the song: 'Cocoa'"
+        },
+        {
+            "name": "Lab Suit",
+            "description": "A suit designed to protect you from the harsh chemicals while 'cooking'.\nMay have been filled up with air at one point.",
+            "path": "bf-meth",
+            "unlock": "song:remember-my-name",
+            "lock": "Break Bad."
+        },
+        {
+            "name": "Summer Outfit",
+            "description": "A simple open shirt and some nice shorts are perfect for hanging out in Montana!\nThe sunglasses make him look dorky to Tess. (which she adores)",
+            "path": "summer-bf",
+            "unlock": "song:v",
+            "lock": "Play the song: 'V'"
+        },
+        {
+            "name": "Benntlee Worner",
+            "description": "He is silly.",
+            "path": "shitpost-ben",
+            "unlock": "song:too-fest",
+            "lock": "Play the song: 'Too Fest'"
+        },
+        {
+            "name": "Young Ben",
+            "description": "A younger version of Ben.\nHis longer, more messy hair is sometimes a pain to deal with.",
+            "path": "bf-young",
+            "unlock": "ss:restless",
+            "lock": "Complete the Side Story: 'Restless'"
+        },
+        {
+            "name": "Club Member",
+            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like Tea.",
+            "path": "bf-club",
+            "unlock": "song:free-me",
+            "lock": "Survive the first encounter with the one who breaks the fourth wall."
+        },
+        {
+            "name": "Trepidation Fit",
+            "description": "A snazzy outfit that gets you into a funky mood.\nWARNING: May attract creepypastas\nSuggested by @ASweetMidnight on twitter <3",
+            "path": "bf-tre",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "R.D's Take",
+            "description": "Rampant Dabbler's take on Ben. The new jacket gives him a huge confidence boost.\nThe pants might give him massive cake though...\nSuggested by: @Rampant_Dabbler on twitter <3",
+            "path": "bf-rd",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "Plumber's Drip",
+            "description": "A Plumber's outfit mostly used to save a princess in another castle!...or space...\nThe hat might be sentient.\nSuggested by @MelancholyMoni_ on twitter <3",
+            "path": "bf-mario",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "goljie's Redesign",
+            "description": "goljie's (on newgrounds.com) (very cool) base game Boyfriend.\nNow with a Left Sides flavor.\n(Suggested by @HankKD7 on twitter <3)",
+            "path": "bf-goljie",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        }
+    ]
+}

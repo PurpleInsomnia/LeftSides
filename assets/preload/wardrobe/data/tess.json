@@ -1,0 +1,103 @@
+{
+    "sectionName": "Tess Anderson",
+    "chars": [
+        {
+            "name": "Default",
+            "description": "The song defaults to its character.",
+            "path": "none",
+            "unlock": "none",
+            "lock": "none"
+        },
+        {
+            "name": "Classic Fit",
+            "description": "One of her favorite outfits to wear around Ben. Picked during a 'Day Date' with Ben before they started dating.\nHowever, she gets cold quickly in this; and always asks for cuddles from Ben.",
+            "path": "gf",
+            "unlock": "song:tutorial",
+            "lock": "Play the Tutorial"
+        },
+        {
+            "name": "Current Fit",
+            "description": "Her comfortable, warm and downright adorable new sweater was given to her by Ben on Christmas 2021.\nThe new pants and shoes slow the time in which she gets cold.",
+            "path": "gf-new",
+            "unlock": "song:peppermints",
+            "lock": "Complete 'Week 6'"
+        },
+        {
+            "name": "Halloween Costume",
+            "description": "She decided to go as a demon for Halloween. How cool is that?\nThe candy buckets are laid aside for Ben's preformances",
+            "path": "gf-spooky",
+            "unlock": "song:spookeez",
+            "lock": "Play the song: 'Spookeez'"
+        },
+        {
+            "name": "Date Outfit",
+            "description": "An outfit chosen to match Ben. Although her dress doesn't have the same design as Ben's shirt; It's still pretty snazzy.\nThe black, laced undergarments were picked out by Ben while they were shopping for 'Date Clothes'.",
+            "path": "gf-date",
+            "unlock": "song:satin-panties",
+            "lock": "Play the song: 'Satin Panties'"
+        },
+        {
+            "name": "'Christmas' Outfit",
+            "description": "A set of clothes made to keep Tess snuggly and warm.\nHer bell earings really get her into the holiday spirit!",
+            "path": "gf-christmas",
+            "unlock": "song:cocoa",
+            "lock": "Play the song: 'Cocoa'"
+        },
+        {
+            "name": "Lab Suit",
+            "description": "A suit designed to protect you from the harsh chemicals while 'cooking'.\nWeirdly draws annoying flies towards you...",
+            "path": "gf-meth",
+            "unlock": "song:remember-my-name",
+            "lock": "Break Bad."
+        },
+        {
+            "name": "Summer Outfit",
+            "description": "Her simple purple shirt and dark short shorts make Ben's heart melt while also keeping her cool!\nMay also be used as PJs.",
+            "path": "summer-gf",
+            "unlock": "song:v",
+            "lock": "Play the song: 'V'"
+        },
+        {
+            "name": "Morning Outfit",
+            "description": "A outfit made from Ben's favorite shirt and Tess' short shorts.\nHer go to pair of PJs after a night of...uh...yeah y'know.",
+            "path": "gf-pj",
+            "unlock": "song:milf",
+            "lock": "Play the song: 'Milf'"
+        },
+        {
+            "name": "Club Member",
+            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like a mixture of Ben, Old Books and Tea.",
+            "path": "gf-club",
+            "unlock": "song:free-me",
+            "lock": "Survive the first encounter with the one who breaks the fourth wall."
+        },
+        {
+            "name": "Trepidation Fit",
+            "description": "A nice formal outfit thats perfect for fighting...creepypastas?\nAlso, Breasts.\nSuggested by @ASweetMidnight on twitter <3",
+            "path": "gf-tre",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "R.D's Take",
+            "description": "Rampant Dabbler's take on Tess.\n(Boob window in sweater hahahaha)\nSuggested by: @Rampant_Dabbler on twitter <3",
+            "path": "gf-rd",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "Princess' Drip",
+            "description": "A dress made to rule a kingdom.\nAlways smells like cake or the inside of a volcanic castle.\nSuggested by @MelancholyMoni_ on twitter <3",
+            "path": "gf-peach",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "goljie's Redesign",
+            "description": "goljie's (on newgrounds.com) (very cool) base game Girlfriend.\nNow with a Left Sides flavor.\n(Suggested by @HankKD7 on twitter <3)",
+            "path": "gf-goljie",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        }
+    ]
+}

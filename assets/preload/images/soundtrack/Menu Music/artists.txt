@@ -11,3 +11,5 @@ Had Me At Gamejolt|PurpleInsomnia|gamejoltMenu
 The Lair|PurpleInsomnia|lair
 The Void|PurpleInsomnia|void
 Their Motifs|PurpleInsomnia|title
+The Monster's Shop|PurpleInsomnia|monstersShop
+The Archives Never Lie|PurpleInsomnia|theArchivesNeverLie

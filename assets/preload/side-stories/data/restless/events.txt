@@ -1,0 +1,5 @@
+30|stop music
+39|stop music
+77|stop music
+82|stop music
+94|stop music

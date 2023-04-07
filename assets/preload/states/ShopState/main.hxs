@@ -1,0 +1,31 @@
+var coolBeat:Float = 0;
+function onCreatePost()
+{
+    Conductor.changeBPM(130);
+    coolBeat = Conductor.crochet / 500;
+    coolBeatTimer();
+}
+
+function coolBeatTimer()
+{
+    new FlxTimer().start(coolBeat, function(tmr:FlxTimer)
+    {
+        if (ClientPrefs.camZooms)
+        {
+            FlxG.camera.zoom = 1.015;
+        }
+        coolBeatTimer();
+    });
+}
+
+function onUpdate(elapsed)
+{
+    if (FlxG.camera.zoom > 1)
+    {
+        FlxG.camera.zoom -= 0.001;
+    }
+    if (FlxG.camera.zoom < 1)
+    {
+        FlxG.camera.zoom = 1;
+    }
+}

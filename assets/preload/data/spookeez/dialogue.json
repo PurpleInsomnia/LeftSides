@@ -1,77 +1,110 @@
 {
 	"dialogue": [
 		{
-			"expression": "sad",
-			"text": "Goddamnit, Why were those houses so far apart???\\nMy legs have commited suicide at this point...",
-			"boxState": "normal",
 			"speed": 0.045,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sadness-combat",
+			"text": "Goddamnit, Why were those houses so far apart???\\nMy legs have commited suicide at this point..."
 		},
 		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "laughing",
-			"text": "*Ha Ha* They weren't THAT far apart you big baby!",
-			"boxState": "normal",
-			"speed": 0.04,
-			"portrait": "gf"
+			"text": "*Ha Ha* They weren't THAT far apart you big baby!"
 		},
 		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "wink",
-			"text": "Plus, It's good to get a nice walk in every now and then (and some candy)",
-			"boxState": "normal",
-			"speed": 0.04,
-			"portrait": "gf"
+			"text": "Plus, It's good to get a nice walk in every now and then (and some candy)"
 		},
 		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "guilt",
-			"text": "Well, yeah..... But I didn't like walking a fourth of a mile to get to a single house.",
-			"boxState": "normal",
-			"speed": 0.04,
-			"portrait": "bf"
+			"text": "Well, yeah..... But I didn't like walking a fourth of a mile to get to a single house."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "And I didn't like getting toothpaste...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "And I didn't like getting toothpaste..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "I guess we're even then.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "I guess we're even then."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "...\\nThe sky looks really pretty tonight..",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "sus",
-			"text": "Ehh.......\\nNot AS pretty as you are.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "cute-blushing",
-			"text": "Oh. Really?",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "big-blush",
-			"text": "Really Really.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "...\\nThe sky looks really pretty tonight.."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "Ehh.......\\nNot AS pretty as you are."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "Oh. Really?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "big-blush",
+			"text": "Really Really."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -79,6 +112,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "sus",
@@ -86,6 +122,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
@@ -93,6 +132,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cute-blushing",
@@ -100,136 +142,190 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "big-blush",
+			"expression": "flustered",
 			"text": "I'll just guess that you look pretty with your nose pierced."
 		},
 		{
-			"expression": "skid-point",
-			"text": "U-um excuse me?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "spookeez"
-		},
-		{
-			"expression": "cringe",
-			"text": "Oh- Sorry, I'll move out of the wa-",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "pump-point",
-			"text": "You see! I told you it was him!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
-		},
-		{
-			"expression": "question",
-			"text": "Huh?",
-			"boxState": "normal",
-			"speed": 0.1,
-			"portrait": "bf"
-		},
-		{
-			"expression": "skid-default",
-			"text": "You're the dude who absolutely DESTROYED that ex rockstar guy!!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
-		},
-		{
-			"expression": "happy",
-			"text": "Oh that, piece of cake lil' dudes.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "Guess my Dad's angry Twitter ramble made you kinda famous, huh?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "guilt",
-			"text": "I hope it wasn't like....\\n...Uh.....\\n...Eggman's family friendly talk about Shadow.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "what",
-			"text": "Um... Anyways, you guys need anything?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "pump-undertale",
-			"text": "We want to sing with YOU!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
-		},
-		{
-			"expression": "trolling",
-			"text": "Ah, good thing we always carry comicaly large speakers with us.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "sus",
-			"text": "Right babe?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "cringe",
-			"text": "How did they get here just now..?",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.07
-		},
-		{
-			"expression": "what",
-			"text": "Who are you too?",
-			"boxState": "normal",
-			"speed": 0.04,
-			"portrait": "bf"
-		},
-		{
-			"expression": "skid-default",
-			"text": "I'm Skid!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
-		},
-		{
-			"expression": "pump-default",
-			"text": "And I'm Pump!!",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "spookeez",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "skid-point",
+			"text": "U-um excuse me?"
 		},
 		{
-			"expression": "happy",
-			"text": "coolswag",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Oh- Sorry, I'll move out of the wa-"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "pump-point",
+			"text": "You see! I told you it was him!"
+		},
+		{
+			"speed": 0.1,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "Huh?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "skid-default",
+			"text": "You're the dude who absolutely DESTROYED that ex rockstar guy!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Oh that, piece of cake lil' dudes."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Guess my Dad's angry Twitter ramble made you kinda famous, huh?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "I hope it wasn't like....\\n...Uh.....\\n...Eggman's family friendly talk about Shadow."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Um... Anyways, you guys need anything?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "pump-undertale",
+			"text": "We want to sing with YOU!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "troll",
+			"text": "Ah, good thing we always carry comicaly large speakers with us."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "Right babe?"
+		},
+		{
+			"speed": 0.07,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "How did they get here just now..?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Who are you too?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "skid-default",
+			"text": "I'm Skid!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "pump-default",
+			"text": "And I'm Pump!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "coolswag"
 		},
 		{
 			"expression": "challenge",
 			"text": "Lets see what ya got!",
 			"boxState": "normal",
-			"speed": 0.04,
-			"portrait": "bf"
+			"portrait": "bf",
+			"speed": 0.04
 		}
 	]
 }

@@ -16,6 +16,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxPoint;
 import flixel.system.FlxSound;
 import flixel.util.FlxTimer;
+import flixel.util.FlxAxes;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
 import flixel.util.FlxColor;
@@ -140,6 +141,7 @@ class FunkinLua {
 		
 		set('inGameOver', false);
 		set('mustHitSection', false);
+		set('altSection', false);
 		set('botPlay', PlayState.cpuControlled);
 
 		for (i in 0...4) {
@@ -835,6 +837,9 @@ class FunkinLua {
 		});
 		Lua_helper.add_callback(lua, "precacheImage", function(name:String) {
 			Paths.addCustomGraphic(name);
+		});
+		Lua_helper.add_callback(lua, "precacheSharedImage", function(name:String) {
+			// Paths.addPreloadGraphic(name);
 		});
 		Lua_helper.add_callback(lua, "precacheSound", function(name:String) {
 			CoolUtil.precacheSound(name);

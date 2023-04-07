@@ -12,6 +12,7 @@ class HealthIcon extends FlxSprite
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
 	public var char:String = '';
+	public var curChar:String = "";
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
@@ -46,6 +47,7 @@ class HealthIcon extends FlxSprite
 			animation.add(char, [0, 1, 2], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
+			curChar = char.replace("icon-", "");
 
 			antialiasing = ClientPrefs.globalAntialiasing;
 			if(char.endsWith('-pixel')) {

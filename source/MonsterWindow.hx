@@ -22,6 +22,7 @@ class MonsterWindow extends FlxTypedGroup<Dynamic>
 		var ok:FlxButton = new FlxButton(x, Std.int(y + (66 * 2)), '', okieDokie);
 		ok.loadGraphic(Paths.image('monster/ok'), false);
 		ok.setGraphicSize(Std.int(ok.width * 2), Std.int(ok.height * 2));
+		ok.updateHitbox();
 		ok.x = Std.int(box.getGraphicMidpoint().x - (ok.width / 2));
 		ok.y -= Std.int(ok.height / 2);
 		add(ok);

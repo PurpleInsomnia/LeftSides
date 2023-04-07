@@ -1,6 +1,5 @@
 package;
 
-import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.FlxGraphic;
 
 class Backdrop extends FlxBackdrop

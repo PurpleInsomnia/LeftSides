@@ -74,6 +74,8 @@ class Option
 					if(options.length > 0) {
 						defaultValue = options[0];
 					}
+				case "useless":
+					defaultValue = false;
 			}
 		}
 
@@ -109,10 +111,22 @@ class Option
 
 	public function getValue():Dynamic
 	{
+		if (type == "useless")
+		{
+			return ClientPrefs.useless.get(variable);
+		}
 		return Reflect.getProperty(ClientPrefs, variable);
 	}
 	public function setValue(value:Dynamic)
 	{
+		if (type == "useless")
+		{
+			if (ClientPrefs.useless.exists(variable))
+			{
+				ClientPrefs.useless.remove(variable);
+			}
+			ClientPrefs.useless.set(variable, value);
+		}
 		Reflect.setProperty(ClientPrefs, variable, value);
 	}
 
@@ -141,7 +155,7 @@ class Option
 		var newValue:String = 'bool';
 		switch(type.toLowerCase().trim())
 		{
-			case 'int' | 'float' | 'percent' | 'string': newValue = type;
+			case 'int' | 'float' | 'percent' | 'string' | "useless": newValue = type;
 			case 'integer': newValue = 'int';
 			case 'str': newValue = 'string';
 			case 'fl': newValue = 'float';

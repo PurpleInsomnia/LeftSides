@@ -1,46 +1,64 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "You've got ass skills asshole.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "You've got ass skills asshole."
 		},
 		{
-			"expression": "wat",
-			"text": "WHAT?!\\nNO FAIR!!!\\nI HAD NO TIME TO REACT TO THAT!!!!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "pico"
+			"expression": "vine-boom",
+			"text": "WHAT?!\\nNO FAIR!!!\\nI HAD NO TIME TO REACT TO THAT!!!!"
 		},
 		{
-			"expression": "upset",
-			"text": "The RNG in this is terrible!!!!\\nI'm gonna keep you as hosta-",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"expression": "upset",
+			"text": "The RNG in this is terrible!!!!\\nI'm gonna keep you as hosta-"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "Please just put this on pause and let us eat.\\nTess and I skipped lunch today y'know?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Please just put this on pause and let us eat.\\nTess and I skipped lunch today y'know?"
 		},
 		{
-			"expression": "upset",
-			"text": "WE'RE GOING AGAIN!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "pico"
+			"expression": "upset",
+			"text": "WE'RE GOING AGAIN!"
 		},
 		{
-			"expression": "sleepy",
-			"text": "(BUT I'M STARVING)",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "tired",
+			"text": "(BUT I'M STARVING)"
 		}
 	]
 }

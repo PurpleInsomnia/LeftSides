@@ -1,0 +1,102 @@
+tessPJ|default|I'm gonna take a bath...so if you need me, just knock on the door or something.|tessRoomNight|default
+benPJ|happy|Noted.
+benPJ|happy|Thanks for letting me stay the night by the way.
+tessPJ|default|Well, we haven't done it in a good while so...figured that it'd be fun.
+tessPJ|happy|Night-night!
+benPJ|happy|Goodnight!
+none|piss|He walks into the guest room, closing the door. Which sends me off to the bathroom to run a bath.|black|tess
+none|piss|I wait for the hot water to fill the tub before I strip and sit in the only place in my house where I feel safe. (when I'm alone at least.)|tessBathroom
+none|piss|I then glance at the shelf near the tiles near the tub, staring at my plugged in hair dryer.
+none|piss|I wait a few minutes. The water calming my senses...
+none|piss|I just can't take them anymore...The beatings and verbal abuse is getting worse...And they haven't fed me for four days...
+none|piss|But only when Ben is around they actually treat me like an actual fucking person with feelings.
+none|piss|I can't take it anymore.
+none|piss|I grab the hair-dryer, and hover it above the calming water.
+none|piss|I take a deep breath. This is it. I made sure to leave my note on the sink.
+none|piss|...
+none|piss|...
+none|piss|I can't drop it. I can't help but wonder how Ben will react to my suicide.
+none|piss|First his mom, now this? His best friend?
+none|piss|This is so...fucking selfish...
+none|piss|I carefully remove the hair-dryer from the area and unplug it from the outlet near the tub.
+none|piss|I then sit back down in the tub uncomfortably. But my contrity turns into anger.
+none|piss|I hit the wall beside my tub with my fist multiple times.
+none|piss|"Stupid, stupid, stupid, STUPID. I'M SUCH A STUPID FUCKING IDIOT!!!"||yell
+none|piss|Next in my spiral of emotions, I start to cry.||tess
+none|piss|This goes on for 45 minutes before I finally calm down.
+none|piss|Ben told me that the moments before he attempted suicide felt so scary to him...
+none|piss|...I didn't realize it was that scary...The pounding in your heart, the emotions...everything was scary...
+none|piss|I then just look down at the moving water...realizing that I almost died today.
+none|piss|I then decide that I'm never gonna do this again. Nor think this, ever.
+none|piss|...
+none|piss|I snap back to reality when I hear my door knock softly.
+none|piss|"Hey Tess?"||default
+none|piss|I hury out of the bath before wrapping a towel around my body.||tess
+none|piss|I open the door slowly while moving my right arm out of view as some bruises are still visible from earlier last week.
+benPJ|oh-blush|Oh, my bad- Sorry to interupt you...||default
+none|piss|I try my hardest not to blush to hard. Ben and I have never been in this type of situation before.
+tessTowel|oh-blush|No no no- Y-you're fine...I was having...um...'girl problems' while I was in here so...that's kinda why I'm still bathing...||default
+benPJ|oh-blush|Oh.
+tessTowel|oh-blush|Wh-what was it that you needed again?
+benPJ|oh-blush|N-nothing really...sorry...I just got a bit worried about you after I knocked on your bedroom door with no response.
+tessTowel|down|N-no!- I-it's okay...I didn't mean for you to get worried...
+tessTowel|oh|Wait- w-why were you knocking on my bedroom door?
+benPJ|oh|I wanted to ask you if you had a spare toothbrush...cause I kinda forgot mine...
+tessTowel|oh|Oh...Well, I don't have a spare...sorry...
+benPJ|happy|That's okay!
+none|piss|I then think about what I was thinking of while spacing out in the tub.||tess
+tessTowel|concerned|Hey um- Can I ask you something?||default
+benPJ|oh|Yeah?
+tessTowel|down|I've been...kinda down in the dumps all week...from like...school and work stress...
+tessTowel|down|And I really want to spend time with the one person that can make me feel better...
+tessTowel|down|Well- Wh-what I'm trying to ask is...
+tessTowel|stop-being-cute|Can you um...sleep in my bed with me tonight...?
+benPJ|oh-blush|Uhhh yeah- That's fine with me.
+tessTowel|down|Okay...I'll just...drain the tub and change into my PJ's...
+none|piss|I shut the door and drain the bath. I discard the note away, leaving no trace of it ever existing.
+none|piss|...
+none|piss|After slipping back into my pajamas, I come back into my room to find Ben chilling on my bed, watching videos on his phone.|tessRoomNight|tess
+tessPJ|comfort|Hey um...since you forgot your toothbrush...umm...y-you can use mine if you want to.|default
+benPJ|happy|Oh- alright, thank you!
+none|piss|As he gets up from my bed. I feel a wave of the sadness I've had all week hit me again, and I reach out for a hug instinctively.||tess
+none|piss|Ben looks empathetically at me, and embraces my hug.
+none|piss|We've shared all kinds of hugs in different situations...
+none|piss|Greetings, goodbyes, when we get a gift from one another, Apologies and "It's gonna okay"'s.
+none|piss|But this one- This one feels different. But it gives me a bit of dopamine. I release Ben and he releases me, venturing on to the restroom, as I crawl into my bed.
+none|piss|After coming out of the bathroom, he crawls into the other side of the bed.
+benPJ|concerned|Are you tired at all?||default
+tessPJ|down|No. Can we watch videos on your phone?
+benPJ|comfort|Okay..
+none|piss|He pulls out his phone and we start watching some light hearted stuff.||tess
+none|piss|A few minutes in, I wrap my arms around his left arm before lying my head on his shoulder.
+none|piss|We both look at eachother, blushing, but then return to watching the video comfortably.
+none|piss|A few more minutes and I tug on his sleeve.
+benPJ|concerned|What's wrong?
+none|piss|I try to say something...literally anything that says that "I'm in love with you".||tess
+none|piss|...I just freeze up. Does he even like me in that way? Does he have a different type? Does he even want to date?
+none|piss|All these questions flood my head...I can't do it.
+tessPJ|down|...Nevermind.||default
+none|piss|Ben flashes me a comforting smile. It lets me know that he understands what I'm feeling.||tess
+none|piss|...After an hour or so, we both start to fall asleep.
+none|piss|...
+none|piss|The next morning, we both sit up tired from our alarm.|tessRoom
+tessPJ|down|...Can we um...not bring up last night anymore? I-it's not because of us its just- I just want to forget how shitty my mood was...
+benPJ|comfort|It's okay, I understand.
+none|piss|I kiss his cheek before wrapping my arms around him.||tess
+benPJ|comfort|We've gotta get ready...
+benPJ|oh|Well- Are you sure you want to go to work today?
+tessPJ|comfort|Yeah...I'm gonna be fine.
+benPJ|comfort|Alright, lemme know when you're ready to go.
+none|piss|He kisses the top of my head before leaving to the guest bedroom to change.||tess
+none|piss|Damn...he's really good at making my day...
+none|piss|I try to keep a positive mood for the rest of the day.|black
+none|piss|But I still cannot help but remind myself of what I did...
+none|piss|...I don't know how I'm gonna tell Ben or if I'm gonna tell him at all...
+none|piss|...
+none|piss|I feel really stupid for not making anymore moves earlier this morning.
+none|piss|...
+none|piss|...I want to confess to him tommorow.
+none|piss|...I want to tell him why I want to spend the rest of my life with him.
+none|piss|It's just...what if...
+none|piss|...I avoid letting my anxiety talk instead of me thinking of rational decisions.
+none|piss|I just need to keep saying; The worst he can say is "No".

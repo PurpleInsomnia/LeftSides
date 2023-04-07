@@ -1,154 +1,220 @@
 {
 	"dialogue": [
 		{
-			"expression": "trolling",
-			"text": "Piece of cake.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "troll",
+			"text": "Piece of cake."
 		},
 		{
-			"expression": "trolling",
-			"text": "(I'm so glad I didn't fuck up..)",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "(I'm so glad I didn't fuck up..)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "Am I considered to be ''worthy'' or whatever it was?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Am I considered to be ''worthy'' or whatever it was?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "...You Will Regret This one day boy...",
-			"boxState": "normal",
+			"text": "...You Will Regret This one day boy..."
+		},
+		{
 			"speed": 0.05,
-			"portrait": "dad"
-		},
-		{
-			"expression": "question",
-			"text": "What the hell does that mean?",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "question",
+			"text": "What the hell does that mean?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
 			"expression": "no",
-			"text": "*Invisibility Noises*",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "*Invisibility Noises*"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "Bro didn't even answer.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Bro didn't even answer."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "...Well....",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"text": "...Well...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "laughing",
-			"text": "NOW I can confidently say that its official!",
+			"text": "NOW I can confidently say that its official!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "normal",
+			"expression": "happy",
+			"text": "Hell yeah!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "happy",
-			"text": "Hell yeah!",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
 			"expression": "stop-being-cute",
-			"text": "H-hey...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "H-hey..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "Yeah?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Yeah?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "Um...Halloween is in a few days and um....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Um...Halloween is in a few days and um...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cute-blushing",
-			"text": "W-would you like to go out trick or treating?...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "W-would you like to go out trick or treating?..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "scared",
-			"text": "I-I mean if you feel like you're too old we could do something else...",
-			"boxState": "normal",
+			"text": "I-I mean if you feel like you're too old we could do something else..."
+		},
+		{
 			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "happy",
-			"text": "Of course I will go with you! We've been doing it every year since we were ten!",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Of course I will go with you! We've been doing it every year since we were ten!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "sus",
-			"text": "You can also come over to watch a scary movie before we go out if you want to.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "You can also come over to watch a scary movie before we go out if you want to."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "But I don't like scary movies....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "But I don't like scary movies...."
 		},
 		{
-			"expression": "trolling",
-			"text": "Well, I shall protect you from the scary stuff.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "troll",
+			"text": "Well, I shall protect you from the scary stuff."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cute-blushing",
-			"text": "Okay...as long as you don't tease me TOO MUCH for getting scared...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Okay...as long as you don't tease me TOO MUCH for getting scared..."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "You have my word."
+			"text": "You probably have my word."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -156,6 +222,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
@@ -163,13 +232,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "tired",
 			"text": "But I'm kinda behind on school work...."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cringe",
@@ -177,13 +252,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "say-what",
+			"expression": "happy",
 			"text": "I can stay over for an episode of a TV show or something.."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cute-blushing",
@@ -191,6 +272,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",

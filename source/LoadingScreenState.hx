@@ -38,6 +38,11 @@ class LoadingScreenState extends MusicBeatState
 
 	var done:Bool = false;
 
+	/**
+	 * Used mostly for week 8. But you can use this too.
+	 */
+	public static var folderDirectory:String = "";
+
 	override function create()
 	{
 		#if MODS_ALLOWED
@@ -49,20 +54,30 @@ class LoadingScreenState extends MusicBeatState
 		DiscordClient.changePresence("Loading", null);
 		#end
 
+		PlayStateMeta.setFile(PlayState.SONG.song);
+
 		files = ["..."];
 
 		done = false;
 
 		FlxG.sound.music.stop();
+		FlxG.sound.playMusic(Paths.music("loading"));
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-		var screen:FlxSprite = new FlxSprite().loadGraphic(Paths.image("loading/loadingScreen"));
+		folderDirectory = PlayStateMeta.dataFile.loadingDirectory;
+		var fullPath:String = "";
+		if (folderDirectory != "")
+		{
+			fullPath = folderDirectory + "/";
+		}
+
+		var screen:FlxSprite = new FlxSprite().loadGraphic(Paths.image("loading/" + fullPath + "loadingScreen"));
 		add(screen);
 
 		var random:Int = FlxG.random.int(0, 6);
-		var tip:FlxSprite = new FlxSprite(-1280, 0).loadGraphic(Paths.image("loading/tips/" + random));
+		var tip:FlxSprite = new FlxSprite(-1280, 0).loadGraphic(Paths.image("loading/" + fullPath + "tips/" + random));
 		add(tip);
 
 		peepeepoopoo = new LoadingSpr();
@@ -75,24 +90,35 @@ class LoadingScreenState extends MusicBeatState
 
 		FlxTween.tween(tip, {x: 0}, 1.5, {ease: FlxEase.sineOut});
 
+		#if sys
 		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
-			getStuff();
+			if (ClientPrefs.precacheCharacters)
+			{
+				CoolUtil.pcCharacters();
+			}
 		});
+		#end
 
 		new FlxTimer().start(4, function(tmr:FlxTimer)
 		{
-			done = true;
-			LoadingState.loadAndSwitchState(new PlayState());
+			if (!done)
+			{
+				done = true;
+				LoadingState.loadAndSwitchState(new PlayState());
+				FlxG.sound.music.stop();
+			}
 		});
 	}
 	
 	override function update(elapsed:Float)
 	{
 		
-		if (FlxG.keys.justPressed.SPACE)
+		if (FlxG.keys.justPressed.SPACE && !done)
 		{
+			done = true;
 			LoadingState.loadAndSwitchState(new PlayState());
+			FlxG.sound.music.stop();
 		}
 		peepeepoopoo.angle += 90 * elapsed;
 		if (done)
@@ -100,69 +126,6 @@ class LoadingScreenState extends MusicBeatState
 			statusText.text = 'Done!';
 		}
 		super.update(elapsed);
-	}
-
-	function getStuff()
-	{
-		/*
-		for (file in FileSystem.readDirectory('assets/songs/' + Paths.formatToSongPath(PlayState.SONG.song) + "/"))
-		{
-			files.push(file);
-		}
-		for (file in FileSystem.readDirectory('assets/shared/images/'))
-		{
-			if (!FileSystem.isDirectory(file))
-			{
-				files.push(file);
-			}
-			else
-			{
-				for (file2 in FileSystem.readDirectory("assets/shared/images/" + file + "/"))
-				{
-					files.push(file2);
-				}
-			}
-		}
-		for (file in FileSystem.readDirectory('mods/images/'))
-		{
-			if (!FileSystem.isDirectory(file))
-			{
-				files.push(file);
-			}
-		}
-		for (file in FileSystem.readDirectory('assets/shared/sounds/'))
-		{
-			if (!FileSystem.isDirectory(file))
-			{
-				files.push(file);
-			}
-		}
-		for (file in FileSystem.readDirectory('mods/sounds/'))
-		{
-			if (!FileSystem.isDirectory(file))
-			{
-				files.push(file);
-			}
-		}
-		for (i in 1...files.length)
-		{
-			if (files[i].endsWith("png"))
-			{
-				var newBitmap:BitmapData = BitmapData.fromFile(files[i]);
-			}
-			if (files[i].endsWith("ogg"))
-			{
-				var sound:FlxSound = new FlxSound().loadEmbedded(files[i]);
-			}
-			if (files[i].endsWith("xml") || files[i].endsWith("txt"))
-			{
-				var txt:Array<String> = CoolUtil.coolTextFile(files[i]);
-			}
-		}
-		*/
-		LimeAssets.loadLibrary(Paths.getModFile("images").replace("mods/", ""));
-		LimeAssets.loadLibrary("shared");
-		files = LimeAssets.list(null);
 	}
 }
 

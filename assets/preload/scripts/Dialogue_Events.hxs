@@ -1,0 +1,26 @@
+/*
+This script controlls ALL the dialogue events.
+Paste this in your DLC or you can make a lua script too. But if you know haxe and want some organization, paste it.
+*/
+function onNextDialogue(count)
+{
+    if (blushTween != null)
+    {
+        blushTween.cancel();
+        blushTween = null;
+    }
+}
+
+var blushTween:FlxTween = null;
+function onDialogueEventTrigger(event)
+{
+    var check:String = event.toLowerCase();
+    switch(check)
+    {
+        case "blushing":
+            blushTween = FlxTween.tween(lePlayState.curDialogueBox.char, {y: lePlayState.curDialogueBox.char.y + 20}, 1, 0.67, {ease: FlxEase.sineOut, onComplete: function(twn:FlxTween)
+            {
+                blushTween = null;
+            }});
+    }
+}

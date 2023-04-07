@@ -38,6 +38,9 @@ function onCreate()
 	setProperty('bottomBoppers.visible', false);
 
 	dialogueBg('black');
+
+	setProperty("preventPCChange", true);
+	setProperty("pauseCharacter", "dad");
 end
 
 function onCountdownTick(counter)
@@ -54,4 +57,16 @@ function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
 		startDialogue('dialogue', 'no-music');
 	end
+end
+
+function opponentNoteHit(id, type, data, sus)
+	if altSection then
+		setProperty("pauseCharacter", "mom");
+	else
+		setProperty("pauseCharacter", "dad");
+	end
+end
+
+function onStartCountdown()
+	return Function_Continue;
 end

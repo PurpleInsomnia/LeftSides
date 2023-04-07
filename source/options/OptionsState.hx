@@ -31,7 +31,7 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', "System", 'Customize', 'Save Files', "Gamejolt"];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', "System", 'Customize', "Useless Options", 'Save Files', "Gamejolt"];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -52,6 +52,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.SysSettingsSubState());
 			case 'Customize':
 				LoadingState.loadAndSwitchState(new CustomizeState());
+			case "Useless Options":
+				openSubState(new options.UselessSubState());
 			case 'Save Files':
 				FlxG.sound.music.stop();
 				MusicBeatState.switchState(new SaveFileMenu());
@@ -75,12 +77,12 @@ class OptionsState extends MusicBeatState
 		DiscordClient.changePresence("Options Menu", null);
 		#end
 
-		var size:Float = 0.6;
+		var size:Float = 0.25;
 
 		if (playstate)
 		{
-			options = ["Note Colors", "Controls", "Graphics", "Visuals and UI", "Gameplay", "System", "Customize"];
-			size = 0.9;
+			options = ["Note Colors", "Controls", "Graphics", "Visuals and UI", "Gameplay", "System", "Customize", "Useless Options"];
+			size = 0.8;
 		}
 
 		FlxG.sound.music.stop();
@@ -107,15 +109,16 @@ class OptionsState extends MusicBeatState
 		for (i in 0...options.length)
 		{
 			var optionText:Alphabet = new Alphabet(0, 0, options[i], true, false, size);
-			optionText.screenCenter();
-			optionText.y += (80 * (i - (options.length / 2))) + 50;
+			optionText.x = 25;
+			optionText.forceX = optionText.x;
+			var newY:Float = 80;
+			if (size != 0.8)
+			{
+				newY = 80 - (80 * size);
+			}
+			optionText.y += Std.int(newY * i);
 			grpOptions.add(optionText);
 		}
-
-		selectorLeft = new Alphabet(0, 0, '>', true, false);
-		add(selectorLeft);
-		selectorRight = new Alphabet(0, 0, '<', true, false);
-		add(selectorRight);
 
 		changeSelection();
 		ClientPrefs.saveSettings();
@@ -176,10 +179,6 @@ class OptionsState extends MusicBeatState
 			item.alpha = 0.6;
 			if (item.targetY == 0) {
 				item.alpha = 1;
-				selectorLeft.x = item.x - 63;
-				selectorLeft.y = item.y;
-				selectorRight.x = item.x + item.width + 15;
-				selectorRight.y = item.y;
 			}
 		}
 		FlxG.sound.play(Paths.sound('scrollMenu'));

@@ -2,6 +2,9 @@
 	"dialogue": [
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -9,13 +12,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "bruh",
 			"text": "And then you have to that thing you do on long car rides when you get sore.."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "guilt",
@@ -23,6 +32,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -30,6 +42,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "sus",
@@ -37,6 +52,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "default",
@@ -44,6 +62,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "sus",
@@ -51,6 +72,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
@@ -58,6 +82,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -65,6 +92,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
@@ -72,6 +102,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "blush",
@@ -79,6 +112,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "confused",
@@ -86,6 +122,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cute-blushing",
@@ -93,6 +132,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "laughing",
@@ -100,13 +142,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "trolling",
+			"expression": "troll",
 			"text": "William Byers."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "look",
@@ -114,6 +162,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cringe",
@@ -121,6 +172,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "question",
@@ -128,6 +182,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cringe",
@@ -135,6 +192,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -142,6 +202,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
@@ -149,6 +212,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -156,6 +222,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",

@@ -1,91 +1,130 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "Before we do ANOTHER round, Imma just say this;",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "sleepy",
-			"text": "I'm cold, tired and hungry. My goddamn voice hurts from that dope solo I did at the end.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "happy",
-			"text": "Also, I want bread sticks.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"speed": 0.085,
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "sleepy",
-			"text": "It never ends"
-		},
-		{
-			"expression": "default",
-			"text": "Imma keep it real with you cheif.\\nI don't really want my daughter dating you.",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "I think your goddamn 19 year old daughter can decide that for herself.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Ok, lemme elaborate;\\nI don't want my daughter to date a human.",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "What a fucking chicanery.\\nI know for a FACT that my girlfriend is human.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "happy",
-			"text": "Right babe?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "...I need to tell you something..",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "...s-so...\\nmy um.... parents..are demons.....",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "....Therefore making me a demon as well....",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.09
+			"text": "Before we do ANOTHER round, Imma just say this;"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sleepy",
+			"text": "I'm cold, tired and hungry. My goddamn voice hurts from that dope solo I did at the end."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Also, I want bread sticks."
+		},
+		{
+			"speed": 0.085,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "tired",
+			"text": "It never ends"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Imma keep it real with you cheif.\\nI don't really want my daughter dating you."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I think your goddamn 19 year old daughter can decide that for herself."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Ok, lemme elaborate;\\nI don't want my daughter to date a human."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "What fucking chicanery.\\nI know for a FACT that my girlfriend is human."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Right babe?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "...I need to tell you something.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "...s-so...\\nmy um.... parents..are demons....."
+		},
+		{
+			"speed": 0.09,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "....Therefore making me a demon as well...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
@@ -93,80 +132,113 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
 			"text": "M-mabye it was just my anxiety telling me that but...."
 		},
 		{
-			"expression": "what-is-this-emotion",
-			"text": "Babe...\\nThats actually fucking awesome!",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "ass",
+			"text": "Babe...\\nThats actually fucking awesome!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "what-is-this-emotion",
+			"expression": "ass",
 			"text": "Honestly, how could I EVER hate you because of that?"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "what-is-this-emotion",
+			"expression": "ass",
 			"text": "I fucking LOVE you either way."
 		},
 		{
-			"expression": "angy",
-			"text": "Ok still not changing my mind.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "flirt",
-			"text": "Human = Bad.",
 			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "Fuck you!\\nI may not have a shit ton of money or a\\nmansion..",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "challenge",
-			"text": "But I do have one cool, swag, epic and quality trait; I treat your daughter the way she WANTS to be treated.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"expression": "anger",
+			"text": "Ok still not changing my mind."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
 			"boxState": "normal",
-			"expression": "talk",
+			"expression": "flert",
+			"text": "Human = Bad."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Fuck you!\\nI may not have a shit ton of money or a\\nmansion.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "But I do have one cool, swag, epic and quality trait; I treat your daughter the way she WANTS to be treated."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "default",
 			"text": "Not good enough.\\nTess, dump this man right now."
 		},
 		{
-			"expression": "hmph",
-			"text": "Nah I'm good.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Nah I'm good."
 		},
 		{
-			"expression": "flirt",
-			"text": "Then he shall PERISH!",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "flert",
+			"text": "Then he shall PERISH!"
 		}
 	]
 }

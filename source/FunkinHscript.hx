@@ -44,6 +44,7 @@ import openfl.filters.ColorMatrixFilter;
 import openfl.filters.ShaderFilter;
 import sys.FileSystem;
 import sys.io.File;
+import FunkinLua;
 
 using StringTools;
 // ogmo bs
@@ -267,6 +268,7 @@ class FunkinHscript
 		
 		hscriptVars.set('inGameOver', false);
 		hscriptVars.set('mustHitSection', false);
+		hscriptVars.set('altSection', false);
 		hscriptVars.set('botPlay', PlayState.cpuControlled);
 
 		for (i in 0...4) {
@@ -401,7 +403,6 @@ class PlayStateHscript
         exp.set("GridBackdrop", GridBackdrop);
 		exp.set("Backdrop", Backdrop);
         exp.set("Highscore", Highscore);
-        exp.set("DiscordClient", DiscordClient);
         exp.set("Paths", Paths);
 		exp.set("Song", Song);
 		exp.set("HealthIcon", HealthIcon);
@@ -409,6 +410,13 @@ class PlayStateHscript
 		exp.set("WeekData", WeekData);
 		exp.set("TextFile", TextFile);
 		exp.set("FileOpener", FileOpener);
+		#if DISCORD
+		exp.set("DiscordClient", DiscordClient);
+		#end
+
+		exp.set("ModchartSprite", ModchartSprite);
+		exp.set("ModchartText", ModchartText);
+		exp.set("LuaButton", LuaButton);
 
 		// note shit.
 		exp.set("Note", Note);
@@ -454,6 +462,9 @@ class PlayStateHscript
 		exp.set("TV", TV);
 		exp.set("VCR", VCR);
 		exp.set("PixelateShader", PixelateShader);
+		exp.set("ChromaticAberation", ChromaticAberation);
+		exp.set("CustomShader", hxshaders.FlxRuntimeShader);
+		exp.set("FlxShaderToy", hxshaders.FlxShaderToy);
 
 		// lol backend shit.
 		exp.set("Internet", InternetAPI);

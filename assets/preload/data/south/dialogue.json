@@ -1,102 +1,144 @@
 {
 	"dialogue": [
 		{
-			"expression": "what",
-			"text": "Oh cool, I just pulled a really cool f-",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "hmph",
-			"text": "...ahem...",
-			"boxState": "normal",
-			"speed": 0.035,
-			"portrait": "gf"
-		},
-		{
-			"expression": "cringe",
-			"text": "....antastic solo...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "what",
+			"text": "Oh cool, I just pulled a really cool f-"
+		},
+		{
+			"speed": 0.035,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "...ahem..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "....antastic solo..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "tired",
 			"text": "(...sorry babe....)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
 			"expression": "pump-worried",
-			"text": "I told you that he would beat us!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"text": "I told you that he would beat us!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
 			"expression": "skid-default",
-			"text": "But he's so COOL!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"text": "But he's so COOL!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "How am I cool? (I ask after whispering Tess an apology for almost swearing infront of children..)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "How am I cool? (I ask after whispering Tess an apology for almost swearing infront of children..)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
 			"expression": "pump-point",
-			"text": "The way you would just freestyle during our song!\\nIt's amazing!!!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"text": "The way you would just freestyle during our song!\\nIt's amazing!!!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "While my voice hurts from goin' a little too high, I am thankful that it sounded cool.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "While my voice hurts from goin' a little too high, I am thankful that it sounded cool."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "Now that last cool swag tune...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Now that last cool swag tune..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
 			"expression": "pump-undertale",
-			"text": "Yes! and with this one, we will surely kick your butt!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "spookeez"
+			"text": "Yes! and with this one, we will surely kick your butt!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "Do your worst, children.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Do your worst, children."
 		},
 		{
-			"expression": "hmph",
-			"text": "(He looks REALLY tired..... I don't want him to over-do himself but...)",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "cute-blushing",
-			"text": "(Those kids were right, the way he freestyles is pretty cute. Guess one more couldn't hurt...)",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "(He looks REALLY tired..... I don't want him to over-do himself but...)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "(Those kids were right, the way he freestyles is pretty cute. Guess one more couldn't hurt...)"
 		}
 	]
 }

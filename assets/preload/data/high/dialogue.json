@@ -1,130 +1,184 @@
 {
 	"dialogue": [
 		{
-			"expression": "happy",
-			"text": "7.8, too much water and too many HMs.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "flert",
-			"text": "(Who was that joke for????)",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "flert",
-			"text": "Your skills are pretty mediocre.\\nLike, how can my daughter find that cute?\\nI know for a fact that she has standards..",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "Because I don't fucking flail my body around why doing the funny poses..",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "Like, are you trying to fall off the car or something?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "what",
-			"text": "Umm. Actually, its a Limo....",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "confused",
-			"text": "Imma 'bout to react with a fucking nerd emoji.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "7.8, too much water and too many HMs."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "flert",
+			"text": "(Who was that joke for????)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "flert",
+			"text": "Your skills are pretty mediocre.\\nLike, how can my daughter find that cute?\\nI know for a fact that she has standards.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Because I don't fucking flail my body around why doing the funny poses.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Like, are you trying to fall off the car or something?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "Anyways.\\nCan I go back to cuddling with your daughter\\nnow?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Umm. Actually, its a Limo...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Imma 'bout to react with a fucking nerd emoji."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Anyways.\\nCan I go back to cuddling with your daughter\\nnow?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "Thats kinda our thing....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "cute-blushing",
-			"text": "Wait.\\nYou mean like ''Cuddle-Cuddle'' or\\n''Cuddle~''?",
-			"boxState": "normal",
-			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "thud",
-			"text": "Why is that important?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Thats kinda our thing...."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
 			"boxState": "normal",
-			"expression": "talk",
+			"expression": "default",
+			"text": "Wait.\\nYou mean like ''Cuddle-Cuddle'' or\\n''Cuddle~''?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "the-rock",
+			"text": "Why is that important?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "default",
 			"text": "You know why."
 		},
 		{
-			"expression": "cringe",
-			"text": "I don't think we use the word ''cuddle'' like that....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "I don't think we use the word ''cuddle'' like that...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "Agreed. Cuddle means cuddle, nothing more.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Agreed. Cuddle means cuddle, nothing more."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": "Ok, SOMETIMES it can turn in that direction.\\nBut still, you're still cuddling to BEGIN with...",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Ok, SOMETIMES it can turn in that direction.\\nBut still, you're still cuddling to BEGIN with..."
 		},
 		{
-			"expression": "talk",
-			"text": "Another round. we have a long drive ahead of us.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
-			"speed": 0.05
-		},
-		{
-			"expression": "sleepy",
-			"text": "But I don't want to...",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"expression": "default",
+			"text": "Another round. we have a long drive ahead of us."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "tired",
+			"text": "But I don't want to..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": ""
 		}
 	]
 }

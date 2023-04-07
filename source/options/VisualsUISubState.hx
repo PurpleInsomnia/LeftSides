@@ -47,6 +47,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool',
 			false);
 		addOption(option);
+
+		var option:Option = new Option("Limited HUD",
+			"Like hide HUD, but the health bar, icons and score text are visible too.\nNote: A certain event will not trigger if this is on.",
+			"limitedHud",
+			"bool",
+			"false");
+		addOption(option);
 		
 		var option:Option = new Option('Hide Time Bar',
 			"If unchecked, A bar will show how much\nTime there is left in a song",
@@ -54,6 +61,16 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool',
 			'false');
 		addOption(option);
+
+		// FUCK YOU!
+		/*
+		var option:Option = new Option("Bloom Shaders",
+			"If checked, glows appear around characters, stages & notes that give\nthe mod a prettier look",
+			"bloom",
+			"bool",
+			"true");
+		addOption(option);
+		*/
 
 		var option:Option = new Option("Time Bar Colour",
 			"What colours the time bar should be",

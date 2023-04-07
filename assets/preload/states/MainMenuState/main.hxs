@@ -1,0 +1,41 @@
+// script showcasing the Menu Editing capabilities with Hscript by making the menu have a camera zoom.
+function onCreate()
+{
+    coolBeatTimer();
+}
+
+var glow:FlxSprite = null;
+function onCreatePost()
+{
+    glow = new FlxSprite();
+    glow.loadGraphic(Paths.image("bgGLOW"));
+    glow.alpha = 0;
+    glow.scrollFactor.set(0, 0);
+    lePlayState.behindGroup.add(glow);
+}
+
+function coolBeatTimer()
+{
+    new FlxTimer().start(MainMenuState.coolBeat, function(tmr:FlxTimer)
+    {
+        if (ClientPrefs.camZooms)
+        {
+            FlxG.camera.zoom = 1.015;
+        }
+        glow.alpha = 1;
+        FlxTween.tween(glow, {alpha: 0}, (MainMenuState.coolBeat / 2));
+        coolBeatTimer();
+    });
+}
+
+function onUpdate(elapsed)
+{
+    if (FlxG.camera.zoom > 1)
+    {
+        FlxG.camera.zoom -= 0.001;
+    }
+    if (FlxG.camera.zoom < 1)
+    {
+        FlxG.camera.zoom = 1;
+    }
+}

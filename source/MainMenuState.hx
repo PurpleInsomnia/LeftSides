@@ -75,13 +75,16 @@ class MainMenuState extends MusicBeatState
 
 	var thingTyped:Bool = false;
 
-	public static var coolBeat:Int = 0;
+	public static var coolBeat:Float = 0;
+	public static var daBeat:Int = 0;
 
 	public static var saveFileName:String;
 
 	var customStates:Array<String> = ['noState'];
 
 	var splashText:FlxText;
+
+	public var behindGroup:FlxTypedGroup<Dynamic>;
 
 	override function create()
 	{
@@ -90,6 +93,8 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		WeekData.loadTheFirstEnabledMod();
+
+		daBeat = 0;
 
 		var check:Bool = StateManager.check("main-menu");
 		var blackOverlay:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
@@ -131,6 +136,9 @@ class MainMenuState extends MusicBeatState
 		bg.blend = BlendMode.DARKEN;
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+		behindGroup = new FlxTypedGroup<Dynamic>();
+		add(behindGroup);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
@@ -208,32 +216,28 @@ class MainMenuState extends MusicBeatState
 		buttonGroup = new FlxTypedGroup<FlxButton>();
 		add(buttonGroup);
 
-		var dlcButton:FlxButton = new FlxButton(150 + 370, 720 - 150, null, dlcPress);
-		dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
-		buttonGroup.add(dlcButton);
-
-		var waButton:FlxButton = new FlxButton(300 + 370, dlcButton.y, null, clickWarn);
+		var waButton:FlxButton = new FlxButton(300 + 370, 720 - 150, null, clickWarn);
 		waButton.loadGraphic(Paths.image('warningButton'), true, 150, 150);
 		buttonGroup.add(waButton);
 
 		if (ClientPrefs.week8Done || ClientPrefs.devMode)
 		{
-			var vButton:FlxButton = new FlxButton(450 + 370, dlcButton.y, null, voidThing);
+			var vButton:FlxButton = new FlxButton(450 + 370, 720 - 150, null, voidThing);
 			vButton.loadGraphic(Paths.image('theVoidButton'), true, 150, 150);
 			buttonGroup.add(vButton);
 		}
 		else
 		{
-			var vButton:FlxButton = new FlxButton(450 + 370, dlcButton.y, null, lockedVoid);
+			var vButton:FlxButton = new FlxButton(450 + 370, 720 - 150, null, lockedVoid);
 			vButton.loadGraphic(Paths.image('lockedButton'), true, 150, 150);
 			buttonGroup.add(vButton);
 		}
 
-		var arcButton:FlxButton = new FlxButton(600 + 370, dlcButton.y, null, sideClick);
+		var arcButton:FlxButton = new FlxButton(600 + 370, 720 - 150, null, sideClick);
 		arcButton.loadGraphic(Paths.image('sideButton'), true, 150, 150);
 		buttonGroup.add(arcButton);
 
-		var soundTr:FlxButton = new FlxButton(750 + 370, dlcButton.y, '', soundtrack);
+		var soundTr:FlxButton = new FlxButton(750 + 370, 720 - 150, '', soundtrack);
 		soundTr.loadGraphic(Paths.image('stButton'), true, 150, 150);
 		buttonGroup.add(soundTr);
 
@@ -276,14 +280,39 @@ class MainMenuState extends MusicBeatState
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story "Talking"', 2, 1]);
 		}
+		if (Highscore.getWeekScore("week3", 1) > 0 && SideStorySelectState.storyList[3][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Party Skippers"', 3, 1]);
+		}
+		if (Highscore.getWeekScore("week5", 1) > 0 && SideStorySelectState.storyList[4][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Happy"', 4, 1]);
+		}
+		if (!ClientPrefs.unlockedRestless && SideStorySelectState.storyList[5][2] != 1)
+		{
+			ClientPrefs.unlockedRestless = true;
+			ClientPrefs.saveSettings();
+			unlocks.push(["SideStorySelectState", 'The Side Story "Restless"', 5, 1]);
+		}
+		if (Highscore.getWeekScore("week7", 1) > 0 && SideStorySelectState.storyList[6][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Bump In"', 6, 1]);
+		}
 		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
 		{
 			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
+		}
+		if (ClientPrefs.completedSideStories.get("happy") && !ClientPrefs.unlockedArchives)
+		{
+			ClientPrefs.unlockedArchives = true;
+			ClientPrefs.saveSettings();
+			unlocks.push(["Huh?", "The Archives. (Located in 'The Monster's Lair' near the 'Terminal'.)"]);
 		}
 
 		if (unlocks.length > 0 && unlocks[0] != null)
 		{
 			trace("Unlocking Somethin");
+			add(blackOverlay);
 			MusicBeatState.switchState(new UnlockState(unlocks));
 		}
 
@@ -506,22 +535,6 @@ class MainMenuState extends MusicBeatState
 		}
 	}
 
-	function arcade()
-	{
-		if (!selectedSomethin)
-		{
-			selectedSomethin = true;
-			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new SplashState());
-		}
-	}
-
-	function lockedArcade()
-	{
-		persistentUpdate = false;
-		openSubState(new LockedArcadeSubstate());
-	}
-
 	function soundtrack()
 	{
 		if (!selectedSomethin)
@@ -575,6 +588,8 @@ class MainMenuState extends MusicBeatState
 
 	public static function coolBeatHit()
 	{
+		daBeat++;
+		MusicBeatState.callOnHscripts("menuBeat", [daBeat]);
 		menuCharSprs[curSelected].animation.play('idle');
 		new FlxTimer().start(coolBeat, function(tmr:FlxTimer)
 		{

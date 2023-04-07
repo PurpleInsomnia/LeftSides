@@ -364,7 +364,8 @@ class DoodlesState extends MusicBeatState
 
 	function getFanArtTxt()
     {
-		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/fanArtList.txt");
+		#if ALLOW_GITHUB
+		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/" + GithubShit.GF.doodlesLink);
 			
 		http.onData = function (data:String)
 		{
@@ -383,11 +384,13 @@ class DoodlesState extends MusicBeatState
 		}
 			
 		http.request();
+		#end
     }
 
 	function getDesc()
 	{
-		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/fanArt/lol.txt");
+		#if ALLOW_GITHUB
+		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/" + GithubShit.GF.doodlesDescLink);
 			
 		http.onData = function (data:String)
 		{
@@ -404,13 +407,15 @@ class DoodlesState extends MusicBeatState
 		}
 			
 		http.request();
+		#end
 	}
 
 	public static function loadAllFanArt()
 	{
+		#if ALLOW_GITHUB
 		var read:Array<String> = [];
 
-		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/fanArtList.txt");
+		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/" + GithubShit.GF.doodlesLink);
 			
 		http.onData = function (data:String)
 		{
@@ -443,5 +448,6 @@ class DoodlesState extends MusicBeatState
 		}
 			
 		http.request();
+		#end
 	}
 }

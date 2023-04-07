@@ -28,7 +28,11 @@ class Main extends Sprite
 	public static function main():Void
 	{
 		// maybe...?
-		DoodlesState.loadAllFanArt();
+		GithubShit.load(function()
+		{
+			DoodlesState.loadAllFanArt();
+			CommunitySong.loadSongs();
+		});
 		Lib.current.addChild(new Main());
 	}
 
@@ -78,6 +82,11 @@ class Main extends Sprite
 		#end
 
 		Paths.getModFolders();
+
+		// putting this here because I want to for some reason.
+		@:privateAccess
+		MusicBeatState.currentStateName = "TitleScreenState";
+
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile

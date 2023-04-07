@@ -297,6 +297,53 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
         return returnable;
     }
 
+    public static function setData(tag:String, value:String, user:Bool = true):Map<String, String>
+    {
+        var returnable:Map<String, String>;
+        if (tag == "points")
+        {
+            GJApi.setData(tag, Std.string(ClientPrefs.points + Std.parseInt(value)), user, function(data:Map<String,String>)
+            {
+                trace("set value: " + tag + " to: "+ Std.string(ClientPrefs.points + Std.parseInt(value)));
+                if (tag == "points")
+                {
+                    Main.gjToastManager.createToast(Paths.getLibraryPath("shop/images/icon.png"), "Added " + value + " points to your shop credits!", "pointsAdd");
+                }
+                returnable = data;
+            });
+        }
+        else
+        {
+            GJApi.setData(tag, value, user, function(data:Map<String,String>)
+            {
+                trace("set value: " + tag + " to: "+ value);
+                returnable = data;
+            });
+        }
+        return returnable;
+    }
+
+    public static function alert(type:String, val:Dynamic)
+    {
+        switch(type)
+        {
+            case "points":
+                Main.gjToastManager.createToast(GameJoltInfo.imagePath, "Added " + val + " points to your shop credits!", "", "addPoints");
+        }
+    }
+
+    public static function fetchData(tag:String, ?user:Bool = true):Map<String, String>
+    {
+        var returnable:Map<String, String>;
+        GJApi.fetchData(tag, user, function(data:Map<String,String>)
+        {
+            returnable = data;
+            // I think I actually need this shit here :skull:
+            return returnable;
+        });
+        return returnable;
+    }
+
     /**
      * Inline function to start the session. Shouldn't be used out of GameJoltAPI
      * Starts the session
@@ -661,6 +708,7 @@ class GJToastManager extends Sprite
         if (!playTime.active)
             return;
 
+        /*
         var elapsedSec = playTime.elapsedTime / 1000;
         if (elapsedSec < ENTER_TIME)
         {
@@ -711,6 +759,19 @@ class GJToastManager extends Sprite
                     }
                 });
             }
+        }
+        */
+        for (i in 0...numChildren)
+        {
+            var child = getChildAt(i);
+            FlxTween.cancelTweensOf(child);
+            FlxTween.tween(child, {y: (i + 1) * -child.height}, LEAVE_TIME, {ease: FlxEase.quadOut,
+                onComplete: function(tween:FlxTween)
+                {
+                    cast(child, Toast).removeChildren();
+                    removeChild(child);
+                }
+            });
         }
     }
 

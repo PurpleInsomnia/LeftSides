@@ -11,3 +11,5 @@ gamejoltMenu
 lair
 void
 title
+monstersShop
+theArchivesNeverLie

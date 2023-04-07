@@ -103,7 +103,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			optionText.targetY = i;
 			grpOptions.add(optionText);
 
-			if(optionsArray[i].type == 'bool') {
+			if(optionsArray[i].type == 'bool' || optionsArray[i].type == 'useless') {
 				var checkbox:CheckboxThingie = new CheckboxThingie(optionText.x - 105, optionText.y, optionsArray[i].getValue() == true);
 				checkbox.sprTracker = optionText;
 				checkbox.ID = i;
@@ -157,7 +157,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(nextAccept <= 0)
 		{
 			var usesCheckbox = true;
-			if(curOption.type != 'bool')
+			if(curOption.type != 'bool' && curOption.type != 'useless')
 			{
 				usesCheckbox = false;
 			}
@@ -249,7 +249,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				{
 					var leOption:Option = optionsArray[i];
 					leOption.setValue(leOption.defaultValue);
-					if(leOption.type != 'bool')
+					if(leOption.type != 'bool' && leOption.type != "useless")
 					{
 						if(leOption.type == 'string')
 						{

@@ -1,5 +1,6 @@
 package;
 
+import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
@@ -53,6 +54,7 @@ class SideStorySelectState extends MusicBeatState
 	public static var gradient2:FlxSprite;
 
 	public static var nameTxt:FlxText;
+	public static var counterTxt:FlxText;
 
 	override function create()
 	{
@@ -68,19 +70,34 @@ class SideStorySelectState extends MusicBeatState
 		curDirect = "";
 		getCustomStories();
 
-		toRead = [storyList[0], storyList[1], storyList[2]];
+		toRead = [storyList[0], storyList[1], storyList[2], storyList[3], storyList[4], storyList[5], storyList[6], storyList[7]];
 		if (customStories != [])
 		{
+			var unlocked:Array<String> = [];
+			for (i in 0...storyList.length)
+			{
+				if (storyList[i][2] != 0)
+				{
+					unlocked.push("true");
+				}
+				else
+				{
+					unlocked.push("false");
+				}
+			}
 			for (i in 0...customStories.length)
 			{
-				if ((storyList[0][2] != 0 && storyList[1][2] != 0 && storyList[2][2] != 0) || ClientPrefs.devMode)
+				if (!unlocked.contains("false") || ClientPrefs.devMode)
 				{
 					toRead.push(customStories[i]);
 				}
 			}
 		}
 
-		FlxG.sound.playMusic(Paths.music("storyTeller"), 1, true);
+		if (!FlxG.sound.music.playing)
+		{
+			FlxG.sound.playMusic(Paths.music("storyTeller"), 1, true);
+		}
 
 		camFollow = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
 		camFollow.screenCenter();
@@ -132,9 +149,6 @@ class SideStorySelectState extends MusicBeatState
 			}
 		}
 
-		trace(amountUnlocked);
-		trace("goofy ahh bug");
-
 		canPress = true;
 
 		if (amountUnlocked == 0)
@@ -161,10 +175,41 @@ class SideStorySelectState extends MusicBeatState
 			nameTxt.scrollFactor.set(0, 0);
 			add(nameTxt);
 
+			counterTxt = new FlxText(0, 25 + Std.int(nameTxt.height), FlxG.width, "", 32);
+			counterTxt.setFormat(Paths.font("eras.ttf"), 42, 0xFFFFFFFF, CENTER, FlxTextBorderStyle.OUTLINE, 0xFF000000);
+			counterTxt.screenCenter(X);
+			counterTxt.scrollFactor.set(0, 0);
+			add(counterTxt);
+
 			changeStory(0);
 		}
 
-		trace("goofy ahh bug");
+		var theW:FlxButton = new FlxButton(0, 0, "", function()
+		{
+			ClientPrefs.inventory[1][1] = ClientPrefs.inventory[1][1] - 1;
+			ClientPrefs.saveSettings();
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			var unlocked:Bool = false;
+			for (i in 0...storyList.length)
+			{
+				if (storyList[i][2] == 0 && !unlocked)
+				{
+					storyList[i][2] = 1;
+					save();
+					MusicBeatState.switchState(new SideStorySelectState());
+					unlocked = true;
+				}
+			}
+		});
+		// Idk why I put that in shop :skull:
+		theW.loadGraphic("assets/shop/images/unlock.png", true, 150, 150);
+		theW.scrollFactor.set(0, 0);
+		theW.screenCenter();
+		theW.y = 720 - 150;
+		if (ClientPrefs.inventory[1][1] > 0 && amountUnlocked != storyList.length)
+		{
+			add(theW);
+		}
 
 		super.create();
 	}
@@ -191,13 +236,32 @@ class SideStorySelectState extends MusicBeatState
 					var name:String = realList[curSelected][1];
 					trace(Paths.getModFile("side-stories/data/" + name + "/dialogue.txt"));
 					var file:Array<String> = [];
+					var checkPath:String = "";
+					var modCheck:Bool = false;
 					if (Paths.currentModDirectory == "")
+					{
 						file = CoolUtil.coolTextFile("assets/side-stories/data/" + name + "/dialogue.txt");
+						checkPath = "assets/side-stories/data/" + name + "/";
+					}
 					else
+					{
 						file = CoolUtil.coolTextFile(Paths.getModFile("side-stories/data/" + name + "/dialogue.txt"));
+						checkPath = Paths.getModFile("side-stories/data/" + name + "/");
+						modCheck = true;
+					}
 
 					FlxG.sound.music.stop();
-					MusicBeatState.switchState(new SideStoryState(file, name, Paths.currentModDirectory));
+					if (FileSystem.exists(checkPath + "warning.png"))
+					{
+						MusicBeatState.switchState(new SideStoryWarnState(checkPath, modCheck, function()
+						{
+							MusicBeatState.switchState(new SideStoryState(file, name, Paths.currentModDirectory));
+						}));
+					}
+					else
+					{
+						MusicBeatState.switchState(new SideStoryState(file, name, Paths.currentModDirectory));
+					}
 				}
 				nameTxt.screenCenter(X);
 			}
@@ -240,6 +304,7 @@ class SideStorySelectState extends MusicBeatState
 		camTween = FlxTween.tween(camFollow, {x: camX[curSelected]}, 0.5, {ease: FlxEase.sineInOut});
 
 		nameTxt.text = realList[curSelected][0];
+		counterTxt.text = "(STORY:" + Std.string(curSelected + 1) + "/" + Std.string(realList.length) + ")";
 
 		if (customStories != [])
 		{
@@ -269,13 +334,25 @@ class SideStorySelectState extends MusicBeatState
 		if (FlxG.save.data.storyList != null)
 		{
 			storyList = FlxG.save.data.storyList;
-			if (storyList.length > 3)
+			if (storyList[3] == null)
 			{
-				storyList = [
-					["Halloween", "halloween", 0, "0xFFFF8400", "0xFF000000", "0xFFCFCFCF"],
-					["Saturday", "saturday", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"],
-					["Talking", "talking", 0, "0x7F9D00FF", "0x7FFD00FF", "0xFF7F7F7F"]
-				];
+				storyList.push(["Party Skippers", "party-skip", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[4] == null)
+			{
+				storyList.push(["Actually Happy", "happy", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[5] == null)
+			{
+				storyList.push(["Restless", "restless", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[6] == null)
+			{
+				storyList.push(["Bump In", "bump", 0, "0xFF9D00FF", "0xFF7D0077", "0xFF3F3F3F"]);
+			}
+			if (storyList[7] == null)
+			{
+				storyList[7] = ["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"];
 			}
 		}
 	}
@@ -337,4 +414,50 @@ class SideStorySelectState extends MusicBeatState
 			}
 		}
 	}
+}
+
+class SideStoryWarnState extends MusicBeatState
+{
+	var callback:Void->Void = null;
+	var path:String = "";
+	var mods:Bool = false;
+
+	public function new(path:String, mods:Bool, callback:Void->Void)
+	{
+		super();
+
+		this.path = path;
+		this.mods = mods;
+		this.callback = callback;
+	}
+
+	override function create()
+	{
+		var cool:FlxSprite = new FlxSprite();
+		if (mods)
+		{
+			cool.loadGraphic(Paths.funnyFlxGraphic(path.replace("mods/", "") + "warning.png"));
+		}
+		else
+		{
+			cool.loadGraphic(path + "warning.png");
+		}
+		cool.alpha = 0;
+		add(cool);
+		FlxTween.tween(cool, {alpha: 1}, 1);
+
+		super.create();
+	}
+
+	var canPress:Bool = true;
+	override function update(elapsed:Float)
+	{
+		if (controls.ACCEPT && canPress)
+		{
+			canPress = false;
+			callback();
+		}
+		super.update(elapsed);
+	}
+
 }

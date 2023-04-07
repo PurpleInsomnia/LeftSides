@@ -31,7 +31,8 @@ class DoodlesConceptState extends MusicBeatState
 		'pico:music',
 		'dad:music',
 		"haunter:image",
-		"frostbite:music"
+		"frostbite:music",
+		"tess_spooky:image"
 	];
 
 	var descs:Array<String> = [
@@ -43,7 +44,8 @@ class DoodlesConceptState extends MusicBeatState
 		'Unused dialogue theme for Pico\n(Press Enter To Play)',
 		'Unused dialogue theme for Daddy Dearest\n(Press Enter To Play)',
 		"Left Sides Lullaby icon concept for Safety Lullaby (staring Haunter :D)",
-		'Instrumental for a Left Sides remix of "Frostbite"\nThe song would instead be called "Third Degree"\n(Press Enter To Play)'
+		'Instrumental for a Left Sides remix of "Frostbite"\nThe song would instead be called "Third Degree"\n(Press Enter To Play)',
+		"Concept art for a redesign of Tess' costume in week 2."
 	];
 
 	var spriteGroup:FlxTypedGroup<FlxSprite>;
@@ -85,6 +87,11 @@ class DoodlesConceptState extends MusicBeatState
 			if (split[1] == 'image')
 			{
 				var sprite:FlxSprite = new FlxSprite().loadGraphic(Paths.concepts('images/' + split[0] + '.png'));
+				if (sprite.width == 1280 && sprite.height == 720)
+				{
+					sprite.setGraphicSize(640, 360);
+				}
+				sprite.updateHitbox();
 				sprite.screenCenter();
 				sprite.x += 1280 * i;
 				camStuff.push(camFollow.x + (1280 * i));

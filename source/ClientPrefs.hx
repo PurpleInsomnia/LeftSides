@@ -66,6 +66,25 @@ class ClientPrefs {
 	public static var customSplashFile:String = "";
 	public static var timeColour:String = "Gradient & Black";
 	public static var strumHealth:Bool = true;
+	public static var bloom:Bool = true;
+	public static var precacheCharacters:Bool = false;
+	public static var limitedHud:Bool = false;
+	public static var unlockedRestless:Bool = false;
+	public static var lowQualitySongs:Bool = false;
+	public static var lostGame:Bool = false;
+	public static var unlockedArchives:Bool = false;
+	public static var unlockedVisit:Bool = false;
+
+	public static var clickedClub:Bool = false;
+	public static var fcTutorial:Bool = false;
+
+	#if (haxe >= "4.0.0")
+	public static var completedSideStories:Map<String, Bool> = new Map();
+	public static var useless:Map<String, Bool> = new Map();
+	#else
+	public static var completedSideStories:Map<String, Bool> = new Map<String, Bool>();
+	public static var useless:Map<String, Bool> = new Map<String, Bool>();
+	#end
 
 
 	#if (haxe >= "4.0.0")
@@ -77,6 +96,15 @@ class ClientPrefs {
 	#end
 
 	public static var gameJoltLogin:Array<String> = ["", ""];
+
+	// shop shit :/
+	public static var points:Int = 0;
+	/**
+	 * KEY: Tag, Amount.
+	 */
+	public static var inventory:Array<Array<Dynamic>> = [];
+	public static var lastShop:Bool = false;
+	public static var itemUnlocks:Array<Bool> = [false, false];
 
 	public static var defaultKeys:Array<FlxKey> = [
 		A, LEFT,			//Note Left
@@ -174,6 +202,21 @@ class ClientPrefs {
 		FlxG.save.data.timeColour = timeColour;
 		FlxG.save.data.strumHealth = strumHealth;
 		FlxG.save.data.customPrefs = CustomClientPrefs.saved;
+		FlxG.save.data.bloom = bloom;
+		FlxG.save.data.limitedHud = limitedHud;
+		FlxG.save.data.unlockedRestless = unlockedRestless;
+		FlxG.save.data.lowQualitySongs = lowQualitySongs;
+		FlxG.save.data.lostGame = lostGame;
+		FlxG.save.data.unlockedArchives = unlockedArchives;
+		FlxG.save.data.unlockedVisit = unlockedVisit;
+
+		FlxG.save.data.clickedClub = clickedClub;
+		FlxG.save.data.fcTutorial = fcTutorial;
+		FlxG.save.data.customChars = PlayState.customChars;
+		FlxG.save.data.curSelectedChars = CoolUtil.curSelectedChars;
+
+		// precache
+		FlxG.save.data.precacheCharacters = precacheCharacters;
 
 		// states bullshit :)
 		FlxG.save.data.preferedHL = HealthLossState.preferedHL;
@@ -181,6 +224,14 @@ class ClientPrefs {
 		FlxG.save.data.luaSave = luaSave;
 
 		FlxG.save.data.gameJoltLogin = gameJoltLogin;
+
+		FlxG.save.data.points = points;
+		FlxG.save.data.inventory = inventory;
+		FlxG.save.data.lastShop = lastShop;
+		FlxG.save.data.itemUnlocks = itemUnlocks;
+
+		FlxG.save.data.completedSideStories = completedSideStories;
+		FlxG.save.data.useless = useless;
 
 		FlxG.save.flush();
 
@@ -369,10 +420,134 @@ class ClientPrefs {
 		{
 			HealthLossState.preferedHL = FlxG.save.data.preferedHL;
 		}
+		if (FlxG.save.data.bloom != null)
+		{
+			bloom = FlxG.save.data.bloom;
+		}
+		if (FlxG.save.data.precacheCharacters != null)
+		{
+			precacheCharacters = FlxG.save.data.precacheCharacters;
+		}
+		if (FlxG.save.data.limitedHud != null)
+		{
+			limitedHud = FlxG.save.data.limitedHud;
+		}
+		if (FlxG.save.data.lastShop != null)
+		{
+			lastShop = FlxG.save.data.lastShop;
+		}
+		if (FlxG.save.data.unlockedRestless != null)
+		{
+			unlockedRestless = FlxG.save.data.unlockedRestless;
+		}
+		if (FlxG.save.data.lowQualitySongs != null)
+		{
+			lowQualitySongs = FlxG.save.data.lowQualitySongs;
+		}
+
+		if (FlxG.save.data.clickedClub != null)
+		{
+			clickedClub = FlxG.save.data.clickedClub;
+		}
+		if (FlxG.save.data.fcTutorial != null)
+		{
+			fcTutorial = FlxG.save.data.fcTutorial;
+		}
+		if (FlxG.save.data.customChars != null)
+		{
+			PlayState.customChars = FlxG.save.data.customChars;
+		}
+		if (FlxG.save.data.curSelectedChars != null)
+		{
+			CoolUtil.curSelectedChars = FlxG.save.data.curSelectedChars;
+		}
+		if (FlxG.save.data.lostGame != null)
+		{
+			lostGame = FlxG.save.data.lostGame;
+		}
+		if (FlxG.save.data.unlockedArchives != null)
+		{
+			unlockedArchives = FlxG.save.data.unlockedArchives;
+		}
+		if (FlxG.save.data.unlockedVisit != null)
+		{
+			unlockedVisit = FlxG.save.data.unlockedVisit;
+		}
+
+
+		if (FlxG.save.data.completedSideStories != null)
+		{
+			completedSideStories = FlxG.save.data.completedSideStories;
+		}
+		else
+		{
+			completedSideStories = [
+				"halloween" => {
+					false;
+				},
+				"saturday" => {
+					false;
+				},
+				"talking" => {
+					false;
+				},
+				"visit" => {
+					false;
+				},
+				"party-skip" => {
+					false;
+				},
+				"happy" => {
+					false;
+				},
+				"restless" => {
+					false;
+				},
+				"bump" => {
+					false;
+				},
+				"that-day" => {
+					false;
+				}
+			];
+		}
+		if (FlxG.save.data.useless != null)
+		{
+			useless = FlxG.save.data.useless;
+			uselessCheck();
+		}
+		else
+		{
+			uselessCheck();
+		}
 
 		if (FlxG.save.data.gameJoltLogin != null)
 		{
 			gameJoltLogin = FlxG.save.data.gameJoltLogin;
+		}
+
+		if (FlxG.save.data.points != null)
+		{
+			points = FlxG.save.data.points;
+			if (points < 0)
+			{
+				points = 0;
+				saveSettings();
+			}
+		}
+		if (FlxG.save.data.inventory != null)
+		{
+			inventory = FlxG.save.data.inventory;
+			checkInventory();
+		}
+		else
+		{
+			checkInventory();
+		}
+
+		if (FlxG.save.data.itemUnlocks != null)
+		{
+			itemUnlocks = FlxG.save.data.itemUnlocks;
 		}
 
 
@@ -457,5 +632,37 @@ class ClientPrefs {
 		loadPrefs();
 		TitleScreenState.initialized = false;
 		MusicBeatState.switchState(new TitleScreenState());
+	}
+
+	public static function checkInventory()
+	{
+		if (inventory[0] == null)
+		{
+			inventory.push(["week-key", 0]);
+		}
+		if (inventory[1] == null)
+		{
+			inventory.push(["story-key", 0]);
+		}
+		if (inventory[2] == null)
+		{
+			inventory.push(["secret-key", 0]);
+		}
+		if (inventory[3] == null)
+		{
+			inventory.push(["costume-box", 0]);
+		}
+	}
+
+	public static function uselessCheck()
+	{
+		if (!useless.exists("wishDownscroll"))
+		{
+			useless.set("wishDownscroll", false);
+		}
+		if (!useless.exists("flipChar"))
+		{
+			useless.set("flipChar", false);
+		}
 	}
 }

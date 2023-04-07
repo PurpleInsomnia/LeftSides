@@ -3,7 +3,7 @@ function onCreate()
 		if getPropertyFromGroup('unspawnNotes', i, 'noteType') == 'Ring' then
 			setPropertyFromGroup('unspawnNotes', i, 'texture', 'ring');
 			setPropertyFromGroup('unspawnNotes', i, 'noAnimation', true);
-			-- setPropertyFromGroup('unspawnNotes', i, 'noteSplashTexture', 'ringSplashes');
+			setPropertyFromGroup('unspawnNotes', i, 'noteSplashTexture', 'ringSplashes');
 
 			if getPropertyFromGroup('unspawnNotes', i, 'mustPress') then --Doesn't let Dad/Opponent notes get ignored
 				setPropertyFromGroup('unspawnNotes', i, 'ignoreNote', true); --Miss has no penalties
@@ -13,9 +13,9 @@ function onCreate()
 
 	setProperty('isRing', true);
 
-	setProperty('isSonicLua', true);
-
 	precacheSound('ringCollect');
+	precacheSound('ringLoss');
+	precacheSharedImage("ringSplashes");
 end
 
 

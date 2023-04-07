@@ -12,8 +12,6 @@ function onCreatePost()
 	makeWiggleEffect("sprite|iconP2", 'dreamy', 10, 10, 0.005);
 	created = true;
 
-	precacheImage("endless/hit it");
-
 	setProperty("gameoverscript", "endless");
 end
 
@@ -37,7 +35,7 @@ end
 
 function onBeatHit()
 	if curBeat % 4 == 0 then
-		setProperty("redVG.alpha", 0);
-		doTweenAlpha("redBGTween", "redVG", 1, getProperty("crochet") / 2000, "linear:backward");
+		setProperty("redVG.alpha", 1);
+		doTweenAlpha("redBGTween", "redVG", 0, getProperty("crochet") / 2000, "linear");
 	end
 end

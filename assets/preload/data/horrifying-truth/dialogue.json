@@ -1,112 +1,160 @@
 {
 	"dialogue": [
 		{
-			"expression": "talk",
-			"text": "It was so sad to see you knocked out while I was [RIPPING] your [GIRLFRIEND'S] head off...",
-			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "traumatized",
-			"text": "",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "break",
-			"text": "Look at you.\\nSmall, [HELPLESS] and [PATHETIC]...\\nCrying over death.",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "default",
-			"text": "You are such a waste of space on this shitty planet, y'know that right?",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "traumatized",
-			"text": "",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "default",
-			"text": "Chin up you fucking burden.\\nI'm going to give you a choice...",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "mock",
-			"text": "1. You give me your body so I can [G9$2VV?!JFD**&$].",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "default",
-			"text": "2. You do your stupid singing shit, and freeze to death right after I eat HER head.",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "mock",
-			"text": "Which one will it be?",
-			"boxState": "normal",
-			"speed": 0.06,
-			"portrait": "freeme"
-		},
-		{
-			"expression": "undertale",
-			"text": "Y-you're dead.\\nYOU'RE SO FUCKING DEAD!!!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "undertale",
-			"text": "YOU DESERVE TO EXPERIENCE YOUR\\nHORRIFYING DEATH OVER AND OVER\\nAGAIN!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "undertale",
-			"text": "YOU DESTROYED MY GIRLFRIEND, MY ONLY WILL TO LIVE!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "undertale",
-			"text": "I WILL MAKE SURE TO DESTROY EVERY SINGLE FUCKING ATOM OF YOUR UGLY BODY!!!!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
-			"expression": "mock",
-			"text": "Thats where you're wrong my friend...",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "freeme",
-			"speed": 0.06
-		},
-		{
-			"expression": "mock",
-			"text": "She was ALREADY destroyed before I made her pretty... ALL the [PAIN] she had to go through the span of ELEVEN YEARS....",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "freeme"
+			"expression": "default",
+			"text": "It was so sad to see you knocked out while I was [RIPPING] your [GIRLFRIEND'S] head off..."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "traumatized",
+			"text": ""
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "Look at you.\\nSmall, [HELPLESS] and [PATHETIC]...\\nCrying over death."
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "You are such a waste of space on this shitty planet, y'know that right?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "traumatized",
+			"text": ""
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Chin up you fucking burden.\\nI'm going to give you a choice..."
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "1. You give me your body so I can [G9$2VV?!JFD**&$]."
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "2. You do your stupid singing shit, and freeze to death right after I eat HER head."
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "insane",
+			"text": "Which one will it be?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "undertale",
+			"text": "Y-you're dead.\\nYOU'RE SO FUCKING DEAD!!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "undertale",
+			"text": "YOU DESERVE TO EXPERIENCE YOUR\\nHORRIFYING DEATH OVER AND OVER\\nAGAIN!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "undertale",
+			"text": "YOU DESTROYED MY GIRLFRIEND, MY ONLY WILL TO LIVE!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "undertale",
+			"text": "I WILL MAKE SURE TO DESTROY EVERY SINGLE FUCKING ATOM OF YOUR UGLY BODY!!!!"
+		},
+		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "insane",
+			"text": "Thats where you're wrong my friend..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "freeme",
+			"boxState": "normal",
+			"expression": "mock",
+			"text": "She was ALREADY destroyed before I made her pretty... ALL the [PAIN] she had to go through the span of ELEVEN YEARS...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
 			"expression": "angry",
@@ -114,6 +162,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "angry",
 			"expression": "mock",
@@ -121,6 +172,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "angry",
 			"expression": "undertale",
@@ -128,13 +182,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
-			"expression": "talk",
+			"expression": "default",
 			"text": "Too Bad....."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
 			"expression": "mock",
@@ -142,6 +202,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
 			"expression": "talk",
@@ -149,6 +212,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
 			"expression": "mock",
@@ -156,6 +222,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "angry",
 			"expression": "mock",
@@ -163,6 +232,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "normal",
 			"expression": "traumatized",
@@ -170,13 +242,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "normal",
-			"expression": "mock",
+			"expression": "insane",
 			"text": "THE FUNNIEST PART IS THE FACT THAT SHE THINKS THAT EVERYTHING IS HER FAULT SOMEHOW!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "angry",
 			"expression": "undertale",
@@ -184,6 +262,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "angry",
 			"expression": "undertale",
@@ -191,13 +272,19 @@
 		},
 		{
 			"speed": 0.07,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "angry",
-			"expression": "mock",
+			"expression": "insane",
 			"text": "IT'S GOING TO BE SO FUCKING FUNNY WHEN I MAKE YOU EAT HER. "
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "angry",
 			"expression": "default",
@@ -205,17 +292,23 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "freeme",
 			"boxState": "angry",
-			"expression": "mock",
+			"expression": "insane",
 			"text": "I THINK YOU KNOW BY NOW THAT THE HEAD IS MY FAVORITE!!"
 		},
 		{
-			"expression": "angry",
-			"text": "",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "angry",
+			"text": ""
 		}
 	]
 }

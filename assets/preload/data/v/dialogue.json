@@ -1,116 +1,164 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": "Jesus fuck it is so hot in this hot ass fucking place.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Jesus fuck it is so hot in this hot ass fucking place."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "AND WHEN THE HELL DID WE GET\\nDRESSED?!?!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "AND WHEN THE HELL DID WE GET\\nDRESSED?!?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "sus",
-			"text": "(Not complainin tho...)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "(Not complainin tho...)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "I don't know.. But at least we get sometime to relax after all the shit we went through today.....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "I don't know.. But at least we get sometime to relax after all the shit we went through today....."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "I've got a feeling that everything's gonna be okay from now on. ",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "I've got a feeling that everything's gonna be okay from now on. "
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "Q",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dmitri"
+			"text": "Q"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "See babe, we even have that W from the mall here.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "See babe, we even have that W from the mall here."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
 			"expression": "death-stare",
-			"text": "What are you doing here?????????!!11",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dmitri"
+			"text": "What are you doing here?????????!!11"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "Good question.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Good question."
 		},
 		{
-			"expression": "trolling",
-			"text": "I was simply put in this spot.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "troll",
+			"text": "I was simply put in this spot."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "Why are you at the public pool?!!!11111143548592jfdjvbjcbvjxbvjxbcjv\\nThat illeagle and inipropriit!!!!!!1fidjnvnx",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dmitri"
+			"text": "Why are you at the public pool?!!!11111143548592jfdjvbjcbvjxbvjxbcjv\\nThat illeagle and inipropriit!!!!!!1fidjnvnx"
 		},
 		{
-			"expression": "hmph",
-			"text": ".....Because its avalible for the public....\\nto use......",
-			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "gf"
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": ".....Because its avalible for the public....\\nto use......"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
 			"expression": "cry",
-			"text": "Did you know that in world war II a man with a tiny amount of thermite cut through germany's most powerful tank(?) in a matter of seconds? Breaking Bad makes a reference to this before they try to steal methlamine",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dmitri"
+			"text": "Did you know that in world war II a man with a tiny amount of thermite cut through germany's most powerful tank(?) in a matter of seconds? Breaking Bad makes a reference to this before they try to steal methlamine"
 		},
 		{
-			"expression": "guilt",
-			"text": "ok... cool... thanks...",
-			"boxState": "normal",
 			"speed": 0.075,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "guilt",
+			"text": "ok... cool... thanks..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "Now rap.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Now rap."
 		},
 		{
-			"expression": "talk",
-			"text": "May I please have a water?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "dmitri"
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "May I please have a water?"
 		}
 	]
 }

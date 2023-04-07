@@ -24,7 +24,7 @@ typedef ListJson = {
 
 class MonsterLairState extends MusicBeatState
 {
-    var toDo:Array<String> = ["Songs", "Chat", "Terminal", "Sound Test"];
+    var toDo:Array<String> = ["Songs", "Chat", "Terminal", "Shop", "Sound Test"];
 
     var songLists:Array<Array<String>> = [];
 
@@ -42,7 +42,8 @@ class MonsterLairState extends MusicBeatState
         "Are You A Liar?",
         "Do You Have Any Friends?",
         "Do You Have Any Enemys?",
-        "What Do You Want?"
+        "What Do You Want?",
+        "Sound Test?"
     ];
 
     var chatAnswers:Array<String> = [
@@ -55,7 +56,8 @@ class MonsterLairState extends MusicBeatState
         "[NO], I [AM NOT AM NOT AM NOT AM NOT] a liar...I [DO NOT LIE] about [EVERYTHING]...but I am [ALWAYS] [TRUTHFUL]",
         "...[FRIEND]...",
         "[TESS]...[LORD LORD LORD]...lots of [DISGUSTING] creatures that want to [TAKE] [AWAY] what I want...",
-        "[THE UNIVERSE] to [%& *(%@#CT]"
+        "[THE UNIVERSE] to [%& *(%@#CT]",
+        "I have hints I've gathered from this [HELLHOLE]:\n- OLD CD GAME\n- MOD PAGE DESCRIPTION\n...Goodluck " + CoolUtil.username() + " ..."
     ];
 
     var welcomeMessages:Array<String> = [
@@ -115,9 +117,17 @@ class MonsterLairState extends MusicBeatState
             toDo.push("Visit");
         }
 
-        if (ClientPrefs.foundDmitri)
+        if (ClientPrefs.foundDmitri || ClientPrefs.inventory[2][1] > 0)
         {
-            songLists[0].push("V");
+            if (songLists[0][0] == "Remember My Name")
+            {
+                songLists[0].push("V");
+            }
+        }
+
+        if (ClientPrefs.completedSideStories.get("visit"))
+        {
+            termShit.push("Archives");
         }
 
         FlxG.sound.music.stop();
@@ -231,34 +241,10 @@ class MonsterLairState extends MusicBeatState
                             fade();
                             MusicBeatState.switchState(new SoundTestState());
                             return;
-                        case "Curse":
-                            canPress = false;
-
-			                var songLowercase:String = ""; 
-                            songLowercase = Paths.formatToSongPath("Calm Down Song");
-			                var poop:String = 'normal';
-			                #if MODS_ALLOWED
-			                if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
-			                #else
-			                if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
-			                #end
-				                poop = songLowercase;
-			                }
-
-			                PlayState.SONG = Song.loadFromJson(poop, songLowercase);
-			                PlayState.isStoryMode = true;
-			                PlayState.storyDifficulty = 1;
-                            // Lullaby demo :)
-                            PlayState.storyPlaylist = ["Calm Down Song", "Hentur"];
-
-                            // Very imposible week to get to :thumbsup:
-			                PlayState.storyWeek = 50;
-			                PlayState.isVoid = true;
-
-					        FlxG.sound.music.stop();
+                        case "Shop":
+                            FlxG.sound.music.stop();
                             fade();
-
-                            MusicBeatState.switchState(new SideStoryState(CoolUtil.coolTextFile("assets/side-stories/data/calm/dialogue.txt"), "calm", ""));
+                            MusicBeatState.switchState(new ShopState());
                             return;
                     }
                     curSelected = 0;
@@ -325,6 +311,11 @@ class MonsterLairState extends MusicBeatState
 					        MusicBeatState.switchState(new ContentWarningTerminalState());
                         case "All Questions":
                             makeTerminalFile();
+                        case "Archives":
+                            FlxG.sound.music.stop();
+                            changing = true;
+                            canPress = false;
+                            MusicBeatState.switchState(new archive.ArchiveBootState());
                     }
                 }
             }
@@ -470,6 +461,13 @@ class MonsterLairState extends MusicBeatState
         });
     }
 
+    function monsterText(text:String)
+    {
+        FlxG.sound.play(Paths.sound('term/accept'));
+        this.text.resetText(text);
+		this.text.start(0.04, true);
+    }
+
     function reloadWelcomes()
     {
 		FlxG.sound.play(Paths.sound('term/accept'));
@@ -491,6 +489,6 @@ class MonsterLairState extends MusicBeatState
 
 	function makeTerminalFile()
 	{
-		TextFile.newFile("Who is Ben?\nWho is Tess?\nWhat is Monster?\nWhat is Hating Simulator?\nWhat is the Void?\nWhat are you?\nWho are the Dearests?\nWho is the oldest Dearest daughter?\nWhat did Ben do in April?\nWho am I?\nWhat is on Ben's Arm?", "ALL TERMINAL QUESTIONS");
+		TextFile.newFile("Who is Ben?\nWho is Tess?\nWhat is Monster?\nWhat is Hating Simulator?\nWhat is the Void?\nWhat are you?\nWho are the Andersons?\nWho is the oldest Anderson daughter?\nWhat did Ben do in April?\nWho am I?\nWhat is on Ben's Arm?", "ALL TERMINAL QUESTIONS");
 	}
 }

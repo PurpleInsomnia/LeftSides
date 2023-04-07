@@ -1,242 +1,344 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "tired",
-			"text": "(Holly fuck why didn't we get a shopping cart?)",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "tired",
-			"text": "(And Tess has been picking out a gift for me for like twenty minutes now....)",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "vine-boom",
-			"text": "",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Hey! Sorry for making you wait.....",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "You're cool, just as long as you found one of the things on the list I gave you..",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "cute-af",
-			"text": "Selected one at random like you said....",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "anime",
-			"text": "Very Epic.",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "You need anything else here? Or do you wanna get some Pretzels?",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "anime",
-			"text": "Mmmmmmmmmmmmmmmmmmm\\nPretzels.....",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "come-again",
-			"text": "Hey- You uh..... need help carrying that stuff?",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Pft. Nah I got it, but thanks for offering!",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "annoyed",
-			"text": "(I don't got it, I just want to be a gentleman.)",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "cute-af",
-			"text": "Well y'know, You make shopping trips a lot more fun..",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Yeah I feel the same...\\nShopping alone is pretty boring....",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "(Holly fuck why didn't we get a shopping cart?)"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "tired",
+			"text": "(And Tess has been picking out a gift for me for like twenty minutes now....)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "vine-boom",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Hey! Sorry for making you wait....."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "You're cool, just as long as you found one of the things on the list I gave you.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "cute-af",
+			"text": "Selected one at random like you said...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "anime",
+			"text": "Very Epic."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "You need anything else here? Or do you wanna get some Pretzels?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "anime",
+			"text": "Mmmmmmmmmmmmmmmmmmm\\nPretzels....."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "come-again",
+			"text": "Hey- You uh..... need help carrying that stuff?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Pft. Nah I got it, but thanks for offering!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "annoyed",
+			"text": "(I don't got it, I just want to be a gentleman.)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "cute-af",
+			"text": "Well y'know, You make shopping trips a lot more fun.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Yeah I feel the same...\\nShopping alone is pretty boring...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
 			"boxState": "normal",
 			"expression": "cute-af",
 			"text": "Yet another thing we can relate to I guess.."
 		},
 		{
-			"expression": "vine-boom",
-			"text": "Let's just hope nothing stupid happens toda-",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "vine-boom",
+			"text": "Let's just hope nothing stupid happens toda-"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "angry",
 			"expression": "fuck-this",
-			"text": "GIVE ME THE FUCKING CHAIR!!!!!",
-			"boxState": "angry",
-			"portrait": "dad-christmas",
-			"speed": 0.05
+			"text": "GIVE ME THE FUCKING CHAIR!!!!!"
 		},
 		{
-			"expression": "angry",
-			"text": "GODDAMNIT",
-			"boxState": "angry",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "GODDAMNIT"
 		},
 		{
-			"expression": "come-again",
-			"text": "(What the hell is he doing??????)",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Yeah, so there is this dude with fake blonde hair. And he's like really short and stuff.",
 			"boxState": "normal",
+			"expression": "come-again",
+			"text": "(What the hell is he doing??????)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Yeah, so there is this dude with fake blonde hair. And he's like really short and stuff."
 		},
 		{
-			"expression": "angry",
-			"text": "THIS ''DUDE'' NEEDS TO GET DOWN TO THE STUPID ASS CHRISTMAS TREE RIGHT NOW!!!",
-			"boxState": "angry",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
-			"speed": 0.05
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "THIS ''DUDE'' NEEDS TO GET DOWN TO THE STUPID ASS CHRISTMAS TREE RIGHT NOW!!!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "vine-boom",
-			"text": "",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": ""
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "annoyed",
-			"text": "Fine I'm Here.\\nWhat do you want?",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "Fine I'm Here.\\nWhat do you want?"
 		},
 		{
-			"expression": "default",
-			"text": "We want a rematch BOY!",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "We want a rematch BOY!"
 		},
 		{
-			"expression": "default",
-			"text": "Heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\\nwhats upppppppppppppppppppppppppppppppppp\\nits meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "Yeah, I know you are already here.",
 			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "annoyed",
-			"text": "...And put a shirt on or somethin...",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "SHUT THE HELL UP!",
-			"boxState": "angry",
-			"portrait": "dad-christmas",
-			"speed": 0.05
-		},
-		{
 			"expression": "default",
-			"text": "Excuse me, I want to see santa.",
+			"text": "Heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\\nwhats upppppppppppppppppppppppppppppppppp\\nits meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dmitri"
-		},
-		{
 			"expression": "angry",
-			"text": "WHO THE FUCK ARE YOU AND WHY ARE YOU HYPER REALISTIC?!?!",
-			"boxState": "angry",
-			"portrait": "dad-christmas",
-			"speed": 0.05
+			"text": "Yeah, I know you are already here."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
+			"expression": "annoyed",
+			"text": "...And put a shirt on or somethin..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "SHUT THE HELL UP!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dmitri",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Excuse me, I want to see santa."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "WHO THE FUCK ARE YOU AND WHY ARE YOU HYPER REALISTIC?!?!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
 			"boxState": "normal",
 			"expression": "default",
 			"text": "....anyways...."
 		},
 		{
-			"expression": "angry",
-			"text": "You will participate in singing some nice\\nchristmas carols NOW!!!",
-			"boxState": "angry",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
-			"speed": 0.05
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "You will participate in singing some nice\\nchristmas carols NOW!!!"
 		},
 		{
-			"expression": "annoyed",
-			"text": "*Angry Groan*\\nFine.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "annoyed",
+			"text": "*Angry Groan*\\nFine."
 		},
 		{
-			"expression": "nervous",
-			"text": "(Why today of all days....)",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "nervous",
+			"text": "(Why today of all days....)"
 		}
 	]
 }

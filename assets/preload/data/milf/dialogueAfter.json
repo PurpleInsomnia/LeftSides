@@ -1,126 +1,180 @@
 {
 	"dialogue": [
 		{
-			"expression": "angry",
-			"text": "How many times do I have to tell you that Tess is an adult, therefore only SHE should be able to decide who she gets to date?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "How many times do I have to tell you that Tess is an adult, therefore only SHE should be able to decide who she gets to date?"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
 			"text": "And NOT letting her Mother decide for HER?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "STOP TREATING HER LIKE SHES STILL A FUCKING BABY.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "STOP TREATING HER LIKE SHES STILL A FUCKING BABY."
 		},
 		{
-			"expression": "angy",
-			"text": "...\\nHave her. I don't care if she skips her fathers party.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "mom"
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "anger",
+			"text": ".../nHave her. I don't care if she skips her fathers party."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "Wait, that was the ENTIRE point to this?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Wait, that was the ENTIRE point to this?"
 		},
 		{
-			"expression": "angy",
-			"text": "...",
-			"boxState": "normal",
 			"speed": 0.035,
-			"portrait": "mom"
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
 			"expression": "talk",
-			"text": "Yeah :)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "mom"
+			"text": "Yeah :)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
 			"expression": "no",
-			"text": "*dips*",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "*dips*"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "Okay. We got 10 minutes until we get to the goofy bread stick place.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Okay. We got 10 minutes until we get to the goofy bread stick place."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cute-blushing",
-			"text": "Sweet...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Sweet..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "Hey, can I tell you something else?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Hey, can I tell you something else?"
 		},
 		{
-			"expression": "happy",
-			"text": "What's up?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "I've never had bread sticks before....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "happy",
-			"text": "Ha ha ha!",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "What's up?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "I've never had bread sticks before...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Ha ha ha!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": "Wait wha-",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Wait wha-"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "trolling",
-			"text": "",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": ""
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "tired",
 			"text": "Bruh this goofy ass coffee isn't helping at all."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "laughing",
@@ -128,6 +182,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
@@ -135,6 +192,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "big-blush",
@@ -142,6 +202,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cute-blushing",
@@ -149,20 +212,29 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",
 			"text": "Hey..umm..."
 		},
 		{
-			"expression": "cute-blushing",
-			"text": "Do you want to go to the mall sometime next week? I wanna do some christmas shopping with you.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "Do you want to go to the mall sometime next week? I wanna do some christmas shopping with you."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -170,20 +242,29 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "say-what",
 			"text": "...So we have an entire week to spare..."
 		},
 		{
-			"expression": "stop-being-cute",
-			"text": "Mhm....\\nWhat do you um...want to do first?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "Mhm....\\nWhat do you um...want to do first?"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -191,6 +272,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
@@ -198,6 +282,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "stop-being-cute",

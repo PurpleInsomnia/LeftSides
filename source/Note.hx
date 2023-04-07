@@ -69,6 +69,7 @@ class Note extends FlxSprite
 	public var hitCausesMiss:Bool = false;
 
 	public var isGfNote:Bool = false;
+	public var colorSwapAllowed:Bool = true;
 
 	private function set_texture(value:String):String {
 		if(texture != value) {
@@ -116,8 +117,17 @@ class Note extends FlxSprite
 					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
+				case "Bullet Note Grey" | "Bullet Note" | "Ring" | "Freeze Note":
+					colorSwapAllowed = false;
+					// hardcoding in lua notetypes bc fuck you.
 			}
 			noteType = value;
+		}
+		if (!colorSwapAllowed)
+		{
+			colorSwap.hue = 0;
+			colorSwap.saturation = 0;
+			colorSwap.brightness = 0;
 		}
 		noteSplashHue = colorSwap.hue;
 		noteSplashSat = colorSwap.saturation;

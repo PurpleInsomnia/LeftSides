@@ -153,6 +153,13 @@ class CustomState extends MusicBeatState
         trace(val);
     }
 
+	#if LUA_ALLOWED
+	function addLuaScript(scriptPath:String)
+	{
+		return new GlobalLua(scriptPath, this);
+	}
+	#end
+
 	function addScript(scriptPath:String)
 	{
 		scriptArray.push(StateHscript.load(scriptPath, hscriptVars));
@@ -213,6 +220,9 @@ class CustomState extends MusicBeatState
         hscriptVars.set("trace", theTrace);
 		hscriptVars.set("addScript", addScript);
 		hscriptVars.set("removeScript", removeScript);
+		#if LUA_ALLOWED
+		hscriptVars.set("addLuaScript", addLuaScript);
+		#end
 
 		hscriptVars.set("callOnScripts", callOnScripts);
 
@@ -313,7 +323,6 @@ class StateHscript
         exp.set("GridBackdrop", GridBackdrop);
 		exp.set("Backdrop", Backdrop);
         exp.set("Highscore", Highscore);
-        exp.set("DiscordClient", DiscordClient);
         exp.set("Paths", Paths);
 		exp.set("Song", Song);
 		exp.set("HealthIcon", HealthIcon);
@@ -321,6 +330,9 @@ class StateHscript
 		exp.set("WeekData", WeekData);
 		exp.set("TextFile", TextFile);
 		exp.set("FileOpener", FileOpener);
+		#if DISCORD
+		exp.set("DiscordClient", DiscordClient);
+		#end
 
 		// note shit.
 		exp.set("Note", Note);
@@ -366,6 +378,9 @@ class StateHscript
 		exp.set("TV", TV);
 		exp.set("VCR", VCR);
 		exp.set("PixelateShader", PixelateShader);
+		exp.set("ChromaticAberation", ChromaticAberation);
+		exp.set("CustomShader", hxshaders.FlxRuntimeShader);
+		exp.set("FlxShaderToy", hxshaders.FlxShaderToy);
 
 		// lol backend shit.
 		exp.set("Internet", InternetAPI);
@@ -389,6 +404,11 @@ class StateHscript
 		exp.set("OgmoDecalData", DecalData);
 		exp.set("OgmoPoint", Point);
 		*/
+
+		// FUCKING FINALLY LUA SUPPORT YIPPIEEEE
+		#if LUA_ALLOWED
+		exp.set("GlobalLua", GlobalLua);
+		#end
         
 		parser.allowTypes = true;
 		parser.resumeErrors = true;

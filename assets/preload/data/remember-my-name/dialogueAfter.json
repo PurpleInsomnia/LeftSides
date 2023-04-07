@@ -2,6 +2,9 @@
 	"dialogue": [
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "trolling",
@@ -9,6 +12,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -16,6 +22,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
@@ -23,6 +32,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "sus",
@@ -30,6 +42,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "default",
@@ -37,6 +52,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bb",
 			"boxState": "normal",
 			"expression": "jesse two",
@@ -44,20 +62,29 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "bruh",
 			"text": "My name is Tess Dearest, yo."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "bruh",
 			"text": "My boyfriend's name is Ben Warner, yo"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bb",
 			"boxState": "normal",
 			"expression": "walt two",
@@ -65,6 +92,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bb",
 			"boxState": "normal",
 			"expression": "jesse two",
@@ -72,6 +102,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bb",
 			"boxState": "normal",
 			"expression": "walt three",
@@ -79,6 +112,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "angry",
@@ -86,6 +122,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bb",
 			"boxState": "normal",
 			"expression": "jesse",
@@ -93,6 +132,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",

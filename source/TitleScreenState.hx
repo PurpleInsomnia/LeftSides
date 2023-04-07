@@ -1,5 +1,7 @@
 package;
 
+import community.CommunityMenu;
+import editors.ChartingList.ChartingListUtil;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.text.FlxText;
@@ -8,6 +10,7 @@ import flixel.tweens.FlxEase;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
+import flixel.ui.FlxButton;
 import sys.FileSystem;
 import flixel.util.FlxColor;
 import lime.app.Application;
@@ -42,7 +45,8 @@ class TitleScreenState extends MusicBeatState
 
 	var canPress:Bool = true;
 
-	var file:TitleJson;
+	public var file:TitleJson;
+	public var bgspr:Backdrop;
 
     override function create()
     {
@@ -77,16 +81,16 @@ class TitleScreenState extends MusicBeatState
 
 		initialized = true;
 		
-		FlxG.mouse.visible = false;
+		FlxG.mouse.visible = true;
 		
 		FlxG.mouse.load(Paths.image('leftMouse'));
 
-        var spr:Backdrop = new Backdrop("title/bg", 1, 1, "HORIZONTAL", -1);
-		spr.blend = openfl.display.BlendMode.MULTIPLY;
-		spr.alpha = 0;
-        add(spr);
+        bgspr = new Backdrop("title/bg", 1, 1, "HORIZONTAL", -1);
+		bgspr.blend = openfl.display.BlendMode.MULTIPLY;
+		bgspr.alpha = 0;
+        add(bgspr);
 
-		FlxTween.tween(spr, {alpha: 1}, 1);
+		FlxTween.tween(bgspr, {alpha: 1}, 1);
 
         var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image("title/logo"));
         add(logo);
@@ -115,13 +119,36 @@ class TitleScreenState extends MusicBeatState
             grp.add(button);
         }
 
+		var ccButton:FlxButton = new FlxButton(0, 0, "", function()
+		{
+			MusicBeatState.switchState(new CommunityMenu());
+		});
+		ccButton.loadGraphic(Paths.image("title/cc"), true, 150, 150);
+		ccButton.x = 1280 - 150;
+		ccButton.y = 720 - 150;
+		add(ccButton); 
+
+		var dlcButton:FlxButton = new FlxButton(1280 - 300, 720 - 150, null, function()
+		{
+			MusicBeatState.switchState(new DlcMenuState());
+		});
+		dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
+		add(dlcButton);
+
+		var dlcTutButton:FlxButton = new FlxButton(1280 - 600, 720 - 150, null, function()
+		{
+			MusicBeatState.switchState(new DlcTutorials());
+		});
+		dlcTutButton.loadGraphic(Paths.image("tutButton"), true, 300, 150);
+		add(dlcTutButton);
+
 		callbacks = [startGame, loadSave, credits, extras];
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, MainMenuState.saveFileName, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v3.0", 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v4.0", 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -138,7 +165,7 @@ class TitleScreenState extends MusicBeatState
 
 		Conductor.changeBPM(102);
 
-		MainMenuState.coolBeat = Std.int(Conductor.crochet / 1000);
+		MainMenuState.coolBeat = Conductor.crochet / 1000;
 
 		changeSelection(0);
 
@@ -219,6 +246,7 @@ class TitleScreenState extends MusicBeatState
 
     function startGame()
     {
+		FlxG.mouse.visible = false;
         doGoofyAhhTweens(curSelected);
         new FlxTimer().start(1, function(tmr:FlxTimer)
         {
@@ -239,6 +267,7 @@ class TitleScreenState extends MusicBeatState
 
 	function loadSave()
 	{
+		FlxG.mouse.visible = false;
 		doGoofyAhhTweens(curSelected);
 		SaveFileMenu.title = true;
         new FlxTimer().start(1, function(tmr:FlxTimer)
@@ -266,6 +295,7 @@ class TitleScreenState extends MusicBeatState
 
 	function extras()
 	{
+		FlxG.mouse.visible = false;
 		if (!file.stopMusic)
 		{
             FlxG.sound.music.stop();
@@ -323,8 +353,6 @@ class TitleScreenState extends MusicBeatState
 					SaveSuff = '_7';
 			}
 
-			trace("uhhhhhh");
-
 			if (curSaveFile == 0)
 			{
 				FlxG.save.bind('funkin', 'ninjamuffin99');
@@ -366,6 +394,8 @@ class TitleScreenState extends MusicBeatState
 			GameJoltAPI.connect();
 			GameJoltAPI.authDaUser(ClientPrefs.gameJoltLogin[0], ClientPrefs.gameJoltLogin[1], false);
 
+			ChartingListUtil.loadShit();
+
 			#if desktop
 			if (ClientPrefs.discord)
 			{
@@ -380,6 +410,8 @@ class TitleScreenState extends MusicBeatState
 			{
 				MusicBeatState.switchState(new VeryFunnyWarning());
 			}
+
+			CommunitySong.loadAssets();
         }
     }
 }

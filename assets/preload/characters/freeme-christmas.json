@@ -1,0 +1,126 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				220
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "Idle",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				220
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "Idle",
+			"indices": [
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33
+			]
+		},
+		{
+			"offsets": [
+				30,
+				66
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				99,
+				144
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				10,
+				128
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				10,
+				412
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Monster Christmas",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "freeme",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		20
+	],
+	"camera_position": [
+		110,
+		-100
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -47,6 +47,8 @@ class Alphabet extends FlxSpriteGroup
 
 	public var typingSpeed:Float = 0.05;
 
+	public var graphicSuff:String = "";
+
 	public static var textSound:String = 'dialogue';
 
 	/*
@@ -55,11 +57,12 @@ class Alphabet extends FlxSpriteGroup
 	}
 	*/
 
-	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false, ?typingSpeed:Float = 0.05, ?textSize:Float = 1)
+	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false, ?typingSpeed:Float = 0.05, ?textSize:Float = 1, ?graphicSuff:String = "")
 	{
 		super(x, y);
 		forceX = Math.NEGATIVE_INFINITY;
 		this.textSize = textSize;
+		this.graphicSuff = graphicSuff;
 
 		// 4th wall breaks and swear filter (coming soon?!?) ;)
 
@@ -156,7 +159,7 @@ class Alphabet extends FlxSpriteGroup
 				consecutiveSpaces = 0;
 
 				// var letter:AlphaCharacter = new AlphaCharacter(30 * loopNum, 0, textSize);
-				var letter:AlphaCharacter = new AlphaCharacter(xPos, 0, textSize);
+				var letter:AlphaCharacter = new AlphaCharacter(xPos, 0, textSize, graphicSuff);
 
 				if (isBold)
 				{
@@ -285,7 +288,7 @@ class Alphabet extends FlxSpriteGroup
 				consecutiveSpaces = 0;
 
 				// var letter:AlphaCharacter = new AlphaCharacter(30 * loopNum, 0, textSize);
-				var letter:AlphaCharacter = new AlphaCharacter(xPos, 55 * yMulti, textSize);
+				var letter:AlphaCharacter = new AlphaCharacter(xPos, 55 * yMulti, textSize, graphicSuff);
 				letter.row = curRow;
 				if (isBold)
 				{
@@ -419,10 +422,10 @@ class AlphaCharacter extends FlxSprite
 
 	private var textSize:Float = 1;
 
-	public function new(x:Float, y:Float, textSize:Float)
+	public function new(x:Float, y:Float, textSize:Float, graphicSuff:String)
 	{
 		super(x, y);
-		var tex = Paths.getSparrowAtlas('alphabet');
+		var tex = Paths.getSparrowAtlas('alphabet' + graphicSuff);
 		frames = tex;
 
 		setGraphicSize(Std.int(width * textSize));

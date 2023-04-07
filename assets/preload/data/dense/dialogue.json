@@ -1,158 +1,188 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "Oh jesus christ.....\\nWhere are we now....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Oh jesus christ.....\\nWhere are we now...."
 		},
 		{
-			"expression": "cringe",
-			"text": "Place seems normal...",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Place seems normal..."
 		},
 		{
-			"expression": "cringe",
-			"text": "Do you smell Pepsi Max or is that just my imagination..?",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "hmm...........\\nYeah, and it's very strong...",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"text": "Do you smell Pepsi Max or is that just my imagination..?"
 		},
 		{
-			"expression": "no",
-			"text": "*Door Opens*",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
 			"boxState": "normal",
+			"expression": "cringe",
+			"text": "hmm...........\\nYeah, and it's very strong..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "no",
+			"text": "*Door Opens*"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "Who goes there?\\nEven though this might be your house!",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Who goes there?\\nEven though this might be your house!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "matto",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "...\\nYou again.",
-			"boxState": "normal",
-			"portrait": "matto",
-			"speed": 0.05
+			"text": "...\\nYou again."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "What?\\nMatto?!\\nThe W rambler who speedruns GTAV?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "What?\\nMatto?!\\nThe W rambler who speedruns GTAV?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": ".....\\nWait what do you mean by, ''You Again''?",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": ".....\\nWait what do you mean by, ''You Again''?"
 		},
 		{
-			"expression": "happy",
-			"text": "I recal a blue haired dwarf trying to ''out rap me''.\\nHe thought that Micheal was in witness protection",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "matto",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I recal a blue haired dwarf trying to ''out rap me''.\\nHe thought that Micheal was in witness protection"
 		},
 		{
 			"expression": "trolling",
 			"text": "I think you are mistaken for an imposter among us.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "default",
 			"text": "I have yellow hair.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "hmph",
 			"text": "Hey...Are we just gonna let that ''blue haired dwarf'' thing slide?",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "happy",
 			"text": "Relax babe it was probably the average V8 (in tha fackin mornin) drinker.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "cringe",
 			"text": "(Okay, now I'm overthinking about the\\npossibility of a confrontation against Ben and that blue dwarf.)",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "challenge",
 			"text": "Ok Matto. Lets spit bars.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "angry",
 			"text": "WHY ARE PEOPLE TRYING TO RAP WITH ME?!?!?",
 			"boxState": "normal",
-			"portrait": "matto",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "matto"
 		},
 		{
 			"expression": "challenge",
 			"text": "Because you're cool.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "happy",
 			"text": "It better not be that song that plays everytime I die.",
 			"boxState": "normal",
-			"portrait": "matto",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "matto"
 		},
 		{
 			"expression": "default",
 			"text": "...Hey...Ben told me about that song...",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "stop-being-cute",
 			"text": "....We listen to it almost every night.",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "talk",
 			"text": "...What...",
 			"boxState": "normal",
-			"portrait": "matto",
-			"speed": 0.225
+			"speed": 0.225,
+			"portrait": "matto"
 		}
 	]
 }

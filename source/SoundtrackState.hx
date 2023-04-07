@@ -246,6 +246,7 @@ class SoundtrackState extends MusicBeatState
 			FlxG.sound.music.stop();
 		if (VocalSound != null)
 			VocalSound.stop();
+			
 		// inst is FlxSound.music?? Idk, but if I try to play 2 sounds simutaneously it just crashes. :/
 		if (curSelected == 0 || curSelected == 1 || curSelected > 3)
 		{
@@ -352,8 +353,14 @@ class SoundtrackState extends MusicBeatState
 		}
 		for (i in 0...toRead.length)
 		{
-			var daTrack:FlxText = new FlxText(20, (52 * i) + 20, toRead[i], 52);
-			daTrack.setFormat(Paths.font('eras.ttf'), 52, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			var textSizeThing:Float = 42;
+			// Idk why, but the default is ten.
+			if (toRead.length > 10)
+			{
+				textSizeThing = 42 - (toRead.length / 2);
+			}
+			var daTrack:FlxText = new FlxText(20, Std.int(textSizeThing * i) + 20, 1280, toRead[i], Std.int(textSizeThing));
+			daTrack.setFormat(Paths.font('eras.ttf'), Std.int(textSizeThing), FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			if (daTrack.y > Std.int(FlxG.height - daTrack.height))
 			{
 				// just using these for longer soundtrack lists *COUGH COUGH* STORY SOUNDTRACK *COUGH COUGH*
@@ -365,9 +372,9 @@ class SoundtrackState extends MusicBeatState
 					num = 0;
 					multNum++;
 				}
-				daTrack.y = (52 * num) + 20;
-				daTrack.x = Std.int(300 * multNum);
-				num ++;
+				daTrack.y = (textSizeThing * num) + 20;
+				daTrack.x = Std.int(100 * multNum);
+				num += 1;
 			}
 			daTrack.ID = i;
 			// daTrack.y += Std.int(daTrack.height + (daTrack.height / 4)) * i;

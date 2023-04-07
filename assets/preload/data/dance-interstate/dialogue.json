@@ -1,32 +1,44 @@
 {
 	"dialogue": [
 		{
-			"expression": "challenge",
-			"text": "Piano took too many reverb drugs.\\nDrums were fresh.\\nPad was okay.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Piano took too many reverb drugs.\\nDrums were fresh.\\nPad was okay."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "7 out of 10",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "7 out of 10"
 		},
 		{
-			"expression": "flert",
-			"text": "Not bad...Now lets pick up the pace!\nUnless if you're ''too tired''...",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "flert",
+			"text": "Not bad...Now lets pick up the pace!\nUnless if you're ''too tired''..."
 		},
 		{
-			"expression": "angry",
-			"text": "*angry mubling about how he wants to cuddle with tess or sum, idk how to translate it*",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "*angry mubling about how he wants to cuddle with tess or sum, idk how to translate it*"
 		}
 	]
 }

@@ -1,0 +1,12 @@
+{
+    "sectionName": "Bently 'Ben' Warner",
+    "chars": [
+        {
+            "name": "Classic Fit",
+            "description": "One of his favorite outfits. Picked during a 'Day Date' with Tess before they started dating",
+            "path": "bf",
+            "songUnlock": "song:tutorial",
+            "lock": "Play the Tutorial"
+        }
+    ]
+}

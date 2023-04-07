@@ -55,7 +55,7 @@ class UnlockState extends MusicBeatState
 
 		label.y = (box.y - label.height) + 20;
 
-		itemTxt = new FlxText(bx + 10, box.y + 40, bx + box.height, "", 24);
+		itemTxt = new FlxText(bx + 10, box.y + 40, (box.width - 20), "", 24);
 		itemTxt.font = Paths.font("eras.ttf");
 		for (i in 0...items.length)
 		{
@@ -102,6 +102,21 @@ class UnlockState extends MusicBeatState
 			if (items[i][0] == "OptionsState")
 			{
 				ClientPrefs.newUnlocked = items[i][2];
+				ClientPrefs.saveSettings();
+			}
+			if (items[i][0] == "NewShop")
+			{
+				ClientPrefs.lastShop = true;
+				ClientPrefs.saveSettings();
+			}
+			if (items[i][0] == "RomHack")
+			{
+				ClientPrefs.itemUnlocks[0] = true;
+				ClientPrefs.saveSettings();
+			}
+			if (items[i][0] == "Depart")
+			{
+				ClientPrefs.itemUnlocks[1] = true;
 				ClientPrefs.saveSettings();
 			}
 		}

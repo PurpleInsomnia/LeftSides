@@ -1,7 +1,9 @@
 local canStrike = true;
 function onCreate()
-	-- fuck seperate sprites. lmfao
-	makeLuaSprite('android', 'spookyBg', -200, -100);
+	makeLuaSprite("sky", "spooky/sky", -1314, -475);
+	addLuaSprite("sky", false);
+
+	makeLuaSprite('android', 'spooky/spookyBG', -200, -100);
 	addLuaSprite('android', false);
 
 	makeLuaSprite('pole', 'week2/spooky/streetpole', -200, -100);
@@ -18,6 +20,25 @@ function onCreate()
 	addLuaSprite('white', true);
 	setObjectCamera('white', 'hud');
 	setProperty('white.alpha', 0);
+
+	if encoreMode then
+		moveNum = 175;
+		moveNumY = 75;
+		setProperty("sky.x", getProperty("sky.x") - moveNum);
+		setProperty("sky.y", getProperty("sky.y") + moveNumY);
+		setProperty("android.x", getProperty("android.x") - moveNum);
+		setProperty("android.y", getProperty("android.y") + moveNumY);
+		setProperty("pole.x", getProperty("pole.x") - moveNum);
+		setProperty("pole.y", getProperty("pole.y") + moveNumY);
+		setProperty("overlay.x", getProperty("overlay.x") - moveNum);
+		setProperty("overlay.y", getProperty("overlay.y") + moveNumY);
+	end
+end
+
+function onCreatePost()
+	if encoreMode then
+		setProperty("dad.y", getProperty("dad.y") - 25);
+	end
 end
 
 function onUpdate(elapsed)

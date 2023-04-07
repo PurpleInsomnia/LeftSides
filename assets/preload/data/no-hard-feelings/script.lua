@@ -1,7 +1,4 @@
 function onCreatePost()
-    addShader("sprite", "boyfriend", "vcr");
-    addShader("sprite", "gf", "vcr");
-
     makeLuaSprite("blackfadething", "black", 0, 0);
     setObjectCamera("blackfadething", "camHUD");
     addLuaSprite("blackfadething", true);

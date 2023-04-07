@@ -1,186 +1,264 @@
 {
 	"dialogue": [
 		{
-			"expression": "wat",
-			"text": "HOW?!\\nHOW IS THAT POSSIBLE?!?!\\nARE YOU CHEATING?!?!",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "hmph",
-			"text": "Cheating.\\nHow can you cheat in a rap battle?",
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"expression": "vine-boom",
+			"text": "HOW?!\\nHOW IS THAT POSSIBLE?!?!\\nARE YOU CHEATING?!?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Cheating.\\nHow can you cheat in a rap battle?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "You gonna let us go now or?....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "You gonna let us go now or?...."
 		},
 		{
-			"expression": "upset",
-			"text": "I'M TIRED OF PLAYING AROUND!!!!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "sad",
-			"text": "...just let us eat man...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "upset",
-			"text": "I Was sent here to KILL you and Now I'm gonna try this time!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"text": "I'M TIRED OF PLAYING AROUND!!!!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sadness-combat",
+			"text": "...just let us eat man..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "I Was sent here to KILL you and Now I'm gonna try this time!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "Probably no bullet in the chamber....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Probably no bullet in the chamber...."
 		},
 		{
-			"expression": "hmph",
-			"text": "Are you that dense?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "hmph",
-			"text": "Just accept that my boyfriend is better than you at most things....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "upset",
-			"text": "SHUT YOUR FUCKING MOUTH BITCH!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "angry",
-			"text": "Ok tough guy.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "challenge",
-			"text": "Shoot me right now.\\nI dare you.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "bruh",
-			"text": "Wait- Are you asking me to shoot you or are you just trying to look cool in front of your girlfriend?",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "challenge",
-			"text": "Probably Both.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "scared",
-			"text": "Ummm....\\nWHAT?!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "scared",
-			"text": "Babe you're going TOO FAR!",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "bruh",
-			"text": "Yeah I was gonna say. Thats kinda pushin the limmits.",
 			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "bruh",
-			"text": "You like.... okay in the head?",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "wat",
-			"text": "!-",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "WHAT THE HELL AM I DOING?!\\nWHY AM I AGREEING WITH THE WEIRD GIRL?!!?",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "Your nerdy bullshit is taking over my fragile mind!!",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
+			"expression": "hmph",
+			"text": "Are you that dense?"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Just accept that my boyfriend is better than you at most things...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "angry",
+			"expression": "upset",
+			"text": "SHUT YOUR FUCKING MOUTH BITCH!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Ok tough guy."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Shoot me right now.\\nI dare you."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "Wait- Are you asking me to shoot you or are you just trying to look cool in front of your girlfriend?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Probably Both."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "Ummm....\\nWHAT?!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "Babe you're going TOO FAR!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "Yeah I was gonna say. Thats kinda pushin the limmits."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "You like.... okay in the head?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "vine-boom",
+			"text": "!-"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "WHAT THE HELL AM I DOING?!\\nWHY AM I AGREEING WITH THE WEIRD GIRL?!!?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "Your nerdy bullshit is taking over my fragile mind!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
 			"text": "-we literally haven't discussed a nerdy topic...\\nyet..."
 		},
 		{
-			"expression": "hmph",
-			"text": "(So what if Ben and I are big fans of Sonic?)",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "angry",
-			"text": "Just DROP IT okay? DO NOT SHOOT ME!",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "gun",
-			"text": "Oh ok.\\nI totally will not shoot you.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "scared",
-			"text": "(That doesn't seem legit....)",
-			"boxState": "normal",
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "(So what if Ben and I are big fans of Sonic?)"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Just DROP IT okay? DO NOT SHOOT ME!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "gun",
+			"text": "Oh ok.\\nI totally will not shoot you."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "(That doesn't seem legit....)"
 		}
 	]
 }

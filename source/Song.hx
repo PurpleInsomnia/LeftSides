@@ -32,6 +32,9 @@ typedef SwagSong =
 
 class Song
 {
+	// for chart editor shit.
+	public static var fileName:String = "";
+
 	public var song:String;
 	public var notes:Array<SwagSection>;
 	public var bpm:Float;
@@ -58,6 +61,7 @@ class Song
 		
 		var formattedFolder:String = Paths.formatToSongPath(folder);
 		var formattedSong:String = Paths.formatToSongPath(jsonInput);
+		fileName = formattedSong;
 		#if MODS_ALLOWED
 		var moddyFile:String = Paths.modsJson(formattedFolder + '/' + formattedSong);
 		if(FileSystem.exists(moddyFile)) {

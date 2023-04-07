@@ -17,6 +17,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 import flixel.tweens.FlxEase;
+import flixel.ui.FlxButton;
 import WeekData;
 
 using StringTools;
@@ -29,7 +30,7 @@ class StoryMenuState extends MusicBeatState
 	// defaults to True
 	public static var weekCompleted:Map<String, Bool> = new Map<String, Bool>();
 
-	var scoreText:FlxText;
+	public var scoreText:FlxText;
 
 	private static var curDifficulty:Int = 1;
 
@@ -38,7 +39,7 @@ class StoryMenuState extends MusicBeatState
 
 	private static var curWeek:Int = 0;
 
-	var txtTracklist:FlxText;
+	public var txtTracklist:FlxText;
 
 	// var coolswag:WeekFile;
 	// dont need it.
@@ -59,6 +60,8 @@ class StoryMenuState extends MusicBeatState
 	var ratingSpr:FlxSprite;
 
 	var curInst:Int = 0;
+
+	var unlockButton:FlxButton;
 
 	override function create()
 	{
@@ -144,32 +147,6 @@ class StoryMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
-
-		var unlocks:Array<Array<Dynamic>> = [];
-
-		// get new unlocks for returning players
-		if (Highscore.getWeekScore("week2", 1) > 0 && SideStorySelectState.storyList[0][2] != 1)
-		{
-			unlocks.push(["SideStorySelectState", 'The Side Story "Halloween"', 0, 1]);
-		}
-		if (Highscore.getScore("Doppelganger", 1) > 0 && SideStorySelectState.storyList[1][2] != 1)
-		{
-			unlocks.push(["SideStorySelectState", 'The Side Story "Saturday"', 1, 1]);
-		}
-		if (Highscore.getWeekScore("week6", 1) > 0 && SideStorySelectState.storyList[2][2] != 1)
-		{
-			unlocks.push(["SideStorySelectState", 'The Side Story "Talking"', 2, 1]);
-		}
-		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
-		{
-			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
-		}
-
-		if (unlocks.length > 0 && unlocks[0] != null)
-		{
-			trace("Unlocking Somethin");
-			MusicBeatState.switchState(new UnlockState(unlocks));
-		}
 
 		for (i in 0...WeekData.weeksList.length)
 		{
@@ -276,7 +253,93 @@ class StoryMenuState extends MusicBeatState
 		add(txtWeekTitle);
 		add(versionShit);
 
+		unlockButton = new FlxButton(0, 0, "", function()
+		{
+			ClientPrefs.inventory[0][1] = ClientPrefs.inventory[0][1] - 1;
+			ClientPrefs.saveSettings();
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			weekCompleted.set(WeekData.weeksList[curWeek - 1], true);
+			FlxG.save.data.weekCompleted = weekCompleted;
+			FlxG.save.flush();
+			MusicBeatState.switchState(new StoryMenuState());
+		});
+		unlockButton.loadGraphic(Paths.image("weekSelect/unlock"), true, 150, 150);
+		unlockButton.screenCenter(X);
+		unlockButton.y = 720 - 150;
+		add(unlockButton);
+
 		changeWeek();
+
+		var unlocks:Array<Array<Dynamic>> = [];
+
+		// get new unlocks for returning players
+		if (Highscore.getWeekScore("week2", 1) > 0 && SideStorySelectState.storyList[0][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Halloween"', 0, 1]);
+		}
+		if (Highscore.getScore("Doppelganger", 1) > 0 && SideStorySelectState.storyList[1][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Saturday"', 1, 1]);
+		}
+		if (Highscore.getWeekScore("week6", 1) > 0 && SideStorySelectState.storyList[2][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Talking"', 2, 1]);
+		}
+		if (Highscore.getWeekScore("week6", 1) > 0 && !ClientPrefs.unlockedVisit)
+		{
+			ClientPrefs.unlockedVisit = true;
+			ClientPrefs.saveSettings();
+			unlocks.push(["Huh?", 'The Side Story: "Visit" (Located in Monster' + "'s" + 'Lair)']);
+		}
+		if (Highscore.getWeekScore("week3", 1) > 0 && SideStorySelectState.storyList[3][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Party Skippers"', 3, 1]);
+		}
+		if (Highscore.getWeekScore("week5", 1) > 0 && SideStorySelectState.storyList[4][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Happy"', 4, 1]);
+		}
+		if (!ClientPrefs.unlockedRestless && SideStorySelectState.storyList[5][2] != 1)
+		{
+			ClientPrefs.unlockedRestless = true;
+			ClientPrefs.saveSettings();
+			unlocks.push(["SideStorySelectState", 'The Side Story "Restless"', 5, 1]);
+		}
+		if (Highscore.getWeekScore("week7", 1) > 0 && SideStorySelectState.storyList[6][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story "Bump In"', 6, 1]);
+		}
+		var checks:Array<Bool> = [];
+		for (key in ClientPrefs.completedSideStories.keys())
+		{
+			if (ClientPrefs.completedSideStories.get(key))
+			{
+				checks.push(true);
+			}
+			else
+			{
+				checks.push(false);
+			}
+		}
+		var canUnlock:Bool = true;
+		for (i in 0...checks.length)
+		{
+			if (canUnlock)
+			{
+				canUnlock = checks[i];
+			}
+		}
+		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
+		{
+			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
+		}
+
+		if (unlocks.length > 0 && unlocks[0] != null)
+		{
+			trace("Unlocking Somethin");
+			MusicBeatState.switchState(new UnlockState(unlocks));
+			add(blackOverlay);
+		}
 
 		if (check)
 		{
@@ -367,6 +430,7 @@ class StoryMenuState extends MusicBeatState
 	{
 		if (!weekIsLocked(curWeek))
 		{
+
 			if (stopspamming == false)
 			{
 				FlxG.sound.play(Paths.sound('confirmStoryMenu'));
@@ -547,7 +611,16 @@ class StoryMenuState extends MusicBeatState
 			}
 		}
 
-		trace("sussy baka?");
+		if (weekIsLocked(curWeek) && ClientPrefs.inventory[0][1] > 0)
+		{
+			FlxG.mouse.visible = true;
+			unlockButton.visible = true;
+		}
+		else
+		{
+			FlxG.mouse.visible = false;
+			unlockButton.visible = false;
+		}
 
 		if (pp.length != 0)
 			updateText(pp);

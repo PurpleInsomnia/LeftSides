@@ -17,6 +17,8 @@ import flixel.util.FlxColor;
 import options.OptionsState;
 import sys.FileSystem;
 
+using StringTools;
+
 class PauseSubState extends MusicBeatSubstate
 {
 	var items:FlxTypedGroup<Alphabet>;
@@ -42,7 +44,7 @@ class PauseSubState extends MusicBeatSubstate
 
 	var canPress:Bool = true;
 
-	public function new(x:Float, y:Float)
+	public function new(x:Float, y:Float, pc:String)
 	{
 		super();
 		menuItems = menuItemsOG;
@@ -85,10 +87,36 @@ class PauseSubState extends MusicBeatSubstate
 		FlxTween.tween(dadGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
 		FlxTween.tween(bfGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
 
-		var chars:FlxSprite = new FlxSprite().loadGraphic(Paths.image("pause/artwork"));
-		chars.y = FlxG.height;
+		var char:String = pc.toLowerCase();
+		var ps:String = "pause/chars/" + char;
+		if (char.startsWith("bf") || char.startsWith("ben") || char == "summer-bf")
+		{
+			ps = "pause/chars/ben";
+		}
+		if (char.startsWith("gf") || char.startsWith("tess") || char == "summer-gf" || char == "date-gf")
+		{
+			ps = "pause/chars/tess";
+		}
+		if (char.startsWith("dad"))
+		{
+			ps = "pause/chars/dad";
+		}
+		if (char.startsWith("mom"))
+		{
+			ps = "pause/chars/mom";
+		}
+		if (char.startsWith("freeme") || char == "bad-thoughts")
+		{
+			ps = "pause/chars/monster";
+		}
+		if (char == "dmitri")
+		{
+			ps = "pause/chars/v";
+		}
+		var chars:FlxSprite = new FlxSprite().loadGraphic(Paths.image(ps));
+		chars.x = FlxG.width;
 		add(chars);
-		FlxTween.tween(chars, {y: 0}, 0.5, {ease: FlxEase.sineOut});
+		FlxTween.tween(chars, {x: 0}, 1, {ease: FlxEase.sineOut});
 
 		var levelInfo:FlxText = new FlxText(0, 0, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
@@ -98,15 +126,7 @@ class PauseSubState extends MusicBeatSubstate
 		levelInfo.x = Std.int(FlxG.width - (levelInfo.width + 10));
 		add(levelInfo);
 
-		var levelDifficulty:FlxText = new FlxText(0, 192 + 32, 0, "", 32);
-		levelDifficulty.text += CoolUtil.difficultyString();
-		levelDifficulty.scrollFactor.set();
-		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
-		levelDifficulty.updateHitbox();
-		levelDifficulty.x = Std.int(FlxG.width - (levelDifficulty.width + 10));
-		add(levelDifficulty);
-
-		var blueballedTxt:FlxText = new FlxText(0, 192 + 64, 0, "", 32);
+		var blueballedTxt:FlxText = new FlxText(0, Std.int(levelInfo.height * 1), 0, "", 32);
 		blueballedTxt.text = "Blueballed: " + PlayState.deathCounter;
 		blueballedTxt.scrollFactor.set();
 		blueballedTxt.setFormat(Paths.font('vcr.ttf'), 32);
@@ -114,7 +134,7 @@ class PauseSubState extends MusicBeatSubstate
 		blueballedTxt.x = Std.int(FlxG.width - (blueballedTxt.width + 10));
 		add(blueballedTxt);
 
-		practiceText = new FlxText(0, 192 + 138, 0, "PRACTICE MODE", 32);
+		practiceText = new FlxText(0, Std.int(levelInfo.height * 3), 0, "PRACTICE MODE", 32);
 		practiceText.scrollFactor.set();
 		practiceText.setFormat(Paths.font('vcr.ttf'), 32);
 		practiceText.updateHitbox();
@@ -122,7 +142,7 @@ class PauseSubState extends MusicBeatSubstate
 		practiceText.visible = PlayState.practiceMode;
 		add(practiceText);
 
-		hlText = new FlxText(0, 192 + 101, 0, "Health Loss: " + PlayState.healthLoss, 32);
+		hlText = new FlxText(0, Std.int(levelInfo.height * 2), 0, "Health Loss: " + PlayState.healthLoss, 32);
 		hlText.scrollFactor.set();
 		hlText.setFormat(Paths.font('vcr.ttf'), 32);
 		hlText.updateHitbox();
@@ -138,14 +158,12 @@ class PauseSubState extends MusicBeatSubstate
 		add(botplayText);
 
 		blueballedTxt.alpha = 0;
-		levelDifficulty.alpha = 0;
 		hlText.alpha = 0;
 		levelInfo.alpha = 0;
 
-		FlxTween.tween(levelInfo, {alpha: 1, y: 192}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
-		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
-		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
-		FlxTween.tween(hlText, {alpha: 1, y: hlText.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.9});
+		FlxTween.tween(levelInfo, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
+		FlxTween.tween(blueballedTxt, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
+		FlxTween.tween(hlText, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.9});
 
 		items = new FlxTypedGroup<Alphabet>();
 		add(items);
@@ -221,6 +239,7 @@ class PauseSubState extends MusicBeatSubstate
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
 				case 'health loss':
+					HealthLossState.playstate = true;
 					MusicBeatState.switchState(new HealthLossState());
 				case 'botplay':
 					PlayState.cpuControlled = !PlayState.cpuControlled;

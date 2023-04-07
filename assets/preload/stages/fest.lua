@@ -3,10 +3,6 @@ function onCreate()
 	addLuaSprite("mickeyDeez", false);
 end
 
-function onCreatePost()
-	setProperty("gf.visible", false);
-end
-
 
 -- stage shit ligma haha funny
 function onEvent(name, penis, sex)

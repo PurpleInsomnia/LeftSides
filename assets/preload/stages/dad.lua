@@ -1,5 +1,7 @@
 function onCreate()
-	setProperty("bfZoom", true);
+	if not songName == "tutorial" then
+		setProperty("bfZoom", true);
+	end
 	-- background shit
 	makeLuaSprite('stageback', 'stageback', -600, -300);
 	setScrollFactor('stageback', 0.9, 0.9);

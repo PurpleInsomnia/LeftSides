@@ -1,18 +1,21 @@
 {
 	"dialogue": [
 		{
-			"expression": "thud",
-			"text": "No...why would we be doing that...?",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "the-rock",
+			"text": "No...why would we be doing that...?"
 		},
 		{
 			"expression": "angry",
 			"text": "SHUT THE FUCK U-",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "matto"
+			"portrait": "matto",
+			"speed": 0.05
 		}
 	]
 }

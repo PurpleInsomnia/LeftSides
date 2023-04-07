@@ -1,84 +1,120 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "blush",
-			"text": "Wow, The 24th floor",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Wow, The 24th floor"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "trolling",
-			"text": "Now THAT'S a view to kill for",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Now THAT'S a view to kill for"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "(Strange, my parents always went for the 23rd floor)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "(Strange, my parents always went for the 23rd floor)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "(Is this year a special occasion because of my plus one???)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "(Is this year a special occasion because of my plus one???)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": "",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": ""
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "That's weird...\\nUsually the room would be packed with people...\\nBut its completely empty in here....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "That's weird...\\nUsually the room would be packed with people...\\nBut its completely empty in here...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "guilt",
-			"text": "Are you sure you pressed the right button on the slow ass elevator?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Are you sure you pressed the right button on the slow ass elevator?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "99.9% sure...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "99.9% sure..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "question",
-			"text": "Huh.........\\nShould we call your dad and ask what going o-",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Huh.........\\nShould we call your dad and ask what going o-"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
 			"expression": "gun",
-			"text": "Hold it right there!!!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"text": "Hold it right there!!!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
 			"expression": "wat",
-			"text": "Oh.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"text": "Oh."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
 			"expression": "upset",
@@ -86,20 +122,29 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
 			"text": "God damnit. I thought that nickname would stop after I graduated."
 		},
 		{
-			"expression": "confused",
-			"text": "Pico.\\nLong time no see.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Pico.\\nLong time no see."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
@@ -107,97 +152,139 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
 			"text": "Like, how am I weird when I'm not the one wearing a Fedora?"
 		},
 		{
-			"expression": "upset",
-			"text": "Shut UP!\\nYOU HAVE NO IDEA WHAT I HAVE AGAINST HIM!!!",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "pico"
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "angry",
+			"expression": "upset",
+			"text": "Shut UP!\\nYOU HAVE NO IDEA WHAT I HAVE AGAINST HIM!!!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "...Yes she does.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "...Yes she does."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "I tell her everything.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "I tell her everything."
 		},
 		{
-			"expression": "trolling",
-			"text": "I don't care.\\nHowever, I now know that The Weird Girl can ACTUALLY talk.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "pico"
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "I don't care.\\nHowever, I now know that The Weird Girl can ACTUALLY talk."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
 			"expression": "upset",
-			"text": "Instead of just using you to talk to people...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"text": "Instead of just using you to talk to people..."
 		},
 		{
-			"expression": "angry",
-			"text": "Hey, FUCK you! Talking to people is hard for her!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf"
+			"expression": "angry",
+			"text": "Hey, FUCK you! Talking to people is hard for her!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
 			"text": "What are you even doing here?"
 		},
 		{
-			"expression": "gun",
-			"text": "Glad ya asked.\\nSo, your father hired me to pop a cap in your boyfriend's ass because he ''Got Destroyed''.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "pico"
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "gun",
+			"text": "Glad ya asked.\\nSo, your father hired me to pop a cap in your boyfriend's ass because he ''Got Destroyed''."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
 			"expression": "bruh",
 			"text": "Dunno what that means.\\nHowever, he said that he'd pay ME big time."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
 			"expression": "gun",
-			"text": "So. Imma do it now.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
+			"text": "So. Imma do it now."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "...Nah we should rap instead.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "...Nah we should rap instead."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "Babe, I think we should be worried about the loaded gun pointed at your face..",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Babe, I think we should be worried about the loaded gun pointed at your face.."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
 			"expression": "upset",
@@ -205,13 +292,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "angry",
-			"expression": "talk",
+			"expression": "angry",
 			"text": "FUCK YOU, REDDIT MOD LOOKIN ASS."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
@@ -219,6 +312,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "challenge",
@@ -226,6 +322,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "scared",
@@ -233,6 +332,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
 			"expression": "upset",
@@ -240,6 +342,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "angry",
@@ -247,13 +352,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
-			"expression": "wat",
+			"expression": "vine-boom",
 			"text": "HEY THATS NOT FAIR!!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
@@ -261,6 +372,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
 			"expression": "bruh",
@@ -268,6 +382,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -275,13 +392,19 @@
 		},
 		{
 			"speed": 0,
+			"events": [
+				""
+			],
 			"portrait": "pico",
 			"boxState": "normal",
-			"expression": "wat",
+			"expression": "vine-boom",
 			"text": "!-"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spooky Tess.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="GF body0000" x="0" y="0" width="101" height="145"/>
+	<SubTexture name="Symbol 30000" x="111" y="0" width="46" height="31"/>
+	<SubTexture name="gf bg arm0000" x="167" y="0" width="88" height="135"/>
+	<SubTexture name="gf bottom leg0000" x="265" y="0" width="80" height="134"/>
+	<SubTexture name="gf cheer body0000" x="355" y="0" width="285" height="358"/>
+	<SubTexture name="gf face0000" x="650" y="0" width="124" height="58"/>
+	<SubTexture name="gf fg arm0000" x="784" y="0" width="77" height="134"/>
+	<SubTexture name="gf hair0000" x="871" y="0" width="300" height="365"/>
+	<SubTexture name="gf head0000" x="1181" y="0" width="252" height="164"/>
+	<SubTexture name="gf top leg0000" x="1443" y="0" width="183" height="115"/>
+	<SubTexture name="leg fear0000" x="1636" y="0" width="80" height="145" frameX="-11" frameY="0" frameWidth="91" frameHeight="145"/>
+	<SubTexture name="leg fear0001" x="1636" y="0" width="80" height="145" frameX="-11" frameY="0" frameWidth="91" frameHeight="145"/>
+	<SubTexture name="leg fear0002" x="1726" y="0" width="84" height="135" frameX="0" frameY="-2" frameWidth="91" frameHeight="145"/>
+	<SubTexture name="leg fear0003" x="1726" y="0" width="84" height="135" frameX="0" frameY="-2" frameWidth="91" frameHeight="145"/>
+	<SubTexture name="palm on cheek hand0000" x="1820" y="0" width="59" height="105"/>
+	<SubTexture name="speakers0000" x="0" y="375" width="703" height="352"/>
+	<SubTexture name="speakers0001" x="0" y="375" width="703" height="352"/>
+	<SubTexture name="speakers0002" x="713" y="375" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0003" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0004" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0005" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0006" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0007" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0008" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0009" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0010" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0011" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0012" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0013" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0014" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0015" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0016" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0017" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0018" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0019" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0020" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0021" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0022" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0023" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+	<SubTexture name="speakers0024" x="0" y="737" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352"/>
+</TextureAtlas>

@@ -1,312 +1,444 @@
 {
 	"dialogue": [
 		{
-			"expression": "wat",
-			"text": "...\\",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "pico"
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "vine-boom",
+			"text": "...\\"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "YOU AGREED TO NOT SHOOT!!",
-			"boxState": "normal",
+			"text": "YOU AGREED TO NOT SHOOT!!"
+		},
+		{
 			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "I lied :)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "cringe",
-			"text": "Can we eat food now or.....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "gun",
-			"text": "No, I'm shooting you now.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "pico"
-		},
-		{
-			"expression": "gun",
-			"text": "*click*",
-			"boxState": "normal",
-			"speed": 0,
-			"portrait": "pico"
-		},
-		{
-			"expression": "wat",
-			"text": "Oh-\\nThats uhhh-\\nFantastic....",
-			"boxState": "normal",
-			"speed": 0.065,
-			"portrait": "pico"
-		},
-		{
-			"expression": "default",
-			"text": "Looks like you failed the hit, shit lips.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "wat",
-			"text": "SHIT! WHAT'S THE BOSS GONNA DO WHEN HE FINDS THAT OUT?!",
-			"boxState": "angry",
+			"events": [
+				""
+			],
 			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "I'm gonna have to run now!\\nAnd change my vision to grayscale!!",
 			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
 			"expression": "default",
-			"text": "You're gonna end up working at a Cinnabon in Nebraska.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "I lied :)"
 		},
 		{
-			"expression": "happy",
-			"text": "And get reconized in a taxi!",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "upset",
-			"text": "STOP MAKING BCS REFERENCES I'M ONLY ON SEASON 2!!!",
-			"boxState": "normal",
-			"portrait": "pico",
-			"speed": 0.05
-		},
-		{
-			"expression": "no",
-			"text": "*dips*",
-			"boxState": "normal",
-			"portrait": "dad",
-			"speed": 0.05
-		},
-		{
-			"expression": "what",
-			"text": "Well.\\nThat was something.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "cringe",
-			"text": "Mhm..You must be starving from all that\\ndodging...",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "drool",
-			"text": "...Might I add that you looked badass doing that?",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"expression": "cringe",
+			"text": "Can we eat food now or....."
 		},
 		{
-			"expression": "sus",
-			"text": "Noted..",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"expression": "gun",
+			"text": "No, I'm shooting you now."
 		},
 		{
-			"expression": "angry",
-			"text": "Oh...\\nI'm gonna talk you your father while we eat.",
+			"speed": 0,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"expression": "gun",
+			"text": "*click*"
 		},
 		{
-			"expression": "confused",
-			"text": "",
+			"speed": 0.065,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"expression": "vine-boom",
+			"text": "Oh-\\nThats uhhh-\\nFantastic...."
 		},
 		{
-			"expression": "angry",
-			"text": "Hey.",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "default",
-			"text": "???",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "Looks like you failed the hit, shit lips."
 		},
 		{
-			"expression": "hmph",
-			"text": "What the hell is wrong with you dad?!??\\nYou nearly got him killed!!!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "gf"
+			"expression": "vine-boom",
+			"text": "SHIT! WHAT'S THE BOSS GONNA DO WHEN HE FINDS THAT OUT?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "I'm gonna have to run now!\\nAnd change my vision to grayscale!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "What almost killed him?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "You're gonna end up working at a Cinnabon in Nebraska."
 		},
 		{
-			"expression": "angry",
-			"text": "Don't play dumb smart ass\\nI know you're trying not to punch the air right now.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "And get reconized in a taxi!"
 		},
 		{
-			"expression": "angry",
-			"text": "You sent a dude out to kill me.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "STOP MAKING BCS REFERENCES I'M ONLY ON SEASON 2!!!"
 		},
 		{
-			"expression": "confused",
-			"text": "Fortunately, We were smarter than the dude.\\nLike...way smarter....",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "no",
+			"text": "*dips*"
 		},
 		{
-			"expression": "angry",
-			"text": "Thats what.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "angry",
-			"text": "Oh and..\\nI GOT FUCKING SHOT AT.",
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "scared",
-			"text": "You know how scary that is?!?!?!?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "I'm sorry who?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
-		},
-		{
-			"expression": "angry",
-			"text": "I'm goin home.\\nFuck Turkey, Leftovers for tonight.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "hmph",
-			"text": "",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "Hey can I ask you something?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "default",
-			"text": "Go ahead...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "hmph",
-			"text": "My Dad's birthday is on the 9th and I really don't want to go to his party...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "So um.... d-do you want to go out to eat that day?....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
-			"expression": "stop-being-cute",
-			"text": "And if you want me to I can stay over for the next week and ALL of winter break..",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
 			"expression": "what",
-			"text": "Holy shit, that is one hell of an elevator pitch!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Well.\\nThat was something."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cringe",
+			"text": "Mhm..You must be starving from all that\\ndodging..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "drool",
+			"text": "...Might I add that you looked badass doing that?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "sus",
+			"text": "Noted.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Oh...\\nI'm gonna talk you your father while we eat."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Hey."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "???"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "angry",
+			"expression": "hmph",
+			"text": "What the hell is wrong with you dad?!??\\nYou nearly got him killed!!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "What almost killed him?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Don't play dumb smart ass\\nI know you're trying not to punch the air right now."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "You sent a dude out to kill me."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Fortunately, We were smarter than the dude.\\nLike...way smarter...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Thats what."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Oh and..\\nI GOT FUCKING SHOT AT."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "You know how scary that is?!?!?!?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "I'm sorry who?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I'm goin home.\\nFuck Turkey, Leftovers for tonight."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "Hey can I ask you something?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Go ahead..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "My Dad's birthday is on the 9th and I really don't want to go to his party..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "So um.... d-do you want to go out to eat that day?...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "And if you want me to I can stay over for the next week and ALL of winter break.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Holy shit, that is one hell of an elevator pitch!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "So Hell Yeah!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "So Hell Yeah!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "laughing",
-			"text": "Sweet!\\nYou can pick the restaurant and I will get a limo for us!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Sweet!\\nYou can pick the restaurant and I will get a limo for us!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "Ooh fancy.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Ooh fancy."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what-is-this-emotion",
-			"text": "You comin' home with me for dinner?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "You comin' home with me for dinner?"
 		},
 		{
-			"expression": "cute-blushing",
-			"text": "Of course I am...",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf"
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "Of course I am..."
 		}
 	]
 }

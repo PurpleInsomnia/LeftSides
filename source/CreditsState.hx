@@ -142,7 +142,7 @@ class CreditsState extends MusicBeatState
             }
             else
             {
-                lime.app.Application.current.window.alert("Social link either doesn't exist, or it was pretty hard to find.", "ERROR");
+                lime.app.Application.current.window.alert("Social link either doesn't exist, or it was pretty hard to find (and purpleinsomnia gave up.)", "ERROR");
             }
         }
         if (controls.BACK)

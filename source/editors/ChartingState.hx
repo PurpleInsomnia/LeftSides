@@ -6,6 +6,7 @@ import Discord.DiscordClient;
 import Conductor.BPMChangeEvent;
 import Section.SwagSection;
 import Song.SwagSong;
+import Song as SongData;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxObject;
@@ -46,61 +47,18 @@ import sys.io.File;
 import sys.FileSystem;
 import flash.media.Sound;
 #end
+import editors.ChartingList;
 
 using StringTools;
 
 class ChartingState extends MusicBeatState
 {
-	public static var noteTypeList:Array<String> = //Used for backwards compatibility with 0.1 - 0.3.2 charts, though, you should add your hardcoded custom note types here too.
-	[
-		'',
-		'Alt Animation',
-		'Hey!',
-		'Glitch Note',
-		'Hurt Note',
-		'GF Sing',
-		'No Animation'
-	];
+	public static var noteTypeList:Array<String> = [];
+
 	private var noteTypeIntMap:Map<Int, String> = new Map<Int, String>();
 	private var noteTypeMap:Map<String, Null<Int>> = new Map<String, Null<Int>>();
 
-	var eventStuff:Array<Dynamic> =
-	[
-		['', "Nothing. Yep, that's right."],
-		['Hey!', "Plays the \"Hey!\" animation from Bopeebo,\nValue 1: BF = Only Boyfriend, GF = Only Girlfriend,\nSomething else = Both.\nValue 2: Custom animation duration,\nleave it blank for 0.6s"],
-		['Set GF Speed', "Sets GF head bopping speed,\nValue 1: 1 = Normal speed,\n2 = 1/2 speed, 4 = 1/4 speed etc.\nUsed on Fresh during the beatbox parts.\n\nWarning: Value must be integer!"],
-		['Blammed Lights', "Value 1: 0 = Turn off, 1 = Blue, 2 = Green,\n3 = Pink, 4 = Red, 5 = Orange, Anything else = Random."],
-		['Kill Henchmen', "For Mom's songs, don't use this please, i love them :("],
-		['Add Camera Zoom', "Used on MILF on that one \"hard\" part\nValue 1: Camera zoom add (Default: 0.015)\nValue 2: UI zoom add (Default: 0.03)\nLeave the values blank if you want to use Default."],
-		['BG Freaks Expression', "Should be used only in \"school\" Stage!"],
-		['Trigger BG Ghouls', "Should be used only in \"schoolEvil\" Stage!"],
-		['Play Animation', "Plays an animation on a Character,\nonce the animation is completed,\nthe animation changes to Idle\n\nValue 1: Animation to play.\nValue 2: Character (Dad, BF, GF)"],
-		['Camera Follow Pos', "Value 1: X\nValue 2: Y\n\nThe camera won't change the follow point\nafter using this, for getting it back\nto normal, leave both values blank."],
-		['Alt Idle Animation', "Sets a speciied suffix after the idle animation name.\nYou can use this to trigger 'idle-alt' if you set\nValue 2 to -alt\n\nValue 1: Character to set (Dad, BF or GF)\nValue 2: New suffix (Leave it blank to disable)"],
-		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
-		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
-		['Change Scroll Speed', 'VALUE 1: The Multiplier'],
-		['Cinematic Bar Zoom', 'Value 1: The y value the bars will be added to\n(put 1 for default)\n \nValue 2: Time'],
-		['Cam Tween Zoom', 'Value 1: Zoom Value\nValue 2: Time (none for instant)'],
-		['Lyrics', 'Value 1: Text\nValue 2: Char (dad for dad, mom for mom and so on)\nPut "remove" in value 1 to remove the thing lol\nPut "<>" to split the text and\nto add a color\n(Example: Penis<>FF0000)'],
-		["Third Strumline", "Value 1: If it should tween. (true/false)\nValue 2: Time for tween (tween must be on.)"],
-		['Countdown', 'Sus? (PLACE 1 BEAT BEOFRE COUNTDOWN)'],
-		['Note Spin', 'Spins notes on a certain beat'],
-		['Screen Flash', 'Cum color?!?!?!?!'],
-		['Monster Window', 'Fatal Error reference?!\nvalue 1: Amount (leave blank for only one)'],
-		['Switch Note Sides', 'Place to toggle'],
-		['Real Time', 'D Sides Too Slow?!\nvalue 1: New length in milliseconds'],
-		['Change UI', 'Place to Toggle'],
-		['Hide HUD', 'Hides SOME hud elements\nValue 1: Alpha,\nValue 2: Time in secs (0 for instant)'],
-		['Zoom Multiplier', 'Multiplys the camera zoom by Value 1\nMUST BE GREATER THAN 0'],
-		['Zoom On Note Hit', 'Place to Toggle'],
-		['Camera Angle', 'Value 1: Angle\nValue 2: Secs\nYou can put "<>" to split the time\nAND to add an EASE'],
-		['Note Angle', 'Same thing as camera angle.'],
-		['Blammed Angle', 'Based off that funny part in blammed\nValue 1: Player (DAD, BF)\nValue 2: Angle (CANNOT BE A NEGATIVE)'],
-		["Vine Boom", "Value 1: Type anything here to play the sound effect\nValue 2: Duration of the shake"],
-		["Change Note Skin", "Value 1: Skin to change to (file path)"],
-		["Screen VG", "Value 1: Tween Time\nValue 2: How long it should be up (tween time included)"]
-	];
+	var eventStuff:Array<Dynamic> = [];
 
 	var _file:FileReference;
 
@@ -193,6 +151,16 @@ class ChartingState extends MusicBeatState
 	var waveformSprite:FlxSprite;
 	var gridLayer:FlxTypedGroup<FlxSprite>;
 
+	// fixin' up the charting menu.
+	public var isEncore:Bool = false;
+
+	public function new(?encore:Bool = false)
+	{
+		super();
+
+		isEncore = encore;
+	}
+
 	override function create()
 	{
 		#if MODS_ALLOWED
@@ -208,7 +176,7 @@ class ChartingState extends MusicBeatState
 
 		WindowControl.rePosWindow();
 
-
+		eventStuff = ChartingListUtil.eventStuff;
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuCharting'));
 		bg.scrollFactor.set();
@@ -271,7 +239,33 @@ class ChartingState extends MusicBeatState
 		if(curSection >= _song.notes.length) curSection = _song.notes.length - 1;
 
 		FlxG.mouse.visible = true;
-		FlxG.save.bind('funkin', 'ninjamuffin99');
+		var SaveSuff:String = '';
+		switch (TitleScreenState.curSaveFile)
+		{
+			case 1:
+				SaveSuff = '_1';
+			case 2:
+				SaveSuff = '_2';
+			case 3:
+				SaveSuff = '_3';
+			case 4:
+				SaveSuff = '_4';
+			case 5:
+				SaveSuff = '_5';
+			case 6:
+				SaveSuff = '_6';
+			case 7:
+				SaveSuff = '_7';
+		}
+
+		if (TitleScreenState.curSaveFile == 0)
+		{
+			FlxG.save.bind('funkin', 'ninjamuffin99');
+		}
+		else
+		{
+			FlxG.save.bind('funkin' + SaveSuff, 'ninjamuffin99');
+		}
 
 		tempBpm = _song.bpm;
 
@@ -1041,6 +1035,11 @@ class ChartingState extends MusicBeatState
 		}
 
 		var file:Dynamic = Paths.voices(currentSongName);
+		if (isEncore)
+		{
+			file = Paths.voicesEncore(currentSongName);
+		}
+
 		vocals = new FlxSound();
 		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
 			vocals.loadEmbedded(file);
@@ -1053,7 +1052,14 @@ class ChartingState extends MusicBeatState
 	}
 
 	function generateSong() {
-		FlxG.sound.playMusic(Paths.inst(currentSongName), 0.6, false);
+		if (!isEncore)
+		{
+			FlxG.sound.playMusic(Paths.inst(currentSongName), 0.6, false);
+		}
+		else
+		{
+			FlxG.sound.playMusic(Paths.instEncore(currentSongName), 0.6, false);
+		}
 		if (instVolume != null) FlxG.sound.music.volume = instVolume.value;
 		if (check_mute_inst != null && check_mute_inst.checked) FlxG.sound.music.volume = 0;
 
@@ -1544,12 +1550,23 @@ class ChartingState extends MusicBeatState
 		}
 		audioBuffers[0] = null;
 		#if MODS_ALLOWED
-		if(FileSystem.exists(Paths.modFolders('songs/' + currentSongName + '/Inst.ogg'))) {
-			audioBuffers[0] = AudioBuffer.fromFile(Paths.modFolders('songs/' + currentSongName + '/Inst.ogg'));
+		var instpath:String = Paths.modFolders('songs/' + currentSongName + '/Inst.ogg');
+		if (isEncore)
+		{
+			instpath = Paths.modFolders('songs/' + currentSongName + '/InstEncore.ogg');
+		}
+
+		if(FileSystem.exists(instpath)) {
+			audioBuffers[0] = AudioBuffer.fromFile(instpath);
 			//trace('Custom vocals found');
 		}
 		else { #end
 			var leVocals:Dynamic = Paths.inst(currentSongName);
+			if (isEncore)
+			{
+				leVocals = Paths.instEncore(currentSongName);
+			}
+
 			if (!Std.isOfType(leVocals, Sound) && OpenFlAssets.exists(leVocals)) { //Vanilla inst
 				audioBuffers[0] = AudioBuffer.fromFile('./' + leVocals.substr(6));
 				//trace('Inst found');
@@ -1563,11 +1580,22 @@ class ChartingState extends MusicBeatState
 		}
 		audioBuffers[1] = null;
 		#if MODS_ALLOWED
-		if(FileSystem.exists(Paths.modFolders('songs/' + currentSongName + '/Voices.ogg'))) {
-			audioBuffers[1] = AudioBuffer.fromFile(Paths.modFolders('songs/' + currentSongName + '/Voices.ogg'));
+		var vocalpath:String = "";
+		if (isEncore)
+		{
+			vocalpath = Paths.modFolders('songs/' + currentSongName + '/VoicesEncore.ogg');
+		}
+
+		if(FileSystem.exists(vocalpath)) {
+			audioBuffers[1] = AudioBuffer.fromFile(vocalpath);
 			//trace('Custom vocals found');
 		} else { #end
 			var leVocals:Dynamic = Paths.voices(currentSongName);
+			if (isEncore)
+			{
+				leVocals = Paths.voicesEncore(currentSongName);
+			}
+
 			if (!Std.isOfType(leVocals, Sound) && OpenFlAssets.exists(leVocals)) { //Vanilla voices
 				audioBuffers[1] = AudioBuffer.fromFile('./' + leVocals.substr(6));
 				//trace('Voices found, LETS FUCKING GOOOO');
@@ -2189,7 +2217,12 @@ class ChartingState extends MusicBeatState
 			_file.addEventListener(Event.COMPLETE, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
-			_file.save(data.trim(), Paths.formatToSongPath(_song.song) + ".json");
+			var toAddPath:String = "";
+			if (isEncore)
+			{
+				toAddPath = "-encore";
+			}
+			_file.save(data.trim(), Paths.formatToSongPath(_song.song) + toAddPath + ".json");
 		}
 	}
 
@@ -2246,7 +2279,12 @@ class ChartingState extends MusicBeatState
 			_file.addEventListener(Event.COMPLETE, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
-			_file.save(data.trim(), "events.json");
+			var toAddFile:String = "";
+			if (isEncore)
+			{
+				toAddFile = "Encore";
+			}
+			_file.save(data.trim(), "events" + toAddFile + ".json");
 		}
 	}
 

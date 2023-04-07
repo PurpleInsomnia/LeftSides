@@ -74,6 +74,15 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		#if sys
+		var option:Option = new Option("Precached Characters",
+			"If checked, only character images will stay in memory. (Major preformance boost imo.)",
+			"precacheCharacters",
+			"bool",
+			false);
+		addOption(option);
+		#end
+
 		var option:Option = new Option('Colorblind Mode',
 		"Use this if you have any form of colorblindness",
 		'colorblind',

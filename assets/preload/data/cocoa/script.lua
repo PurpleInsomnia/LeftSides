@@ -34,7 +34,8 @@ function onCreate()
 
 	setProperty('boppers.visible', true);
 
-	playMusic('christmasShopping', 1, true);
+	setProperty("preventPCChange", true);
+	setProperty("pauseCharacter", "dad");
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
@@ -70,12 +71,24 @@ end
 
 function onCountdownTick(counter)
 	if counter == 0 then
-		removeLuaSprite('bfAlmostDies', false);
 		bgAlpha(0, true, 1);
-		seenCutscene = false; 
 	end
 end
 
 function onChristmasCountdown()
+	playMusic('christmasShopping', 1, true);
+	setProperty('inCutscene', true);
 	runTimer('startDialogue', 0.8);
+end
+
+function opponentNoteHit(id, type, data, sus)
+	if altSection then
+		setProperty("pauseCharacter", "mom");
+	else
+		setProperty("pauseCharacter", "dad");
+	end
+end
+
+function onStartCountdown()
+	return Function_Continue;
 end

@@ -644,6 +644,8 @@ class EditorPlayState extends MusicBeatState
 
 		vocals.volume = 1;
 
+		/*
+
 		var placement:String = Std.string(combo);
 
 		var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
@@ -677,14 +679,6 @@ class EditorPlayState extends MusicBeatState
 			spawnNoteSplashOnNote(note);
 		}
 		//songScore += score;
-
-		/* if (combo > 60)
-				daRating = 'sick';
-			else if (combo > 12)
-				daRating = 'good'
-			else if (combo > 4)
-				daRating = 'bad';
-			*/
 
 		var pixelShitPart1:String = "";
 		var pixelShitPart2:String = '';
@@ -776,10 +770,6 @@ class EditorPlayState extends MusicBeatState
 
 			daLoop++;
 		}
-		/* 
-			trace(combo);
-			trace(seperatedScore);
-			*/
 
 		coolText.text = Std.string(seperatedScore);
 		// comboGroup.add(coolText);
@@ -798,6 +788,7 @@ class EditorPlayState extends MusicBeatState
 			},
 			startDelay: Conductor.crochet * 0.001
 		});
+		*/
 	}
 
 	private function generateStaticArrows(player:Int):Void

@@ -27,8 +27,16 @@ class ChooseCredits extends MusicBeatState
         });
         button1.loadGraphic(Paths.image("credits/buttons/staff"), true, 300, 300);
         button1.screenCenter();
-        button1.x -= 225;
+        button1.x -= 325;
         add(button1);
+
+        var button3 = new FlxButton(0, 0, "", function()
+        {
+            MusicBeatState.switchState(new GoodbyeState());
+        });
+        button3.loadGraphic(Paths.image("credits/buttons/goodbye"), true, 300, 300);
+        button3.screenCenter();
+        add(button3);
 
         var button2 = new FlxButton(0, 0, "", function()
         {
@@ -36,7 +44,7 @@ class ChooseCredits extends MusicBeatState
         });
         button2.loadGraphic(Paths.image("credits/buttons/hof"), true, 300, 300);
         button2.screenCenter();
-        button2.x += 225;
+        button2.x += 325;
         add(button2);
 
         super.create();
@@ -49,7 +57,8 @@ class ChooseCredits extends MusicBeatState
 
     function makeTheHOFfile()
     {
-		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/HallOfFame.txt");
+        #if ALLOW_GITHUB
+		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/" + GithubShit.GF.dlcHOFLink);
 			
 		http.onData = function (data:String)
 		{
@@ -64,5 +73,6 @@ class ChooseCredits extends MusicBeatState
 		}
 			
 		http.request();
+        #end
     }
 }

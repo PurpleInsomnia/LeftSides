@@ -1,0 +1,8 @@
+{
+    "name": "Departing Record",
+    "desc": "Are you ready yet?",
+    "price": 999,
+    "thanks": "Until we meet again, [USERNAME]!",
+    "nah": "What are you still doing here?",
+    "tag": "departing-record"
+}

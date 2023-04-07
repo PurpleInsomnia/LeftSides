@@ -32,6 +32,7 @@ typedef FunnyDialogueLine = {
 	var text:Null<String>;
 	var boxState:Null<String>;
 	var speed:Null<Float>;
+	var events:Null<Array<String>>;
 }
 
 class DialogueBoxPsych extends FlxSpriteGroup
@@ -57,9 +58,16 @@ class DialogueBoxPsych extends FlxSpriteGroup
 
     public var canPress:Bool = false;
 
-    public function new(file:FunnyDialogueFile, ?song:String = null)
+	public var lePlayState:PlayState = null;
+
+    public function new(file:FunnyDialogueFile, ?song:String = null, ps:PlayState)
     {
         super();
+
+		if (ps != null)
+		{
+			lePlayState = ps;
+		}
 
         var time:Float = 0.25;
 
@@ -163,18 +171,19 @@ class DialogueBoxPsych extends FlxSpriteGroup
     public function doOutro()
     {
         canPress = false;
+		FlxG.sound.music.fadeOut(0.5, 0);
         FlxTween.tween(char, {alpha: 0}, 0.5);
         FlxTween.tween(box, {alpha: 0}, 0.5);
         FlxTween.tween(text, {alpha: 0}, 0.5);
         new FlxTimer().start(0.5, function(tmr:FlxTimer)
         {
+			lePlayState.callOnLuas("dialogueCompleted", []);
             finishThing();
         });
     }
 
     public function nextLine()
-    {
-        // this might take a while....
+    {	
         curDialogue = daFile.dialogue[line];
         if (daFile.dialogue[line].boxState != boxGra)
         {
@@ -185,23 +194,32 @@ class DialogueBoxPsych extends FlxSpriteGroup
         if (daFile.dialogue[line].portrait != charGra)
         {
             charGra = daFile.dialogue[line].portrait;
-            char.reloadCharacterJson(charGra);
-            char.reloadFrames();
-            char.reloadAnimations();
+            char.reloadCharacter(charGra);
         }
-        reposChar();
         char.playAnim(daFile.dialogue[line].expression);
+		reposChar();
 
         reloadTextSounds();
+
+		if (daFile.dialogue[line].events != null)
+		{
+			if (daFile.dialogue[line].events[0] != null)
+        	{
+            	for (event in daFile.dialogue[line].events)
+            	{
+                	if (lePlayState != null)
+					{
+						lePlayState.callOnLuas("onDialogueEventTrigger", [event]);
+					}
+            	}
+        	}
+		}
 
         var toType:String = checkText(daFile.dialogue[line].text);
 		text.font = Paths.font(DialogueManager.font);
 		text.color = Std.parseInt(DialogueManager.textColor);
         text.resetText(toType);
 		text.start(daFile.dialogue[line].speed, true);
-
-		// port shit for D E P T H
-		portShit();
 
         // prevents that stupid ass double press thing for null text :skull:
         if (toType.length < 1 || toType == "")
@@ -216,15 +234,15 @@ class DialogueBoxPsych extends FlxSpriteGroup
     public function reposChar()
     {
         char.y = Std.int(box.y - (char.height - 10));
-        if (char.jsonFile.dialogue_pos.toLowerCase() == "left")
+        if (char.curCharacter.startsWith("bf") || char.curCharacter.startsWith("player") || char.curCharacter.startsWith("ben") || char.curCharacter.startsWith("gf") || char.curCharacter.startsWith("tess"))
+        {
+			char.x = Std.int((box.x + box.width) - (char.width + 10));
+        }
+        else
         {
             char.x = box.x + 10;
         }
-        if (char.jsonFile.dialogue_pos.toLowerCase() == "right")
-        {
-            char.x = Std.int((box.x + box.width) - (char.width + 10));
-        }
-        if (char.jsonFile.dialogue_pos.toLowerCase() == "center")
+        if (char.curCharacter.startsWith("center"))
         {
             char.screenCenter(X);
         }
@@ -349,33 +367,11 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		return editedText;
 	}
 
-	function portShit() 
-	{
-		var split:Array<String> = daFile.dialogue[line].portrait.split("-");
-		switch(split[0])
-		{
-			case "bf":
-				switch (daFile.dialogue[line].expression)
-				{
-					case "flustered":
-						FlxTween.tween(char, {y: char.y + 25}, 1, {ease: FlxEase.sineInOut});
-				}
-			case "gf":
-				switch (daFile.dialogue[line].expression)
-				{
-					case "stop-being-cute" | "cute-af":
-						FlxTween.tween(char, {y: char.y + 25}, 1, {ease: FlxEase.sineInOut});
-				}
-		}
-	}
-
     public static function loadDialogue(path:String):FunnyDialogueFile
     {
 		if (FileSystem.exists(path.replace(".json", ".txt")))
 		{
-			var json:FunnyDialogueFile = {
-				dialogue: []
-			}
+			var theData:Array<FunnyDialogueLine> = [];
 			var raw:Array<String> = CoolUtil.coolTextFile(path.replace(".json", ".txt"));
 			for (i in 0...raw.length)
 			{
@@ -388,14 +384,22 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				{
 					split[5] = "0.05";
 				}
+				if (split[6] == null)
+				{
+					split[6] = "";
+				}
 				var line:FunnyDialogueLine = {
 					portrait: split[1],
 					expression: split[2],
 					text: split[3],
 					boxState: split[4],
-					speed: Std.parseInt(split[5])
+					speed: Std.parseFloat(split[5]),
+					events: split[6].split(":")
 				}
-				json.dialogue.push(line);
+				theData.push(line);
+			}
+			var json:FunnyDialogueFile = {
+				dialogue: theData
 			}
 			return cast json;
 		}

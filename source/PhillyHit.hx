@@ -13,6 +13,7 @@ class PhillyHit extends FlxTypedGroup<FlxSprite>
 
 		var glow:FlxSprite = new FlxSprite().loadGraphic(Paths.image('philly/glow'));
 		glow.color = color;
+		glow.alpha = 0.75;
 		add(glow);
 
 		FlxTween.tween(glow, {alpha: 0}, time * 2, {ease: FlxEase.sineInOut});

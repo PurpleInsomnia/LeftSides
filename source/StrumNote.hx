@@ -116,6 +116,14 @@ class StrumNote extends FlxSprite
 
 	public function changeSkin(skin:String, funni:Int)
 	{
+		if (skin == texture)
+		{
+			return;
+		}
+		if (CustomStrum.strum != '')
+		{
+			return;
+		}
 			if(PlayState.isPixelStage)
 			{
 				loadGraphic(Paths.image('pixelUI/' + skin));
@@ -182,6 +190,7 @@ class StrumNote extends FlxSprite
 				}
 		}
 
+		this.texture = skin;
 		updateHitbox();
 		scrollFactor.set();
 		playAnim('static');

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spooky Kids.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="microphone0000" x="0" y="0" width="146" height="145"/>
+	<SubTexture name="pump arms0000" x="156" y="0" width="83" height="131" frameX="0" frameY="-28" frameWidth="149" frameHeight="159"/>
+	<SubTexture name="pump arms0001" x="249" y="0" width="132" height="135" frameX="-17" frameY="0" frameWidth="149" frameHeight="159"/>
+	<SubTexture name="pump bodies0000" x="391" y="0" width="265" height="218"/>
+	<SubTexture name="pump heads0000" x="666" y="0" width="251" height="232"/>
+	<SubTexture name="pump heads0001" x="0" y="242" width="251" height="232"/>
+	<SubTexture name="pump heads0002" x="261" y="242" width="251" height="232"/>
+	<SubTexture name="pump heads0003" x="522" y="242" width="251" height="232"/>
+	<SubTexture name="pump heads0004" x="0" y="484" width="251" height="232"/>
+	<SubTexture name="skid arms0000" x="261" y="484" width="81" height="128" frameX="0" frameY="0" frameWidth="158" frameHeight="128"/>
+	<SubTexture name="skid arms0001" x="352" y="484" width="127" height="124" frameX="-31" frameY="0" frameWidth="158" frameHeight="128"/>
+	<SubTexture name="skid bodies0000" x="489" y="484" width="280" height="188" frameX="0" frameY="-2" frameWidth="280" frameHeight="215"/>
+	<SubTexture name="skid bodies0001" x="0" y="726" width="248" height="215" frameX="-24" frameY="0" frameWidth="280" frameHeight="215"/>
+	<SubTexture name="skid head0000" x="258" y="726" width="287" height="238"/>
+</TextureAtlas>

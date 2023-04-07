@@ -1,0 +1,65 @@
+// this is just a script that showcases what hscript can do. lol.
+// - PurpleInsomnia.
+var letterGrade:ModchartSprite = null;
+var curGraphic:String = "f";
+function onCreatePost()
+{
+    // create the letter grade.
+    // making this a "ModchartSpirte" instead of a "FlxSprite" so that you can edit it with luas.
+    letterGrade = new ModchartSprite(0, 0);
+    letterGrade.loadGraphic(Paths.image("letterGrades/f"));
+    letterGrade.visible = false;
+    letterGrade.cameras = [lePlayState.camHUD];
+    letterGrade.x = 1280 - 120;
+    letterGrade.y = 720 - 70; 
+    // push this to the thing for the "Hide Hud" event.
+    lePlayState.hideElements.push(letterGrade);
+    lePlayState.camHudStuff.push(letterGrade);
+    add(letterGrade);
+    letterGrade.wasAdded = true;
+    lePlayState.modchartSprites.set("LetterGradeSprite", letterGrade);
+
+    precacheGraphics();
+}
+
+function precacheGraphics()
+{
+    // "precaches" the graphics....
+    letterGrade.loadGraphic(Paths.image("letterGrades/d"));
+    letterGrade.loadGraphic(Paths.image("letterGrades/c"));
+    letterGrade.loadGraphic(Paths.image("letterGrades/b"));
+    letterGrade.loadGraphic(Paths.image("letterGrades/a"));
+    letterGrade.loadGraphic(Paths.image("letterGrades/s"));
+}
+
+function onUpdate(elapsed)
+{
+    // woooo spooky if thenssss
+    if (lePlayState.ratingString != "?")
+    {
+        letterGrade.visible = true;
+    }
+    else
+    {
+        letterGrade.visible = false;
+    }
+
+    if (lePlayState.ratingPercent >= 1 && !curGraphic == "s")
+    {
+        curGraphic = "s";
+        letterGrade.loadGraphic(Paths.image("letterGrades/s"));
+    }
+    else
+    {
+        var toCheck:Array<Float> = [1, 0.95, 0.9, 0.8, 0.7, 0.5];
+        var toRead:Array<String> = ["a", "a", "b", "c", "d", "f"];
+        for (i in 0...toCheck.length)
+        {
+            if (lePlayState.ratingPercent < toCheck[i] && curGraphic != toRead[i])
+            {
+                curGraphic = toRead[i];
+                letterGrade.loadGraphic(Paths.image("letterGrades/" + toRead[i]));
+            }
+        }
+    }
+}

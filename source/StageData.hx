@@ -64,23 +64,36 @@ class StageData {
 		var rawJson:String = null;
 		var path:String; 
 		if (!PlayState.encoreMode)
+		{
 			path = Paths.getPreloadPath('stages/' + stage + '.json');
+		}
 		else
+		{
 			path = Paths.getPreloadPath('stages/encore/' + stage + '.json');
+		}
 
 		#if MODS_ALLOWED
 		var modPath:String;
 		if (!PlayState.encoreMode) 
+		{
 			modPath = Paths.modFolders('stages/' + stage + '.json');
-		else 
+		}
+		else
+		{ 
 			modPath = Paths.modFolders('stages/encore/' + stage + '.json');
-		if(FileSystem.exists(modPath)) {
+		}
+
+		if(FileSystem.exists(modPath)) 
+		{
 			rawJson = File.getContent(modPath);
-		} else if(FileSystem.exists(path)) {
+		} 
+		else if(FileSystem.exists(path)) 
+		{
 			rawJson = File.getContent(path);
 		}
 		#else
-		if(Assets.exists(path)) {
+		if(Assets.exists(path)) 
+		{
 			rawJson = Assets.getText(path);
 		}
 		#end

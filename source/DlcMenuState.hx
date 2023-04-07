@@ -31,6 +31,11 @@ typedef ModData =
 	color:Array<Int>
 }
 
+typedef DlcHomeFile =
+{
+	var mainMenuAsHome:Bool;
+}
+
 class DlcMenuState extends MusicBeatState
 {
 	var modsList:Array<Array<Dynamic>> = [];
@@ -102,25 +107,27 @@ class DlcMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollower, null, 1);
 
+		var folders:Array<String> = Paths.getModDirectories();
 		if (!FileSystem.exists("modsList.txt"))
 		{
 			noMods = true;
 			skipLastCheck = false;
 			File.saveContent("modsList.txt", "");
 		}
-		else
+		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
 			// auto-updates the list incase a new pack is found :)
 			check = CoolUtil.coolTextFile("modsList.txt");
 			var toRead:Array<String> = [];
-			if (check[0].length >= 2)
+			if (check[0].length >= 3)
 			{
 				for (i in 0...check.length)
 				{
 					var toSplit:Array<String> = check[i].split("|");
 					toRead.push(toSplit[0]);
 				}
-				for (folder in Paths.getModDirectories())
+				var cont:String = "";
+				for (folder in folders)
 				{
 					if (!Paths.ignoreModFolders.exists(folder))
 					{
@@ -129,20 +136,21 @@ class DlcMenuState extends MusicBeatState
 							check.push(Std.string(folder) + "|0");
 							for (i in 0...check.length)
 							{
-								var cont:String = check[0];
+								cont = check[0];
 								for (i in 1...check.length)
 								{
-									cont += check[i];
+									cont += "/n" + check[i];
 								}
-								File.saveContent("modsList.txt", cont);
 							}
 						}
 					}
 				}
+				File.saveContent("modsList.txt", cont);
 			}
 			else
 			{
-				for (folder in Paths.getModDirectories())
+				var cont:String = "";
+				for (folder in folders)
 				{
 					if (!Paths.ignoreModFolders.exists(folder))
 					{
@@ -150,43 +158,17 @@ class DlcMenuState extends MusicBeatState
 						check.push(Std.string(folder) + "|0");
 						for (i in 0...check.length)
 						{
-							var cont:String = check[0];
+							cont = check[0];
 							for (i in 1...check.length)
 							{
-								cont += check[i];
+								cont += "/n" + check[i];
 							}
-							File.saveContent("modsList.txt", cont);
 						}
 					}
 				}
+				File.saveContent("modsList.txt", cont);
 			}
-		}
-
-		// checks again.
-		if (FileSystem.exists("modsList.txt"))
-		{
-			if (check[0].length < 2)
-			{
-				for (folder in Paths.getModDirectories())
-				{
-					if (!Paths.ignoreModFolders.exists(folder))
-					{
-						skipLastCheck = true;
-						noMods = false;
-						check.push(Std.string(folder) + "|0");
-						for (i in 0...check.length)
-						{
-							var cont:String = check[0];
-							for (i in 1...check.length)
-							{
-								cont += check[i];
-							}
-							File.saveContent("modsList.txt", cont);
-						}
-					}
-				}
-			}
-		}
+		});
 
 		var blackOvrlay:FlxSprite = new FlxSprite().makeGraphic(1280, 720, 0xFF000000);
 		blackOvrlay.cameras = [camOV];
@@ -445,18 +427,31 @@ class DlcMenuState extends MusicBeatState
 
 			saveFile();
 
+			var switching:Bool = false;
 			if (!noMods)
 			{
 				Paths.currentModDirectory = modsList[0][2];
+				if (FileSystem.exists("mods/" + Paths.currentModDirectory + "/home.json"))
+				{
+					var homeFile:DlcHomeFile = Json.parse(Paths.getTextFromFile("home.json"));
+					if (homeFile.mainMenuAsHome)
+					{
+						switching = true;
+						MusicBeatState.switchState(new MainMenuState());
+					}
+				}
 			}
 
-			if (restart)
+			if (!switching)
 			{
-				MusicBeatState.switchState(new TitleScreenState());
-			}
-			else
-			{
-				MusicBeatState.switchState(new MainMenuState());
+				if (restart)
+				{
+					MusicBeatState.switchState(new TitleScreenState());
+				}
+				else
+				{
+					MusicBeatState.switchState(new MainMenuState());
+				}
 			}
 		}
 		super.update(elapsed);

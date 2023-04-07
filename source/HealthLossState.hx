@@ -29,6 +29,7 @@ class HealthLossState extends MusicBeatState
 	var curSelected:Int = 1;
 
 	public static var preferedHL:Int = 1;
+	public static var playstate:Bool = false;
 
 	override public function create()
 	{
@@ -101,7 +102,15 @@ class HealthLossState extends MusicBeatState
 			ClientPrefs.saveSettings();
 			FlxG.sound.play(Paths.sound('confirmMenu'), 1);
 			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new LoadingScreenState());
+			if (!playstate)
+			{
+				MusicBeatState.switchState(new LoadingScreenState());
+			}
+			else
+			{
+				LoadingState.loadAndSwitchState(new PlayState());
+			}
+			playstate = false;
 		}
 		super.update(elapsed);
 	}

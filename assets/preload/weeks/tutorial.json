@@ -1,7 +1,7 @@
 {
 	"storyName": "CONFESSION",
 	"hideFreeplay": false,
-	"weekBackground": "stage",
+	"weekBackground": "tutorial",
 	"weekBefore": "tutorial",
 	"startUnlocked": true,
 	"weekCharacters": [

@@ -58,6 +58,7 @@ class Paths
 	static public function getModFolders()
 	{
 		#if MODS_ALLOWED
+		ignoreModFolders.set("arcade", true);
 		ignoreModFolders.set('characters', true);
 		ignoreModFolders.set('custom_events', true);
 		ignoreModFolders.set('custom_notetypes', true);
@@ -77,6 +78,7 @@ class Paths
 		ignoreModFolders.set("fanart", true);
 		ignoreModFolders.set("states", true);
 		ignoreModFolders.set("shaders", true);
+		ignoreModFolders.set("wardrobe", true);
 		ignoreModFolders.set("fonts", true);
 		#end
 	}
@@ -202,8 +204,23 @@ class Paths
 		return getPath('doodles/$key.png', IMAGE, library);
 	}
 
-	static public function arcade(key:String)
+	static public function arcade(key:String):Dynamic
 	{
+		if (FileSystem.exists(Paths.modFolders("arcade/" + key)))
+		{
+			if (key.contains("images/"))
+			{
+				return Paths.getFlxGraphic(Paths.modFolders("arcade/" + key));
+			}
+			if (key.contains("sounds/") || key.contains("music/"))
+			{
+				if(!customSoundsLoaded.exists(key)) {
+					customSoundsLoaded.set(key, Sound.fromFile(key));
+				}
+				return customSoundsLoaded.get(key);
+			}
+			return Paths.modFolders("arcade/" + key);
+		}
 		return 'assets/arcade/' + key;
 	}
 
@@ -238,24 +255,26 @@ class Paths
 
 	inline static public function voices(song:String):Any
 	{
+		var songFin:String = "Voices";
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT';
 	}
 
 	inline static public function voicesEncore(song:String):Any
 	{
+		var toAdd:String = "";
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/VoicesEncore'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/VoicesEncore' + toAdd));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/VoicesEncore.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/VoicesEncore' + toAdd + '.$SOUND_EXT';
 	}
 
 	inline static public function fuckedVoices(song:String):Any
@@ -271,24 +290,26 @@ class Paths
 
 	inline static public function inst(song:String):Any
 	{
+		var songFin:String = "Inst";
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT';
 	}
 
 	inline static public function instEncore(song:String):Any
 	{
+		var toAdd:String = "";
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore' + toAdd));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/InstEncore.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/InstEncore' + toAdd + '.$SOUND_EXT';
 	}
 
 	inline static public function fuckedInst(song:String):Any
@@ -388,6 +409,11 @@ class Paths
 		#end
 	}
 
+	inline static public function getPrecachedSparrow(key:String, ?library:String)
+	{
+		return FlxAtlasFrames.fromSparrow(CoolUtil.playstateImages.get(key), file('images/$key.xml', library));
+	}
+
 	inline static public function getPackerAtlas(key:String, ?library:String)
 	{
 		#if MODS_ALLOWED
@@ -403,7 +429,13 @@ class Paths
 		#end
 	}
 
-	inline static public function formatToSongPath(path:String) {
+	inline static public function getPrecacheAtlas(key:String, ?library:String)
+	{
+		return FlxAtlasFrames.fromSpriteSheetPacker(CoolUtil.playstateImages.get(key), file('images/$key.txt', library));
+	}
+
+	inline static public function formatToSongPath(path:String) 
+	{
 		return path.toLowerCase().replace(' ', '-');
 	}
 
@@ -424,7 +456,7 @@ class Paths
 	}
 
 	inline static public function funnyFlxGraphic(key:String):FlxGraphic {
-		var newBitmap:BitmapData = BitmapData.fromFile(getPreloadPath(key));
+		var newBitmap:BitmapData = BitmapData.fromFile(preloadFunny(key));
 		if(FileSystem.exists(getModFile(key)))
 		{
 			if(!customImagesLoaded.exists(key))
@@ -432,6 +464,15 @@ class Paths
 				newBitmap = BitmapData.fromFile(getModFile(key));
 			}
 		}
+		var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, key);
+		newGraphic.persist = true;
+		FlxG.bitmap.addGraphic(newGraphic);
+		customImagesLoaded.set(key, true);
+		return FlxG.bitmap.get(key);
+	}
+
+	inline static public function getFlxGraphic(key:String):FlxGraphic {
+		var newBitmap:BitmapData = BitmapData.fromFile(key);
 		var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, key);
 		newGraphic.persist = true;
 		FlxG.bitmap.addGraphic(newGraphic);
@@ -457,6 +498,11 @@ class Paths
 		return "assets/gameover/" + key;
 	}
 
+	inline static public function wardrobe(key:String)
+	{
+		return "assets/wardrobe/" + key;
+	}
+
 	inline static public function preloadFunny(key:String)
 	{
 		if (FileSystem.exists(modFolders(key)))
@@ -475,18 +521,29 @@ class Paths
 		return "assets/dialogue/" + key;
 	}
 
-	inline static public function shaders(key:String)
+	inline static public function shaders(key:String, ?toAdd:String = "frag")
 	{
-		if (FileSystem.exists(modFolders("shaders/" + key)))
+		if (FileSystem.exists(modFolders("shaders/" + key + "." + toAdd)))
 		{
-			return modFolders("shaders/" + key);
+			return modFolders("shaders/" + key + "." + toAdd);
 		}
-		return "assets/shaders/" + key;
+		return "assets/shaders/" + key + "." + toAdd;
+	}
+
+	inline static public function shop(key:String)
+	{
+		return "assets/shop/" + key;
+	}
+
+	inline static public function archives(key:String)
+	{
+		return "assets/archives/" + key;
 	}
 	
 	#if MODS_ALLOWED
 	static public function addCustomGraphic(key:String):FlxGraphic {
-		if(FileSystem.exists(modsImages(key))) {
+		if(FileSystem.exists(modsImages(key))) 
+		{
 			if(!customImagesLoaded.exists(key)) {
 				var newBitmap:BitmapData = BitmapData.fromFile(modsImages(key));
 				var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, key);

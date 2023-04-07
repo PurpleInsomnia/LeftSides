@@ -2,7 +2,6 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.FlxGraphic;
 
 class GridBackdrop extends FlxBackdrop

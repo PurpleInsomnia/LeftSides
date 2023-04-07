@@ -21,39 +21,16 @@ import FunkinLua;
 
 using StringTools;
 
-typedef DialogueCharacterFile = {
-	var image:String;
-	var dialogue_pos:String;
-
-	var animations:Array<DialogueAnimArray>;
-	var position:Array<Float>;
-	var scale:Float;
-}
-
-typedef DialogueAnimArray = {
-	var anim:String;
-	var loop_name:String;
-	var loop_offsets:Array<Int>;
-	var idle_name:String;
-	var idle_offsets:Array<Int>;
-}
-
 class DialogueCharacter extends FlxSprite
 {
 	private static var IDLE_SUFFIX:String = '-IDLE';
 	public static var DEFAULT_CHARACTER:String = 'bf';
 	public static var DEFAULT_SCALE:Float = 0.7;
 
-	public var jsonFile:DialogueCharacterFile = null;
-	#if (haxe >= "4.0.0")
-	public var dialogueAnimations:Map<String, DialogueAnimArray> = new Map();
-	#else
-	public var dialogueAnimations:Map<String, DialogueAnimArray> = new Map<String, DialogueAnimArray>();
-	#end
-
 	public var startingPos:Float = 0; //For center characters, it works as the starting Y, for everything else it works as starting X
 	public var isGhost:Bool = false; //For the editor
 	public var curCharacter:String = 'bf';
+	public var daAnim:String = "default";
 
 	public static var curBox:String = 'speech_bubble';
 
@@ -69,88 +46,135 @@ class DialogueCharacter extends FlxSprite
 		if(character == null) character = DEFAULT_CHARACTER;
 		this.curCharacter = character;
 
-		reloadCharacterJson(character);
-		frames = Paths.getSparrowAtlas('dialogue/' + jsonFile.image);
-		reloadAnimations();
+		reloadCharacter(character);
+		reloadExpression();
 	}
 
-	public function reloadFrames()
+	public function reloadExpression()
 	{
-		frames = Paths.getSparrowAtlas('dialogue/' + jsonFile.image);
-	}
-
-	public function reloadCharacterJson(character:String) {
-		var characterPath:String = 'dialogue/characters/' + character + '.json';
-		var rawJson = null;
-
-		#if MODS_ALLOWED
-		var path:String = Paths.modFolders(characterPath);
-		if (!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath(characterPath);
+		// fixes the stuff with having multiple fucking portraits in the files.
+		var prefix:String = curCharacter;
+		switch (prefix)
+		{
+			case "ben":
+				prefix = "benN";
+			case "tess":
+				prefix = "tessN";
+			case "bf":
+				prefix = "ben";
+			case "gf":
+				prefix = "tess";
 		}
-
-		if(!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath('dialogue/characters/' + DEFAULT_CHARACTER + '.json');
+		if (FileSystem.exists(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".png")))
+		{
+			loadGraphic(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".png"));
+			return;
 		}
-		rawJson = File.getContent(path);
-
-		#else
-		var path:String = Paths.getPreloadPath(characterPath);
-		rawJson = Assets.getText(path);
-		#end
-		
-		jsonFile = cast Json.parse(rawJson);
-	}
-
-	public function reloadAnimations() {
-		dialogueAnimations.clear();
-		if(jsonFile.animations != null && jsonFile.animations.length > 0) {
-			for (anim in jsonFile.animations) {
-				animation.addByPrefix(anim.anim, anim.loop_name, 24, isGhost);
-				animation.addByPrefix(anim.anim + IDLE_SUFFIX, anim.idle_name, 24, true);
-				dialogueAnimations.set(anim.anim, anim);
+		if (FileSystem.exists(Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".png")))
+		{
+			loadGraphic(Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".png"));
+			return;
+		}
+		if (FileSystem.exists(Paths.preloadFunny("shared/images/dialogue/" + curCharacter + ".png")))
+		{
+			loadGraphic(Paths.preloadFunny("shared/images/dialogue/" + curCharacter + ".png"), true, 413, 249);
+			switch(curCharacter)
+			{
+				case "dmitri":
+					animation.add("default", [0], 1, true);
+					animation.add("death-stare", [1], 1, true);
+					animation.add("cry", [2], 1, true);
+				case "spookeez":
+					animation.add("skid-default", [1], 1, true);
+					animation.add("skid-bruh", [0], 1, true);
+					animation.add("skid-point", [2], 1, true);
+					animation.add("skid-sad", [3], 1, true);
+					animation.add("pump-default", [4], 1, true);
+					animation.add("pump-point", [5], 1, true);
+					animation.add("pump-undertale", [6], 1, true);
+					animation.add("pump-worried", [7], 1, true);
+				case "matto":
+					animation.add("default", [2], 1, true);
+					animation.add("angry", [1], 1, true);
+					animation.add("happy", [0], 1, true);
+				case "bb":
+					animation.add("walt", [2], 1, true);
+					animation.add("walt two", [3], 1, true);
+					animation.add("walt three", [4], 1, true);
+					animation.add("jesse", [0], 1, true);
+					animation.add("jesse two", [1], 1, true);
 			}
-		}
-	}
-
-	public function playAnim(animName:String = null, ?playIdle:Bool = false) {
-		var leAnim:String = animName;
-		if(animName == null || !dialogueAnimations.exists(animName)) { //Anim is null, get a random animation
-			var arrayAnims:Array<String> = [];
-			for (anim in dialogueAnimations) {
-				arrayAnims.push(anim.anim);
-			}
-			if(arrayAnims.length > 0) {
-				leAnim = arrayAnims[FlxG.random.int(0, arrayAnims.length-1)];
-			}
-			trace("Uhhhh anim is null");
-		}
-
-		if(dialogueAnimations.exists(leAnim) &&
-		(dialogueAnimations.get(leAnim).loop_name == null ||
-		dialogueAnimations.get(leAnim).loop_name.length < 1 ||
-		dialogueAnimations.get(leAnim).loop_name == dialogueAnimations.get(leAnim).idle_name)) {
-			playIdle = true;
-		}
-		animation.play(playIdle ? leAnim + IDLE_SUFFIX : leAnim, false);
-
-		if(dialogueAnimations.exists(leAnim)) {
-			var anim:DialogueAnimArray = dialogueAnimations.get(leAnim);
-			if(playIdle) {
-				offset.set(anim.idle_offsets[0], anim.idle_offsets[1]);
-				//trace('Setting idle offsets: ' + anim.idle_offsets);
-			} else {
-				offset.set(anim.loop_offsets[0], anim.loop_offsets[1]);
-				//trace('Setting loop offsets: ' + anim.loop_offsets);
-			}
-		} else {
-			offset.set(0, 0);
-			trace('Offsets not found! Dialogue character is badly formatted, anim: ' + leAnim + ', ' + (playIdle ? 'idle anim' : 'loop anim'));
+			animation.play(daAnim, true);
+			return;
 		}
 	}
 
-	public function animationIsLoop():Bool {
-		if(animation.curAnim == null) return false;
-		return !animation.curAnim.name.endsWith(IDLE_SUFFIX);
+	public function reloadCharacter(character:String) 
+	{
+		curCharacter = character;
+	}
+
+	public function playAnim(animName:String = null, ?playIdle:Bool = false) 
+	{
+		daAnim = animName;
+		reloadExpression();
+	}
+
+	public function portExists(port:String)
+	{
+		var prefix:String = port;
+		switch (prefix)
+		{
+			case "ben":
+				prefix = "benN";
+			case "tess":
+				prefix = "tessN";
+			case "bf":
+				prefix = "ben";
+			case "gf":
+				prefix = "tess";
+		}
+		if (FileSystem.exists(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/")))
+		{
+			return true;
+		}
+		if (FileSystem.exists(Paths.preloadFunny("dialogue/ports/" + port + "/")))
+		{
+			return true;
+		}
+		if (FileSystem.exists(Paths.preloadFunny("shared/images/dialogue/" + port + ".png")))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public function checkExpression(swag:String)
+	{
+		var prefix:String = curCharacter;
+		switch (prefix)
+		{
+			case "ben":
+				prefix = "benN";
+			case "tess":
+				prefix = "tessN";
+			case "bf":
+				prefix = "ben";
+			case "gf":
+				prefix = "tess";
+		}
+		if (FileSystem.exists(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".png")))
+		{
+			return true;
+		}
+		if (FileSystem.exists(Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".png")))
+		{
+			return true;
+		}
+		if (FileSystem.exists(Paths.preloadFunny("shared/images/dialogue/" + curCharacter + ".png")))
+		{
+			return true;
+		}
+		return false;
 	}
 }

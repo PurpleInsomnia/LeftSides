@@ -1,0 +1,8 @@
+{
+    "name": "Story Key",
+    "desc": "I know this item grants you the ability to unlock a locked [SIDE] [STORY] with just one click...",
+    "price": 175,
+    "thanks": "Huh...you enjoy reading THAT much?",
+    "nah": "I gave you all of them...remember that, [BURDEN]?",
+    "tag": "story-key"
+}

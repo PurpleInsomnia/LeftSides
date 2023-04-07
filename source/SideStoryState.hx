@@ -7,6 +7,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.addons.text.FlxTypeText;
+import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import sys.FileSystem;
 import sys.io.File;
@@ -35,10 +36,12 @@ class SideStoryState extends MusicBeatState
 	public var luaTimers:Map<String, FlxTimer> = new Map();
 	public var luaTweens:Map<String, FlxTween> = new Map();
 	public var luaSprites:Map<String, FlxSprite> = new Map();
+	public var luaSounds:Map<String, FlxSound> = new Map();
 	#else
 	public var luaTimers:Map<String, FlxTimer> = new Map(String, FlxTimer);
 	public var luaTweens:Map<String, FlxTween> = new Map(String, FlxTween);
 	public var luaSprites:Map<String, FlxSprite> = new Map(String, FlxSprite);
+	public var luaSounds:Map<String, FlxSound> = new Map(String, FlxSound);
 	#end
 
 	public var bg:FlxSprite;
@@ -77,7 +80,7 @@ class SideStoryState extends MusicBeatState
 		SideStoryDateState.modDirect = modDirect;
 
 		if (dialogue == null)
-			list = ["ben:default:Lmao no cool swag file found (Bozo, L + ratio):ohmagwad"];
+			list = ["ben|default|Lmao no cool swag file found (Bozo, L + ratio)|ohmagwad"];
 		else
 			list = dialogue;
 
@@ -311,10 +314,13 @@ class SideStoryState extends MusicBeatState
 	{
 		port.loadGraphic(PathSS.image("ports/" + curChar + "/" + gra));
 		if (curChar.startsWith("ben") || curChar.startsWith("tess") || curChar.startsWith("bf") || curChar.startsWith("gf") || curChar == "yBen" || curChar == "yTess")
+		{
 			port.flipX = false;
+		}
 		else
+		{
 			port.flipX = true;
-			
+		}	
 		resetCharPos();
 	}
 
@@ -327,6 +333,12 @@ class SideStoryState extends MusicBeatState
 		else
 		{
 			port.x = box.x + 20;
+		}
+		// phone shit.
+		switch(curChar)
+		{
+			case "phone":
+				port.flipX = false;
 		}
 		port.y = box.y - port.height;
 	}
@@ -382,12 +394,29 @@ class SideStoryState extends MusicBeatState
 		{
 			FlxG.sound.music.fadeOut(0, 1);
 		}
+		if (!ClientPrefs.completedSideStories.exists(directory))
+		{
+			ClientPrefs.completedSideStories.set(directory, true);
+		}
+		else
+		{
+			ClientPrefs.completedSideStories.remove(directory);
+			ClientPrefs.completedSideStories.set(directory, true);
+		}
+		ClientPrefs.saveSettings();
 		FlxG.camera.fade(0xFF000000, 1, false, function()
 		{
 			FlxG.sound.music.stop();
 			if (directory == "visit")
 			{
+				ClientPrefs.unlockedRestless = true;
+				ClientPrefs.saveSettings();
 				MusicBeatState.switchState(new MonsterLairState());
+				return;
+			}
+			if (directory == "happy" && SideStorySelectState.storyList[7][2] != 1)
+			{
+				MusicBeatState.switchState(new UnlockState([["SideStorySelectState", 'The Side Story "That Day"', 7, 1]]));
 				return;
 			}
 			MusicBeatState.switchState(new SideStorySelectState());
@@ -549,7 +578,38 @@ class SideStoryLua
 		{
 			if (FileSystem.exists(PathSS.getPath("sounds/" + sound + ".ogg")))
 			{
-				FlxG.sound.play(PathSS.sound(sound), volume, loop);
+				if (lePlayState.luaSounds.exists(sound))
+				{
+					var leSound:FlxSound = lePlayState.luaSounds.get(sound);
+					leSound.stop();
+					lePlayState.luaSounds.remove(sound);
+				}
+				var newSound:FlxSound = FlxG.sound.load(PathSS.sound(sound), volume, loop);
+				lePlayState.luaSounds.set(sound, newSound);
+				newSound.play();
+			}
+		});
+
+		Lua_helper.add_callback(lua, "stopSound", function(sound:String)
+		{
+			if (lePlayState.luaSounds.exists(sound))
+			{
+				var leSound:FlxSound = lePlayState.luaSounds.get(sound);
+				leSound.stop();
+				lePlayState.luaSounds.remove(sound);
+			}
+		});
+
+		Lua_helper.add_callback(lua, "FADsound", function(sound:String, ?dur:Float = 1)
+		{
+			if (lePlayState.luaSounds.exists(sound))
+			{
+				var leSound:FlxSound = lePlayState.luaSounds.get(sound);
+				leSound.fadeOut(dur, 0, function(twn:FlxTween)
+				{
+					leSound.stop();
+					lePlayState.luaSounds.remove(sound);
+				});
 			}
 		});
 
@@ -893,6 +953,10 @@ class SideStoryLua
 		Lua_helper.add_callback(lua, "startMusic", function(fileName:String, ?vol:Float = 1)
 		{
 			trace("vine boom?");
+			if (FlxG.sound.music.playing)
+			{
+				FlxG.sound.music.stop();
+			}
 			FlxG.sound.playMusic(PathSS.music(fileName), 0, true);
 			FlxG.sound.music.fadeIn(0.5, 0, vol);
 		});

@@ -78,6 +78,10 @@ class Character extends FlxSprite
 	public var alreadyLoaded:Bool = true; //Used by "Change Character" event
 
 	public static var DEFAULT_CHARACTER:String = 'bf'; //In case a character is missing, it will use BF on its place
+
+	// custom classes mostly used for monster :/
+	public var chromab:Bool = false;
+
 	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
 	{
 		super(x, y);
@@ -133,10 +137,24 @@ class Character extends FlxSprite
 				#end
 
 				var json:CharacterFile = cast Json.parse(rawJson);
-				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) {
-					frames = Paths.getPackerAtlas(json.image);
-				} else {
-					frames = Paths.getSparrowAtlas(json.image);
+				if (!CoolUtil.playstateImages.exists(json.image))
+				{
+					if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) {
+						frames = Paths.getPackerAtlas(json.image);
+					} else {
+						frames = Paths.getSparrowAtlas(json.image);
+					}
+				}
+				else
+				{
+					if(!Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) 
+					{
+						frames = Paths.getPrecachedSparrow(json.image);
+					}
+					else
+					{
+						frames = Paths.getPrecacheAtlas(json.image);
+					}
 				}
 				imageFile = json.image;
 
@@ -214,6 +232,12 @@ class Character extends FlxSprite
 					animation.getByName('singLEFTmiss').frames = oldMiss;
 				}
 			}*/
+		}
+
+		switch (curCharacter)
+		{
+			case "freeme" | "bad-thoughts":
+				chromab = true;
 		}
 	}
 

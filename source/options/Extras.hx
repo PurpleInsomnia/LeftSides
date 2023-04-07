@@ -10,7 +10,7 @@ import flixel.text.FlxText;
 
 class Extras extends MusicBeatState
 {
-	var extras:Array<String> = ['How To Unlock V', 'How To Make DLC Packs', "How to make custom ui", "How to make custom side stories", "How to make custom menus", "How to make custom soundtracks", "Possible Planned DLC List"];
+	var extras:Array<String> = ['How To Make DLC Packs', "How to make custom ui", "How to make custom side stories", "How to make custom menus", "How to make custom soundtracks", "Custom States For DLC", "Custom Soundtracks For DLC"];
 
 	var extrasGrp:FlxTypedGroup<Alphabet>;
 
@@ -72,25 +72,25 @@ class Extras extends MusicBeatState
 			switch(curSelected)
 			{
 				case 0:
-					makeFile();
-					canPress = true;
-				case 1:
 					makeDlcFile();
 					canPress = true;
-				case 2:
+				case 1:
 					makeUiFile();
 					canPress = true;
-				case 3:
+				case 2:
 					makeSideStoryFile();
 					canPress = true;
-				case 4:
+				case 3:
 					makeMenuFile();
 					canPress = true;
-				case 5:
+				case 4:
 					makeSoundFile();
 					canPress = true;
+				case 5:
+					makeMenuFile();
+					canPress = true;
 				case 6:
-					makeUpcomingFile();
+					makeSoundFile();
 					canPress = true;
 			}
 		}
@@ -121,11 +121,6 @@ class Extras extends MusicBeatState
 			else
 				a.alpha = 0.75;
 		});
-	}
-
-	function makeFile()
-	{
-		TextFile.newFile("Okay, so there is a sprite on the left side of Pico's stage (Kinda a tan colour)\nThis sprite is clickable\nupon doing so you will be brought into the void menu\nand you can play it from there\n- PurpleInsomnia <3", "How to unlock V");
 	}
 
 	function makeDlcFile()
@@ -171,23 +166,4 @@ class Extras extends MusicBeatState
 	{
 		TextFile.newFile('In the "mods/data" folder (or in your DLC' + "'s" + ' data folder) make a .txt file called "soundtrack".\nIn this file put in something like this "FOLDERNAME|ALBUMNAME"\n \nAfter that, In the images folder, make a new folder called "soundtrack" then make a new folder in there, and name it the folder path on your .txt file.\n \nThen you can make a cover image, a bg image and the list of your tracks. (called tracks.txt).\n \n(If you are confused, look in "assets/images/soundtrack/LeftSides" for an example.)', "How to make custom soundtracks");
 	}
-
-	function makeUpcomingFile()
-    {
-		var http = new haxe.Http("https://raw.githubusercontent.com/PurpleInsomnia/LeftSidesAPIShit/main/PlannedDLC.txt");
-			
-		http.onData = function (data:String)
-		{
-            var cont:String = data;
-
-            TextFile.newFile(cont, "Upcoming DLC");
-		}
-			
-		http.onError = function (error) 
-        {
-			trace('error: $error');
-		}
-			
-		http.request();
-    }
 }

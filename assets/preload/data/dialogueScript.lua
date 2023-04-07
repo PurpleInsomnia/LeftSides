@@ -20,9 +20,11 @@ function onDialogueOpen()
 	doTweenAlpha('asshole3', 'camHUD', 1, 0.0001, 'linear');
 end
 
+hide = false;
 function onCountdownTick(counter)
 	if counter == 0 then
-		doTweenAlpha('asshole2', 'skip', 0, 0.001, 'linear');
+		removeLuaSprite('skip', true);
+		hide = getPropertyFromClass('ClientPrefs', 'limitedHud');
 		doTweenAlpha('asshole3', 'camHUD', 1, 1, 'linear');
 		doTweenAlpha('asshole4', 'healthBar', 1, 1, 'linear');
 		doTweenAlpha('asshole5', 'iconP1', 1, 1, 'linear');

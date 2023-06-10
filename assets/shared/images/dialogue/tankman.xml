@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:437343390b5e34effbdfd1c6d78410f7:b5c9233f4268413e2dbb8081f19cb3dd:d74c45ac56bd100e7c2bfdf0a4d3c922$ -->
-<TextureAtlas imagePath="tankman.png" width="1666" height="245">
-    <SubTexture name="default" x="0" y="0" width="409" height="245"/>
-    <SubTexture name="happy" x="419" y="0" width="409" height="245"/>
-    <SubTexture name="mad" x="838" y="0" width="409" height="245"/>
-    <SubTexture name="sus" x="1257" y="0" width="409" height="245"/>
-</TextureAtlas>

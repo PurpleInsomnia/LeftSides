@@ -27,7 +27,7 @@ class MusicBeatState extends FlxUIState
 	private var controls(get, never):Controls;
 
 	private static var currentStateName:String = "";
-	public static var menuHscripts:Array<MenuHscript.MenuScript> = [];
+	public static var menuHscripts:Array<HscriptScript> = [];
 
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
@@ -40,6 +40,16 @@ class MusicBeatState extends FlxUIState
 			menuHscripts.push(MenuHscript.returnFile("main"));
 		}
 		MenuHscript.callOnScripts("onCreate", []);
+
+		// genius way of checking for platinum acheivements.
+		if (currentStateName != "TitleScreenState" && TitleScreenState.initialized)
+		{
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				CoolUtil.getCompletionStatus(true);
+			});
+		}
+
 		super.create();
 
 		// Custom made Trans out

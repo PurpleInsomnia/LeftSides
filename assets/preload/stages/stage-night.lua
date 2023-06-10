@@ -27,6 +27,13 @@ function onCreate()
 		makeLuaSprite('stagelight', 'stageShader', -600, -400);
 		setBlendMode('stagelight', 'hardlight');
 		setProperty('stagelight.alpha', 0.75);
+
+		makeLuaSprite('p', 'stageNight/stagefront', -650, 530);
+		setScrollFactor('p', 0.9, 0.9);
+		scaleObject('p', 1.1, 1.1);
+		setProperty("p.alpha", 0);
+		setProperty("p.particles", true);
+		setProperty("p.particleColors", "0xFF4B85C2|0xFFFF00AA|0xFFFAC405|0xFF9339F8");
 	end
 
 	addLuaSprite('stageback', false);
@@ -35,6 +42,7 @@ function onCreate()
 	addLuaSprite('stagelight_right', false);
 	addLuaSprite('stagecurtains', true);
 	addLuaSprite('stagelight', true);
+	addLuaSprite('p', true);
 	
 	close(true); --For performance reasons, close this script once the stage is fully loaded, as this script won't be used anymore after loading the stage
 end

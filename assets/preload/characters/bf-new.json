@@ -1,173 +1,173 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				12,
 				-6
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE LEFT0",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "BF NOTE LEFT0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-10,
 				-50
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE DOWN0",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "BF NOTE DOWN0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-39,
 				27
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE UP0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "BF NOTE UP0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-38,
 				-5
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE RIGHT0",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "BF NOTE RIGHT0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				11,
 				-9
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE LEFT MISS",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "BF NOTE LEFT MISS"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-15,
 				-51
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE DOWN MISS",
-			"indices": []
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "BF NOTE DOWN MISS"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-38,
 				31
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "BF NOTE UP MISS",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "BF NOTE UP MISS"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-40,
 				-6
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHTmiss",
-			"fps": 24,
-			"name": "BF NOTE RIGHT MISS",
-			"indices": []
+			"indices": [],
+			"name": "BF NOTE RIGHT MISS"
 		},
 		{
-			"loop": false,
-			"offsets": [
-				-3,
-				5
-			],
-			"anim": "hey",
-			"fps": 24,
-			"name": "BF HEY",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-3,
-				5
-			],
-			"anim": "emote",
-			"fps": 24,
-			"name": "BF HEY",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				25,
-				18
-			],
-			"anim": "hurt",
-			"fps": 24,
-			"name": "BF hit",
-			"indices": []
-		},
-		{
-			"loop": true,
 			"offsets": [
 				-4,
-				0
+				3
 			],
-			"anim": "scared",
+			"loop": false,
 			"fps": 24,
-			"name": "BF idle shaking",
-			"indices": []
+			"anim": "hey",
+			"indices": [],
+			"name": "BF HEY"
+		},
+		{
+			"offsets": [
+				-4,
+				3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "emote",
+			"indices": [],
+			"name": "BF HEY"
+		},
+		{
+			"offsets": [
+				-5,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hurt",
+			"indices": [],
+			"name": "BF hit"
 		},
 		{
 			"offsets": [
 				-5,
 				0
 			],
-			"loop": false,
+			"loop": true,
 			"fps": 24,
-			"anim": "idle",
+			"anim": "scared",
 			"indices": [],
-			"name": "BF idle dance0"
+			"name": "BF idle shaking"
 		},
 		{
+			"loop": false,
 			"offsets": [
-				50,
+				-5,
 				0
 			],
-			"loop": false,
+			"anim": "idle",
 			"fps": 24,
-			"anim": "idle-alt",
-			"indices": [],
-			"name": "BF idle dance alt"
+			"name": "BF idle dance0",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				36,
+				0
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "BF idle dance alt",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				10,
 				-76
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "dodge",
-			"loop": false,
-			"name": "boyfriend dodge"
+			"fps": 24,
+			"name": "boyfriend dodge",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/benWinter",
+	"image": "characters/benNEW",
 	"position": [
 		0,
 		350
@@ -175,9 +175,9 @@
 	"healthicon": "bf",
 	"flip_x": true,
 	"healthbar_colors": [
-		209,
-		162,
-		48
+		255,
+		175,
+		0
 	],
 	"camera_position": [
 		0,

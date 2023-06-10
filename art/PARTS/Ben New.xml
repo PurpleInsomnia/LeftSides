@@ -5,121 +5,18 @@
 	<SubTexture name="BF Body Down0000" x="0" y="0" width="349" height="261"/>
 	<SubTexture name="BF Body Up0000" x="359" y="0" width="367" height="271"/>
 	<SubTexture name="BF Body Up no hand0000" x="736" y="0" width="328" height="271"/>
-	<SubTexture name="BF Head defalt0000" x="1074" y="0" width="337" height="204"/>
-	<SubTexture name="BF defalt arm0000" x="1421" y="0" width="217" height="160"/>
-	<SubTexture name="BF head slight turn0000" x="1648" y="0" width="313" height="219"/>
-	<SubTexture name="BF hit head0000" x="0" y="281" width="337" height="227"/>
-	<SubTexture name="BF sing face ye0000" x="347" y="281" width="167" height="123"/>
-	<SubTexture name="arm default0000" x="524" y="281" width="139" height="108"/>
-	<SubTexture name="bf attack bod0000" x="673" y="281" width="138" height="126"/>
-	<SubTexture name="bf body default0000" x="821" y="281" width="332" height="255"/>
-	<SubTexture name="bf cringe hand0000" x="1163" y="281" width="120" height="101"/>
-	<SubTexture name="bf dodge blue0000" x="1293" y="281" width="369" height="400"/>
-	<SubTexture name="bf dodge face0000" x="1672" y="281" width="131" height="159"/>
-	<SubTexture name="bf dodge hand0000" x="1813" y="281" width="134" height="107"/>
-	<SubTexture name="bf dodge legs0000" x="0" y="691" width="337" height="215"/>
-	<SubTexture name="bf face default0000" x="347" y="691" width="164" height="109"/>
-	<SubTexture name="bf face default alt0000" x="521" y="691" width="165" height="109"/>
-	<SubTexture name="bf face nervous0000" x="696" y="691" width="149" height="106"/>
-	<SubTexture name="bf face nervous0001" x="696" y="691" width="149" height="106"/>
-	<SubTexture name="bf face nervous0002" x="696" y="691" width="149" height="106"/>
-	<SubTexture name="bf head dodge0000" x="855" y="691" width="281" height="201"/>
-	<SubTexture name="bf hit face0000" x="1146" y="691" width="135" height="114" frameX="-1" frameY="-2" frameWidth="136" frameHeight="118"/>
-	<SubTexture name="bf hit face0001" x="1291" y="691" width="136" height="118"/>
-	<SubTexture name="bf mic prep0000" x="1437" y="691" width="208" height="95"/>
-	<SubTexture name="bf yellow 10000" x="0" y="916" width="429" height="425"/>
-	<SubTexture name="blueThingy0000" x="439" y="916" width="433" height="415" frameX="0" frameY="0" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0001" x="439" y="916" width="433" height="415" frameX="0" frameY="0" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0002" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0003" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0004" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0005" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0006" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0007" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0008" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0009" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0010" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0011" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0012" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0013" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0014" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0015" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0016" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0017" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0018" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0019" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0020" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0021" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0022" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0023" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0024" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0025" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0026" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0027" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0028" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0029" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0030" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0031" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0032" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0033" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0034" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0035" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0036" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0037" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0038" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0039" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0040" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0041" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0042" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0043" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0044" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0045" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0046" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0047" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0048" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0049" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0050" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0051" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0052" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0053" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0054" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0055" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0056" x="882" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="blueThingy0057" x="1330" y="916" width="438" height="412" frameX="0" frameY="-6" frameWidth="438" frameHeight="418"/>
-	<SubTexture name="boyfriend mic head0000" x="0" y="1351" width="331" height="210"/>
-	<SubTexture name="head covering brain0000" x="341" y="1351" width="192" height="136"/>
-	<SubTexture name="heyFACE0000" x="543" y="1351" width="167" height="137" frameX="-3" frameY="0" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0001" x="543" y="1351" width="167" height="137" frameX="-3" frameY="0" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0002" x="720" y="1351" width="160" height="127" frameX="0" frameY="-7" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0003" x="720" y="1351" width="160" height="127" frameX="0" frameY="-7" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0004" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0005" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0006" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0007" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0008" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0009" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0010" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0011" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0012" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0013" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0014" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0015" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0016" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0017" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0018" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0019" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0020" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0021" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0022" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0023" x="890" y="1351" width="161" height="126" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0024" x="1061" y="1351" width="161" height="105" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="heyFACE0025" x="1061" y="1351" width="161" height="105" frameX="-2" frameY="-6" frameWidth="170" frameHeight="137"/>
-	<SubTexture name="left arm0000" x="1232" y="1351" width="118" height="144"/>
-	<SubTexture name="mic full forward0000" x="1360" y="1351" width="171" height="86"/>
-	<SubTexture name="mic hand0000" x="1541" y="1351" width="183" height="127"/>
-	<SubTexture name="mic throwing arm0000" x="1734" y="1351" width="247" height="174"/>
-	<SubTexture name="microphone0000" x="0" y="1571" width="146" height="145"/>
-	<SubTexture name="peace hand0000" x="156" y="1571" width="103" height="133"/>
-	<SubTexture name="retry default frame0000" x="269" y="1571" width="152" height="80"/>
-	<SubTexture name="skeleton base0000" x="431" y="1571" width="387" height="390"/>
+	<SubTexture name="BF Head defalt0000" x="1074" y="0" width="356" height="208"/>
+	<SubTexture name="BF defalt arm0000" x="1440" y="0" width="217" height="160"/>
+	<SubTexture name="BF head slight turn0000" x="1667" y="0" width="332" height="218"/>
+	<SubTexture name="arm default0000" x="0" y="281" width="139" height="108"/>
+	<SubTexture name="bf body default0000" x="149" y="281" width="332" height="255"/>
+	<SubTexture name="bf body default no pocket0000" x="491" y="281" width="332" height="255"/>
+	<SubTexture name="bf cringe hand0000" x="833" y="281" width="120" height="101"/>
+	<SubTexture name="bf face default0000" x="963" y="281" width="134" height="103"/>
+	<SubTexture name="bf face default alt0000" x="1107" y="281" width="135" height="103"/>
+	<SubTexture name="bf face nervous0000" x="1252" y="281" width="149" height="106"/>
+	<SubTexture name="bf face nervous0001" x="1252" y="281" width="149" height="106"/>
+	<SubTexture name="bf face nervous0002" x="1252" y="281" width="149" height="106"/>
+	<SubTexture name="heyFACE0000" x="1411" y="281" width="135" height="101"/>
+	<SubTexture name="peace hand0000" x="1556" y="281" width="103" height="133"/>
 </TextureAtlas>

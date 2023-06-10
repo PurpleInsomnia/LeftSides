@@ -1,0 +1,75 @@
+{
+	"storyName": "TESS' 21ST BIRTHDAY DATE...THINGY...",
+	"hideFreeplay": false,
+	"weekBackground": "tess21",
+	"weekBefore": "week7",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Poster Boy",
+			"tankman",
+			[
+				21,
+				21,
+				21
+			]
+		],
+        [
+			"Beef",
+			"bootleg",
+			[
+				255,
+				255,
+				255
+			]
+		],
+        [
+			"Territory",
+			"walt",
+			[
+				63,
+		        128,
+		        74
+			]
+		],
+        [
+			"Blow This Joint",
+			"lucid",
+			[
+				21,
+				21,
+				21
+			]
+		],
+		[
+			"Huge Drama",
+			"pyro",
+			[
+				143,
+				89,
+				204
+			]
+		],
+		[
+			"Borrowed Motifs",
+			"nikku",
+			[
+				102,
+				51,
+				204
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week 8"
+}

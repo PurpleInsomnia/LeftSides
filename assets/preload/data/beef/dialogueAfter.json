@@ -1,0 +1,14 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "This is why you ask for permission first."
+		}
+	]
+}

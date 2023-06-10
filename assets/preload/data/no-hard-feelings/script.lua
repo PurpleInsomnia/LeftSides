@@ -1,6 +1,6 @@
 function onCreatePost()
     makeLuaSprite("blackfadething", "black", 0, 0);
-    setObjectCamera("blackfadething", "camHUD");
+    setObjectCamera("blackfadething", "video");
     addLuaSprite("blackfadething", true);
 end
 

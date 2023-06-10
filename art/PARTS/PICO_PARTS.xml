@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="PICO_PARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Pico body default0000" x="0" y="0" width="326" height="281"/>
+	<SubTexture name="no Gun arm?0000" x="336" y="0" width="114" height="107"/>
+	<SubTexture name="pico angry face0000" x="460" y="0" width="142" height="113"/>
+	<SubTexture name="pico arm0000" x="612" y="0" width="119" height="117"/>
+	<SubTexture name="pico default face0000" x="741" y="0" width="140" height="91"/>
+	<SubTexture name="pico default head0000" x="0" y="291" width="302" height="244"/>
+	<SubTexture name="pico gun aim down0000" x="312" y="291" width="207" height="189"/>
+	<SubTexture name="pico gun arm0000" x="529" y="291" width="249" height="277"/>
+	<SubTexture name="pico mic hand0000" x="788" y="291" width="151" height="170"/>
+</TextureAtlas>

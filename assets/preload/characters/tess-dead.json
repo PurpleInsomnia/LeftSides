@@ -1,0 +1,90 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-19
+			],
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				259,
+				-19
+			],
+			"fps": 24,
+			"anim": "yoink",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23
+			],
+			"name": "What"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				259,
+				-19
+			],
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31
+			],
+			"name": "What"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Tess Stop Dying",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "gf-2",
+	"flip_x": false,
+	"healthbar_colors": [
+		115,
+		0,
+		165
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

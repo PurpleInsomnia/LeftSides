@@ -128,7 +128,6 @@ class SoundTestState extends MusicBeatState
             }
             if (num1 == 20 && num2 == 25)
             {
-                GameJoltAPI.getTrophy(178529, "huh");
                 MusicBeatState.switchState(new LogState());
             }
             canPress = false;

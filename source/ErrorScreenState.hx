@@ -33,6 +33,10 @@ class ErrorScreenState extends FlxState
 		Paths.destroyLoadedImages();
 		#end
 
+		#if desktop
+		DiscordClient.changePresence("[ERROR]", null);
+		#end
+
 		bg = new FlxSprite().loadGraphic(Paths.image('error'));
 		add(bg);
 

@@ -29,15 +29,26 @@ import GameJolt.GameJoltLogin;
 
 using StringTools;
 
+typedef OptionsJson = {
+	var options:Array<String>;
+	var playstateOptions:Array<String>;
+	var music:String;
+}
+
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', "System", 'Customize', "Useless Options", 'Save Files', "Gamejolt"];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay', "System", 'Customize', "Useless Options", "Gamejolt"];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
 
-	function openSelectedSubstate(label:String) {
-		switch(label) {
+	public var optionsChar:FlxSprite;
+
+	function openSelectedSubstate(label:String) 
+	{
+		optionsChar.visible = false;
+		switch(label)
+		{
 			case 'Note Colors':
 				openSubState(new options.NotesSubState());
 			case 'Controls':
@@ -54,9 +65,6 @@ class OptionsState extends MusicBeatState
 				LoadingState.loadAndSwitchState(new CustomizeState());
 			case "Useless Options":
 				openSubState(new options.UselessSubState());
-			case 'Save Files':
-				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new SaveFileMenu());
 			case "Gamejolt":
 				FlxG.sound.music.stop();
 				MusicBeatState.switchState(new GameJoltLogin());
@@ -78,10 +86,13 @@ class OptionsState extends MusicBeatState
 		#end
 
 		var size:Float = 0.25;
+		var data:OptionsJson = Json.parse(Paths.getTextFromFile("data/optionsState.json"));
+
+		options = data.options;
 
 		if (playstate)
 		{
-			options = ["Note Colors", "Controls", "Graphics", "Visuals and UI", "Gameplay", "System", "Customize", "Useless Options"];
+			options = data.playstateOptions;
 			size = 0.8;
 		}
 
@@ -89,7 +100,7 @@ class OptionsState extends MusicBeatState
 
 		if (!FlxG.sound.music.playing)
 		{
-			FlxG.sound.playMusic(Paths.music('options'));
+			FlxG.sound.playMusic(Paths.music(data.music));
 		}
 
 		var backdrop:GridBackdrop = new GridBackdrop();
@@ -98,10 +109,13 @@ class OptionsState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backdropSHADER'));
 		bg.blend = BlendMode.DARKEN;
 		bg.updateHitbox();
-
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+		optionsChar = new FlxSprite();
+		optionsChar.scrollFactor.set(0, 0);
+		add(optionsChar);
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
@@ -126,9 +140,11 @@ class OptionsState extends MusicBeatState
 		super.create();
 	}
 
-	override function closeSubState() {
+	override function closeSubState() 
+	{
 		super.closeSubState();
 		ClientPrefs.saveSettings();
+		optionsChar.visible = true;
 	}
 
 
@@ -182,5 +198,7 @@ class OptionsState extends MusicBeatState
 			}
 		}
 		FlxG.sound.play(Paths.sound('scrollMenu'));
+
+		optionsChar.loadGraphic(Paths.image("options/chars/" + Paths.formatToSongPath(options[curSelected])));
 	}
 }

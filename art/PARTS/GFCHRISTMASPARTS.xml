@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="GFCHRISTMASPARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="GF body0000" x="0" y="0" width="120" height="145"/>
+	<SubTexture name="gf arm blank0000" x="130" y="0" width="50" height="103"/>
+	<SubTexture name="gf arm blank bg0000" x="190" y="0" width="62" height="102"/>
+	<SubTexture name="gf bg arm0000" x="262" y="0" width="107" height="125"/>
+	<SubTexture name="gf bottom leg0000" x="379" y="0" width="80" height="134"/>
+	<SubTexture name="gf face0000" x="469" y="0" width="120" height="46"/>
+	<SubTexture name="gf fg arm0000" x="599" y="0" width="94" height="128"/>
+	<SubTexture name="gf hair0000" x="703" y="0" width="302" height="309"/>
+	<SubTexture name="gf head0000" x="0" y="319" width="259" height="128"/>
+	<SubTexture name="gf top leg0000" x="269" y="319" width="183" height="115"/>
+</TextureAtlas>

@@ -1,3 +1,0 @@
-Place it on any song with pico
-Also you can change if a sound plays or not (1 for no sound, 0 for a sound)
-- PurpleInsomnia

@@ -19,10 +19,9 @@ class MasterEditorMenu extends MusicBeatState
 {
 	var options:Array<String> = [
 		'Week Editor',
-		'Menu Character Editor',
 		'Dialogue Editor',
 		'Character Editor',
-		'Chart Editor'
+		'Stage Editor'
 	];
 	private var grpTexts:FlxTypedGroup<Alphabet>;
 
@@ -80,16 +79,25 @@ class MasterEditorMenu extends MusicBeatState
 					LoadingState.loadAndSwitchState(new CharacterEditorState(Character.DEFAULT_CHARACTER, false));
 				case 'Week Editor':
 					MusicBeatState.switchState(new WeekEditorState());
-				case 'Menu Character Editor':
-					MusicBeatState.switchState(new MenuCharacterEditorState());
 				case 'Dialogue Editor':
 					LoadingState.loadAndSwitchState(new DialogueEditingState());
+				case 'Stage Editor':
+					PlayState.SONG = Song.loadFromJson('bopeebo', 'bopeebo');
+					PlayState.isStoryMode = false;
+			    	PlayState.isVoid = false;
+			    	PlayState.storyDifficulty = 1;
+			    	PlayState.storyWeek = 1;
+					LoadingState.loadAndSwitchState(new StageEditorState("dad", PlayState.SONG, false));
 				case 'Chart Editor':
 					if (PlayState.SONG == null)
 					{
 						PlayState.SONG = Song.loadFromJson('dad-battle', 'dad-battle');
+						PlayState.isStoryMode = false;
+			    		PlayState.isVoid = false;
+			    		PlayState.storyDifficulty = 1;
+			    		PlayState.storyWeek = 1;
 					}
-					LoadingState.loadAndSwitchState(new ChartingState(), false);
+					LoadingState.loadAndSwitchState(new ChartingState(false, false), false);
 			}
 			FlxG.sound.music.volume = 0;
 		}

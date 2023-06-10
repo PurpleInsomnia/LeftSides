@@ -1,5 +1,6 @@
 package;
 
+import trophies.TrophyUtil;
 import community.CommunityMenu;
 import editors.ChartingList.ChartingListUtil;
 import flixel.FlxG;
@@ -15,7 +16,7 @@ import sys.FileSystem;
 import flixel.util.FlxColor;
 import lime.app.Application;
 import haxe.Json;
-#if desktop
+#if DISCORD
 import Discord.DiscordClient;
 #end
 import GameJolt.GameJoltAPI;
@@ -36,6 +37,7 @@ class TitleScreenState extends MusicBeatState
 
     public static var curSaveFile:Int = 0;
 	public static var sfn:String = '';
+	public static var saveIconThing:String = "BEN";
 
     public static var initialized:Bool = false;
 
@@ -73,101 +75,138 @@ class TitleScreenState extends MusicBeatState
 		FlxG.sound.volumeDownKeys = volumeDownKeys;
 		FlxG.sound.volumeUpKeys = volumeUpKeys;
 
+		SaveFileIcon.loadList();
 		if (!initialized)
 		{
 			PlayerSettings.init();
 			loadData();
 		}
-
-		initialized = true;
 		
 		FlxG.mouse.visible = true;
-		
 		FlxG.mouse.load(Paths.image('leftMouse'));
 
-        bgspr = new Backdrop("title/bg", 1, 1, "HORIZONTAL", -1);
-		bgspr.blend = openfl.display.BlendMode.MULTIPLY;
-		bgspr.alpha = 0;
-        add(bgspr);
+		if (initialized)
+		{
+			var data:CoolUtil.CompletionData = CoolUtil.getCompletionStatus();
 
-		FlxTween.tween(bgspr, {alpha: 1}, 1);
-
-        var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image("title/logo"));
-        add(logo);
-
-		FlxTween.tween(logo, {y: logo.y + 25}, 2, {type: PINGPONG, ease: FlxEase.sineInOut});
-
-        grp = new FlxTypedGroup<FlxSprite>();
-        add(grp);
-
-        for (i in 0...shitBalls.length)
-        {
-            var button:FlxSprite = new FlxSprite();
-            button.loadGraphic(Paths.image("title/" + shitBalls[i]), true, 1280, 720);
-            button.animation.add("idle", [0], 1, true);
-            button.animation.add("selected", [1], 1, true);
-			button.ID = i;
-			if (i != curSelected)
+			if ((data.gotten / data.toGet100) * 100 == 100)
 			{
-				button.alpha = 0.75;
-				button.x = 0;
+        		bgspr = new Backdrop("title/bg100", 1, 1, "HORIZONTAL", -1);
 			}
 			else
 			{
-				button.x = -25;
+				bgspr = new Backdrop("title/bg", 1, 1, "HORIZONTAL", -1);
 			}
-            grp.add(button);
-        }
+			bgspr.blend = openfl.display.BlendMode.MULTIPLY;
+			bgspr.alpha = 0;
+        	add(bgspr);
 
-		var ccButton:FlxButton = new FlxButton(0, 0, "", function()
-		{
-			MusicBeatState.switchState(new CommunityMenu());
-		});
-		ccButton.loadGraphic(Paths.image("title/cc"), true, 150, 150);
-		ccButton.x = 1280 - 150;
-		ccButton.y = 720 - 150;
-		add(ccButton); 
+			FlxTween.tween(bgspr, {alpha: 1}, 1);
 
-		var dlcButton:FlxButton = new FlxButton(1280 - 300, 720 - 150, null, function()
-		{
-			MusicBeatState.switchState(new DlcMenuState());
-		});
-		dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
-		add(dlcButton);
+        	var logo:FlxSprite = new FlxSprite();
+			if ((data.gotten / data.toGet100) * 100 == 100)
+			{
+				logo.loadGraphic(Paths.image("title/logo100"));
+			}
+			else
+			{
+				logo.loadGraphic(Paths.image("title/logo"));
+			}
+        	add(logo);
 
-		var dlcTutButton:FlxButton = new FlxButton(1280 - 600, 720 - 150, null, function()
-		{
-			MusicBeatState.switchState(new DlcTutorials());
-		});
-		dlcTutButton.loadGraphic(Paths.image("tutButton"), true, 300, 150);
-		add(dlcTutButton);
+			FlxTween.tween(logo, {y: logo.y + 25}, 2, {type: PINGPONG, ease: FlxEase.sineInOut});
 
-		callbacks = [startGame, loadSave, credits, extras];
+        	grp = new FlxTypedGroup<FlxSprite>();
+        	add(grp);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, MainMenuState.saveFileName, 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v4.0", 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + MainMenuState.psychEngineVersion, 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
+        	for (i in 0...shitBalls.length)
+        	{
+            	var button:FlxSprite = new FlxSprite();
+            	button.loadGraphic(Paths.image("title/" + shitBalls[i]), true, 1280, 720);
+            	button.animation.add("idle", [0], 1, true);
+            	button.animation.add("selected", [1], 1, true);
+				button.ID = i;
+				if (i != curSelected)
+				{
+					button.alpha = 0.75;
+					button.x = 0;
+				}
+				else
+				{
+					button.x = -25;
+				}
+            	grp.add(button);
+        	}
 
-        FlxG.sound.playMusic(Paths.music("title"), 1, false);
+			var ccButton:FlxButton = new FlxButton(0, 0, "", function()
+			{
+				MusicBeatState.switchState(new CommunityMenu());
+			});
+			ccButton.loadGraphic(Paths.image("title/cc"), true, 150, 150);
+			ccButton.x = 1280 - 150;
+			ccButton.y = 720 - 150;
+			add(ccButton); 
 
-		Conductor.changeBPM(102);
+			var dlcButton:FlxButton = new FlxButton(1280 - 300, 720 - 150, null, function()
+			{
+				MusicBeatState.switchState(new dlc.DlcMenuState());
+			});
+			dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
+			add(dlcButton);
 
-		MainMenuState.coolBeat = Conductor.crochet / 1000;
+			var comicButton:FlxButton = new FlxButton(1280 - 450, 720 - 150, null, function()
+			{
+				MusicBeatState.switchState(new comics.ComicsMenu());
+			});
+			comicButton.loadGraphic(Paths.image("title/comics"), true, 150, 150);
+			add(comicButton);
 
-		changeSelection(0);
+			var dlcTutButton:FlxButton = new FlxButton(1280 - 750, 720 - 150, null, function()
+			{
+				MusicBeatState.switchState(new dlc.DlcTutorials());
+			});
+			dlcTutButton.loadGraphic(Paths.image("tutButton"), true, 300, 150);
+			add(dlcTutButton);
+
+			callbacks = [startGame, loadSave, credits, extras];
+
+			var coolswagTxt:String = "Completion Status: " + Std.int((data.gotten / data.toGet100) * 100) + "%";
+
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 104, 0, coolswagTxt, 12);
+			versionShit.scrollFactor.set();
+			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(versionShit);
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, MainMenuState.saveFileName, 12);
+			versionShit.scrollFactor.set();
+			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(versionShit);
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v4.5", 12);
+			versionShit.scrollFactor.set();
+			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(versionShit);
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + MainMenuState.psychEngineVersion, 12);
+			versionShit.scrollFactor.set();
+			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(versionShit);
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
+			versionShit.scrollFactor.set();
+			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(versionShit);
+
+        	FlxG.sound.playMusic(Paths.music("title"), 1, false);
+
+			Conductor.changeBPM(102);
+
+			MainMenuState.coolBeat = Conductor.crochet / 1000;
+
+			#if DISCORD
+			DiscordClient.changePresence("In The Title Screen", null);
+			#end
+
+			changeSelection(0);
+		}
+
+		trace("GRAHHH, RATIOOOOOO");
 
         super.create();
     }
@@ -364,6 +403,7 @@ class TitleScreenState extends MusicBeatState
 
 			sfn = 'funkin' + SaveSuff;
 
+			saveIconThing = SaveFileName;
 			MainMenuState.saveFileName = 'SAVE FILE ICON = ' + SaveFileName + ' | SAVE FILE SLOT = ' + curSaveFile;
 			ClientPrefs.loadPrefs();
 
@@ -388,6 +428,8 @@ class TitleScreenState extends MusicBeatState
 
 			SideStorySelectState.load();
 
+			TrophyUtil.load();
+
 			FlxG.save.data.createdFile = createdFile;
 			FlxG.save.flush();
 
@@ -395,6 +437,8 @@ class TitleScreenState extends MusicBeatState
 			GameJoltAPI.authDaUser(ClientPrefs.gameJoltLogin[0], ClientPrefs.gameJoltLogin[1], false);
 
 			ChartingListUtil.loadShit();
+
+			checkify.CheckifyData.load();
 
 			#if desktop
 			if (ClientPrefs.discord)
@@ -412,6 +456,8 @@ class TitleScreenState extends MusicBeatState
 			}
 
 			CommunitySong.loadAssets();
+
+			initialized = true;
         }
     }
 }

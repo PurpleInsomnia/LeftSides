@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BFCHRISTMASPARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF Body Down0000" x="0" y="0" width="355" height="256"/>
+	<SubTexture name="BF Body Up0000" x="365" y="0" width="325" height="266"/>
+	<SubTexture name="BF Head defalt0000" x="0" y="276" width="356" height="208"/>
+	<SubTexture name="BF defalt arm0000" x="366" y="276" width="226" height="159"/>
+	<SubTexture name="BF head slight turn0000" x="602" y="276" width="332" height="218"/>
+	<SubTexture name="arm default0000" x="0" y="504" width="139" height="112"/>
+	<SubTexture name="bf body default0000" x="149" y="504" width="329" height="260"/>
+	<SubTexture name="bf cringe hand0000" x="488" y="504" width="120" height="101"/>
+	<SubTexture name="bf face default0000" x="618" y="504" width="134" height="103"/>
+	<SubTexture name="heyFACE0000" x="762" y="504" width="135" height="101"/>
+	<SubTexture name="peace hand0000" x="907" y="504" width="103" height="133"/>
+</TextureAtlas>

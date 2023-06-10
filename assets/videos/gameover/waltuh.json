@@ -1,0 +1,6 @@
+{
+    "screenFlash": [true, "0xFFFFFFFF", 0.75],
+    "deathSound": [true, "KABOOM", 2.23],
+    "loopMusic": [true, "gameOver"],
+    "confirmSound": [true, "gameOverEnd", 3]
+}

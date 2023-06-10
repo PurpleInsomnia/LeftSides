@@ -120,9 +120,9 @@
 	"healthicon": "bf",
 	"flip_x": true,
 	"healthbar_colors": [
-		209,
-		162,
-		48
+		255,
+		175,
+		0
 	],
 	"camera_position": [
 		0,

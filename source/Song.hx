@@ -27,6 +27,7 @@ typedef SwagSong =
 
 	var arrowSkin:String;
 	var splashSkin:String;
+	var thirdStrum:Bool;
 	var validScore:Bool;
 }
 
@@ -41,6 +42,7 @@ class Song
 	public var needsVoices:Bool = true;
 	public var arrowSkin:String;
 	public var splashSkin:String;
+	public var thridStrum:Bool = false;
 	public var speed:Float = 1;
 	public var stage:String;
 

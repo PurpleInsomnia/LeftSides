@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="New Tess.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="GF body0000" x="0" y="0" width="101" height="145"/>
+	<SubTexture name="cheer arm0000" x="111" y="0" width="116" height="165"/>
+	<SubTexture name="gf bg arm0000" x="237" y="0" width="94" height="149"/>
+	<SubTexture name="gf bottom leg0000" x="341" y="0" width="68" height="135"/>
+	<SubTexture name="gf fg arm0000" x="419" y="0" width="83" height="134"/>
+	<SubTexture name="gf hair0000" x="512" y="0" width="349" height="264"/>
+	<SubTexture name="gf head0000" x="0" y="274" width="252" height="121"/>
+	<SubTexture name="gf top leg0000" x="262" y="274" width="169" height="117"/>
+</TextureAtlas>

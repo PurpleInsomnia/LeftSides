@@ -71,6 +71,10 @@ class ClientPrefs {
 	public static var limitedHud:Bool = false;
 	public static var unlockedRestless:Bool = false;
 	public static var lowQualitySongs:Bool = false;
+	public static var iconStyle:String = "Default";
+	public static var playSoundOnNoteHit:Bool = false;
+	public static var hitSoundVolume:Float = 1;
+
 	public static var lostGame:Bool = false;
 	public static var unlockedArchives:Bool = false;
 	public static var unlockedVisit:Bool = false;
@@ -140,7 +144,7 @@ class ClientPrefs {
 		[Control.ACCEPT, 'Accept'],
 		[Control.BACK, 'Back'],
 		[Control.PAUSE, 'Pause'],
-		[Control.EMOTE, 'Attack']
+		[Control.EMOTE, 'Taunt']
 	];
 	public static var lastControls:Array<FlxKey> = defaultKeys.copy();
 
@@ -206,6 +210,10 @@ class ClientPrefs {
 		FlxG.save.data.limitedHud = limitedHud;
 		FlxG.save.data.unlockedRestless = unlockedRestless;
 		FlxG.save.data.lowQualitySongs = lowQualitySongs;
+		FlxG.save.data.iconStyle = iconStyle;
+		FlxG.save.data.playSoundOnNoteHit = playSoundOnNoteHit;
+		FlxG.save.data.hitSoundVolume = hitSoundVolume;
+
 		FlxG.save.data.lostGame = lostGame;
 		FlxG.save.data.unlockedArchives = unlockedArchives;
 		FlxG.save.data.unlockedVisit = unlockedVisit;
@@ -443,6 +451,18 @@ class ClientPrefs {
 		if (FlxG.save.data.lowQualitySongs != null)
 		{
 			lowQualitySongs = FlxG.save.data.lowQualitySongs;
+		}
+		if (FlxG.save.data.iconStyle != null)
+		{
+			iconStyle = FlxG.save.data.iconStyle;
+		}
+		if (FlxG.save.data.playSoundOnNoteHit != null)
+		{
+			playSoundOnNoteHit = FlxG.save.data.playSoundOnNoteHit;
+		}
+		if (FlxG.save.data.hitSoundVolume != null)
+		{
+			hitSoundVolume = FlxG.save.data.hitSoundVolume;
 		}
 
 		if (FlxG.save.data.clickedClub != null)

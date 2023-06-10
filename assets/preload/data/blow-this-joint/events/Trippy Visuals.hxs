@@ -1,0 +1,113 @@
+var daWiggle:WiggleEffect = null;
+var effectOn:Bool = false;
+var daHue:Float = 0;
+var backdropShader:FlxSprite = null;
+function onCreatePost()
+{
+    // unlucky.
+    if (ClientPrefs.shaders)
+    {
+        daWiggle = new WiggleEffect();
+        daWiggle.effectType = WiggleEffectType.dreamy;
+        daWiggle.waveSpeed = 10;
+        daWiggle.waveFrequency = 10;
+        daWiggle.waveAmplitude = 0.005;
+    }
+
+    backdropShader = new FlxSprite(0, 0);
+    backdropShader.makeGraphic(1280, 720);
+    backdropShader.cameras = [lePlayState.camShader];
+    backdropShader.blend = getBlend("multiply");
+    backdropShader.visible = false;
+    add(backdropShader);
+}
+
+var ct:FlxTween = null;
+function onEvent(name:String, val1:String, val2:String)
+{
+    if (name == "Trippy Visuals")
+    {
+        lePlayState.triggerEventNote("Screen Flash", "", "");
+        effectOn = !effectOn;
+        if (effectOn && ClientPrefs.shaders)
+        {
+            for (i in 0...4)
+            {
+                lePlayState.opponentStrums.members[i].shader = daWiggle.shader;
+            }
+            for (i in 0...lePlayState.unspawnNotes.length)
+            {
+                if (!lePlayState.unspawnNotes[i].mustPress)
+                {
+                    lePlayState.unspawnNotes[i].shader = daWiggle.shader;
+                }
+            }
+
+            for (i in 0...lePlayState.backgroundSprites.length)
+            {
+                if (!lePlayState.backgroundSprites[i].isLightSource)
+                {
+                    lePlayState.backgroundSprites[i].shader = daWiggle.shader;
+                }
+            }
+
+            backdropShader.visible = true;
+            backdropShader.color = FlxColor.fromRGB(FlxG.random.int(100, 255), FlxG.random.int(100, 255), FlxG.random.int(100, 255));
+        }
+        if (!effectOn && ClientPrefs.shaders)
+        {
+            for (i in 0...4)
+            {
+                lePlayState.opponentStrums.members[i].shader = null;
+            }
+            for (i in 0...lePlayState.unspawnNotes.length)
+            {
+                if (!lePlayState.unspawnNotes[i].mustPress)
+                {
+                    lePlayState.unspawnNotes[i].shader = null;
+                }
+            }
+
+            for (i in 0...lePlayState.backgroundSprites.length)
+            {
+                if (!lePlayState.backgroundSprites[i].isLightSource)
+                {
+                    lePlayState.backgroundSprites[i].shader = null;
+                }
+            }
+
+            backdropShader.visible = false;
+        }
+
+        if (effectOn)
+        {
+            callCT(-2);
+        }
+        else
+        {
+            lePlayState.modchartTweens.remove("ct");
+            ct.cancel();
+            lePlayState.camGame.angle = 0;
+        }
+    }
+}
+
+function onUpdatePost(elapsed:Float)
+{
+	if (ClientPrefs.shaders)
+	{
+		daWiggle.update(elapsed);
+	}
+}
+
+var daTarg:Float = -2;
+function callCT(ang:Float)
+{
+    ct = FlxTween.tween(lePlayState.camGame, {angle: ang}, Conductor.crochet / 500, {ease: FlxEase.sineInOut, onComplete: function(twn:FlxTween)
+    {
+        lePlayState.modchartTweens.remove("ct");
+        daTarg = daTarg * -1;
+        callCT(daTarg);
+    }});
+    lePlayState.modchartTweens.set("ct", ct);
+}

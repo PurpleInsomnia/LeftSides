@@ -13,9 +13,9 @@ using StringTools;
 
 class CustomizeState extends MusicBeatState
 {
-    var fileList:Array<String> = ['Off', 'NOTE_assets', 'funkinNOTE_assets', "purpleinsomniaNOTE_assets"];
-	var splashFileList:Array<String> = ["Off", "noteSplashes", "funkinNoteSplashes", "purpleinsomniaNoteSplashes"];
-	var strumArray:Array<String> = ['Off', 'Left Sides Notes', "Funkin' Notes", "PurpleInsomnia Notes"];
+    var fileList:Array<String> = ['Off', 'NOTE_assets', 'funkinNOTE_assets', "purpleinsomniaNOTE_assets", "breakingBadNOTE_assets"];
+	var splashFileList:Array<String> = ["Off", "noteSplashes", "funkinNoteSplashes", "purpleinsomniaNoteSplashes", "breakingBad_noteSplashes"];
+	var strumArray:Array<String> = ['Off', 'Left Sides Notes', "Funkin' Notes", "PurpleInsomnia Notes", "Breaking Bad Notes"];
 	var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
     // I hate the sonic spikes tbh :/
 	var barArray:Array<String> = ['Default', "Grid", "Foggy"];

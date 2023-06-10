@@ -54,6 +54,14 @@ class VisualsUISubState extends BaseOptionsMenu
 			"bool",
 			"false");
 		addOption(option);
+
+		var option:Option = new Option("Health Icon Style",
+			"How the health icons should be displayed.",
+			"iconStyle",
+			"string",
+			"Default",
+			["Default", "Classic"]);
+		addOption(option);
 		
 		var option:Option = new Option('Hide Time Bar',
 			"If unchecked, A bar will show how much\nTime there is left in a song",

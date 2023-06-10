@@ -1,5 +1,6 @@
 package;
 
+import trophies.TrophiesState.TrophySelectState;
 #if DISCORD
 import Discord.DiscordClient;
 #end
@@ -216,6 +217,22 @@ class MainMenuState extends MusicBeatState
 		buttonGroup = new FlxTypedGroup<FlxButton>();
 		add(buttonGroup);
 
+		var p2Button:FlxButton = new FlxButton(370, 720 - 150, null, function()
+		{
+			selectedSomethin = true;
+			MusicBeatState.switchState(new twoplayer.TwoPlayerState());
+		});
+		p2Button.loadGraphic(Paths.image("2Player/button"), true, 150, 150);
+		buttonGroup.add(p2Button);
+
+		var troButton:FlxButton = new FlxButton(150 + 370, 720 - 150, null, function()
+		{
+			selectedSomethin = true;
+			MusicBeatState.switchState(new TrophySelectState(true));
+		});
+		troButton.loadGraphic(Paths.image("trophyButton"), true, 150, 150);
+		buttonGroup.add(troButton);
+
 		var waButton:FlxButton = new FlxButton(300 + 370, 720 - 150, null, clickWarn);
 		waButton.loadGraphic(Paths.image('warningButton'), true, 150, 150);
 		buttonGroup.add(waButton);
@@ -237,9 +254,11 @@ class MainMenuState extends MusicBeatState
 		arcButton.loadGraphic(Paths.image('sideButton'), true, 150, 150);
 		buttonGroup.add(arcButton);
 
+		#if desktop
 		var soundTr:FlxButton = new FlxButton(750 + 370, 720 - 150, '', soundtrack);
 		soundTr.loadGraphic(Paths.image('stButton'), true, 150, 150);
 		buttonGroup.add(soundTr);
+		#end
 
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		blackScreen.scrollFactor.set();
@@ -444,11 +463,6 @@ class MainMenuState extends MusicBeatState
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
-			if (FlxG.keys.justPressed.EIGHT && ClientPrefs.devMode)
-			{
-				selectedSomethin = true;
-				MusicBeatState.switchState(new UnlockState([["Huh?", "Test Unlock LOL"]]));
-			}
 			#end
 		}
 
@@ -531,18 +545,20 @@ class MainMenuState extends MusicBeatState
 		{
 			selectedSomethin = true;
 			persistentUpdate = false;
-			MusicBeatState.switchState(new DlcMenuState());
+			MusicBeatState.switchState(new dlc.DlcMenuState());
 		}
 	}
 
 	function soundtrack()
 	{
+		#if desktop
 		if (!selectedSomethin)
 		{
 			selectedSomethin = true;
 			FlxG.sound.music.stop();
-			MusicBeatState.switchState(new SoundtrackState());
+			MusicBeatState.switchState(new checkify.CheckifyLoadingState());
 		}
+		#end
 	}
 
 	function sideClick()

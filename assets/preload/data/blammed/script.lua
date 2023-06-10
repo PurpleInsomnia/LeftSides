@@ -46,7 +46,6 @@ function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
 		inScene = true;
-		award(6, 'You finished Week 3!', 'pico');
 		runTimer('startAfterDialogue', 0.08);
 		dialogueBg('dialogueBgs/pico2');
 		allowCountdown = true;

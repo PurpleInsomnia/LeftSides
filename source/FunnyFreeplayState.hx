@@ -1,5 +1,8 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
 import PlayStateMeta.PlayStateMetaData;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxG;
@@ -54,6 +57,9 @@ class FunnyFreeplayState extends MusicBeatState
 
     override function create()
     {
+        #if desktop
+        DiscordClient.changePresence("In The Freeplay Menu", null);
+        #end
     	Paths.destroyLoadedImages();
 
         WeekData.loadTheFirstEnabledMod();
@@ -128,10 +134,6 @@ class FunnyFreeplayState extends MusicBeatState
             if ((Highscore.getScore("Doppelganger", 1) != 0 || ClientPrefs.inventory[2][1] > 0) || ClientPrefs.devMode)
             {
                 addSong("Too Fest", 69, "nuckle", FlxColor.fromRGB(222, 126, 24), "EXE", false);
-            }
-            if (Highscore.getScore("Manipulator", 1) != 0)
-            {
-                addSong("Manipulator", 69, "boots", FlxColor.fromRGB(248, 0, 255), "Worst Person In Existance", false);
             }
         }
 
@@ -341,10 +343,13 @@ class FunnyFreeplayState extends MusicBeatState
         textBG.setGraphicSize(FlxG.width, Std.int(text.height));
 		add(text);
 
-        ca = new ChromaticAberation();
-        ca.shader.intensity.value = [0.0];
-        var filters:Array<BitmapFilter> = [new ShaderFilter(ca.shader)];
-        FlxG.camera.setFilters(filters);
+        if (ClientPrefs.shaders)
+        {
+            ca = new ChromaticAberation();
+            ca.shader.intensity.value = [0.0];
+            var filters:Array<BitmapFilter> = [new ShaderFilter(ca.shader)];
+            FlxG.camera.setFilters(filters);
+        }
 
         changeSelection(0);
 
@@ -381,16 +386,7 @@ class FunnyFreeplayState extends MusicBeatState
         {
             canPress = false;
             FlxG.sound.play(Paths.sound("confirmMenu"));
-            #if sys
-			if (ClientPrefs.precacheCharacters)
-			{
-				CoolUtil.pcCharacters();
-			}
-		    #end
-            new FlxTimer().start(2, function(tmr:FlxTimer)
-            {
-                LoadingState.loadAndSwitchState(new WardrobeState());
-            });
+            MusicBeatState.switchState(new WardrobeState(false));
         }
         if (FlxG.keys.justPressed.E && canPress && lists[1][0] != null)
         {
@@ -479,14 +475,7 @@ class FunnyFreeplayState extends MusicBeatState
 			    PlayState.storyDifficulty = 1;
 
 			    PlayState.storyWeek = lists[0][curSelected].week;
-			    if (FlxG.keys.pressed.SHIFT)
-			    {
-				    LoadingState.loadAndSwitchState(new editors.ChartingState(false));
-			    }
-			    else
-			    {
-				    MusicBeatState.switchState(new HealthLossState());
-			    }
+				MusicBeatState.switchState(new HealthLossState());
             }
             else
             {
@@ -587,13 +576,16 @@ class FunnyFreeplayState extends MusicBeatState
                     iconGrp.members[i].alpha = 0.5;
                 }
                 recordGrp.members[curSelected].alpha = 1;
-                if (recordGrp.members[curSelected].chromAb)
+                if (ClientPrefs.shaders)
                 {
-                    ca.shader.intensity.value = [ca.max];
-                }
-                else
-                {
-                    ca.shader.intensity.value = [0];
+                    if (recordGrp.members[curSelected].chromAb)
+                    {
+                        ca.shader.intensity.value = [ca.max];
+                    }
+                    else
+                    {
+                        ca.shader.intensity.value = [0];
+                    }
                 }
                 crGrp.members[curSelected].alpha = 1;
                 iconGrp.members[curSelected].alpha = 1;
@@ -619,13 +611,16 @@ class FunnyFreeplayState extends MusicBeatState
                     iconEncoreGrp.members[i].alpha = 0.25;
                 }
                 recordEncoreGrp.members[curSelected].alpha = 1;
-                if (recordEncoreGrp.members[curSelected].chromAb)
+                if (ClientPrefs.shaders)
                 {
-                    ca.shader.intensity.value = [ca.max];
-                }
-                else
-                {
-                    ca.shader.intensity.value = [0];
+                    if (recordEncoreGrp.members[curSelected].chromAb)
+                    {
+                        ca.shader.intensity.value = [ca.max];
+                    }
+                    else
+                    {
+                        ca.shader.intensity.value = [0];
+                    }
                 }
                 crEncoreGrp.members[curSelected].alpha = 1;
                 iconEncoreGrp.members[curSelected].alpha = 1;

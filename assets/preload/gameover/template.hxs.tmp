@@ -1,0 +1,34 @@
+var can:Bool = false;
+function onCreate()
+{
+    lePlayState.musicName = "gameOver";
+
+    new FlxTimer().start(1, function(tmr:FlxTimer)
+    {
+        onTimerCompleted("the timer");
+    });
+}
+
+function onTimerCompleted(tag:String)
+{
+    if (tag == "the timer")
+    {
+        lePlayState.canPress = true;
+        lePlayState.playMusic(1, true);
+    }
+}
+
+function onUpdate(elapsed:Float)
+{
+    can = lePlayState.canPress;
+    if (controls.ACCEPT && can)
+    {
+        lePlayState.canPress = false;
+        lePlayState.switchState();
+    }
+    if (controls.BACK && can)
+    {
+        lePlayState.canPress = false;
+        lePlayState.back();
+    }
+}

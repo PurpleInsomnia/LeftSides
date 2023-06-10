@@ -4,8 +4,6 @@ package;
 import Discord.DiscordClient;
 #end
 import CustomGameOverLua;
-import CustomState.StateHscript;
-import CustomState.StateScript;
 import GameJolt.GameJoltAPI;
 import filters.*;
 import flixel.FlxCamera;
@@ -69,7 +67,7 @@ class CustomGameOverState extends MusicBeatState
 	#end
 
 	var lua:CustomGameOverLua = null;
-	var script:StateScript;
+	var script:HscriptScript;
 	var path:String = "";
 
 	var hscriptVars:StringMap<Dynamic> = new StringMap<Dynamic>();
@@ -96,9 +94,8 @@ class CustomGameOverState extends MusicBeatState
 		}
 		if (FileSystem.exists(Paths.gameover(path + ".hxs")))
 		{
-			StateHscript.initialize();
 			setHscript();
-			script = StateHscript.load(Paths.gameover(path + ".hxs"), hscriptVars);
+			script = HscriptManager.load(Paths.gameover(path + ".hxs"), hscriptVars);
 		}
 
 		callOnLuas("onCreate", []);

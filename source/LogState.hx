@@ -51,11 +51,14 @@ class LogState extends MusicBeatState
 
         startDialogue();
 
-        var toAdd:Array<BitmapFilter> = [];
-        vcr = new GrainFilter();
-        var filter1:ShaderFilter = new ShaderFilter(vcr.shader);
-        toAdd.push(filter1);
-        FlxG.camera.setFilters(toAdd);
+        if (ClientPrefs.shaders)
+        {
+            var toAdd:Array<BitmapFilter> = [];
+            vcr = new GrainFilter();
+            var filter1:ShaderFilter = new ShaderFilter(vcr.shader);
+            toAdd.push(filter1);
+            FlxG.camera.setFilters(toAdd);
+        }
 
         FlxG.sound.playMusic(PathsL.music("static"), 1, true);
 
@@ -66,7 +69,10 @@ class LogState extends MusicBeatState
 
     override function update(elapsed:Float)
     {
-        vcr.update(elapsed);
+        if (ClientPrefs.shaders)
+        {
+            vcr.update(elapsed);
+        }
         if (controls.ACCEPT && ended && canPress)
         {
             if (curLine != 24)

@@ -46,6 +46,7 @@ class Note extends FlxSprite
 	public var noteSplashDisabled:Bool = false;
 	public var noteSplashTexture:String = null;
 	public var noteTexture:String = null; // This changes the strums AND arrows, to change ONLY the arrows, do the "texture" function
+	// update: No it fucking dosen't younger PurpleInsomnia my fucking god, dumb idiot lmfaoooo.
 	public var noteSplashHue:Float = 0;
 	public var noteSplashSat:Float = 0;
 	public var noteSplashBrt:Float = 0;
@@ -70,6 +71,7 @@ class Note extends FlxSprite
 
 	public var isGfNote:Bool = false;
 	public var colorSwapAllowed:Bool = true;
+	public var noteGraphic:String = "";
 
 	private function set_texture(value:String):String {
 		if(texture != value) {
@@ -117,6 +119,13 @@ class Note extends FlxSprite
 					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
+				case "Fulminated Mercury":
+					ignoreNote = mustPress;
+					hitHealth = -0.25;
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					reloadNote("FM");
 				case "Bullet Note Grey" | "Bullet Note" | "Ring" | "Freeze Note":
 					colorSwapAllowed = false;
 					// hardcoding in lua notetypes bc fuck you.
@@ -268,6 +277,7 @@ class Note extends FlxSprite
 
 		var arraySkin:Array<String> = skin.split('/');
 		arraySkin[arraySkin.length-1] = prefix + arraySkin[arraySkin.length-1] + suffix;
+		noteGraphic = prefix + arraySkin[arraySkin.length-1] + suffix;
 
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
@@ -300,9 +310,13 @@ class Note extends FlxSprite
 		if(animName != null)
 			animation.play(animName, true);
 
-		if(inEditor) {
+		if(inEditor) 
+		{
 			setGraphicSize(ChartingState.GRID_SIZE, ChartingState.GRID_SIZE);
 			updateHitbox();
+		}
+		else
+		{
 		}
 	}
 
@@ -366,10 +380,32 @@ class Note extends FlxSprite
 		}
 		else
 		{
-			canBeHit = false;
+			if (!twoplayer.TwoPlayerState.tpm)
+			{
+				canBeHit = false;
 
-			if (strumTime <= Conductor.songPosition)
-				wasGoodHit = true;
+				if (strumTime <= Conductor.songPosition)
+				{
+					wasGoodHit = true;
+				}
+			}
+			else
+			{
+				if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
+					&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * earlyHitMult))
+				{
+					canBeHit = true;
+				}
+				else
+				{
+					canBeHit = false;
+				}
+
+				if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset && !wasGoodHit)
+				{
+					tooLate = true;
+				}
+			}
 		}
 
 		if (tooLate)

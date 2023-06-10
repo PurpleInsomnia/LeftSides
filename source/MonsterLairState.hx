@@ -1,5 +1,8 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
@@ -19,6 +22,7 @@ import filters.*;
 import options.ContentWarningTerminalState;
 
 typedef ListJson = {
+    var listNames:Array<String>;
     var lists:Array<Array<String>>;
 }
 
@@ -28,7 +32,7 @@ class MonsterLairState extends MusicBeatState
 
     var songLists:Array<Array<String>> = [];
 
-    var listNames:Array<String> = ["Void", "Dreams"];
+    var listNames:Array<String> = [];
 
     var termShit:Array<String> = ["Open Terminal", "All Questions"];
 
@@ -43,7 +47,10 @@ class MonsterLairState extends MusicBeatState
         "Do You Have Any Friends?",
         "Do You Have Any Enemys?",
         "What Do You Want?",
-        "Sound Test?"
+        "Sound Test?",
+        "DEPTHS?",
+        "Remnants Of Our World?",
+        "Trance World?"
     ];
 
     var chatAnswers:Array<String> = [
@@ -57,7 +64,10 @@ class MonsterLairState extends MusicBeatState
         "...[FRIEND]...",
         "[TESS]...[LORD LORD LORD]...lots of [DISGUSTING] creatures that want to [TAKE] [AWAY] what I want...",
         "[THE UNIVERSE] to [%& *(%@#CT]",
-        "I have hints I've gathered from this [HELLHOLE]:\n- OLD CD GAME\n- MOD PAGE DESCRIPTION\n...Goodluck " + CoolUtil.username() + " ..."
+        "I have hints I've gathered from this [HELLHOLE]:\n- OLD CD GAME\n- MOD PAGE DESCRIPTION\n...Goodluck " + CoolUtil.username() + " ...",
+        "That child isn't ready for what lurks down there...",
+        "...Ah...those four...R[?*!@], A[@#*], I[?**(] and V...\n...They don't stand a [CHANCE].\nNot with all those [ABOMINATIONS] running around...",
+        "...[WANTED KID]...What's his name?...Rem Saikle?\nThe [REDACTED] Government put down a high price for his head.\nSuch a shame that [REDACTED]..."
     ];
 
     var welcomeMessages:Array<String> = [
@@ -93,6 +103,9 @@ class MonsterLairState extends MusicBeatState
 
     override function create() 
     {
+        #if desktop
+        DiscordClient.changePresence("In 'The Monster's Lair'", null);
+        #end
         random = FlxG.random.int(0, welcomeMessages.length - 1);
         noHoriz = true;
 
@@ -104,6 +117,7 @@ class MonsterLairState extends MusicBeatState
         else
         {
             jsonFile = {
+                listNames: ["Void", "Dreams"],
                 lists: [
                     ["No Song Bozo"],
                     ["No Song Bozo"]
@@ -111,18 +125,11 @@ class MonsterLairState extends MusicBeatState
             }
         }
         songLists = jsonFile.lists;
+        listNames = jsonFile.listNames;
 
         if (Highscore.getWeekScore("week6", 1) > 0 || ClientPrefs.devMode)
         {
             toDo.push("Visit");
-        }
-
-        if (ClientPrefs.foundDmitri || ClientPrefs.inventory[2][1] > 0)
-        {
-            if (songLists[0][0] == "Remember My Name")
-            {
-                songLists[0].push("V");
-            }
         }
 
         if (ClientPrefs.completedSideStories.get("visit"))
@@ -148,16 +155,19 @@ class MonsterLairState extends MusicBeatState
         grp = new FlxTypedGroup<Alphabet>();
         add(grp);
 
-        var toAdd:Array<BitmapFilter> = [];
-        var tv:TV = new TV();
-        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
-        vcr = new VCR();
-        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
-        var filter3:ShaderFilter = new ShaderFilter(new Scanline());
-        toAdd.push(filter1);
-        toAdd.push(filter2);
-        toAdd.push(filter3);
-        camGame.setFilters(toAdd);
+        if (ClientPrefs.shaders)
+        {
+            var toAdd:Array<BitmapFilter> = [];
+            var tv:TV = new TV();
+            var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+            vcr = new VCR();
+            var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+            var filter3:ShaderFilter = new ShaderFilter(new Scanline());
+            toAdd.push(filter1);
+            toAdd.push(filter2);
+            toAdd.push(filter3);
+            camGame.setFilters(toAdd);
+        }
 
         currentArray = toDo;
         createAlphabetList();
@@ -173,11 +183,14 @@ class MonsterLairState extends MusicBeatState
         var tvSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image("monsterLair/tv"));
         add(tvSpr);
 
-        wiggle = new WiggleEffect();
-        wiggle.effectType = DREAMY;
-        wiggle.waveSpeed = 1;
-        wiggle.waveFrequency = 5;
-        wiggle.waveAmplitude = 0.005;
+        if (ClientPrefs.shaders)
+        {
+            wiggle = new WiggleEffect();
+            wiggle.effectType = DREAMY;
+            wiggle.waveSpeed = 1;
+            wiggle.waveFrequency = 5;
+            wiggle.waveAmplitude = 0.005;
+        }
 
         var box:FlxSprite = new FlxSprite(600, 520).makeGraphic(680, 200, 0xFF0A0A0A);
         add(box);
@@ -185,7 +198,10 @@ class MonsterLairState extends MusicBeatState
         text = new FlxTypeText(610, box.y + 10, FlxG.width - 670, "", 24);
         text.font = Paths.font("eras.ttf");
 		text.sounds = [FlxG.sound.load(Paths.sound('term/text'), 0.4)];
-        text.shader = wiggle.shader;
+        if (ClientPrefs.shaders)
+        {
+            text.shader = wiggle.shader;
+        }
         add(text);
 
         reloadWelcomes();
@@ -206,8 +222,11 @@ class MonsterLairState extends MusicBeatState
     var changing:Bool = false;
     override function update(elapsed:Float)
     {
-        vcr.update(elapsed);
-        wiggle.update(elapsed);
+        if (ClientPrefs.shaders)
+        {
+            vcr.update(elapsed);
+            wiggle.update(elapsed);
+        }
 
         if (canPress && !inDialogue)
         {
@@ -254,19 +273,21 @@ class MonsterLairState extends MusicBeatState
                 }
                 if (currentArray == listNames && !changing)
                 {
-                    switch (listNames[curSelected])
-                    {
-                        case "Void":
-                            currentArray = songLists[0];
-                        case "Dreams":
-                            currentArray = songLists[1];
-                    }
+                    currentArray = songLists[curSelected];
                     curSelected = 0;
                     createAlphabetList();
                     changeSelection(0);
                     changing = true;
                 }
-                if (currentArray == songLists[0] || currentArray == songLists[1])
+                var issl:Bool = false;
+                for (i in 0...songLists.length)
+                {
+                    if (currentArray == songLists[i])
+                    {
+                        issl = true;
+                    }
+                }
+                if (issl)
                 {
                     if (!changing)
                     {
@@ -335,14 +356,17 @@ class MonsterLairState extends MusicBeatState
                     changeSelection(0);
                     changing = true;
                 }
-                if (currentArray == songLists[0] || currentArray == songLists[1])
+                for (i in 0...songLists.length)
                 {
-                    if (!changing)
+                    if (currentArray == songLists[i])
                     {
-                        currentArray = listNames;
-                        createAlphabetList();
-                        changeSelection(0);
-                        changing = true;
+                        if (!changing)
+                        {
+                            currentArray = listNames;
+                            createAlphabetList();
+                            changeSelection(0);
+                            changing = true;
+                        }
                     }
                 }
                 if (currentArray == chatAsks && !changing)

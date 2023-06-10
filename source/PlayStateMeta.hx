@@ -7,6 +7,14 @@ typedef PlayStateMetaData = {
 	var wardrobeEnabled:Bool;
     var loadingDirectory:String;
     var pauseMusic:String;
+    var strumSkins:MetaSkins;
+    var ratingPack:String;
+}
+
+typedef MetaSkins = {
+    dad:String,
+    bf:String,
+    gf:String
 }
 
 class PlayStateMeta
@@ -24,9 +32,15 @@ class PlayStateMeta
         var metaFile:PlayStateMetaData = {
             wardrobeEnabled: true,
             loadingDirectory: "",
-            pauseMusic: "breakfast"
+            pauseMusic: "breakfast",
+            strumSkins: {
+                "dad": "",
+                "bf": "",
+                "gf": ""
+            },
+            ratingPack: ""
         }
-        dataFile =  metaFile;
+        dataFile = metaFile;
     }
 
     public static function loadFile(song:String)
@@ -39,7 +53,13 @@ class PlayStateMeta
         var metaFile:PlayStateMetaData = {
             wardrobeEnabled: true,
             loadingDirectory: "",
-            pauseMusic: "breakfast"
+            pauseMusic: "breakfast",
+            strumSkins: {
+                "dad": "",
+                "bf": "",
+                "gf": ""
+            },
+            ratingPack: ""
         }
         return metaFile;
     }

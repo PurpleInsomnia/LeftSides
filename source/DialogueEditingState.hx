@@ -234,9 +234,19 @@ class DialogueEditingState extends MusicBeatState
         {
             if (input.hasFocus)
             {
+                FlxG.sound.muteKeys = [];
+				FlxG.sound.volumeDownKeys = [];
+				FlxG.sound.volumeUpKeys = [];
                 block = true;
             }
         }
+        if (!block)
+        {
+            FlxG.sound.muteKeys = TitleScreenState.muteKeys;
+			FlxG.sound.volumeDownKeys = TitleScreenState.volumeDownKeys;
+			FlxG.sound.volumeUpKeys = TitleScreenState.volumeUpKeys;
+        }
+
         if (canPress && block)
         {
             if (FlxG.keys.justPressed.ANY)
@@ -371,6 +381,17 @@ class DialogueEditingState extends MusicBeatState
             }
             if (FlxG.keys.justPressed.P)
             {
+                var newLine:EditingDialogueLine = {
+                    portrait: portInput.text,
+                    expression: expInput.text,
+                    text: dialogueInput.text,
+                    boxState: boxInput.text,
+                    speed: speedInput.value,
+                    events: eventInput.text.split(":")
+                }
+                lines.remove(lines[line]);
+                lines.insert(line, newLine);
+
                 lines.insert(line + 1, {
                     portrait: "ben",
                     expression: "happy",

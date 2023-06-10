@@ -106,6 +106,9 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
      * Inline variable to see if the user wants to submit scores.
      */
     public static var leaderboardToggle:Bool;
+
+    public static var isAwarding:Bool = false;
+
     /**
      * Grabs user data and returns as a string, true for Username, false for Token
      * @param username Bool value
@@ -205,11 +208,13 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
      */
     public static function getTrophy(trophyID:Int, image:String) /* Awards a trophy to the user! */
     {
+        var nu:Bool = false;
         if(userLogin)
         {
-            GJApi.addTrophy(trophyID, function(data:Map<String,String>){
-                trace(data);
+            GJApi.addTrophy(trophyID, function(data:Map<String,String>)
+            {
                 var bool:Bool = false;
+                nu = true;
                 if (data.exists("message"))
                 {
                     bool = true;
@@ -217,12 +222,89 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
                 GJApi.fetchTrophy(trophyID, function(data2:Map<String, String>)
                 {
                     if (!bool)
-                        Main.gjToastManager.createToast(Paths.getLibraryPath("images/achievements/" + image + ".png"), "Trophy Earned: " + data2.get("title"), data2.get("description"), "award");
+                    {
+                        Main.gjToastManager.createToast(Paths.getLibraryPath("images/achievements/" + image + ".png"), "Trophy Earned: " + data2.get("title"), data2.get("description"), "award", true);
+                    }
                     else
-                        trace("Award " + data2.get("title") + " is already unlocked!!");
+                    {
+                        //trace("Award " + data2.get("title") + " is already unlocked!!");
+                    }
                 });
             });
         }
+        var TROPHYNAME:String = "";
+        switch (trophyID)
+        {
+            case 178512: // tutorial
+                TROPHYNAME = "That's How You Do It!";
+            case 178513: // week 1
+                TROPHYNAME = "Underestimated.";
+            case 178514: // week 2
+                TROPHYNAME = "Still Scared Of Them?";
+            case 178515: // week 3
+                TROPHYNAME = "Bully 'em Back!";
+            case 178516: // week 4
+                TROPHYNAME = "Pay Up!";
+            case 178517: // week 5
+                TROPHYNAME = "Well- That Just Happend.";
+            case 178518: // week 6
+                TROPHYNAME = "Happy Holidays!";
+            case 178519: // week 7
+                TROPHYNAME = "Epic Prank!!!";
+            case 194374: // week 8
+                TROPHYNAME = "Happy Birthday, Tess!";
+
+            case 178520: // waltuh
+                TROPHYNAME = "Stay Out Of MY Teritory.";
+            case 178521: // matto
+                TROPHYNAME = "MILLIONS TO ONE!!!";
+            case 178522: // eggman
+                TROPHYNAME = "You Have Twenty-Three Hours...";
+            case 178523: // bf
+                TROPHYNAME = "I've found you, FAKER!(?)";
+            case 178524: // nuckle
+                TROPHYNAME = "You Played Almost An Hour Or Two...For This?";
+            case 178525: // lonely
+                TROPHYNAME = "The Cure";
+            case 178526: // sonic
+                TROPHYNAME = "How Did We Get Here, Anyways?";
+            case 178527: // jabbin
+                TROPHYNAME = "The Fun Never Ends!";
+            case 178528: // V
+                TROPHYNAME = "Hello? Hi.";
+            case 194355: // fortnite boots whore.
+                TROPHYNAME = "Exposed.";
+            case 194357: // tankman
+                TROPHYNAME = "Heh, Pretty Good!";
+            case 194358: // bootleg.
+                TROPHYNAME = "Virgin Center Sides, Chad Left Sides";
+            case 194359: // wal'er why
+                TROPHYNAME = "This Is The Moment That Walt Became Heisenberg";
+            case 194360: // LUCID!!! HELP!!!
+                TROPHYNAME = "GRRRRRRRAHH. RATIOOOOOOO!!!!";
+            case 194899:
+                TROPHYNAME = "August 27th, 2022";
+
+            case 178530: // missinput
+                TROPHYNAME = "Misinput.";
+
+            // platinum
+            case 194362: // wardrobe
+                TROPHYNAME = "Dress Up Party.";
+            case 194363: // ss
+                TROPHYNAME = "Our Past Can Hurt.";
+            case 194371: // songs
+                TROPHYNAME = "Our Past Can [NO LONGER] Hurt...";
+            case 194372: // s ranks
+                TROPHYNAME = "Smells Like Perfection.";
+            case 194373: // 100
+                TROPHYNAME = "Origin Stories.";
+        }
+        if (trophies.TrophyUtil.trophies.exists(TROPHYNAME))
+        {
+            nu = true;
+        }
+        trophies.TrophyUtil.award(TROPHYNAME, nu);
     }
 
     /**
@@ -230,15 +312,26 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
      * @param id TrophyID
      * @return Bool (True for achieved, false for unachieved)
      */
-    public static function checkTrophy(id:Int):Bool
+    public static function checkTrophy(id:Int, ?tro:Bool = false, ?name:String = ""):Bool
     {
         var value:Bool = false;
         GJApi.fetchTrophy(id, function(data:Map<String, String>)
             {
-                trace(data);
+                //trace(data);
                 if (data.get("achieved").toString() != "false")
                     value = true;
-                trace(id+""+value);
+                //trace(id+""+value);
+                if (tro)
+                {
+                    if (value)
+                    {
+                        if (!trophies.TrophyUtil.trophies.exists(name))
+                        {
+                            trophies.TrophyUtil.trophies.set(name, true);
+                        }
+                        trophies.TrophyUtil.save();
+                    }
+                }
             });
         return value;
     }
@@ -247,7 +340,6 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
     {
         var returnable:Map<String,String> = new Map<String, String>();
         GJApi.fetchTrophy(id, function(data:Map<String,String>){
-            trace(data);
             returnable = data;
         });
         return returnable;
@@ -329,6 +421,8 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
         {
             case "points":
                 Main.gjToastManager.createToast(GameJoltInfo.imagePath, "Added " + val + " points to your shop credits!", "", "addPoints");
+            case "trophy":
+                Main.gjToastManager.createToast(Paths.preloadFunny("images/achievements/" + val.icon + ".png"), val.name, val.desc, "award", true);
         }
     }
 
@@ -638,6 +732,7 @@ class GJToastManager extends Sprite
     public static var TOTAL_TIME:Float = ENTER_TIME + DISPLAY_TIME + LEAVE_TIME;
 
     var playTime:FlxTimer = new FlxTimer();
+    var trophy:Bool = false;
 
     public function new()
     {
@@ -655,9 +750,15 @@ class GJToastManager extends Sprite
      * @param description Description for the toast
      * @param sound Want to have an alert sound? Set this to **true**! Defaults to **false**.
      */
-    public function createToast(iconPath:String, title:String, description:String, ?sound:String = ""):Void
+    public function createToast(iconPath:String, title:String, description:String, ?sound:String = "", ?trophy:Bool = false):Void
     {
        if (sound != "")FlxG.sound.play(Paths.sound(sound), 0.75); 
+
+        this.trophy = trophy;
+       if (trophy)
+       {
+            GameJoltAPI.isAwarding = true;
+       }
         
         var toast = new Toast(iconPath, title, description);
         addChild(toast);
@@ -679,6 +780,10 @@ class GJToastManager extends Sprite
                     FlxTween.tween(child, {y: (i + 1) * -child.height}, LEAVE_TIME, {ease: FlxEase.quadOut, startDelay: DISPLAY_TIME,
                         onComplete: function(tween:FlxTween)
                         {
+                            if (trophy)
+                            {
+                                GameJoltAPI.isAwarding = false;
+                            }
                             cast(child, Toast).removeChildren();
                             removeChild(child);
                         }

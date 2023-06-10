@@ -37,7 +37,6 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
-		award(8, 'You finished Week 5!', 'winterSpooky');
 		runTimer('startAfterDialogue', 0.08);
 		allowCountdown = true;
 		return Function_Stop;
@@ -53,7 +52,7 @@ function onTimerCompleted(tag, loops, loopsLeft)
 		removeLuaSprite('poisonIndicator', false);
 		loadDialogue('dialogueAfter');
 		isAfter = true;
-		if bruh then
+		if bruh and not tpm then
 			setPropertyFromClass('ClientPrefs', 'middleScroll', false);
 		end
 	end
@@ -123,8 +122,6 @@ end
 local isMonster = true;
 function onCreate()
 	isMonster = true;
-	makeLuaSprite('gfIsDead', 'lemon-man/ripBozo', 600, 530);
-	addLuaSprite('gfIsDead', true);
 
 	-- Funny Poison Thing
 
@@ -155,20 +152,11 @@ function onCreate()
 	setProperty('outsideMall.alpha', 0);
 	setProperty('5min.visible', false);
 
-	if not middlescroll then
+	setProperty("skipCountdown", true);
+
+	if not middlescroll and not tpm then
 		setPropertyFromClass('ClientPrefs', 'middleScroll', true);
 		bruh = true;
-	end
-end
-
-local isPoison = true;
-function onBeatHit()
-	if isPoison then
-		health = getProperty('health');
-		setProperty('health', health - 0.04);
-		if health < 0.12 then
-			setProperty('health', 0.12);
-		end
 	end
 end
 

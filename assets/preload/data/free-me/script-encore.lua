@@ -31,37 +31,25 @@ end
 
 local created = false;
 function onCreatePost()
-	setHealthbarColor("FFFFFF", "000000");
 	setProperty("health", 2);
 
-	-- hide icons
-	setProperty("iconP1.visible", false);
-	setProperty("iconP2.visible", false);
-	setProperty("barBG.visible", false);
+	-- hide tess
 	setProperty("gf.visible", false);
 
-	makeLuaSprite("text", "encore/monster/text", 0, 0);
-	setObjectCamera("text", "camHUD");
-	scaleObject("text", 0.25, 0.25);
-	screenCenter("text", "x");
-	setProperty("text.y", getProperty("healthBarBG.y") - getProperty("text.height"));
-	setProperty("text.alpha", 0);
-	addLuaSprite("text", true);
+	--makeLuaSprite("bfIcon", "encore/monster/bfIcon", 0, 0);
 
-	makeLuaSprite("bfIcon", "encore/monster/bfIcon", 0, 0);
+	--loadGraphic("bfIcon", "encore/monster/bfIcon", true, 150, 150);
+	--addGraphicAnimation("bfIcon", "idle", "0", 1, true);
+	--addGraphicAnimation("bfIcon", "dying", "1", 1, true);
+	--addGraphicAnimation("bfIcon", "death", "2", 1, true);
+	--objectPlayAnimation("bfIcon", "idle", true);
 
-	loadGraphic("bfIcon", "encore/monster/bfIcon", true, 150, 150);
-	addGraphicAnimation("bfIcon", "idle", "0", 1, true);
-	addGraphicAnimation("bfIcon", "dying", "1", 1, true);
-	addGraphicAnimation("bfIcon", "death", "2", 1, true);
-	objectPlayAnimation("bfIcon", "idle", true);
-
-	setObjectCamera("bfIcon", "camHUD");
-	setProperty("bfIcon.y", getProperty("healthBarBG.y") - 75);
-	setProperty("bfIcon.x", (getProperty("healthBarBG.x") + getProperty("healthBarBG.width")) - 75);
-	setProperty("bfIcon.angle", -2);
-	setProperty("bfIcon.alpha", 0);
-	addLuaSprite("bfIcon", true);
+	--setObjectCamera("bfIcon", "camHUD");
+	--setProperty("bfIcon.y", getProperty("healthBarBG.y") - 75);
+	--setProperty("bfIcon.x", (getProperty("healthBarBG.x") + getProperty("healthBarBG.width")) - 75);
+	--setProperty("bfIcon.angle", -2);
+	--setProperty("bfIcon.alpha", 0);
+	--addLuaSprite("bfIcon", true);
 
 	makeLuaSprite("monsterVG", "encore/monster/vg", 0, 0);
 	setObjectCamera("monsterVG", "camHUD");
@@ -69,13 +57,8 @@ function onCreatePost()
 	addLuaSprite("monsterVG", true);
 
 	doTweenAlpha("monsterTextAlpha", "text", 0.5, 1, "sineInOut:pingpong");
-
-	-- Botplay shit lmao
-	setProperty("botplayTxt.text", "[STOP] CHEATING");
 	
 	setProperty("customScoreTxt", true);
-
-	doTweenAngle("bfIconAngle", "bfIcon", 2, 1, "elasticOut:pingpong");
 
 	makeWiggleEffect('camera|camhud', 'dreamy', 1, 10, 0.005);
 	created = true;
@@ -128,28 +111,12 @@ function onUpdatePost(elapsed)
 end
 
 function onEvent(name, v1, v2)
-	if name == "Change Character" then
-		setHealthbarColor("FFFFFF", "000000");
-	end
-	if name == "Toggle Screen" then
-		if not getProperty("text.visible") then
-			setProperty("text.visible", false);
-			setProperty("bfIcon.visible", false);
-		else
-			setProperty("text.visible", true);
-			setProperty("bfIcon.visible", true);
-		end
-	end
 	if name == "Add Dialogue Bg" then
 		dialogueBg(v1);
 	end
 end
 
 function onCountdownTick(counter)
-	if counter == 0 then
-		doTweenAlpha('asshole10', 'bfIcon', 1, 1, 'linear');
-		doTweenAlpha('asshole11', 'text', 1, 1, 'linear');
-	end
 	if counter == 2 then
 		triggerEvent('Alt Idle Animation', 'boyfriend', '-alt');
 		characterPlayAnim("boyfriend", "flip-hat", true);
@@ -157,8 +124,6 @@ function onCountdownTick(counter)
 end
 
 function onEndSong()
-	setProperty("bfIcon.alpha", 0);
-	setProperty("text.alpha", 0);
 	if getProperty("monsterVG.visible") then
 		setProperty("monsterVG.visible", false);
 	end

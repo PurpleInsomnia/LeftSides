@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="hug.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="bf.png" x="0" y="0" width="509" height="345"/>
-	<SubTexture name="gf.png" x="0" y="355" width="509" height="345"/>
-</TextureAtlas>

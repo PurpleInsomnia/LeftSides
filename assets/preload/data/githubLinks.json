@@ -2,5 +2,6 @@
     "doodlesLink": "fanArtList.txt",
     "doodlesDescLink": "fanArt/lol.txt",
     "dlcHOFLink": "HallOfFame.txt",
-    "communityLink": "cslist.json"
+    "communityLink": "cslist.json",
+    "comicsLink": "comicsList.json"
 }

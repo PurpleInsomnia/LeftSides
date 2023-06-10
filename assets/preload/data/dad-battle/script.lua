@@ -44,7 +44,6 @@ local allowCountdown = false
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
-		award(4, 'You finished Week 1!', 'dad');
 		runTimer('startAfterDialogue', 0.8);
 		allowCountdown = true;
 		return Function_Stop;
@@ -69,10 +68,4 @@ end
 
 function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
-end
-
-function onCreate()
-	doTweenColor('bfShading', 'boyfriend', '7F7F7F', 0.001, 'linear');
-	doTweenColor('dadShading', 'dad', '7F7F7F', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', '7F7F7F', 0.001, 'linear');
 end

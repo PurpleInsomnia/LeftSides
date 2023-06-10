@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:f07b3eb84782ebc251eca747e4170b9a:f8972cb6ef7a355efe8daf45430eac19:0818523fa2cfdc9b90efa8a0df750315$ -->
-<TextureAtlas imagePath="ron.png" width="1660" height="245">
-    <SubTexture name="angry" x="0" y="0" width="409" height="245"/>
-    <SubTexture name="cool" x="417" y="0" width="409" height="245"/>
-    <SubTexture name="default" x="834" y="0" width="409" height="245"/>
-    <SubTexture name="what" x="1251" y="0" width="409" height="245"/>
-</TextureAtlas>

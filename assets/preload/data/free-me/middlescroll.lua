@@ -2,13 +2,13 @@
 local chad = false;
 function onCreate()
 	chad = middlescroll;
-	if not chad then
+	if not chad and not tpm then
 		setPropertyFromClass('ClientPrefs', 'middleScroll', true);
 	end
 end
 
 function onDestroy()
-	if not chad then
+	if not chad and not tpm then
 		setPropertyFromClass('ClientPrefs', 'middleScroll', false);
 	end
 end

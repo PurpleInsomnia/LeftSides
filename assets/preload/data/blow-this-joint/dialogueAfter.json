@@ -1,0 +1,44 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "lucid",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Lmao get ratioed."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "the-rock",
+			"text": "Bro, I'm sorry that I didn't have any weed."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "lucid",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Unlucky./nJk jk, we cool."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Aight, cool."
+		}
+	]
+}

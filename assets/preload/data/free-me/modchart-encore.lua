@@ -1,5 +1,5 @@
 function onStepHit()
-    if curStep == 1 then
+    if curStep == 1 and not tpm then
         doModchart();
     end
 end

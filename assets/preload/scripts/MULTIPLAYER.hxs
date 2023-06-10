@@ -1,0 +1,37 @@
+// DO NOT FUCKING DELETE THIS.
+var scores:Array<Int> = [0, 0];
+function onCreatePost()
+{
+    if (TwoPlayerState.tpm)
+    {
+        lePlayState.customScoreTxt = true;
+    }
+}
+
+function onUpdatePost(elapsed:Float)
+{
+    if (TwoPlayerState.tpm)
+    {
+        lePlayState.scoreTxt.text = "PLAYER 1'S SCORE: " + scores[1] + " | PLAYER 2'S SCORE: " + scores[0];
+    }
+}
+
+function opponentNoteHit(id:Int, ledata:Int, type:String, sus:Bool)
+{
+    if (!sus && TwoPlayerState.tpm)
+    {
+        var coolScore:Int = scores[0];
+        coolScore += 200;
+        scores[0] = coolScore;
+    }
+}
+
+function goodNoteHit(id:Int, ledata:Int, type:String, sus:Bool)
+{
+    if (!sus && TwoPlayerState.tpm)
+    {
+        var coolScore:Int = scores[1];
+        coolScore += 200;
+        scores[1] = coolScore;
+    }
+}

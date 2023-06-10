@@ -36,14 +36,17 @@ class NoIdeaState extends MusicBeatState
 
 		FlxG.mouse.visible = true;
 
-		var toAdd:Array<BitmapFilter> = [];
-        var tv:TV = new TV();
-        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
-        vcr = new VCR();
-        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
-        toAdd.push(filter1);
-        toAdd.push(filter2);
-        FlxG.camera.setFilters(toAdd);
+		if (ClientPrefs.shaders)
+		{
+			var toAdd:Array<BitmapFilter> = [];
+        	var tv:TV = new TV();
+        	var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+        	vcr = new VCR();
+        	var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        	toAdd.push(filter1);
+        	toAdd.push(filter2);
+        	FlxG.camera.setFilters(toAdd);
+		}
 
 		theSprite = new FlxSprite(0, -150).loadGraphic(Paths.image('talk/bgSprite'));
 		theSprite.alpha = 0;
@@ -71,9 +74,12 @@ class NoIdeaState extends MusicBeatState
 		});
 	}
 
-	override function update(elapsed) 
+	override function update(elapsed:Float) 
 	{
-		vcr.update(elapsed);
+		if (ClientPrefs.shaders)
+		{
+			vcr.update(elapsed);
+		}
 		super.update(elapsed);	
 	}
 

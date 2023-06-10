@@ -67,6 +67,13 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeFramerate;
 		#end
 
+		var option:Option = new Option("Shaders",
+			"If checked shaders are enabled, uncheck this if you are encountering errors",
+			"shaders",
+			"bool",
+			true);
+		addOption(option);
+
 		var option:Option = new Option('Persistent Cached Data',
 			'If checked, images loaded will stay in memory\nuntil the game is closed, this increases memory usage,\nbut basically makes reloading times instant.',
 			'imagesPersist',

@@ -210,8 +210,7 @@ class StoryMenuState extends MusicBeatState
 		for (i in 0...CoolUtil.difficultyStuff.length) {
 			var sprDifficulty:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menudifficulties/' + CoolUtil.difficultyStuff[i][0].toLowerCase()));
 			sprDifficulty.screenCenter();
-			if (i != 1)
-				sprDifficulty.visible = false;
+			sprDifficulty.visible = false;
 			sprDifficulty.ID = i;
 			sprDifficulty.antialiasing = ClientPrefs.globalAntialiasing;
 			sprDifficultyGroup.add(sprDifficulty);
@@ -383,15 +382,6 @@ class StoryMenuState extends MusicBeatState
 				changeWeek(1);
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
-			if (controls.UI_RIGHT)
-				rightArrow.animation.play('press')
-			else
-				rightArrow.animation.play('idle');
-
-			if (controls.UI_LEFT)
-				leftArrow.animation.play('press');
-			else
-				leftArrow.animation.play('idle');
 
 			if (controls.ACCEPT)
 			{
@@ -468,6 +458,7 @@ class StoryMenuState extends MusicBeatState
 			PlayState.campaignMisses = 0;
 			PlayState.campaignHits = 0;
 			PlayState.campaignGMiss = 0;
+			PlayState.campaignRatings = [];
 			// storymode changeables
 		
 			var thingy:Array<String> = [];

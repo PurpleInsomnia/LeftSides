@@ -62,4 +62,9 @@ function onUpdate(elapsed)
             }
         }
     }
+
+    if (TwoPlayerState.tpm)
+    {
+        letterGrade.visible = false;
+    }
 }

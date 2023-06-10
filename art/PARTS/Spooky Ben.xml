@@ -4,14 +4,17 @@
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="BF Body Down0000" x="0" y="0" width="349" height="261"/>
 	<SubTexture name="BF Body Up0000" x="359" y="0" width="328" height="271"/>
-	<SubTexture name="BF Head defalt0000" x="697" y="0" width="281" height="204"/>
+	<SubTexture name="BF Head defalt0000" x="697" y="0" width="288" height="200"/>
 	<SubTexture name="BF defalt arm0000" x="0" y="281" width="226" height="159"/>
-	<SubTexture name="arm default0000" x="236" y="281" width="139" height="103"/>
-	<SubTexture name="bf attack bod0000" x="385" y="281" width="138" height="126"/>
-	<SubTexture name="bf body default0000" x="533" y="281" width="332" height="250"/>
-	<SubTexture name="bf cringe hand0000" x="875" y="281" width="120" height="101"/>
-	<SubTexture name="bf face default0000" x="0" y="541" width="164" height="109"/>
-	<SubTexture name="bf face nervous0000" x="174" y="541" width="149" height="106"/>
-	<SubTexture name="bf face nervous0001" x="174" y="541" width="149" height="106"/>
-	<SubTexture name="bf face nervous0002" x="174" y="541" width="149" height="106"/>
+	<SubTexture name="BF head slight turn0000" x="236" y="281" width="272" height="216"/>
+	<SubTexture name="arm default0000" x="518" y="281" width="139" height="103"/>
+	<SubTexture name="bf body default0000" x="667" y="281" width="332" height="250"/>
+	<SubTexture name="bf body default no pocket0000" x="0" y="541" width="332" height="250"/>
+	<SubTexture name="bf cringe hand0000" x="342" y="541" width="120" height="101"/>
+	<SubTexture name="bf face default0000" x="472" y="541" width="134" height="103"/>
+	<SubTexture name="bf face default alt0000" x="616" y="541" width="135" height="103"/>
+	<SubTexture name="bf face nervous0000" x="761" y="541" width="149" height="106"/>
+	<SubTexture name="bf face nervous0001" x="761" y="541" width="149" height="106"/>
+	<SubTexture name="bf face nervous0002" x="761" y="541" width="149" height="106"/>
+	<SubTexture name="peace hand0000" x="920" y="541" width="103" height="133"/>
 </TextureAtlas>

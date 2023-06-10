@@ -17,7 +17,14 @@
         },
         {
             "name": "Current Fit",
-            "description": "Her comfortable, warm and downright adorable new sweater was given to her by Ben on Christmas 2021.\nThe new pants and shoes slow the time in which she gets cold.",
+            "description": "The earings she got on Valentines Day 2023 and necklace she got on Christmas Day 2021 pairs well with her outift.",
+            "path": "brand-new-tess",
+            "unlock": "song:peppermints",
+            "lock": "Complete 'Week 6'"
+        },
+        {
+            "name": "Current Fit (OLD)",
+            "description": "Her new, cozy and warm sweater given to her Christmas Day 2021.\nShe now wears her hair in a new style.",
             "path": "gf-new",
             "unlock": "song:peppermints",
             "lock": "Complete 'Week 6'"
@@ -51,53 +58,67 @@
             "lock": "Break Bad."
         },
         {
-            "name": "Summer Outfit",
-            "description": "Her simple purple shirt and dark short shorts make Ben's heart melt while also keeping her cool!\nMay also be used as PJs.",
-            "path": "summer-gf",
-            "unlock": "song:v",
-            "lock": "Play the song: 'V'"
-        },
-        {
             "name": "Morning Outfit",
-            "description": "A outfit made from Ben's favorite shirt and Tess' short shorts.\nHer go to pair of PJs after a night of...uh...yeah y'know.",
+            "description": "A outfit made from Ben's favorite shirt and Tess' short shorts.\nHer go to pair of PJs after a night of...uh...yeah y'know.\n(MADE BEFORE THE REDESIGNS)",
             "path": "gf-pj",
             "unlock": "song:milf",
             "lock": "Play the song: 'Milf'"
         },
         {
             "name": "Club Member",
-            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like a mixture of Ben, Old Books and Tea.",
+            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like a mixture of Ben, Old Books and Tea.\n(MADE BEFORE THE REDESIGNS)",
             "path": "gf-club",
             "unlock": "song:free-me",
             "lock": "Survive the first encounter with the one who breaks the fourth wall."
         },
         {
-            "name": "Trepidation Fit",
+            "name": "Trepidation Fit\n(MADE BEFORE THE REDESIGNS)",
             "description": "A nice formal outfit thats perfect for fighting...creepypastas?\nAlso, Breasts.\nSuggested by @ASweetMidnight on twitter <3",
             "path": "gf-tre",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "R.D's Take",
+            "name": "R.D's Take\n(MADE BEFORE THE REDESIGNS)",
             "description": "Rampant Dabbler's take on Tess.\n(Boob window in sweater hahahaha)\nSuggested by: @Rampant_Dabbler on twitter <3",
             "path": "gf-rd",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "Princess' Drip",
+            "name": "Princess' Drip\n(MADE BEFORE THE REDESIGNS)",
             "description": "A dress made to rule a kingdom.\nAlways smells like cake or the inside of a volcanic castle.\nSuggested by @MelancholyMoni_ on twitter <3",
             "path": "gf-peach",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "goljie's Redesign",
+            "name": "goljie's Redesign\n(MADE BEFORE THE REDESIGNS)",
             "description": "goljie's (on newgrounds.com) (very cool) base game Girlfriend.\nNow with a Left Sides flavor.\n(Suggested by @HankKD7 on twitter <3)",
             "path": "gf-goljie",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "Pyro Merch",
+            "description": "Dripped out with the PYROCYNICAL MERCH!! !!\nSmells like 'No games on the PS5'\n(MADE BEFORE THE REDESIGNS)",
+            "path": "gf-pyro",
+            "unlock": "song:huge-drama",
+            "lock": "Play the song: 'Huge Drama'"
+        },
+        {
+            "name": "Cool Fit",
+            "description": "Only the coolest designs are featured here.\n(MADE BEFORE THE REDESIGNS)",
+            "path": "gf-cool",
+            "unlock": "misc:ownSuggestedCostumes",
+            "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "Loading Screen",
+            "description": "Straight outta the loading screen.\nShe can't really control her onomatopoeias. So they just appear sometimes...",
+            "path": "gf-loading",
+            "unlock": "misc:100",
+            "lock": "Acheive 100% Game Completion. (THIS OUTFIT IS NOT REQUIRED FOR 100%.)"
         }
     ]
 }

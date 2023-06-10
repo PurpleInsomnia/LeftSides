@@ -1,0 +1,68 @@
+var bpt:String = "BOTPLAY";
+function onCreatePost()
+{
+    var song:String = Paths.formatToSongPath(PlayState.SONG.song);
+    switch (song)
+    {
+        case "tutorial":
+            bpt = "Damn. On the tutorial?\nReally?";
+         case "bopeebo" | "fresh":
+            bpt = "Whatever floats your boat, I guess.";
+        case "dad-battle":
+            bpt = "Trust me, it feels REALLY good when\nyou beat it legitamately.";
+        case "spookeez" | "tricks-and-treats" | "south":
+            bpt = "Damn, you can't even handle 7 year olds?";
+        case "free-me":
+            bpt = "[STOP] Cheating";
+        case "pico" | "philly-nice" | "blammed":
+            bpt = "Now you're really cheating, huh?";
+        case "satin-panties" | "dance-interstate" | "high" | "milf":
+            bpt = "Not leaving a good impression on her mom\njust sayin'.";
+        case "cocoa":
+            bpt = "It's a slow song.\nCome on.";
+        case "eggnog":
+            bpt = "Don't you even feel\na little ashamed?";
+        case "horrifying-truth":
+            bpt = "[WORTHLESS CHEATER]";
+        case "peppermints":
+            bpt = "Not on christmas\n(crying emoji)";
+        case "ron":
+            bpt = "You're doing this ironically...\nright?";
+        case "poster-boy":
+            bpt = "Only thing you'll be funkin' tonight\nis your sock.";
+        case "beef":
+            bpt = "You probably put this on to\nlook at Tess' ass huh?";
+        case "territory":
+            bpt = "Stay out of this territory.";
+        case "blow-this-joint":
+            bpt = "Unlucky";
+        case "huge-drama":
+            bpt = "Fell Off.";
+        case "borrowed-motifs":
+            bpt = "I mean.\nUnderstandable, I guess...";
+        case "remember my name":
+            bpt = "Breaking Legitimacy";
+        case "dense":
+            bpt = "*AUSTRALIAN SCREAMING*";
+        case "crackin-eggs":
+            bpt = "What the actual shit?\nWHAT?!";
+        case "doppelganger":
+            bpt = "*Dial Up Sounds*";
+        case "v":
+            bpt = "V Humor.";
+        case "no-hard-feelings":
+            bpt = "Welcome to the mind\nof a different kind.";
+        case "isolation":
+            bpt = "You Killed Him.";
+        case "manipulator":
+            bpt = "Autofire\n(V Playing Fornite Mobile Reference?!)";
+        case "comfy-together":
+            bpt = "IT'S A SLOW SONG\nYOU'LL BE FINE";
+        case "endless":
+            bpt = "FUN IS INFINITE";
+        case "too-fest":
+            bpt = "*VINE THUD*";
+    }
+    bpt = CoolUtil.swearFilter(bpt);
+    lePlayState.botplayTxt.text = bpt;
+}

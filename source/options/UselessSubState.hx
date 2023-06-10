@@ -34,7 +34,7 @@ class UselessSubState extends BaseOptionsMenu
 		title = 'Useless Settings';
 		rpcTitle = 'Useless Settings Menu'; //for Discord Rich Presence
 
-        var option:Option = new Option("Wish Downscroll",
+        var option:Option = new Option("Downscroll From Wish.com",
         "If checked, downscroll is enabled. However, not really.",
         "wishDownscroll",
         "useless",

@@ -290,9 +290,9 @@
 					[
 						28800,
 						-1,
-						"Cool Flash",
-						"1",
-						"0"
+						"Color Flash",
+						"",
+						""
 					]
 				],
 				"mustHitSection": true
@@ -378,9 +378,9 @@
 					[
 						38406.25,
 						-1,
-						"Cool Flash",
-						"0",
-						"0"
+						"Color Flash",
+						"",
+						""
 					]
 				],
 				"mustHitSection": true
@@ -684,9 +684,9 @@
 					[
 						57603,
 						-1,
-						"Cool Flash",
-						"1",
-						"0"
+						"Color Flash",
+						"",
+						""
 					]
 				],
 				"mustHitSection": true
@@ -779,9 +779,9 @@
 					[
 						67206,
 						-1,
-						"Cool Flash",
-						"0",
-						"0"
+						"Color Flash",
+						"",
+						""
 					]
 				],
 				"mustHitSection": true

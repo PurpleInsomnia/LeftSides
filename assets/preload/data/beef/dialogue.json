@@ -1,0 +1,54 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "the-rock",
+			"text": "Okay.\\nWho is this bozo?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bootleg",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Hi.\\nIt the me: Bedophile from the popular mod (That doesn't use ANY ideas, code or art from this mod), Center Sides."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "bruh",
+			"text": "Your girlfriend looks like a fucking chilli pepper.\\n...Also, why is she wearing my dress?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bootleg",
+			"boxState": "normal",
+			"expression": "gf",
+			"text": "Help."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Ya'll are gonna be catchin' some hands."
+		}
+	]
+}

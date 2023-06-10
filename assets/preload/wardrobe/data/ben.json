@@ -51,13 +51,6 @@
             "lock": "Break Bad."
         },
         {
-            "name": "Summer Outfit",
-            "description": "A simple open shirt and some nice shorts are perfect for hanging out in Montana!\nThe sunglasses make him look dorky to Tess. (which she adores)",
-            "path": "summer-bf",
-            "unlock": "song:v",
-            "lock": "Play the song: 'V'"
-        },
-        {
             "name": "Benntlee Worner",
             "description": "He is silly.",
             "path": "shitpost-ben",
@@ -66,45 +59,66 @@
         },
         {
             "name": "Young Ben",
-            "description": "A younger version of Ben.\nHis longer, more messy hair is sometimes a pain to deal with.",
+            "description": "A younger version of Ben.\nHis longer, more messy hair is sometimes a pain to deal with.\n(MADE BEFORE THE REDESIGNS)",
             "path": "bf-young",
             "unlock": "ss:restless",
             "lock": "Complete the Side Story: 'Restless'"
         },
         {
             "name": "Club Member",
-            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like Tea.",
+            "description": "A nice uniform that is required to be worn durring school hours.\nSmells like Tea.\n(MADE BEFORE THE REDESIGNS)",
             "path": "bf-club",
             "unlock": "song:free-me",
             "lock": "Survive the first encounter with the one who breaks the fourth wall."
         },
         {
-            "name": "Trepidation Fit",
+            "name": "Trepidation Fit\n(MADE BEFORE THE REDESIGNS)",
             "description": "A snazzy outfit that gets you into a funky mood.\nWARNING: May attract creepypastas\nSuggested by @ASweetMidnight on twitter <3",
             "path": "bf-tre",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "R.D's Take",
+            "name": "R.D's Take\n(MADE BEFORE THE REDESIGNS)",
             "description": "Rampant Dabbler's take on Ben. The new jacket gives him a huge confidence boost.\nThe pants might give him massive cake though...\nSuggested by: @Rampant_Dabbler on twitter <3",
             "path": "bf-rd",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "Plumber's Drip",
+            "name": "Plumber's Drip\n(MADE BEFORE THE REDESIGNS)",
             "description": "A Plumber's outfit mostly used to save a princess in another castle!...or space...\nThe hat might be sentient.\nSuggested by @MelancholyMoni_ on twitter <3",
             "path": "bf-mario",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
         },
         {
-            "name": "goljie's Redesign",
+            "name": "goljie's Redesign\n(MADE BEFORE THE REDESIGNS)",
             "description": "goljie's (on newgrounds.com) (very cool) base game Boyfriend.\nNow with a Left Sides flavor.\n(Suggested by @HankKD7 on twitter <3)",
             "path": "bf-goljie",
             "unlock": "misc:ownSuggestedCostumes",
             "lock": "Buy a box in 'The Shop'."
+        },
+        {
+            "name": "Familiar Fit",
+            "description": "Awfully familiar look.\nHe often calls this outfit: 'The Faker Fit'\n(MADE BEFORE THE REDESIGNS)",
+            "path": "bf-bf",
+            "unlock": "song:doppelganger",
+            "lock": "Play the song: 'Doppelganger'"
+        },
+        {
+            "name": "Pyro Merch",
+            "description": "Shilling the coolest merch ever.\nMakes him reference the 'August 27th Incident' a lot.\n(MADE BEFORE THE REDESIGNS)",
+            "path": "bf-pyro",
+            "unlock": "song:huge-drama",
+            "lock": "Play the song: 'Huge Drama'"
+        },
+        {
+            "name": "Loading Screen",
+            "description": "Fresh out of the loading screen.\nThought boxes are common. However, only HE can see them.",
+            "path": "bf-loading",
+            "unlock": "misc:100",
+            "lock": "Acheive 100% Game Completion. (THIS OUTFIT IS NOT REQUIRED FOR 100%.)"
         }
     ]
 }

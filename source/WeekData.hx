@@ -339,9 +339,12 @@ class WeekData {
 				// gets asset based directories if certain folders don't exist.
 				// or the system finds "isAssetMod.leftSides".
 				var split:Array<String> = list[i].split("|");
-				if (!FileSystem.exists(Paths.mods(split[i] + "/weeks/")) || FileSystem.exists(Paths.mods(split[i] + "/isAssetMod.leftSides")))
+				if (FileSystem.exists(Paths.mods(split[0] + "/isAssetMod.leftSides")))
 				{
-					toPush.push(split[i]);
+					if (split[1] != "0")
+					{
+						toPush.push(split[i]);
+					}
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 	"song": {
 		"sectionLengths": [],
 		"player1": "bf",
-		"player2": "gf",
+		"player2": "gf-tutorial",
 		"notes": [
 			{
 				"sectionNotes": [],
@@ -3373,7 +3373,7 @@
 				"mustHitSection": true
 			}
 		],
-		"player3": "gf",
+		"player3": "gf-tutorial",
 		"song": "Tutorial",
 		"validScore": true,
 		"sections": 0,

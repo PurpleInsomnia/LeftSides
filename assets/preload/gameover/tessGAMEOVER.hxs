@@ -1,0 +1,44 @@
+var can:Bool = false;
+var restartSprite:FlxSprite = null;
+function onCreate()
+{
+    restartSprite = new FlxSprite().loadGraphic(Paths.image("tessRetry"));
+    restartSprite.alpha = 0;
+    add(restartSprite);
+
+    lePlayState.musicName = "gameOver";
+
+    FlxG.camera.flash(0xFFFFFFFF, 1, null, true);
+
+    FlxG.sound.play(Paths.sound("tessDiesLol"));
+    new FlxTimer().start(1, function(tmr:FlxTimer)
+    {
+        onTimerCompleted("the timer");
+    });
+}
+
+function onTimerCompleted(tag:String)
+{
+    if (tag == "the timer")
+    {
+        FlxTween.tween(restartSprite, {alpha: 1}, 0.5);
+        lePlayState.canPress = true;
+        lePlayState.playMusic(1, true);
+    }
+}
+
+function onUpdate(elapsed:Float)
+{
+    can = lePlayState.canPress;
+    if (controls.ACCEPT && can)
+    {
+        FlxG.sound.play(Paths.music("gameOverEnd"));
+        lePlayState.canPress = false;
+        lePlayState.switchState();
+    }
+    if (controls.BACK && can)
+    {
+        lePlayState.canPress = false;
+        lePlayState.back();
+    }
+}

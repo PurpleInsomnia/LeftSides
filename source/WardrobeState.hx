@@ -9,9 +9,15 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.text.FlxText;
 import flixel.util.FlxTimer;
+import sys.FileSystem;
+import sys.io.File;
 
 typedef WardrobeSection = {
     var sectionName:String;
+    var chars:Array<WardrobeChar>;
+}
+
+typedef WardrobeAdd = {
     var chars:Array<WardrobeChar>;
 }
 
@@ -36,10 +42,19 @@ class WardrobeState extends MusicBeatState
 
     public var descText:FlxText;
     public var charText:FlxText;
+    public var nameText:FlxText;
 
     public var charFiles:Array<WardrobeSection> = [];
     public var ben:WardrobeCharacter = null;
     public var tess:WardrobeCharacter = null;
+
+    public var isPlaystate:Bool = false;
+
+    public function new(isPlaystate:Bool)
+    {
+        super();
+        this.isPlaystate = isPlaystate;
+    }
 
     override function create()
     {
@@ -56,6 +71,17 @@ class WardrobeState extends MusicBeatState
         for (i in 0...chars.length)
         {
             var cf:WardrobeSection = Json.parse(Paths.getTextFromFile("wardrobe/data/" + chars[i].toLowerCase() + ".json"));
+            for (mod in Paths.getModDirectories())
+            {
+                if (FileSystem.exists("mods/" + mod + "/wardrobe/data/" + chars[i].toLowerCase() + "-toAdd.json"))
+                {
+                    var toAdd:WardrobeAdd = Json.parse(File.getContent("mods/" + mod + "/wardrobe/data/" + chars[i].toLowerCase() + "-toAdd.json"));
+                    for (char in toAdd.chars)
+                    {
+                        cf.chars.push(char);
+                    }
+                }
+            }
             charFiles.push(cf);
         }
 
@@ -68,8 +94,6 @@ class WardrobeState extends MusicBeatState
         tess.visible = false;
         editCharacterProperties(1, false);
         add(tess);
-
-        trace("added characters! :)");
 
         var bottomBar:FlxSprite = new FlxSprite(0, 720 - 150).makeGraphic(1280, 720, 0xFF000000);
         add(bottomBar);
@@ -93,6 +117,16 @@ class WardrobeState extends MusicBeatState
             add(text);
             texts.push(text);
         }
+
+        nameText = new FlxText(0, 0, 1280 - (sideBar.width + 20), "Bozo", 48);
+        nameText.font = Paths.font("eras.ttf");
+        nameText.alignment = CENTER;
+        nameText.updateHitbox();
+        nameText.y = 75;
+        nameText.y -= Std.int(nameText.height);
+        nameText.x = sideBar.width + 20;
+        nameText.visible = false;
+        add(nameText);
 
         charText = new FlxText(0, 0, 1280 - (sideBar.width + 20), "", 48);
         charText.font = Paths.font("eras.ttf");
@@ -132,16 +166,19 @@ class WardrobeState extends MusicBeatState
                     charText.visible = true;
                     descText.visible = true;
                     isChars = true;
+                    nameText.visible = true;
                     switch (curSelected)
                     {
                         case 0:
                             texts[1].visible = false;
                             bg.color = 0xFFFF8A00;
                             curSelectedChar = CoolUtil.curSelectedChars[0];
+                            nameText.text = charFiles[0].sectionName;
                         case 1:
                             texts[0].visible = false;
                             bg.color = 0xFFB300FF;
                             curSelectedChar = CoolUtil.curSelectedChars[1];
+                            nameText.text = charFiles[1].sectionName;
                     }
                     changeChar(0);
                     new FlxTimer().start(0.1, function(tmr:FlxTimer)
@@ -153,7 +190,14 @@ class WardrobeState extends MusicBeatState
                 {
                     canPress = false;
                     FlxG.sound.play(Paths.sound("cancelMenu"));
-                    MusicBeatState.switchState(new FunnyFreeplayState());
+                    if (!isPlaystate)
+                    {
+                        MusicBeatState.switchState(new FunnyFreeplayState());
+                    }
+                    else
+                    {
+                        MusicBeatState.switchState(new PlayState());
+                    }
                 }
             }
             else
@@ -172,9 +216,9 @@ class WardrobeState extends MusicBeatState
                     switch (curSelected)
                     {
                         case 0:
-                            PlayState.customChars[0] = ben.curCharacter;
+                            PlayState.customChars[0] = ben.name;
                         case 1:
-                            PlayState.customChars[1] = tess.curCharacter;
+                            PlayState.customChars[1] = tess.name;
                     }
                     ClientPrefs.saveSettings();
                 }
@@ -187,6 +231,7 @@ class WardrobeState extends MusicBeatState
                         texts[i].visible = true;
                     }
                     charText.visible = false;
+                    nameText.visible = false;
                     descText.visible = false;
                     isChars = false;
                     bg.color = 0xFFFFFFFF;
@@ -390,6 +435,18 @@ class WardrobeState extends MusicBeatState
                             {
                                ben.locked = true; 
                             }
+                        case "100":
+                            if (trophies.TrophyUtil.trophies.exists("Origin Stories."))
+                            {
+                                if (!trophies.TrophyUtil.trophies.get("Origin Stories."))
+                                {
+                                    ben.locked = true;
+                                }
+                            }
+                            else
+                            {
+                                ben.locked = true;
+                            }
                     }
             }
             if (ben.locked)
@@ -470,6 +527,18 @@ class WardrobeState extends MusicBeatState
                             {
                                tess.locked = true; 
                             }
+                        case "100":
+                            if (trophies.TrophyUtil.trophies.exists("Origin Stories."))
+                            {
+                                if (!trophies.TrophyUtil.trophies.get("Origin Stories."))
+                                {
+                                    tess.locked = true;
+                                }
+                            }
+                            else
+                            {
+                                tess.locked = true;
+                            }
                     }
             }
             if (tess.locked)
@@ -478,9 +547,193 @@ class WardrobeState extends MusicBeatState
             }
         }
     }
+
+    public static function getUnlocksAsInt()
+    {
+        var aub:Int = 0;
+        var aut:Int = 0;
+        var total:Int = 0;
+
+        var benFile:WardrobeSection = Json.parse(File.getContent("assets/wardrobe/data/ben.json"));
+        var tessFile:WardrobeSection = Json.parse(File.getContent("assets/wardrobe/data/tess.json"));
+        for (i in 1...benFile.chars.length)
+        {
+            if (benFile.chars[i].path != "bf-loading")
+            {
+                total += 1;
+                var split:Array<String> = benFile.chars[i].unlock.split(":");
+                switch (split[0])
+                {
+                    case "song":
+                        if (Highscore.getScore(split[1], 1) > 0)
+                        {
+                            aub += 1;
+                        }
+                    case "songEncore":
+                        if (Highscore.getEncoreScore(split[1], 1) > 0)
+                        {
+                            aub += 1;
+                        }
+                    case "data":
+                        if (Reflect.getProperty(ClientPrefs, split[1]))
+                        {
+                            aub += 1;
+                        }
+                    case "ss":
+                        if (ClientPrefs.completedSideStories.get(split[1]))
+                        {
+                            aub += 1;
+                        }
+                    case "misc":
+                        switch (split[1])
+                        {
+                            case "allSideStories":
+                                var toCheck:Array<String> = [];
+                                var isFinished:Array<Bool> = [];
+                                for (ss in SideStorySelectState.storyList)
+                                {
+                                    toCheck.push(ss[1]);
+                                }
+                                for (check in toCheck)
+                                {
+                                    if (ClientPrefs.completedSideStories.get(check))
+                                    {
+                                        isFinished.push(true);
+                                    }
+                                    else
+                                    {
+                                        isFinished.push(false);
+                                    }
+                                }
+                                var canCont:Bool = true;
+                                for (i in 0...isFinished.length)
+                                {
+                                    if (!isFinished[i])
+                                    {
+                                        canCont = false;
+                                    }
+                                }
+                                if (canCont)
+                                {
+                                    aub += 1;
+                                }
+                            case "ownSuggestedCostumes":
+                                if (ClientPrefs.inventory[3][1] != 0)
+                                {
+                                    aub += 1;
+                                }
+                            case "100":
+                                if (trophies.TrophyUtil.trophies.exists("Origin Stories."))
+                                {
+                                    if (trophies.TrophyUtil.trophies.get("Origin Stories."))
+                                    {
+                                        aub += 1;
+                                    }
+                                }
+                        }
+                }
+            }
+        }
+        for (i in 1...tessFile.chars.length)
+        {
+            if (tessFile.chars[i].path != "gf-loading")
+            {
+                total += 1;
+                var split:Array<String> = tessFile.chars[i].unlock.split(":");
+                switch (split[0])
+                {
+                    case "song":
+                        if (Highscore.getScore(split[1], 1) > 0)
+                        {
+                            aut += 1;
+                        }
+                    case "songEncore":
+                        if (Highscore.getEncoreScore(split[1], 1) > 0)
+                        {
+                            aut += 1;
+                        }
+                    case "data":
+                        if (Reflect.getProperty(ClientPrefs, split[1]))
+                        {
+                            aut += 1;
+                        }
+                    case "ss":
+                        if (ClientPrefs.completedSideStories.get(split[1]))
+                        {
+                            aut += 1;
+                        }
+                    case "misc":
+                        switch (split[1])
+                        {
+                            case "allSideStories":
+                                var toCheck:Array<String> = [];
+                                var isFinished:Array<Bool> = [];
+                                for (ss in SideStorySelectState.storyList)
+                                {
+                                    toCheck.push(ss[1]);
+                                }
+                                for (check in toCheck)
+                                {
+                                    if (ClientPrefs.completedSideStories.get(check))
+                                    {
+                                        isFinished.push(true);
+                                    }
+                                    else
+                                    {
+                                        isFinished.push(false);
+                                    }
+                                }
+                                var canCont:Bool = true;
+                                for (i in 0...isFinished.length)
+                                {
+                                    if (!isFinished[i])
+                                    {
+                                        canCont = false;
+                                    }
+                                }
+                                if (canCont)
+                                {
+                                    aut += 1;
+                                }
+                            case "ownSuggestedCostumes":
+                                if (ClientPrefs.inventory[3][1] != 0)
+                                {
+                                aut += 1;
+                                }
+                            case "100":
+                                if (trophies.TrophyUtil.trophies.exists("Origin Stories."))
+                                {
+                                    if (trophies.TrophyUtil.trophies.get("Origin Stories."))
+                                    {
+                                        aut += 1;
+                                    }
+                                }
+                        }
+                }
+            }
+        }
+        return [aub, aut, total];
+    }
 }
 
-class WardrobeCharacter extends Character
+class WardrobeCharacter extends FlxSprite
 {
     public var locked:Bool = false;
+    public var name:String = "";
+
+    public function new(x:Float, y:Float, name:String, isBen:Bool)
+    {
+        super(x, y);
+
+        this.name = name;
+
+        if (isBen)
+        {
+            loadGraphic(Paths.wardrobe("images/ben/" + name + ".png"));
+        }
+        else
+        {
+            loadGraphic(Paths.wardrobe("images/tess/" + name + ".png"));
+        }
+    }
 }

@@ -65,7 +65,7 @@ function onTimerCompleted(tag)
 		outlineVisible = false;
 		doTweenAlpha('cock', 'outline', 0, 1, 'linear');
 		healthFrozen = false;
-		playSound('thaw');
+		playSound('thaw', 0.25);
 	end
 end
 

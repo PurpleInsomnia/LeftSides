@@ -60,7 +60,6 @@ class Character extends FlxSprite
 	public var animationNotes:Array<Dynamic> = [];
 	public var stunned:Bool = false;
 	public var singDuration:Float = 4; //Multiplier of how long a character holds the sing pose
-	public var idleSuffix:String = '';
 	public var danceIdle:Bool = false; //Character use "danceLeft" and "danceRight" instead of "idle"
 
 	public var healthIcon:String = 'face';
@@ -81,6 +80,10 @@ class Character extends FlxSprite
 
 	// custom classes mostly used for monster :/
 	public var chromab:Bool = false;
+
+	// new shit is peak!!!
+	public var animSuffix:String = "";
+	public var idleSuffix:String = "";
 
 	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
 	{
@@ -241,7 +244,7 @@ class Character extends FlxSprite
 		}
 	}
 
-	override function update(elapsed:Float)
+	override public function update(elapsed:Float)
 	{
 		if(!debugMode && animation.curAnim != null)
 		{
@@ -279,7 +282,7 @@ class Character extends FlxSprite
 
 			if(animation.curAnim.finished && animation.getByName(animation.curAnim.name + '-loop') != null)
 			{
-				playAnim(animation.curAnim.name + '-loop');
+				playAnim(animation.curAnim.name + animSuffix + '-loop');
 			}
 		}
 		super.update(elapsed);
@@ -312,10 +315,15 @@ class Character extends FlxSprite
 	public function playAnim(AnimName:String, Force:Bool = false, Reversed:Bool = false, Frame:Int = 0):Void
 	{
 		specialAnim = false;
-		animation.play(AnimName, Force, Reversed, Frame);
+		var toPlay:String = AnimName + animSuffix;
+		if (AnimName.startsWith("idle") || AnimName.startsWith("dance"))
+		{
+			toPlay = AnimName;
+		}
+		animation.play(toPlay, Force, Reversed, Frame);
 
-		var daOffset = animOffsets.get(AnimName);
-		if (animOffsets.exists(AnimName))
+		var daOffset = animOffsets.get(toPlay);
+		if (animOffsets.exists(toPlay))
 		{
 			offset.set(daOffset[0], daOffset[1]);
 		}

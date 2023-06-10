@@ -24,6 +24,8 @@ class SaveFileStartState extends MusicBeatState
 	{
 		iconArray = [];
 
+		trace("WHAT");
+
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('saveFile/bgDark'));
 		bg.alpha = 0.5;
 		add(bg);
@@ -53,6 +55,8 @@ class SaveFileStartState extends MusicBeatState
 			add(icon);
 			iconArray.push(icon);
 		}
+
+		trace("WHAT");
 
 		text = new FlxText(0, (box.y + 150 + 25), SaveFileIcon.list[curSelected], 16);
 		text.setFormat(Paths.font('eras.ttf'), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -93,12 +97,6 @@ class SaveFileStartState extends MusicBeatState
 			canPress = false;
 			makeSave(SaveFileIcon.list[curSelected]);
 			madeFile = true;
-		}
-
-		if (FlxG.keys.anyJustPressed([ENTER, SPACE]) && canPress && showed)
-		{
-			canPress = false;
-			MusicBeatState.switchState(new TitleScreenState());
 		}
 
 		super.update(elapsed);

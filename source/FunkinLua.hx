@@ -59,7 +59,7 @@ class FunkinLua {
 	private var luaArray:Array<FunkinLua> = [];
 
 	public var accessedProps:Map<String, Dynamic> = null;
-	public function new(script:String) {
+	public function new(script:String, ?plays:PlayState = null) {
 		#if LUA_ALLOWED
 		lua = LuaL.newstate();
 		LuaL.openlibs(lua);
@@ -90,8 +90,15 @@ class FunkinLua {
 		accessedProps = new Map<String, Dynamic>();
 		#end
 
-		var curState:Dynamic = FlxG.state;
-		lePlayState = curState;
+		if (plays == null)
+		{
+			var curState:Dynamic = FlxG.state;
+			lePlayState = curState;
+		}
+		else
+		{
+			lePlayState = plays;
+		}
 
 		// Lua shit
 		set('Function_Stop', Function_Stop);
@@ -118,6 +125,7 @@ class FunkinLua {
 		set('weekRaw', PlayState.storyWeek);
 		set('week', WeekData.weeksList[PlayState.storyWeek]);
 		set('seenCutscene', PlayState.seenCutscene);
+		set("tpm", twoplayer.TwoPlayerState.tpm);
 
 		// Camera poo
 		set('cameraX', 0);
@@ -904,8 +912,15 @@ class FunkinLua {
 		});
 		Lua_helper.add_callback(lua, "cameraSetTarget", function(target:String) {
 			var isDad:Bool = false;
-			if(target == 'dad') {
+			lePlayState.focusOnGf = false;
+			if(target == 'dad') 
+			{
 				isDad = true;
+			}
+			if (target == 'gf')
+			{
+				isDad = true;
+				lePlayState.focusOnGf = true;
 			}
 			lePlayState.moveCamera(isDad);
 		});
@@ -1047,21 +1062,32 @@ class FunkinLua {
 			}
 		});
 		Lua_helper.add_callback(lua, "addLuaSprite", function(tag:String, front:Bool = false) {
-			if(lePlayState.modchartSprites.exists(tag)) {
+			if(lePlayState.modchartSprites.exists(tag)) 
+			{
 				var shit:ModchartSprite = lePlayState.modchartSprites.get(tag);
-				if(!shit.wasAdded) {
-					if(front) {
+				if(!shit.wasAdded) 
+				{
+					if(front) 
+					{
+						shit.inFront = true;
 						lePlayState.add(shit);
-					} else {
+					} 
+					else 
+					{
 						var position:Int = lePlayState.members.indexOf(lePlayState.gfGroup);
 						if(lePlayState.members.indexOf(lePlayState.boyfriendGroup) < position) {
 							position = lePlayState.members.indexOf(lePlayState.boyfriendGroup);
 						} else if(lePlayState.members.indexOf(lePlayState.dadGroup) < position) {
 							position = lePlayState.members.indexOf(lePlayState.dadGroup);
 						}
+						shit.ppos = position;
 						lePlayState.insert(position, shit);
 					}
 					shit.wasAdded = true;
+					if (!shit.changedCamera)
+					{
+						lePlayState.backgroundSprites.push(shit);
+					}
 				}
 			}
 		});
@@ -1135,6 +1161,7 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "setObjectCamera", function(obj:String, camera:String = '') {
 			if(lePlayState.modchartSprites.exists(obj)) {
 				lePlayState.modchartSprites.get(obj).cameras = [cameraFromString(camera)];
+				lePlayState.modchartSprites.get(obj).changedCamera = true;
 				return true;
 			}
 
@@ -1214,6 +1241,11 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "changeStrumSkin", function(skin:String, player:String, ?reloadNotes:Bool = true) {
 			var penis:StrumNote;
 			PlayState.SONG.arrowSkin = skin;
+
+			var ts:Bool = false;
+			@:privateAccess
+			ts = lePlayState.thirdStrum;
+
 			if (player == 'bf' || player == 'boyfriend')
 			{
 				for (i in 0...4)
@@ -1228,7 +1260,7 @@ class FunkinLua {
 					lePlayState.opponentStrums.members[i].changeSkin(skin, i);
 				}
 			}
-			if (player == "gf")
+			if (player == "gf" && ts)
 			{
 				for (i in 0...4)
 				{
@@ -1241,7 +1273,10 @@ class FunkinLua {
 				{
 					lePlayState.playerStrums.members[i].changeSkin(skin, i);
 					lePlayState.opponentStrums.members[i].changeSkin(skin, i);
-					lePlayState.gfStrums.members[i].changeSkin(skin, i);
+					if (ts)
+					{
+						lePlayState.gfStrums.members[i].changeSkin(skin, i);
+					}
 				}
 			}
 			if (reloadNotes)
@@ -1249,7 +1284,7 @@ class FunkinLua {
 				// PlayState.SONG.arrowSkin = skin;
 				for (i in 0...lePlayState.unspawnNotes.length)
 				{
-					if (lePlayState.unspawnNotes[i].noteType == '')
+					if (lePlayState.unspawnNotes[i].noteType == '' || lePlayState.unspawnNotes[i].noteType == 'Alt Animation' || lePlayState.unspawnNotes[i].noteType == 'GF Sing' || lePlayState.unspawnNotes[i].noteType == 'No Animation')
 					{
 						lePlayState.unspawnNotes[i].texture = skin;
 					}
@@ -1654,14 +1689,29 @@ class FunkinLua {
 			lePlayState.preparePortal(out, false);
 		});
 
-		Lua_helper.add_callback(lua, "award", function(quan:Int, dale:String, dingle:String) {
-			// THIS IS UNUSED.
-			// PLEASE DON"T USE IT.
-			trace('ah hell nah, bro is cheating.');
+		/**
+		 * This one is only intended for DLC trophies.
+		 */
+		Lua_helper.add_callback(lua, "award", function(trophy:String)
+		{
+			var ret:Bool = false;
+			for (i in 0...trophies.TrophyUtil.trophiesData.trophies.length)
+			{
+				if (trophies.TrophyUtil.trophiesData.trophies[i].name == trophy)
+				{
+					ret = true;
+				}
+			}
+			if (ret)
+			{
+				return;
+			}
+
+			trophies.TrophyUtil.award(trophy, false);
 		});
 
-		Lua_helper.add_callback(lua, "attack", function(window:Bool = true, cock:Bool = true) {
-			lePlayState.attackAlert(window, cock);
+		Lua_helper.add_callback(lua, "attack", function(window:Bool = true, cock:Bool = true, ?character:String = "bf-attack") {
+			lePlayState.attackAlert(window, cock, character);
 		});
 
 		Lua_helper.add_callback(lua, "changeRingCount", function(thing:Float) {
@@ -2281,7 +2331,8 @@ class FunkinLua {
 	}
 
 	function cameraFromString(cam:String):FlxCamera {
-		switch(cam.toLowerCase()) {
+		switch(cam.toLowerCase()) 
+		{
 			case 'camhud' | 'hud': return lePlayState.camHUD;
 			case 'camother' | 'other': return lePlayState.camOther;
 			case "camshader" | "shader": return lePlayState.camShader;
@@ -2399,10 +2450,89 @@ class FunkinLua {
 	}
 }
 
-class ModchartSprite extends FlxSprite
+class ModchartSprite extends FNFSprite
 {
 	public var wasAdded:Bool = false;
-	//public var isInFront:Bool = false;
+	public var changedCamera:Bool = false;
+
+	public var particles:Bool = false;
+	public var particleType:String = "default";
+	public var particleColors:String = "0xFFFFFFFF";
+	public var particleAlpha:Float = 1;
+
+	var particleCreating:Bool = false;
+	public var ppos:Int = 0;
+	public var count:Int = -1;
+	var parent:PlayState = null;
+
+	public function new(x:Float, y:Float)
+	{
+		super(x, y);
+
+		var stupid:Dynamic = FlxG.state;
+		parent = stupid;
+	}
+
+	public function spawnParticle(elapsed:Float)
+	{
+		if (ClientPrefs.lowQuality)
+		{
+			return;
+		}
+		if (!ClientPrefs.shaders)
+		{
+			return;
+		}
+		if (!particles)
+		{
+			return;
+		}
+
+		switch (particleType)
+		{
+			case "default":
+				if (!particleCreating)
+				{
+					particleCreating = true;
+					count += 1;
+					var posX:Float = FlxG.random.float(0, this.width);
+					var posY:Float = FlxG.random.float((this.height / 2), this.height);
+					var newParticle:FlxSprite = new FlxSprite(this.x + posX, this.y + posY).loadGraphic(Paths.image("particles/default"));
+
+					var split:Array<String> = particleColors.split("|");
+					if (split.length > 1)
+					{
+						var get:Int = FlxG.random.int(0, split.length - 1);
+						newParticle.color = Std.parseInt(split[get]);
+					}
+					else
+					{
+						newParticle.color = Std.parseInt(split[0]);
+					}
+
+					newParticle.alpha = particleAlpha;
+
+					if (ppos == 0)
+					{
+						parent.add(newParticle);
+					}
+					else
+					{
+						parent.insert(ppos, newParticle);
+					}
+					parent.modchartTimers.set("particleTimer" + count, new FlxTimer().start(0.025, function(tmr:FlxTimer)
+					{
+						parent.modchartTimers.remove("particleTimer" + count);
+						particleCreating = false;
+					}));
+					parent.modchartTweens.set("particle" + count, FlxTween.tween(newParticle, {y: this.y - 320, alpha: 0}, FlxG.random.float(1, 1.5), {ease: FlxEase.sineInOut, onComplete: function(twn:FlxTween)
+					{
+						parent.modchartTweens.remove("particle" + count);
+						parent.remove(newParticle);
+					}}));
+				}
+		}
+	}
 }
 
 class ModchartText extends FlxText

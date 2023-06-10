@@ -293,9 +293,9 @@ class DialogueBoxPsych extends FlxSpriteGroup
 						{
 							soundRp = 'textSounds/gfText';
 						}
-					case 'bf-christmas':
+					case 'bf-christmas' | "ben":
 						soundRp = 'textSounds/bfText';
-					case 'gf-christmas':
+					case 'gf-christmas' | "tess":
 						soundRp = 'textSounds/gfText';
 					case 'dad-christmas':
 						soundRp = 'textSounds/dadText';
@@ -333,9 +333,10 @@ class DialogueBoxPsych extends FlxSpriteGroup
         if (swagtext.contains(Std.string("\\n")) || swagtext.contains("/") || swagtext.contains("\\"))
         {
             // no need for that shit anymore :skull:
-            editedText = editedText.replace(Std.string("\\n"), " ");
-            editedText = editedText.replace("/", "");
-			editedText = editedText.replace("\\", "");
+            editedText = editedText.replace(Std.string("\\n"), "\n");
+            editedText = editedText.replace("/n", "\n");
+			editedText = editedText.replace("\\", "\n");
+			editedText = editedText.replace("/", " ");
         }
 		if (swagtext.contains("[USERNAME]") || swagtext.contains("USERNAME"))
 		{

@@ -1,81 +1,81 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				20,
 				9
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Left"
+			"fps": 24,
+			"name": "Left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-42,
 				11
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Right"
+			"fps": 24,
+			"name": "Right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-22,
 				-54
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
+			"fps": 24,
+			"name": "Down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-41,
 				26
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
+			"fps": 24,
+			"name": "Up",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "Idle0",
-			"indices": []
+			"indices": [],
+			"name": "Idle0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle-alt",
+			"loop": false,
 			"fps": 24,
-			"name": "Idle Alt",
-			"indices": []
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "Idle Alt"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-27,
 				8
 			],
-			"anim": "flip-hat",
+			"loop": false,
 			"fps": 24,
-			"name": "Flip Hat",
-			"indices": []
+			"anim": "flip-hat",
+			"indices": [],
+			"name": "Flip Hat"
 		}
 	],
 	"no_antialiasing": false,
@@ -87,9 +87,9 @@
 	"healthicon": "bf",
 	"flip_x": true,
 	"healthbar_colors": [
-		143,
-		148,
-		214
+		255,
+		175,
+		0
 	],
 	"camera_position": [
 		-120,

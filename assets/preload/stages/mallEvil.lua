@@ -5,4 +5,8 @@ function onCreate()
 	addLuaSprite('snowFall', false);
 	setObjectCamera('snowFall', 'hud');
 	-- heheheha
+
+	setProperty("bfZoom", true);
+	setProperty("gfInFront", true);
+	setProperty("dadInFront", true);
 end

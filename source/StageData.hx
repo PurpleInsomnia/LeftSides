@@ -13,22 +13,33 @@ import Song;
 using StringTools;
 
 typedef StageFile = {
-	var directory:String;
 	var defaultZoom:Float;
 	var isPixelStage:Bool;
 
 	var boyfriend:Array<Dynamic>;
 	var girlfriend:Array<Dynamic>;
 	var opponent:Array<Dynamic>;
+
+	var cameraSpeed:Float;
+	var cameraPositions:PositionData;
+}
+
+typedef PositionData = {
+	var dad:Array<Float>;
+	var bf:Array<Float>;
+	var gf:Array<Float>;
 }
 
 class StageData {
-	public static var forceNextDirectory:String = null;
+	public static var forceNextDirectory:String = "";
 	public static function loadDirectory(SONG:SwagSong) {
 		var stage:String = '';
-		if(SONG.stage != null) {
+		if(SONG.stage != null) 
+		{
 			stage = SONG.stage;
-		} else if(SONG.song != null) {
+		} 
+		else if(SONG.song != null) 
+		{
 			switch (SONG.song.toLowerCase().replace(' ', '-'))
 			{
 				case 'spookeez' | 'south' | 'monster':
@@ -48,15 +59,10 @@ class StageData {
 				default:
 					stage = 'stage';
 			}
-		} else {
+		} 
+		else 
+		{
 			stage = 'stage';
-		}
-
-		var stageFile:StageFile = getStageFile(stage);
-		if(stageFile == null) { //preventing crashes
-			forceNextDirectory = '';
-		} else {
-			forceNextDirectory = stageFile.directory;
 		}
 	}
 
@@ -102,5 +108,11 @@ class StageData {
 			return null;
 		}
 		return cast Json.parse(rawJson);
+	}
+
+	public static function getDefaultFile()
+	{
+		var ret:StageFile = Json.parse(File.getContent("assets/stages/stage.json"));
+		return ret;
 	}
 }

@@ -80,6 +80,7 @@ class Paths
 		ignoreModFolders.set("shaders", true);
 		ignoreModFolders.set("wardrobe", true);
 		ignoreModFolders.set("fonts", true);
+		ignoreModFolders.set("soundtracks", true);
 		#end
 	}
 
@@ -253,28 +254,38 @@ class Paths
 		return 'unusedSongs/$song.$SOUND_EXT';
 	}
 
-	inline static public function voices(song:String):Any
+	inline static public function voices(song:String, ?ext:String = "ogg", ?fn:String = "Voices"):Any
 	{
-		var songFin:String = "Voices";
+		var songFin:String = fn;
+		var fullExt:String = ext;
+		if (fullExt == "ogg")
+		{
+			fullExt = '$SOUND_EXT';
+		}
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin, fullExt));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + "." + fullExt;
 	}
 
-	inline static public function voicesEncore(song:String):Any
+	inline static public function voicesEncore(song:String, ?ext:String = "ogg", ?fn:String = "VoicesEncore"):Any
 	{
 		var toAdd:String = "";
+		var fullExt:String = ext;
+		if (fullExt == "ogg")
+		{
+			fullExt = '$SOUND_EXT';
+		}
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/VoicesEncore' + toAdd));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + fn + toAdd, fullExt));
 		if(file != null) {
 			return file;
 		}
 		#end
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/VoicesEncore' + toAdd + '.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + fn + toAdd + "." + fullExt;
 	}
 
 	inline static public function fuckedVoices(song:String):Any
@@ -576,8 +587,8 @@ class Paths
 		return modFolders('sounds/' + key + '.' + SOUND_EXT);
 	}
 
-	inline static public function modsSongs(key:String) {
-		return modFolders('songs/' + key + '.' + SOUND_EXT);
+	inline static public function modsSongs(key:String, ?ext:String = "ogg") {
+		return modFolders('songs/' + key + '.' + ext);
 	}
 
 	inline static public function modsImages(key:String) {

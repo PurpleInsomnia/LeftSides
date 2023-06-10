@@ -100,28 +100,34 @@ end
 
 function onVideoDone()
 	runTimer('startDialogueReal', 0.08);
-
-	setProperty('followChars', false);
 end
 
 function onCreate()
-	changeIconP1('bf-nervous');
+	if not encoreMode then
+		changeIconP1('bf-nervous');
+	end
 
 	dialogueBg('black', false, true);
 
 	precacheSound('dialogueSounds/phoneNotification');
 end
 
-function onStepHit()
-	if curStep == 256 then
-		changeIconP1('bf');
-		triggerEvent("Alt Idle Animation", "boyfriend", "-alt");
+function onEvent(name, val1, val2)
+	if name == "Hey!" and val1 == "BF" then
+		if not encoreMode then
+			setProperty("dad.animSuffix", "");
+			changeIconP1('bf');
+			triggerEvent("Alt Idle Animation", "boyfriend", "-alt");
+		end
 	end
 end
 
 function onCountdownTick(counter)
 	if counter == 0 then
 		bgAlpha(0, true, 1);
-		setProperty('followChars', false);
+		setProperty("bfZoom", false);
+		if not encoreMode then
+			setProperty("dad.animSuffix", "-direction");
+		end
 	end
 end

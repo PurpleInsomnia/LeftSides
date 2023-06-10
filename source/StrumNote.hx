@@ -16,7 +16,8 @@ class StrumNote extends FlxSprite
 
 	public var texture:String;
 
-	public function new(x:Float, y:Float, leData:Int, player:Int) {
+	public function new(x:Float, y:Float, leData:Int, player:Int) 
+	{
 		colorSwap = new ColorSwap();
 		shader = colorSwap.shader;
 		noteData = leData;

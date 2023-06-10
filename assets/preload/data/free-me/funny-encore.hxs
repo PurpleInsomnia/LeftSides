@@ -19,7 +19,7 @@ function onStepHit()
     {
         lePlayState.customTimeText = true;
         doTextThing = true;
-        if (curStep == 1760)
+        if (curStep == 1760 && TwoPlayerState.tpm)
         {
             lePlayState.timeBar.visible = true;
             for (i in 0...4)

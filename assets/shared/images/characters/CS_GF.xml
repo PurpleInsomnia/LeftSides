@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="CS_GF.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dance0000" x="0" y="0" width="779" height="646" frameX="0" frameY="-40" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="dance0001" x="789" y="0" width="740" height="671" frameX="-39" frameY="-16" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="dance0002" x="1539" y="0" width="699" height="686" frameX="-80" frameY="0" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="dance0003" x="2248" y="0" width="765" height="653" frameX="-80" frameY="-34" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="dance0004" x="3023" y="0" width="737" height="671" frameX="-81" frameY="-16" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="dance0005" x="1539" y="0" width="699" height="686" frameX="-80" frameY="0" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="sing0000" x="0" y="696" width="672" height="686" frameX="-14" frameY="0" frameWidth="699" frameHeight="686"/>
+	<SubTexture name="sing0001" x="0" y="696" width="672" height="686" frameX="-14" frameY="0" frameWidth="699" frameHeight="686"/>
+	<SubTexture name="sing0002" x="682" y="696" width="681" height="686" frameX="-9" frameY="0" frameWidth="699" frameHeight="686"/>
+	<SubTexture name="sing0003" x="1539" y="0" width="699" height="686" frameX="0" frameY="0" frameWidth="845" frameHeight="687"/>
+	<SubTexture name="sing0004" x="1539" y="0" width="699" height="686" frameX="0" frameY="0" frameWidth="845" frameHeight="687"/>
+</TextureAtlas>

@@ -1,5 +1,8 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -58,6 +61,9 @@ class SideStorySelectState extends MusicBeatState
 
 	override function create()
 	{
+		#if desktop
+		DiscordClient.changePresence("Selecting A Side Story...", null);
+		#end
 		noStories = false;
 		amountUnlocked = 0;
 		curSelected = 0;
@@ -70,7 +76,16 @@ class SideStorySelectState extends MusicBeatState
 		curDirect = "";
 		getCustomStories();
 
-		toRead = [storyList[0], storyList[1], storyList[2], storyList[3], storyList[4], storyList[5], storyList[6], storyList[7]];
+		toRead = [
+			storyList[0], 
+			storyList[1], 
+			storyList[2], 
+			storyList[3], 
+			storyList[4], 
+			storyList[5], 
+			storyList[6], 
+			storyList[7]
+		];
 		if (customStories != [])
 		{
 			var unlocked:Array<String> = [];
@@ -234,7 +249,6 @@ class SideStorySelectState extends MusicBeatState
 				{
 					// nothing yet :|
 					var name:String = realList[curSelected][1];
-					trace(Paths.getModFile("side-stories/data/" + name + "/dialogue.txt"));
 					var file:Array<String> = [];
 					var checkPath:String = "";
 					var modCheck:Bool = false;
@@ -306,6 +320,7 @@ class SideStorySelectState extends MusicBeatState
 		nameTxt.text = realList[curSelected][0];
 		counterTxt.text = "(STORY:" + Std.string(curSelected + 1) + "/" + Std.string(realList.length) + ")";
 
+		#if desktop
 		if (customStories != [])
 		{
 			if (curSelected >= (amountUnlocked - customStories.length))
@@ -320,6 +335,7 @@ class SideStorySelectState extends MusicBeatState
 				Paths.currentModDirectory = "";
 			}
 		}
+		#end
 	}
 
 	public static function save()
@@ -352,13 +368,14 @@ class SideStorySelectState extends MusicBeatState
 			}
 			if (storyList[7] == null)
 			{
-				storyList[7] = ["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"];
+				storyList.push(["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"]);
 			}
 		}
 	}
 
 	function getCustomStories()
 	{
+		#if desktop
 		checkMods();
 		var customFile:CustomFile = null;
 		for (i in 0...directories.length)
@@ -386,10 +403,12 @@ class SideStorySelectState extends MusicBeatState
 				}
 			}
 		}
+		#end
 	}
 
 	function checkMods()
 	{
+		#if desktop
 		var modsListPath:String = 'modsList.txt';
 		var originalLength:Int = directories.length;
 		if(FileSystem.exists(modsListPath))
@@ -398,11 +417,11 @@ class SideStorySelectState extends MusicBeatState
 			for (i in 0...stuff.length)
 			{
 				var splitName:Array<String> = stuff[i].trim().split('|');
-				if(splitName[1] == '0') // Disable mod
+				if(splitName[1] == '0') // Disable dlc
 				{
 					// pussy
 				}
-				else // Sort mod loading order based on modsList.txt file
+				else // Sort dlc loading order based on modsList.txt file
 				{
 					var path = haxe.io.Path.join([Paths.mods(), splitName[0]]);
 					//trace('trying to push: ' + splitName[0]);
@@ -413,6 +432,7 @@ class SideStorySelectState extends MusicBeatState
 				}
 			}
 		}
+		#end
 	}
 }
 

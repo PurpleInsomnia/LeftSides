@@ -1,0 +1,44 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Wow, this stage looks pretty nice!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "cute-blushing",
+			"text": "Nice pick on the place..."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "I do pick the very best. Especially on your birthday."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "heehee",
+			"text": "And now to absolutely destroy this dude."
+		}
+	]
+}

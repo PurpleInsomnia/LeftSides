@@ -1,0 +1,105 @@
+var black:FlxSprite = null;
+var overlay:FlxSprite = null;
+var bar:FlxSprite = null;
+function onCreatePost()
+{
+    var stageData:Dynamic = {
+        defaultZoom: 0.75,
+		isPixelStage: false,
+			
+		boyfriend: [870, 100],
+		girlfriend: [400, 130],
+		opponent: [100, 200],
+
+		cameraSpeed: 1,
+		cameraPositions: {
+			dad: [0, 0],
+			bf: [0, 0],
+			gf: [0, 0]
+		}
+    }
+    lePlayState.reloadStageData(stageData);
+
+	bar = new FlxSprite().loadGraphic(Paths.image("fnf/gimmiks/pyroBar"));
+	bar.cameras = [lePlayState.camOther];
+	bar.x = 12;
+	bar.y = 592;
+	bar.x -= 1256;
+	add(bar);
+
+    overlay = new FlxSprite().loadGraphic(Paths.image("fnf/gimmiks/pyroVideo"));
+    overlay.cameras = [lePlayState.camOther];
+	overlay.visible = false;
+    add(overlay);
+
+    lePlayState.topBar.visible = false;
+    lePlayState.bottomBar.visible = false;
+
+	black = new FlxSprite().makeGraphic(1280, 720, 0xFF000000);
+	black.cameras = [lePlayState.camBars];
+	add(black);
+}
+
+function onCountdownTick(counter:Int)
+{
+	if (counter == 0)
+	{
+		FlxTween.tween(lePlayState.camHUD, {y: -40}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.healthBar, {y: lePlayState.healthBar.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.barBG, {y: lePlayState.barBG.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.iconP1, {y: lePlayState.iconP1.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.iconP2, {y: lePlayState.iconP2.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		if (!ClientPrefs.lowQuality)
+		{
+			FlxTween.tween(lePlayState.iconGlowP1, {y: lePlayState.iconGlowP1.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+			FlxTween.tween(lePlayState.iconGlowP2, {y: lePlayState.iconP2.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		}
+		FlxTween.tween(lePlayState.scoreTxt, {y: lePlayState.scoreTxt.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+	}
+}
+
+function onStepHit()
+{
+	if (curStep == 1)
+	{
+		lePlayState.modchartTweens.set("PyroBarMove", FlxTween.tween(bar, {x: 12}, 164.57));
+		black.visible = false;
+		overlay.visible = true;
+		lePlayState.triggerEventNote("Screen Flash", "", "");
+	}
+}
+
+function onBeatHit()
+{
+	if (curBeat == 175)
+	{
+		lePlayState.modchartTweens.set("tessSeesSkylar", FlxTween.tween(lePlayState.gf, {x: lePlayState.gf.x + 2280}, Conductor.crochet / 1000, {
+			onComplete: function(twn:FlxTween)
+			{
+				modchartTweens.remove("tessSeesSkylar");
+			}
+		}));
+		lePlayState.modchartTweens.set("benSeesSkylar", FlxTween.tween(lePlayState.boyfriend, {x: lePlayState.boyfriend.x + 2280}, Conductor.crochet / 1000, {
+			onComplete: function(twn:FlxTween)
+			{
+				modchartTweens.remove("benSeesSkylar");
+			}
+		}));
+	}
+	if (curBeat == 319)
+	{
+		lePlayState.modchartTweens.set("tessNoSkylar", FlxTween.tween(lePlayState.gf, {x: lePlayState.gf.x - 2280}, Conductor.crochet / 1000, {
+			onComplete: function(twn:FlxTween)
+			{
+				modchartTweens.remove("tessNoSkylar");
+			}
+		}));
+		lePlayState.modchartTweens.set("benNoSkylar", FlxTween.tween(lePlayState.boyfriend, {x: lePlayState.boyfriend.x - 2280}, Conductor.crochet / 1000, {
+			onComplete: function(twn:FlxTween)
+			{
+				lePlayState.reloadHealthBarFromChar(lePlayState.boyfriend, lePlayState.dad);
+				modchartTweens.remove("benNoSkylar");
+			}
+		}));
+	}
+}

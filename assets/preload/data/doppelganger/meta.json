@@ -1,0 +1,10 @@
+{
+    "wardrobeEnabled": false,
+    "loadingDirectory": "",
+    "pauseMusic": "breakfast",
+    "strumSkins": {
+        "dad": "funkinNOTE_assets",
+        "bf": "",
+        "gf": ""
+    }
+}

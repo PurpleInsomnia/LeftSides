@@ -44,7 +44,6 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
-		award(5, 'You finished Week 2!', 'spooky');
 		if encoreMode then
 			removeWiggleEffect(0);
 		end
@@ -103,7 +102,9 @@ function onCreate()
 
 	dialogueBg('spookyAlt');
 
-	setProperty('iconP2.visible', false);
+	if not encoreMode then
+		setProperty('iconP2.visible', false);
+	end
 end
 
 local canHit = false;

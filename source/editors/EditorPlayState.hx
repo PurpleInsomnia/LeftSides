@@ -182,7 +182,7 @@ class EditorPlayState extends MusicBeatState
 
 						var gottaHitNote:Bool = section.mustHitSection;
 
-						if (songNotes[1] > 3)
+						if (songNotes[1] > 3 && songNotes[1] < 8)
 						{
 							gottaHitNote = !section.mustHitSection;
 						}
@@ -199,6 +199,12 @@ class EditorPlayState extends MusicBeatState
 						swagNote.noteType = songNotes[3];
 						if(!Std.isOfType(songNotes[3], String)) swagNote.noteType = editors.ChartingState.noteTypeList[songNotes[3]]; //Backward compatibility + compatibility with Week 7 charts
 						swagNote.scrollFactor.set();
+
+						if (songNotes[1] > 7)
+						{
+							gottaHitNote = false;
+							swagNote.mustPress = false;
+						}
 
 						var susLength:Float = swagNote.sustainLength;
 
@@ -598,6 +604,10 @@ class EditorPlayState extends MusicBeatState
 
 			if (!note.isSustainNote)
 			{
+				if (ClientPrefs.playSoundOnNoteHit)
+				{
+					FlxG.sound.play(Paths.sound("HITSOUND"), ClientPrefs.hitSoundVolume, false);
+				}
 				popUpScore(note);
 				combo += 1;
 				songHits++;

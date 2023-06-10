@@ -1,5 +1,6 @@
 package;
 
+import comics.ComicsMeta;
 import flixel.FlxG;
 import flixel.system.ui.FlxSoundTray;
 import flixel.FlxGame;
@@ -32,6 +33,7 @@ class Main extends Sprite
 		{
 			DoodlesState.loadAllFanArt();
 			CommunitySong.loadSongs();
+			ComicsMeta.loadMetaData();
 		});
 		Lib.current.addChild(new Main());
 	}
@@ -104,5 +106,7 @@ class Main extends Sprite
 
 		gjToastManager = new GJToastManager();
 		addChild(gjToastManager);
+
+		HscriptManager.initialize();
 	}
 }

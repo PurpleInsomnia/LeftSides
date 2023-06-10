@@ -1,0 +1,54 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Hi there, person who probably forgot they signed up."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "lucid",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Hello, Ben from Left Sides."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "lucid",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "You got any weed?\\nCause I need that weed."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "oh",
+			"text": "No, we don't.\\nWe...we don't smoke."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "lucid",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "GRRRRRRRAHHHHHHH!!!!!\\nRATIOOOOOOOOOOOOOO!!!!"
+		}
+	]
+}

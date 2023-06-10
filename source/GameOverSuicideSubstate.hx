@@ -73,11 +73,26 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 		jumpscareSpr.scrollFactor.set();
 		add(jumpscareSpr);
 
-		var toAdd:Array<BitmapFilter> = [];
-        vcr = new VCR();
-        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
-        toAdd.push(filter2);
-        FlxG.camera.setFilters(toAdd);
+		if (ClientPrefs.shaders && !ClientPrefs.lowQuality)
+		{
+			var toAdd:Array<BitmapFilter> = [];
+        	vcr = new VCR();
+        	var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        	toAdd.push(filter2);
+        	FlxG.camera.setFilters(toAdd);
+		}
+		else
+		{
+			var stupidStatic:FlxSprite = new FlxSprite();
+			stupidStatic.frames = Paths.getSparrowAtlas('static');
+			stupidStatic.antialiasing = ClientPrefs.globalAntialiasing;
+			stupidStatic.animation.addByPrefix('idle', 'idle', 24, true);
+			stupidStatic.animation.play('idle');
+			stupidStatic.scrollFactor.set();
+			stupidStatic.screenCenter();
+
+			add(stupidStatic);
+		}
 
 		FlxG.sound.play(Paths.sound(deathSoundName));
 		Conductor.changeBPM(100);
@@ -104,7 +119,10 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-		vcr.update(elapsed);
+		if (ClientPrefs.shaders)
+		{
+			vcr.update(elapsed);
+		}
 		FlxG.camera.zoom = 1;
 
 		// FlxG.camera.x = red.x;
@@ -123,7 +141,31 @@ class GameOverSuicideSubstate extends MusicBeatSubstate
 			PlayState.deathCounter = 0;
 			PlayState.seenCutscene = false;
 
-			MusicBeatState.switchState(new NoEscapeState());
+			if (PlayState.isStoryMode)
+			{
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+					{
+						MusicBeatState.switchState(new StoryMenuState());
+					}
+					else
+					{
+						MusicBeatState.switchState(new StoryEncoreState());
+					}
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				}
+			}
+			else
+			{
+				var check:Bool = StateManager.check("freeplay");
+				if (!check)
+				{
+					MusicBeatState.switchState(new FunnyFreeplayState());
+					FlxG.sound.playMusic(Paths.music('freeplay'));
+				}
+			}
 
 			lePlayState.callOnLuas('onGameOverConfirm', [false]);
 		}

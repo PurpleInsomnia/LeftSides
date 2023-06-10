@@ -64,7 +64,6 @@ local allowCountdown = false;
 function onEndSong()
 	if not allowCountdown and isStoryMode then
 		setProperty('inCutscene', true);
-		award(7, 'You finished Week 4!', 'mom');
 		runTimer('startAfterDialogue', 0.08);
 		allowCountdown = true;
 		return Function_Stop;

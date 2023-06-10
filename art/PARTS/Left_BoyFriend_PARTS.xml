@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Left_BoyFriend_PARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF Body Down0000" x="0" y="0" width="349" height="261"/>
+	<SubTexture name="BF Body Up0000" x="359" y="0" width="328" height="271"/>
+	<SubTexture name="BF Head defalt0000" x="0" y="281" width="356" height="208"/>
+	<SubTexture name="BF defalt arm0000" x="366" y="281" width="226" height="159"/>
+	<SubTexture name="BF head slight turn0000" x="602" y="281" width="332" height="218"/>
+	<SubTexture name="arm default0000" x="0" y="509" width="139" height="103"/>
+	<SubTexture name="bf attack bod0000" x="149" y="509" width="138" height="126"/>
+	<SubTexture name="bf body default0000" x="297" y="509" width="332" height="250"/>
+	<SubTexture name="bf body default no pocket0000" x="639" y="509" width="332" height="250"/>
+	<SubTexture name="bf cringe hand0000" x="0" y="769" width="120" height="101"/>
+	<SubTexture name="bf face default0000" x="130" y="769" width="134" height="103"/>
+	<SubTexture name="bf face default alt0000" x="274" y="769" width="135" height="103"/>
+	<SubTexture name="bf face nervous0000" x="419" y="769" width="149" height="106"/>
+	<SubTexture name="bf face nervous0001" x="419" y="769" width="149" height="106"/>
+	<SubTexture name="bf face nervous0002" x="419" y="769" width="149" height="106"/>
+	<SubTexture name="heyFACE0000" x="578" y="769" width="135" height="101"/>
+	<SubTexture name="peace hand0000" x="723" y="769" width="103" height="133"/>
+</TextureAtlas>

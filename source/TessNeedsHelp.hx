@@ -19,14 +19,17 @@ class TessNeedsHelp extends MusicBeatState
 		FlxTransitionableState.skipNextTransIn = true;
 		jump = new FlxSprite().loadGraphic(Paths.image("fault/3"));
 
-		var toAdd:Array<BitmapFilter> = [];
-        var tv:TV = new TV();
-        var filter1:ShaderFilter = new ShaderFilter(tv.shader);
-        vcr = new VCR();
-        var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
-        toAdd.push(filter1);
-        toAdd.push(filter2);
-        FlxG.camera.setFilters(toAdd);
+		if (ClientPrefs.shaders)
+		{
+			var toAdd:Array<BitmapFilter> = [];
+        	var tv:TV = new TV();
+        	var filter1:ShaderFilter = new ShaderFilter(tv.shader);
+        	vcr = new VCR();
+        	var filter2:ShaderFilter = new ShaderFilter(vcr.shader);
+        	toAdd.push(filter1);
+        	toAdd.push(filter2);
+        	FlxG.camera.setFilters(toAdd);
+		}
 
 		FlxG.sound.play(Paths.sound("fault/amb"), 1, true);
 
@@ -56,7 +59,10 @@ class TessNeedsHelp extends MusicBeatState
 
 	override function update(elapsed) 
 	{
-		vcr.update(elapsed);
+		if (ClientPrefs.shaders)
+		{
+			vcr.update(elapsed);
+		}
 		super.update(elapsed);	
 	}
 

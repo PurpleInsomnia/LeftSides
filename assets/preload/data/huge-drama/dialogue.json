@@ -1,0 +1,54 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Alright, who's next?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "pyro",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "So at the minute, There is some huge drama between Left Sides and the newly born offbrand offspring, Center Sides."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "ben",
+			"boxState": "normal",
+			"expression": "omg",
+			"text": "Holy shit.\\nPyrocynical."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "tess",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Oh my god! Pyro!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "pyro",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "*British noises about big drama*"
+		}
+	]
+}

@@ -65,7 +65,7 @@
 		},
 		{
 			"expression": "confused",
-			"text": "Okay Mister Anderson.",
+			"text": "Okay, Mister Anderson.",
 			"boxState": "normal",
 			"speed": 0.02,
 			"portrait": "bf"
@@ -89,7 +89,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
-			"text": "Um- Okay?....."
+			"text": "Um- Okay?.....\\n(Why the hell is he worried about that...?)"
 		},
 		{
 			"expression": "talk",

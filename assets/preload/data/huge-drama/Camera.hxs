@@ -1,0 +1,11 @@
+function goodNoteHit(id, daData, type, sus)
+{
+    if (type == "Opponent Player" && lePlayState.focusPlayerChar == lePlayState.boyfriend)
+    {
+        lePlayState.focusPlayerChar = lePlayState.dad;
+    }
+    if (type == "" && lePlayState.focusPlayerChar == lePlayState.dad)
+    {
+        lePlayState.focusPlayerChar = lePlayState.boyfriend;
+    }
+}

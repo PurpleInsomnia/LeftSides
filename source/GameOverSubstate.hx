@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
@@ -187,7 +188,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		super.beatHit();
 
 		if (bf.startedDeath)
-			bf.playAnim('deathLoop');
+		{
+			bf.playAnim("deathLoop", true);
+		}
 
 		//FlxG.log.add('beat');
 	}
@@ -223,7 +226,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		var ranNum:Int = FlxG.random.int(0, string.length - 1);
 
-		var text:FlxText = new FlxText(0, 90, FlxG.width, string[ranNum], 36);
+		var text:FlxText = new FlxText(0, 90, FlxG.width, '"' + string[ranNum] + '"', 36);
 		text.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.cameras = [stupidCamera];
 		text.screenCenter(X);
@@ -235,7 +238,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		icon.cameras = [stupidCamera];
 		icon.screenCenter(X);
 		add(icon);
-		icon.animation.curAnim.curFrame = 2;
+		icon.animation.play("winning");
 
 		var text2:FlxText = new FlxText(0, FlxG.height - 40, 'You HAD ' + timeString + ' left.', 32);
 		text2.color = FlxColor.YELLOW;

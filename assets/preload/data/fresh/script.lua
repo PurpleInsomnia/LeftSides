@@ -23,9 +23,3 @@ end
 function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
 end
-
-function onCreate()
-	doTweenColor('bfShading', 'boyfriend', 'BFBFBF', 0.001, 'linear');
-	doTweenColor('dadShading', 'dad', 'BFBFBF', 0.001, 'linear');
-	doTweenColor('gfShading', 'gf', 'BFBFBF', 0.001, 'linear');
-end

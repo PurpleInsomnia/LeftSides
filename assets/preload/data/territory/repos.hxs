@@ -1,0 +1,20 @@
+function onCreatePost()
+{
+    var stageData:Dynamic = {
+        defaultZoom: 0.75,
+		isPixelStage: false,
+			
+		boyfriend: [870, 100],
+		girlfriend: [400, 130],
+		opponent: [100, 150],
+
+		cameraSpeed: 1,
+		cameraPositions: {
+			dad: [0, 150],
+			bf: [0, 0],
+			gf: [0, 0]
+		}
+    }
+    lePlayState.reloadStageData(stageData);
+    lePlayState.bfZoom = true;
+}

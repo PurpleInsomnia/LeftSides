@@ -8,7 +8,6 @@ function onCreate()
     addLuaSprite("kyleCrane", true);
 
     setFCRanks("YAY!!11!!", "Close Enough", "Rigged");
-    setProperty("botplayTxt.text", "Kinda ashamed tbh.");
 
     setProperty("gameoverscript", "manipulation");
 end

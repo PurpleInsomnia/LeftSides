@@ -1,5 +1,8 @@
 package;
 
+#if DISCORD
+import Discord.DiscordClient;
+#end
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -97,6 +100,10 @@ class SideStoryState extends MusicBeatState
 			MusicBeatState.switchState(new SideStoryDateState(date[0]));
 			return;
 		}
+
+		#if desktop
+		DiscordClient.changePresence("Reading The Side Story: " + directory.toUpperCase(), null);
+		#end
 
 		bg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
 		add(bg);
@@ -1029,6 +1036,11 @@ class SideStoryLua
 			PlayState.SONG = Song.loadFromJson(poop, songLowercase);
 			PlayState.isStoryMode = true;
 			PlayState.storyDifficulty = 1;
+			PlayState.campaignScore = 0;
+			PlayState.campaignMisses = 0;
+			PlayState.campaignHits = 0;
+			PlayState.campaignGMiss = 0;
+			PlayState.campaignRatings = [];
             // Lullaby demo :)
 
             // Very imposible week to get to :thumbsup:

@@ -6,11 +6,17 @@ function onCreate()
 	makeLuaSprite('android', 'spooky/spookyBG', -200, -100);
 	addLuaSprite('android', false);
 
+	makeLuaSprite('android2', 'spooky/spookyBG', -2314, -100);
+	addLuaSprite('android2', false);
+
+	makeLuaSprite('android3', 'spooky/spookyBG', 1914, -100);
+	addLuaSprite('android3', false);
+
 	makeLuaSprite('pole', 'week2/spooky/streetpole', -200, -100);
 	addLuaSprite('pole', false);
 
 	-- vroom vroom
-	makeLuaSprite('car', 'week2/spooky/spookyCar', -1449, -100);
+	makeLuaSprite('car', 'week2/spooky/spookyCar', -1649, -100);
 	addLuaSprite('car', true);
 
 	makeLuaSprite('overlay', 'week2/spookyOverlay', -200, -50);
@@ -28,6 +34,10 @@ function onCreate()
 		setProperty("sky.y", getProperty("sky.y") + moveNumY);
 		setProperty("android.x", getProperty("android.x") - moveNum);
 		setProperty("android.y", getProperty("android.y") + moveNumY);
+		setProperty("android2.x", getProperty("android2.x") - moveNum);
+		setProperty("android2.y", getProperty("android2.y") + moveNumY);
+		setProperty("android3.x", getProperty("android3.x") - moveNum);
+		setProperty("android3.y", getProperty("android3.y") + moveNumY);
 		setProperty("pole.x", getProperty("pole.x") - moveNum);
 		setProperty("pole.y", getProperty("pole.y") + moveNumY);
 		setProperty("overlay.x", getProperty("overlay.x") - moveNum);
@@ -95,6 +105,6 @@ end
 
 function onTweenCompleted(tag)
 	if tag == 'carTween' then
-		setProperty('car.x', -1449);
+		setProperty('car.x', -1649);
 	end
 end

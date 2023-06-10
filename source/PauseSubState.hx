@@ -26,7 +26,7 @@ class PauseSubState extends MusicBeatSubstate
 	var spikes:FlxSprite;
 
 	var menuItems:Array<String> = ['EASY', 'NORMAL', 'HARD', 'ONE SHOT', 'BACK'];
-	var menuItemsOG:Array<String> = ['resume', 'restart', "options", 'health loss', 'practice', 'botplay', 'exit'];
+	var menuItemsOG:Array<String> = ['resume', 'restart', "options", 'health loss', "wardrobe", 'practice', 'botplay', 'exit'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -239,8 +239,12 @@ class PauseSubState extends MusicBeatSubstate
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
 				case 'health loss':
+					CustomFadeTransition.nextCamera = transCamera;
 					HealthLossState.playstate = true;
 					MusicBeatState.switchState(new HealthLossState());
+				case "wardrobe":
+					CustomFadeTransition.nextCamera = transCamera;
+					MusicBeatState.switchState(new WardrobeState(true));
 				case 'botplay':
 					PlayState.cpuControlled = !PlayState.cpuControlled;
 					PlayState.usedPractice = true;

@@ -10,14 +10,3 @@ function onCreate()
     setBlendMode("shader2", "add");
     addLuaSprite("shader2", true);
 end
-
-function onEvent(name, value1, value2)
-    if name == "Blammed Lights" and not value1 == "0" then
-       doTweenAlpha("s1tweenin", "shader1", 0, 1, "linear");
-       doTweenAlpha("s2tweenin", "shader2", 0, 1, "linear"); 
-    end
-    if name == "Blammed Lights" and value1 == "0" then
-        doTweenAlpha("s1tweenout", "shader1", 1, 1, "linear");
-       doTweenAlpha("s2tweenout", "shader2", 1, 1, "linear"); 
-    end
-end

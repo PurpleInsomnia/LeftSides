@@ -1,0 +1,183 @@
+var daCharacter:Character = null;
+var charNoteType:String = "Skylar Note";
+var charName:String = "skylar";
+var charGrp:String = "bf";
+var posAdd:Array<Int> = [900, 440];
+var inFront:Bool = true;
+var isPlayer:Bool = false;
+function onCreatePost()
+{
+    daCharacter = new Character(0, 0, charName, false);
+    lePlayState.startCharacterPos(daCharacter);
+    // moving the character.
+    daCharacter.x += posAdd[0];
+    daCharacter.y += posAdd[1];
+
+    if (isPlayer)
+    {
+	    if (daCharacter.flipX)
+	    {
+		    daCharacter.flipX = false;
+	    }
+	    else
+	    {
+		    daCharacter.flipX = true;
+	    }
+    }
+
+    if (!inFront)
+    {
+        lePlayState.insertToCharGroup(daCharacter, charGrp);
+    }
+    else
+    {
+        lePlayState.addToCharGroup(daCharacter, charGrp);
+    }
+    daCharacter.alpha = 0;
+}
+
+function goodNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    if (type == charNoteType && isPlayer)
+    {
+        switch (noteData)
+        {
+            case 0:
+                daCharacter.playAnim("singLEFT", true);
+            case 1:
+                daCharacter.playAnim("singDOWN", true);
+            case 2:
+                daCharacter.playAnim("singUP", true);
+            case 3:
+                daCharacter.playAnim("singRIGHT", true);
+        }
+        daCharacter.holdTimer = 0;
+        lePlayState.focusPlayerChar = daCharacter;
+    }
+    else if (lePlayState.focusPlayerChar == daCharacter && isPlayer)
+    {
+        lePlayState.focusPlayerChar = lePlayState.boyfriend;
+    }
+}
+
+function opponentNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    if (type == charNoteType)
+    {
+        switch (noteData)
+        {
+            case 0:
+                daCharacter.playAnim("singLEFT", true);
+            case 1:
+                daCharacter.playAnim("singDOWN", true);
+            case 2:
+                daCharacter.playAnim("singUP", true);
+            case 3:
+                daCharacter.playAnim("singRIGHT", true);
+        }
+        lePlayState.focusOpptChar = daCharacter;
+        daCharacter.holdTimer = 0;
+    }
+    else if (lePlayState.focusOpptChar == daCharacter && !isPlayer)
+    {
+        lePlayState.focusOpptChar = lePlayState.dad;
+    }
+}
+
+function gfNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    if (type == charNoteType)
+    {
+        switch (noteData)
+        {
+            case 0:
+                daCharacter.playAnim("singLEFT", true);
+            case 1:
+                daCharacter.playAnim("singDOWN", true);
+            case 2:
+                daCharacter.playAnim("singUP", true);
+            case 3:
+                daCharacter.playAnim("singRIGHT", true);
+        }
+        lePlayState.focusOpptChar = daCharacter;
+        daCharacter.holdTimer = 0;
+    }
+    else if (lePlayState.focusOpptChar == daCharacter && !isPlayer)
+    {
+        lePlayState.focusOpptChar = lePlayState.dad;
+    }
+}
+
+function noteMiss(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    if (type == charNoteType && isPlayer)
+    {
+        switch (noteData)
+        {
+            case 0:
+                daCharacter.playAnim("singLEFTmiss", true);
+            case 1:
+                daCharacter.playAnim("singDOWNmiss", true);
+            case 2:
+                daCharacter.playAnim("singUPmiss", true);
+            case 3:
+                daCharacter.playAnim("singRIGHTmiss", true);
+        }
+        lePlayState.focusPlayerChar = daCharacter;
+    }
+    else if (lePlayState.focusPlayerChar == daCharacter && isPlayer)
+    {
+        lePlayState.focusPlayerChar = lePlayState.boyfriend;
+    }
+}
+
+function onBeatHit()
+{
+    if (curBeat % 2 == 0)
+    {
+        if (!daCharacter.animation.curAnim != null && !StringTools.startsWith(daCharacter.animation.curAnim.name, "sing"))
+        {
+            daCharacter.dance();
+        }
+    }
+    if (curBeat == 173)
+    {
+        // putting this here earlier because of lag.
+        lePlayState.camFollowPlayerChar = daCharacter;
+    }
+	if (curBeat == 175)
+	{
+        modchartTweens.set("skylarAppears", FlxTween.tween(daCharacter, {alpha: 1}, Conductor.crochet / 1000, {
+            onComplete: function(twn:FlxTween)
+            {
+                modchartTweens.remove("skylarAppears");
+            }
+        }));
+	}
+    if (curBeat == 176)
+    {
+        lePlayState.reloadHealthBarFromChar(lePlayState.dad, daCharacter);
+    }
+    if (curBeat == 319)
+    {
+        lePlayState.camFollowPlayerChar = lePlayState.boyfriend;
+        modchartTweens.set("noMoreSkylar", FlxTween.tween(daCharacter, {alpha: 0}, Conductor.crochet / 1000, {
+            onComplete: function(twn:FlxTween)
+            {
+                modchartTweens.remove("noMoreSkylar");
+                remove(daCharacter);
+            }
+        }));
+    }
+}
+
+function onUpdatePost(elapsed:Float)
+{
+    if (!PlayState.cpuControlled && isPlayer)
+    {
+        if (daCharacter.holdTimer > (Conductor.stepCrochet * 0.001 * daCharacter.singDuration) && StringTools.startsWith(daCharacter.animation.curAnim.name, 'sing') && !StringTools.endsWith(daCharacter.animation.curAnim.name, 'miss'))
+        {
+            daCharacter.dance();
+        }
+    }
+}

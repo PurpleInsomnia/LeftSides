@@ -10,6 +10,9 @@ end
 local setAlpha = 0;
 function onUpdate(elapsed)
 	setAlpha = (getProperty("health") / 2);
+	if tpm then
+		setAlpha = 1;
+	end
 	for i = 0, getProperty('unspawnNotes.length')-1 do
 		setPropertyFromGroup('unspawnNotes', i, "alpha", setAlpha);
 	end

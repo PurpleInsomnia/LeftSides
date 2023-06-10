@@ -15,6 +15,10 @@ function onDialogueOpen()
 	setProperty("barBG.alpha", 0);
 	setProperty('iconP1.alpha', 0);
 	setProperty('iconP2.alpha', 0);
+	if not lowQuality then
+		setProperty('iconGlowP1.visible', false);
+		setProperty('iconGlowP2.visible', false);
+	end
 	setProperty("scoreTxt.alpha", 0);
 	setProperty('strumLine.alpha', 0);
 	doTweenAlpha('asshole3', 'camHUD', 1, 0.0001, 'linear');
@@ -27,6 +31,10 @@ function onCountdownTick(counter)
 		hide = getPropertyFromClass('ClientPrefs', 'limitedHud');
 		doTweenAlpha('asshole3', 'camHUD', 1, 1, 'linear');
 		doTweenAlpha('asshole4', 'healthBar', 1, 1, 'linear');
+		if not lowQuality then
+			setProperty('iconGlowP1.visible', true);
+			setProperty('iconGlowP2.visible', true);
+		end
 		doTweenAlpha('asshole5', 'iconP1', 1, 1, 'linear');
 		doTweenAlpha('asshole6', 'iconP2', 1, 1, 'linear');
 		doTweenAlpha('asshole7', 'strumLine', 1, 1, 'linear');
@@ -42,6 +50,10 @@ function onNextDialogue(count)
 	end
 	doTweenAlpha('fard', 'button', 0.25, 0.2, 'linear');
 	setProperty('healthBar.alpha', 0);
+	if not lowQuality then
+		setProperty('iconGlowP1.visible', false);
+		setProperty('iconGlowP2.visible', false);
+	end
 	setProperty('iconP1.alpha', 0);
 	setProperty('iconP2.alpha', 0);
 	setProperty("barBG.alpha", 0);
@@ -70,6 +82,10 @@ end
 
 -- endsong shit bc
 function onEndSong()
+	if not lowQuality then
+		setProperty('iconGlowP1.visible', false);
+		setProperty('iconGlowP2.visible', false);
+	end
 	setProperty('iconP1.alpha', 0);
 	setProperty('iconP2.alpha', 0);
 	setProperty("barBG.alpha", 0);
@@ -79,6 +95,10 @@ end
 
 function onTimerCompleted(tag)
 	if tag == 'alphaHud' then
+		if not lowQuality then
+			setProperty('iconGlowP1.visible', false);
+			setProperty('iconGlowP2.visible', false);
+		end
 		setProperty('iconP1.alpha', 0);
 		setProperty('iconP2.alpha', 0);
 		setProperty("barBG.alpha", 0);

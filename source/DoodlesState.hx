@@ -72,7 +72,7 @@ class DoodlesState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("Checkin' Out Some Doodles & Fan Art.", null);
 		#end
 
 		swagShader = new ColorSwap();
@@ -137,6 +137,7 @@ class DoodlesState extends MusicBeatState
 			doodleItem.visible = false;
 		}
 
+		#if desktop
 		getFanArtTxt();
 		getDesc();
 		if (fanArt != [])
@@ -152,6 +153,7 @@ class DoodlesState extends MusicBeatState
 		}
 
 		fanArtItems.visible = false;
+		#end
 
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		blackScreen.alpha = 0;
@@ -245,6 +247,7 @@ class DoodlesState extends MusicBeatState
 				});
 			}
 
+			#if desktop
 			if (controls.UI_DOWN_P && isDoodle && !nofanart)
 			{
 				isDoodle = false;
@@ -284,6 +287,7 @@ class DoodlesState extends MusicBeatState
 					versionShit.screenCenter(X);
 				});
 			}
+			#end
 
 			if (controls.BACK)
 			{
@@ -301,6 +305,7 @@ class DoodlesState extends MusicBeatState
 			spr.screenCenter();
 		});
 
+		#if desktop
 		if (!nofanart)
 		{
 			fanArtItems.forEach(function(spr:FlxSprite)
@@ -308,6 +313,7 @@ class DoodlesState extends MusicBeatState
 				spr.screenCenter();
 			});
 		}
+		#end
 	}
 
 	function changeItem(huh:Int = 0)
@@ -320,10 +326,12 @@ class DoodlesState extends MusicBeatState
 		if (curSelected < 0 && isDoodle)
 			curSelected = doodleItems.length - 1;
 
+		#if desktop
 		if (curSelected >= fanArtItems.length && isFanArt)
 			curSelected = 0;
 		if (curSelected < 0 && isFanArt)
 			curSelected = fanArtItems.length - 1;
+		#end
 
 		doodleItems.forEach(function(spr:FlxSprite)
 		{
@@ -339,6 +347,7 @@ class DoodlesState extends MusicBeatState
 			}
 		});
 
+		#if desktop
 		fanArtItems.forEach(function(spr:FlxSprite)
 		{
 			spr.updateHitbox();
@@ -354,6 +363,7 @@ class DoodlesState extends MusicBeatState
 				spr.visible = false;
 			}
 		});
+		#end
 	}
 
 	function pressConcept()

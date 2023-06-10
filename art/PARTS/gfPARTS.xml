@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gfPARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="GF body0000" x="0" y="0" width="101" height="145"/>
+	<SubTexture name="gf arm blank0000" x="111" y="0" width="50" height="103"/>
+	<SubTexture name="gf arm blank bg0000" x="171" y="0" width="62" height="102"/>
+	<SubTexture name="gf arm covering0000" x="243" y="0" width="97" height="116"/>
+	<SubTexture name="gf bg arm0000" x="350" y="0" width="88" height="135"/>
+	<SubTexture name="gf bottom leg0000" x="448" y="0" width="80" height="134"/>
+	<SubTexture name="gf face0000" x="538" y="0" width="120" height="46"/>
+	<SubTexture name="gf face down0000" x="668" y="0" width="141" height="49"/>
+	<SubTexture name="gf face down0001" x="819" y="0" width="141" height="40" frameX="0" frameY="0" frameWidth="141" frameHeight="49"/>
+	<SubTexture name="gf fg arm0000" x="0" y="155" width="77" height="134"/>
+	<SubTexture name="gf hair0000" x="87" y="155" width="302" height="309"/>
+	<SubTexture name="gf head0000" x="399" y="155" width="259" height="128"/>
+	<SubTexture name="gf top leg0000" x="668" y="155" width="183" height="115"/>
+</TextureAtlas>

@@ -43,12 +43,59 @@ class ResultsScreen extends MusicBeatState
 	public static var gMiss:Int = 0;
 	public static var hits:Int = 0;
 	public static var misses:Int = 0;
+	public static var ratings:Array<PlayState.RatingChart> = [];
+	public static var botplay:Bool = false;
 
 	public static var divNum:Int = 0;
 
 	var rankText:FlxText;
 
 	override public function create()
+	{
+		if (twoplayer.TwoPlayerState.tpm)
+		{
+			if (PlayState.SONG.song != 'Free Me' || PlayState.SONG.song != 'Thorns' || PlayState.SONG.song != 'Horrifying Truth')
+			{
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+						MusicBeatState.switchState(new StoryMenuState());
+					else
+						MusicBeatState.switchState(new StoryEncoreState());
+				}
+			}
+			if (PlayState.SONG.song == 'Free Me')
+				MusicBeatState.switchState(new NoIdeaState());
+			/*
+			if (PlayState.SONG.song == 'Thorns' && !ClientPrefs.arcadeUnlocked)
+				MusicBeatState.switchState(new UnlockedState('arcade'));
+			if (PlayState.SONG.song == 'Thorns' && ClientPrefs.arcadeUnlocked)
+				MusicBeatState.switchState(new StoryMenuState());
+			*/
+			if (PlayState.SONG.song == 'Horrifying Truth' && !ClientPrefs.week8Done)
+				MusicBeatState.switchState(new UnlockedState('void'));
+			if (PlayState.SONG.song == 'Horrifying Truth' && ClientPrefs.week8Done)
+			{
+				var check:Bool = StateManager.check("story-menu");
+				if (!check)
+				{
+					if (!PlayState.encoreMode)
+						MusicBeatState.switchState(new StoryMenuState());
+					else
+						MusicBeatState.switchState(new StoryEncoreState());
+				}
+			}
+		}
+		else
+		{
+			makeTheShit();
+		}
+
+		super.create();
+	}
+
+	function makeTheShit()
 	{
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('results/bg'));
 		add(bg);
@@ -58,10 +105,56 @@ class ResultsScreen extends MusicBeatState
 		scoreTxt.alpha = 0;
 		add(scoreTxt);
 
-		scoreTxt.text = 'WEEK SCORE: ' + score + '\n(NOTES HIT: ' + hits + ')\n(NOTES MISSED: ' + misses +')\n...';
+		var totalRatings:PlayState.RatingChart = {
+			bads: 0,
+			goods: 0,
+			shits: 0,
+			sicks: 0
+		}
+		for (i in 0...ratings.length)
+		{
+			totalRatings.bads += ratings[i].bads;
+			totalRatings.goods += ratings[i].goods;
+			totalRatings.shits += ratings[i].shits;
+			totalRatings.sicks += ratings[i].sicks;
+		}
+
+		var ratingBonus:Float = 0;
+		for (bad in 0...totalRatings.bads + 1)
+		{
+			ratingBonus -= 0.001;
+		}
+		for (shit in 0...totalRatings.shits + 1)
+		{
+			ratingBonus -= 0.005;
+		}
+		for (good in 0...totalRatings.goods + 1)
+		{
+			ratingBonus += 0.0005;
+		}
+		for (sick in 0...totalRatings.sicks + 1)
+		{
+			ratingBonus += 0.001;
+		}
+		if (ratingBonus < 0)
+		{
+			// cope.
+			ratingBonus = 0;
+		}
+		if (ratingBonus > 1)
+		{
+			var toSub:Float = 1 - ratingBonus;
+			ratingBonus = ratingBonus - toSub;
+		}
+		var rString:String = Std.string(ratingBonus);
+
+		var fullDisplay:String = "[BADS: " + totalRatings.bads + "] [GOODS: " + totalRatings.goods +  ']\n["TERRIBLES": ' + totalRatings.shits + ']' + " [SICKS: " + totalRatings.sicks + "]\n[BONUS POINTS:" + rString + "]";
+
+		scoreTxt.text = 'WEEK SCORE: ' + score + '\n(NOTES HIT: ' + hits + ')\n(NOTES MISSED: ' + misses +')\n' + fullDisplay;
 		scoreTxt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.screenCenter(X);
 		scoreTxt.y = (0 + scoreTxt.height) + 15;
+		scoreTxt.y -= 80;
 
 		rankText = new FlxText(0, 0, 'YOUR RANK IS', 32);
 		rankText.y = scoreTxt.y + scoreTxt.height;
@@ -75,6 +168,7 @@ class ResultsScreen extends MusicBeatState
 		var rating:Float;
 
 		rating = score / ((hits + misses - gMiss) * 350);
+		rating += ratingBonus;
 
 		if (rating <= 0.5)
 			ratingString = 'f';
@@ -93,10 +187,14 @@ class ResultsScreen extends MusicBeatState
 		{
 			ratingString = 's';
 		}
+		if (botplay)
+		{
+			ratingString = "bot";
+		}
 
 		trace(ratingString);
 
-		FlxG.sound.playMusic(Paths.music('results'), 0.7);
+		FlxG.sound.playMusic(Paths.music('results'), 0.7, false);
 
 		Highscore.saveWeekRating(WeekData.weeksList[week], curDifficulty, ratingString);
 
@@ -105,7 +203,7 @@ class ResultsScreen extends MusicBeatState
 		lime.app.Application.current.window.title = "Friday Night Funkin': Left Sides";
 
 		var didIt:FlxSprite = new FlxSprite().loadGraphic(Paths.image('results/youDidIt'));
-		didIt.y += -30;
+		didIt.y += -50;
 		add(didIt);
 
 		enter = new FlxSprite().loadGraphic(Paths.image('results/enter'));
@@ -128,16 +226,6 @@ class ResultsScreen extends MusicBeatState
 		{
 			calculateShow();
 		});
-
-		new FlxTimer().start(34.28, function(tmr:FlxTimer)
-		{
-			if (canPress)
-			{
-				endBs();
-			}
-		});
-
-		super.create();
 	}
 
 	override public function update(elapsed:Float)
@@ -155,19 +243,20 @@ class ResultsScreen extends MusicBeatState
 
 	public function endBs()
 	{
+		ResultsScreen.botplay = false;
 		canPress = false;
-		FlxG.sound.play(Paths.sound('resultEND'));
+		FlxG.sound.play(Paths.sound('select'));
 
 		FlxG.sound.music.stop();
 
-		FlxTween.tween(ratingSpr, {y: -720, alpha: 0}, 5.14, {ease: FlxEase.sineIn});
-		FlxTween.tween(ratingIcon, {y: 720, alpha: 0}, 5.14, {ease: FlxEase.sineIn});
+		FlxTween.tween(ratingSpr, {y: -720, alpha: 0}, 1, {ease: FlxEase.sineIn});
+		FlxTween.tween(ratingIcon, {y: 720, alpha: 0}, 1, {ease: FlxEase.sineIn});
 
-		FlxG.camera.fade(FlxColor.BLACK, 6.85, false, function()
+		FlxG.camera.fade(FlxColor.BLACK, 1, false, function()
 		{
-			if (PlayState.SONG.song != 'Free Me' || PlayState.SONG.song != 'Thorns' || PlayState.SONG.song != 'Horrifying Truth')
+			if (PlayState.SONG.song != 'Free Me' || PlayState.SONG.song != 'Horrifying Truth')
 			{
-				var check:Bool = StateManager.check("freeplay");
+				var check:Bool = StateManager.check("story-menu");
 				if (!check)
 				{
 					if (!PlayState.encoreMode)
@@ -227,8 +316,8 @@ class ResultsScreen extends MusicBeatState
 				FlxG.sound.play(Paths.sound('alert'));
 		}
 
-		FlxTween.tween(ratingSpr, {y: 0}, 1, {ease: FlxEase.elasticOut});
-		FlxTween.tween(ratingIcon, {y: 0}, 1, {ease: FlxEase.elasticOut});
+		FlxTween.tween(ratingSpr, {y: 60}, 1, {ease: FlxEase.elasticOut});
+		FlxTween.tween(ratingIcon, {y: 60}, 1, {ease: FlxEase.elasticOut});
 
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{

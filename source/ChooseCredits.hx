@@ -38,6 +38,7 @@ class ChooseCredits extends MusicBeatState
         button3.screenCenter();
         add(button3);
 
+        #if ALLOW_GITHUB
         var button2 = new FlxButton(0, 0, "", function()
         {
             makeTheHOFfile();
@@ -46,6 +47,9 @@ class ChooseCredits extends MusicBeatState
         button2.screenCenter();
         button2.x += 325;
         add(button2);
+        #else
+        button3.x += 325;
+        #end
 
         super.create();
     }

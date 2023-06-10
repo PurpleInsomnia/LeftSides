@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Tess Stop Dying.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Idle0000" x="0" y="0" width="1143" height="508" frameX="0" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0001" x="1153" y="0" width="1143" height="508" frameX="0" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0002" x="2306" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0003" x="3453" y="0" width="1137" height="509" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0004" x="4600" y="0" width="1137" height="521" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0005" x="5747" y="0" width="1137" height="521" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0006" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0007" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0008" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0009" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0010" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0011" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0012" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0013" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="Idle0014" x="6894" y="0" width="1137" height="508" frameX="-3" frameY="0" frameWidth="1143" frameHeight="521"/>
+	<SubTexture name="What0000" x="0" y="531" width="1140" height="508" frameX="-259" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0001" x="0" y="531" width="1140" height="508" frameX="-259" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0002" x="1150" y="531" width="1137" height="508" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0003" x="2297" y="531" width="1137" height="508" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0004" x="3444" y="531" width="1251" height="508" frameX="-148" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0005" x="4705" y="531" width="1248" height="524" frameX="-151" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0006" x="5963" y="531" width="1249" height="543" frameX="-150" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0007" x="0" y="1084" width="1245" height="508" frameX="-154" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0008" x="1255" y="1084" width="1254" height="508" frameX="-145" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0009" x="2519" y="1084" width="1248" height="508" frameX="-151" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0010" x="3777" y="1084" width="1258" height="508" frameX="-144" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0011" x="5045" y="1084" width="1258" height="508" frameX="-141" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0012" x="6313" y="1084" width="1257" height="508" frameX="-142" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0013" x="0" y="1602" width="1258" height="508" frameX="-141" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0014" x="1268" y="1602" width="1255" height="508" frameX="-147" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0015" x="2533" y="1602" width="1268" height="508" frameX="-131" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0016" x="3811" y="1602" width="1399" height="532" frameX="-31" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0017" x="5220" y="1602" width="1430" height="532" frameX="0" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0018" x="6660" y="1602" width="1427" height="532" frameX="-3" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0019" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0020" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0021" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0022" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0023" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0024" x="1178" y="2144" width="1171" height="532" frameX="-259" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0025" x="1178" y="2144" width="1171" height="532" frameX="-259" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0026" x="2359" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0027" x="3537" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0028" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0029" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0030" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0031" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0032" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0033" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0034" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0035" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0036" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0037" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0038" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+	<SubTexture name="What0039" x="0" y="2144" width="1168" height="532" frameX="-262" frameY="0" frameWidth="1430" frameHeight="543"/>
+</TextureAtlas>

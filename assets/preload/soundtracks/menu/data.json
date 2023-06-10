@@ -1,0 +1,47 @@
+{
+    "name": "Left Sides OST [MENU MUSIC] (VOL. 1)",
+    "list": [
+        "Freaky Menu (Main Menu)",
+        "Breakfast (Pause Screen)",
+        "Breakfast (Doodles Menu)",
+        "Left Sides Shuffle (Freeplay Menu)",
+        "Options",
+        "Your Results",
+        "Things Happen (Old Credits Menu)",
+        "Moving On (Credits Menu)",
+        "Extra Hugs (Extras Menu)",
+        "Story Teller (Side Stories Menu)",
+        "Truths And Lies (Terminal Menu)",
+        "You Had Me At GameJolt (GameJolt Menu)",
+        "The Monster's Lair",
+        "THE VOID",
+        "Their Motifs (Title Screen)",
+        "The Monster's Shop",
+        "The Archives Never Lie (Archives Menu)",
+        "Goodybye Message"
+    ],
+    "artists": [
+        "PurpleInsomnia"
+    ],
+    "songType": "music",
+    "filePaths": [
+        "freakyMenu",
+        "breakfast",
+        "breakfastOLD",
+        "freeplay",
+        "options",
+        "results",
+        "credits",
+        "movingOn",
+        "extraHugs",
+        "storyTeller",
+        "terminal",
+        "gamejoltMenu",
+        "lair",
+        "void",
+        "title",
+        "monstersShop",
+        "theArchivesNeverLie",
+        "goodbye"
+    ]
+}

@@ -1,0 +1,32 @@
+function onCreatePost()
+{
+    lePlayState.gameoverscript = "";
+
+    // unlucky amr?
+    lePlayState.dad.y += 75;
+}
+
+function gfNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    if (lePlayState.focusOnGf)
+    {
+        lePlayState.focusOpptChar = lePlayState.gf;
+    }
+}
+
+function opponentNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
+{
+    lePlayState.focusOpptChar = lePlayState.dad;
+}
+
+function onStepHit()
+{
+    if (curStep == 639)
+    {
+        lePlayState.focusOnGf = true;
+    }
+    if (curStep == 895)
+    {
+        lePlayState.focusOnGf = false;
+    }
+}

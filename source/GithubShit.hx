@@ -9,6 +9,7 @@ typedef GithubFile = {
     var doodlesDescLink:String;
     var dlcHOFLink:String;
     var communityLink:String;
+    var comicsLink:String;
 }
 
 class GithubShit

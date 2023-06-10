@@ -1,7 +1,7 @@
 {
 	"song": {
 		"speed": 1.5,
-		"stage": null,
+		"stage": "dad",
 		"player1": "bf",
 		"player2": "gf",
 		"player3": "gf",
@@ -190,15 +190,7 @@
 				"lengthInSteps": 16,
 				"altAnim": false,
 				"typeOfSection": 0,
-				"sectionNotes": [
-					[
-						48000,
-						-1,
-						"Heart",
-						"1",
-						"9.6"
-					]
-				],
+				"sectionNotes": [],
 				"bpm": 0,
 				"changeBPM": false,
 				"mustHitSection": false
@@ -314,7 +306,22 @@
 				"lengthInSteps": 16,
 				"altAnim": false,
 				"typeOfSection": 0,
-				"sectionNotes": [],
+				"sectionNotes": [
+					[
+						76800,
+						-1,
+						"Cinematic Bar Zoom",
+						"35",
+						"0.5"
+					],
+					[
+						76803,
+						-1,
+						"Screen Flash",
+						"",
+						""
+					]
+				],
 				"bpm": 0,
 				"changeBPM": false,
 				"mustHitSection": false
@@ -360,6 +367,41 @@
 				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 0,
+				"changeBPM": false,
+				"mustHitSection": false
+			},
+			{
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [
+					[
+						96000,
+						-1,
+						"Cinematic Bar Zoom",
+						"1",
+						"0.5"
+					]
+				],
 				"bpm": 0,
 				"changeBPM": false,
 				"mustHitSection": false
@@ -448,6 +490,7 @@
 		],
 		"splashSkin": null,
 		"validScore": false,
+		"thirdStrum": null,
 		"bpm": 100,
 		"arrowSkin": null,
 		"needsVoices": true,

@@ -93,6 +93,24 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 
 		addOption(option);
 
+		var option:Option = new Option("Play 'Tick' Sound On Note Hit",
+		"If checked, a cool sound will play whenever you hit a note.",
+		"playSoundOnNoteHit",
+		"bool",
+		false);
+		addOption(option);
+
+		var option:Option = new Option("Tick Sound Volume",
+		"Determines the volume of the 'Tick' sound when it's on.",
+		"hitSoundVolume",
+		"float",
+		1);
+		addOption(option);
+		option.minValue = 0;
+		option.maxValue = 1;
+		option.changeValue = 0.1;
+		option.decimals = 2;
+
 		var option:Option = new Option('Jumpscares',
 			"If unchecked, you won't piss yourself when the funny",
 			'jumpscares',

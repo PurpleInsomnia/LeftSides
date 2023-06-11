@@ -371,6 +371,29 @@ class SideStorySelectState extends MusicBeatState
 				storyList.push(["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"]);
 			}
 		}
+		else
+		{
+			if (storyList[3] == null)
+			{
+				storyList.push(["Party Skippers", "party-skip", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[4] == null)
+			{
+				storyList.push(["Actually Happy", "happy", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[5] == null)
+			{
+				storyList.push(["Restless", "restless", 0, "0xFF9D00FF", "0xFFFF7E00", "0xFF3F3F3F"]);
+			}
+			if (storyList[6] == null)
+			{
+				storyList.push(["Bump In", "bump", 0, "0xFF9D00FF", "0xFF7D0077", "0xFF3F3F3F"]);
+			}
+			if (storyList[7] == null)
+			{
+				storyList.push(["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"]);
+			}
+		}
 	}
 
 	function getCustomStories()

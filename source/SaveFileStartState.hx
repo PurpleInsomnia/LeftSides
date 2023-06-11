@@ -127,6 +127,7 @@ class SaveFileStartState extends MusicBeatState
 		FlxG.sound.play(Paths.sound('saveFile/create'));
 		var save:SaveFile = new SaveFile(name, iconArray[curSelected]);
 		FlxG.camera.flash(0xFFFFFFFF, 1);
+		trace('epic win!!');
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			var path:String = 'assets/data/saveData.leftSides';

@@ -88,7 +88,6 @@ class TitleScreenState extends MusicBeatState
 		if (initialized)
 		{
 			var data:CoolUtil.CompletionData = CoolUtil.getCompletionStatus();
-
 			if ((data.gotten / data.toGet100) * 100 == 100)
 			{
         		bgspr = new Backdrop("title/bg100", 1, 1, "HORIZONTAL", -1);
@@ -205,8 +204,6 @@ class TitleScreenState extends MusicBeatState
 
 			changeSelection(0);
 		}
-
-		trace("GRAHHH, RATIOOOOOO");
 
         super.create();
     }
@@ -450,14 +447,16 @@ class TitleScreenState extends MusicBeatState
 			}
 			#end
 
+			CommunitySong.loadAssets();
+
 			if (FlxG.save.data.warned == null || FlxG.save.data.warned == false)
 			{
 				MusicBeatState.switchState(new VeryFunnyWarning());
 			}
-
-			CommunitySong.loadAssets();
-
-			initialized = true;
+			else
+			{
+				initialized = true;
+			}
         }
     }
 }

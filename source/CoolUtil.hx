@@ -259,6 +259,7 @@ class CoolUtil
 				}
 			}
 		}
+
 		var completed:Int = 0;
 		for (i in 0...read.length)
 		{

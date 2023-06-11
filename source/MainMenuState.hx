@@ -307,7 +307,7 @@ class MainMenuState extends MusicBeatState
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story "Happy"', 4, 1]);
 		}
-		if (!ClientPrefs.unlockedRestless && SideStorySelectState.storyList[5][2] != 1)
+		if (!ClientPrefs.unlockedRestless && SideStorySelectState.storyList[5][2] != 1 && Highscore.getWeekScore("week5", 1) > 0)
 		{
 			ClientPrefs.unlockedRestless = true;
 			ClientPrefs.saveSettings();

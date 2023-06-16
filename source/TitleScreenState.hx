@@ -179,7 +179,7 @@ class TitleScreenState extends MusicBeatState
 			versionShit.scrollFactor.set();
 			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(versionShit);
-			var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v4.5", 12);
+			var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Friday Night Funkin Left Sides v4.5.6", 12);
 			versionShit.scrollFactor.set();
 			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(versionShit);
@@ -223,7 +223,25 @@ class TitleScreenState extends MusicBeatState
             canPress = false;
 			SaveFileMenu.title = false;
 			FlxG.sound.play(Paths.sound("title/accept"));
-            callbacks[curSelected]();
+			if (shitBalls[curSelected] == "Start")
+			{
+				var daCheck:Dynamic = NameBox.check();
+				if (daCheck == null)
+				{
+					add(new NameBox(this, function()
+					{
+						callbacks[curSelected]();
+					}));
+				}
+				else
+				{
+					callbacks[curSelected]();
+				}
+			}
+			else
+			{
+            	callbacks[curSelected]();
+			}
         }
         super.update(elapsed);
     }
@@ -448,6 +466,10 @@ class TitleScreenState extends MusicBeatState
 			#end
 
 			CommunitySong.loadAssets();
+
+			WardrobeState.checkForNull();
+
+			NameBox.load();
 
 			if (FlxG.save.data.warned == null || FlxG.save.data.warned == false)
 			{

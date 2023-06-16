@@ -12,4 +12,6 @@ class FNFSprite extends FlxSprite
     {
         savedAlpha = alpha;
     }
+
+    public var graphicName:String = "";
 }

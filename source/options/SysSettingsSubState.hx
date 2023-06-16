@@ -49,6 +49,30 @@ class SysSettingsSubState extends BaseOptionsMenu
 
 		addOption(option);
 
+		var option:Option = new Option("Use Prefered Name As PC Username",
+		"Check this if you want to use the prefered name you typed into the 'Name Box' inseted of your PC Username.",
+		"usePNAsUser",
+		"bool",
+		false);
+
+		addOption(option);
+
+		var option:Option = new Option("Change Prefered Name",
+		"Press this to change your name!",
+		"lol",
+		"callback");
+
+		option.onChange = function()
+		{
+			canPress = false;
+			add(new NameBox(null, function()
+			{
+				canPress = true;
+			}));
+		}
+
+		addOption(option);
+
 		#if desktop
 		var option:Option = new Option("Discord Rich Presence",
 		"If checked, Discord will display this game (and it's curent state) as a status message\n(YOU MUST RESTART THE GAME TO ACTIVATE)",
@@ -79,6 +103,14 @@ class SysSettingsSubState extends BaseOptionsMenu
 		var option:Option = new Option("Charting Mode",
 		"If checked, charting is enabled",
 		"chartingMode",
+		"bool",
+		false);
+
+		addOption(option);
+
+		var option:Option = new Option("Debug Check",
+		"If checked, the game shows you which line of code in 'PlayState.hx' is problematic.",
+		"debugCheck",
 		"bool",
 		false);
 

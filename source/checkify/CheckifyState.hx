@@ -50,7 +50,12 @@ class CheckifyState extends MusicBeatState
         add(coolalbum);
         for (i in 0...songLists.length)
         {
-            var album:CheckifyAlbum = new CheckifyAlbum(0, 360, songLists[i][0], songLists[i][1]);
+            var direc:String = "";
+            if (songLists[i][2] != null)
+            {
+                direc = songLists[i][2];
+            }
+            var album:CheckifyAlbum = new CheckifyAlbum(0, 360, songLists[i][0], songLists[i][1], direc);
             album.ID = i;
             album.y += Std.int(300 * i);
             coolalbum.add(album);
@@ -151,7 +156,7 @@ class CheckifyAlbum extends FlxSpriteGroup
 {
     public var details:Array<Dynamic> = [];
     public var box:FlxSprite = null;
-    public function new(x:Int, y:Int, name:String, details:Array<Dynamic>)
+    public function new(x:Int, y:Int, name:String, details:Array<Dynamic>, ?direc:String = "")
     {
         super();
 
@@ -160,7 +165,7 @@ class CheckifyAlbum extends FlxSpriteGroup
         box = new FlxSprite(x, y).loadGraphic(CPaths.image("album/box"));
         add(box);
 
-        var cover:FlxSprite = new FlxSprite().loadGraphic(CPaths.getAlbumArt(name));
+        var cover:FlxSprite = new FlxSprite().loadGraphic(CPaths.getAlbumArt(name, direc));
         cover.x = x + 75;
         cover.y = y + 25;
         add(cover);
@@ -210,15 +215,7 @@ class CheckifyOverlay extends FlxSpriteGroup
             greetingTime = "Good Evening";
         }
         #end
-        var greetingUsername:String = "Player";
-        if (ClientPrefs.showUsername)
-        {
-            #if desktop
-			greetingUsername = Std.string(Sys.environment()["USERNAME"]);
-			#else
-			greetingUsername = Std.string(Sys.environment()["USER"]);
-			#end
-        }
+        var greetingUsername:String = NameBox.playerName;
         var greetingText:FlxText = new FlxText(icon.x + icon.width + 20, icon.getGraphicMidpoint().y, 1280 - 170, "" + greetingTime + ", " + greetingUsername, 32);
         greetingText.font = Paths.font("eras.ttf");
         greetingText.updateHitbox();

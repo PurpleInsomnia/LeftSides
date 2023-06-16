@@ -44,17 +44,24 @@ function onCountdownTick(counter:Int)
 {
 	if (counter == 0)
 	{
-		FlxTween.tween(lePlayState.camHUD, {y: -40}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-		FlxTween.tween(lePlayState.healthBar, {y: lePlayState.healthBar.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-		FlxTween.tween(lePlayState.barBG, {y: lePlayState.barBG.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-		FlxTween.tween(lePlayState.iconP1, {y: lePlayState.iconP1.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-		FlxTween.tween(lePlayState.iconP2, {y: lePlayState.iconP2.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		var mult:Int = 1;
+		var add:Int = 0;
+		if (ClientPrefs.downScroll)
+		{
+			mult = -1;
+			add = 20;
+		}
+		FlxTween.tween(lePlayState.camHUD, {y: (40 + add) * -1}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.healthBar, {y: lePlayState.healthBar.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.barBG, {y: lePlayState.barBG.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.iconP1, {y: lePlayState.iconP1.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.iconP2, {y: lePlayState.iconP2.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 		if (!ClientPrefs.lowQuality)
 		{
-			FlxTween.tween(lePlayState.iconGlowP1, {y: lePlayState.iconGlowP1.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-			FlxTween.tween(lePlayState.iconGlowP2, {y: lePlayState.iconP2.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+			FlxTween.tween(lePlayState.iconGlowP1, {y: lePlayState.iconGlowP1.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+			FlxTween.tween(lePlayState.iconGlowP2, {y: lePlayState.iconP2.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 		}
-		FlxTween.tween(lePlayState.scoreTxt, {y: lePlayState.scoreTxt.y - 70}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
+		FlxTween.tween(lePlayState.scoreTxt, {y: lePlayState.scoreTxt.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 	}
 }
 

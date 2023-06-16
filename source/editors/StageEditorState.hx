@@ -50,6 +50,12 @@ class StageEditorState extends PlayState
     public var csc:FlxColor = 0xFFFFFFFF;
     public var csn:String = "";
 
+    #if (haxe >= "4.0.0")
+    public var setBackgroundSprites:Map<String, FNFSprite> = new Map();
+    #else
+    public var setBackgroundSprites:Map<String, FNFSprite> = new Map<String, FNFSprite>();
+    #end
+
     public function new(stage:String, song:SwagSong, ?playstate:Bool = true)
     {
         super();
@@ -140,6 +146,9 @@ class StageEditorState extends PlayState
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
 				add(stageFront);
+
+                backgroundSprites.push(bg);
+				backgroundSprites.push(stageFront);
 			case 'limo': //Week 4
 				var suffix:String = '';
 				var suffixReal = '';
@@ -166,21 +175,6 @@ class StageEditorState extends PlayState
 
 				limo = new BGSprite('limo/limoDrive' + suffix, -120, 550, 1, 1, ['Limo stage'], true);
                 add(limo);
-
-			case 'mallEvil': //Week 5 - Winter Horrorland
-				var bg:BGSprite = new BGSprite('christmas/evilBG', -400, -500, 0.2, 0.2);
-				bg.setGraphicSize(Std.int(bg.width * 0.8));
-				bg.updateHitbox();
-				add(bg);
-
-				var evilTree:BGSprite = new BGSprite('christmas/evilTree', 300, -300, 0.2, 0.2);
-				add(evilTree);
-
-				var evilSnow:BGSprite = new BGSprite('christmas/evilSnow', -200, 700);
-				add(evilSnow);
-
-				var evilSnow2:BGSprite = new BGSprite('christmas/evilSnow', -200 - 2624, 700);
-				add(evilSnow2);
         }
 
         var gfVersion:String = daSong.player3;
@@ -263,6 +257,12 @@ class StageEditorState extends PlayState
 					stageCurtains.updateHitbox();
 					stageCurtains.inFront = true;
 					add(stageCurtains);
+
+                    backgroundSprites.push(light);
+					backgroundSprites.push(light2);
+					backgroundSprites.push(floorLight);
+					backgroundSprites.push(stageCurtains);
+					backgroundSprites.push(stageCrowd);
 				}
         }
 
@@ -400,6 +400,8 @@ class StageEditorState extends PlayState
         boyfriend.dance();
         dad.dance();
         gf.dance();
+
+        ExtendedStageEditorMenu.getCharacters();
     }
 
     var snapChar:Int = 0;
@@ -445,7 +447,7 @@ class StageEditorState extends PlayState
                 cst.cancel();
             }
 
-            if (!modchartSprites.exists(pressed))
+            if (!setBackgroundSprites.exists(pressed))
             {
                 // zaza?!
             }
@@ -455,7 +457,7 @@ class StageEditorState extends PlayState
                 {
                     curSprite.color = csc;
                 }
-                curSprite = modchartSprites.get(pressed);
+                curSprite = setBackgroundSprites.get(pressed);
                 curSprite.color = 0xFFFFFFFF;
                 csc = curSprite.color;
                 cst = FlxTween.color(curSprite, 1.5, curSprite.color, 0xFFFF7700, {type: PINGPONG, ease: FlxEase.sineInOut, onComplete: function(twn:FlxTween)
@@ -523,11 +525,11 @@ class StageEditorState extends PlayState
         var coolArray:Array<String> = getAllSprites();
         for (i in 0...coolArray.length)
         {
-            if (modchartSprites.exists(coolArray[i]))
+            if (setBackgroundSprites.exists(coolArray[i]))
             {
                 if (coolArray[i] != csn)
                 {
-                    modchartSprites.get(coolArray[i]).color = 0xFFFFFFFF;
+                    setBackgroundSprites.get(coolArray[i]).color = 0xFFFFFFFF;
                 }
             }
         }
@@ -691,9 +693,13 @@ class StageEditorState extends PlayState
     public function getAllSprites():Array<String>
     {
         var retArray:Array<String> = [""];
-        for (spr in modchartSprites.keys())
+        setBackgroundSprites.clear();
+        var id:Int = 0;
+        for (spr in backgroundSprites)
         {
-            retArray.push(spr);
+            id += 1;
+            retArray.push("(" + id + ") - " + spr.graphicName);
+            setBackgroundSprites.set("(" + id + ") - " + spr.graphicName, spr);
         }
         return retArray;
     }
@@ -817,6 +823,7 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
 {
     public var parent:StageEditorState = null;
     public var callback:Void->Void = null;
+    public static var charactersArray:Array<String> = [];
     public function new(state:StageEditorState, callback:Void->Void)
     {
         super();
@@ -830,7 +837,7 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
         add(bg);
 
         var charArray:Array<String> = [parent.daSong.player2];
-        charArray = getCharacters(charArray);
+        charArray = returnCharacters(charArray);
         var dadDD:FlxUIDropDownMenuCustom = new FlxUIDropDownMenuCustom(40, 40, FlxUIDropDownMenuCustom.makeStrIdLabelArray(charArray, false), function(pressed:String)
         {
             parent.dad.visible = false;
@@ -851,7 +858,7 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
         add(label);
 
         charArray = [parent.daSong.player3];
-        charArray = getCharacters(charArray);
+        charArray = returnCharacters(charArray);
         var gfDD:FlxUIDropDownMenuCustom = new FlxUIDropDownMenuCustom(40, 90, FlxUIDropDownMenuCustom.makeStrIdLabelArray(charArray, false), function(pressed:String)
         {
             parent.gf.visible = false;
@@ -872,7 +879,7 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
         add(label2);
 
         charArray = [parent.daSong.player1];
-        charArray = getCharacters(charArray);
+        charArray = returnCharacters(charArray);
         var bfDD:FlxUIDropDownMenuCustom = new FlxUIDropDownMenuCustom(40, 130, FlxUIDropDownMenuCustom.makeStrIdLabelArray(charArray, false), function(pressed:String)
         {
             parent.boyfriend.visible = false;
@@ -897,9 +904,9 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
         add(dadDD);
     }
 
-    public function getCharacters(huh:Array<String>)
+    public static function getCharacters()
     {
-        var retArray = huh;
+        var retArray:Array<String> = [];
         var directories:Array<String> = [Paths.mods('characters/'), Paths.mods(Paths.currentModDirectory + '/characters/'), Paths.getPreloadPath('characters/'), Paths.mods('characters/encore/'), Paths.mods(Paths.currentModDirectory + '/characters/encore/'), Paths.getPreloadPath('characters/encore/')];
 		for (i in 0...directories.length) 
         {
@@ -924,6 +931,19 @@ class ExtendedStageEditorMenu extends FlxTypedGroup<Dynamic>
 				}
 			}
 		}
+        ExtendedStageEditorMenu.charactersArray = retArray;
+    }
+
+    public function returnCharacters(huh:Array<String>):Array<String>
+    {
+        var retArray:Array<String> = huh;
+        for (char in ExtendedStageEditorMenu.charactersArray)
+        {
+            if (!retArray.contains(char))
+            {
+                retArray.push(char);
+            }
+        }
         return retArray;
     }
 

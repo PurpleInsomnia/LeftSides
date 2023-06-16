@@ -966,7 +966,9 @@ class FunkinLua {
 			tag = tag.replace('.', '');
 			resetSpriteTag(tag);
 			var leSprite:ModchartSprite = new ModchartSprite(x, y);
-			if(image != null && image.length > 0) {
+			if(image != null && image.length > 0) 
+			{
+				leSprite.graphicName = image;
 				leSprite.loadGraphic(Paths.image(image));
 			}
 			leSprite.antialiasing = ClientPrefs.globalAntialiasing;
@@ -977,6 +979,7 @@ class FunkinLua {
 			tag = tag.replace('.', '');
 			resetSpriteTag(tag);
 			var leSprite:ModchartSprite = new ModchartSprite(x, y);
+			leSprite.graphicName = image;
 			leSprite.frames = Paths.getSparrowAtlas(image);
 			leSprite.antialiasing = ClientPrefs.globalAntialiasing;
 			lePlayState.modchartSprites.set(tag, leSprite);
@@ -988,6 +991,7 @@ class FunkinLua {
 
 			if(lePlayState.modchartSprites.exists(obj)) {
 				lePlayState.modchartSprites.get(obj).makeGraphic(width, height, colorNum);
+				lePlayState.modchartSprites.get(obj).graphicName = color;
 				return;
 			}
 

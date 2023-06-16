@@ -62,65 +62,13 @@ class SoundTestState extends MusicBeatState
         if (controls.ACCEPT && canPress)
         {
             FlxG.sound.play(Paths.sound("confirmMenu"));
-            if (num1 == 0 && num2 == 0)
-            {
-                canPress = false;
-
-			    var songLowercase:String = ""; 
-                songLowercase = Paths.formatToSongPath("manipulator");
-			    var poop:String = 'normal';
-			    #if MODS_ALLOWED
-			    if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
-			    #else
-			    if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
-			    #end
-				    poop = songLowercase;
-			    }
-
-			    PlayState.SONG = Song.loadFromJson(poop, songLowercase);
-			    PlayState.isStoryMode = false;
-			    PlayState.storyDifficulty = 1;
-
-			    PlayState.storyWeek = 0;
-			    PlayState.isVoid = true;
-
-				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new HealthLossState());
-                return;
-            }
-            if (num1 == 12 && num2 == 25)
-            {
-                canPress = false;
-
-			    var songLowercase:String = ""; 
-                songLowercase = Paths.formatToSongPath("endless");
-			    var poop:String = 'normal';
-			    #if MODS_ALLOWED
-			    if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
-			    #else
-			    if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
-			    #end
-				    poop = songLowercase;
-			    }
-
-			    PlayState.SONG = Song.loadFromJson(poop, songLowercase);
-			    PlayState.isStoryMode = false;
-			    PlayState.storyDifficulty = 1;
-
-			    PlayState.storyWeek = 0;
-			    PlayState.isVoid = true;
-
-				FlxG.sound.music.stop();
-				MusicBeatState.switchState(new HealthLossState());
-                return;
-            }
             if (num1 == 20 && num2 == 2)
             {
                 FileOpener.openFile("assets/codes/code.png");
             }
             if (num1 == 3 && num2 == 7)
             {
-                TextFile.newFile("1ST - PUT EVERY NUMBER IN HER BIRTHDATE TOGETHER.\n2ND - THE DAY OF THE MONTH HE TRIED TO KILL HIMSELF.", "CLOSER");
+                TextFile.newFile("1ST - ADD EVERY SINGLE NUMBER IN HER BIRTHDATE TOGETHER.\n2ND - THE DAY OF THE MONTH HE TRIED TO KILL HIMSELF.", "CLOSER");
             }
             if (num1 == 11 && num2 == 19)
             {

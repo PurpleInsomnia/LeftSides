@@ -76,6 +76,8 @@ class Option
 					}
 				case "useless":
 					defaultValue = false;
+				case "callback":
+					defaultValue = "";
 			}
 		}
 
@@ -111,23 +113,33 @@ class Option
 
 	public function getValue():Dynamic
 	{
-		if (type == "useless")
+		if (type != "callback")
 		{
-			return ClientPrefs.useless.get(variable);
+			if (type == "useless")
+			{
+				return ClientPrefs.useless.get(variable);
+			}
+			return Reflect.getProperty(ClientPrefs, variable);
 		}
-		return Reflect.getProperty(ClientPrefs, variable);
+		else
+		{
+			return "";
+		}
 	}
 	public function setValue(value:Dynamic)
 	{
-		if (type == "useless")
+		if (type != "callback")
 		{
-			if (ClientPrefs.useless.exists(variable))
+			if (type == "useless")
 			{
-				ClientPrefs.useless.remove(variable);
+				if (ClientPrefs.useless.exists(variable))
+				{
+					ClientPrefs.useless.remove(variable);
+				}
+				ClientPrefs.useless.set(variable, value);
 			}
-			ClientPrefs.useless.set(variable, value);
+			Reflect.setProperty(ClientPrefs, variable, value);
 		}
-		Reflect.setProperty(ClientPrefs, variable, value);
 	}
 
 	public function setChild(child:Alphabet)
@@ -155,7 +167,7 @@ class Option
 		var newValue:String = 'bool';
 		switch(type.toLowerCase().trim())
 		{
-			case 'int' | 'float' | 'percent' | 'string' | "useless": newValue = type;
+			case 'int' | 'float' | 'percent' | 'string' | "useless" | "callback": newValue = type;
 			case 'integer': newValue = 'int';
 			case 'str': newValue = 'string';
 			case 'fl': newValue = 'float';

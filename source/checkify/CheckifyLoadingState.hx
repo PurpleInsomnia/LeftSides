@@ -58,6 +58,7 @@ class CheckifyLoadingState extends MusicBeatState
         var daModFile:Array<String> = [];
 		if (FileSystem.exists("modsList.txt"))
 		{
+            var dmd:String = Paths.currentModDirectory;
 			daModFile = CoolUtil.coolTextFile("modsList.txt");
             var modDirecs:Array<String> = [];
 		    for (i in 0...daModFile.length)
@@ -73,12 +74,14 @@ class CheckifyLoadingState extends MusicBeatState
                     {
                         if (FileSystem.isDirectory("mods/" + modDirecs[i] + "/soundtracks/" + file))
                         {
+                            Paths.currentModDirectory = modDirecs[i];
                             var data:CheckifyMeta = CheckifyPaths.loadMeta(file);
-                            songs.insert(0, [file, CheckifyPaths.loadSongsFromData(data)]);
+                            songs.insert(0, [file, CheckifyPaths.loadSongsFromData(data), modDirecs[i]]);
                         }
                     }
                 }
             }
+            Paths.currentModDirectory = dmd;
 		}
 
         MusicBeatState.switchState(new CheckifyState(songs));

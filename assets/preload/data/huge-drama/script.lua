@@ -1,17 +1,3 @@
-local chad = false;
-function onCreate()
-	chad = downscroll;
-	if chad then
-		setPropertyFromClass('ClientPrefs', 'downScroll', false);
-	end
-end
-
-function onDestroy()
-	if chad then
-		setPropertyFromClass('ClientPrefs', 'downScroll', true);
-	end
-end
-
 function onStartCountdown()
     playSound("skylar", 0);
 end

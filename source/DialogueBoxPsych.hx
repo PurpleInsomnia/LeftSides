@@ -343,6 +343,11 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			editedText = editedText.replace("USERNAME", CoolUtil.username());
 			editedText = editedText.replace("[USERNAME]", CoolUtil.username());
 		}
+		if (swagtext.contains("[PLAYERNAME]") || swagtext.contains("PLAYERNAME"))
+		{
+			editedText = editedText.replace("PLAYERNAME", NameBox.playerName);
+			editedText = editedText.replace("[PLAYERNAME]", NameBox.playerName);
+		}
 		if (ClientPrefs.swearFilter)
 		{
 			for (i in 0...badWords.length)

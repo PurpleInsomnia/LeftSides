@@ -154,8 +154,13 @@ class CheckifyPaths
         return bitmap;
     }
 
-    public static function getAlbumArt(album:String)
+    public static function getAlbumArt(album:String, direc:String)
     {
+        var rmd:String = Paths.currentModDirectory;
+        if (direc.length > 1)
+        {
+            Paths.currentModDirectory = direc;
+        }
         var bitmap:BitmapData = null;
         if (FileSystem.exists(Paths.getModFile("soundtracks/" + album + "/cover.png")))
         {
@@ -163,6 +168,7 @@ class CheckifyPaths
             return bitmap;
         }
         bitmap = BitmapData.fromFile(Paths.getPreloadPath("soundtracks/" + album + "/cover.png"));
+        Paths.currentModDirectory = rmd;
         return bitmap;
     }
 }

@@ -1,3 +1,3 @@
 function onCreatePost()
-	desktopBg(true);
+	close(true);
 end

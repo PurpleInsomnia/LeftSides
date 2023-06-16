@@ -115,6 +115,11 @@ class CoolUtil
 	public static function username()
 	{
 		var username:String = '**USERNAME**';
+		if (ClientPrefs.usePNAsUser)
+		{
+			username = NameBox.playerName;
+		}
+
 		if (ClientPrefs.showUsername)
 		{
 			#if desktop
@@ -127,7 +132,7 @@ class CoolUtil
 		}
 		else
 		{
-			return '**USERNAME**';
+			return username;
 		}
 	}
 
@@ -355,15 +360,18 @@ class CoolUtil
 		var tra:Int = 0;
 		for (i in 0...trophies.TrophyUtil.trophiesData.trophies.length)
 		{
-			tg1 += 1;
-			tra += 1;
-			if (trophies.TrophyUtil.trophies.exists(trophies.TrophyUtil.trophiesData.trophies[i].name))
+			if (trophies.TrophyUtil.trophiesData.trophies[i].name != "Origin Stories.")
 			{
-				ret.gotten += 1;
-				tr += 1;
+				tg1 += 1;
+				tra += 1;
+				if (trophies.TrophyUtil.trophies.exists(trophies.TrophyUtil.trophiesData.trophies[i].name))
+				{
+					ret.gotten += 1;
+					tr += 1;
+				}
 			}
 		}
-		ret.trophies = "" + tr + "/" + (tra - 1);
+		ret.trophies = "" + tr + "/" + tra;
 
 		ret.toGet100 = tg1;
 		if (ClientPrefs.devMode)
@@ -372,7 +380,7 @@ class CoolUtil
 		}
 
 		var per:Int = Std.int((ret.gotten / ret.toGet100) * 100);
-		if (per == 100 && check)
+		if (per >= 100 && check)
 		{
 			GameJolt.GameJoltAPI.getTrophy(194373, "100");
 		}

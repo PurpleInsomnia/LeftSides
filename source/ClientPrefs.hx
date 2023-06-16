@@ -82,6 +82,10 @@ class ClientPrefs {
 	public static var clickedClub:Bool = false;
 	public static var fcTutorial:Bool = false;
 
+	public static var debugCheck:Bool = false;
+
+	public static var usePNAsUser:Bool = false;
+
 	#if (haxe >= "4.0.0")
 	public static var completedSideStories:Map<String, Bool> = new Map();
 	public static var useless:Map<String, Bool> = new Map();
@@ -222,6 +226,9 @@ class ClientPrefs {
 		FlxG.save.data.fcTutorial = fcTutorial;
 		FlxG.save.data.customChars = PlayState.customChars;
 		FlxG.save.data.curSelectedChars = CoolUtil.curSelectedChars;
+
+		FlxG.save.data.debugCheck = debugCheck;
+		FlxG.save.data.usePNAsUser = usePNAsUser;
 
 		// precache
 		FlxG.save.data.precacheCharacters = precacheCharacters;
@@ -492,6 +499,14 @@ class ClientPrefs {
 		if (FlxG.save.data.unlockedVisit != null)
 		{
 			unlockedVisit = FlxG.save.data.unlockedVisit;
+		}
+		if (FlxG.save.data.debugCheck != null)
+		{
+			debugCheck = FlxG.save.data.debugCheck;
+		}
+		if (FlxG.save.data.usePNAsUser != null)
+		{
+			usePNAsUser = FlxG.save.data.usePNAsUser;
 		}
 
 

@@ -45,6 +45,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	public var title:String;
 	public var rpcTitle:String;
 
+	public var canPress:Bool = true;
+
 	public function new()
 	{
 		super();
@@ -140,24 +142,24 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	var holdValue:Float = 0;
 	override function update(elapsed:Float)
 	{
-		if (controls.UI_UP_P)
+		if (controls.UI_UP_P && canPress)
 		{
 			changeSelection(-1);
 		}
-		if (controls.UI_DOWN_P)
+		if (controls.UI_DOWN_P && canPress)
 		{
 			changeSelection(1);
 		}
 
-		if (controls.BACK) {
+		if (controls.BACK && canPress) {
 			close();
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 		}
 
-		if(nextAccept <= 0)
+		if(nextAccept <= 0 && canPress)
 		{
 			var usesCheckbox = true;
-			if(curOption.type != 'bool' && curOption.type != 'useless')
+			if(curOption.type != 'bool' && curOption.type != 'useless' && curOption.type != "callback")
 			{
 				usesCheckbox = false;
 			}

@@ -5,11 +5,19 @@ import flixel.FlxG;
 import flixel.system.ui.FlxSoundTray;
 import flixel.FlxGame;
 import flixel.FlxState;
+import haxe.CallStack.StackItem;
+import haxe.CallStack;
+import haxe.io.Path;
+import lime.app.Application;
 import openfl.Assets;
 import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
+import openfl.events.UncaughtErrorEvent;
+import sys.FileSystem;
+import sys.io.File;
+import sys.io.Process;
 import GameJolt;
 
 class Main extends Sprite

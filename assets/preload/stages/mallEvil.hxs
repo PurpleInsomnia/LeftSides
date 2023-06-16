@@ -1,0 +1,48 @@
+function onCreate()
+{
+    var bg:BGSprite = new BGSprite('christmas/evilBG', -400, -500, 0.2, 0.2);
+	bg.setGraphicSize(Std.int(bg.width * 0.8));
+	bg.updateHitbox();
+	add(bg, false);
+
+	var evilTree:BGSprite = new BGSprite('christmas/evilTree', 300, -300, 0.2, 0.2);
+	add(evilTree, false);
+
+	var tessHead:ModchartSprite = new ModchartSprite(300, -300);
+	tessHead.loadGraphic(Paths.image("christmas/tessHead"));
+	tessHead.scrollFactor.set(0.2, 0.2);
+	tessHead.visible = false;
+	add(tessHead, false);
+	lePlayState.modchartSprites.set("tessHead", tessHead);
+
+	var evilSnow:BGSprite = new BGSprite('christmas/evilSnow', -200, 700);
+	add(evilSnow, false);
+
+	var evilSnow2:BGSprite = new BGSprite('christmas/evilSnow', -200 - 2623, 700 - 16);
+	add(evilSnow2, false);
+
+	lePlayState.backgroundSprites.push(bg);
+	lePlayState.backgroundSprites.push(evilTree);
+	lePlayState.backgroundSprites.push(tessHead);
+	lePlayState.backgroundSprites.push(evilSnow);
+	lePlayState.backgroundSprites.push(evilSnow2);
+
+    var snow:FlxSprite = new FlxSprite();
+    snow.frames = Paths.getSparrowAtlas("christmas/fallingSnow");
+    snow.animation.addByPrefix("idle", "bad", 24, true);
+    snow.animation.play("idle", true);
+    snow.cameras = [lePlayState.camHUD];
+    add(snow, false);
+
+    lePlayState.bfZoom = true;
+    lePlayState.gfInFront = true;
+    lePlayState.dadInFront = true;
+}
+
+function onCreatePost()
+{
+    var overlay:BGSprite = new BGSprite("christmas/overlayEvilSnow", -400, -500, 0.2, 0.2);
+    overlay.setGraphicSize(Std.int(overlay.width * 0.8));
+	overlay.updateHitbox();
+	add(overlay);
+}

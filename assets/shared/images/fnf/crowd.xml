@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="crowd.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="crowd bop0000" x="0" y="0" width="2560" height="561"/>
+	<SubTexture name="crowd bop0001" x="0" y="0" width="2560" height="561"/>
+	<SubTexture name="crowd bop0002" x="0" y="571" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0003" x="0" y="1141" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0004" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0005" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0006" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0007" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0008" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+	<SubTexture name="crowd bop0009" x="0" y="1711" width="2560" height="560" frameX="0" frameY="0" frameWidth="2560" frameHeight="561"/>
+</TextureAtlas>

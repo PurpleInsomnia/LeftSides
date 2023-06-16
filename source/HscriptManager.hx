@@ -141,6 +141,11 @@ class HscriptManager
 		#if DISCORD
 		exp.set("DiscordClient", DiscordClient);
 		#end
+		exp.set("NameBox", NameBox);
+
+		// FNF.
+		exp.set("BGSprite", BGSprite);
+		exp.set("FNFSprite", FNFSprite);
 
 		// trophies
 		exp.set("TrophySelectState", TrophySelectState);

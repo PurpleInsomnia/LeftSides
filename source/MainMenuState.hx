@@ -578,17 +578,8 @@ class MainMenuState extends MusicBeatState
 		menuCharSprs = [];
 		for (i in 0...menuChars.length)
 		{
-			var menuChar:FlxSprite = new FlxSprite(0, 0);
-			menuChar.scrollFactor.set();
-			menuChar.frames = Paths.getSparrowAtlas('mainmenu/selectChars/' + menuChars[i]);
-			menuChar.animation.addByPrefix('idle', menuChars[i], 24, false);
-			menuChar.animation.play('idle');
-			menuChar.antialiasing = ClientPrefs.globalAntialiasing;
-
-			menuChar.screenCenter();
-			menuChar.x += (menuChar.width / 2);
-			menuChar.y += (menuChar.height / 4);
-
+			var menuChar:FlxSprite = new FlxSprite().loadGraphic(Paths.image('mainmenu/selectChars/' + menuChars[i]));
+			menuChar.scrollFactor.set(0, 0);
 			menuCharSprs.push(menuChar);
 			menuChar.visible = false;
 			add(menuChar);
@@ -606,7 +597,6 @@ class MainMenuState extends MusicBeatState
 	{
 		daBeat++;
 		MusicBeatState.callOnHscripts("menuBeat", [daBeat]);
-		menuCharSprs[curSelected].animation.play('idle');
 		new FlxTimer().start(coolBeat, function(tmr:FlxTimer)
 		{
 			coolBeatHit();

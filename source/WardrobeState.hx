@@ -714,6 +714,26 @@ class WardrobeState extends MusicBeatState
         }
         return [aub, aut, total];
     }
+
+    public static function checkForNull()
+    {
+        var benFile:WardrobeSection = Json.parse(File.getContent(Paths.preloadFunny("wardrobe/data/ben.json")));
+        var tessFile:WardrobeSection = Json.parse(File.getContent(Paths.preloadFunny("wardrobe/data/tess.json")));
+        for (i in 0...benFile.chars.length)
+        {
+            if (!FileSystem.exists(Paths.preloadFunny("characters/" + benFile.chars[i].path + ".json")) && PlayState.customChars[0] == benFile.chars[i].path)
+            {
+                PlayState.customChars[0] = "none";
+            }
+        }
+        for (i in 0...tessFile.chars.length)
+        {
+            if (!FileSystem.exists(Paths.preloadFunny("characters/" + tessFile.chars[i].path + ".json")) && PlayState.customChars[0] == tessFile.chars[i].path)
+            {
+                PlayState.customChars[1] = "none";
+            }
+        }
+    }
 }
 
 class WardrobeCharacter extends FlxSprite

@@ -68,15 +68,20 @@ class SoundTestState extends MusicBeatState
             }
             if (num1 == 3 && num2 == 7)
             {
-                TextFile.newFile("1ST - ADD EVERY SINGLE NUMBER IN HER BIRTHDATE TOGETHER.\n2ND - THE DAY OF THE MONTH HE TRIED TO KILL HIMSELF.", "CLOSER");
+                TextFile.newFile("1ST - ADD EVERY SINGLE NUMBER IN TESS' BIRTHDATE TOGETHER.\n2ND - THE DAY OF THE MONTH HE TRIED TO KILL HIMSELF.", "CLOSER");
             }
             if (num1 == 11 && num2 == 19)
             {
-                FileOpener.openFile("assets/codes/link.png");
+                CoolUtil.browserLoad("https://www.youtube.com/watch?v=WLbcpJTHbKE&lc=Ugxkyck-yxgmyl4U0sR4AaABAg");
             }
             if (num1 == 20 && num2 == 25)
             {
                 MusicBeatState.switchState(new LogState());
+            }
+            if (num1 == 12 && num2 == 25)
+            {
+                canPress = false;
+                playSong("Endless");
             }
             canPress = false;
             new FlxTimer().start(0.001, function(tmr:FlxTimer)
@@ -144,5 +149,28 @@ class SoundTestState extends MusicBeatState
     function fade()
     {
 		FlxG.camera.fade(0xFFFFFFFF, 0.5, false);
+    }
+
+    function playSong(song:String)
+    {
+        var songLowercase:String = Paths.formatToSongPath(song);
+		var poop:String = 'normal';
+		#if MODS_ALLOWED
+		if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
+		#else
+		if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
+		#end
+			poop = songLowercase;
+		}
+
+		PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+		PlayState.isStoryMode = false;
+		PlayState.storyDifficulty = 1;
+
+		PlayState.storyWeek = 0;
+		PlayState.isVoid = true;
+
+		FlxG.sound.music.stop();
+		MusicBeatState.switchState(new HealthLossState());
     }
 }

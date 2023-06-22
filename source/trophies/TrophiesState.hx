@@ -143,7 +143,7 @@ class TrophySelectState extends MusicBeatState
                     data = DlcTrophies.getTrophyFromDirectory(toSelect[curSelected]);
                 }
                 #if desktop
-                DiscordClient.changePresence("Checking Trophies For: '" + toSelect[curSelected] + "'", null);
+                DiscordClient.changePresence("Checking Trophies For: (" + toSelect[curSelected] + ")", null);
                 #end
                 MusicBeatState.switchState(new TrophiesState(dlc, data));
             }

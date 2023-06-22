@@ -86,7 +86,6 @@ class MonsterLairState extends MusicBeatState
     var camGame:FlxCamera;
     var camFront:FlxCamera;
 
-    var wiggle:WiggleEffect;
     var vcr:VCR;
 
     var currentArray:Array<String> = [];
@@ -183,25 +182,12 @@ class MonsterLairState extends MusicBeatState
         var tvSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image("monsterLair/tv"));
         add(tvSpr);
 
-        if (ClientPrefs.shaders)
-        {
-            wiggle = new WiggleEffect();
-            wiggle.effectType = DREAMY;
-            wiggle.waveSpeed = 1;
-            wiggle.waveFrequency = 5;
-            wiggle.waveAmplitude = 0.005;
-        }
-
         var box:FlxSprite = new FlxSprite(600, 520).makeGraphic(680, 200, 0xFF0A0A0A);
         add(box);
 
         text = new FlxTypeText(610, box.y + 10, FlxG.width - 670, "", 24);
         text.font = Paths.font("eras.ttf");
 		text.sounds = [FlxG.sound.load(Paths.sound('term/text'), 0.4)];
-        if (ClientPrefs.shaders)
-        {
-            text.shader = wiggle.shader;
-        }
         add(text);
 
         reloadWelcomes();
@@ -225,7 +211,6 @@ class MonsterLairState extends MusicBeatState
         if (ClientPrefs.shaders)
         {
             vcr.update(elapsed);
-            wiggle.update(elapsed);
         }
 
         if (canPress && !inDialogue)

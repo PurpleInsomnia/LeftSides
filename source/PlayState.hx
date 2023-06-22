@@ -3458,7 +3458,7 @@ class PlayState extends MusicBeatState
 
 		if (!customScoreTxt)
 		{
-			if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf" || gf.curCharacter == "brand-new-tess") && gf.visible)
+			if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf" || gf.curCharacter == "brand-new-tess" || gf.curCharacter.startsWith("tess")) && gf.visible && SONG.song != "Horrifying Truth")
 			{
 				if(ratingString == '?') {
 					scoreTxt.text = 'Score: ' + songScore + ' | Combo Breaks: ' + songMisses + " | Tess' Rating: " + ratingString;
@@ -9150,7 +9150,7 @@ class PlayState extends MusicBeatState
 				ratingString = '?';
 			} else if(ratingPercent >= 1) {
 				ratingPercent = 1;
-				if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf") && gf.visible)
+				if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf" || gf.curCharacter.startsWith("tess")) && gf.visible && SONG.song != "Horrifying Truth")
 				{
 					ratingString = ratingStuffTess[ratingStuffTess.length-1][0]; //Uses last string
 				}
@@ -9159,10 +9159,12 @@ class PlayState extends MusicBeatState
 					ratingString = ratingStuff[ratingStuff.length-1][0]; //Uses last string
 				}
 			} else {
-				if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf") && gf.visible || gf.curCharacter.startsWith("tess"))
+				if ((gf.curCharacter.startsWith("gf") || gf.curCharacter == "date-gf" || gf.curCharacter == "two-gf" || gf.curCharacter.startsWith("tess")) && gf.visible && SONG.song != "Horrifying Truth")
 				{
-					for (i in 0...ratingStuffTess.length-1) {
-						if(ratingPercent < ratingStuffTess[i][1]) {
+					for (i in 0...ratingStuffTess.length-1) 
+					{
+						if(ratingPercent < ratingStuffTess[i][1]) 
+						{
 							ratingString = ratingStuffTess[i][0];
 							break;
 						}

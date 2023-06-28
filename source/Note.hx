@@ -73,6 +73,9 @@ class Note extends FlxSprite
 	public var colorSwapAllowed:Bool = true;
 	public var noteGraphic:String = "";
 
+	public var trueScaleY:Float = 0;
+	public var distance:Float = 2000;
+
 	private function set_texture(value:String):String {
 		if(texture != value) {
 			reloadNote('', value);
@@ -230,7 +233,12 @@ class Note extends FlxSprite
 						prevNote.animation.play('redhold');
 				}
 
-				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.SONG.speed;
+				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05;
+				if(PlayState.instance != null)
+				{
+					prevNote.scale.y *= (PlayState.SONG.speed * PlayState.instance.scrollMult);
+				}
+
 				if(PlayState.isPixelStage) {
 					prevNote.scale.y *= 1.19;
 				}

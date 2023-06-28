@@ -1,200 +1,324 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "annoyed",
-			"text": "There, did your dumb carol.\\nNow please leave and never bother us AND that hyper realistic person alone.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"text": "There, did your dumb carol.\\nNow please leave and never bother us AND that hyper realistic person alone."
 		},
 		{
-			"expression": "fuck-this",
-			"text": "...",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "dad-christmas"
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "normal",
+			"expression": "fuck-this",
+			"text": "..."
 		},
 		{
-			"expression": "fuck-this",
-			"text": "...Tess, would you come over here to me and your father please...?",
-			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "mom-christmas"
+			"events": [
+				""
+			],
+			"portrait": "mom-christmas",
+			"boxState": "normal",
+			"expression": "fuck-this",
+			"text": "...Tess, would you come over here to me and your father please...?"
 		},
 		{
-			"expression": "nervous",
-			"text": "...",
-			"boxState": "normal",
 			"speed": 0,
-			"portrait": "gf-christmas"
-		},
-		{
-			"expression": "default",
-			"text": "...Don't make us ask again...",
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad-christmas"
+			"expression": "nervous",
+			"text": "..."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "...Don't make us ask again..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
 			"boxState": "normal",
 			"expression": "fuck-this",
 			"text": "You've had your fun with this punk.\\nIt's time to go back home..\\nWhere you belong.."
 		},
 		{
-			"expression": "nervous",
-			"text": "...",
-			"boxState": "normal",
 			"speed": 0,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "nervous",
+			"text": "..."
 		},
 		{
-			"expression": "nervous",
-			"text": "...F-fuck Y-you.",
-			"boxState": "normal",
 			"speed": 0.1,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "nervous",
+			"text": "...F-fuck Y-you."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
 			"boxState": "normal",
 			"expression": "angry",
 			"text": "COME AGAIN?!"
 		},
 		{
-			"expression": "angry",
-			"text": "FUCK YOU DAD!",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "FUCK YOU DAD!"
 		},
 		{
-			"expression": "angry",
-			"text": "I'VE BEEN DEALING WITH YOUR BULLSHIT EVER SINCE I TURNED EIGHT!!",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "I'VE BEEN DEALING WITH YOUR BULLSHIT EVER SINCE I TURNED EIGHT!!"
 		},
 		{
-			"expression": "default",
-			"text": "hey, maybe lets not create a sce-",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom-christmas",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "mom-christmas"
+			"expression": "default",
+			"text": "hey, maybe lets not create a sce-"
 		},
 		{
-			"expression": "angry",
-			"text": "SHUT THE HELL UP, AND LET HER FINISH!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
 			"expression": "angry",
-			"text": "NOT HERE!!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "dad-christmas"
+			"text": "SHUT THE HELL UP, AND LET HER FINISH!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "angry",
 			"expression": "angry",
-			"text": "I'm fucking doing it, alright.\\nI'M SPILLING E V E R Y T H I N G.",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "NOT HERE!!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "I'm fucking doing it, alright.\\nI'M SPILLING E V E R Y T H I N G."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
 			"boxState": "normal",
 			"expression": "angry",
 			"text": "I HAVE MULTIPLE POINTS FOR:\\n''WHY I DO NOT WANT TO BE AROUND MY PARENTS ANYMORE''"
 		},
 		{
-			"expression": "angry",
-			"text": "You forget my birthday every year, BOTH of your asses like to make fun out of how I dress AND my anxiety...",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "You forget my birthday every year, BOTH of your asses like to make fun out of how I dress AND my anxiety..."
 		},
 		{
-			"expression": "angry",
-			"text": "-In fact, BOTH Ben and I have been made fun out of for a VERY LONG TIME. But you guys go WAY to fucking far!",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "-In fact, BOTH Ben and I have been made fun out of for a VERY LONG TIME. But you guys go WAY to fucking far!"
 		},
 		{
-			"expression": "angry",
-			"text": "And lets not forget the big point here:",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "And lets not forget the big point here:"
 		},
 		{
-			"expression": "angry",
-			"text": "Don't you dare...",
-			"boxState": "normal",
 			"speed": 0.06,
-			"portrait": "dad-christmas"
-		},
-		{
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "OR WHAT?",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "Don't you dare..."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "OR WHAT?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
 			"boxState": "angry",
 			"expression": "angry",
 			"text": "YOU'RE GONNA HIT ME AGAIN?!\\nIT TAKES A FUCK TON OF MAKE UP TO HIDE THOSE BRUISES Y'KNOW?!"
 		},
 		{
-			"expression": "scared",
-			"text": "WHAT THE FUCK?!",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
 			"expression": "angry",
-			"text": "WHAT IN THE ACTUAL FUCK?!?!",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"text": "WHAT THE FUCK?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
 			"expression": "angry",
-			"text": "SHIT LETS NOT FORGET TO MENTION:\\nYOU ASSHOLES WOULD STARVE ME EVERY MONTH UP UNTIL NOW.",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "WHAT IN THE ACTUAL FUCK?!?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "angry",
 			"expression": "angry",
-			"text": "YOU PRICKS DESERVE EVERY AMOUNT OF BACKLASH THIS GIVES.",
-			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"text": "SHIT LETS NOT FORGET TO MENTION:\\nYOU ASSHOLES WOULD STARVE ME EVERY MONTH UP UNTIL NOW."
 		},
 		{
-			"expression": "fuck-this",
-			"text": "Then we will cover it up with HAPPY tunes.",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "YOU PRICKS DESERVE EVERY AMOUNT OF BACKLASH THIS GIVES."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad-christmas"
+			"expression": "fuck-this",
+			"text": "Then we will cover it up with HAPPY tunes."
 		},
 		{
-			"expression": "angry",
-			"text": "YOU GUYS ARE FUCKING DEAD..",
-			"boxState": "angry",
 			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "YOU GUYS ARE FUCKING MONSTERS./nIS THIS WHY SHE WAS CRYING AND BEGGING ME NOT TO BRING HER HOME ON THANKSGIVING NIGHT?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "HOW CAN THE BOTH OF YOU DO SUCH SICKENING THINGS DO YOUR DAUGHTER? SHE IS SUPPOSED TO BE LOVED AND SUPPORTED BY HER PARENTS."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "INSTEAD, YOU TWO SICK FUCKS DECIDE TO TORTURE HER?!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "AND TO TOP IT OFF, YOU TWO WOULD ONLY ACT LIKE PARENTS WHEN I OR MY MOM WERE IN THE SAME ROOM."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "coolswag."
 		}
 	]
 }

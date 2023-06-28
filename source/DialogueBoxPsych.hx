@@ -160,6 +160,14 @@ class DialogueBoxPsych extends FlxSpriteGroup
             }
 		}
         super.update(elapsed);
+
+		if (char.animJson != null)
+        {
+            if (char.animation.curAnim != null && !char.animJson.loops && char.animation.finished)
+            {
+                char.animation.play("idle", true);
+            }
+        }
     }
 
     public function doIntro(time:Float)

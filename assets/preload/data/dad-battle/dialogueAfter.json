@@ -38,7 +38,7 @@
 			"portrait": "dad",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "...You Will Regret This one day boy..."
+			"text": "...I'm getting a drink."
 		},
 		{
 			"speed": 0.05,
@@ -48,7 +48,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "question",
-			"text": "What the hell does that mean?"
+			"text": "Weren't you gonna rant on social media?"
 		},
 		{
 			"speed": 0.05,
@@ -147,8 +147,8 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "scared",
-			"text": "I-I mean if you feel like you're too old we could do something else..."
+			"expression": "stop-being-cute",
+			"text": "F-for old time's sake..."
 		},
 		{
 			"speed": 0.05,

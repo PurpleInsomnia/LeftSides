@@ -157,13 +157,13 @@ class FunnyFreeplayState extends MusicBeatState
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
 			var leSongs:Array<String> = [];
 			var leChars:Array<String> = [];
-            var skip:Bool = weekIsLocked(i);
+            var skip:Bool = weekIsLocked(i, true);
             if (ClientPrefs.devMode)
             {  
                 skip = false;
             }
 			for (j in 0...leWeek.songs.length) {
-				if (!weekIsLocked(i))
+				if (!weekIsLocked(i, true))
 				{
 					leSongs.push(leWeek.songs[j][0]);
 					leChars.push(leWeek.songs[j][1]);
@@ -704,9 +704,26 @@ class FunnyFreeplayState extends MusicBeatState
         }
 	}
 
-	function weekIsLocked(weekNum:Int) {
+	function weekIsLocked(weekNum:Int, ?encoreMode:Bool = false) 
+    {
 		var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[weekNum]);
-		return (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!StoryMenuState.weekCompleted.exists(leWeek.weekBefore) || !StoryMenuState.weekCompleted.get(leWeek.weekBefore)));
+        var leBool:Bool = true;
+		if (leWeek.weekName.endsWith(" Encore") && encoreMode)
+		{
+			leBool = !StoryMenuState.weekCompleted.exists(WeekData.weeksList[weekNum].replace("Encore", ""));
+		}
+		else
+		{
+            if (!encoreMode)
+            {
+                leBool = (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!StoryMenuState.weekCompleted.exists(leWeek.weekBefore) || !StoryMenuState.weekCompleted.get(leWeek.weekBefore)));
+            }
+            else
+            {
+			    leBool = (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!StoryEncoreState.weekEncoreCompleted.exists(leWeek.weekBefore) || !StoryEncoreState.weekEncoreCompleted.get(leWeek.weekBefore)));
+            }
+		}
+		return leBool;
 	}
 }
 

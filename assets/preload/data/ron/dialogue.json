@@ -2,6 +2,9 @@
 	"dialogue": [
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -9,6 +12,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -16,6 +22,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "angry",
@@ -23,6 +32,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "what",
@@ -30,6 +42,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "tess",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -37,6 +52,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "angry",
 			"expression": "angry",
@@ -44,6 +62,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "cool",
@@ -51,6 +72,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "angry",
@@ -58,6 +82,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "cool",
@@ -65,6 +92,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "tess",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -72,6 +102,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -79,6 +112,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -86,13 +122,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
-			"expression": "thud",
+			"expression": "the-rock",
 			"text": "Where did you get the money??"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -100,6 +142,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "cool",
@@ -107,6 +152,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "what",
@@ -114,6 +162,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "tess",
 			"boxState": "normal",
 			"expression": "cringe",
@@ -121,6 +172,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "say-what",
@@ -128,16 +182,22 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
-			"expression": "talk",
+			"expression": "default",
 			"text": "Fifteen."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "tired",
 			"text": "Okay...Ron...I want to get my money from mister beast....."
 		}
 	]

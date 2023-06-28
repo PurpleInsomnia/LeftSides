@@ -501,7 +501,16 @@ class StoryEncoreState extends MusicBeatState
 			return false;
 		}
 		var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[weekNum]);
-		return (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!weekEncoreCompleted.exists(leWeek.weekBefore) || !weekEncoreCompleted.get(leWeek.weekBefore)));
+		var leBool:Bool = true;
+		if (leWeek.weekName.endsWith(" Encore"))
+		{
+			leBool = !StoryMenuState.weekCompleted.exists(WeekData.weeksList[weekNum].replace("Encore", ""));
+		}
+		else
+		{
+			leBool = (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!weekEncoreCompleted.exists(leWeek.weekBefore) || !weekEncoreCompleted.get(leWeek.weekBefore)));
+		}
+		return leBool;
 	}
 
 	function updateText()

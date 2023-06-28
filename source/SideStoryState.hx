@@ -97,7 +97,7 @@ class SideStoryState extends MusicBeatState
 		{
 			var date:Array<String> = CoolUtil.coolTextFile(PathSS.data(directory + "/date.txt"));
 			showedDate = true;
-			MusicBeatState.switchState(new SideStoryDateState(date[0]));
+			MusicBeatState.switchState(new SideStoryDateState(date));
 			return;
 		}
 
@@ -984,15 +984,15 @@ class SideStoryLua
 			lePlayState.preloadShit();
 		});
 
-		Lua_helper.add_callback(lua, "loadSong", function(song:String, ?skipHL:Bool = false)
+		Lua_helper.add_callback(lua, "loadSong", function(song:String, ?skipHL:Bool = false, ?isVoid:Bool = false, ?week:Int = 999)
 		{
 			var name:String = Paths.formatToSongPath(song);
 			var poop = Highscore.formatSong(name, 1);
 			PlayState.SONG = Song.loadFromJson(poop, name);
 			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = 1;
-			PlayState.storyWeek = 999;
-			PlayState.isVoid = false;
+			PlayState.storyWeek = week;
+			PlayState.isVoid = isVoid;
 			if (skipHL)
 			{
 				MusicBeatState.switchState(new LoadingScreenState());
@@ -1299,14 +1299,19 @@ class PathSS
 class SideStoryDateState extends MusicBeatState
 {
 	var toType:String = "";
+	var daColor:Int = 0xFFFFFFFF;
 	public static var dialogue:Array<String> = [];
 	public static var directory:String = "halloween";
 	public static var modDirect:String = "";
 
-	public function new(date:String)
+	public function new(date:Array<String>)
 	{
 		super();
-		toType = date;
+		toType = date[0];
+		if (date[1] != null)
+		{
+			daColor = Std.parseInt("0xFF" + date[1]);
+		}
 	}
 
 	var text:FlxText;

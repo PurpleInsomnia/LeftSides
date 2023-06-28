@@ -101,88 +101,124 @@
 			"text": "I recal a blue haired dwarf trying to ''out rap me''.\\nHe thought that Micheal was in witness protection"
 		},
 		{
-			"expression": "trolling",
-			"text": "I think you are mistaken for an imposter among us.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "troll",
+			"text": "I think you are mistaken for an imposter among us."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "I have yellow hair.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "I have yellow hair."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "hmph",
-			"text": "Hey...Are we just gonna let that ''blue haired dwarf'' thing slide?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "Hey...Are we just gonna let that ''blue haired dwarf'' thing slide?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "Relax babe it was probably the average V8 (in tha fackin mornin) drinker.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Relax babe it was probably some drunk weirdo or somethin'."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "(Okay, now I'm overthinking about the\\npossibility of a confrontation against Ben and that blue dwarf.)",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "(Okay, now I'm overthinking about the\\npossibility of a confrontation against Ben and that blue dwarf.)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "Ok Matto. Lets spit bars.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Ok Matto. Lets spit bars."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "matto",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "WHY ARE PEOPLE TRYING TO RAP WITH ME?!?!?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "matto"
+			"text": "WHY ARE PEOPLE TRYING TO RAP WITH ME?!?!?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "Because you're cool.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Because you're cool."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "matto",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "It better not be that song that plays everytime I die.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "matto"
+			"text": "It better not be that song that plays everytime I die."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "...Hey...Ben told me about that song...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "...Hey...Ben told me about that song..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "stop-being-cute",
-			"text": "....We listen to it almost every night.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf"
+			"text": "....It's a very nice song./nAnd we do not delete it."
 		},
 		{
-			"expression": "talk",
-			"text": "...What...",
-			"boxState": "normal",
 			"speed": 0.225,
-			"portrait": "matto"
+			"events": [
+				""
+			],
+			"portrait": "matto",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "...What..."
 		}
 	]
 }

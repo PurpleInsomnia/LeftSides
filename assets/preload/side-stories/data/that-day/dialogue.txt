@@ -71,7 +71,7 @@ none|piss|He pulls out his phone and we start watching some light hearted stuff.
 none|piss|A few minutes in, I wrap my arms around his left arm before lying my head on his shoulder.
 none|piss|We both look at eachother, blushing, but then return to watching the video comfortably.
 none|piss|A few more minutes and I tug on his sleeve.
-benPJ|concerned|What's wrong?
+benPJ|concerned|What's wrong?||default
 none|piss|I try to say something...literally anything that says that "I'm in love with you".||tess
 none|piss|...I just freeze up. Does he even like me in that way? Does he have a different type? Does he even want to date?
 none|piss|All these questions flood my head...I can't do it.
@@ -80,15 +80,15 @@ none|piss|Ben flashes me a comforting smile. It lets me know that he understands
 none|piss|...After an hour or so, we both start to fall asleep.
 none|piss|...
 none|piss|The next morning, we both sit up tired from our alarm.|tessRoom
-tessPJ|down|...Can we um...not bring up last night anymore? I-it's not because of us its just- I just want to forget how shitty my mood was...
+tessPJ|down|...Can we um...not bring up last night anymore? I-it's not because of us its just- I just want to forget how shitty my mood was...||default
 benPJ|comfort|It's okay, I understand.
 none|piss|I kiss his cheek before wrapping my arms around him.||tess
-benPJ|comfort|We've gotta get ready...
+benPJ|comfort|We've gotta get ready...||default
 benPJ|oh|Well- Are you sure you want to go to work today?
 tessPJ|comfort|Yeah...I'm gonna be fine.
 benPJ|comfort|Alright, lemme know when you're ready to go.
 none|piss|He kisses the top of my head before leaving to the guest bedroom to change.||tess
-none|piss|Damn...he's really good at making my day...
+none|piss|Damn...that kinda eases my worries about asking him.
 none|piss|I try to keep a positive mood for the rest of the day.|black
 none|piss|But I still cannot help but remind myself of what I did...
 none|piss|...I don't know how I'm gonna tell Ben or if I'm gonna tell him at all...

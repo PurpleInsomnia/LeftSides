@@ -70,7 +70,7 @@ end
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
 function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
-	if count == 29 and not isAfter then
+	if count == 30 and not isAfter then
 		dialogueBg('tips/ice', false, true);
 	end
 	if count == 5 and isAfter then

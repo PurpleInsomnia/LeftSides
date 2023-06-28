@@ -6,9 +6,11 @@ import sys.FileSystem;
 typedef PlayStateMetaData = {
 	var wardrobeEnabled:Bool;
     var loadingDirectory:String;
+    var loadingMusic:String;
     var pauseMusic:String;
     var strumSkins:MetaSkins;
     var ratingPack:String;
+    var songInfoType:String;
 }
 
 typedef MetaSkins = {
@@ -32,13 +34,15 @@ class PlayStateMeta
         var metaFile:PlayStateMetaData = {
             wardrobeEnabled: true,
             loadingDirectory: "",
+            loadingMusic: "loading",
             pauseMusic: "breakfast",
             strumSkins: {
                 "dad": "",
                 "bf": "",
                 "gf": ""
             },
-            ratingPack: ""
+            ratingPack: "",
+            songInfoType: "default"
         }
         dataFile = metaFile;
     }
@@ -53,13 +57,15 @@ class PlayStateMeta
         var metaFile:PlayStateMetaData = {
             wardrobeEnabled: true,
             loadingDirectory: "",
+            loadingMusic: "loading",
             pauseMusic: "breakfast",
             strumSkins: {
                 "dad": "",
                 "bf": "",
                 "gf": ""
             },
-            ratingPack: ""
+            ratingPack: "",
+            songInfoType: "default"
         }
         return metaFile;
     }

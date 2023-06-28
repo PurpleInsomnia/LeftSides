@@ -17,6 +17,7 @@ function onCreate()
 
 	-- vroom vroom
 	makeLuaSprite('car', 'week2/spooky/spookyCar', -1649, -100);
+	setProperty("car.visible", false);
 	addLuaSprite('car', true);
 
 	makeLuaSprite('overlay', 'week2/spookyOverlay', -200, -50);
@@ -100,11 +101,13 @@ end
 
 -- beep beep :)
 function moveCar()
+	setProperty("car.visible", true);
 	doTweenX('carTween', 'car', 2114, 0.5, 'linear');
 end
 
 function onTweenCompleted(tag)
 	if tag == 'carTween' then
+		setProperty("car.visible", false);
 		setProperty('car.x', -1649);
 	end
 end

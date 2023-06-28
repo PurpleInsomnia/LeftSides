@@ -163,6 +163,7 @@ class HscriptManager
 		exp.set("StrumNote", StrumNote);
 
         // shader classes
+		exp.set("BlendMode", HscriptBlendMode);
         exp.set("ShaderFilter", ShaderFilter);
         exp.set("BitmapFilter", BitmapFilter);
 		exp.set("ColorMatrixFilter", ColorMatrixFilter);
@@ -337,4 +338,24 @@ class CoolColor
 	{
 		return FlxColor.fromHSB(Hue, Sat, Bright);
 	}
+}
+
+class HscriptBlendMode
+{
+	public static var NORMAL:BlendMode = BlendMode.NORMAL;
+
+	public static var ADD:BlendMode = BlendMode.ADD;
+	public static var ALPHA:BlendMode = BlendMode.ALPHA;
+	public static var DARKEN:BlendMode = BlendMode.DARKEN;
+	public static var DIFFERENCE:BlendMode = BlendMode.DIFFERENCE;
+	public static var ERASE:BlendMode = BlendMode.ERASE;
+	public static var HARDLIGHT:BlendMode = BlendMode.HARDLIGHT;
+	public static var INVERT:BlendMode = BlendMode.INVERT;
+	public static var LAYER:BlendMode = BlendMode.LAYER;
+	public static var LIGHTEN:BlendMode = BlendMode.LIGHTEN;
+	public static var MULTIPLY:BlendMode = BlendMode.MULTIPLY;
+	public static var OVERLAY:BlendMode = BlendMode.OVERLAY;
+	public static var SCREEN:BlendMode = BlendMode.SCREEN;
+	public static var SHADER:BlendMode = BlendMode.SHADER;
+	public static var SUBTRACT:BlendMode = BlendMode.SUBTRACT;
 }

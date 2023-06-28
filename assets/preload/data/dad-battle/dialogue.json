@@ -1,53 +1,74 @@
 {
 	"dialogue": [
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "sus",
-			"text": "Imagine losing to a 19 year old that has only been doing this for like 7 minutes.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Imagine losing to a 19 year old that has only been doing this for like 7 minutes."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "happy",
-			"text": "Couldn't be me.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "Couldn't be me."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "Not to shabby boy...",
-			"boxState": "normal",
-			"portrait": "dad",
-			"speed": 0.05
+			"text": "Not to shabby boy..."
 		},
 		{
-			"expression": "yell",
-			"text": "But I have one last trick up my sleeve!!!",
-			"boxState": "normal",
-			"portrait": "dad",
-			"speed": 0.05
-		},
-		{
-			"expression": "mic",
-			"text": "And if you SOMEHOW win this...\\n..I will go on an angry rant on twitter.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "dad"
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "yell",
+			"text": "But I have one last trick up my sleeve!!!"
 		},
 		{
-			"expression": "challenge",
-			"text": "Bring it.",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
 			"boxState": "normal",
+			"expression": "mic",
+			"text": "And if you SOMEHOW win this...\\n..I will.../nuh.../nGo on a RANT on social media!!!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Bring it."
 		},
 		{
-			"expression": "stop-being-cute",
-			"text": "(Why can't I just date him now...)",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "stop-being-cute",
+			"text": "(Why can't I just date him now...)"
 		}
 	]
 }

@@ -17,7 +17,7 @@
 			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "trolling",
+			"expression": "troll",
 			"text": "Now THAT'S a view to kill for"
 		},
 		{
@@ -37,8 +37,8 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "stop-being-cute",
-			"text": "(Is this year a special occasion because of my plus one???)"
+			"expression": "bruh",
+			"text": "(Huh, maybe it's just booked already.)"
 		},
 		{
 			"speed": 0.05,
@@ -107,7 +107,7 @@
 			],
 			"portrait": "pico",
 			"boxState": "normal",
-			"expression": "wat",
+			"expression": "vine-boom",
 			"text": "Oh."
 		},
 		{

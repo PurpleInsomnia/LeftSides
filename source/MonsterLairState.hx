@@ -272,9 +272,15 @@ class MonsterLairState extends MusicBeatState
                         issl = true;
                     }
                 }
-                if (issl)
+                if (issl && !changing)
                 {
-                    if (!changing)
+                    if (Paths.formatToSongPath(currentArray[curSelected]) == "isolation")
+                    {
+                        MusicBeatState.switchState(new SideStoryState(CoolUtil.coolTextFile("assets/side-stories/data/isolation/dialogue.txt"), "isolation", ""));
+                        FlxG.sound.music.stop();
+                        return;
+                    }
+                    else
                     {
 			            canPress = false;
 

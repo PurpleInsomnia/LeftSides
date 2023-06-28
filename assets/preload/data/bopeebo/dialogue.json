@@ -1,102 +1,144 @@
 {
 	"dialogue": [
 		{
-			"expression": "yell",
-			"text": "HEY!!",
-			"boxState": "angry",
 			"speed": 0.025,
-			"portrait": "dad"
-		},
-		{
-			"expression": "confused",
-			"text": "FUCK I spoke too soon..",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
-			"expression": "scared",
-			"text": "D-Dad?!?!?",
+			"events": [
+				""
+			],
+			"portrait": "dad",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "gf"
-		},
-		{
 			"expression": "yell",
-			"text": "Why is MY daughter trying to teach you how to sing?!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "HEY!!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "FUCK I spoke too soon.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "D-Dad?!?!?/nI...I t-thought you were asleep..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "yell",
+			"text": "Why is MY daughter trying to teach you how to sing?!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "question",
 			"text": "Why am I the bad guy here?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "You're the one that just BUSTS into her room while I knock and wait.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "You're the one that just BUSTS into her room while I knock and wait."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
 			"expression": "mic",
-			"text": "...Are you trying to test me BOY?!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "dad"
+			"text": "...Are you trying to test me BOY?!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "confused",
-			"text": "No.\\nJust trying to point the obvious fact that I am clearly more poli-",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf"
+			"text": "No.\\nJust trying to point the obvious fact that I am clearly more poli-"
 		},
 		{
-			"expression": "yell",
-			"text": "SHUT THE HELL UP!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "dad"
+			"expression": "yell",
+			"text": "SHUT THE HELL UP!"
 		},
 		{
-			"expression": "confused",
-			"text": "Okay, Mister Anderson.",
-			"boxState": "normal",
 			"speed": 0.02,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Okay, Mister Anderson."
 		},
 		{
-			"expression": "mic",
-			"text": "Now, Prove to me that you can date my\\ndaughter...",
-			"boxState": "normal",
 			"speed": 0.03,
-			"portrait": "dad"
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "mic",
+			"text": "Now, Prove to me that you can date my\\ndaughter..."
 		},
 		{
-			"expression": "talk",
-			"text": "Oh and one more thing.\\nDON'T TRY TO FUCKING SWOON HER\\nWHILE I'M SINGING!!!",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "dad"
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "mic",
+			"text": "Oh and one more thing.\\nDON'T TRY TO FUCKING SWOON HER\\nWHILE I'M SINGING!!!"
 		},
 		{
 			"speed": 0.08,
+			"events": [
+				""
+			],
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
 			"text": "Um- Okay?.....\\n(Why the hell is he worried about that...?)"
 		},
 		{
-			"expression": "talk",
-			"text": "",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "bf"
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ""
 		}
 	]
 }

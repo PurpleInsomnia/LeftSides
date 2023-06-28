@@ -78,7 +78,7 @@
 			"portrait": "freeme",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "2. You do your stupid singing shit, and freeze to death right after I eat HER head."
+			"text": "2. You do your stupid singing shit, and freeze to death right after I EAT HER [HEAD]."
 		},
 		{
 			"speed": 0.06,
@@ -108,7 +108,7 @@
 			"portrait": "bf-christmas",
 			"boxState": "angry",
 			"expression": "undertale",
-			"text": "YOU DESERVE TO EXPERIENCE YOUR\\nHORRIFYING DEATH OVER AND OVER\\nAGAIN!"
+			"text": "WHY ARE YOU DOING THIS TO ME?"
 		},
 		{
 			"speed": 0.05,
@@ -297,7 +297,7 @@
 			],
 			"portrait": "freeme",
 			"boxState": "angry",
-			"expression": "insane",
+			"expression": "crazy",
 			"text": "I THINK YOU KNOW BY NOW THAT THE HEAD IS MY FAVORITE!!"
 		},
 		{

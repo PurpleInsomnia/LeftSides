@@ -17,7 +17,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "bruh",
 			"text": "Cheating.\\nHow can you cheat in a rap battle?"
 		},
 		{
@@ -77,7 +77,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "angry",
 			"text": "Are you that dense?"
 		},
 		{
@@ -87,7 +87,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "hmph",
+			"expression": "angry",
 			"text": "Just accept that my boyfriend is better than you at most things...."
 		},
 		{
@@ -251,14 +251,14 @@
 			"text": "Oh ok.\\nI totally will not shoot you."
 		},
 		{
-			"speed": 0.05,
+			"expression": "scared",
+			"text": "(That doesn't seem legit....)",
 			"events": [
 				""
 			],
-			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "scared",
-			"text": "(That doesn't seem legit....)"
+			"speed": 0.05,
+			"portrait": "gf"
 		}
 	]
 }

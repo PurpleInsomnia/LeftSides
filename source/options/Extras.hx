@@ -12,7 +12,7 @@ import CoolUtil.CompletionData;
 
 class Extras extends MusicBeatState
 {
-	var extras:Array<String> = ["Custom DLC API", "Completion Checklist"];
+	var extras:Array<String> = ["Custom DLC API", "Completion Checklist", "Follow My Twitter For Updates!"];
 
 	var extrasGrp:FlxTypedGroup<Alphabet>;
 
@@ -47,7 +47,7 @@ class Extras extends MusicBeatState
 
 		for (i in 0...extras.length)
 		{
-			var a:Alphabet = new Alphabet(0, 40, extras[i], true, false, 0.05, 0.95);
+			var a:Alphabet = new Alphabet(0, 40, extras[i], true, false, 0.05, 0.85);
 			a.screenCenter(X);
 			a.y += 90 * i;
 			a.ID = i;
@@ -81,6 +81,8 @@ class Extras extends MusicBeatState
 					{
 						canPress = true;
 					}));
+				case 2:
+					CoolUtil.browserLoad("https://twitter.com/_purpleinsomnia");
 			}
 		}
 		if (controls.BACK && canPress)

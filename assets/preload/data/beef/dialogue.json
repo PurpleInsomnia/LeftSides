@@ -31,14 +31,14 @@
 			"text": "Your girlfriend looks like a fucking chilli pepper.\\n...Also, why is she wearing my dress?"
 		},
 		{
-			"speed": 0.04,
+			"speed": 0.14,
 			"events": [
 				""
 			],
 			"portrait": "bootleg",
 			"boxState": "normal",
 			"expression": "gf",
-			"text": "Help."
+			"text": "HELP!/nHELLP!/nHELP ME!/nHELLLLLP!"
 		},
 		{
 			"speed": 0.04,

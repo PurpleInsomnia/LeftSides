@@ -3,12 +3,12 @@ none|piss|Tess walks down the stairs with the box of tissues from my bedroom bef
 tess|hmph|...Okay...||default
 none|piss|She imediately begins to tear up.||ben
 tess|tears|...I want to umm..s-start off by asking you w-what that monster said to you a few w-weeks back?
-ben|guilt|...They told me...
+ben|guilt|...They told me...||default
 none|piss|I fidget around, trying to ignore the urge to start crying.||ben
 ben|guilt|...They told me that your were stabbed with a broken bottle...and starved of food...||default
 ben|guilt|...They said that you were s-suicidal...that you had a giant bruise on your back.
 none|piss|Tears start running down my face as I try my hardest not to start hyperventalating.||ben
-ben|tears|...T-they told me that your d-dad threw you off a b-balcony....and s-said that's how you r-really broke your arm...
+ben|tears|...T-they told me that your d-dad threw you off a b-balcony....and s-said that's how you r-really broke your arm...||default
 tess|tears|...
 none|piss|Tess suddenly stares at me with a horrified expression. She starts shaking.||ben
 tess|horrified|How did they come to that conclusion?||default
@@ -52,10 +52,10 @@ monster|insane|THAT'S WHAT YOU [FUCKING] DID TO ME.||dark
 monster|insane|All this effort...and he still thinks what he did to himself was [DISGUSTING].
 tess|tears|th...that's not.....t-true...
 monster|insane|YOU DON'T KNOW A GODDAMN THING ABOUT HIS THOUGHT PROCESS.
-monster|insane|GAHH! YOU MAKE ME TO [DISGUSTED]!!!
+monster|insane|GAHH! YOU MAKE ME TOO [DISGUSTED]!!!
 none|funnycutscene|l
 none|tesswhenthe||none|default
-ben|scared|AHHH!|benRoomNight|benRoomNight
+ben|scared|AHHH!|benRoomNight
 none|piss|Tess' bloodcurdling scream wakes me up.||ben
 none|piss|She feels around her body, like she's making sure that it still exists. Then proceeds to sob after curling up into a ball.
 ben|scared|W-what the hell happened?!||default

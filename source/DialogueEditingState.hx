@@ -96,6 +96,11 @@ class DialogueEditingState extends MusicBeatState
         camFront.zoom = 0.75;
         camFront.y += 100;
 
+        if (!FlxG.mouse.visible)
+        {
+            FlxG.mouse.visible = true;
+        }
+
         // using that for now.
         lines = daFile.dialogue;
 
@@ -405,6 +410,14 @@ class DialogueEditingState extends MusicBeatState
             }
 		}
         super.update(elapsed);
+
+        if (char.animJson != null)
+        {
+            if (char.animation.curAnim != null && !char.animJson.loops && char.animation.finished)
+            {
+                char.animation.play("idle", true);
+            }
+        }
 
         if (finished)
         {

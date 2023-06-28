@@ -18,7 +18,7 @@
 			"speed": 0.07,
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "tired",
 			"text": "Seven In The Morning...."
 		},
 		{
@@ -32,7 +32,7 @@
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "say-what",
+			"expression": "what",
 			"text": "(Guess she changed her mind about not bringing it up...)"
 		},
 		{
@@ -46,14 +46,14 @@
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "say-what",
+			"expression": "what",
 			"text": "(Hope she's not upset at me or anything...)\\n(But I guess that I shouldn't overthink about what she needs to say....)"
 		},
 		{
 			"speed": 0.07,
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "sleepy",
+			"expression": "tired",
 			"text": "(And now to making coffee....)"
 		}
 	]

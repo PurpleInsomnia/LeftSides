@@ -136,47 +136,6 @@ class StageEditorState extends PlayState
 			}
 		}
 
-        switch (name)
-		{
-            case 'stage':
-                var bg:BGSprite = new BGSprite('fnf/stageback', -600, -200);
-				add(bg);
-
-				var stageFront:BGSprite = new BGSprite('fnf/stagefront', -650, 600);
-				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-				stageFront.updateHitbox();
-				add(stageFront);
-
-                backgroundSprites.push(bg);
-				backgroundSprites.push(stageFront);
-			case 'limo': //Week 4
-				var suffix:String = '';
-				var suffixReal = '';
-
-				if (daSong.song == 'Satin Panties' || daSong.song == 'Dance Interstate')
-				{
-					suffix = 'SUNSET';
-					suffixReal = 'Real';
-					if (daSong.song == "Dance Interstate")
-                    {
-						suffixReal = "Realer";
-                    }
-					var shader = new BGSprite('limo/sunsetShader', 0, 0, 0, 0);
-					shader.blend = BlendMode.MULTIPLY;
-					shader.cameras = [camShader];
-					add(shader);
-				}
-
-				var skyBG = new BGSprite('limo/limoSunset' + suffixReal, -120 - 3936, -150, 0.1, 0.1);
-				add(skyBG);
-
-				modchartTweens.set('limoSunsetMove', FlxTween.tween(skyBG, {x: -120}, 150, {type: LOOPING}));
-				// modchartTweens.get('limoSunsetMove').active = false;
-
-				limo = new BGSprite('limo/limoDrive' + suffix, -120, 550, 1, 1, ['Limo stage'], true);
-                add(limo);
-        }
-
         var gfVersion:String = daSong.player3;
 		if(gfVersion == null || gfVersion.length < 1) 
         {
@@ -201,8 +160,16 @@ class StageEditorState extends PlayState
 		gfGroup = new FlxSpriteGroup(daData.girlfriend[0], daData.girlfriend[1]);
 
         add(gfGroup);
-        add(dadGroup);
-        add(boyfriendGroup);
+
+		gfLayer = new FlxTypedGroup<Dynamic>();
+		add(gfLayer);
+
+		add(dadGroup);
+
+		dadLayer = new FlxTypedGroup<Dynamic>();
+		add(dadLayer);
+
+		add(boyfriendGroup);
 
         gf = new Character(0, 0, gfVersion);
         gf.scrollFactor.set(0.95, 0.95);
@@ -219,52 +186,6 @@ class StageEditorState extends PlayState
         boyfriend.x += boyfriend.positionArray[0];
 		boyfriend.y += boyfriend.positionArray[1];
         boyfriendGroup.add(boyfriend);
-
-        switch (name)
-        {
-            case "stage":
-				if(!ClientPrefs.lowQuality) 
-				{
-					var light:BGSprite = new BGSprite("fnf/light", -600, -200, 0.9, 0.9);
-					light.setGraphicSize(Std.int(light.width * 1.1));
-					light.updateHitbox();
-					light.alpha = 0.25;
-					light.blend = BlendMode.ADD;
-					light.inFront = true;
-                    light.isLightSource = true;
-					add(light);
-					var light2:BGSprite = new BGSprite("fnf/light", -600, -200, 0.9, 0.9);
-					light2.setGraphicSize(Std.int(light2.width * 1.1));
-					light2.updateHitbox();
-					light2.alpha = 0.25;
-					light2.flipX = true;
-					light2.blend = BlendMode.ADD;
-					light2.inFront = true;
-                    light2.isLightSource = true;
-					add(light2);
-
-					var floorLight:BGSprite = new BGSprite('fnf/stagefrontLIGHTS', -650, 600);
-					floorLight.setGraphicSize(Std.int(floorLight.width * 1.1));
-					floorLight.updateHitbox();
-					floorLight.alpha = 0.25;
-					floorLight.blend = BlendMode.ADD;
-					floorLight.inFront = true;
-					add(floorLight);
-
-
-					var stageCurtains:BGSprite = new BGSprite('fnf/stagecurtains', -700, -300, 1.3, 1.3);
-					//stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 1.1));
-					stageCurtains.updateHitbox();
-					stageCurtains.inFront = true;
-					add(stageCurtains);
-
-                    backgroundSprites.push(light);
-					backgroundSprites.push(light2);
-					backgroundSprites.push(floorLight);
-					backgroundSprites.push(stageCurtains);
-					backgroundSprites.push(stageCrowd);
-				}
-        }
 
         if (daSong.player2 == gfVersion)
         {

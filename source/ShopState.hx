@@ -275,10 +275,12 @@ class ShopState extends MusicBeatState
 
         if (item == "secret-key")
         {
+            FlxG.sound.music.stop();
             MusicBeatState.switchState(new UnlockState([["Lol", "All Secret Songs within the freeplay and lair menu!"]]));
         }
         if (item == "costume-box")
         {
+            FlxG.sound.music.stop();
             MusicBeatState.switchState(new UnlockState([["Lol", "A lot of costumes in the 'Wardrobe Menu'!"]]));
         }
     }

@@ -1,0 +1,78 @@
+var stageCrowd:BGSprite = null;
+function onCreate()
+{
+    var bg:BGSprite = new BGSprite('fnf/stageback', -600, -200);
+	add(bg, false);
+
+	var stageFront:BGSprite = new BGSprite('fnf/stagefront', -650, 600);
+	stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+	stageFront.updateHitbox();
+	add(stageFront, false);
+
+	lePlayState.backgroundSprites.push(bg);
+	lePlayState.backgroundSprites.push(stageFront);
+
+    if(!ClientPrefs.lowQuality) 
+	{
+		var light:BGSprite = new BGSprite("fnf/light", -600, -200, 0.9, 0.9);
+		light.setGraphicSize(Std.int(light.width * 1.1));
+		light.updateHitbox();
+		light.alpha = 0.25;
+		light.blend = BlendMode.ADD;
+		light.inFront = true;
+		light.isLightSource = true;
+		add(light);
+		var light2:BGSprite = new BGSprite("fnf/light", -600, -200, 0.9, 0.9);
+		light2.setGraphicSize(Std.int(light2.width * 1.1));
+	    light2.updateHitbox();
+		light2.alpha = 0.25;
+		light2.flipX = true;
+		light2.blend = BlendMode.ADD;
+		light2.inFront = true;
+		light2.isLightSource = true;
+		add(light2);
+
+		var floorLight:BGSprite = new BGSprite('fnf/stagefrontLIGHTS', -650, 600);
+	    floorLight.setGraphicSize(Std.int(floorLight.width * 1.1));
+		floorLight.updateHitbox();
+		floorLight.alpha = 0.25;
+		floorLight.blend = getBlend("add");
+		floorLight.inFront = true;
+		floorLight.isLightSource = true;
+		add(floorLight);
+
+
+		var stageCurtains:BGSprite = new BGSprite('fnf/stagecurtains', -700, -300, 1.3, 1.3);
+		//stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 1.1));
+		stageCurtains.updateHitbox();
+		stageCurtains.inFront = true;
+		add(stageCurtains);
+
+		stageCrowd = new BGSprite("fnf/crowd", -650, 600, 1, 1, ["crowd bop"], false);
+		stageCrowd.setGraphicSize(Std.int(stageCrowd.width * 1.1));
+		stageCrowd.updateHitbox();
+		add(stageCrowd);
+
+		lePlayState.backgroundSprites.push(light);
+		lePlayState.backgroundSprites.push(light2);
+		lePlayState.backgroundSprites.push(floorLight);
+		lePlayState.backgroundSprites.push(stageCurtains);
+		lePlayState.backgroundSprites.push(stageCrowd);
+	}
+}
+
+function onCountdownTick(counter:Int)
+{
+    if (!ClientPrefs.lowQuality)
+    {
+        stageCrowd.dance();
+    }
+}
+
+function onBeatHit()
+{   
+    if (!ClientPrefs.lowQuality)
+    {
+        stageCrowd.dance();
+    }
+}

@@ -2,6 +2,9 @@
 	"dialogue": [
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "tess",
 			"boxState": "normal",
 			"expression": "hmph",
@@ -9,6 +12,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "cool",
@@ -16,6 +22,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "cool",
@@ -23,6 +32,9 @@
 		},
 		{
 			"speed": 0.07,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "tired",
@@ -30,13 +42,19 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
-			"expression": "talk",
+			"expression": "default",
 			"text": "Thanks for watching USERNAME!! Bee sher to subscibe for moar funny epic praink and joks!!"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "tired",
@@ -44,6 +62,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "tess",
 			"boxState": "normal",
 			"expression": "cringe",
@@ -51,6 +72,9 @@
 		},
 		{
 			"speed": 0.025,
+			"events": [
+				""
+			],
 			"portrait": "ron",
 			"boxState": "normal",
 			"expression": "default",
@@ -58,6 +82,9 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ben",
 			"boxState": "normal",
 			"expression": "happy",

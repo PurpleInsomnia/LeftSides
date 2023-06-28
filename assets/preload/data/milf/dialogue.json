@@ -48,7 +48,7 @@
 			"portrait": "mom",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "Imma keep it real with you cheif.\\nI don't really want my daughter dating you."
+			"text": "Imma keep it real with you chief.\\nI don't really want my daughter dating you."
 		},
 		{
 			"speed": 0.05,
@@ -58,7 +58,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
-			"text": "I think your goddamn 19 year old daughter can decide that for herself."
+			"text": "I think your goddamn ADULT daughter can decide that for herself."
 		},
 		{
 			"speed": 0.05,
@@ -198,7 +198,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "angry",
-			"text": "Fuck you!\\nI may not have a shit ton of money or a\\nmansion.."
+			"text": "Fuck you! AND your stupid undertale lore./nI may not have a shit ton of money or a mansion.."
 		},
 		{
 			"speed": 0.05,
@@ -238,7 +238,7 @@
 			"portrait": "mom",
 			"boxState": "normal",
 			"expression": "flert",
-			"text": "Then he shall PERISH!"
+			"text": "Then he shall...uh./nNot press the space bar in time!"
 		}
 	]
 }

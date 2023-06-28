@@ -543,6 +543,9 @@ class ClientPrefs {
 				},
 				"that-day" => {
 					false;
+				},
+				"isolation" => {
+					false;
 				}
 			];
 		}

@@ -61,7 +61,16 @@ class LoadingScreenState extends MusicBeatState
 		done = false;
 
 		FlxG.sound.music.stop();
-		FlxG.sound.playMusic(Paths.music("loading"));
+		var loadingMusic:String = "loading";
+		var get:String = PlayStateMeta.dataFile.loadingMusic;
+		if (get != null)
+		{
+			loadingMusic = get;
+		}
+		if (get.toLowerCase() != "none")
+		{
+			FlxG.sound.playMusic(Paths.music(loadingMusic));
+		}
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
@@ -106,7 +115,10 @@ class LoadingScreenState extends MusicBeatState
 			{
 				done = true;
 				LoadingState.loadAndSwitchState(new PlayState());
-				FlxG.sound.music.stop();
+				if (get.toLowerCase() != "none")
+				{
+					FlxG.sound.music.stop();
+				}
 			}
 		});
 	}

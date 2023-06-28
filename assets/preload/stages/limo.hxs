@@ -1,0 +1,40 @@
+var limo:BGSprite = null;
+function onCreate()
+{
+    var suffix:String = "";
+	var suffixReal:String = "";
+
+	if (PlayState.SONG.song == 'Satin Panties' || PlayState.SONG.song == 'Dance Interstate')
+	{
+		suffix = 'SUNSET';
+		suffixReal = 'Real';
+		if (PlayState.SONG.song == "Dance Interstate")
+        {
+			suffixReal = "Realer";
+        }
+		var shader = new BGSprite('limo/sunsetShader', 0, 0, 0, 0);
+		shader.blend = BlendMode.MULTIPLY;
+		shader.cameras = [lePlayState.camShader];
+		add(shader);
+	}
+
+	var skyBG = new BGSprite('limo/limoSunset' + suffixReal, -120 - 3936, -150, 0.1, 0.1);
+	add(skyBG, false);
+
+	lePlayState.backgroundSprites.push(skyBG);
+
+	if (PlayState.SONG.song != 'Milf' && PlayState.SONG.song != "Dance Interstate")
+	{
+		lePlayState.modchartTweens.set('limoSunsetMove', FlxTween.tween(skyBG, {x: -120}, 150, {ease: FlxEase.sineOut}));
+	}
+	else
+	{
+		lePlayState.modchartTweens.set('limoSunsetMove', FlxTween.tween(skyBG, {x: -120}, 150, {type: FlxTweenType.looping}));
+	}
+
+	limo = new BGSprite('limo/limoDrive' + suffix, -120, 550, 1, 1, ['Limo stage'], true);
+    limo.inFront = true;
+    lePlayState.gfLayer.add(limo);
+
+    lePlayState.backgroundSprites.push(limo);
+}

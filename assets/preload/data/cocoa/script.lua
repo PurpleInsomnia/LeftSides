@@ -30,7 +30,7 @@ local bgAlpha = function (val, tween, sec)
 end
 
 function onCreate()
-	dialogueBg('mall1', false);
+	dialogueBg('black', false);
 
 	setProperty('boppers.visible', true);
 

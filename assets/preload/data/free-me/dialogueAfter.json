@@ -237,7 +237,7 @@
 			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "trolling",
+			"expression": "troll",
 			"text": "*Among Us Sound* \\nThat'd be lovely. "
 		},
 		{
@@ -327,7 +327,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "cringe",
+			"expression": "concerned",
 			"text": "...You okay?..."
 		},
 		{
@@ -357,7 +357,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "cringe",
+			"expression": "concerned",
 			"text": "...Baby...I know that you're trying really, really hard to bounce back from everything\\nthat was thrown at you earlier this year.."
 		},
 		{
@@ -367,7 +367,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "cringe",
+			"expression": "concerned",
 			"text": "...And I'm so proud of you for doing that.\\nAnd ever since I gathered the courage to tell you my feelings for you,"
 		},
 		{
@@ -438,7 +438,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "confused",
-			"text": "...And then go back to being miserable because we have work the next day. I hate it when people get Mayonaise on thier sandwich."
+			"text": "...And then go back to being miserable because we have work the next day. I hate it when people get Mayonaise on their sandwich."
 		},
 		{
 			"speed": 0.05,
@@ -471,11 +471,14 @@
 			"text": "I'll um...think about some options..."
 		},
 		{
-			"expression": "happy",
-			"text": "Sounds good...",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Sounds good..."
 		}
 	]
 }

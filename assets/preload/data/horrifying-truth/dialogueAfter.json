@@ -1,273 +1,390 @@
 {
 	"dialogue": [
 		{
-			"expression": "angry",
-			"text": "You ASSHOLES pushed him to his limits!!",
-			"boxState": "angry",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "You ASSHOLES pushed him to his limits!!"
 		},
 		{
-			"expression": "default",
-			"text": "He'll be fine hun! How about we-",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "mom-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "He'll be fine hun! How about we-"
 		},
 		{
-			"expression": "tired",
-			"text": "do..don't take her home you p-pricks....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "tired",
+			"text": "do..don't take her home you p-pricks...."
 		},
 		{
-			"expression": "nervous",
-			"text": "A-are you okay?....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "nervous",
+			"text": "A-are you okay?...."
 		},
 		{
-			"expression": "tired",
-			"text": "...It's just.....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "bf",
-			"text": "I'm...I'm so sorry about everything thats happened to you....",
 			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.05
+			"expression": "tired",
+			"text": "...It's just....."
 		},
 		{
-			"expression": "bf",
-			"text": "That Monster killed you in my trance...and just taunted both of us....",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "hug",
 			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.05
+			"expression": "bf",
+			"text": "I'm...I'm so sorry about everything thats happened to you...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
+			"expression": "bf",
+			"text": "That Monster killed you in my trance...and just taunted both of us...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
 			"expression": "gf",
-			"text": "Did he umm.......s-say anything about me?....",
-			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.05
+			"text": "Did they umm.......s-say anything about me?...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
 			"expression": "bf",
-			"text": "I...",
-			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.05
+			"text": "I..."
 		},
 		{
+			"speed": 0.06,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
 			"expression": "bf",
-			"text": "I don't want to talk about it now.....",
-			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.06
+			"text": "I don't want to talk about it now....."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
 			"expression": "bf",
-			"text": "But it made me want to vommit.....",
-			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.05
+			"text": "But it made me want to vommit....."
 		},
 		{
+			"speed": 0.07,
+			"events": [
+				""
+			],
+			"portrait": "hug",
+			"boxState": "normal",
 			"expression": "gf",
-			"text": "Oh my god.....",
-			"boxState": "normal",
-			"portrait": "hug",
-			"speed": 0.07
+			"text": "Oh my god....."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "scared",
-			"text": "We're going home...",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
+			"text": "We're going home..."
 		},
 		{
-			"expression": "angry",
-			"text": "I'm done yelling at my parents.\\nThey mean NOTHING to me anymore.....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I'm done yelling at my parents.\\nThey mean NOTHING to me anymore....."
 		},
 		{
-			"expression": "angry",
-			"text": "You're not getting rid of contact with us you bit-",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad-christmas",
 			"boxState": "angry",
-			"portrait": "dad-christmas",
-			"speed": 0.05
+			"expression": "angry",
+			"text": "You're not getting rid of contact with us you bit-"
 		},
 		{
-			"expression": "angry",
-			"text": "I better not EVER see your crusty asses OR your henchmen stalk my house, understood?",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
-			"speed": 0.05
-		},
-		{
+			"boxState": "normal",
 			"expression": "angry",
-			"text": "Don't ever call us too.",
-			"boxState": "normal",
+			"text": "I better not EVER see your crusty asses OR your henchmen stalk my house, understood?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Don't ever call us too."
 		},
 		{
-			"expression": "default",
-			"text": "...\\nPricks.\\n*Leaves*",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "dad-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "...\\nPricks.\\n*Leaves*"
 		},
 		{
-			"expression": "no",
-			"text": "",
-			"boxState": "normal",
+			"speed": 0.005,
+			"events": [
+				""
+			],
 			"portrait": "dad",
-			"speed": 0.005
-		},
-		{
-			"expression": "come-again",
-			"text": "Hey....you okay?...",
 			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
+			"expression": "no",
+			"text": ""
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "come-again",
+			"text": "Hey....you okay?..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "tired",
-			"text": "Y-yeah sorry...It's just really hard to come to terms with everything....",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "Y-yeah sorry...It's just really hard to come to terms with everything...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "nervous",
-			"text": "I know....\\n...I'm sorry that you had to find out like this.....",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
+			"text": "I know....\\n...I'm sorry that you had to find out like this....."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "annoyed",
-			"text": "Better now than never....",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "Better now than never...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "...It was kinda badass seeing you angry with someone.",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "...It was kinda badass seeing you angry with someone."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "cute-af",
-			"text": "Really?",
+			"text": "Really?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
 			"boxState": "normal",
+			"expression": "default",
+			"text": "Yeah!\\nLet's not ignore the fact that EVERYONE in the MALL sided with you!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "Yeah!\\nLet's not ignore the fact that EVERYONE in the MALL sided with you!",
 			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
-		},
-		{
 			"expression": "default",
-			"text": "Glad to know that they did!",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "Glad to know that they did!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "come-again",
-			"text": "...Ummm can I ask you something?",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
+			"text": "...Ummm can I ask you something?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "vine-boom",
-			"text": "What's up?",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "What's up?"
 		},
 		{
-			"expression": "come-again",
-			"text": "I um....feel really, REALLY safe whenever I'm around you......So do you um....mind if I um....move into your place?",
-			"boxState": "normal",
-			"portrait": "gf-christmas",
-			"speed": 0.05
-		},
-		{
-			"expression": "cute-af",
-			"text": "A-and it's not only the fact that I feel safe...I love you to DEATH and I love being around you!",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "come-again",
+			"text": "I um....feel really, REALLY safe whenever I'm around you......So do you um....mind if I um....move into your place?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
+			"expression": "cute-af",
+			"text": "A-and it's not only the fact that I feel safe...I love you to DEATH and I love being around you!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "anime",
-			"text": "Of course you can! I mean- Do you have everything you NEED at my place?",
-			"boxState": "normal",
-			"portrait": "bf-christmas",
-			"speed": 0.05
+			"text": "Of course you can! I mean- Do you have everything you NEED at my place?"
 		},
 		{
-			"expression": "come-again",
-			"text": "I think so....\\nI know that I left your hoodie at my place....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "come-again",
+			"text": "I think so....\\nI know that I left your hoodie at my place...."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "nervous",
-			"text": "S-sorry about that.....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "S-sorry about that....."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "default",
-			"text": "It's cool, I have plenty more.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"text": "It's cool, I have plenty more."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "cute-af",
-			"text": "Sweet!\\nWanna um.....play video games when we get home?",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "Sweet!\\nWanna um.....play video games when we get home?"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf-christmas",
+			"boxState": "normal",
 			"expression": "annoyed",
-			"text": "I found this Goofy Ass Dating Sim that we could try....Called ''Hating Simulator'' or something dumb...",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "bf-christmas"
+			"text": "I found this Goofy Ass Dating Sim that we could try....Called ''Hating Simulator'' or something dumb..."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf-christmas",
+			"boxState": "normal",
 			"expression": "cute-af",
-			"text": "Sounds like a plan.....",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "gf-christmas"
+			"text": "Sounds like a plan....."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "normal",
 			"expression": "tired",
@@ -275,20 +392,29 @@
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf-christmas",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "...We're gonna miss our bus if we keep standing here....'"
+			"text": "...We're gonna miss our bus if we keep standing here...."
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "normal",
 			"expression": "tired",
-			"text": "(...She will talk when she decides to, Ben....)"
+			"text": "(...She will talk when she decides to, Bently....)"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf-christmas",
 			"boxState": "normal",
 			"expression": "tired",

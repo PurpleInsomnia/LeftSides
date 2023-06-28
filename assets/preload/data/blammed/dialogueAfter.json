@@ -227,7 +227,7 @@
 			],
 			"portrait": "gf",
 			"boxState": "angry",
-			"expression": "hmph",
+			"expression": "angry",
 			"text": "What the hell is wrong with you dad?!??\\nYou nearly got him killed!!!"
 		},
 		{
@@ -308,7 +308,7 @@
 			"portrait": "dad",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "I'm sorry who?"
+			"text": "I'm sorry, who?"
 		},
 		{
 			"speed": 0.05,

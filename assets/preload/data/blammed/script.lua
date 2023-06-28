@@ -47,7 +47,7 @@ function onEndSong()
 		setProperty('inCutscene', true);
 		inScene = true;
 		runTimer('startAfterDialogue', 0.08);
-		dialogueBg('dialogueBgs/pico2');
+		dialogueBg('dialogueBgs/black');
 		allowCountdown = true;
 		return Function_Stop;
 	end

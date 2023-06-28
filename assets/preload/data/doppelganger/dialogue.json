@@ -1,270 +1,369 @@
 {
 	"dialogue": [
 		{
-			"expression": "what",
-			"text": "The goddamn rain makes it hard to see....",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "what",
+			"text": "The goddamn rain makes it hard to see...."
 		},
 		{
 			"expression": "stop-being-cute",
 			"text": "The rain makes it hard to see you...",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"expression": "blush",
 			"text": "Right back at ya cutie.",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
 			"expression": "cute-blushing",
-			"text": "Hey! You know I get all giddy whenever you call me ''cutie''!"
+			"text": "Hey! You know I get all giddy whenever you call me ''cutie''!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
 			"expression": "sus",
-			"text": "Exactly why I called you that."
+			"text": "Exactly why I called you that.",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "bf"
 		},
 		{
 			"expression": "cringe",
 			"text": "Ummm....I-I don't want to be a total buzzkill\\nor anything....But I feel like someone is stalking us...",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
-			"expression": "challenge",
-			"text": "Don't worry, I've got this..",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "no",
-			"text": "",
-			"boxState": "normal",
-			"portrait": "dad",
-			"speed": 0.05
-		},
-		{
-			"expression": "angry",
-			"text": "Hey if you are like, stalking us you should probably leave before I kick your ass!",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "default",
-			"text": "beep.",
-			"boxState": "normal",
-			"portrait": "ogbf",
-			"speed": 0.02
+			"speed": 0.05,
+			"portrait": "gf"
 		},
 		{
 			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Don't worry, I've got this.."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "dad",
+			"boxState": "normal",
+			"expression": "no",
+			"text": ""
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Hey if you are like, stalking us you should probably leave before I kick your ass!"
+		},
+		{
+			"speed": 0.02,
+			"events": [
+				""
+			],
+			"portrait": "ogbf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "beep."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "hmph",
 			"text": "(I knew it)"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "guilt",
-			"text": "Ok, getting weird now.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Ok, getting weird now."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "challenge",
-			"text": "You've got a lot of nerve trying to steal my look!",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "You've got a lot of nerve trying to steal my look!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "cringe",
-			"text": "....And failing horribly....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "....And failing horribly...."
 		},
 		{
-			"expression": "default",
-			"text": "Bap skep deep bo.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ogbf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Bap skep deep bo."
 		},
 		{
-			"expression": "what",
-			"text": "What the hell are you speaking????\\nDial-Up internet????",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "talk",
-			"text": "He said ''I think you're the faker around here''.",
 			"boxState": "normal",
-			"portrait": "oggf",
-			"speed": 0.05
+			"expression": "what",
+			"text": "What the hell are you speaking????\\nDial-Up internet????"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "oggf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "He said ''I think you're the faker around here''."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "look",
-			"text": "Was that a SA2 reference? (Just without the ''hedgehog'' part?)",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Was that a SA2 reference? (Just without the ''hedgehog'' part?)"
 		},
 		{
-			"expression": "hmph",
-			"text": "And who are you?",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "gf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "And who are you?"
 		},
 		{
-			"expression": "talk",
-			"text": "I'm Girlfriend!",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "oggf",
-			"speed": 0.05
-		},
-		{
-			"expression": "hmph",
-			"text": "Thats the stupidest name in the history of existance.",
 			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"expression": "wink",
+			"text": "I'm Girlfriend!"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Thats the stupidest name in the history of existance."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "what",
-			"text": "Um......",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "Um......"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
 			"expression": "waking-up",
-			"text": "I guess you guys wanna rap battle?....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "I guess you guys wanna rap battle?...."
 		},
 		{
-			"expression": "talk",
-			"text": "beep!",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ogbf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "beep!"
 		},
 		{
-			"expression": "talk",
-			"text": "Skeep doob bop.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ogbf",
-			"speed": 0.05
-		},
-		{
-			"expression": "talk",
-			"text": "English Motherfucker do you speak it?!?!",
 			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"expression": "default",
+			"text": "Skeep doob bop."
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "English Motherfucker do you speak it?!?!"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "ogbf",
+			"boxState": "normal",
 			"expression": "wat",
-			"text": "eep-",
-			"boxState": "normal",
-			"portrait": "ogbf",
-			"speed": 0.05
+			"text": "eep-"
 		},
 		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
 			"expression": "scared",
-			"text": "Hey babe, maybe lets not do this.... I really don't want to catch a cold in this rain..",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
+			"text": "Hey babe, maybe lets not do this.... I really don't want to catch a cold in this rain.."
 		},
 		{
-			"expression": "default",
-			"text": "Bitch shut the fuck up, you're ruining my eye candy.",
-			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "oggf"
+			"events": [
+				""
+			],
+			"portrait": "oggf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Bitch shut the fuck up, you're ruining my eye candy."
 		},
 		{
-			"expression": "talk",
-			"text": "HEY!\\nDON'T TALK TO HER LIKE THAT!",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "angry",
-			"speed": 0.05,
-			"portrait": "bf"
-		},
-		{
 			"expression": "talk",
-			"text": "She's not that fragile you defensive baby.",
-			"boxState": "normal",
-			"speed": 0.05,
-			"portrait": "oggf"
+			"text": "HEY!\\nDON'T TALK TO HER LIKE THAT!"
 		},
 		{
-			"expression": "confused",
-			"text": "you have no idea...",
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "oggf",
 			"boxState": "normal",
+			"expression": "talk",
+			"text": "She's not that fragile you defensive baby."
+		},
+		{
 			"speed": 0.065,
-			"portrait": "bf"
-		},
-		{
-			"expression": "default",
-			"text": "Lmao shut the fuck up.",
+			"events": [
+				""
+			],
+			"portrait": "bf",
 			"boxState": "normal",
-			"portrait": "ogbf",
-			"speed": 0.05
-		},
-		{
-			"expression": "hmph",
-			"text": "Damn. These guys are assholes...",
-			"boxState": "normal",
-			"portrait": "gf",
-			"speed": 0.05
-		},
-		{
 			"expression": "confused",
-			"text": "Indeed they are...",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
+			"text": "you have no idea..."
 		},
 		{
-			"expression": "default",
-			"text": "Anyways....",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "challenge",
-			"text": "Hello and welcome back to me kicking someone's\\nass. Today's subject; ''Faker''.",
-			"boxState": "normal",
-			"portrait": "bf",
-			"speed": 0.05
-		},
-		{
-			"expression": "talk",
-			"text": "boop.",
-			"boxState": "normal",
+			"speed": 0.05,
+			"events": [
+				""
+			],
 			"portrait": "ogbf",
-			"speed": 0.05
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Lmao shut the fuck up."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "hmph",
+			"text": "Damn. These guys are assholes..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Indeed they are..."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Anyways...."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "challenge",
+			"text": "Hello and welcome back to me kicking someone's\\nass. Today's subject; ''Faker''."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "ogbf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "boop."
 		}
 	]
 }

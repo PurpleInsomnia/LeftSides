@@ -2,7 +2,7 @@
 -- PurpleInsomnia
 function onCountdownTick(counter)
 	if counter == 3 and not getProperty('delayedInfo') then
-		doTweenX('camInfoMove', 'camInfo', 0, 0.75, 'quintOut');
+		doTweenX('camInfoMove', 'camInfo', 0, 0.75, 'circOut');
 	end
 	if counter == 3 and getProperty('delayedInfo') then
 		switchSongName();

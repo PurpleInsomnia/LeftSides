@@ -1,0 +1,12 @@
+{
+    "wardrobeEnabled": true,
+    "loadingDirectory": "",
+    "pauseMusic": "breakfast",
+    "strumSkins": {
+        "dad": "",
+        "bf": "",
+        "gf": ""
+    },
+    "ratingPack": "",
+    "songInfoType": "custom"
+}

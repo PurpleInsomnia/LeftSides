@@ -118,7 +118,7 @@
 			"portrait": "mom",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "You know why."
+			"text": "Now, it's important that you two use protectio-"
 		},
 		{
 			"speed": 0.05,
@@ -127,8 +127,8 @@
 			],
 			"portrait": "gf",
 			"boxState": "normal",
-			"expression": "cringe",
-			"text": "I don't think we use the word ''cuddle'' like that...."
+			"expression": "oh-embarrassed",
+			"text": "Okayyy Mom! C-conversation over..."
 		},
 		{
 			"speed": 0.05,
@@ -138,17 +138,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "confused",
-			"text": "Agreed. Cuddle means cuddle, nothing more."
-		},
-		{
-			"speed": 0.05,
-			"events": [
-				""
-			],
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "what",
-			"text": "Ok, SOMETIMES it can turn in that direction.\\nBut still, you're still cuddling to BEGIN with..."
+			"text": "Yeah...we're not...stupid teenagers...?"
 		},
 		{
 			"speed": 0.05,
@@ -158,7 +148,7 @@
 			"portrait": "mom",
 			"boxState": "normal",
 			"expression": "default",
-			"text": "Another round. we have a long drive ahead of us."
+			"text": "19 is still a teenager."
 		},
 		{
 			"speed": 0.05,
@@ -167,8 +157,18 @@
 			],
 			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "tired",
-			"text": "But I don't want to..."
+			"expression": "angry",
+			"text": "Yeah, but we're not stupid./nIn fact, why the hell are we arguing about this? Tess and I KNOW the do's and don'ts. What I'm saying is that you're talkin to us like we're 15."
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "mom",
+			"boxState": "normal",
+			"expression": "flert",
+			"text": "Nuh uh./nAnother round, we have a long drive ahead~."
 		},
 		{
 			"speed": 0.05,

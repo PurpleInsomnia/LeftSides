@@ -1,5 +1,13 @@
 {
     "wardrobeEnabled": false,
-    "loadingDirectory": "",
-    "pauseMusic": "breakfast"
+    "loadingDirectory": "isolation",
+    "loadingMusic": "none",
+    "pauseMusic": "breakfast",
+    "strumSkins": {
+        "dad": "",
+        "bf": "",
+        "gf": ""
+    },
+    "ratingPack": "",
+    "songInfoType": "default"
 }

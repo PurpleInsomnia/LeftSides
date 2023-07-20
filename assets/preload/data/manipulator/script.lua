@@ -1,10 +1,7 @@
 function onCreate()
-    makeLuaSprite("blackOverlay", "black", 0, 0);
-    setObjectCamera("blackOverlay", "camHUD");
-    addLuaSprite("blackOverlay", false);
-
     makeLuaSprite("kyleCrane", "fortniteBoots/crane", 0, 0);
     setObjectCamera("kyleCrane", "camHUD");
+    setProperty("kyleCrane.visible", false);
     addLuaSprite("kyleCrane", true);
 
     setFCRanks("YAY!!11!!", "Close Enough", "Rigged");
@@ -12,15 +9,7 @@ function onCreate()
     setProperty("gameoverscript", "manipulation");
 end
 
-function onStartCountdown()
-    setProperty("kyleCrane.visible", false);
-end
-
 function onBeatHit()
-    if curBeat == 30 then
-        removeLuaSprite("blackOverlay", true);
-        triggerEvent("Screen Flash", "", "");
-    end
     if curBeat > 32 then
         if curStep < 943 then
             if curBeat % 2 == 0 then

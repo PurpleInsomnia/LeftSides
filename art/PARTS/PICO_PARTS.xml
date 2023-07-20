@@ -2,13 +2,40 @@
 <TextureAtlas imagePath="PICO_PARTS.png">
 	<!-- Created with Adobe Animate version 22.0.4.185 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Pico body default0000" x="0" y="0" width="326" height="281"/>
-	<SubTexture name="no Gun arm?0000" x="336" y="0" width="114" height="107"/>
-	<SubTexture name="pico angry face0000" x="460" y="0" width="142" height="113"/>
-	<SubTexture name="pico arm0000" x="612" y="0" width="119" height="117"/>
-	<SubTexture name="pico default face0000" x="741" y="0" width="140" height="91"/>
-	<SubTexture name="pico default head0000" x="0" y="291" width="302" height="244"/>
-	<SubTexture name="pico gun aim down0000" x="312" y="291" width="207" height="189"/>
-	<SubTexture name="pico gun arm0000" x="529" y="291" width="249" height="277"/>
-	<SubTexture name="pico mic hand0000" x="788" y="291" width="151" height="170"/>
+	<SubTexture name="Down Body0000" x="0" y="0" width="602" height="217" frameX="-2" frameY="-7" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0001" x="0" y="0" width="602" height="217" frameX="-2" frameY="-7" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0002" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0003" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0004" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0005" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0006" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0007" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0008" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0009" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Down Body0010" x="612" y="0" width="351" height="225" frameX="0" frameY="0" frameWidth="604" frameHeight="225"/>
+	<SubTexture name="Pico body default0000" x="973" y="0" width="326" height="282"/>
+	<SubTexture name="finger0000" x="1309" y="0" width="45" height="42"/>
+	<SubTexture name="gun aim forward ksetch0000" x="1364" y="0" width="234" height="131"/>
+	<SubTexture name="gun arm top faced0000" x="1608" y="0" width="277" height="143"/>
+	<SubTexture name="gun side profile0000" x="0" y="292" width="246" height="250"/>
+	<SubTexture name="hand for spin0000" x="256" y="292" width="136" height="133"/>
+	<SubTexture name="hand gun spin0000" x="402" y="292" width="391" height="316" frameX="-16" frameY="-9" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0001" x="803" y="292" width="372" height="334" frameX="0" frameY="-30" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0002" x="1185" y="292" width="320" height="344" frameX="-27" frameY="-42" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0003" x="1515" y="292" width="297" height="326" frameX="-90" frameY="-54" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0004" x="0" y="646" width="262" height="322" frameX="-135" frameY="-51" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0005" x="272" y="646" width="298" height="318" frameX="-92" frameY="-17" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand gun spin0006" x="580" y="646" width="336" height="287" frameX="-70" frameY="0" frameWidth="407" frameHeight="386"/>
+	<SubTexture name="hand in finger spin0000" x="926" y="646" width="225" height="108"/>
+	<SubTexture name="hand spinning gun profile0000" x="1161" y="646" width="356" height="217" frameX="-33" frameY="-7" frameWidth="392" frameHeight="232"/>
+	<SubTexture name="hand spinning gun profile0001" x="1527" y="646" width="388" height="227" frameX="0" frameY="-3" frameWidth="392" frameHeight="232"/>
+	<SubTexture name="hand spinning gun profile0002" x="0" y="978" width="359" height="232" frameX="-33" frameY="0" frameWidth="392" frameHeight="232"/>
+	<SubTexture name="no Gun arm?0000" x="369" y="978" width="114" height="107"/>
+	<SubTexture name="pico angry face0000" x="493" y="978" width="142" height="113"/>
+	<SubTexture name="pico arm0000" x="645" y="978" width="119" height="117"/>
+	<SubTexture name="pico default face0000" x="774" y="978" width="153" height="79"/>
+	<SubTexture name="pico default head0000" x="937" y="978" width="303" height="247"/>
+	<SubTexture name="pico gun aim down0000" x="1250" y="978" width="207" height="189"/>
+	<SubTexture name="pico gun arm0000" x="1467" y="978" width="249" height="277"/>
+	<SubTexture name="pico mic hand0000" x="1726" y="978" width="151" height="170"/>
 </TextureAtlas>

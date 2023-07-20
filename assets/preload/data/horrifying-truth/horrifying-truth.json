@@ -5268,6 +5268,7 @@
 			}
 		],
 		"player3": "tess-dead",
+		"arrowSkin": "BLOOD_NOTE_ASSETS",
 		"song": "Horrifying Truth",
 		"needsVoices": true,
 		"sections": 0,

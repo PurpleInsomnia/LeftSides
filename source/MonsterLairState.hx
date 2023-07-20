@@ -131,7 +131,7 @@ class MonsterLairState extends MusicBeatState
             toDo.push("Visit");
         }
 
-        if (ClientPrefs.completedSideStories.get("visit"))
+        if (ClientPrefs.completedSideStories.get("visit") || ClientPrefs.devMode)
         {
             termShit.push("Archives");
         }

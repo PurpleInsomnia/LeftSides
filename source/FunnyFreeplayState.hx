@@ -126,6 +126,11 @@ class FunnyFreeplayState extends MusicBeatState
             {
                 addSong("Comfy Together", 69, "gf", FlxColor.fromRGB(115, 0, 165), "Pre-Week 4", false);
             }
+            if (Highscore.getScore("Test", 1) != 0 || ClientPrefs.inventory[2][1] > 0 || ClientPrefs.devMode)
+            {
+                addSong("Test", 69, "bf-digital", FlxColor.fromRGB(255, 175, 0), "TEST", false);
+            }
+
             // EXE :skull:
             if ((Highscore.getScore("Endless", 1) != 0 || ClientPrefs.inventory[2][1] > 0) || ClientPrefs.devMode)
             {

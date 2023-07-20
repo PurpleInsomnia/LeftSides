@@ -413,7 +413,7 @@ class DialogueEditingState extends MusicBeatState
 
         if (char.animJson != null)
         {
-            if (char.animation.curAnim != null && !char.animJson.loops && char.animation.finished)
+            if (char.animation.curAnim != null && !char.animJson.loops && char.animation.finished && !finished)
             {
                 char.animation.play("idle", true);
             }
@@ -520,6 +520,19 @@ class DialogueEditingState extends MusicBeatState
         {
             char.screenCenter(X);
         }
+
+        if (char.meta != null)
+		{
+			switch (char.meta.position.toLowerCase())
+			{
+				case "right":
+					char.x = Std.int((box.x + box.width) - (char.width + 10));
+				case "left":
+					char.x = box.x + 10;
+				case "center":
+					char.screenCenter(X);
+			}
+		}
     }
 
     public function reloadTextSounds()

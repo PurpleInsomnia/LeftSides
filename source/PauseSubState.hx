@@ -22,6 +22,8 @@ using StringTools;
 class PauseSubState extends MusicBeatSubstate
 {
 	var items:FlxTypedGroup<Alphabet>;
+	// lmaaaaooooooooooo
+	public static var itemPrefix:String = "";
 
 	var spikes:FlxSprite;
 
@@ -87,37 +89,6 @@ class PauseSubState extends MusicBeatSubstate
 		FlxTween.tween(dadGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
 		FlxTween.tween(bfGra, {alpha: 0.75}, 0.25, {ease: FlxEase.sineOut});
 
-		var char:String = pc.toLowerCase();
-		var ps:String = "pause/chars/" + char;
-		if (char.startsWith("bf") || char.startsWith("ben") || char == "summer-bf")
-		{
-			ps = "pause/chars/ben";
-		}
-		if (char.startsWith("gf") || char.startsWith("tess") || char == "summer-gf" || char == "date-gf")
-		{
-			ps = "pause/chars/tess";
-		}
-		if (char.startsWith("dad"))
-		{
-			ps = "pause/chars/dad";
-		}
-		if (char.startsWith("mom"))
-		{
-			ps = "pause/chars/mom";
-		}
-		if (char.startsWith("freeme") || char == "bad-thoughts")
-		{
-			ps = "pause/chars/monster";
-		}
-		if (char == "dmitri")
-		{
-			ps = "pause/chars/v";
-		}
-		var chars:FlxSprite = new FlxSprite().loadGraphic(Paths.image(ps));
-		chars.x = FlxG.width;
-		add(chars);
-		FlxTween.tween(chars, {x: 0}, 1, {ease: FlxEase.sineOut});
-
 		var levelInfo:FlxText = new FlxText(0, 0, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
 		levelInfo.scrollFactor.set();
@@ -170,9 +141,10 @@ class PauseSubState extends MusicBeatSubstate
 
 		for (i in 0...menuItems.length)
 		{
-			var spr:Alphabet = new Alphabet(0, 0, menuItems[i], true, false);
+			var spr:Alphabet = new Alphabet(0, 0, menuItems[i], true, false, 0.05, 1, itemPrefix);
 			spr.isMenuItem = true;
-			spr.forceX = 25;
+			spr.screenCenter(X);
+			spr.forceX = spr.x;
 			spr.targetY = i;
 			items.add(spr);
 		}

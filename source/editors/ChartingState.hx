@@ -625,6 +625,8 @@ class ChartingState extends MusicBeatState
 
 		var reloadNotesButton:FlxButton = new FlxButton(noteSplashesInputText.x + 5, noteSplashesInputText.y + 20, 'Change Notes', function() {
 			_song.arrowSkin = noteSkinInputText.text;
+			_song.splashSkin = noteSplashesInputText.text;
+			// I hate that dumbass bug!! !! !!
 			updateGrid();
 		});
 
@@ -852,6 +854,44 @@ class ChartingState extends MusicBeatState
 			updateGrid();
 		});
 
+		var leaveOneSectionButton:FlxButton = new FlxButton(110, 210, "Leave One Section", function()
+		{
+			var newSection:Array<Dynamic> = [];
+			for (i in 0..._song.notes[curSection].sectionNotes.length)
+			{
+				var note:Array<Dynamic> = _song.notes[curSection].sectionNotes[i];
+				if (note[1] == -1)
+				{
+					newSection.push(note);
+				}
+				if (note[1] > -1 && note[1] < 4)
+				{
+					newSection.push(note);
+				}
+			}
+			_song.notes[curSection].sectionNotes = newSection;
+			updateGrid();
+		});
+
+		var clearGFSectionButton = new FlxButton(110, 240, "Clear GF Section", function()
+		{
+			var newSection:Array<Dynamic> = [];
+			for (i in 0..._song.notes[curSection].sectionNotes.length)
+			{
+				var note:Array<Dynamic> = _song.notes[curSection].sectionNotes[i];
+				if (note[1] == -1)
+				{
+					newSection.push(note);
+				}
+				if (note[1] > -1 && note[1] < 8)
+				{
+					newSection.push(note);
+				}
+			}
+			_song.notes[curSection].sectionNotes = newSection;
+			updateGrid();
+		});
+
 		tab_group_section.add(stepperLength);
 		tab_group_section.add(stepperSectionBPM);
 		tab_group_section.add(check_mustHitSection);
@@ -866,6 +906,8 @@ class ChartingState extends MusicBeatState
 		tab_group_section.add(duetButton);
 		tab_group_section.add(mirrorButton);
 		tab_group_section.add(cycleButton);
+		tab_group_section.add(leaveOneSectionButton);
+		tab_group_section.add(clearGFSectionButton);
 
 		UI_box.addGroup(tab_group_section);
 	}

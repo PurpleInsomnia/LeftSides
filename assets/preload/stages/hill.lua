@@ -48,7 +48,7 @@ end
 
 function onCreatePost()
 	if encoreMode then
-		setProperty("dad.y", getProperty("dad.y") - 25);
+		setProperty("dad.y", getProperty("dad.y") - 75);
 	end
 end
 

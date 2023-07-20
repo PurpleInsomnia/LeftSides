@@ -199,6 +199,12 @@ class CustomState extends MusicBeatState
 		}
 	}
 
+	// only I can use this HAHAHAHAHAHA!!!
+	public static function unlockGameJoltTrophy(id:Int, icon:String)
+	{
+		GameJoltAPI.getTrophy(id, icon);
+	}
+
     function setHscriptVars()
     {
         hscriptVars.set("add", add);
@@ -208,6 +214,7 @@ class CustomState extends MusicBeatState
 		hscriptVars.set("screenCenter", screenCenter);
 		hscriptVars.set("setCamBgAlpha", setCamBgAlpha);
 		hscriptVars.set("alignText", alignText);
+		hscriptVars.set("unlockGameJoltTrophy", unlockGameJoltTrophy);
 
         hscriptVars.set("controls", controls);
 		hscriptVars.set("openSubState", openSubState);

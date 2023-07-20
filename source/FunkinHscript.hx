@@ -144,6 +144,12 @@ class FunkinHscript
 		}
 	}
 
+	// only I can use this HAHAHAHAHAHA!!!
+	public static function unlockGameJoltTrophy(id:Int, icon:String)
+	{
+		GameJoltAPI.getTrophy(id, icon);
+	}
+
     public function call(thing:String, arg:Array<Dynamic>)
     {
         if (daScript.exists(thing))
@@ -226,6 +232,7 @@ class FunkinHscript
 		hscriptVars.set("screenCenter", screenCenter);
 		hscriptVars.set("setCamBgAlpha", setCamBgAlpha);
 		hscriptVars.set("alignText", alignText);
+		hscriptVars.set("unlockGameJoltTrophy", unlockGameJoltTrophy);
 		hscriptVars.set("openSubState", lePlayState.openSubState);
         hscriptVars.set("getBlend", getBlend);
         hscriptVars.set("trace", theTrace);

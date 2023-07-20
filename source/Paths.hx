@@ -299,9 +299,9 @@ class Paths
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices-fucked.$SOUND_EXT';
 	}
 
-	inline static public function inst(song:String):Any
+	inline static public function inst(song:String, ?prefix:String = ""):Any
 	{
-		var songFin:String = "Inst";
+		var songFin:String = "Inst" + prefix;
 		#if MODS_ALLOWED
 		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin));
 		if(file != null) {
@@ -311,9 +311,9 @@ class Paths
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT';
 	}
 
-	inline static public function instEncore(song:String):Any
+	inline static public function instEncore(song:String, ?prefix:String = ""):Any
 	{
-		var toAdd:String = "";
+		var toAdd:String = prefix;
 		#if MODS_ALLOWED
 		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore' + toAdd));
 		if(file != null) {

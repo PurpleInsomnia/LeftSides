@@ -57,7 +57,7 @@ end
 local isAfter = false;
 function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
-		startDialogue('dialogue', 'spooky3');
+		startDialogue('dialogue', 'THE MINDSCAPE');
 		playSound('dialogueSounds/freeme');
 	end
 	if tag == 'startAfterDialogue' then -- Timer completed, play dialogue
@@ -109,7 +109,7 @@ end
 
 local canHit = false;
 function opponentNoteHit(id, type, data, sus)
-	if canHit and not sus then
+	if canHit and not sus and not extremeMode then
    		health = getProperty('health')
     		setProperty('health', health - 0.01);
     		if health < 0.05 then
@@ -130,7 +130,9 @@ function onBeatHit()
 	if curBeat == 72 then
 		if not encoreMode then
 			triggerEvent('Real Time', '2.5', '');
-			healthTween(2.5, 1);
+			if not extremeMode then
+				healthTween(2.5, 1);
+			end
 			-- Reset Score ;)
 			scoreTween(2.5);
 			hitTween(2.5);
@@ -151,7 +153,8 @@ end
 local startDeath = false;
 local funnyHealth = 0;
 function onUpdate(elapsed)
-	if getProperty("songMisses") == 40 then
+	if getProperty("songMisses") == 40 and not startDeath then
+		startDeath = false;
 		healthTween(2.5, 0);
 	end
 end

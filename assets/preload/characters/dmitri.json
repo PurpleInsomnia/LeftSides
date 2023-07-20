@@ -1,63 +1,63 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				-112,
 				230
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "IDLE",
-			"indices": []
+			"indices": [],
+			"name": "IDLE"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-47,
-				187
+				-27,
+				297
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "UP",
-			"indices": []
+			"indices": [],
+			"name": "UP"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-140,
-				160
+				-80,
+				260
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "RIGHT",
-			"indices": []
+			"indices": [],
+			"name": "RIGHT"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-60,
-				15
+				-22,
+				135
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "DOWN",
-			"indices": []
+			"indices": [],
+			"name": "DOWN"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				50,
-				190
+				90,
+				319
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "LEFT",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "LEFT"
 		}
 	],
 	"no_antialiasing": true,
-	"image": "characters/Dmitri",
+	"image": "characters/V",
 	"position": [
 		0,
 		240

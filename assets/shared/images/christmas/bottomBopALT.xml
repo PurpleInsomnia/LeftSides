@@ -1,8 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:bfe2812ebf17ad17e4142dcca0d20b84:d60e25c4859a4a8368586dafacaa1540:69c624c223f5c6e93cf8f34a03812437$ -->
-<TextureAtlas imagePath="bottomBopALT.png" width="1979" height="2000">
-    <SubTexture name="boppers bop0000" x="0" y="0" width="1979" height="664"/>
-    <SubTexture name="boppers bop0001" x="0" y="668" width="1979" height="664"/>
-    <SubTexture name="boppers bop0002" x="0" y="1336" width="1979" height="664"/>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bottomBopALT.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bottom Level Boppers Alt0000" x="0" y="0" width="941" height="571" frameX="0" frameY="-5" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0001" x="0" y="0" width="941" height="571" frameX="0" frameY="-5" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0002" x="951" y="0" width="933" height="574" frameX="-4" frameY="-2" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0003" x="951" y="0" width="933" height="574" frameX="-4" frameY="-2" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0004" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0005" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0006" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0007" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0008" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0009" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0010" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0011" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0012" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers Alt0013" x="0" y="584" width="925" height="576" frameX="-6" frameY="0" frameWidth="941" frameHeight="576"/>
 </TextureAtlas>

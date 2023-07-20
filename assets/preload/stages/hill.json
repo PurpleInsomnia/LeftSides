@@ -4,5 +4,5 @@
 
 	"boyfriend": [970, 0],
 	"girlfriend": [600, 30],
-	"opponent": [200, 0]
+	"opponent": [200, -100]
 }

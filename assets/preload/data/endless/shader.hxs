@@ -1,0 +1,21 @@
+var monitor:TV = null;
+var ca:ChromaticAberation = null;
+function onCreatePost()
+{
+    if (ClientPrefs.shaders && !ClientPrefs.lowQuality)
+    {
+        lePlayState.camGameFilters.push(new ShaderFilter(new Scanline()));
+
+        tv = new TV();
+        lePlayState.camGameFilters.push(new ShaderFilter(tv.shader));
+
+        ca = new ChromaticAberation();
+        ca.max = 0.20;
+        ca.shader.intensity.value[0] = ca.max;
+        lePlayState.camGameFilters.push(new ShaderFilter(ca.shader));
+
+        lePlayState.camGame.setFilters(lePlayState.camGameFilters);
+
+        lePlayState.modchartSprites.get("shader").alpha = 0.85;
+    }
+}

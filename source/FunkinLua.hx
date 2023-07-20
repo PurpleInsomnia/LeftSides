@@ -121,6 +121,7 @@ class FunkinLua {
 
 		set('isStoryMode', PlayState.isStoryMode);
 		set("encoreMode", PlayState.encoreMode);
+		set("extremeMode", PlayState.extremeMode);
 		set('difficulty', PlayState.storyDifficulty);
 		set('weekRaw', PlayState.storyWeek);
 		set('week', WeekData.weeksList[PlayState.storyWeek]);

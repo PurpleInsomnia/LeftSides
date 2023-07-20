@@ -1,0 +1,234 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Hiiiiiiiiiiiiiiiiiiiiiiii V!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "How's my favorite girlfriend doing?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "..."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "What do you wanna do today?/nEat ramen and only ramen, '''''tease''''' PurpleInsomnia about his back problems even though he doesn't GAF about it at all and ignores me."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Shilling Genshit to our teachers, ruin a friend group or be the most band kid pieces of shit in history?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "no."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "hmm",
+			"text": "Ok then. I'll maybe just...show someone my private photos without their consent...no- scratch that- Talk about my fake boobs for 5 minutes on the bus. No wait- I'll sit on your lap again."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "Do not do that."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "cry",
+			"text": "Wha...V-V? What's gotten into you? I thought we were besties?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "Common sense./nThat's what has gotten into me./nCommon sense that you are a shitty person and nobody fuckin' likes you. And, you're a pathalogical liar."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "fake-ass-tick",
+			"text": "*Totally real tick that suddenly started just now! Yep I've just gotten ticks for some reason. Totally not because I'm craving 2 seconds of attention.*"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "whar",
+			"text": "Y-you're joking...right?/n(Pls don't be! I need ''friends''! I have no social awareness.)"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "No. Deadass."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "cry",
+			"text": "Bu...but, we listen to cringey anime music together... :("
+		},
+		{
+			"speed": 0.02,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Pidgeon."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "fake-ass-tick",
+			"text": "*coo coo coo*/n(PurpleInsomnia's note: This is a real person btw. Not even fucking exagerating here.)"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "You are THE stereotypical emo, anime stan, fake depressed loser. And you smell like ketchup with a side of fresh shit out of a dog's ass."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "Dog collar wearing, 5'1 being, monotone singing, shoplifting doing, bragging to chicks that you wore big bras in 2nd grade doing, Racist being, extremely revealing clothes wearing, BITCH."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "normal",
+			"expression": "cry",
+			"text": "But...you restrained me from trauma dumping for the 139027428398th time when that hot girl in the mall exposed her parents...you said that it was '''inappropriate'' to do so..."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "Because it is inappropriate to trauma dump during a serious situation when you are NOT the center of attention."
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "fortnite-boots",
+			"boxState": "angry",
+			"expression": "mad",
+			"text": "Grrrrrrrrrr! I'm so mad now! I'm goinj to...idk...Trauma Dump!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "death-stare",
+			"text": "No. You know what?"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "v",
+			"boxState": "normal",
+			"expression": "kill-yourself",
+			"text": "You should kill yourself...NOW!"
+		}
+	]
+}

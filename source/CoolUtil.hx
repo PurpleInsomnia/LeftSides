@@ -360,7 +360,17 @@ class CoolUtil
 		var tra:Int = 0;
 		for (i in 0...trophies.TrophyUtil.trophiesData.trophies.length)
 		{
-			if (trophies.TrophyUtil.trophiesData.trophies[i].name != "Origin Stories.")
+			var nat:Bool = false;
+			if (trophies.TrophyUtil.trophiesData.trophies[i].name == "Origin Stories.")
+			{
+				nat = true;
+			}
+			if (trophies.TrophyUtil.trophiesData.trophies[i].name == "Oh My Goodness")
+			{
+				nat = true;
+			}
+
+			if (!nat)
 			{
 				tg1 += 1;
 				tra += 1;

@@ -76,6 +76,8 @@ class Note extends FlxSprite
 	public var trueScaleY:Float = 0;
 	public var distance:Float = 2000;
 
+	public var char:String = "";
+
 	private function set_texture(value:String):String {
 		if(texture != value) {
 			reloadNote('', value);

@@ -76,7 +76,7 @@ class CheckifyLoadingState extends MusicBeatState
                         {
                             Paths.currentModDirectory = modDirecs[i];
                             var data:CheckifyMeta = CheckifyPaths.loadMeta(file);
-                            songs.insert(0, [file, CheckifyPaths.loadSongsFromData(data), modDirecs[i]]);
+                            songs.push([file, CheckifyPaths.loadSongsFromData(data), modDirecs[i]]);
                         }
                     }
                 }

@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
-<!-- $TexturePacker:SmartUpdate:5b5f0403cb03cadda7a35d67f5ed1c01:6de2299c36665106cdf816275393e6f1:015693f33005b6e2f8b3b9f99304e19e$ -->
-<TextureAtlas imagePath="bottomBop.png" width="3962" height="1332">
-    <SubTexture name="boppers bop0000" x="0" y="0" width="1979" height="664"/>
-    <SubTexture name="boppers bop0001" x="1983" y="0" width="1979" height="664"/>
-    <SubTexture name="boppers bop0002" x="0" y="668" width="1979" height="664"/>
-    <SubTexture name="boppers bop0003" x="1983" y="668" width="1979" height="664"/>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bottomBop.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bottom Level Boppers0000" x="0" y="0" width="935" height="571" frameX="0" frameY="-5" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0001" x="0" y="0" width="935" height="571" frameX="0" frameY="-5" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0002" x="945" y="0" width="930" height="573" frameX="-2" frameY="-3" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0003" x="945" y="0" width="930" height="573" frameX="-2" frameY="-3" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0004" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0005" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0006" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0007" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0008" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
+	<SubTexture name="Bottom Level Boppers0009" x="0" y="583" width="925" height="576" frameX="-4" frameY="0" frameWidth="935" frameHeight="576"/>
 </TextureAtlas>

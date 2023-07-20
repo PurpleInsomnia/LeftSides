@@ -31,11 +31,6 @@ end
 
 function onCreate()
 	dialogueBg('black', false);
-
-	setProperty('boppers.visible', true);
-
-	setProperty("preventPCChange", true);
-	setProperty("pauseCharacter", "dad");
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)

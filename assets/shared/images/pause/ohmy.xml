@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:3296080109eb06d2c007481f99dbf9e8:fc799bb545f1725d6f024d07d466b76a:28c81993c671dfd478488f4411a299f4$ -->
+<TextureAtlas imagePath="ohmy.png" width="3840" height="2880">
+    <SubTexture name="idle0001" x="0" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0002" x="1280" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0003" x="2560" y="0" width="1280" height="720"/>
+    <SubTexture name="idle0004" x="0" y="720" width="1280" height="720"/>
+    <SubTexture name="idle0005" x="1280" y="720" width="1280" height="720"/>
+    <SubTexture name="idle0006" x="2560" y="720" width="1280" height="720"/>
+    <SubTexture name="idle0007" x="0" y="1440" width="1280" height="720"/>
+    <SubTexture name="idle0008" x="1280" y="1440" width="1280" height="720"/>
+    <SubTexture name="idle0009" x="2560" y="1440" width="1280" height="720"/>
+    <SubTexture name="idle0010" x="0" y="2160" width="1280" height="720"/>
+    <SubTexture name="idle0011" x="1280" y="2160" width="1280" height="720"/>
+    <SubTexture name="idle0012" x="2560" y="2160" width="1280" height="720"/>
+</TextureAtlas>

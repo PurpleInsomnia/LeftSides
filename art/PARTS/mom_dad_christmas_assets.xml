@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mom_dad_christmas_assets.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DAD BEARD0000" x="0" y="0" width="216" height="167"/>
+	<SubTexture name="Dad Chest0000" x="226" y="0" width="358" height="369"/>
+	<SubTexture name="Dad Head DOWN NOTE0000" x="594" y="0" width="230" height="302" frameX="0" frameY="-5" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0001" x="594" y="0" width="230" height="302" frameX="0" frameY="-5" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0002" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0003" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0004" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0005" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0006" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0007" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0008" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0009" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0010" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0011" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0012" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0013" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0014" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0015" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0016" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head DOWN NOTE0017" x="834" y="0" width="227" height="304" frameX="0" frameY="0" frameWidth="230" frameHeight="307"/>
+	<SubTexture name="Dad Head RIGHT NOTE0000" x="1071" y="0" width="227" height="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0001" x="1071" y="0" width="227" height="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0002" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0003" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0004" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0005" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0006" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0007" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0008" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0009" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0010" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0011" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0012" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0013" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0014" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0015" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0016" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0017" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0018" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0019" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0020" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0021" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0022" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0023" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0024" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0025" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0026" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0027" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0028" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0029" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0030" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0031" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0032" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0033" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0034" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0035" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0036" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0037" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0038" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0039" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0040" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0041" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0042" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0043" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0044" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0045" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0046" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0047" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0048" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0049" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0050" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0051" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0052" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0053" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad Head RIGHT NOTE0054" x="1308" y="0" width="227" height="304" frameX="0" frameY="-3" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad chest sing0000" x="1545" y="0" width="352" height="369"/>
+	<SubTexture name="Dad default head0000" x="1907" y="0" width="227" height="304"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0000" x="2144" y="0" width="227" height="321"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0001" x="2144" y="0" width="227" height="321"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0002" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0003" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0004" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0005" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0006" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0007" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0008" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0009" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0010" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0011" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0012" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0013" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0014" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0015" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0016" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0017" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0018" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0019" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0020" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0021" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0022" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0023" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0024" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0025" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0026" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0027" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0028" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0029" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0030" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0031" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0032" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0033" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0034" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0035" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0036" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0037" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0038" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0039" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0040" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0041" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0042" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0043" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0044" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0045" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0046" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0047" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0048" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0049" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0050" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0051" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0052" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0053" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0054" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0055" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0056" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0057" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0058" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Dad head UP + LEFT NOTE0059" x="1308" y="0" width="227" height="304" frameX="0" frameY="-10" frameWidth="227" frameHeight="312"/>
+	<SubTexture name="Lleg pose right0000" x="2381" y="0" width="253" height="293"/>
+	<SubTexture name="arm lean0000" x="2644" y="0" width="105" height="378"/>
+	<SubTexture name="back feet0000" x="2759" y="0" width="326" height="136" frameX="0" frameY="0" frameWidth="330" frameHeight="183"/>
+	<SubTexture name="back feet0001" x="3095" y="0" width="328" height="179" frameX="-2" frameY="-4" frameWidth="330" frameHeight="183"/>
+	<SubTexture name="back foot 10000" x="3433" y="0" width="120" height="103"/>
+	<SubTexture name="back foot 20000" x="3563" y="0" width="169" height="98"/>
+	<SubTexture name="back foot 30000" x="3742" y="0" width="104" height="119"/>
+	<SubTexture name="back foot 40000" x="3856" y="0" width="182" height="136"/>
+	<SubTexture name="belt0000" x="0" y="388" width="146" height="115"/>
+	<SubTexture name="bg forearm0000" x="156" y="388" width="62" height="106"/>
+	<SubTexture name="bg shoulder0000" x="228" y="388" width="161" height="113"/>
+	<SubTexture name="body pose right0000" x="399" y="388" width="233" height="294"/>
+	<SubTexture name="chair arm0000" x="642" y="388" width="267" height="157"/>
+	<SubTexture name="chairbase0000" x="919" y="388" width="674" height="692"/>
+	<SubTexture name="chest down0000" x="1603" y="388" width="260" height="248"/>
+	<SubTexture name="cory left pose sketch0000" x="1873" y="388" width="619" height="785"/>
+	<SubTexture name="curly bit blownin da udder way0000" x="2502" y="388" width="116" height="114"/>
+	<SubTexture name="dad complete chest0000" x="2628" y="388" width="272" height="365"/>
+	<SubTexture name="dad gun forearm0000" x="2910" y="388" width="97" height="167"/>
+	<SubTexture name="dad gun hand0000" x="3017" y="388" width="240" height="212"/>
+	<SubTexture name="dad gun shoulder0000" x="3267" y="388" width="171" height="177"/>
+	<SubTexture name="dad hand on waist0000" x="3448" y="388" width="69" height="102"/>
+	<SubTexture name="dad legs0000" x="3527" y="388" width="291" height="243"/>
+	<SubTexture name="dad mic arm0000" x="3828" y="388" width="142" height="174"/>
+	<SubTexture name="dad mic hand sing0000" x="3980" y="388" width="102" height="173"/>
+	<SubTexture name="dad mic idle hand0000" x="0" y="1183" width="146" height="111"/>
+	<SubTexture name="dad wasit0000" x="156" y="1183" width="332" height="404"/>
+	<SubTexture name="down face 10000" x="498" y="1183" width="97" height="121"/>
+	<SubTexture name="down face 10001" x="498" y="1183" width="97" height="121"/>
+	<SubTexture name="down face 10002" x="498" y="1183" width="97" height="121"/>
+	<SubTexture name="down face 10003" x="498" y="1183" width="97" height="121"/>
+	<SubTexture name="down face 20000" x="605" y="1183" width="97" height="127"/>
+	<SubTexture name="dumbArm0000" x="712" y="1183" width="255" height="363" frameX="0" frameY="-7" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0001" x="712" y="1183" width="255" height="363" frameX="0" frameY="-7" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0002" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0003" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0004" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0005" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0006" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0007" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0008" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="dumbArm0009" x="977" y="1183" width="246" height="363" frameX="0" frameY="0" frameWidth="255" frameHeight="370"/>
+	<SubTexture name="evil red eyes0000" x="1233" y="1183" width="88" height="72"/>
+	<SubTexture name="evil red eyes0001" x="1233" y="1183" width="88" height="72"/>
+	<SubTexture name="evil red eyes0002" x="1331" y="1183" width="88" height="72"/>
+	<SubTexture name="evil red eyes0003" x="1331" y="1183" width="88" height="72"/>
+	<SubTexture name="eyeglow0000" x="1429" y="1183" width="117" height="153"/>
+	<SubTexture name="eyeglow0001" x="1429" y="1183" width="117" height="153"/>
+	<SubTexture name="eyeglow0002" x="1556" y="1183" width="117" height="153"/>
+	<SubTexture name="eyeglow0003" x="1556" y="1183" width="117" height="153"/>
+	<SubTexture name="hair blowing right 0000" x="1683" y="1183" width="456" height="360" frameX="0" frameY="-10" frameWidth="463" frameHeight="370"/>
+	<SubTexture name="hair blowing right 0001" x="2149" y="1183" width="454" height="364" frameX="-4" frameY="0" frameWidth="463" frameHeight="370"/>
+	<SubTexture name="hair blowing right 0002" x="2613" y="1183" width="450" height="356" frameX="-13" frameY="-7" frameWidth="463" frameHeight="370"/>
+	<SubTexture name="hair blowing right 0003" x="3073" y="1183" width="452" height="364" frameX="-2" frameY="-3" frameWidth="463" frameHeight="370"/>
+	<SubTexture name="hair squiggle0000" x="3535" y="1183" width="116" height="115"/>
+	<SubTexture name="hand on hip0000" x="3661" y="1183" width="74" height="78" frameX="0" frameY="-10" frameWidth="74" frameHeight="88"/>
+	<SubTexture name="hand on hip0001" x="3745" y="1183" width="68" height="88" frameX="-6" frameY="0" frameWidth="74" frameHeight="88"/>
+	<SubTexture name="hand on hip eviler0000" x="3823" y="1183" width="107" height="110"/>
+	<SubTexture name="left arm pose right0000" x="0" y="1597" width="326" height="152"/>
+	<SubTexture name="left face 10000" x="336" y="1597" width="99" height="135"/>
+	<SubTexture name="left face 10001" x="336" y="1597" width="99" height="135"/>
+	<SubTexture name="left face 10002" x="336" y="1597" width="99" height="135"/>
+	<SubTexture name="left face 10003" x="336" y="1597" width="99" height="135"/>
+	<SubTexture name="left face 20000" x="445" y="1597" width="97" height="135"/>
+	<SubTexture name="left forearm0000" x="552" y="1597" width="92" height="94"/>
+	<SubTexture name="left post sketch0000" x="654" y="1597" width="450" height="544"/>
+	<SubTexture name="leg bend0000" x="1114" y="1597" width="205" height="345"/>
+	<SubTexture name="leg out left0000" x="1329" y="1597" width="259" height="268"/>
+	<SubTexture name="mic hand left0000" x="1598" y="1597" width="111" height="199"/>
+	<SubTexture name="mic hand right0000" x="1719" y="1597" width="136" height="224"/>
+	<SubTexture name="mom body0000" x="1865" y="1597" width="199" height="321"/>
+	<SubTexture name="mom body lean left0000" x="2074" y="1597" width="294" height="277"/>
+	<SubTexture name="mom christmas body0000" x="2378" y="1597" width="225" height="263"/>
+	<SubTexture name="mom christmas forearm0000" x="2613" y="1597" width="84" height="96"/>
+	<SubTexture name="mom christmas leg back0000" x="2707" y="1597" width="229" height="294"/>
+	<SubTexture name="mom christmas leg right0000" x="2946" y="1597" width="227" height="289"/>
+	<SubTexture name="mom christmas shoulder0000" x="3183" y="1597" width="106" height="175"/>
+	<SubTexture name="mom christmas wait0000" x="3299" y="1597" width="287" height="218"/>
+	<SubTexture name="mom default face0000" x="3596" y="1597" width="102" height="109"/>
+	<SubTexture name="mom default face0001" x="3596" y="1597" width="102" height="109"/>
+	<SubTexture name="mom default face0002" x="3596" y="1597" width="102" height="109"/>
+	<SubTexture name="mom default face0003" x="3596" y="1597" width="102" height="109"/>
+	<SubTexture name="mom face up pose0000" x="3708" y="1597" width="102" height="120"/>
+	<SubTexture name="mom face up pose0001" x="3708" y="1597" width="102" height="120"/>
+	<SubTexture name="mom face up pose0002" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0003" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0004" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0005" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0006" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0007" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0008" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0009" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0010" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0011" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0012" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0013" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0014" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0015" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0016" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0017" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0018" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0019" x="3820" y="1597" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom hair default0000" x="0" y="2151" width="386" height="423"/>
+	<SubTexture name="mom hand grab0000" x="396" y="2151" width="87" height="102"/>
+	<SubTexture name="mom head default0000" x="493" y="2151" width="178" height="248"/>
+</TextureAtlas>

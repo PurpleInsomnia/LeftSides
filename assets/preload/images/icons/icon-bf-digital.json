@@ -1,0 +1,11 @@
+{
+    "defaultFrames": [0, 1, 0, 2, 0, 3],
+    "losingFrames": [0, 1, 0, 2, 0, 3],
+    "winningFrames": [0, 1, 0, 2, 0, 3],
+    "fps": 6,
+    "loops": {
+        "idle": true,
+        "losing": true,
+        "winning": true
+    }
+}

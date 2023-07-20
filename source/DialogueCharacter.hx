@@ -27,6 +27,11 @@ typedef CharacterAnimation = {
 	var loops:Bool;
 }
 
+typedef CharacterMeta = {
+	var flipX:Bool;
+	var position:String;
+}
+
 class DialogueCharacter extends FlxSprite
 {
 	private static var IDLE_SUFFIX:String = '-IDLE';
@@ -39,6 +44,7 @@ class DialogueCharacter extends FlxSprite
 	public var daAnim:String = "default";
 	public var animations:Bool = false;
 	public var animJson:CharacterAnimation = null;
+	public var meta:CharacterMeta;
 
 	public static var curBox:String = 'speech_bubble';
 
@@ -63,6 +69,7 @@ class DialogueCharacter extends FlxSprite
 		// fixes the stuff with having multiple fucking portraits in the files.
 		var prefix:String = curCharacter;
 		var animFilePath:String = "thereisnopathlol";
+		var coolPath:String = "";
 		var imgPath:String = "";
 		var loaded:Bool = false;
 		switch (prefix)
@@ -79,6 +86,7 @@ class DialogueCharacter extends FlxSprite
 		if (FileSystem.exists(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".png")) && !loaded)
 		{
 			animFilePath = Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".json");
+			coolPath = Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim);
 			if (!FileSystem.exists(animFilePath))
 			{
 				loadGraphic(Paths.preloadFunny("side-stories/images/ports/" + prefix + "/" + daAnim + ".png"));
@@ -92,6 +100,7 @@ class DialogueCharacter extends FlxSprite
 		if (FileSystem.exists(Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".png")) && !loaded)
 		{
 			animFilePath = Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".json");
+			coolPath = Paths.dialogue("ports/" + prefix + "/" + daAnim);
 			if (!FileSystem.exists(animFilePath))
 			{
 				loadGraphic(Paths.dialogue("ports/" + curCharacter + "/" + daAnim + ".png"));
@@ -139,10 +148,20 @@ class DialogueCharacter extends FlxSprite
 			if (FileSystem.exists(animFilePath))
 			{
 				animJson = Json.parse(File.getContent(animFilePath));
-				loadGraphic(imgPath, true, animJson.dimensions[0], animJson.dimensions[1]);
-				var coolFrames:Int = Math.floor(width / animJson.dimensions[0]) * Math.floor(height / animJson.dimensions[1]);
-				coolFrames += 1;
-				animation.add("idle", [for (i in 0...coolFrames) i], animJson.fps, animJson.loops);
+				var dims:Dynamic = animJson.dimensions;
+				if (dims != null)
+				{
+					loadGraphic(imgPath, true, animJson.dimensions[0], animJson.dimensions[1]);
+					var coolFrames:Int = Math.floor(width / animJson.dimensions[0]) * Math.floor(height / animJson.dimensions[1]);
+					trace(coolFrames);
+					coolFrames += 1;
+					animation.add("idle", [for (i in 0...coolFrames) i], animJson.fps, animJson.loops);
+				}
+				else
+				{
+					frames = FlxAtlasFrames.fromSparrow(coolPath + ".png", File.getContent(coolPath + ".xml"));
+					animation.addByPrefix("idle", "animation", animJson.fps, animJson.loops);
+				}
 				animation.play("idle", true);
 			}
 			else
@@ -150,11 +169,31 @@ class DialogueCharacter extends FlxSprite
 				animJson = null;
 			}
 		}
+
+		if (meta != null)
+		{
+			if (meta.flipX)
+			{
+				flipX = true;
+			}
+		}
+		else
+		{
+			flipX = false;
+		}
 	}
 
 	public function reloadCharacter(character:String) 
 	{
 		curCharacter = character;
+		if (FileSystem.exists(Paths.preloadFunny("dialogue/ports/" + character + "/meta.json")))
+		{
+			meta = Json.parse(File.getContent(Paths.preloadFunny("dialogue/ports/" + character + "/meta.json")));
+		}
+		else
+		{
+			meta = null;
+		}
 	}
 
 	public function playAnim(animName:String = null, ?playIdle:Bool = false) 

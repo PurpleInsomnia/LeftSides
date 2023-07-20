@@ -30,17 +30,7 @@ local bgAlpha = function (val, tween, sec)
 end
 
 function onCreate()
-	setProperty('boppersAlt.visible', true);
-
-	-- doTweenY('theFortnite', 'gf',  gfY + gfTweenVal, 0.001, 'sineIn');
-
-	setProperty('bottomBoppersAlt.visible', true);
-	setProperty('bottomBoppers.visible', false);
-
 	dialogueBg('black');
-
-	setProperty("preventPCChange", true);
-	setProperty("pauseCharacter", "dad");
 end
 
 function onCountdownTick(counter)

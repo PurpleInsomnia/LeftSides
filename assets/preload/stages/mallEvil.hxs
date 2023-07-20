@@ -5,10 +5,10 @@ function onCreate()
 	bg.updateHitbox();
 	add(bg, false);
 
-	var evilTree:BGSprite = new BGSprite('christmas/evilTree', 300, -300, 0.2, 0.2);
+	var evilTree:BGSprite = new BGSprite('christmas/evilTree', 330, -300, 0.2, 0.2);
 	add(evilTree, false);
 
-	var tessHead:ModchartSprite = new ModchartSprite(300, -300);
+	var tessHead:ModchartSprite = new ModchartSprite(330, -300);
 	tessHead.loadGraphic(Paths.image("christmas/tessHead"));
 	tessHead.scrollFactor.set(0.2, 0.2);
 	tessHead.visible = false;

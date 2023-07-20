@@ -16,6 +16,12 @@ class NoteSplash extends FlxSprite
 		var skin:String = 'noteSplashes';
 		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 
+		// hmmmm
+		if (skin == "")
+		{
+			skin = "noteSplashes";
+		}
+
 		if (skin == 'noteSplashes' || skin == PlayState.SONG.splashSkin)
 		{
 			if (CustomStrum.splash != '')

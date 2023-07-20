@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="DAD_PARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DAD BEARD0000" x="0" y="0" width="216" height="167"/>
+	<SubTexture name="Dad Chest0000" x="226" y="0" width="366" height="380"/>
+	<SubTexture name="Dad chest sing0000" x="602" y="0" width="366" height="380"/>
+	<SubTexture name="Dad default head0000" x="978" y="0" width="227" height="304"/>
+	<SubTexture name="Dad default head0001" x="1215" y="0" width="227" height="304"/>
+	<SubTexture name="Dad default head0002" x="1452" y="0" width="227" height="304"/>
+	<SubTexture name="Dad default head0003" x="1689" y="0" width="227" height="304"/>
+	<SubTexture name="dad mic arm0000" x="0" y="390" width="142" height="174"/>
+	<SubTexture name="dad mic hand sing0000" x="152" y="390" width="102" height="173"/>
+	<SubTexture name="dad mic hand sing 20000" x="264" y="390" width="135" height="173"/>
+	<SubTexture name="dad mic idle hand0000" x="409" y="390" width="145" height="110"/>
+	<SubTexture name="dad wasit0000" x="564" y="390" width="293" height="393"/>
+	<SubTexture name="evil red eyes0000" x="867" y="390" width="88" height="72"/>
+	<SubTexture name="evil red eyes0001" x="867" y="390" width="88" height="72"/>
+	<SubTexture name="evil red eyes0002" x="965" y="390" width="88" height="72"/>
+	<SubTexture name="evil red eyes0003" x="965" y="390" width="88" height="72"/>
+	<SubTexture name="evil red eyes 20000" x="1063" y="390" width="48" height="63" frameX="-23" frameY="0" frameWidth="71" frameHeight="72"/>
+	<SubTexture name="evil red eyes 20001" x="1063" y="390" width="48" height="63" frameX="-23" frameY="0" frameWidth="71" frameHeight="72"/>
+	<SubTexture name="evil red eyes 20002" x="1121" y="390" width="71" height="72"/>
+	<SubTexture name="evil red eyes 20003" x="1121" y="390" width="71" height="72"/>
+</TextureAtlas>

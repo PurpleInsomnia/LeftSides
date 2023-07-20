@@ -217,6 +217,14 @@ class MainMenuState extends MusicBeatState
 		buttonGroup = new FlxTypedGroup<FlxButton>();
 		add(buttonGroup);
 
+		var extremeButton:FlxButton = new FlxButton(750 + 370, 0, null, function()
+		{
+			selectedSomethin = true;
+			openSubState(new ExtremeSubState());
+		});
+		extremeButton.loadGraphic(Paths.image("extreme"), true, 150, 150);
+		buttonGroup.add(extremeButton);
+
 		var p2Button:FlxButton = new FlxButton(370, 720 - 150, null, function()
 		{
 			selectedSomethin = true;
@@ -601,5 +609,56 @@ class MainMenuState extends MusicBeatState
 		{
 			coolBeatHit();
 		});
+	}
+}
+
+class ExtremeSubState extends MusicBeatSubstate
+{
+	var statusText:FlxText;
+	public function new()
+	{
+		super();
+
+		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		bg.alpha = 0.6;
+		bg.scrollFactor.set();
+		add(bg);
+
+		var tip:FlxSprite = new FlxSprite().loadGraphic(Paths.image("extremeTIP"));
+		tip.scrollFactor.set();
+		add(tip);
+
+		statusText = new FlxText(0, 380, 1280, "EXTREME MODE IS OFF", 34);
+		statusText.font = Paths.font("eras.ttf");
+		statusText.color = 0xFFFFFFFF;
+		statusText.updateHitbox();
+		statusText.alignment = CENTER;
+		statusText.scrollFactor.set();
+		add(statusText);
+	}
+
+	override function update(elapsed:Float)
+	{
+		if (controls.BACK)
+		{
+			close();
+		}
+		if (controls.ACCEPT)
+		{
+			PlayState.extremeMode = !PlayState.extremeMode;
+		}
+		super.update(elapsed);
+
+		if (PlayState.extremeMode)
+		{
+			statusText.color = 0xFF00FF00;
+			statusText.text = "EXTREME MODE IS ON";
+		}
+		else
+		{
+			statusText.color = 0xFFFF0000;
+			statusText.text = "EXTREME MODE IS OFF";
+		}
+		statusText.screenCenter(X);
 	}
 }

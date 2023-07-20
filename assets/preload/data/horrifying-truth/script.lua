@@ -30,7 +30,7 @@ local bgAlpha = function (val, tween, sec)
 end
 
 function onMonsterCutsceneDone()
-	startDialogue('dialogue', 'spooky5');
+	startDialogue('dialogue', 'THE MINDSCAPE');
 end
 
 local allowCountdown = false;

@@ -241,9 +241,39 @@ class TrophyUtil
                     icon: "pyro"
                 },
                 {
+                    name: "Lies",
+                    desc: "Beat 'Borrowed Motifs'",
+                    icon: "nikku"
+                },
+                {
+                    name: "My Name Is ASAC Schrader...",
+                    desc: "Beat 'Don't Lie'",
+                    icon: "hank"
+                },
+                {
+                    name: "Testing 1-2-3",
+                    desc: "Enabled charting and beat 'Test'",
+                    icon: "test"
+                },
+                {
+                    name: "Super Duper Extreme Rapping",
+                    desc: "Beat a song on the 'Extreme' game mode.",
+                    icon: "extreme"
+                },
+                {
                     name: "Misinput.",
                     desc: "It was a misinput. Missin-CALM DOWN! YOU CALM THE FUCK DOWN! IT WAS A MISINPUT",
                     icon: "misinput"
+                },
+                {
+                    name: "Say My Name",
+                    desc: "Die pressing too many 'Fulminated Mercury' notes.",
+                    icon: "woltuh-why"
+                },
+                {
+                    name: "Oh My Goodness",
+                    desc: "Opened the secret pause menu. (1 in 1000 chance)\n(This trophy is NOT required for 100%)",
+                    icon: "ohmy"
                 },
                 {
                     name: "Dress Up Party.",

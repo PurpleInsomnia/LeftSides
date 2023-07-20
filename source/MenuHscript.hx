@@ -178,6 +178,12 @@ class MenuHscript
 		}
 	}
 
+	// only I can use this HAHAHAHAHAHA!!!
+	public static function unlockGameJoltTrophy(id:Int, icon:String)
+	{
+		GameJoltAPI.getTrophy(id, icon);
+	}
+
     public static function setHscriptVars(parent:Dynamic)
     {
 		MenuHscript.parent = parent;
@@ -190,6 +196,7 @@ class MenuHscript
 		hscriptVars.set("screenCenter", screenCenter);
 		hscriptVars.set("setCamBgAlpha", setCamBgAlpha);
 		hscriptVars.set("alignText", alignText);
+		hscriptVars.set("unlockGameJoltTrophy", unlockGameJoltTrophy);
 
         hscriptVars.set("controls", parent.controls);
 		hscriptVars.set("openSubState", parent.openSubState);

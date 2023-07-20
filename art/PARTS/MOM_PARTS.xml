@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="MOM_PARTS.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Lleg pose right0000" x="0" y="0" width="253" height="293"/>
+	<SubTexture name="Symbol 10000" x="263" y="0" width="68" height="89" frameX="-1" frameY="0" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10001" x="263" y="0" width="68" height="89" frameX="-1" frameY="0" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10002" x="341" y="0" width="69" height="90" frameX="-1" frameY="-4" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10003" x="341" y="0" width="69" height="90" frameX="-1" frameY="-4" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10004" x="420" y="0" width="69" height="90" frameX="0" frameY="-9" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10005" x="420" y="0" width="69" height="90" frameX="0" frameY="-9" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10006" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10007" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10008" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10009" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10010" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10011" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10012" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 10013" x="420" y="0" width="69" height="90" frameX="0" frameY="-11" frameWidth="70" frameHeight="100"/>
+	<SubTexture name="Symbol 20000" x="499" y="0" width="194" height="368" frameX="-6" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20001" x="499" y="0" width="194" height="368" frameX="-6" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20002" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20003" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20004" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20005" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20006" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20007" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20008" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20009" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20010" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20011" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20012" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20013" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="Symbol 20014" x="703" y="0" width="185" height="376" frameX="0" frameY="0" frameWidth="200" frameHeight="376"/>
+	<SubTexture name="arm lean0000" x="898" y="0" width="105" height="378"/>
+	<SubTexture name="back feet0000" x="1013" y="0" width="326" height="136" frameX="0" frameY="0" frameWidth="330" frameHeight="183"/>
+	<SubTexture name="back feet0001" x="1349" y="0" width="328" height="179" frameX="-2" frameY="-4" frameWidth="330" frameHeight="183"/>
+	<SubTexture name="back foot 10000" x="1687" y="0" width="120" height="103"/>
+	<SubTexture name="back foot 20000" x="1817" y="0" width="169" height="98"/>
+	<SubTexture name="back foot 30000" x="1996" y="0" width="104" height="119"/>
+	<SubTexture name="back foot 40000" x="2110" y="0" width="182" height="136"/>
+	<SubTexture name="bg forearm0000" x="2302" y="0" width="62" height="106"/>
+	<SubTexture name="bg shoulder0000" x="2374" y="0" width="161" height="113"/>
+	<SubTexture name="body pose right0000" x="2545" y="0" width="244" height="295"/>
+	<SubTexture name="chest down0000" x="2799" y="0" width="274" height="278"/>
+	<SubTexture name="cory left pose sketch0000" x="3083" y="0" width="619" height="785"/>
+	<SubTexture name="curly bit blownin da udder way0000" x="3712" y="0" width="116" height="114" frameX="-7" frameY="0" frameWidth="123" frameHeight="114"/>
+	<SubTexture name="curly bit blownin da udder way0001" x="3838" y="0" width="121" height="111" frameX="0" frameY="-3" frameWidth="123" frameHeight="114"/>
+	<SubTexture name="down face 10000" x="3969" y="0" width="97" height="121"/>
+	<SubTexture name="down face 10001" x="3969" y="0" width="97" height="121"/>
+	<SubTexture name="down face 10002" x="3969" y="0" width="97" height="121"/>
+	<SubTexture name="down face 10003" x="3969" y="0" width="97" height="121"/>
+	<SubTexture name="down face 20000" x="0" y="795" width="97" height="127"/>
+	<SubTexture name="dumbArm0000" x="107" y="795" width="174" height="168" frameX="0" frameY="0" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0001" x="107" y="795" width="174" height="168" frameX="0" frameY="0" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0002" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0003" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0004" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0005" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0006" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0007" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0008" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="dumbArm0009" x="291" y="795" width="164" height="168" frameX="0" frameY="-3" frameWidth="174" frameHeight="171"/>
+	<SubTexture name="evil red eyes0000" x="465" y="795" width="88" height="72"/>
+	<SubTexture name="evil red eyes0001" x="465" y="795" width="88" height="72"/>
+	<SubTexture name="evil red eyes0002" x="563" y="795" width="88" height="72"/>
+	<SubTexture name="evil red eyes0003" x="563" y="795" width="88" height="72"/>
+	<SubTexture name="eyeglow0000" x="661" y="795" width="117" height="153"/>
+	<SubTexture name="eyeglow0001" x="661" y="795" width="117" height="153"/>
+	<SubTexture name="eyeglow0002" x="788" y="795" width="117" height="153"/>
+	<SubTexture name="eyeglow0003" x="788" y="795" width="117" height="153"/>
+	<SubTexture name="hair blowing right 0000" x="915" y="795" width="494" height="385" frameX="-3" frameY="0" frameWidth="497" frameHeight="387"/>
+	<SubTexture name="hair blowing right 0001" x="1419" y="795" width="492" height="385" frameX="0" frameY="0" frameWidth="497" frameHeight="387"/>
+	<SubTexture name="hair blowing right 0002" x="1921" y="795" width="492" height="385" frameX="0" frameY="-2" frameWidth="497" frameHeight="387"/>
+	<SubTexture name="hair blowing right 0003" x="2423" y="795" width="493" height="385" frameX="-2" frameY="0" frameWidth="497" frameHeight="387"/>
+	<SubTexture name="hair squiggle0000" x="2926" y="795" width="116" height="115" frameX="0" frameY="0" frameWidth="124" frameHeight="115"/>
+	<SubTexture name="hair squiggle0001" x="3052" y="795" width="122" height="112" frameX="-2" frameY="-3" frameWidth="124" frameHeight="115"/>
+	<SubTexture name="hand on hip0000" x="3184" y="795" width="74" height="78" frameX="0" frameY="-10" frameWidth="74" frameHeight="88"/>
+	<SubTexture name="hand on hip0001" x="3268" y="795" width="68" height="88" frameX="-6" frameY="0" frameWidth="74" frameHeight="88"/>
+	<SubTexture name="hand on hip eviler0000" x="3346" y="795" width="107" height="110"/>
+	<SubTexture name="left arm pose right0000" x="3463" y="795" width="326" height="152"/>
+	<SubTexture name="left face 10000" x="3799" y="795" width="99" height="135"/>
+	<SubTexture name="left face 10001" x="3799" y="795" width="99" height="135"/>
+	<SubTexture name="left face 10002" x="3799" y="795" width="99" height="135"/>
+	<SubTexture name="left face 10003" x="3799" y="795" width="99" height="135"/>
+	<SubTexture name="left face 20000" x="3908" y="795" width="97" height="135"/>
+	<SubTexture name="left forearm0000" x="0" y="1190" width="92" height="94"/>
+	<SubTexture name="leg bend0000" x="102" y="1190" width="205" height="345"/>
+	<SubTexture name="leg out left0000" x="317" y="1190" width="259" height="268"/>
+	<SubTexture name="mic hand left0000" x="586" y="1190" width="111" height="199"/>
+	<SubTexture name="mic hand right0000" x="707" y="1190" width="136" height="224"/>
+	<SubTexture name="mom body0000" x="853" y="1190" width="229" height="322"/>
+	<SubTexture name="mom body lean left0000" x="1092" y="1190" width="331" height="277"/>
+	<SubTexture name="mom default face0000" x="1433" y="1190" width="102" height="109"/>
+	<SubTexture name="mom default face0001" x="1433" y="1190" width="102" height="109"/>
+	<SubTexture name="mom default face0002" x="1433" y="1190" width="102" height="109"/>
+	<SubTexture name="mom default face0003" x="1433" y="1190" width="102" height="109"/>
+	<SubTexture name="mom face up pose0000" x="1545" y="1190" width="102" height="120"/>
+	<SubTexture name="mom face up pose0001" x="1545" y="1190" width="102" height="120"/>
+	<SubTexture name="mom face up pose0002" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0003" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0004" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0005" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0006" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0007" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0008" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0009" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0010" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0011" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0012" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0013" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0014" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0015" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0016" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0017" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0018" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom face up pose0019" x="1657" y="1190" width="102" height="114" frameX="0" frameY="0" frameWidth="102" frameHeight="120"/>
+	<SubTexture name="mom hair default0000" x="1769" y="1190" width="475" height="402" frameX="-8" frameY="-3" frameWidth="490" frameHeight="408"/>
+	<SubTexture name="mom hair default0001" x="2254" y="1190" width="472" height="402" frameX="0" frameY="-6" frameWidth="490" frameHeight="408"/>
+	<SubTexture name="mom hair default0002" x="2736" y="1190" width="474" height="402" frameX="-16" frameY="-1" frameWidth="490" frameHeight="408"/>
+	<SubTexture name="mom hair default0003" x="3220" y="1190" width="472" height="403" frameX="-2" frameY="0" frameWidth="490" frameHeight="408"/>
+	<SubTexture name="mom head default0000" x="3702" y="1190" width="178" height="248"/>
+	<SubTexture name="mom left leg0000" x="3890" y="1190" width="118" height="312"/>
+	<SubTexture name="mom mic arm0000" x="0" y="1603" width="150" height="305"/>
+	<SubTexture name="mom right leg0000" x="160" y="1603" width="227" height="351"/>
+	<SubTexture name="red eyes slim0000" x="397" y="1603" width="208" height="78"/>
+	<SubTexture name="red eyes slim0001" x="397" y="1603" width="208" height="78"/>
+	<SubTexture name="red eyes slim0002" x="615" y="1603" width="208" height="78"/>
+	<SubTexture name="red eyes slim0003" x="615" y="1603" width="208" height="78"/>
+	<SubTexture name="right arm hip up0000" x="833" y="1603" width="150" height="248"/>
+	<SubTexture name="right face 10000" x="993" y="1603" width="94" height="121"/>
+	<SubTexture name="right face 10001" x="993" y="1603" width="94" height="121"/>
+	<SubTexture name="right face 10002" x="993" y="1603" width="94" height="121"/>
+	<SubTexture name="right face 10003" x="993" y="1603" width="94" height="121"/>
+	<SubTexture name="right face 20000" x="1097" y="1603" width="96" height="128"/>
+	<SubTexture name="right mic hand0000" x="1203" y="1603" width="163" height="134"/>
+	<SubTexture name="rleg pose right0000" x="1376" y="1603" width="229" height="353"/>
+	<SubTexture name="thigh 1 0000" x="1615" y="1603" width="153" height="168"/>
+	<SubTexture name="thigh 20000" x="1778" y="1603" width="205" height="153"/>
+	<SubTexture name="wrist bangles0000" x="1993" y="1603" width="59" height="84"/>
+</TextureAtlas>

@@ -278,7 +278,7 @@
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "cringe",
-			"text": "How did they get here just now..?"
+			"text": "(How did they get here just now..?)"
 		},
 		{
 			"speed": 0.04,
@@ -298,7 +298,27 @@
 			"portrait": "spookeez",
 			"boxState": "normal",
 			"expression": "skid-default",
-			"text": "I'm Skid!"
+			"text": "I'm an Evil Genius!"
+		},
+		{
+			"speed": 0.04,
+			"events": [
+				""
+			],
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "default",
+			"text": "Nah like; what do you want me to call you?"
+		},
+		{
+			"speed": 0.05,
+			"events": [
+				""
+			],
+			"portrait": "spookeez",
+			"boxState": "normal",
+			"expression": "skid-default",
+			"text": "Evil Genius."
 		},
 		{
 			"speed": 0.05,
@@ -308,7 +328,7 @@
 			"portrait": "spookeez",
 			"boxState": "normal",
 			"expression": "pump-default",
-			"text": "And I'm Pump!!"
+			"text": "And I'm Bot!!"
 		},
 		{
 			"speed": 0.05,
@@ -318,7 +338,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "coolswag"
+			"text": "...Ok then."
 		},
 		{
 			"expression": "challenge",

@@ -26,7 +26,7 @@ class ArchiveState extends MusicBeatState
     var submenus:Array<Array<String>> = [
         ["H.I.T", "Red Plant", "Prediction"],
         ["Amanda Anderson", "Hating Simulator Publishing Co.", "The Monster", "The Traitor"],
-        ["pictures", "documents"]
+        ["pictures", "documents", "videos"]
     ];
 
     // specific arrays.
@@ -38,12 +38,13 @@ class ArchiveState extends MusicBeatState
     ];
     var notes:Array<String> = [
         "The 'HUMAN INTERACTION TERMINAL' has been completed! Relied on human based interviews for some of the entries that have been redacted by the [GVMT Requests that I hide our race] Government but, at least I could add on to it myself. There have been weird breaches though...Not that " + CoolUtil.username() + " guy I chatted with but...something else....",
-        "...Something bad is gonna happen. This red string-like plant has infected one of the [REDACTED]'s human test subjects...They went mad. Their flesh smelt horrible...They only made growling noises, but after a few days [DOCTER] declared them Brain Dead....But- they still had a pulse...Human pop culture calls this: 'Zombifacation'.\nI'm scared about if it's out there...festering...",
+        "...Something bad is gonna happen. This red string-like plant has infected one of the [REDACTED]'s human test subjects...They went mad. Their flesh smelt horrible...They only made growling noises, but after a few days [DOCTOR] declared them Brain Dead....But- they still had a pulse...Human pop culture calls this: 'Zombifacation'.\nI'm scared about if it's out there...festering...",
         "Dark World. Kids have to swim in waters with horrifying monsters.\nIs it the doing of 'The Monster'?"
     ];
     var filesys:Array<Array<String>> = [
         ["body.png", "poster.png"],
-        ["HRL.txt"]
+        ["HRL.txt"],
+        ["CSV.mp4"]
     ];
     
     override function create()
@@ -105,6 +106,14 @@ class ArchiveState extends MusicBeatState
                         {
                             toOpen = "data/" + curArray[curSelected];
                             FileOpener.openFile(Paths.archives(toOpen));
+                        }
+                        if (toOpen.endsWith(".mp4"))
+                        {
+                            switch (toOpen)
+                            {
+                                case "CSV.mp4":
+                                    CoolUtil.browserLoad("https://www.youtube.com/watch?v=BC4ee9M-EH8");
+                            }
                         }
                 }
             }

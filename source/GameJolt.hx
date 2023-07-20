@@ -282,13 +282,26 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
                 TROPHYNAME = "This Is The Moment That Walt Became Heisenberg";
             case 194360: // LUCID!!! HELP!!!
                 TROPHYNAME = "GRRRRRRRAHH. RATIOOOOOOO!!!!";
-            case 194899:
+            case 194899: // pyro
                 TROPHYNAME = "August 27th, 2022";
+            case 200305: // nikku
+                TROPHYNAME = "Lies";
+            case 200725:
+                TROPHYNAME = "My Name Is ASAC Schrader...";
+            case 200306: // test
+                TROPHYNAME = "Testing 1-2-3";
 
             case 178530: // missinput
                 TROPHYNAME = "Misinput.";
+            case 200307: // not meth!!
+                TROPHYNAME = "Say My Name";
+
+            case 200410:
+                TROPHYNAME = "Super Duper Extreme Rapping";
 
             // platinum
+            case 200321:
+                TROPHYNAME = "Oh My Goodness";
             case 194362: // wardrobe
                 TROPHYNAME = "Dress Up Party.";
             case 194363: // ss

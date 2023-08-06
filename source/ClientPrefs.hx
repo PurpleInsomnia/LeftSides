@@ -5,8 +5,11 @@ import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import sys.io.File;
+import sys.FileSystem;
 import haxe.Json;
 import Controls;
+
+using StringTools;
 
 class ClientPrefs {
 	//TO DO: Redo ClientPrefs in a way that isn't too stupid
@@ -72,6 +75,7 @@ class ClientPrefs {
 	public static var unlockedRestless:Bool = false;
 	public static var lowQualitySongs:Bool = false;
 	public static var iconStyle:String = "Default";
+	public static var iconGlows:Bool = true;
 	public static var playSoundOnNoteHit:Bool = false;
 	public static var hitSoundVolume:Float = 1;
 
@@ -109,8 +113,15 @@ class ClientPrefs {
 	public static var points:Int = 0;
 	/**
 	 * KEY: Tag, Amount.
+	 * I'm still using this variable for backending some shit...
 	 */
 	public static var inventory:Array<Array<Dynamic>> = [];
+
+	#if (haxe >= "4.0.0")
+	public static var newInventory:Map<String, Dynamic> = new Map();
+	#else
+	public static var newInventory:Map<String, Dynamic> = new Map<String, Dynamic>();
+	#end
 	public static var lastShop:Bool = false;
 	public static var itemUnlocks:Array<Bool> = [false, false];
 
@@ -215,6 +226,7 @@ class ClientPrefs {
 		FlxG.save.data.unlockedRestless = unlockedRestless;
 		FlxG.save.data.lowQualitySongs = lowQualitySongs;
 		FlxG.save.data.iconStyle = iconStyle;
+		FlxG.save.data.iconGlows = iconGlows;
 		FlxG.save.data.playSoundOnNoteHit = playSoundOnNoteHit;
 		FlxG.save.data.hitSoundVolume = hitSoundVolume;
 
@@ -244,6 +256,7 @@ class ClientPrefs {
 		FlxG.save.data.inventory = inventory;
 		FlxG.save.data.lastShop = lastShop;
 		FlxG.save.data.itemUnlocks = itemUnlocks;
+		FlxG.save.data.newInventory = newInventory;
 
 		FlxG.save.data.completedSideStories = completedSideStories;
 		FlxG.save.data.useless = useless;
@@ -335,8 +348,9 @@ class ClientPrefs {
 		if(FlxG.save.data.showComboSpr != null) {
 			showComboSpr = FlxG.save.data.showComboSpr;
 		}
-		if(FlxG.save.data.shaders != null) {
-			shaders = true;
+		if(FlxG.save.data.shaders != null) 
+		{
+			shaders = FlxG.save.data.shaders;
 		}
 		if(FlxG.save.data.dialogueVoices != null) {
 			dialogueVoices = FlxG.save.data.dialogueVoices;
@@ -463,6 +477,10 @@ class ClientPrefs {
 		{
 			iconStyle = FlxG.save.data.iconStyle;
 		}
+		if (FlxG.save.data.iconGlows != null)
+		{
+			iconGlows = FlxG.save.data.iconGlows;
+		}
 		if (FlxG.save.data.playSoundOnNoteHit != null)
 		{
 			playSoundOnNoteHit = FlxG.save.data.playSoundOnNoteHit;
@@ -546,6 +564,9 @@ class ClientPrefs {
 				},
 				"isolation" => {
 					false;
+				},
+				"worries" => {
+					false;
 				}
 			];
 		}
@@ -583,6 +604,16 @@ class ClientPrefs {
 			checkInventory();
 		}
 
+		if (FlxG.save.data.newInventory != null)
+		{
+			newInventory = FlxG.save.data.newInventory;
+			checkInventory();
+		}
+		else
+		{
+			checkInventory();
+		}
+
 		if (FlxG.save.data.itemUnlocks != null)
 		{
 			itemUnlocks = FlxG.save.data.itemUnlocks;
@@ -609,6 +640,22 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.arcadeUnlocked != null) {
 			arcadeUnlocked = FlxG.save.data.arcadeUnlocked;
+		}
+
+		if (FlxG.save.data.dlcInventory != null)
+		{
+			dlc.DlcInventory.inventory = FlxG.save.data.dlcInventory;
+		}
+
+		if (FlxG.save.data.loadingScreenMetas != null)
+		{
+			LoadingScreenState.loadingScreenMeta = FlxG.save.data.loadingScreenMetas[0];
+			LoadingScreenState.loadingScreen = FlxG.save.data.loadingScreenMetas[1];
+		}
+		else
+		{
+			LoadingScreenState.loadingScreenMeta = haxe.Json.parse(sys.io.File.getContent("assets/images/loading/meta.json"));
+			LoadingScreenState.loadingScreen = LoadingScreenState.loadingScreenMeta.loadingScreens[0];
 		}
 
 		// flixel automatically saves your volume!
@@ -674,21 +721,68 @@ class ClientPrefs {
 
 	public static function checkInventory()
 	{
-		if (inventory[0] == null)
+		if (inventory[0] != null)
 		{
-			inventory.push(["week-key", 0]);
+			if (inventory[0] == null)
+			{
+				inventory.push(["week-key", 0]);
+				if (!newInventory.exists("week-key"))
+				{
+					newInventory.set("week-key", 0);
+				}
+			}
+			if (inventory[1] == null)
+			{
+				inventory.push(["story-key", 0]);
+				if (!newInventory.exists("story-key"))
+				{
+					newInventory.set("story-key", 0);
+				}
+			}
+			if (inventory[2] == null)
+			{
+				inventory.push(["secret-key", 0]);
+				if (!newInventory.exists("secret-key"))
+				{
+					newInventory.set("secret-key", 0);
+				}
+			}
+			if (inventory[3] == null)
+			{
+				inventory.push(["costume-box", 0]);
+				if (!newInventory.exists("costume-box"))
+				{
+					newInventory.set("costume-box", 0);
+				}
+			}
 		}
-		if (inventory[1] == null)
+
+		for (file in FileSystem.readDirectory("assets/shop/data/"))
 		{
-			inventory.push(["story-key", 0]);
-		}
-		if (inventory[2] == null)
-		{
-			inventory.push(["secret-key", 0]);
-		}
-		if (inventory[3] == null)
-		{
-			inventory.push(["costume-box", 0]);
+			if (file.endsWith(".json"))
+			{
+				var form:String = file.replace(".json", "");
+				if (!newInventory.exists(form))
+				{
+					newInventory.set(form, 0);
+				}
+				if (newInventory.exists(form))
+				{
+					for (inv in inventory)
+					{
+						if (inv[0] == form)
+						{
+							if (newInventory.get(form) != inv[1])
+							{
+								if (newInventory.get(form) < inv[1])
+								{
+									newInventory.set(form, inv[1]);
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -701,6 +795,10 @@ class ClientPrefs {
 		if (!useless.exists("flipChar"))
 		{
 			useless.set("flipChar", false);
+		}
+		if (!useless.exists("leftSides"))
+		{
+			useless.set("leftSides", false);
 		}
 	}
 }

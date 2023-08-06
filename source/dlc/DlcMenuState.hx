@@ -462,6 +462,7 @@ class DlcMenuState extends MusicBeatState
 					if (homeFile.mainMenuAsHome)
 					{
 						switching = true;
+						FlxG.sound.music.stop();
 						MusicBeatState.switchState(new MainMenuState());
 					}
 				}

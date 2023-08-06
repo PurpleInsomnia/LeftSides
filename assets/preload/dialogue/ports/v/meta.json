@@ -1,4 +1,5 @@
 {
     "flipX": true,
-    "position": "right"
+    "position": "right",
+    "antialiasing": true
 }

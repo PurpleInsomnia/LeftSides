@@ -1,0 +1,35 @@
+var basePos:Array<Int> = [];
+function onCreatePost()
+{
+    basePos = [lePlayState.dad.x, lePlayState.dad.y];
+}
+
+function onStepHit()
+{
+    checkPos();
+}
+
+function checkPos()
+{
+    var newPos:Array<Int> = [0, 0];
+    switch (lePlayState.dad.curCharacter)
+    {
+        case "walt":
+        case "jesse":
+            newPos = [0, 20];
+        case "finger":
+        case "gus":
+        case "saul":
+        case "hank":
+            newPos = [0, 50];
+    }
+
+    if (lePlayState.dad.x != basePos[0] + newPos[0])
+    {
+        lePlayState.dad.x = basePos[0] + newPos[0];
+    }
+    if (lePlayState.dad.y != basePos[1] + newPos[1])
+    {
+        lePlayState.dad.y = basePos[1] + newPos[1];
+    }
+}

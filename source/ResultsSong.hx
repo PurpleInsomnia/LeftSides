@@ -98,6 +98,11 @@ class ResultsSong extends MusicBeatState
 			{
 				var toSub:Float = 1 - ratingBonus;
 				ratingBonus = ratingBonus - toSub;
+				ratingBonus -= 0.01;
+			}
+			if (PlayState.deathCounter > 0)
+			{
+				ratingBonus -= (0.35 * PlayState.deathCounter);
 			}
 			var rString:String = Std.string(ratingBonus);
 

@@ -26,9 +26,24 @@ import openfl.utils.Assets as LimeAssets;
 
 using StringTools;
 
+typedef LoadingScreenMeta = {
+	var loadingScreens:Array<LoadingMeta>;
+	var modDirectory:Dynamic;
+}
+
+typedef LoadingMeta = {
+	var path:String;
+	var desc:String;
+	var unlock:String;
+	var unlockArgs:Array<Dynamic>;
+}
+
 class LoadingScreenState extends MusicBeatState
 {
 	private var camGame:FlxCamera;
+
+	public static var loadingScreen:LoadingMeta = null;
+	public static var loadingScreenMeta:LoadingScreenMeta = null;
 
 	var peepeepoopoo:LoadingSpr;
 
@@ -75,18 +90,47 @@ class LoadingScreenState extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
+		// ohh my gawd.
+		if (LoadingScreenState.loadingScreenMeta == null)
+		{
+			LoadingScreenState.loadingScreenMeta = haxe.Json.parse(sys.io.File.getContent("assets/images/loading/meta.json"));
+			LoadingScreenState.loadingScreen = LoadingScreenState.loadingScreenMeta.loadingScreens[0];
+
+			FlxG.save.data.loadingScreenMetas = [LoadingScreenState.loadingScreenMeta, LoadingScreenState.loadingScreen];
+            FlxG.save.flush();
+		}
+
 		folderDirectory = PlayStateMeta.dataFile.loadingDirectory;
+		if (folderDirectory != "")
+		{
+			folderDirectory += "/";
+		}
 		var fullPath:String = "";
 		if (folderDirectory != "")
 		{
-			fullPath = folderDirectory + "/";
+			fullPath = folderDirectory + "/loadingScreen";
+		}
+		else
+		{
+			fullPath = "loadingScreens/" + LoadingScreenState.loadingScreen.path;
 		}
 
-		var screen:FlxSprite = new FlxSprite().loadGraphic(Paths.image("loading/" + fullPath + "loadingScreen"));
+		var lastDirectory:String = Paths.currentModDirectory;
+		if (LoadingScreenState.loadingScreenMeta.modDirectory != null)
+		{
+			if (LoadingScreenState.loadingScreen.path != "default")
+			{
+				Paths.currentModDirectory = LoadingScreenState.loadingScreenMeta.modDirectory;
+			}
+		}
+
+		var screen:FlxSprite = new FlxSprite().loadGraphic(Paths.image("loading/" + fullPath));
 		add(screen);
 
+		Paths.currentModDirectory = lastDirectory;
+
 		var random:Int = FlxG.random.int(0, 6);
-		var tip:FlxSprite = new FlxSprite(-1280, 0).loadGraphic(Paths.image("loading/" + fullPath + "tips/" + random));
+		var tip:FlxSprite = new FlxSprite(-1280, 0).loadGraphic(Paths.image("loading/" + folderDirectory + "tips/" + random));
 		add(tip);
 
 		peepeepoopoo = new LoadingSpr();

@@ -872,6 +872,8 @@ class ChartingState extends MusicBeatState
 			_song.notes[curSection].sectionNotes = newSection;
 			updateGrid();
 		});
+		leaveOneSectionButton.setGraphicSize(80, 30);
+		leaveOneSectionButton.updateHitbox();
 
 		var clearGFSectionButton = new FlxButton(110, 240, "Clear GF Section", function()
 		{
@@ -891,6 +893,8 @@ class ChartingState extends MusicBeatState
 			_song.notes[curSection].sectionNotes = newSection;
 			updateGrid();
 		});
+		clearGFSectionButton.setGraphicSize(80, 30);
+		clearGFSectionButton.updateHitbox();
 
 		tab_group_section.add(stepperLength);
 		tab_group_section.add(stepperSectionBPM);
@@ -1834,7 +1838,7 @@ class ChartingState extends MusicBeatState
 		}
 		audioBuffers[1] = null;
 		#if MODS_ALLOWED
-		var vocalpath:String = "";
+		var vocalpath:String = Paths.modFolders('songs/' + currentSongName + '/Voices.ogg');
 		if (isEncore)
 		{
 			vocalpath = Paths.modFolders('songs/' + currentSongName + '/VoicesEncore.ogg');
@@ -1844,10 +1848,10 @@ class ChartingState extends MusicBeatState
 			audioBuffers[1] = AudioBuffer.fromFile(vocalpath);
 			//trace('Custom vocals found');
 		} else { #end
-			var leVocals:Dynamic = Paths.voices(currentSongName);
+			var leVocals:Dynamic = Paths.voices(currentSongName, "ogg", "Voices");
 			if (isEncore)
 			{
-				leVocals = Paths.voicesEncore(currentSongName);
+				leVocals = Paths.voicesEncore(currentSongName, "ogg", "VoicesEncore");
 			}
 
 			if (!Std.isOfType(leVocals, Sound) && OpenFlAssets.exists(leVocals)) { //Vanilla voices

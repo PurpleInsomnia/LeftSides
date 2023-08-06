@@ -9,6 +9,9 @@ function onNextLinePost(line)
 	if line == 7 then
 		portMovement("moveDown", false);
 	end
+	if line == 10 then
+		textMessages("test");
+	end
 end
 
 function onNextLine(line)

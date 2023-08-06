@@ -30,6 +30,7 @@ typedef CharacterAnimation = {
 typedef CharacterMeta = {
 	var flipX:Bool;
 	var position:String;
+	var antialiasing:Bool;
 }
 
 class DialogueCharacter extends FlxSprite
@@ -180,6 +181,14 @@ class DialogueCharacter extends FlxSprite
 		else
 		{
 			flipX = false;
+		}
+		if (meta != null)
+		{
+			var aac:Dynamic = meta.antialiasing;
+			if (aac != null)
+			{
+				antialiasing = meta.antialiasing;
+			}
 		}
 	}
 

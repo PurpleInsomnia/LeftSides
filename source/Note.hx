@@ -76,6 +76,8 @@ class Note extends FlxSprite
 	public var trueScaleY:Float = 0;
 	public var distance:Float = 2000;
 
+	public var forcePixel:Bool = false;
+
 	public var char:String = "";
 
 	private function set_texture(value:String):String {
@@ -149,7 +151,7 @@ class Note extends FlxSprite
 		return value;
 	}
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false, ?forcePixel:Bool = false)
 	{
 		super();
 
@@ -159,6 +161,7 @@ class Note extends FlxSprite
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
 		this.inEditor = inEditor;
+		this.forcePixel = forcePixel;
 
 		x += (ClientPrefs.middleScroll ? PlayState.STRUM_X_MIDDLESCROLL : PlayState.STRUM_X) + 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
@@ -218,8 +221,10 @@ class Note extends FlxSprite
 
 			offsetX -= width / 2;
 
-			if (PlayState.isPixelStage)
+			if (PlayState.isPixelStage || forcePixel)
+			{
 				offsetX += 30;
+			}
 
 			if (prevNote.isSustainNote)
 			{
@@ -241,14 +246,16 @@ class Note extends FlxSprite
 					prevNote.scale.y *= (PlayState.SONG.speed * PlayState.instance.scrollMult);
 				}
 
-				if(PlayState.isPixelStage) {
+				if(PlayState.isPixelStage || forcePixel) 
+				{
 					prevNote.scale.y *= 1.19;
 				}
 				prevNote.updateHitbox();
 				// prevNote.setGraphicSize();
 			}
 
-			if(PlayState.isPixelStage) {
+			if(PlayState.isPixelStage || forcePixel) 
+			{
 				scale.y *= PlayState.daPixelZoom;
 				updateHitbox();
 			}
@@ -292,13 +299,17 @@ class Note extends FlxSprite
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
 		// maybe?
-		if(PlayState.isPixelStage) {
-			if(isSustainNote) {
+		if(PlayState.isPixelStage || forcePixel) 
+		{
+			if(isSustainNote) 
+			{
 				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
 				width = width / 4;
 				height = height / 2;
 				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
-			} else {
+			} 
+			else 
+			{
 				loadGraphic(Paths.image('pixelUI/' + blahblah));
 				width = width / 4;
 				height = height / 5;
@@ -307,12 +318,15 @@ class Note extends FlxSprite
 			setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 			loadPixelNoteAnims();
 			antialiasing = false;
-		} else {
+		} else 
+		{
 			frames = Paths.getSparrowAtlas(blahblah);
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
 		}
-		if(isSustainNote) {
+		
+		if(isSustainNote) 
+		{
 			scale.y = lastScaleY;
 		}
 		updateHitbox();

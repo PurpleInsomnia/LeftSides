@@ -52,7 +52,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			"Like hide HUD, but the health bar, icons and score text are visible too.\nNote: A certain event will not trigger if this is on.",
 			"limitedHud",
 			"bool",
-			"false");
+			false);
 		addOption(option);
 
 		var option:Option = new Option("Health Icon Style",
@@ -61,6 +61,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			"string",
 			"Default",
 			["Default", "Classic"]);
+		addOption(option);
+
+		var option:Option = new Option("Icon Glows",
+			"If checked, the icons glow depending on how much health you have.",
+			"iconGlows",
+			"bool",
+			true);
 		addOption(option);
 		
 		var option:Option = new Option('Hide Time Bar',

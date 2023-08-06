@@ -50,7 +50,7 @@ class WeekData {
 			weekBackground: 'stage',
 			weekBefore: 'tutorial',
 			storyName: 'Your New Week',
-			weekName: 'Custom Week',
+			weekName: 'DEFAULT_WEEK_NAME',
 			freeplayColor: [146, 113, 253],
 			startUnlocked: true,
 			hideStoryMode: false,

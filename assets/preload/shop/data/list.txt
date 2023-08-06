@@ -1,0 +1,5 @@
+week-key
+story-key
+secret-key
+costume-box
+funkin

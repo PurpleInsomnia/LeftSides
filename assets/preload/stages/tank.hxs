@@ -1,0 +1,70 @@
+var boat:BGSprite = null;
+var bg:BGSprite = null;
+function onCreate()
+{
+    if (!ClientPrefs.lowQuality)
+    {
+        bg = new BGSprite("tank/bg", -600, -550);
+        add(bg, false);
+
+        boat = new BGSprite("tank/boat", -600, -500);
+        boat.x -= Std.int(boat.width);
+        add(boat, false);
+
+        var floor:BGSprite = new BGSprite("tank/floor", -600, -550);
+        add(floor, false);
+
+        lePlayState.backgroundSprites.push(bg);
+        lePlayState.backgroundSprites.push(boat);
+        lePlayState.backgroundSprites.push(floor);
+    }
+    else
+    {
+        bg = new BGSprite("tank/bg_lowQual", -600, -550);
+        add(bg, false);
+        lePlayState.backgroundSprites.push(bg);
+    }
+
+    var fg:BGSprite = new BGSprite("tank/fg", -600, -550);
+    add(fg, true);
+
+    lePlayState.backgroundSprites.push(fg);
+}
+
+var boatTime:Float = 7;
+var boatTween:FlxTween = null;
+function onStepHit()
+{
+    if (curStep == 1 && !ClientPrefs.lowQuality)
+    {
+        var floatSpeed:float = 3;
+        var song:String = Paths.formatToSongPath(PlayState.SONG.song);
+        switch (song)
+        {
+            default:
+                // do nothing.
+        }
+        lePlayState.modchartTweens.set("boatmoves", FlxTween.tween(lePlayState.camGame, {y: 35}, floatSpeed, {ease: FlxEase.sineInOut, type: FlxTweenType.pingpong}));
+        lePlayState.modchartTweens.set("bgmoves", FlxTween.tween(bg, {y: (bg.y - 35)}, floatSpeed, {ease: FlxEase.sineInOut, type: FlxTweenType.pingpong}));
+        lePlayState.modchartTweens.set("boatmovesboat", FlxTween.tween(boat, {y: (boat.y - 35)}, floatSpeed, {ease: FlxEase.sineInOut, type: FlxTweenType.pingpong}));
+    }
+    if (curStep % 96 == 0)
+    {
+        if (boat != null)
+        {
+            if (boatTween != null)
+            {
+                boatTween.cancel();
+                lePlayState.modchartTweens.remove("boatboatboat");
+            }
+            boat.x = -600 - Std.int(boat.width);
+            boatTween = FlxTween.tween(boat, {x: -600 + Std.int(boat.width)}, boatTime, {
+                onComplete: function(twn:FlxTween)
+                {
+                    lePlayState.modchartTweens.remove("boatboatboat");
+                }
+            });
+            lePlayState.modchartTweens.set("boatboatboat", boatTween);
+        }
+    }
+}

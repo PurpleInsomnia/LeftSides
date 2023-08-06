@@ -431,7 +431,7 @@ class WardrobeState extends MusicBeatState
                                 ben.locked = true;
                             }
                         case "ownSuggestedCostumes":
-                            if (ClientPrefs.inventory[3][1] == 0)
+                            if (ClientPrefs.newInventory.get("costume-box") == 0)
                             {
                                ben.locked = true; 
                             }
@@ -523,7 +523,7 @@ class WardrobeState extends MusicBeatState
                                 tess.locked = true;
                             }
                         case "ownSuggestedCostumes":
-                            if (ClientPrefs.inventory[3][1] == 0)
+                            if (ClientPrefs.newInventory.get("costume-box") == 0)
                             {
                                tess.locked = true; 
                             }
@@ -618,7 +618,7 @@ class WardrobeState extends MusicBeatState
                                     aub += 1;
                                 }
                             case "ownSuggestedCostumes":
-                                if (ClientPrefs.inventory[3][1] != 0)
+                                if (ClientPrefs.newInventory.get("costume-box") == 0)
                                 {
                                     aub += 1;
                                 }
@@ -696,9 +696,9 @@ class WardrobeState extends MusicBeatState
                                     aut += 1;
                                 }
                             case "ownSuggestedCostumes":
-                                if (ClientPrefs.inventory[3][1] != 0)
+                                if (ClientPrefs.newInventory.get("costume-box") == 0)
                                 {
-                                aut += 1;
+                                    aut += 1;
                                 }
                             case "100":
                                 if (trophies.TrophyUtil.trophies.exists("Origin Stories."))

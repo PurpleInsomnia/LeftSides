@@ -4,5 +4,8 @@
     "price": 2000,
     "thanks": "DON'T BRING IT BACK. [PLEASE].",
     "nah": "I'm not [GIVING] you clothes [AGAIN].",
-    "tag": "costume-box"
+    "broke": "Just because I don't want them, [DOESN'T] mean [YOU] get to take them for an [UNREASONABLE] price...",
+    "oosMessage": "Thank you for [TAKING] them...",
+    "tag": "costume-box",
+    "stock": 1
 }

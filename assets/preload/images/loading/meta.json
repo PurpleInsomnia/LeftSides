@@ -1,0 +1,20 @@
+{
+    "loadingScreens": [
+        {
+            "path": "default",
+            "desc": "The default loading screen. What else did you expect?",
+            "unlock": "lol"
+        },
+        {
+            "path": "funkin",
+            "desc": "The coolest loading screen on The Monster's self-made market.",
+            "unlock": "shop-item"
+        },
+        {
+            "path": "v",
+            "desc": "Holy moly it's V.",
+            "unlock": "song",
+            "unlockArgs": ["V"]
+        }
+    ]
+}

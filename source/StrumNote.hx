@@ -11,18 +11,22 @@ class StrumNote extends FlxSprite
 	private var colorSwap:ColorSwap;
 	public var resetAnim:Float = 0;
 	private var noteData:Int = 0;
+	private var startFlipped:Bool = false;
+	public var forcePixel:Bool = false;
 
 	private var player:Int;
 
 	public var texture:String;
 
-	public function new(x:Float, y:Float, leData:Int, player:Int) 
+	public function new(x:Float, y:Float, leData:Int, player:Int, ?startFlipped:Bool = false, ?forcePixel:Bool = false) 
 	{
 		colorSwap = new ColorSwap();
 		shader = colorSwap.shader;
 		noteData = leData;
 		this.player = player;
 		this.noteData = leData;
+		this.startFlipped = startFlipped;
+		this.forcePixel = forcePixel;
 		super(x, y);
 
 		var skin:String = 'NOTE_assets';
@@ -33,7 +37,7 @@ class StrumNote extends FlxSprite
 
 		this.texture = skin;
 
-		if(PlayState.isPixelStage)
+		if(PlayState.isPixelStage || forcePixel)
 		{
 			loadGraphic(Paths.image('pixelUI/' + skin));
 			width = width / 4;
@@ -108,6 +112,20 @@ class StrumNote extends FlxSprite
 		if (mult == -1)
 		{
 			mult = player;
+			if (startFlipped)
+			{
+				var changedMult:Bool = false;
+				if (mult == 0 && !changedMult)
+				{
+					mult = 1;
+					changedMult = true;
+				}
+				if (mult == 1 && !changedMult)
+				{
+					mult = 0;
+					changedMult = true;
+				}
+			}
 		}
 		x += Note.swagWidth * noteData;
 		x += 50;
@@ -125,7 +143,7 @@ class StrumNote extends FlxSprite
 		{
 			return;
 		}
-			if(PlayState.isPixelStage)
+			if(PlayState.isPixelStage || forcePixel)
 			{
 				loadGraphic(Paths.image('pixelUI/' + skin));
 				width = width / 4;

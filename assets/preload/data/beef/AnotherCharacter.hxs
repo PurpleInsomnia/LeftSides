@@ -33,6 +33,8 @@ function onCreatePost()
     {
         lePlayState.addToCharGroup(daCharacter, charGrp);
     }
+
+    lePlayState.characters.set("tess", daCharacter);
 }
 
 function goodNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
@@ -52,10 +54,18 @@ function goodNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)
         }
         daCharacter.holdTimer = 0;
         lePlayState.focusPlayerChar = daCharacter;
+        if (lePlayState.gameoverscript == "")
+        {
+            lePlayState.reloadHealthBarFromChar(daCharacter, lePlayState.dad);
+        }
         lePlayState.gameoverscript = "tessGAMEOVER";
     }
     else if (lePlayState.focusPlayerChar == daCharacter && isPlayer)
     {
+        if (lePlayState.gameoverscript == "tessGAMEOVER")
+        {
+            lePlayState.reloadHealthBarFromChar(lePlayState.boyfriend, lePlayState.dad);
+        }
         lePlayState.focusPlayerChar = lePlayState.boyfriend;
         lePlayState.gameoverscript = "";
     }

@@ -136,6 +136,8 @@ class MonsterLairState extends MusicBeatState
             termShit.push("Archives");
         }
 
+        PlayState.songPrefix = "";
+
         FlxG.sound.music.stop();
         FlxG.sound.playMusic(Paths.music("lair"));
 

@@ -103,7 +103,7 @@
 		{
 			"speed": 0.05,
 			"events": [
-				""
+				"play-sound:VINEBOOM:0.5"
 			],
 			"portrait": "bb",
 			"boxState": "normal",

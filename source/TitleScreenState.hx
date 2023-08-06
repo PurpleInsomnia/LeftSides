@@ -153,14 +153,7 @@ class TitleScreenState extends MusicBeatState
 			dlcButton.loadGraphic(Paths.image('dlcButton'), true, 150, 150);
 			add(dlcButton);
 
-			var comicButton:FlxButton = new FlxButton(1280 - 450, 720 - 150, null, function()
-			{
-				MusicBeatState.switchState(new comics.ComicsMenu());
-			});
-			comicButton.loadGraphic(Paths.image("title/comics"), true, 150, 150);
-			add(comicButton);
-
-			var dlcTutButton:FlxButton = new FlxButton(1280 - 750, 720 - 150, null, function()
+			var dlcTutButton:FlxButton = new FlxButton(1280 - 600, 720 - 150, null, function()
 			{
 				MusicBeatState.switchState(new dlc.DlcTutorials());
 			});

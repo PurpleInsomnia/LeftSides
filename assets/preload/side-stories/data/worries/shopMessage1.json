@@ -1,0 +1,61 @@
+{
+    "name": "Tess (My World <3)",
+    "pfp": "tess",
+    "messages": [
+        {
+            "message": "I forgot to tell you that I wanted to get some energy drinks for our trip.",
+            "r": false
+        },
+        {
+            "message": "i thought somethin was missing lol\nwhat do you want me to get?",
+            "r": true
+        },
+        {
+            "message": "Um...suprise me~",
+            "r": false
+        },
+        {
+            "message": "oki :)",
+            "r": true
+        },
+        {
+            "message": "can you think of anything else we need for our trip?",
+            "r": true
+        },
+        {
+            "message": "Um...",
+            "r": false
+        },
+        {
+            "message": "We're running low on condoms...",
+            "r": false
+        },
+        {
+            "message": "damn",
+            "r": true,
+            "image": "damn"
+        },
+        {
+            "message": "well, alright. i'll get those things and then i'll head back home. :)",
+            "r": true
+        },
+        {
+            "message": "i also picked up a little treat for you <3",
+            "r": true
+        },
+        {
+            "message": "Awwww thank you baby :D",
+            "r": false
+        },
+        {
+            "message": "I love you <3",
+            "r": false
+        },
+        {
+            "message": "i love you too <3",
+            "r": true
+        }
+    ],
+    "phone": "ben",
+    "android": true
+}

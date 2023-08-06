@@ -1,0 +1,34 @@
+function onCreate()
+{
+    var bg:BGSprite = new BGSprite("philly/bg", 0, 0, 1, 1);
+    add(bg, false);
+
+    lePlayState.backgroundSprites.push(bg);
+}
+
+function onCreatePost()
+{
+    trace("killing myself");
+
+    if (!ClientPrefs.lowQuality)
+    {
+        var lol:BGSprite = new BGSprite("philly/shader1", 0, 0, 1, 1);
+        if (ClientPrefs.shaders)
+        {
+            lol.blend = BlendMode.MULTIPY;
+        }
+        add(lol, true);
+
+        var ass:BGSprite = new BGSprite("philly/shader2", 0, 0, 1, 1);
+        if (ClientPrefs.shaders)
+        {
+            ass.blend = BlendMode.ADD;
+        }
+        add(ass, true);
+
+        lePlayState.backgroundSprites.push(lol);
+        lePlayState.backgroundSprites.push(ass);
+    }
+
+    trace("killing myself");
+}

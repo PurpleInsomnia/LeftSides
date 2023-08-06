@@ -45,6 +45,7 @@ class ResultsScreen extends MusicBeatState
 	public static var misses:Int = 0;
 	public static var ratings:Array<PlayState.RatingChart> = [];
 	public static var botplay:Bool = false;
+	public static var deathCounter:Int = 0;
 
 	public static var divNum:Int = 0;
 
@@ -66,15 +67,14 @@ class ResultsScreen extends MusicBeatState
 				}
 			}
 			if (PlayState.SONG.song == 'Free Me')
+			{
 				MusicBeatState.switchState(new NoIdeaState());
-			/*
-			if (PlayState.SONG.song == 'Thorns' && !ClientPrefs.arcadeUnlocked)
-				MusicBeatState.switchState(new UnlockedState('arcade'));
-			if (PlayState.SONG.song == 'Thorns' && ClientPrefs.arcadeUnlocked)
-				MusicBeatState.switchState(new StoryMenuState());
-			*/
+			}
+
 			if (PlayState.SONG.song == 'Horrifying Truth' && !ClientPrefs.week8Done)
-				MusicBeatState.switchState(new UnlockedState('void'));
+			{
+				MusicBeatState.switchState(new TessNeedsHelp());
+			}
 			if (PlayState.SONG.song == 'Horrifying Truth' && ClientPrefs.week8Done)
 			{
 				var check:Bool = StateManager.check("story-menu");
@@ -145,6 +145,11 @@ class ResultsScreen extends MusicBeatState
 		{
 			var toSub:Float = 1 - ratingBonus;
 			ratingBonus = ratingBonus - toSub;
+			ratingBonus -= 0.01;
+		}
+		if (deathCounter > 0)
+		{
+			ratingBonus -= (0.35 * deathCounter);
 		}
 		var rString:String = Std.string(ratingBonus);
 
@@ -266,15 +271,14 @@ class ResultsScreen extends MusicBeatState
 				}
 			}
 			if (PlayState.SONG.song == 'Free Me')
+			{
 				MusicBeatState.switchState(new NoIdeaState());
-			/*
-			if (PlayState.SONG.song == 'Thorns' && !ClientPrefs.arcadeUnlocked)
-				MusicBeatState.switchState(new UnlockedState('arcade'));
-			if (PlayState.SONG.song == 'Thorns' && ClientPrefs.arcadeUnlocked)
-				MusicBeatState.switchState(new StoryMenuState());
-			*/
+			}
+			
 			if (PlayState.SONG.song == 'Horrifying Truth' && !ClientPrefs.week8Done)
-				MusicBeatState.switchState(new UnlockedState('void'));
+			{
+				MusicBeatState.switchState(new TessNeedsHelp());
+			}
 			if (PlayState.SONG.song == 'Horrifying Truth' && ClientPrefs.week8Done)
 			{
 				var check:Bool = StateManager.check("story-menu");

@@ -54,9 +54,11 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 		setProperty('gf.specialAnim', true);
 
 		if notChanged then
-			notChanged = false;
-			triggerEvent('Alt Idle Animation', 'dad', '-alt');
-			setCameraSpeed(1.2);
+			if getProperty("dad.curCharacter") == "pico" then
+				notChanged = false;
+				triggerEvent('Alt Idle Animation', 'dad', '-alt');
+				setCameraSpeed(1.25);
+			end
 		end
 	end
 end

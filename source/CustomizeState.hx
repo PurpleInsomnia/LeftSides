@@ -1,9 +1,13 @@
 package;
 
+import LoadingScreenState.LoadingMeta;
+import LoadingScreenState.LoadingScreenMeta;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxCamera;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
 import sys.FileSystem;
@@ -143,6 +147,14 @@ class CustomizeState extends MusicBeatState
         selText.screenCenter(X);
         add(selText);
 
+        var hint:FlxText = new FlxText(0, 70, 1280, "Press '7' to change your loading screen!", 12);
+        hint.setFormat(Paths.font("vcr.ttf"), 12, 0xFFFFFFFF, CENTER, FlxTextBorderStyle.OUTLINE, 0xFF000000);
+        hint.borderSize = 2;
+        hint.cameras = [camHUD];
+        hint.y -= Std.int(hint.height);
+        hint.screenCenter(X);
+        add(hint);
+
         changeThing(0);
 
         checkPrefs();
@@ -212,6 +224,11 @@ class CustomizeState extends MusicBeatState
         {
             CustomFadeTransition.nextCamera = camHUD;
             MusicBeatState.switchState(new OptionsState());
+        }
+        else if (FlxG.keys.justPressed.SEVEN)
+        {
+            CustomFadeTransition.nextCamera = camHUD;
+            MusicBeatState.switchState(new CustomizeLoadingScreenState());
         }
         selText.screenCenter(X);
         daStrum.updateHitbox();
@@ -546,5 +563,270 @@ class CustomizeState extends MusicBeatState
         {
             remove(daRating);
         }});
+    }
+}
+
+class CustomizeLoadingScreenState extends MusicBeatState
+{
+    public var canPress:Bool = true;
+    public var curSelected:Int = 0;
+    public var metas:Array<LoadingScreenState.LoadingScreenMeta> = [];
+
+    public var camFollow:FlxSprite;
+    public var loadingScreens:FlxTypedGroup<LoadingScreenSprite>;
+    public var descText:FlxText;
+    override function create()
+    {
+        var meta:LoadingScreenState.LoadingScreenMeta = haxe.Json.parse(sys.io.File.getContent("assets/images/loading/meta.json"));
+        metas.push(meta);
+
+        checkMods();
+
+        camFollow = new FlxSprite().makeGraphic(1, 1);
+        camFollow.screenCenter();
+        add(camFollow);
+        FlxG.camera.follow(camFollow, null, 1);
+
+        var bd:Backdrop = new Backdrop("freeplay/grid", 0, 0, "HORIZONTAL", -1, 1);
+        add(bd);
+
+        var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("freeplay/bg"));
+        bg.color = 0xFF3F3F3F;
+        bg.scrollFactor.set(0, 0);
+        bg.blend = openfl.display.BlendMode.MULTIPLY;
+        add(bg);
+
+        loadingScreens = new FlxTypedGroup<LoadingScreenSprite>();
+        add(loadingScreens);
+
+        var last:String = Paths.currentModDirectory;
+        var j:Int = 0;
+        for (i in 0...metas.length)
+        {
+            var nmd:String = "";
+            if (metas[i].modDirectory != null)
+            {
+                nmd = metas[i].modDirectory;
+            }
+            Paths.currentModDirectory = nmd;
+            for (met in metas[i].loadingScreens)
+            {
+                var scr:LoadingScreenSprite = new LoadingScreenSprite();
+                scr.loadGraphic(Paths.image("loading/loadingScreens/" + met.path));
+                scr.setGraphicSize(960, 540);
+                scr.updateHitbox();
+                scr.screenCenter();
+                scr.x += 1010 * j;
+                scr.init(metas[i], met);
+                if (scr.unlocked)
+                {
+                    scr.ID = j;
+                    j += 1;
+                    loadingScreens.add(scr);
+                }
+            }
+        }
+        Paths.currentModDirectory = last;
+
+        var topBar:FlxSprite = new FlxSprite();
+        topBar.makeGraphic(1280, 720, 0xFF000000);
+        topBar.y = -720 + 70;
+        topBar.scrollFactor.set(0, 0);
+        add(topBar);
+
+        var botBar:FlxSprite = new FlxSprite();
+        botBar.makeGraphic(1280, 720, 0xFF000000);
+        botBar.y = 720 - 70;
+        botBar.scrollFactor.set(0, 0);
+        add(botBar);
+
+        descText = new FlxText(0, botBar.y + 4, FlxG.width, "lol", 24);
+        descText.setFormat(Paths.font("vcr.ttf"), 24, 0xFFFFFFFF, CENTER, FlxTextBorderStyle.OUTLINE, 0xFF000000);
+        descText.scrollFactor.set();
+        descText.screenCenter(X);
+        add(descText);
+
+        var hint:FlxText = new FlxText(0, 0, 1280, "Press [ACCEPT] to select a loading screen!", 18);
+        hint.setFormat(Paths.font("vcr.ttf"), 18, 0xFFFFFFFF, CENTER, FlxTextBorderStyle.OUTLINE, 0xFF000000);
+        hint.y += Std.int(hint.height) + 9;
+        hint.scrollFactor.set();
+        hint.screenCenter(X);
+        add(hint);
+
+        change(0);
+
+        super.create();
+    }
+
+    override function update(elapsed:Float)
+    {
+        if (controls.UI_LEFT_P && canPress)
+        {
+            change(-1);
+        }
+        if (controls.UI_RIGHT_P && canPress)
+        {
+            change(1);
+        }
+        if (controls.ACCEPT && canPress)
+        {
+            canPress = false;
+            FlxG.sound.play(Paths.sound("confirmMenu"));
+            LoadingScreenState.loadingScreenMeta = loadingScreens.members[curSelected].meta;
+            LoadingScreenState.loadingScreen = loadingScreens.members[curSelected].data;
+
+            FlxG.save.data.loadingScreenMetas = [LoadingScreenState.loadingScreenMeta, LoadingScreenState.loadingScreen];
+            FlxG.save.flush();
+
+            new FlxTimer().start(0.01, function(tmr:FlxTimer)
+            {
+                canPress = true;
+            });
+        }
+        if (controls.BACK && canPress)
+        {
+            canPress = false;
+            FlxG.sound.play(Paths.sound("cancelMenu"));
+            MusicBeatState.switchState(new CustomizeState());
+        }
+        super.update(elapsed);
+
+        descText.screenCenter(X);
+    }
+
+    var camTwn:FlxTween = null;
+    function change(?huh:Int = 0)
+    {
+        if (camTwn != null)
+        {
+            camTwn.cancel();
+            camTwn = null;
+        }
+
+        curSelected += huh;
+
+        if (huh != 0)
+        {
+            FlxG.sound.play(Paths.sound("scrollMenu"));
+        }
+
+        if (curSelected >= loadingScreens.length)
+        {
+            curSelected = 0;
+        }
+        if (curSelected < 0)
+        {
+            curSelected = loadingScreens.length - 1;
+        }
+
+        loadingScreens.forEach(
+            function(spr:LoadingScreenSprite)
+            {
+                if (spr.ID == curSelected)
+                {
+                    spr.alpha = 1;
+                    camTwn = FlxTween.tween(camFollow, {x: spr.getGraphicMidpoint().x - 185}, 0.5, {ease: FlxEase.circOut,
+                        onComplete: function(twn:FlxTween)
+                        {
+                            camTwn = null;
+                        }
+                    });
+                    descText.text = spr.data.desc;
+                }
+                else
+                {
+                    spr.alpha = 0.5;
+                }
+            }
+        );
+    }
+
+    var directories:Array<String> = [];
+    function checkMods()
+	{
+		var modsListPath:String = 'modsList.txt';
+		var originalLength:Int = directories.length;
+		if(FileSystem.exists(modsListPath))
+		{
+			var stuff:Array<String> = CoolUtil.coolTextFile(modsListPath);
+			for (i in 0...stuff.length)
+			{
+				var splitName:Array<String> = stuff[i].trim().split('|');
+				var path = haxe.io.Path.join([Paths.mods(), splitName[0]]);
+				//trace('trying to push: ' + splitName[0]);
+				if (sys.FileSystem.isDirectory(path) && !Paths.ignoreModFolders.exists(splitName[0]) && !directories.contains(path))
+				{
+                    directories.push(path + "/");
+					if (FileSystem.exists(path + "/images/loading/meta.json"))
+                    {
+                        var newMeta:LoadingScreenState.LoadingScreenMeta = haxe.Json.parse(sys.io.File.getContent(path + "/images/loading/meta.json"));
+                        metas.push(newMeta);
+                    }
+				}
+			}
+		}
+	}
+}
+
+class LoadingScreenSprite extends FlxSprite
+{
+    public var unlocked:Bool = false;
+    public var meta:LoadingScreenMeta = null;
+    public var data:LoadingMeta = null;
+
+    public function new()
+    {
+        super();
+    }
+
+    public function init(meta:LoadingScreenMeta, data:LoadingMeta)
+    {
+        this.meta = meta;
+        this.data = data;
+
+        switch (data.unlock)
+        {
+            case "song":
+                if (Highscore.getScore(data.unlockArgs[0], 1) > 0)
+                {
+                    unlocked = true;
+                }
+            case "song-encore":
+                if (Highscore.getEncoreScore(data.unlockArgs[0], 1) > 0)
+                {
+                    unlocked = true;
+                }
+            case "week":
+                if (Highscore.getWeekScore(data.unlockArgs[0], 1) > 0)
+                {
+                    unlocked = true;
+                }
+            case "shop-item":
+                if (ClientPrefs.newInventory.exists(data.path))
+                {
+                    if (ClientPrefs.newInventory.get(data.path) == 1)
+                    {
+                        unlocked = true;
+                    }
+                }
+                else
+                {
+                    if (meta.modDirectory != null)
+                    {
+                        if (dlc.DlcInventory.inventory.exists(meta.modDirectory))
+                        {
+                            if (dlc.DlcInventory.inventory.get(meta.modDirectory).exists(data.path))
+                            {
+                                if (dlc.DlcInventory.inventory.get(meta.modDirectory).get(data.path) == 1)
+                                {
+                                    unlocked = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            default:
+                unlocked = true;
+        }
     }
 }

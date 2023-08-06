@@ -142,9 +142,12 @@ class Character extends FlxSprite
 				var json:CharacterFile = cast Json.parse(rawJson);
 				if (!CoolUtil.playstateImages.exists(json.image))
 				{
-					if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) {
+					if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) 
+					{
 						frames = Paths.getPackerAtlas(json.image);
-					} else {
+					}
+					else 
+					{
 						frames = Paths.getSparrowAtlas(json.image);
 					}
 				}

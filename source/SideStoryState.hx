@@ -5,6 +5,8 @@ import Discord.DiscordClient;
 #end
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.FlxCamera;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -18,6 +20,7 @@ import Type.ValueType;
 import flixel.graphics.FlxGraphic;
 import openfl.display.BitmapData;
 import flash.media.Sound;
+import haxe.Json;
 import fliters.*;
 
 #if LUA_ALLOWED
@@ -399,7 +402,10 @@ class SideStoryState extends MusicBeatState
 		showedDate = false;
 		if (FlxG.sound.music != null)
 		{
-			FlxG.sound.music.fadeOut(0, 1);
+			FlxG.sound.music.fadeOut(1, 0, function(twn:FlxTween)
+			{
+				FlxG.sound.music.stop();
+			});
 		}
 		if (!ClientPrefs.completedSideStories.exists(directory))
 		{
@@ -497,6 +503,23 @@ class SideStoryState extends MusicBeatState
 			}
 		}
 		return editedText;
+	}
+
+	public function textMessages(tmpath:String)
+	{
+		canPress = false;
+		box.visible = false;
+		port.visible = false;
+		text.visible = false;
+		openSubState(new SideStoryTextMessages(directory, tmpath, function()
+		{
+			canPress = true;
+			box.visible = true;
+			port.visible = true;
+			text.visible = true;
+			curLine++;
+			nextLine();
+		}));
 	}
 }
 
@@ -957,7 +980,7 @@ class SideStoryLua
 			lePlayState.add(spr);
 		});
 
-		Lua_helper.add_callback(lua, "startMusic", function(fileName:String, ?vol:Float = 1)
+		Lua_helper.add_callback(lua, "startMusic", function(fileName:String, ?vol:Float = 1, ?fade:Bool = true)
 		{
 			trace("vine boom?");
 			if (FlxG.sound.music.playing)
@@ -965,7 +988,29 @@ class SideStoryLua
 				FlxG.sound.music.stop();
 			}
 			FlxG.sound.playMusic(PathSS.music(fileName), 0, true);
-			FlxG.sound.music.fadeIn(0.5, 0, vol);
+			if (fade)
+			{
+				FlxG.sound.music.fadeIn(0.5, 0, vol);
+			}
+			else
+			{
+				FlxG.sound.music.volume = vol;
+			}
+		});
+
+		Lua_helper.add_callback(lua, "stopMusic", function(?time:Int = 0)
+		{
+			if (FlxG.sound.music.playing)
+			{
+				if (time == 0)
+				{
+					FlxG.sound.music.stop();
+				}
+				else
+				{
+					FlxG.sound.music.fadeOut(time, 0);
+				}
+			}
 		});
 
 		Lua_helper.add_callback(lua, "timeCard", function(name:String)
@@ -1055,6 +1100,11 @@ class SideStoryLua
 			{
 				MusicBeatState.switchState(new HealthLossState());
 			}
+		});
+
+		Lua_helper.add_callback(lua, "textMessages", function(path:String)
+		{
+			lePlayState.textMessages(path);
 		});
 
 		call("onCreate", []);
@@ -1337,5 +1387,317 @@ class SideStoryDateState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+	}
+}
+
+/**
+ *  TEXT MESSAGES GRRRRRRAHHHHH!!!!!!
+ */
+
+typedef TextMessages = {
+	var name:String;
+	var pfp:String;
+	var messages:Array<TextMessage>;
+	var phone:String;
+	var android:Bool;
+}
+
+typedef TextMessage = {
+	var message:String;
+	var r:Bool;
+	var image:String;
+}
+
+class SideStoryTextMessages extends MusicBeatSubstate
+{
+	public var daMessages:Dynamic = null;
+
+	public var camText:FlxCamera;
+	public var textBackground:FlxSprite = null;
+	public var bubbles:FlxTypedGroup<TextBubble> = null;
+	var overlay:FlxSprite = null;
+
+	public var curLine:Int = 0;
+	public var canPress:Bool = false;
+
+	public var camFollow:FlxSprite;
+	public var callback:Void->Void = null;
+	public function new(directory:String, path:String, callback:Void->Void)
+	{
+		super();
+
+		this.callback = callback;
+
+		if (FileSystem.exists(PathSS.data(directory + "/" + path + ".json")))
+		{
+			daMessages = Json.parse(File.getContent(PathSS.data(directory + "/" + path + ".json")));
+		}
+		else
+		{
+			daMessages = {
+				name: "Ben",
+				pfp: "ben",
+				messages: [
+					{
+						message: "Hiiiii silly~",
+						r: true
+					},
+					{
+						message: "hi goofball :)",
+						r: false
+					},
+					{
+						message: "watcha up to?",
+						r: false
+					},
+					{
+						message: "Just testing out this cool little thing PurpleInsomnia programmed. :3",
+						r: true
+					},
+					{
+						message: "lol. aight.",
+						r: false,
+						image: "test"
+					},
+					{
+						message: "Ily",
+						r: true
+					},
+					{
+						message: "ily too. <3",
+						r: false
+					}
+				],
+				phone: "tess",
+				android: false
+			}
+		}
+
+		var bg:FlxSprite = new FlxSprite().makeGraphic(1280, 720, 0xFF000000);
+		bg.alpha = 0.5;
+		add(bg);
+
+		var dc:FlxCamera = new FlxCamera();
+		camText = new FlxCamera(433, 20, 405, 670);
+		camText.bgColor.alpha = 0;
+		FlxG.cameras.reset(dc);
+		FlxG.cameras.add(camText);
+
+		camFollow = new FlxSprite().makeGraphic(1, 1);
+		camFollow.cameras = [camText];
+		camFollow.x = 197;
+		add(camFollow);
+
+		camText.follow(camFollow, null, 1);
+
+		textBackground = new FlxSprite(15, 13).makeGraphic(376, 644, 0xFF353535);
+		textBackground.cameras = [camText];
+		textBackground.scrollFactor.set(0, 0);
+		add(textBackground);
+
+		bubbles = new FlxTypedGroup<TextBubble>();
+		bubbles.cameras = [camText];
+		add(bubbles);
+
+		var topBar:FlxSprite = new FlxSprite(15, 13).makeGraphic(376, 80, 0xFF272727);
+		topBar.scrollFactor.set(0, 0);
+		topBar.cameras = [camText];
+		add(topBar);
+
+		var icon:FlxSprite = new FlxSprite(13, 13).loadGraphic(PathSS.image("phone/icons/" + daMessages.pfp));
+		icon.scrollFactor.set(0, 0);
+		icon.cameras = [camText];
+		add(icon);
+
+		var nameText:FlxText = new FlxText(115, 40, 376 - 115, daMessages.name, 18);
+		nameText.font = Paths.font("eras.ttf");
+		nameText.updateHitbox();
+		nameText.y += Std.int(nameText.height / 2);
+		nameText.scrollFactor.set(0, 0);
+		nameText.cameras = [camText];
+		add(nameText);
+
+		overlay = new FlxSprite(15, 13).makeGraphic(376, 644, 0xFF000000);
+		overlay.alpha = 0;
+		overlay.scrollFactor.set(0, 0);
+		overlay.cameras = [camText];
+		add(overlay);
+
+		var phoneLOL:FlxSprite = new FlxSprite();
+		var daPhone:Dynamic = daMessages.phone;
+		if (daPhone != null)
+		{
+			phoneLOL.loadGraphic(PathSS.image("phone/" + daPhone));
+		}
+		else
+		{
+			phoneLOL.loadGraphic(PathSS.image("phone/default"));
+		}
+		phoneLOL.scrollFactor.set(0, 0);
+		phoneLOL.cameras = [camText];
+		add(phoneLOL);
+
+		start();
+	}
+
+	var bubbleTween:FlxTween = null;
+	var camTwn:FlxTween = null;
+	public function start()
+	{
+		if (camTwn != null)
+		{
+			camTwn.cancel();
+			camTwn = null;
+		}
+
+		var mess:TextMessage = daMessages.messages[curLine];
+
+		var newBubble:TextBubble = new TextBubble(mess.message, mess.r, daMessages.android, mess.image);
+		newBubble.cameras = [camText];
+		if (mess.r)
+		{
+			newBubble.x = (433 - 45) - 180;
+			newBubble.openBubble.flipX = true;
+			newBubble.openBubble.x += 10;
+			newBubble.x -= 20;
+		}
+		else
+		{
+			newBubble.x += 10;
+		}
+
+		var lastBubb:TextBubble = null;
+		var sub:Int = 0;
+		if (curLine > 0)
+		{
+			lastBubb = bubbles.members[curLine - 1];
+			sub = Std.int(lastBubb.y);
+			sub += 40 + Std.int(lastBubb.lol.height) + 10;
+			if (lastBubb.coolImage != null)
+			{
+				sub += Std.int(lastBubb.coolImage.height);
+			}
+		}
+		newBubble.y = sub;
+		newBubble.ID = curLine;
+		bubbles.add(newBubble);
+
+		bubbleTween = FlxTween.tween(newBubble, {alpha: 1}, 0.5, {
+			onComplete: function(twn:FlxTween)
+			{
+				bubbleTween = null;
+				canPress = true;
+			}
+		});
+
+		camTwn = FlxTween.tween(camFollow, {y: newBubble.lmao.getGraphicMidpoint().y}, 0.5, {ease: FlxEase.circOut,
+			onComplete: function(twn:FlxTween)
+			{
+				camTwn = null;
+			}
+		});
+	}
+
+	override function update(elapsed:Float)
+	{
+		if (canPress)
+		{
+			if (controls.ACCEPT)
+			{
+				curLine += 1;
+				canPress = false;
+				if (curLine >= daMessages.messages.length)
+				{
+					FlxTween.tween(overlay, {alpha: 1}, 0.25, {
+						onComplete: function(twn:FlxTween)
+						{
+							new FlxTimer().start(0.75, function(tmr:FlxTimer)
+							{
+								FlxG.cameras.remove(camText);
+								FlxG.cameras.reset();
+								callback();
+								close();
+							});
+						}
+					});
+				}
+				else
+				{
+					start();
+				}
+			}
+		}
+		super.update(elapsed);
+	}
+}
+
+class TextBubble extends flixel.group.FlxSpriteGroup
+{
+	public var text:String = null;
+	public var lol:FlxText;
+	public var openBubble:FlxSprite = null;
+	public var lmao:FlxSprite = null;
+	public var coolImage:FlxSprite = null;
+	public function new(text:String, r:Bool, ?isAndroid:Bool = false, img:Dynamic)
+	{
+		super();
+
+		var gp:String = "phone/bubbles/";
+		var color:Int = 0xFFFFFFFF;
+		if (!isAndroid)
+		{
+			gp += "iphone/";
+		}
+		else
+		{
+			gp += "android/";
+		}
+		if (r)
+		{
+			gp += "reciever/";
+			if (!isAndroid)
+			{
+				color = 0xFF3036FF;
+			}
+			else
+			{
+				color = 0xFF7CA480;
+			}
+		}
+		else
+		{
+			gp += "sender/";
+			color = 0xFF616161;
+		}
+
+		openBubble = new FlxSprite(5, 64).loadGraphic(PathSS.image(gp + "open"));
+		add(openBubble);
+
+		lol = new FlxText(15, 74, 160, text, 12);
+		lol.font = Paths.font("eras.ttf");
+
+		var daadd:Int = 0;
+		if (img != null)
+		{
+			coolImage = new FlxSprite(35, lol.y + Std.int(lol.height) + 10).loadGraphic(PathSS.image("phone/pics/" + img));
+			coolImage.setGraphicSize(128, 128);
+			coolImage.updateHitbox();
+			daadd += 128;
+		}
+
+		lmao = new FlxSprite(15, 64 + Std.int(openBubble.height)).makeGraphic(170, Std.int(lol.height) + daadd, color);
+		add(lmao);
+
+		var end:FlxSprite = new FlxSprite(15, lmao.y + Std.int(lmao.height)).loadGraphic(PathSS.image(gp + "close"));
+		add(end);
+
+		add(lol);
+
+		if (coolImage != null)
+		{
+			add(coolImage);
+		}
+
+		this.alpha = 0;
 	}
 }

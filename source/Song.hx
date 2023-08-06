@@ -69,6 +69,11 @@ class Song
 		if(FileSystem.exists(moddyFile)) {
 			rawJson = File.getContent(moddyFile).trim();
 		}
+		if (FileSystem.exists(Paths.json(formattedFolder + '/' + formattedSong + PlayState.songPrefix)))
+		{
+			var nf:String = formattedSong + PlayState.songPrefix;
+			formattedSong = nf;
+		}
 		#end
 
 		if(rawJson == null) {

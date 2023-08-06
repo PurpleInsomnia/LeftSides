@@ -103,8 +103,10 @@ class MainMenuState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In The Main Menu", null);
 		#end
+
+		PlayState.songPrefix = "";
 
 		options.OptionsState.playstate = false;
 
@@ -325,6 +327,10 @@ class MainMenuState extends MusicBeatState
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story "Bump In"', 6, 1]);
 		}
+		if (Highscore.getWeekScore("week8", 1) > 0 && SideStorySelectState.storyList[8][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story: "Worries"', 8, 1]);
+		}
 		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
 		{
 			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
@@ -470,6 +476,17 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
+			}
+			else if (FlxG.keys.justPressed.TWO)
+			{
+				selectedSomethin = true;
+				FlxG.sound.music.stop();
+				MusicBeatState.switchState(new SideStoryState(CoolUtil.coolTextFile("assets/side-stories/data/test/dialogue.txt"), "test", ""));
+			}
+			else if (FlxG.keys.justPressed.NINE)
+			{
+				selectedSomethin = true;
+				MusicBeatState.switchState(new UnlockState([["Custom", "Test unlock"]]));
 			}
 			#end
 		}

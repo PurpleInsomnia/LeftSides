@@ -1,0 +1,27 @@
+{
+    "title": "Useless Settings",
+    "rpcTitle": "Useless Settings Menu",
+    "options": [
+        {
+            "name": "Downscroll From Wish.com",
+            "description": "If checked, downscroll is enabled. However, not really.",
+            "varName": "wishDownscroll",
+            "type": "useless",
+            "defaultVal": false
+        },
+        {
+            "name": "Flip Characters",
+            "description": "If checked, all characters are flipped on the Y axis",
+            "varName": "flipChar",
+            "type": "useless",
+            "defaultVal": false
+        },
+        {
+            "name": "''Left Sides''",
+            "description": "Get it? Get it? Get it? Because the strums are on the LEFT SIDE hahahaha\n(Kill me.)",
+            "varName": "leftSides",
+            "type": "useless",
+            "defaultVal": false
+        }
+    ]
+}

@@ -50,6 +50,7 @@ class Alphabet extends FlxSpriteGroup
 	public var graphicSuff:String = "";
 
 	public static var textSound:String = 'dialogue';
+	public static var graphicSuffixThing:Dynamic = null;
 
 	/*
 	public static function resetVariables() {
@@ -63,8 +64,14 @@ class Alphabet extends FlxSpriteGroup
 		forceX = Math.NEGATIVE_INFINITY;
 		this.textSize = textSize;
 		this.graphicSuff = graphicSuff;
+		if (Alphabet.graphicSuffixThing != null)
+		{
+			this.graphicSuff = Alphabet.graphicSuffixThing;
+		}
 
 		// 4th wall breaks and swear filter (coming soon?!?) ;)
+
+		// Yes 2022 me, I know. I've already put it in.
 
 		_finalText = checkText(text);
 		this.text = checkText(text);

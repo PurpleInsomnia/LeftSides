@@ -112,6 +112,17 @@
 		},
 		{
 			"offsets": [
+				-17,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "emote",
+			"indices": [],
+			"name": "Hey"
+		},
+		{
+			"offsets": [
 				-45,
 				-2
 			],
@@ -128,7 +139,7 @@
 		0,
 		160
 	],
-	"healthicon": "gf-2",
+	"healthicon": "gf-playable-2",
 	"flip_x": true,
 	"healthbar_colors": [
 		115,

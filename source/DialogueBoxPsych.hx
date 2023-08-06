@@ -213,13 +213,22 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		{
 			if (daFile.dialogue[line].events[0] != null)
         	{
-            	for (event in daFile.dialogue[line].events)
-            	{
-                	if (lePlayState != null)
-					{
-						lePlayState.callOnLuas("onDialogueEventTrigger", [event]);
-					}
-            	}
+				if (daFile.dialogue[line].events[0] != "")
+				{
+            		for (event in daFile.dialogue[line].events)
+            		{
+                		if (lePlayState != null)
+						{
+							var daSplit:Array<String> = event.split(":");
+							var daValues:Array<Dynamic> = [];
+							for (i in 1...daSplit.length)
+							{
+								daValues.push(daSplit[i]);
+							}
+							lePlayState.callOnLuas("onDialogueEventTrigger", [daSplit[0], daValues]);
+						}
+            		}
+				}
         	}
 		}
 

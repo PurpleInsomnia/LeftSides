@@ -62,6 +62,8 @@ class FunnyFreeplayState extends MusicBeatState
         #end
     	Paths.destroyLoadedImages();
 
+        PlayState.songPrefix = "";
+
         WeekData.loadTheFirstEnabledMod();
 
         var check:Bool = StateManager.check("freeplay");
@@ -109,11 +111,16 @@ class FunnyFreeplayState extends MusicBeatState
 					    colors = [146, 113, 253];
 				    }
                     var rs:String = "";
+                    var pc:Array<Array<String>> = [["bf", ""]];
                     if (song[3] != null)
                     {
                         rs = song[3];
                     }
-				    addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]), leWeek.weekName, false, rs);
+                    if (song[4] != null)
+                    {
+                        pc = song[4];
+                    }
+				    addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]), leWeek.weekName, false, rs, pc);
                 }
 			}
 		}
@@ -124,21 +131,21 @@ class FunnyFreeplayState extends MusicBeatState
             allowVanilla = true;
             if (Highscore.getScore("Milf", 1) != 0 || ClientPrefs.devMode)
             {
-                addSong("Comfy Together", 69, "gf", FlxColor.fromRGB(115, 0, 165), "Pre-Week 4", false);
+                addSong("Comfy Together", 69, "gf", FlxColor.fromRGB(115, 0, 165), "Pre-Week 4", false, "", [["bf", ""]]);
             }
-            if (Highscore.getScore("Test", 1) != 0 || ClientPrefs.inventory[2][1] > 0 || ClientPrefs.devMode)
+            if (Highscore.getScore("Test", 1) != 0 || ClientPrefs.newInventory.get("secret-key") > 0 || ClientPrefs.devMode)
             {
-                addSong("Test", 69, "bf-digital", FlxColor.fromRGB(255, 175, 0), "TEST", false);
+                addSong("Test", 69, "bf-digital", FlxColor.fromRGB(255, 175, 0), "TEST", false, "", [["bf", ""]]);
             }
 
             // EXE :skull:
-            if ((Highscore.getScore("Endless", 1) != 0 || ClientPrefs.inventory[2][1] > 0) || ClientPrefs.devMode)
+            if ((Highscore.getScore("Endless", 1) != 0 || ClientPrefs.newInventory.get("secret-key") > 0) || ClientPrefs.devMode)
             {
-                addSong("Endless", 69, "jabbin", FlxColor.fromRGB(222, 126, 24), "EXE", false);
+                addSong("Endless", 69, "jabbin", FlxColor.fromRGB(222, 126, 24), "EXE", false, "", [["bf", ""]]);
             }
-            if ((Highscore.getScore("Doppelganger", 1) != 0 || ClientPrefs.inventory[2][1] > 0) || ClientPrefs.devMode)
+            if ((Highscore.getScore("Doppelganger", 1) != 0 || ClientPrefs.newInventory.get("secret-key") > 0) || ClientPrefs.devMode)
             {
-                addSong("Too Fest", 69, "nuckle", FlxColor.fromRGB(222, 126, 24), "EXE", false);
+                addSong("Too Fest", 69, "nuckle", FlxColor.fromRGB(222, 126, 24), "EXE", false, "", [["bf", ""], ["gf", "Tess"]]);
             }
         }
 
@@ -150,7 +157,7 @@ class FunnyFreeplayState extends MusicBeatState
             {
                 if (Highscore.getScore(daFile.unlockedAtScoreOf[i], 1) != 0)
                 {
-                    addSong(daFile.songsToAdd[i], daFile.data[i][0], daFile.data[i][1], Std.int(daFile.data[i][2]), daFile.data[i][3], daFile.data[i][4]);
+                    addSong(daFile.songsToAdd[i], daFile.data[i][0], daFile.data[i][1], Std.int(daFile.data[i][2]), daFile.data[i][3], daFile.data[i][4], daFile.data[i][5], daFile.data[i][6]);
                 }
             }
         }
@@ -187,11 +194,16 @@ class FunnyFreeplayState extends MusicBeatState
 					    colors = [146, 113, 253];
 				    }
                     var rs:String = "";
+                    var pc:Array<Array<String>> = [["bf", ""]];
                     if (song[3] != null)
                     {
                         rs = song[3];
                     }
-				    addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]), leWeek.weekName, true, rs);
+                    if (song[4] != null)
+                    {
+                        pc = song[4];
+                    }
+				    addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]), leWeek.weekName, true, rs, pc);
                 }
 			}
 		}
@@ -227,8 +239,17 @@ class FunnyFreeplayState extends MusicBeatState
         iconEncoreGrp = new FlxTypedGroup<HealthIcon>();
         add(iconEncoreGrp);
 
+        WeekData.loadTheFirstEnabledMod();
+        var thecoolestDirect:String = Paths.currentModDirectory;
+
         for (i in 0...lists[0].length)
         {
+            var coolswagDirect:String = "";
+            if (lists[0][i].folder != "")
+            {
+                coolswagDirect = lists[0][i].folder;
+            }
+            Paths.currentModDirectory = coolswagDirect;
 
             var record:Record = new Record(lists[0][i].recordSuff);
             record.screenCenter();
@@ -257,8 +278,18 @@ class FunnyFreeplayState extends MusicBeatState
             }
             centerRecord.color = lists[0][i].color;
         }
+
+        Paths.currentModDirectory = thecoolestDirect;
+
         for (i in 0...lists[1].length)
         {
+            var coolswagDirect:String = "";
+            if (lists[1][i].folder != "")
+            {
+                coolswagDirect = lists[1][i].folder;
+            }
+            Paths.currentModDirectory = coolswagDirect;
+
             var record:Record = new Record(lists[1][i].recordSuff);
             record.reload(true);
             record.screenCenter();
@@ -278,6 +309,8 @@ class FunnyFreeplayState extends MusicBeatState
             icon.scrollFactor.set(1, 1);
             iconEncoreGrp.add(icon);
         }
+
+        Paths.currentModDirectory = thecoolestDirect;
 
         if (PlayState.encoreMode)
         {
@@ -480,7 +513,15 @@ class FunnyFreeplayState extends MusicBeatState
 			    PlayState.storyDifficulty = 1;
 
 			    PlayState.storyWeek = lists[0][curSelected].week;
-				MusicBeatState.switchState(new HealthLossState());
+
+                if (lists[0][curSelected].pc[1] != null)
+                {
+                    MusicBeatState.switchState(new SelectCharacterState(lists[0][curSelected].pc, [poop, songLowercase]));
+                }
+                else
+                {
+				    MusicBeatState.switchState(new HealthLossState());
+                }
             }
             else
             {
@@ -505,14 +546,14 @@ class FunnyFreeplayState extends MusicBeatState
 			    PlayState.storyDifficulty = 1;
 
 			    PlayState.storyWeek = lists[1][curSelected].week;
-			    if (FlxG.keys.pressed.SHIFT)
-			    {
-				    LoadingState.loadAndSwitchState(new editors.ChartingState(true));
-			    }
-			    else
-			    {
+			    if (lists[1][curSelected].pc[1] != null)
+                {
+                    MusicBeatState.switchState(new SelectCharacterState(lists[1][curSelected].pc, [poop, songLowercase]));
+                }
+                else
+                {
 				    MusicBeatState.switchState(new HealthLossState());
-			    }
+                }
             }
         }
 
@@ -629,7 +670,7 @@ class FunnyFreeplayState extends MusicBeatState
                 }
                 crEncoreGrp.members[curSelected].alpha = 1;
                 iconEncoreGrp.members[curSelected].alpha = 1;
-                camTween = FlxTween.tween(camFollow, {x: recordGrp.members[curSelected].getGraphicMidpoint().x}, 0.25, {ease: FlxEase.sineInOut});
+                camTween = FlxTween.tween(camFollow, {x: recordGrp.members[curSelected].getGraphicMidpoint().x}, 0.75, {ease: FlxEase.circOut});
                 if (lists[1][curSelected].meta.wardrobeEnabled)
                 {
                     canWardrobe = true;
@@ -696,16 +737,24 @@ class FunnyFreeplayState extends MusicBeatState
         return artist[0];
     }
 
-    public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int, weekName:String, ?encore:Bool = false, ?rs:String = "")
+    public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int, weekName:String, ?encore:Bool = false, ?rs:String = "", ?pc:Array<Array<String>>)
 	{
         var metaFile:PlayStateMetaData = PlayStateMeta.loadFile(songName);
         if (!encore)
         {
-		    lists[0].push(new FreeplaySong(songName, weekNum, songCharacter, color, weekName, rs, metaFile));
+            if (pc == null)
+            {
+                pc = [["bf", ""]];
+            }
+		    lists[0].push(new FreeplaySong(songName, weekNum, songCharacter, color, weekName, rs, pc, metaFile));
         }
         else
         {
-            lists[1].push(new FreeplaySong(songName, weekNum, songCharacter, color, weekName, rs, metaFile));
+            if (pc == null)
+            {
+                pc = [["bf", ""]];
+            }
+            lists[1].push(new FreeplaySong(songName, weekNum, songCharacter, color, weekName, rs, pc, metaFile));
         }
 	}
 
@@ -742,9 +791,10 @@ class FreeplaySong
     public var weekName:String = "";
     // record modifier bullshit.
     public var recordSuff:String = "";
+    public var pc:Array<Array<String>> = [["bf", ""]];
     public var meta:PlayStateMetaData = null;
 
-	public function new(song:String, week:Int, songCharacter:String, color:Int, weekName:String, ?rs:String = "", metaFile:PlayStateMetaData)
+	public function new(song:String, week:Int, songCharacter:String, color:Int, weekName:String, ?rs:String = "", ?pc:Array<Array<String>>, metaFile:PlayStateMetaData)
 	{
 		this.name = song;
 		this.week = week;
@@ -754,6 +804,7 @@ class FreeplaySong
 		this.folder = Paths.currentModDirectory;
         this.meta = metaFile;
         recordSuff = rs;
+        this.pc = pc;
 		if(this.folder == null) this.folder = '';
 	}
 }

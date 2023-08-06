@@ -34,6 +34,7 @@ function onCreatePost()
         lePlayState.addToCharGroup(daCharacter, charGrp);
     }
     daCharacter.alpha = 0;
+    lePlayState.characters.set("skylar", daCharacter);
 }
 
 function goodNoteHit(id:Int, noteData:Int, type:String, sussy:Bool)

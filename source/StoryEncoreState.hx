@@ -72,6 +72,7 @@ class StoryEncoreState extends MusicBeatState
 		// FlxG.sound.music.stop();
 
 		// FlxG.sound.playMusic(Paths.music('weekMusic/week0'));
+		PlayState.songPrefix = "";
 
 		var check:Bool = StateManager.check("story-menu");
 		var blackOverlay:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);

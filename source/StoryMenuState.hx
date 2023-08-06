@@ -76,6 +76,7 @@ class StoryMenuState extends MusicBeatState
 		// FlxG.sound.music.stop();
 
 		// FlxG.sound.playMusic(Paths.music('weekMusic/week0'));
+		PlayState.songPrefix = "";
 
 		var check:Bool = StateManager.check("story-menu");
 		var blackOverlay:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
@@ -254,7 +255,7 @@ class StoryMenuState extends MusicBeatState
 
 		unlockButton = new FlxButton(0, 0, "", function()
 		{
-			ClientPrefs.inventory[0][1] = ClientPrefs.inventory[0][1] - 1;
+			ClientPrefs.newInventory.set("week-key", ClientPrefs.newInventory.get("week-key") - 1);
 			ClientPrefs.saveSettings();
 			FlxG.sound.play(Paths.sound("confirmMenu"));
 			weekCompleted.set(WeekData.weeksList[curWeek - 1], true);
@@ -307,6 +308,10 @@ class StoryMenuState extends MusicBeatState
 		if (Highscore.getWeekScore("week7", 1) > 0 && SideStorySelectState.storyList[6][2] != 1)
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story "Bump In"', 6, 1]);
+		}
+		if (Highscore.getWeekScore("week8", 1) > 0 && SideStorySelectState.storyList[8][2] != 1)
+		{
+			unlocks.push(["SideStorySelectState", 'The Side Story: "Worries"', 8, 1]);
 		}
 		var checks:Array<Bool> = [];
 		for (key in ClientPrefs.completedSideStories.keys())

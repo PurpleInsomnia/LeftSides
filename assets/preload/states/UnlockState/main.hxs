@@ -1,0 +1,4 @@
+function onConfirm(item:Array<Dynamic>)
+{
+    trace("Yooooo!!! " + item[1]);
+}

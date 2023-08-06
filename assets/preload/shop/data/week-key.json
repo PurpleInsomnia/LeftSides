@@ -4,5 +4,7 @@
     "price": 300,
     "thanks": "Use this wisely...[USERNAME]...",
     "nah": "I have none of these left...",
+    "broke": "[PLAYER_POINTS] for this?! You've gotta be [JOKING]...[USERNAME]",
+    "oosMessage": "All gone...",
     "tag": "week-key"
 }

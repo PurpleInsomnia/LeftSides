@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				60,
-				20
+				70,
+				15
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				86,
-				109
+				81,
+				107
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -36,7 +36,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-26,
+				-16,
 				94
 			],
 			"anim": "singRIGHT",
@@ -47,8 +47,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				46,
-				186
+				36,
+				166
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -58,24 +58,46 @@
 		{
 			"loop": false,
 			"offsets": [
-				-13,
-				111
+				1,
+				130
 			],
 			"anim": "singUP-alt",
 			"fps": 24,
-			"name": "TANKMAN UGH",
+			"name": "Tankman Ugh",
 			"indices": []
 		},
 		{
-			"loop": true,
+			"offsets": [
+				1,
+				118
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"loop": false,
+			"name": "Tankman YEAH"
+		},
+		{
 			"offsets": [
 				0,
-				134
+				125
 			],
-			"anim": "singDOWN-alt",
+			"indices": [],
 			"fps": 24,
-			"name": "PRETTY GOOD TANKMAN",
-			"indices": []
+			"anim": "singDOWN-alt",
+			"loop": false,
+			"name": "Tankman Heh"
+		},
+		{
+			"offsets": [
+				89,
+				119
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"loop": false,
+			"name": "Tankman Pretty Good"
 		}
 	],
 	"no_antialiasing": false,

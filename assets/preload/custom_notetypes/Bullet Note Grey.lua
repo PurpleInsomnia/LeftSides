@@ -52,12 +52,6 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 
 		characterPlayAnim('gf', 'scared', true);
 		setProperty('gf.specialAnim', true);
-
-		if notChanged then
-			notChanged = false;
-			triggerEvent('Alt Idle Animation', 'dad', '-alt');
-			setCameraSpeed(1.2);
-		end
 	end
 end
 

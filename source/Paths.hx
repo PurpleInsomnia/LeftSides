@@ -58,29 +58,29 @@ class Paths
 	static public function getModFolders()
 	{
 		#if MODS_ALLOWED
-		ignoreModFolders.set("arcade", true);
 		ignoreModFolders.set('characters', true);
 		ignoreModFolders.set('custom_events', true);
 		ignoreModFolders.set('custom_notetypes', true);
 		ignoreModFolders.set('data', true);
+		ignoreModFolders.set("dialogue", true);
+		ignoreModFolders.set("doodles", true);
+		ignoreModFolders.set("fonts", true);
+		ignoreModFolders.set("gameover", true);
+		ignoreModFolders.set('images', true);
 		ignoreModFolders.set('songs', true);
 		ignoreModFolders.set('music', true);
-		ignoreModFolders.set('sounds', true);
-		ignoreModFolders.set('doodles', true);
-		ignoreModFolders.set('scripts', true);
-		ignoreModFolders.set('videos', true);
-		ignoreModFolders.set('images', true);
-		ignoreModFolders.set('stages', true);
-		ignoreModFolders.set('weeks', true);
-		ignoreModFolders.set("side-stories", true);
-		ignoreModFolders.set("dialogue", true);
+		ignoreModFolders.set('options', true);
 		ignoreModFolders.set("quotes", true);
-		ignoreModFolders.set("fanart", true);
-		ignoreModFolders.set("states", true);
-		ignoreModFolders.set("shaders", true);
-		ignoreModFolders.set("wardrobe", true);
-		ignoreModFolders.set("fonts", true);
+		ignoreModFolders.set("scripts", true);
+		ignoreModFolders.set('shaders', true);
+		ignoreModFolders.set("shop", true);
+		ignoreModFolders.set("side-stories", true);
 		ignoreModFolders.set("soundtracks", true);
+		ignoreModFolders.set("stages", true);
+		ignoreModFolders.set("states", true);
+		ignoreModFolders.set('videos', true);
+		ignoreModFolders.set("wardrobe", true);
+		ignoreModFolders.set('weeks', true);
 		#end
 	}
 
@@ -303,11 +303,28 @@ class Paths
 	{
 		var songFin:String = "Inst" + prefix;
 		#if MODS_ALLOWED
+		if (!FileSystem.exists(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin)))
+		{
+			songFin = "Inst";
+			if (!FileSystem.exists(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin)))
+			{
+				songFin = "Inst" + prefix;
+			}
+		}
 		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/' + songFin));
-		if(file != null) {
+		if(file != null) 
+		{
 			return file;
 		}
 		#end
+		if (!FileSystem.exists('assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT'))
+		{
+			songFin = "Inst";
+			if (!FileSystem.exists('assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT'))
+			{
+				songFin = "Inst" + prefix;
+			}
+		}
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/' + songFin + '.$SOUND_EXT';
 	}
 
@@ -315,11 +332,23 @@ class Paths
 	{
 		var toAdd:String = prefix;
 		#if MODS_ALLOWED
+		if (!FileSystem.exists(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore' + toAdd)))
+		{
+			toAdd = "";
+			if (!FileSystem.exists(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore' + toAdd)))
+			{
+				toAdd = prefix;
+			}
+		}
 		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/InstEncore' + toAdd));
 		if(file != null) {
 			return file;
 		}
 		#end
+		if (!FileSystem.exists('assets/songs/${song.toLowerCase().replace(' ', '-')}/InstEncore' + toAdd + '.$SOUND_EXT'))
+		{
+			toAdd = "";
+		}
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/InstEncore' + toAdd + '.$SOUND_EXT';
 	}
 

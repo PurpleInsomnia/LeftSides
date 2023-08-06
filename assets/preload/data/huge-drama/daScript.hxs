@@ -56,7 +56,7 @@ function onCountdownTick(counter:Int)
 		FlxTween.tween(lePlayState.barBG, {y: lePlayState.barBG.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 		FlxTween.tween(lePlayState.iconP1, {y: lePlayState.iconP1.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 		FlxTween.tween(lePlayState.iconP2, {y: lePlayState.iconP2.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
-		if (!ClientPrefs.lowQuality)
+		if (!ClientPrefs.lowQuality && ClientPrefs.iconGlows)
 		{
 			FlxTween.tween(lePlayState.iconGlowP1, {y: lePlayState.iconGlowP1.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});
 			FlxTween.tween(lePlayState.iconGlowP2, {y: lePlayState.iconP2.y - 70 * mult}, Conductor.crochet / 250, {ease: FlxEase.sineInOut});

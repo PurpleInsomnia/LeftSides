@@ -13,6 +13,8 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.addons.editors.ogmo.FlxOgmo3Loader;
+import flixel.addons.effects.FlxTrail;
+import flixel.addons.effects.FlxTrailArea;
 import flixel.addons.text.FlxTypeText;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.FlxGraphic;
@@ -114,6 +116,7 @@ class HscriptManager
         exp.set("FlxTextBorderStyle", HscriptBorder);
 		exp.set("FlxVideo", FlxVideo);
 		exp.set("FlxColor", CoolColor);
+		exp.set("FlxTrail", FlxTrail);
 		
 		// Classes
 		exp.set("Conductor", Conductor);
@@ -192,6 +195,9 @@ class HscriptManager
         exp.set("ComicsState", ComicsMenu);
 		exp.set("TwoPlayerState", twoplayer.TwoPlayerState);
 		exp.set("CheckifyLoadingState", checkify.CheckifyLoadingState);
+		exp.set("SelectCharacterState", SelectCharacterState);
+		exp.set("TrophiesState", trophies.TrophiesState);
+		exp.set("UnlockState", UnlockState);
 
 		// substates :)
 		exp.set("ResetScoreSubState", ResetScoreSubState);
@@ -214,6 +220,8 @@ class HscriptManager
 		exp.set("FlxShaderToy", hxshaders.FlxShaderToy);
 		exp.set("WiggleEffect", WiggleEffect);
 		exp.set("WiggleEffectType", WET);
+		exp.set("RGBPalette", RGBPalette);
+		exp.set("RGBShaderReference", RGBPalette.RGBShaderReference);
 
 		// lol backend shit.
 		exp.set("Internet", InternetAPI);
@@ -224,6 +232,9 @@ class HscriptManager
 
 		// system shit
 		exp.set("Application", lime.app.Application);
+
+		// dlc
+		exp.set("DlcInventory", dlc.DlcInventory);
         
 		parser.allowTypes = true;
         parser.resumeErrors = true;

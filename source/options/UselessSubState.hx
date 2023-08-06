@@ -50,6 +50,14 @@ class UselessSubState extends BaseOptionsMenu
 
         addOption(option);
 
+        var option:Option = new Option("'Left Sides'",
+        "Get it? Get it? Get it? Because the strums are on the left side hahahaha\n(Kill me)",
+        "leftSides",
+        "useless",
+        false);
+
+        addOption(option);
+
 		super();
 	}
 }

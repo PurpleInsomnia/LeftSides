@@ -120,6 +120,50 @@
 			"fps": 24,
 			"name": "BF HEY",
 			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				-76
+			],
+			"anim": "dodgeDown",
+			"fps": 24,
+			"name": "BF DODGE DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-12
+			],
+			"anim": "dodgeLeft",
+			"fps": 24,
+			"name": "BF DODGE LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-15,
+				-12
+			],
+			"anim": "dodgeRight",
+			"fps": 24,
+			"name": "BF DODGE RIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-10,
+				0
+			],
+			"anim": "dodgeUp",
+			"fps": 24,
+			"name": "BF DODGE UP",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,

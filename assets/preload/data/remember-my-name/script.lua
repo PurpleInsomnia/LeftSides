@@ -78,32 +78,58 @@ function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
 end
 
-
-local bfX = 0;
-local gfX = 0;
 function onCreate()
 	dialogueBg('black', false, false);
-
-	bfX = getProperty('boyfriend.x');
-	gfX = getProperty('gf.x');
 
 	makeLuaSprite('blackThing', 'black', 0, 0);
 	setObjectCamera('blackThing', 'hud');
 	setProperty('blackThing.alpha', 0);
 	addLuaSprite('blackThing', false);
+
+	addCharacterToList("jesse", "opponent");
+	addCharacterToList("finger", "opponent");
+	addCharacterToList("gus", "opponent");
+	addCharacterToList("saul", "opponent");
 end
 
 function onStepHit()
-	if curStep == 511 then
-		doTweenAlpha('blackThing', 'blackThing', 1, 6.19, 'linear');
-		doTweenX('benLeaves', 'boyfriend', bfX + 1440, 6.39, 'sineIn');
-		doTweenX('tessLeaves', 'gf', gfX + 1440, 6.39, 'sineIn');
+	if curStep == 112 then
+		setProperty("blackThing.alpha", 1);
 	end
-	if curStep == 621 then
-		setProperty('blackThing.alpha', 0);
+	if curStep == 128 then
+		setProperty("blackThing.alpha", 0);
 	end
-	if curStep == 636 then
-		setProperty('boyfriend.x', bfX);
-		setProperty('gf.x', gfX);	
+	if curStep == 768 then
+		setProperty("blackThing.alpha", 1);
+	end
+	if curStep == 832 then
+		setProperty("blackThing.alpha", 0);
+	end
+	if curStep == 1464 then
+		setProperty("blackThing.alpha", 1);
+	end
+	if curStep == 1472 then
+		setProperty("blackThing.alpha", 0);
+	end
+	if curStep == 1712 then
+		setProperty("blackThing.alpha", 1);
+	end
+	if curStep == 1728 then
+		setProperty("blackThing.alpha", 0);
+	end
+	if curStep == 2232 then
+		setProperty("blackThing.alpha", 1);
+	end
+	if curStep == 2240 then
+		setProperty("blackThing.alpha", 0);
+	end
+	if curStep == 2489 then
+		setProperty("blackThing.alpha", 1);
+	end
+	if curStep == 2496 then
+		setProperty("blackThing.alpha", 0);
+	end
+	if curStep == 2751 then
+		doTweenAlpha("blackThingAlpha", "blackThing", 1, 2, "linear");
 	end
 end

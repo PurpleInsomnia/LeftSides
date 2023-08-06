@@ -12,9 +12,10 @@ function onNextDialogue(count)
 }
 
 var blushTween:FlxTween = null;
-function onDialogueEventTrigger(event)
+// all values MUST be strings. Dynamic just checks for null values.
+function onDialogueEventTrigger(event:String, values:Array<Dynamic>)
 {
-    var check:String = event.toLowerCase();
+    var check:String = Paths.formatToSongPath(event);
     switch(check)
     {
         case "blushing":
@@ -22,5 +23,12 @@ function onDialogueEventTrigger(event)
             {
                 blushTween = null;
             }});
+        case "play-sound":
+            var vol:Float = 1;
+            if (values[1] != null)
+            {
+                vol = Std.parseFloat(values[1]);
+            }
+            FlxG.sound.play(Paths.sound(values[0]), vol);
     }
 }

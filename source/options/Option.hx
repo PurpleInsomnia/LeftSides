@@ -63,20 +63,20 @@ class Option
 		{
 			switch(type)
 			{
-				case 'bool':
+				case 'bool' | "custom_bool":
 					defaultValue = false;
-				case 'int' | 'float':
+				case 'int' | 'float' | "custom_int" | "custom_float":
 					defaultValue = 0;
-				case 'percent':
+				case 'percent' | "custom_percent":
 					defaultValue = 1;
-				case 'string':
+				case 'string' | "custom_string":
 					defaultValue = '';
 					if(options.length > 0) {
 						defaultValue = options[0];
 					}
 				case "useless":
 					defaultValue = false;
-				case "callback":
+				case "callback" | "custom_callback":
 					defaultValue = "";
 			}
 		}
@@ -119,7 +119,16 @@ class Option
 			{
 				return ClientPrefs.useless.get(variable);
 			}
-			return Reflect.getProperty(ClientPrefs, variable);
+			var ref:Dynamic = null;
+			if (type.startsWith("custom_"))
+			{
+				ref = CustomClientPrefs.get(variable);
+			}
+			else
+			{
+				ref = Reflect.getProperty(ClientPrefs, variable);
+			}
+			return ref;
 		}
 		else
 		{
@@ -138,7 +147,14 @@ class Option
 				}
 				ClientPrefs.useless.set(variable, value);
 			}
-			Reflect.setProperty(ClientPrefs, variable, value);
+			if (type.startsWith("custom_"))
+			{
+				CustomClientPrefs.save(variable, value);
+			}
+			else
+			{
+				Reflect.setProperty(ClientPrefs, variable, value);
+			}
 		}
 	}
 
@@ -167,7 +183,7 @@ class Option
 		var newValue:String = 'bool';
 		switch(type.toLowerCase().trim())
 		{
-			case 'int' | 'float' | 'percent' | 'string' | "useless" | "callback": newValue = type;
+			case 'int' | 'float' | 'percent' | 'string' | "useless" | "callback" | "custom_bool" | "custom_int" | "custom_float" | "custom_percent" | "custom_string": newValue = type;
 			case 'integer': newValue = 'int';
 			case 'str': newValue = 'string';
 			case 'fl': newValue = 'float';

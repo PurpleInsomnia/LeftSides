@@ -1,0 +1,55 @@
+var setStep:Int = 0;
+function onCountdownTick(counter:Int)
+{
+    if (counter == 3)
+    {
+        if (!lePlayState.delayedInfo)
+        {
+            modchartTweens.set("camInfoMove", FlxTween.tween(lePlayState.camInfo, {x: 0}, 0.75, {ease: FlxEase.circOut,
+                onComplete: function(twn:FlxTween)
+                {
+                    doStayTimer();
+                    modchartTweens.remove("camInfoMove");
+                }
+            }));
+        }
+        else
+        {
+            switchDaSong();
+        }
+    }
+}
+
+function switchDaSong()
+{
+    var song:String = Paths.formatToSongPath(PlayState.SONG.song);
+    switch (song)
+    {
+        default:
+            setStep = 0;
+    }
+}
+
+function onStepHit()
+{
+    if (curStep == setStep && lePlayState.delayedInfo)
+    {
+        modchartTweens.set("camInfoMove", FlxTween.tween(lePlayState.camInfo, {x: 0}, 0.75, {ease: FlxEase.circOut,
+            onComplete: function(twn:FlxTween)
+            {
+                doStayTimer();
+                modchartTweens.remove("camInfoMove");
+            }
+        }));
+    }
+}
+
+function doStayTimer()
+{
+    modchartTweens.set("cinematicTrans", FlxTween.tween(lePlayState.camInfo, {x: -640}, 0.75, {ease: FlxEase.expoIn, startDelay: 1,
+        onComplete: function(twn:FlxTween)
+        {
+            modchartTweens.remove("cinematicTrans");
+        }
+    }));
+}

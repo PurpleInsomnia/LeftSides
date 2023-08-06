@@ -1,0 +1,8 @@
+function onCreatePost()
+{
+    if (PlayState.songPrefix == "Tess")
+    {
+        lePlayState.boyfriend.y += 100;
+        lePlayState.gameoverscript = "tessGAMEOVER";
+    }
+}

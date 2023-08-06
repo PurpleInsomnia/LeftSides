@@ -8,3 +8,4 @@ ben|happy|That's pretty cool.
 tess|stop-being-cute|...You're cool...
 ben|troll|Damn, you're pretty good at testing the moveDown function for the portraits (used in a lua file?!)
 ben|troll|Also, dialogue bg test.|ohmagawd|default
+none|piss||benRoom|default

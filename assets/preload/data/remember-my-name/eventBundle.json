@@ -1,0 +1,52 @@
+{
+    "events": [
+        {
+            "step": 832,
+            "toTrigger": [
+                ["Change Character", "dad", "jesse"],
+                ["Change Scroll Speed", "1.09", ""]
+            ]
+        },
+        {
+            "step": 1344,
+            "toTrigger": [
+                ["Change Character", "dad", "finger"],
+                ["Change Scroll Speed", "1", ""]
+            ]
+        },
+        {
+            "step": 1472,
+            "toTrigger": [
+                ["Change Scroll Speed", "1.18", ""]
+            ]
+        },
+        {
+            "step": 1728,
+            "toTrigger": [
+                ["Change Character", "dad", "gus"],
+                ["Change Scroll Speed", "0.75", ""]
+            ]
+        },
+        {
+            "step": 1984,
+            "toTrigger": [
+                ["Change Character", "dad", "saul"],
+                ["Change Scroll Speed", "1", ""]
+            ]
+        },
+        {
+            "step": 2240,
+            "toTrigger": [
+                ["Change Character", "dad", "hank"],
+                ["Change Scroll Speed", "1", ""]
+            ]
+        },
+        {
+            "step": 2496,
+            "toTrigger": [
+                ["Change Character", "dad", "walt"],
+                ["Change Scroll Speed", "1", ""]
+            ]
+        }
+    ]
+}

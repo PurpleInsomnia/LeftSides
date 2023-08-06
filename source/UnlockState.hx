@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 
 class UnlockState extends MusicBeatState
 {
@@ -17,18 +18,24 @@ class UnlockState extends MusicBeatState
 
 	*/
 	var items:Array<Array<Dynamic>> = [];
+	var retState:Dynamic = null;
 
 	var canPress:Bool = false;
 	var label:FlxSprite;
 	var box:FlxSprite;
 	var itemTxt:FlxText;
 
-	public function new(items:Array<Array<Dynamic>>)
+	public function new(items:Array<Array<Dynamic>>, ?retState:Dynamic = null)
 	{
 		super();
 
 		this.items = [];
 		this.items = items;
+		this.retState = retState;
+		if (this.retState == null)
+		{
+			this.retState = new MainMenuState();
+		}
 
 		// place holder incase the list's length is 1
 		if (items.length == 1)
@@ -55,7 +62,7 @@ class UnlockState extends MusicBeatState
 
 		label.y = (box.y - label.height) + 20;
 
-		itemTxt = new FlxText(bx + 10, box.y + 40, (box.width - 20), "", 24);
+		itemTxt = new FlxText(bx + 8, box.y + 8, (box.width - 16), "", 24);
 		itemTxt.font = Paths.font("eras.ttf");
 		for (i in 0...items.length)
 		{
@@ -68,8 +75,8 @@ class UnlockState extends MusicBeatState
 		itemTxt.alpha = 0;
 		add(itemTxt);
 
-		FlxTween.tween(label, {x: lx}, 0.5);
-		FlxTween.tween(box, {x: bx}, 0.5);
+		FlxTween.tween(label, {x: lx}, 0.5, {ease: FlxEase.circOut});
+		FlxTween.tween(box, {x: bx}, 0.5, {ease: FlxEase.circOut});
 
 		FlxTween.tween(itemTxt, {alpha: 1}, 0.5, {startDelay: 0.25, onComplete: function(twn:FlxTween)
 		{
@@ -119,16 +126,20 @@ class UnlockState extends MusicBeatState
 				ClientPrefs.itemUnlocks[1] = true;
 				ClientPrefs.saveSettings();
 			}
+			if (items[i][0] == "Custom")
+			{
+				MusicBeatState.callOnHscripts("onConfirm", [items[i]]);
+			}
 		}
 
-		FlxTween.tween(label, {x: FlxG.width, alpha: 0}, 0.5);
-		FlxTween.tween(box, {x: -box.height, alpha: 0}, 0.5);
+		FlxTween.tween(label, {x: FlxG.width, alpha: 0}, 0.5, {ease: FlxEase.circIn});
+		FlxTween.tween(box, {x: -box.height, alpha: 0}, 0.5, {ease: FlxEase.circIn});
 		FlxTween.tween(itemTxt, {y: -32, alpha: 0}, 0.5, {onComplete: function(twn:FlxTween)
 		{
 			var check:Bool = StateManager.check("main-menu");
 			if (!check)
 			{
-				MusicBeatState.switchState(new MainMenuState());
+				MusicBeatState.switchState(retState);
 			}
 		}});
 	}

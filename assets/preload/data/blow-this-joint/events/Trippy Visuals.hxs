@@ -76,18 +76,30 @@ function onEvent(name:String, val1:String, val2:String)
                 }
             }
 
+            lePlayState.camHUDFilters = [];
+            lePlayState.camHUD.setFilters(lePlayState.camHUDFilters);
+
             backdropShader.visible = false;
         }
 
         if (effectOn)
         {
             callCT(-2);
+            if (!ClientPrefs.lowQuality)
+            {
+                lePlayState.spiritTrail("dad");
+                lePlayState.spiritTrail("bf");
+            }
         }
         else
         {
             lePlayState.modchartTweens.remove("ct");
             ct.cancel();
             lePlayState.camGame.angle = 0;
+            if (!ClientPrefs.lowQuality)
+            {
+                lePlayState.clearTrails();
+            }
         }
     }
 }

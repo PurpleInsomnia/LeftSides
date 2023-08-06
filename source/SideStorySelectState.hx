@@ -84,7 +84,8 @@ class SideStorySelectState extends MusicBeatState
 			storyList[4], 
 			storyList[5], 
 			storyList[6], 
-			storyList[7]
+			storyList[7],
+			storyList[8]
 		];
 		if (customStories != [])
 		{
@@ -201,7 +202,7 @@ class SideStorySelectState extends MusicBeatState
 
 		var theW:FlxButton = new FlxButton(0, 0, "", function()
 		{
-			ClientPrefs.inventory[1][1] = ClientPrefs.inventory[1][1] - 1;
+			ClientPrefs.newInventory.set("story-key", ClientPrefs.newInventory.get("story-key") - 1);
 			ClientPrefs.saveSettings();
 			FlxG.sound.play(Paths.sound("confirmMenu"));
 			var unlocked:Bool = false;
@@ -370,6 +371,10 @@ class SideStorySelectState extends MusicBeatState
 			{
 				storyList.push(["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"]);
 			}
+			if (storyList[8] == null)
+			{
+				storyList.push(["Worries", "worries", 0, "0xFF9D00FF", "0xFFFF7E00", "0x3F0000"]);
+			}
 		}
 		else
 		{
@@ -392,6 +397,10 @@ class SideStorySelectState extends MusicBeatState
 			if (storyList[7] == null)
 			{
 				storyList.push(["That Day", "that-day", 0, "0xFF9D00FF", "0x3F003F", "0x3F0000"]);
+			}
+			if (storyList[8] == null)
+			{
+				storyList.push(["Worries", "worries", 0, "0xFF9D00FF", "0xFFFF7E00", "0x3F0000"]);
 			}
 		}
 	}

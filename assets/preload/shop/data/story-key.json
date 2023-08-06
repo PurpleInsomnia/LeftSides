@@ -3,6 +3,8 @@
     "desc": "I know this item grants you the ability to unlock a locked [SIDE] [STORY] with just one click...",
     "price": 175,
     "thanks": "Huh...you enjoy reading THAT much?",
-    "nah": "I gave you all of them...remember that, [BURDEN]?",
+    "nah": "I gave you all of them...remember that, [LOSER]?",
+    "broke": "Don't beg me for [LORE]...[BROKE] person...",
+    "oosMessage": "Aww...no more free [LORE] for you...",
     "tag": "story-key"
 }

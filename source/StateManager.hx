@@ -8,7 +8,6 @@ class StateManager
     public static function check(name:String):Bool
     {
         #if desktop
-        WeekData.loadTheFirstEnabledMod();
         if (FileSystem.exists(Paths.getModFile("states/" + name + ".hxs")))
         {
             MusicBeatState.switchState(new CustomState(Paths.getModFile("states/" + name + ".hxs")));

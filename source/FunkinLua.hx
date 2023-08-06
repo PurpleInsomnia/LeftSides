@@ -839,7 +839,7 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "addCharacterToList", function(name:String, type:String) {
 			var charType:Int = 0;
 			switch(type.toLowerCase()) {
-				case 'dad': charType = 1;
+				case 'dad' | "opponent": charType = 1;
 				case 'gf' | 'girlfriend': charType = 2;
 			}
 			lePlayState.addCharacterToList(name, charType);
@@ -1251,14 +1251,14 @@ class FunkinLua {
 			@:privateAccess
 			ts = lePlayState.thirdStrum;
 
-			if (player == 'bf' || player == 'boyfriend')
+			if (player == 'bf' || player == 'boyfriend' || player == "p1" || player == "player")
 			{
 				for (i in 0...4)
 				{
 					lePlayState.playerStrums.members[i].changeSkin(skin, i);
 				}
 			}
-			if (player == 'dad')
+			if (player == 'dad' || player == "p2" || player == "opponent")
 			{
 				for (i in 0...4)
 				{
@@ -1296,6 +1296,11 @@ class FunkinLua {
 				}
 			}
 			lePlayState.callOnLuas('onStrumSkinChange', [skin]);			
+		});
+
+		Lua_helper.add_callback(lua, "forcePixelNotes", function(oppt:Bool, player:Bool, ?gf:Bool = false)
+		{
+			lePlayState.forcePixelNotes = [oppt, player, gf];
 		});
 
 		Lua_helper.add_callback(lua, "setLength", function(newLength:Float) {
@@ -1371,8 +1376,13 @@ class FunkinLua {
 			FlxG.mouse.visible = bool;
 		});
 
-		Lua_helper.add_callback(lua, "setWindowSize", function(width:Int, height:Int) {
+		Lua_helper.add_callback(lua, "setWindowSize", function(width:Int, height:Int, ?center:Bool = true)
+		{
 			FlxG.resizeWindow(width, height);
+			if (center)
+			{
+				WindowControl.rePosWindow();
+			}
 		});
 
 		Lua_helper.add_callback(lua, "error", function(msg:String, ?title:String = 'Error') {
@@ -1713,10 +1723,6 @@ class FunkinLua {
 			}
 
 			trophies.TrophyUtil.award(trophy, false);
-		});
-
-		Lua_helper.add_callback(lua, "attack", function(window:Bool = true, cock:Bool = true, ?character:String = "bf-attack") {
-			lePlayState.attackAlert(window, cock, character);
 		});
 
 		Lua_helper.add_callback(lua, "changeRingCount", function(thing:Float) {

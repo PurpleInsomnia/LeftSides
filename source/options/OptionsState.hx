@@ -3,6 +3,9 @@ package options;
 #if DISCORD
 import Discord.DiscordClient;
 #end
+#if desktop
+import sys.FileSystem;
+#end
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -63,11 +66,20 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.SysSettingsSubState());
 			case 'Customize':
 				LoadingState.loadAndSwitchState(new CustomizeState());
-			case "Useless Options":
-				openSubState(new options.UselessSubState());
+			//case "Useless Options":
+				// TESTIN THIS SHIT!!!!
+				//openSubState(new options.UselessSubState());
 			case "Gamejolt":
 				FlxG.sound.music.stop();
 				MusicBeatState.switchState(new GameJoltLogin());
+			default:
+				// custom options state fuck yeaaaaaahhhhh!!!!
+				#if desktop
+				if (FileSystem.exists(Paths.preloadFunny("options/" + Paths.formatToSongPath(label) + ".json")))
+				{
+					openSubState(new options.CustomOptionsSubState(Paths.formatToSongPath(label)));
+				}
+				#end
 		}
 	}
 

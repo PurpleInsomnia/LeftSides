@@ -107,7 +107,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
         });
     }
 
-    var ended:Bool = false;
+    public var ended:Bool = false;
 
     override function update(elapsed:Float)
     {

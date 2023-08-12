@@ -313,6 +313,10 @@ class StoryMenuState extends MusicBeatState
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story: "Worries"', 8, 1]);
 		}
+		if (Highscore.getWeekScore("week5", 1) > 0 && !ClientPrefs.newUnlocked)
+		{
+			unlocks.push(["OptionsState", "The Monster's Lair.", true]);
+		}
 		var checks:Array<Bool> = [];
 		for (key in ClientPrefs.completedSideStories.keys())
 		{

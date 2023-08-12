@@ -247,7 +247,7 @@ class MainMenuState extends MusicBeatState
 		waButton.loadGraphic(Paths.image('warningButton'), true, 150, 150);
 		buttonGroup.add(waButton);
 
-		if (ClientPrefs.week8Done || ClientPrefs.devMode)
+		if ((Highscore.getWeekScore("week5", 1) > 0) || ClientPrefs.devMode)
 		{
 			var vButton:FlxButton = new FlxButton(450 + 370, 720 - 150, null, voidThing);
 			vButton.loadGraphic(Paths.image('theVoidButton'), true, 150, 150);
@@ -331,9 +331,9 @@ class MainMenuState extends MusicBeatState
 		{
 			unlocks.push(["SideStorySelectState", 'The Side Story: "Worries"', 8, 1]);
 		}
-		if (ClientPrefs.week8Done && !ClientPrefs.newUnlocked)
+		if (Highscore.getWeekScore("week5", 1) > 0 && !ClientPrefs.newUnlocked)
 		{
-			unlocks.push(["OptionsState", "New Songs In Monster's Lair! (formerly THE VOID)", true]);
+			unlocks.push(["OptionsState", "The Monster's Lair.", true]);
 		}
 		if (ClientPrefs.completedSideStories.get("happy") && !ClientPrefs.unlockedArchives)
 		{

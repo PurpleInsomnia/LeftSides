@@ -64,7 +64,13 @@ class ResultsSong extends MusicBeatState
 		}
 		else
 		{
-			var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('results/bg'));
+			var ppSuck:GridBackdrop = new GridBackdrop();
+			ppSuck.scrollFactor.set(0, 0);
+			add(ppSuck);
+
+			var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backdropSHADER'));
+			bg.scrollFactor.set(0, 0);
+			bg.blend = openfl.display.BlendMode.DARKEN;
 			add(bg);
 
 			scoreTxt = new FlxText(0, 0, '', 32);

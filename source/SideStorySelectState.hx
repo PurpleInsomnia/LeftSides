@@ -222,7 +222,7 @@ class SideStorySelectState extends MusicBeatState
 		theW.scrollFactor.set(0, 0);
 		theW.screenCenter();
 		theW.y = 720 - 150;
-		if (ClientPrefs.inventory[1][1] > 0 && amountUnlocked != storyList.length)
+		if (ClientPrefs.newInventory.get("story-key") > 0 && amountUnlocked != storyList.length)
 		{
 			add(theW);
 		}

@@ -147,14 +147,6 @@ class CustomizeState extends MusicBeatState
         selText.screenCenter(X);
         add(selText);
 
-        var hint:FlxText = new FlxText(0, 70, 1280, "Press '7' to change your loading screen!", 12);
-        hint.setFormat(Paths.font("vcr.ttf"), 12, 0xFFFFFFFF, CENTER, FlxTextBorderStyle.OUTLINE, 0xFF000000);
-        hint.borderSize = 2;
-        hint.cameras = [camHUD];
-        hint.y -= Std.int(hint.height);
-        hint.screenCenter(X);
-        add(hint);
-
         changeThing(0);
 
         checkPrefs();
@@ -224,11 +216,6 @@ class CustomizeState extends MusicBeatState
         {
             CustomFadeTransition.nextCamera = camHUD;
             MusicBeatState.switchState(new OptionsState());
-        }
-        else if (FlxG.keys.justPressed.SEVEN)
-        {
-            CustomFadeTransition.nextCamera = camHUD;
-            MusicBeatState.switchState(new CustomizeLoadingScreenState());
         }
         selText.screenCenter(X);
         daStrum.updateHitbox();
@@ -687,7 +674,7 @@ class CustomizeLoadingScreenState extends MusicBeatState
         {
             canPress = false;
             FlxG.sound.play(Paths.sound("cancelMenu"));
-            MusicBeatState.switchState(new CustomizeState());
+            MusicBeatState.switchState(new options.OptionsState());
         }
         super.update(elapsed);
 

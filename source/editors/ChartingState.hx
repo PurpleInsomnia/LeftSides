@@ -919,6 +919,9 @@ class ChartingState extends MusicBeatState
 	var stepperSusLength:FlxUINumericStepper;
 	var strumTimeInputText:FlxUIInputText; //I wanted to use a stepper but we can't scale these as far as i know :(
 	var noteTypeDropDown:FlxUIDropDownMenuCustom;
+	var changeSectionToNoteType:FlxButton;
+	var changeOpptSectionToNoteType:FlxButton;
+	var changeGFSectionToNoteType:FlxButton;
 	public var currentType:Int = 0;
 
 	public var avalibleNoteTypes:Array<String> = [];
@@ -983,11 +986,59 @@ class ChartingState extends MusicBeatState
 		});
 		blockPressWhileScrolling.push(noteTypeDropDown);
 
+		changeSectionToNoteType = new FlxButton(150, 105, "Change P1\nTo Type", function()
+		{
+			for (i in 0..._song.notes[curSection].sectionNotes.length)
+			{
+				var note:Array<Dynamic> = _song.notes[curSection].sectionNotes[i];
+				if (note[1] > -1 && note[1] < 4)
+				{
+					note[3] = noteTypeIntMap.get(currentType);
+				}
+			}
+			updateGrid();
+		});
+		changeSectionToNoteType.setGraphicSize(80, 30);
+		changeSectionToNoteType.updateHitbox();
+
+		changeOpptSectionToNoteType = new FlxButton(150, 145, "Change P2\nTo Type", function()
+		{
+			for (i in 0..._song.notes[curSection].sectionNotes.length)
+			{
+				var note:Array<Dynamic> = _song.notes[curSection].sectionNotes[i];
+				if (note[1] > 3 && note[1] < 8)
+				{
+					note[3] = noteTypeIntMap.get(currentType);
+				}
+			}
+			updateGrid();
+		});
+		changeOpptSectionToNoteType.setGraphicSize(80, 30);
+		changeOpptSectionToNoteType.updateHitbox();
+
+		changeGFSectionToNoteType = new FlxButton(150, 185, "Change P3\nTo Type", function()
+		{
+			for (i in 0..._song.notes[curSection].sectionNotes.length)
+			{
+				var note:Array<Dynamic> = _song.notes[curSection].sectionNotes[i];
+				if (note[1] > 7)
+				{
+					note[3] = noteTypeIntMap.get(currentType);
+				}
+			}
+			updateGrid();
+		});
+		changeGFSectionToNoteType.setGraphicSize(80, 30);
+		changeGFSectionToNoteType.updateHitbox();
+
 		tab_group_note.add(new FlxText(10, 10, 0, 'Sustain length:'));
 		tab_group_note.add(new FlxText(10, 50, 0, 'Strum time (in miliseconds):'));
 		tab_group_note.add(new FlxText(10, 90, 0, 'Note type:'));
 		tab_group_note.add(stepperSusLength);
 		tab_group_note.add(strumTimeInputText);
+		tab_group_note.add(changeSectionToNoteType);
+		tab_group_note.add(changeOpptSectionToNoteType);
+		tab_group_note.add(changeGFSectionToNoteType);
 		tab_group_note.add(noteTypeDropDown);
 
 		UI_box.addGroup(tab_group_note);
@@ -1242,10 +1293,10 @@ class ChartingState extends MusicBeatState
 			// vocals.stop();
 		}
 
-		var file:Dynamic = Paths.voices(currentSongName);
+		var file:Dynamic = Paths.voices(currentSongName, "ogg", "Voices" + PlayState.songPrefix);
 		if (isEncore)
 		{
-			file = Paths.voicesEncore(currentSongName);
+			file = Paths.voicesEncore(currentSongName, "ogg", "VoicesEncore" + PlayState.songPrefix);
 		}
 
 		vocals = new FlxSound();
@@ -1262,11 +1313,11 @@ class ChartingState extends MusicBeatState
 	function generateSong() {
 		if (!isEncore)
 		{
-			FlxG.sound.playMusic(Paths.inst(currentSongName), 0.6, false);
+			FlxG.sound.playMusic(Paths.inst(currentSongName, PlayState.songPrefix), 0.6, false);
 		}
 		else
 		{
-			FlxG.sound.playMusic(Paths.instEncore(currentSongName), 0.6, false);
+			FlxG.sound.playMusic(Paths.instEncore(currentSongName, PlayState.songPrefix), 0.6, false);
 		}
 		if (instVolume != null) FlxG.sound.music.volume = instVolume.value;
 		if (check_mute_inst != null && check_mute_inst.checked) FlxG.sound.music.volume = 0;
@@ -1838,20 +1889,20 @@ class ChartingState extends MusicBeatState
 		}
 		audioBuffers[1] = null;
 		#if MODS_ALLOWED
-		var vocalpath:String = Paths.modFolders('songs/' + currentSongName + '/Voices.ogg');
+		var vocalpath:String = Paths.modFolders('songs/' + currentSongName + '/Voices' + PlayState.songPrefix + '.ogg');
 		if (isEncore)
 		{
-			vocalpath = Paths.modFolders('songs/' + currentSongName + '/VoicesEncore.ogg');
+			vocalpath = Paths.modFolders('songs/' + currentSongName + '/VoicesEncore' + PlayState.songPrefix + '.ogg');
 		}
 
 		if(FileSystem.exists(vocalpath)) {
 			audioBuffers[1] = AudioBuffer.fromFile(vocalpath);
 			//trace('Custom vocals found');
 		} else { #end
-			var leVocals:Dynamic = Paths.voices(currentSongName, "ogg", "Voices");
+			var leVocals:Dynamic = Paths.voices(currentSongName, "ogg", "Voices" + PlayState.songPrefix);
 			if (isEncore)
 			{
-				leVocals = Paths.voicesEncore(currentSongName, "ogg", "VoicesEncore");
+				leVocals = Paths.voicesEncore(currentSongName, "ogg", "VoicesEncore" + PlayState.songPrefix);
 			}
 
 			if (!Std.isOfType(leVocals, Sound) && OpenFlAssets.exists(leVocals)) { //Vanilla voices

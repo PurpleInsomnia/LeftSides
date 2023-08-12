@@ -30,5 +30,21 @@ function onDialogueEventTrigger(event:String, values:Array<Dynamic>)
                 vol = Std.parseFloat(values[1]);
             }
             FlxG.sound.play(Paths.sound(values[0]), vol);
+        case "text-messages":
+            lePlayState.curDialogueBox.canPress = false;
+            lePlayState.curDialogueBox.char.visible = false;
+            lePlayState.curDialogueBox.box.visible = false;
+            lePlayState.curDialogueBox.text.visible = false;
+            openSubState(new SideStoryTextMessages("", values[0], function()
+            {
+                lePlayState.curDialogueBox.canPress = true;
+                lePlayState.curDialogueBox.char.visible = true;
+                lePlayState.curDialogueBox.box.visible = true;
+                lePlayState.curDialogueBox.text.visible = true;
+                lePlayState.curDialogueBox.ended = false;
+                lePlayState.curDialogueBox.line += 1;
+                lePlayState.curDialogueBox.nextDialogueThing();
+				lePlayState.curDialogueBox.nextLine();
+            }));
     }
 }

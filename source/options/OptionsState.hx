@@ -65,7 +65,7 @@ class OptionsState extends MusicBeatState
 			case "System":
 				openSubState(new options.SysSettingsSubState());
 			case 'Customize':
-				LoadingState.loadAndSwitchState(new CustomizeState());
+				openSubState(new options.CustomizeSubState());
 			//case "Useless Options":
 				// TESTIN THIS SHIT!!!!
 				//openSubState(new options.UselessSubState());
@@ -107,8 +107,6 @@ class OptionsState extends MusicBeatState
 			options = data.playstateOptions;
 			size = 0.8;
 		}
-
-		FlxG.sound.music.stop();
 
 		if (!FlxG.sound.music.playing)
 		{

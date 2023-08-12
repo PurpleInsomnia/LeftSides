@@ -198,11 +198,14 @@ class HscriptManager
 		exp.set("SelectCharacterState", SelectCharacterState);
 		exp.set("TrophiesState", trophies.TrophiesState);
 		exp.set("UnlockState", UnlockState);
+		exp.set("WardrobeState", WardrobeState);
 
 		// substates :)
 		exp.set("ResetScoreSubState", ResetScoreSubState);
 		exp.set("ResetEncoreScoreSubState", ResetEncoreScoreSubState);
         exp.set("GameOverSubState", GameOverSubstate);
+		// killing myself
+		exp.set("SideStoryTextMessages", SideStoryState.SideStoryTextMessages);
 
         // custom shit.
         exp.set("CustomState", CustomState);

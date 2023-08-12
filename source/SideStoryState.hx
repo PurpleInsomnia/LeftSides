@@ -1411,6 +1411,43 @@ typedef TextMessage = {
 class SideStoryTextMessages extends MusicBeatSubstate
 {
 	public var daMessages:Dynamic = null;
+	private var defaultMessages:Dynamic = {
+		name: "Ben",
+		pfp: "ben",
+		messages: [
+			{
+				message: "Hiiiii silly~",
+				r: true
+			},
+			{
+				message: "hi goofball :)",
+				r: false
+			},
+			{
+				message: "watcha up to?",
+				r: false
+			},
+			{
+				message: "Just testing out this cool little thing PurpleInsomnia programmed. :3",
+				r: true
+			},
+			{
+				message: "lol. aight.",
+				r: false,
+				image: "test"
+			},
+			{
+				message: "Ily",
+				r: true
+			},
+			{
+				message: "ily too. <3",
+				r: false
+			}
+		],
+		phone: "tess",
+		android: false
+	}
 
 	public var camText:FlxCamera;
 	public var textBackground:FlxSprite = null;
@@ -1422,55 +1459,32 @@ class SideStoryTextMessages extends MusicBeatSubstate
 
 	public var camFollow:FlxSprite;
 	public var callback:Void->Void = null;
+	public var directory:String = "";
 	public function new(directory:String, path:String, callback:Void->Void)
 	{
 		super();
 
 		this.callback = callback;
+		this.directory = directory;
 
 		if (FileSystem.exists(PathSS.data(directory + "/" + path + ".json")))
 		{
 			daMessages = Json.parse(File.getContent(PathSS.data(directory + "/" + path + ".json")));
 		}
+		else if (directory == "")
+		{
+			if (FileSystem.exists(Paths.preloadFunny("data/" + Paths.formatToSongPath(PlayState.SONG.song) + "/" + path + ".json")))
+			{
+				daMessages = Json.parse(File.getContent(Paths.preloadFunny("data/" + Paths.formatToSongPath(PlayState.SONG.song) + "/" + path + ".json")));
+			}
+			else
+			{
+				daMessages = defaultMessages;
+			}
+		}
 		else
 		{
-			daMessages = {
-				name: "Ben",
-				pfp: "ben",
-				messages: [
-					{
-						message: "Hiiiii silly~",
-						r: true
-					},
-					{
-						message: "hi goofball :)",
-						r: false
-					},
-					{
-						message: "watcha up to?",
-						r: false
-					},
-					{
-						message: "Just testing out this cool little thing PurpleInsomnia programmed. :3",
-						r: true
-					},
-					{
-						message: "lol. aight.",
-						r: false,
-						image: "test"
-					},
-					{
-						message: "Ily",
-						r: true
-					},
-					{
-						message: "ily too. <3",
-						r: false
-					}
-				],
-				phone: "tess",
-				android: false
-			}
+			daMessages = defaultMessages;
 		}
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(1280, 720, 0xFF000000);
@@ -1480,7 +1494,10 @@ class SideStoryTextMessages extends MusicBeatSubstate
 		var dc:FlxCamera = new FlxCamera();
 		camText = new FlxCamera(433, 20, 405, 670);
 		camText.bgColor.alpha = 0;
-		FlxG.cameras.reset(dc);
+		if (directory != "")
+		{
+			//FlxG.cameras.reset(dc);
+		}
 		FlxG.cameras.add(camText);
 
 		camFollow = new FlxSprite().makeGraphic(1, 1);
@@ -1614,7 +1631,10 @@ class SideStoryTextMessages extends MusicBeatSubstate
 							new FlxTimer().start(0.75, function(tmr:FlxTimer)
 							{
 								FlxG.cameras.remove(camText);
-								FlxG.cameras.reset();
+								if (directory != "")
+								{
+									FlxG.cameras.reset();
+								}
 								callback();
 								close();
 							});

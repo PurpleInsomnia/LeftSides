@@ -23,24 +23,20 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "phone",
+			"events": [
+				"Text Messages:morningMessage"
+			],
+			"portrait": "bf",
 			"boxState": "normal",
-			"expression": "talk",
-			"text": "[TESS]: Hey, can you come over?\\nI need to tell you something.....\\n(Kinda about what happened yesterday)..."
+			"expression": "tired",
+			"text": ""
 		},
 		{
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "what",
-			"text": "(Guess she changed her mind about not bringing it up...)"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "phone",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "[ME]: I gotta make coffee first lol...\\nAfter that, I'll be headin' over. :)"
+			"text": "(Guess she changed her mind about not bringing her mood from yesterday up...)"
 		},
 		{
 			"speed": 0.05,

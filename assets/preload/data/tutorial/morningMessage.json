@@ -1,0 +1,40 @@
+{
+    "name": "Tess",
+    "pfp": "tess-old",
+    "messages": [
+        {
+            "message": "Hey, can you come over today?",
+            "r": false
+        },
+        {
+            "message": "how come?",
+            "r": true
+        },
+        {
+            "message": "You left your charger here, sily. :)",
+            "r": false
+        },
+        {
+            "message": "damnit. thank you lmao",
+            "r": true
+        },
+        {
+            "message": "I also wanted to talk to you about yesterday...my mood specifically...",
+            "r": false
+        },
+        {
+            "message": "oh. alr then. :)",
+            "r": true
+        },
+        {
+            "message": "i'm gonna get myself coffee, and then i'm headin' over :)",
+            "r": true
+        },
+        {
+            "message": "Okay! :)",
+            "r": false
+        }
+    ],
+    "phone": "ben",
+    "android": true
+}
